@@ -1262,7 +1262,13 @@
                                     <i class="fas fa-chevron-down accordion-chevron"></i>
                                 </button>
                                 <div class="accordion-body">
-                                    <p class="tool-note"><i class="fas fa-info-circle"></i> مقادیر VBG را وارد کنید. هرچه کامل‌تر باشد، تفسیر دقیق‌تر خواهد بود.</p>
+                                    <!-- Mode selector -->
+                                    <div class="method-selector-compact" style="margin-bottom:10px;" id="vbgModeBtns">
+                                        <button class="method-btn-compact gradient active" data-mode="vbg"><i class="fas fa-droplet"></i> VBG — وریدی</button>
+                                        <button class="method-btn-compact gradient" data-mode="abg"><i class="fas fa-heart-pulse"></i> ABG — شریانی</button>
+                                    </div>
+                                    <input type="checkbox" id="vbgModeABG" style="display:none;">
+                                    <p class="tool-note" id="vbgModeNote"><i class="fas fa-info-circle"></i> حالت VBG: pH وریدی معمولاً ۰.۰۳–۰.۰۵ کمتر از شریانی است. pCO₂ وریدی ۶–۸ mmHg بالاتر است.</p>
                                     <div class="calc-toggles-stack">
                                         <div class="calc-toggle-item">
                                             <div class="oxy-input-row">
@@ -1295,7 +1301,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">BE</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgBE" inputmode="decimal" placeholder="0" step="0.1" class="oxy-input" style="width:90px;">
+                                                    <input type="number" id="vbgBE" inputmode="decimal" placeholder="0" step="0.1" min="-30" max="30" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">mEq/L</span>
                                                 </div>
                                             </div>
