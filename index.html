@@ -1395,57 +1395,8 @@
                                 </div>
                             </div>
 
-                            <!-- Dose Calculator -->
-                            <div class="accordion-item">
-                                <button class="accordion-header" onclick="toggleAccordion(this)">
-                                    <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#667eea,#3b82f6)"><i class="fas fa-syringe"></i></div>
-                                    <div class="accordion-title-wrap">
-                                        <span class="accordion-title">ماشین حساب دوز</span>
-                                        <span class="accordion-sub">Volume to Administer</span>
-                                    </div>
-                                    <i class="fas fa-chevron-down accordion-chevron"></i>
-                                </button>
-                                <div class="accordion-body">
-                                    <div class="input-group">
-                                        <label>انتخاب دارو (اختیاری)</label>
-                                        <select id="doseCalcDrugPicker" onchange="populateDoseCalcFromDrug()">
-                                            <option value="">انتخاب دارو...</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-row-2col">
-                                        <div class="input-group">
-                                            <label>دوز مورد نیاز</label>
-                                            <div class="input-with-unit">
-                                                <input type="number" id="doseNeeded" placeholder="0" step="0.1" inputmode="decimal">
-                                                <select id="doseUnit" style="border:none;background:transparent;font-size:12px;color:var(--text-tertiary);padding:0 2px;">
-                                                    <option value="mg">mg</option>
-                                                    <option value="mcg">mcg</option>
-                                                    <option value="units">units</option>
-                                                    <option value="mEq">mEq</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="input-group">
-                                            <label>غلظت</label>
-                                            <div class="input-with-unit">
-                                                <input type="number" id="doseConcentration" placeholder="0" step="0.01" inputmode="decimal">
-                                                <span class="input-unit" id="doseConcentrationUnit">mg/mL</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <label>حجم ویال</label>
-                                        <div class="input-with-unit">
-                                            <input type="number" id="doseVialVolume" placeholder="0" step="0.1" inputmode="decimal">
-                                            <span class="input-unit">mL</span>
-                                        </div>
-                                    </div>
-                                    <button class="tool-btn" onclick="calculateDose()"><i class="fas fa-calculator"></i> محاسبه حجم</button>
-                                    <div class="tool-result" id="doseResult"></div>
-                                </div>
-                            </div>
-
-                            <!-- Y-Site Compatibility -->
+                            
+                            <!-- Y-Site<!-- Y-Site Compatibility -->
 
                         </div>
                     </div>
