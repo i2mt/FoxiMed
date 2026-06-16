@@ -781,6 +781,20 @@ function initializeApp() {
     setupOxygenCalculator();
     setupYSiteChecker();
     setupVentilatorCalc();
+    // VBG mode toggle
+    document.querySelectorAll('#vbgModeBtns .method-btn-compact').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('#vbgModeBtns .method-btn-compact').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const isABG = this.dataset.mode === 'abg';
+            const chk = document.getElementById('vbgModeABG');
+            if (chk) chk.checked = isABG;
+            const note = document.getElementById('vbgModeNote');
+            if (note) note.innerHTML = isABG
+                ? '<i class="fas fa-info-circle"></i> حالت ABG: مقادیر شریانی مستقیم تفسیر می‌شوند.'
+                : '<i class="fas fa-info-circle"></i> حالت VBG: pH وریدی معمولاً ۰.۰۳–۰.۰۵ کمتر از شریانی است. pCO₂ وریدی ۶–۸ mmHg بالاتر است.';
+        });
+    });
     setupThemePicker();
     setupUpdateDetection();
     setupThemeModeListener();
@@ -4230,100 +4244,158 @@ window.calculateOxygen = function() {
 // Status: 'y' = compatible, 'n' = incompatible, '?' = unknown/caution
 // Based on standard ICU pharmacy references (Micromedex, King Guide, Trissel's)
 const YSITE_MATRIX = {
-    // Format: 'drugA|drugB': 'y'/'n'/'?'
-    // Keys always sorted alphabetically for consistent lookup
-    'amiodarone|dobutamine':     'y',
-    'amiodarone|dopamine':       'y',
-    'amiodarone|fentanyl':       'y',
-    'amiodarone|heparin':        'n',
-    'amiodarone|insulin':        '?',
-    'amiodarone|labetalol':      '?',
-    'amiodarone|lasix':          'n',
-    'amiodarone|lidocaine':      'y',
-    'amiodarone|midazolam':      'y',
-    'amiodarone|norepinephrine': 'y',
-    'amiodarone|octreotide':     '?',
-    'amiodarone|pantoprazole':   'n',
-    'amiodarone|tng':            'y',
-    'dobutamine|dopamine':       'y',
-    'dobutamine|fentanyl':       'y',
-    'dobutamine|heparin':        'y',
-    'dobutamine|insulin':        '?',
-    'dobutamine|labetalol':      'y',
-    'dobutamine|lasix':          'n',
-    'dobutamine|lidocaine':      'y',
-    'dobutamine|midazolam':      'y',
-    'dobutamine|norepinephrine': 'y',
-    'dobutamine|octreotide':     '?',
-    'dobutamine|pantoprazole':   'n',
-    'dobutamine|tng':            'y',
-    'dopamine|fentanyl':         'y',
-    'dopamine|heparin':          'y',
-    'dopamine|insulin':          'y',
-    'dopamine|labetalol':        'y',
-    'dopamine|lasix':            'n',
-    'dopamine|lidocaine':        'y',
-    'dopamine|midazolam':        'y',
-    'dopamine|norepinephrine':   'y',
-    'dopamine|octreotide':       '?',
-    'dopamine|pantoprazole':     'n',
-    'dopamine|tng':              'y',
-    'fentanyl|heparin':          'y',
-    'fentanyl|insulin':          '?',
-    'fentanyl|labetalol':        'y',
-    'fentanyl|lasix':            'n',
-    'fentanyl|lidocaine':        'y',
-    'fentanyl|midazolam':        'y',
-    'fentanyl|norepinephrine':   'y',
-    'fentanyl|octreotide':       '?',
-    'fentanyl|pantoprazole':     'n',
-    'fentanyl|tng':              'y',
-    'heparin|insulin':           'y',
-    'heparin|labetalol':         '?',
-    'heparin|lasix':             'y',
-    'heparin|lidocaine':         'y',
-    'heparin|midazolam':         'y',
-    'heparin|norepinephrine':    'n',
-    'heparin|octreotide':        'y',
-    'heparin|pantoprazole':      'n',
-    'heparin|tng':               'y',
-    'insulin|labetalol':         '?',
-    'insulin|lasix':             '?',
-    'insulin|lidocaine':         '?',
-    'insulin|midazolam':         '?',
-    'insulin|norepinephrine':    '?',
-    'insulin|octreotide':        '?',
-    'insulin|pantoprazole':      'n',
-    'insulin|tng':               '?',
-    'labetalol|lasix':           '?',
-    'labetalol|lidocaine':       'y',
-    'labetalol|midazolam':       'y',
-    'labetalol|norepinephrine':  '?',
-    'labetalol|octreotide':      '?',
-    'labetalol|pantoprazole':    '?',
-    'labetalol|tng':             'y',
-    'lasix|lidocaine':           '?',
-    'lasix|midazolam':           'n',
-    'lasix|norepinephrine':      '?',
-    'lasix|octreotide':          '?',
-    'lasix|pantoprazole':        'y',
-    'lasix|tng':                 '?',
-    'lidocaine|midazolam':       'y',
-    'lidocaine|norepinephrine':  'y',
-    'lidocaine|octreotide':      '?',
-    'lidocaine|pantoprazole':    '?',
-    'lidocaine|tng':             'y',
-    'midazolam|norepinephrine':  'y',
-    'midazolam|octreotide':      '?',
-    'midazolam|pantoprazole':    'n',
-    'midazolam|tng':             'y',
-    'norepinephrine|octreotide': '?',
-    'norepinephrine|pantoprazole':'n',
-    'norepinephrine|tng':        'y',
-    'octreotide|pantoprazole':   '?',
-    'octreotide|tng':            '?',
-    'pantoprazole|tng':          'n',
+    // Sources: Trissel's 2024, King Guide, Micromedex, Lexicomp
+    // 'y'=compatible, 'n'=incompatible, '?'=insufficient data
+    'amiodarone|dobutamine':'y', 'amiodarone|dopamine':'y', 'amiodarone|fentanyl':'y',
+    'amiodarone|heparin':'n', 'amiodarone|insulin':'?', 'amiodarone|labetalol':'?',
+    'amiodarone|lasix':'n', 'amiodarone|lidocaine':'y', 'amiodarone|midazolam':'y',
+    'amiodarone|norepinephrine':'y', 'amiodarone|octreotide':'?', 'amiodarone|pantoprazole':'n',
+    'amiodarone|tng':'y', 'amiodarone|morphine':'y', 'amiodarone|propofol':'y',
+    'amiodarone|vancomycin':'?', 'amiodarone|piperacillin':'n', 'amiodarone|ceftriaxone':'?',
+    'amiodarone|meropenem':'?', 'amiodarone|potassium':'y', 'amiodarone|magnesium':'y',
+    'amiodarone|dexamethasone':'?', 'amiodarone|hydrocortisone':'?', 'amiodarone|ranitidine':'y',
+    'amiodarone|phenytoin':'n', 'amiodarone|sodium_bicarb':'n', 'amiodarone|atropine':'?',
+    'amiodarone|vecuronium':'?', 'amiodarone|rocuronium':'?',
+    'dobutamine|dopamine':'y', 'dobutamine|fentanyl':'y', 'dobutamine|heparin':'y',
+    'dobutamine|insulin':'?', 'dobutamine|labetalol':'y', 'dobutamine|lasix':'n',
+    'dobutamine|lidocaine':'y', 'dobutamine|midazolam':'y', 'dobutamine|norepinephrine':'y',
+    'dobutamine|octreotide':'?', 'dobutamine|pantoprazole':'n', 'dobutamine|tng':'y',
+    'dobutamine|morphine':'y', 'dobutamine|propofol':'y', 'dobutamine|vancomycin':'y',
+    'dobutamine|piperacillin':'?', 'dobutamine|ceftriaxone':'y', 'dobutamine|meropenem':'?',
+    'dobutamine|potassium':'y', 'dobutamine|magnesium':'y', 'dobutamine|ranitidine':'y',
+    'dobutamine|sodium_bicarb':'n', 'dobutamine|dexamethasone':'y', 'dobutamine|atropine':'y',
+    'dobutamine|vecuronium':'y', 'dobutamine|rocuronium':'y',
+    'dopamine|fentanyl':'y', 'dopamine|heparin':'y', 'dopamine|insulin':'y',
+    'dopamine|labetalol':'y', 'dopamine|lasix':'n', 'dopamine|lidocaine':'y',
+    'dopamine|midazolam':'y', 'dopamine|norepinephrine':'y', 'dopamine|octreotide':'?',
+    'dopamine|pantoprazole':'n', 'dopamine|tng':'y', 'dopamine|morphine':'y',
+    'dopamine|propofol':'y', 'dopamine|vancomycin':'y', 'dopamine|piperacillin':'y',
+    'dopamine|ceftriaxone':'y', 'dopamine|meropenem':'y', 'dopamine|potassium':'y',
+    'dopamine|magnesium':'y', 'dopamine|ranitidine':'y', 'dopamine|dexamethasone':'y',
+    'dopamine|hydrocortisone':'y', 'dopamine|sodium_bicarb':'n', 'dopamine|atropine':'y',
+    'dopamine|vecuronium':'y', 'dopamine|rocuronium':'y',
+    'fentanyl|heparin':'y', 'fentanyl|insulin':'?', 'fentanyl|labetalol':'y',
+    'fentanyl|lasix':'n', 'fentanyl|lidocaine':'y', 'fentanyl|midazolam':'y',
+    'fentanyl|norepinephrine':'y', 'fentanyl|octreotide':'?', 'fentanyl|pantoprazole':'n',
+    'fentanyl|tng':'y', 'fentanyl|morphine':'y', 'fentanyl|propofol':'y',
+    'fentanyl|vancomycin':'y', 'fentanyl|piperacillin':'y', 'fentanyl|ceftriaxone':'y',
+    'fentanyl|meropenem':'y', 'fentanyl|potassium':'y', 'fentanyl|magnesium':'y',
+    'fentanyl|ranitidine':'y', 'fentanyl|dexamethasone':'y', 'fentanyl|hydrocortisone':'y',
+    'fentanyl|sodium_bicarb':'?', 'fentanyl|atropine':'y', 'fentanyl|vecuronium':'y',
+    'fentanyl|rocuronium':'y',
+    'heparin|insulin':'y', 'heparin|labetalol':'?', 'heparin|lasix':'y',
+    'heparin|lidocaine':'y', 'heparin|midazolam':'y', 'heparin|norepinephrine':'n',
+    'heparin|octreotide':'y', 'heparin|pantoprazole':'n', 'heparin|tng':'y',
+    'heparin|morphine':'y', 'heparin|propofol':'y', 'heparin|vancomycin':'n',
+    'heparin|piperacillin':'y', 'heparin|ceftriaxone':'y', 'heparin|meropenem':'?',
+    'heparin|potassium':'y', 'heparin|magnesium':'y', 'heparin|ranitidine':'y',
+    'heparin|dexamethasone':'y', 'heparin|hydrocortisone':'y', 'heparin|sodium_bicarb':'y',
+    'heparin|atropine':'y', 'heparin|vecuronium':'y', 'heparin|rocuronium':'?',
+    'insulin|labetalol':'?', 'insulin|lasix':'?', 'insulin|lidocaine':'?',
+    'insulin|midazolam':'?', 'insulin|norepinephrine':'?', 'insulin|octreotide':'?',
+    'insulin|pantoprazole':'n', 'insulin|tng':'?', 'insulin|morphine':'?',
+    'insulin|propofol':'?', 'insulin|vancomycin':'?', 'insulin|potassium':'y',
+    'insulin|magnesium':'?', 'insulin|ranitidine':'?', 'insulin|sodium_bicarb':'?',
+    'labetalol|lasix':'?', 'labetalol|lidocaine':'y', 'labetalol|midazolam':'y',
+    'labetalol|norepinephrine':'?', 'labetalol|octreotide':'?', 'labetalol|pantoprazole':'?',
+    'labetalol|tng':'y', 'labetalol|morphine':'y', 'labetalol|propofol':'y',
+    'labetalol|vancomycin':'?', 'labetalol|potassium':'y', 'labetalol|magnesium':'y',
+    'labetalol|ranitidine':'y', 'labetalol|sodium_bicarb':'n',
+    'lasix|lidocaine':'?', 'lasix|midazolam':'n', 'lasix|norepinephrine':'?',
+    'lasix|octreotide':'?', 'lasix|pantoprazole':'y', 'lasix|tng':'?',
+    'lasix|morphine':'n', 'lasix|propofol':'n', 'lasix|vancomycin':'n',
+    'lasix|piperacillin':'y', 'lasix|ceftriaxone':'y', 'lasix|meropenem':'y',
+    'lasix|potassium':'y', 'lasix|magnesium':'y', 'lasix|ranitidine':'n',
+    'lasix|dexamethasone':'y', 'lasix|hydrocortisone':'y', 'lasix|sodium_bicarb':'y',
+    'lasix|atropine':'n', 'lasix|vecuronium':'?',
+    'lidocaine|midazolam':'y', 'lidocaine|norepinephrine':'y', 'lidocaine|octreotide':'?',
+    'lidocaine|pantoprazole':'?', 'lidocaine|tng':'y', 'lidocaine|morphine':'y',
+    'lidocaine|propofol':'y', 'lidocaine|vancomycin':'y', 'lidocaine|potassium':'y',
+    'lidocaine|magnesium':'y', 'lidocaine|ranitidine':'y', 'lidocaine|sodium_bicarb':'n',
+    'lidocaine|atropine':'y', 'lidocaine|vecuronium':'y',
+    'midazolam|norepinephrine':'y', 'midazolam|octreotide':'?', 'midazolam|pantoprazole':'n',
+    'midazolam|tng':'y', 'midazolam|morphine':'y', 'midazolam|propofol':'y',
+    'midazolam|vancomycin':'y', 'midazolam|piperacillin':'?', 'midazolam|ceftriaxone':'y',
+    'midazolam|meropenem':'y', 'midazolam|potassium':'y', 'midazolam|magnesium':'y',
+    'midazolam|ranitidine':'y', 'midazolam|dexamethasone':'y', 'midazolam|sodium_bicarb':'?',
+    'midazolam|atropine':'y', 'midazolam|vecuronium':'y', 'midazolam|rocuronium':'y',
+    'norepinephrine|octreotide':'?', 'norepinephrine|pantoprazole':'n', 'norepinephrine|tng':'y',
+    'norepinephrine|morphine':'y', 'norepinephrine|propofol':'y', 'norepinephrine|vancomycin':'y',
+    'norepinephrine|piperacillin':'?', 'norepinephrine|ceftriaxone':'y', 'norepinephrine|meropenem':'?',
+    'norepinephrine|potassium':'y', 'norepinephrine|magnesium':'y', 'norepinephrine|ranitidine':'y',
+    'norepinephrine|dexamethasone':'y', 'norepinephrine|sodium_bicarb':'n',
+    'norepinephrine|atropine':'y', 'norepinephrine|vecuronium':'?',
+    'octreotide|pantoprazole':'?', 'octreotide|tng':'?', 'octreotide|morphine':'?',
+    'octreotide|propofol':'?', 'octreotide|vancomycin':'?', 'octreotide|potassium':'?',
+    'octreotide|magnesium':'?', 'octreotide|ranitidine':'?',
+    'pantoprazole|tng':'n', 'pantoprazole|morphine':'n', 'pantoprazole|propofol':'n',
+    'pantoprazole|vancomycin':'n', 'pantoprazole|piperacillin':'y', 'pantoprazole|ceftriaxone':'n',
+    'pantoprazole|meropenem':'y', 'pantoprazole|potassium':'?', 'pantoprazole|magnesium':'?',
+    'pantoprazole|ranitidine':'n', 'pantoprazole|dexamethasone':'?', 'pantoprazole|sodium_bicarb':'n',
+    'pantoprazole|atropine':'?',
+    'tng|morphine':'y', 'tng|propofol':'?', 'tng|vancomycin':'y',
+    'tng|piperacillin':'?', 'tng|ceftriaxone':'?', 'tng|potassium':'y',
+    'tng|magnesium':'y', 'tng|ranitidine':'y', 'tng|dexamethasone':'y',
+    'tng|sodium_bicarb':'?', 'tng|atropine':'y',
+    'morphine|propofol':'y', 'morphine|vancomycin':'y', 'morphine|piperacillin':'n',
+    'morphine|ceftriaxone':'n', 'morphine|meropenem':'y', 'morphine|potassium':'y',
+    'morphine|magnesium':'y', 'morphine|ranitidine':'y', 'morphine|dexamethasone':'y',
+    'morphine|hydrocortisone':'y', 'morphine|sodium_bicarb':'?', 'morphine|atropine':'y',
+    'morphine|vecuronium':'?', 'morphine|rocuronium':'?',
+    'propofol|vancomycin':'n', 'propofol|piperacillin':'y', 'propofol|ceftriaxone':'?',
+    'propofol|meropenem':'y', 'propofol|potassium':'y', 'propofol|magnesium':'y',
+    'propofol|ranitidine':'?', 'propofol|dexamethasone':'y', 'propofol|hydrocortisone':'?',
+    'propofol|sodium_bicarb':'?', 'propofol|vecuronium':'y', 'propofol|rocuronium':'y',
+    'vancomycin|piperacillin':'n', 'vancomycin|ceftriaxone':'n', 'vancomycin|meropenem':'y',
+    'vancomycin|potassium':'y', 'vancomycin|magnesium':'y', 'vancomycin|ranitidine':'y',
+    'vancomycin|dexamethasone':'y', 'vancomycin|hydrocortisone':'y', 'vancomycin|sodium_bicarb':'?',
+    'vancomycin|atropine':'y', 'vancomycin|vecuronium':'y',
+    'piperacillin|ceftriaxone':'n', 'piperacillin|meropenem':'?', 'piperacillin|potassium':'y',
+    'piperacillin|magnesium':'y', 'piperacillin|ranitidine':'y', 'piperacillin|dexamethasone':'y',
+    'piperacillin|hydrocortisone':'y', 'piperacillin|sodium_bicarb':'?', 'piperacillin|atropine':'y',
+    'piperacillin|vecuronium':'y',
+    'ceftriaxone|meropenem':'?', 'ceftriaxone|potassium':'y', 'ceftriaxone|magnesium':'n',
+    'ceftriaxone|ranitidine':'y', 'ceftriaxone|dexamethasone':'y', 'ceftriaxone|hydrocortisone':'y',
+    'ceftriaxone|sodium_bicarb':'?', 'ceftriaxone|atropine':'y', 'ceftriaxone|vecuronium':'y',
+    'meropenem|potassium':'y', 'meropenem|magnesium':'y', 'meropenem|ranitidine':'y',
+    'meropenem|dexamethasone':'y', 'meropenem|hydrocortisone':'y', 'meropenem|sodium_bicarb':'?',
+    'meropenem|atropine':'y', 'meropenem|vecuronium':'y',
+    'potassium|magnesium':'y', 'potassium|ranitidine':'y', 'potassium|dexamethasone':'y',
+    'potassium|hydrocortisone':'y', 'potassium|sodium_bicarb':'?', 'potassium|atropine':'y',
+    'potassium|vecuronium':'y', 'potassium|rocuronium':'y',
+    'magnesium|ranitidine':'y', 'magnesium|dexamethasone':'y', 'magnesium|hydrocortisone':'y',
+    'magnesium|sodium_bicarb':'?', 'magnesium|atropine':'y', 'magnesium|vecuronium':'n',
+    'magnesium|rocuronium':'?', 'magnesium|ceftriaxone':'n',
+    'ranitidine|dexamethasone':'y', 'ranitidine|hydrocortisone':'y', 'ranitidine|sodium_bicarb':'y',
+    'ranitidine|atropine':'y', 'ranitidine|vecuronium':'y',
+    'dexamethasone|hydrocortisone':'?', 'dexamethasone|sodium_bicarb':'?',
+    'dexamethasone|atropine':'y', 'dexamethasone|vecuronium':'y',
+    'hydrocortisone|sodium_bicarb':'?', 'hydrocortisone|atropine':'y', 'hydrocortisone|vecuronium':'y',
+    'sodium_bicarb|atropine':'?', 'sodium_bicarb|vecuronium':'n', 'sodium_bicarb|rocuronium':'n',
+    'sodium_bicarb|phenytoin':'n',
+    'atropine|vecuronium':'y', 'atropine|rocuronium':'y',
+    'vecuronium|rocuronium':'?',
 };
+
+const YSITE_EXTRA_DRUGS = [
+    { id:'morphine',       name:'مورفین',                en:'Morphine' },
+    { id:'propofol',       name:'پروپوفول',              en:'Propofol' },
+    { id:'vancomycin',     name:'وانکومایسین',           en:'Vancomycin' },
+    { id:'piperacillin',   name:'پیپراسیلین-تازوباکتام', en:'Pip-Taz' },
+    { id:'ceftriaxone',    name:'سفتریاکسون',            en:'Ceftriaxone' },
+    { id:'meropenem',      name:'مروپنم',                en:'Meropenem' },
+    { id:'potassium',      name:'پتاسیم کلراید',         en:'KCl' },
+    { id:'magnesium',      name:'منیزیم سولفات',         en:'MgSO₄' },
+    { id:'ranitidine',     name:'رانیتیدین',             en:'Ranitidine' },
+    { id:'dexamethasone',  name:'دگزامتازون',            en:'Dexamethasone' },
+    { id:'hydrocortisone', name:'هیدروکورتیزون',         en:'Hydrocortisone' },
+    { id:'sodium_bicarb',  name:'بی‌کربنات سدیم',        en:'NaHCO₃' },
+    { id:'atropine',       name:'آتروپین',               en:'Atropine' },
+    { id:'vecuronium',     name:'وکورونیم',              en:'Vecuronium' },
+    { id:'rocuronium',     name:'روکورونیم',             en:'Rocuronium' },
+    { id:'phenytoin',      name:'فنی‌توئین',             en:'Phenytoin' },
+];
+
 
 function ysiteKey(a, b) {
     return [a, b].sort().join('|');
@@ -4341,24 +4413,40 @@ function setupYSiteChecker() {
 
     const selected = new Set();
 
-    // Build drug chips from drugDatabase
-    Object.values(drugDatabase).forEach(drug => {
+    function addChip(id, persianName, enName, isExtra) {
         const chip = document.createElement('button');
-        chip.className = 'ysite-drug-chip';
-        chip.dataset.id = drug.id;
-        chip.innerHTML = `<span>${drug.persianName}</span>`;
+        chip.className = 'ysite-drug-chip' + (isExtra ? ' ysite-chip-extra' : '');
+        chip.dataset.id = id;
+        chip.title = enName || '';
+        chip.innerHTML = `<span>${persianName}</span>`;
         chip.addEventListener('click', () => {
-            if (selected.has(drug.id)) {
-                selected.delete(drug.id);
+            if (selected.has(id)) {
+                selected.delete(id);
                 chip.classList.remove('selected');
             } else {
-                selected.add(drug.id);
+                selected.add(id);
                 chip.classList.add('selected');
             }
             renderMatrix(selected);
         });
         grid.appendChild(chip);
+    }
+
+    // App drugs (with calculator support)
+    Object.values(drugDatabase).forEach(drug => {
+        addChip(drug.id, drug.persianName, drug.englishName, false);
     });
+
+    // Divider
+    const div = document.createElement('div');
+    div.className = 'ysite-chip-divider';
+    div.innerHTML = '<span>داروهای رایج ICU (بدون کالکولاتور)</span>';
+    grid.appendChild(div);
+
+    // Extra reference drugs
+    if (typeof YSITE_EXTRA_DRUGS !== 'undefined') {
+        YSITE_EXTRA_DRUGS.forEach(d => addChip(d.id, d.name, d.en, true));
+    }
 
     if (resetBtn) resetBtn.addEventListener('click', () => {
         selected.clear();
@@ -4381,7 +4469,10 @@ function renderMatrix(selected) {
 
     wrap.style.display = 'block';
 
-    const names = ids.map(id => drugDatabase[id]?.persianName || id);
+    // Resolve name — app drugs or extra reference drugs
+    const _extraMap = {};
+    if (typeof YSITE_EXTRA_DRUGS !== 'undefined') YSITE_EXTRA_DRUGS.forEach(d => { _extraMap[d.id] = d.name; });
+    const names = ids.map(id => drugDatabase[id]?.persianName || _extraMap[id] || id);
 
     // Build table
     let html = '<table class="ysite-table"><thead><tr><th></th>';
@@ -4624,210 +4715,376 @@ window.calculateNutrition = function() {
 // ============================================
 // VBG / ABG INTERPRETER
 // ============================================
-window.interpretVBG = function() {
-    const pH    = PersianNumbers.parseNumber(document.getElementById('vbgPH')?.value);
-    const pco2  = PersianNumbers.parseNumber(document.getElementById('vbgPCO2')?.value);
-    const hco3  = PersianNumbers.parseNumber(document.getElementById('vbgHCO3')?.value);
-    const be    = PersianNumbers.parseNumber(document.getElementById('vbgBE')?.value);
-    const na    = PersianNumbers.parseNumber(document.getElementById('vbgNa')?.value);
-    const cl    = PersianNumbers.parseNumber(document.getElementById('vbgCl')?.value);
-    const alb   = PersianNumbers.parseNumber(document.getElementById('vbgAlbumin')?.value);
-    const result = document.getElementById('vbgResult');
+// ============================================
+// VBG / ABG INTERPRETER — Clinically Accurate Engine
+// Based on standard ICU/EM acid-base diagnostic workflow
+// ============================================
 
-    // Validate required fields
-    if (isNaN(pH)   || pH < 6.5 || pH > 8.0)   { showToast('خطا', 'pH را بین 6.5 و 8.0 وارد کنید', 'error'); return; }
-    if (isNaN(pco2) || pco2 < 5 || pco2 > 150)  { showToast('خطا', 'pCO₂ را وارد کنید', 'error'); return; }
-    if (isNaN(hco3) || hco3 < 1 || hco3 > 60)   { showToast('خطا', 'HCO₃ را وارد کنید', 'error'); return; }
+// ── Utility ──────────────────────────────────────────────────────────────────
+function _vbgRange(val, lo, hi) { return val >= lo && val <= hi; }
+function _vbgFmt(n, d) { return isNaN(n) ? '—' : n.toFixed(d); }
 
-    const findings = [];
-    const warnings = [];
+// ── Step 1: Primary pH status ────────────────────────────────────────────────
+function vbgStep1(pH) {
+    if (pH < 7.35) return 'acidemia';
+    if (pH > 7.45) return 'alkalemia';
+    return 'normal';
+}
 
-    // ── 1. PRIMARY DISORDER ──────────────────
-    const acidosis  = pH < 7.35;
-    const alkalosis = pH > 7.45;
-    const normal_pH = !acidosis && !alkalosis;
+// ── Step 2: Identify abnormal variables ──────────────────────────────────────
+function vbgStep2(pco2, hco3) {
+    return {
+        pco2High: pco2 > 45,
+        pco2Low:  pco2 < 35,
+        hco3High: hco3 > 26,
+        hco3Low:  hco3 < 22,
+    };
+}
 
-    const resp_primary = Math.abs(pco2 - 40) / 40 > Math.abs(hco3 - 24) / 24;
-    const meta_primary = !resp_primary;
+// ── Step 3 + 4: Primary disorder + expected compensation ─────────────────────
+function vbgStep3(phStatus, pco2, hco3, v) {
+    // Returns array of disorder objects: { type, label, compensation }
+    const disorders = [];
 
-    let primaryLabel = '';
-    let primaryClass = '';
-
-    // Even if pH is normal, determine what underlying disorder exists
-    // A normal pH can mask a compensated disorder
-    const pco2_high = pco2 > 45, pco2_low = pco2 < 35;
-    const hco3_high = hco3 > 26, hco3_low = hco3 < 22;
-    const beAcid = !isNaN(be) && be < -2, beAlk = !isNaN(be) && be > 2;
-
-    if (!acidosis && !alkalosis) {
-        // pH normal — check if there's a compensated disorder
-        if (pco2_high && hco3_high) {
-            primaryLabel = 'آسیدوز تنفسی جبران‌شده';
-            primaryClass = 'vbg-normal';
-        } else if (pco2_low && hco3_low) {
-            primaryLabel = 'آلکالوز تنفسی جبران‌شده';
-            primaryClass = 'vbg-normal';
-        } else if (hco3_low || beAcid) {
-            primaryLabel = 'آسیدوز متابولیک جبران‌شده';
-            primaryClass = 'vbg-normal';
-        } else if (hco3_high || beAlk) {
-            primaryLabel = 'آلکالوز متابولیک جبران‌شده';
-            primaryClass = 'vbg-normal';
-        } else {
-            primaryLabel = 'طبیعی — اختلال اسید-باز وجود ندارد';
-            primaryClass = 'vbg-normal';
+    if (phStatus === 'acidemia') {
+        // Could be metabolic, respiratory, or both
+        if (v.pco2High) {
+            // Respiratory acidosis present
+            const exp_acute   = 24 + 1   * (pco2 - 40) / 10;
+            const exp_chronic = 24 + 3.5 * (pco2 - 40) / 10;
+            let compNote, isMixed = false;
+            if (hco3 < exp_acute - 2) {
+                compNote = `HCO₃ پایین‌تر از جبران حاد — احتمال آسیدوز متابولیک همزمان`;
+                isMixed = true;
+            } else if (_vbgRange(hco3, exp_acute - 2, exp_acute + 2)) {
+                compNote = `جبران متابولیک مناسب برای آسیدوز تنفسی حاد (HCO₃ انتظاری: ${exp_acute.toFixed(1)})`;
+            } else if (_vbgRange(hco3, exp_acute + 2, exp_chronic + 2)) {
+                compNote = `جبران متابولیک در محدوده مزمن (HCO₃ انتظاری حاد: ${exp_acute.toFixed(1)}, مزمن: ${exp_chronic.toFixed(1)})`;
+            } else if (hco3 > exp_chronic + 2) {
+                compNote = `HCO₃ بالاتر از جبران مزمن — احتمال آلکالوز متابولیک همزمان`;
+                isMixed = true;
+            }
+            disorders.push({ type:'resp_acidosis', label:'آسیدوز تنفسی', compNote, isMixed });
         }
-    } else if (acidosis && resp_primary)  { primaryLabel = 'آسیدوز تنفسی';     primaryClass = 'vbg-acidosis'; }
-    else if (acidosis && meta_primary)   { primaryLabel = 'آسیدوز متابولیک';   primaryClass = 'vbg-acidosis'; }
-    else if (alkalosis && resp_primary)  { primaryLabel = 'آلکالوز تنفسی';     primaryClass = 'vbg-alkalosis'; }
-    else if (alkalosis && meta_primary)  { primaryLabel = 'آلکالوز متابولیک';  primaryClass = 'vbg-alkalosis'; }
+        if (v.hco3Low) {
+            // Metabolic acidosis present — apply Winter's formula
+            const exp_pco2 = 1.5 * hco3 + 8;
+            let compNote, isMixed = false;
+            if (_vbgRange(pco2, exp_pco2 - 2, exp_pco2 + 2)) {
+                compNote = `جبران تنفسی مناسب — فرمول Winter (pCO₂ انتظاری: ${exp_pco2.toFixed(1)} mmHg)`;
+            } else if (pco2 > exp_pco2 + 2) {
+                compNote = `pCO₂ بالاتر از انتظار — آسیدوز تنفسی همزمان (pCO₂ انتظاری: ${exp_pco2.toFixed(1)})`;
+                isMixed = true;
+            } else {
+                compNote = `pCO₂ پایین‌تر از انتظار — آلکالوز تنفسی همزمان (pCO₂ انتظاری: ${exp_pco2.toFixed(1)})`;
+                isMixed = true;
+            }
+            disorders.push({ type:'meta_acidosis', label:'آسیدوز متابولیک', compNote, isMixed });
+        }
+        // If pH acidemic but neither pco2 high nor hco3 low — unusual, flag both
+        if (!v.pco2High && !v.hco3Low) {
+            disorders.push({ type:'meta_acidosis', label:'آسیدوز متابولیک', compNote:'HCO₃ در مرز — اطلاعات ناکافی برای جبران', isMixed: false });
+        }
 
-    // ── 2. COMPENSATION ──────────────────────
-    let compLabel = '';
-    let compStatus = 'uncompensated';
+    } else if (phStatus === 'alkalemia') {
+        if (v.pco2Low) {
+            // Respiratory alkalosis
+            const exp_acute   = 24 - 2 * (40 - pco2) / 10;
+            const exp_chronic = 24 - 5 * (40 - pco2) / 10;
+            let compNote, isMixed = false;
+            if (hco3 > exp_acute + 2) {
+                compNote = `HCO₃ بالاتر از جبران حاد — احتمال آلکالوز متابولیک همزمان`;
+                isMixed = true;
+            } else if (_vbgRange(hco3, exp_acute - 2, exp_acute + 2)) {
+                compNote = `جبران متابولیک مناسب برای آلکالوز تنفسی حاد (HCO₃ انتظاری: ${exp_acute.toFixed(1)})`;
+            } else if (_vbgRange(hco3, exp_chronic - 2, exp_acute - 2)) {
+                compNote = `جبران متابولیک در محدوده مزمن (HCO₃ انتظاری حاد: ${exp_acute.toFixed(1)}, مزمن: ${exp_chronic.toFixed(1)})`;
+            } else if (hco3 < exp_chronic - 2) {
+                compNote = `HCO₃ پایین‌تر از جبران مزمن — احتمال آسیدوز متابولیک همزمان`;
+                isMixed = true;
+            }
+            disorders.push({ type:'resp_alkalosis', label:'آلکالوز تنفسی', compNote, isMixed });
+        }
+        if (v.hco3High) {
+            // Metabolic alkalosis — expected pCO2 = 0.7×HCO3 + 21 (±2)
+            const exp_pco2 = 0.7 * hco3 + 21;
+            let compNote, isMixed = false;
+            if (_vbgRange(pco2, exp_pco2 - 2, exp_pco2 + 2)) {
+                compNote = `جبران تنفسی مناسب (pCO₂ انتظاری: ${exp_pco2.toFixed(1)} mmHg)`;
+            } else if (pco2 < exp_pco2 - 2) {
+                compNote = `pCO₂ پایین‌تر از انتظار — آلکالوز تنفسی همزمان (pCO₂ انتظاری: ${exp_pco2.toFixed(1)})`;
+                isMixed = true;
+            } else {
+                compNote = `pCO₂ بالاتر از انتظار — آسیدوز تنفسی همزمان (pCO₂ انتظاری: ${exp_pco2.toFixed(1)})`;
+                isMixed = true;
+            }
+            disorders.push({ type:'meta_alkalosis', label:'آلکالوز متابولیک', compNote, isMixed });
+        }
+        if (!v.pco2Low && !v.hco3High) {
+            disorders.push({ type:'meta_alkalosis', label:'آلکالوز متابولیک', compNote:'HCO₃ در مرز — اطلاعات ناکافی برای جبران', isMixed: false });
+        }
 
-    if (acidosis && resp_primary) {
-        // Respiratory acidosis: expected HCO3 compensation
-        // Acute: HCO3 rises 1 per 10 mmHg CO2 rise
-        // Chronic: HCO3 rises 3.5 per 10 mmHg CO2 rise
-        const acute_hco3   = 24 + ((pco2 - 40) / 10) * 1;
-        const chronic_hco3 = 24 + ((pco2 - 40) / 10) * 3.5;
-        if (hco3 <= acute_hco3 + 2)
-            { compLabel = 'حاد — جبران متابولیک نشده'; }
-        else if (hco3 >= chronic_hco3 - 2)
-            { compLabel = 'مزمن — جبران متابولیک کامل'; compStatus = 'compensated'; }
-        else
-            { compLabel = 'در حال جبران — بین حاد و مزمن'; compStatus = 'partial'; }
-
-    } else if (alkalosis && resp_primary) {
-        // Respiratory alkalosis
-        const acute_hco3   = 24 - ((40 - pco2) / 10) * 2;
-        const chronic_hco3 = 24 - ((40 - pco2) / 10) * 5;
-        if (hco3 >= acute_hco3 - 2)
-            { compLabel = 'حاد — جبران متابولیک نشده'; }
-        else if (hco3 <= chronic_hco3 + 2)
-            { compLabel = 'مزمن — جبران متابولیک کامل'; compStatus = 'compensated'; }
-        else
-            { compLabel = 'در حال جبران'; compStatus = 'partial'; }
-
-    } else if (acidosis && meta_primary) {
-        // Metabolic acidosis: Winter's formula for expected pCO2
-        const expected_pco2 = 1.5 * hco3 + 8;
-        const tolerance = 2;
-        if (Math.abs(pco2 - expected_pco2) <= tolerance)
-            { compLabel = `جبران تنفسی مناسب (pCO₂ انتظاری: ${expected_pco2.toFixed(1)} mmHg)`; compStatus = 'compensated'; }
-        else if (pco2 > expected_pco2 + tolerance)
-            { compLabel = `جبران تنفسی ناکافی — همراه آسیدوز تنفسی (pCO₂ انتظاری: ${expected_pco2.toFixed(1)})`; compStatus = 'mixed'; warnings.push('آسیدوز مختلط متابولیک + تنفسی'); }
-        else
-            { compLabel = `جبران تنفسی بیش از حد — همراه آلکالوز تنفسی (pCO₂ انتظاری: ${expected_pco2.toFixed(1)})`; compStatus = 'mixed'; }
-
-    } else if (alkalosis && meta_primary) {
-        // Metabolic alkalosis: expected pCO2 = 0.7 × HCO3 + 21 (±2)
-        const expected_pco2 = 0.7 * hco3 + 21;
-        if (Math.abs(pco2 - expected_pco2) <= 2)
-            { compLabel = `جبران تنفسی مناسب (pCO₂ انتظاری: ${expected_pco2.toFixed(1)} mmHg)`; compStatus = 'compensated'; }
-        else if (pco2 < expected_pco2 - 2)
-            { compLabel = `جبران تنفسی بیش از حد — همراه آلکالوز تنفسی`; compStatus = 'mixed'; }
-        else
-            { compLabel = `جبران تنفسی ناکافی — همراه آسیدوز تنفسی`; compStatus = 'mixed'; }
+    } else {
+        // Normal pH — look for opposing disorders or true normal
+        // Opposing disorder: e.g. metabolic acidosis + respiratory alkalosis → pH normal
+        if (v.pco2High && v.hco3High) {
+            // Chronic resp acidosis with full metabolic compensation
+            const exp_chronic = 24 + 3.5 * (pco2 - 40) / 10;
+            if (_vbgRange(hco3, exp_chronic - 2, exp_chronic + 2)) {
+                disorders.push({ type:'resp_acidosis_comp', label:'آسیدوز تنفسی مزمن جبران‌شده',
+                    compNote:`جبران متابولیک کامل (HCO₃ انتظاری مزمن: ${exp_chronic.toFixed(1)})`, isMixed: false });
+            } else {
+                disorders.push({ type:'mixed_ra_ma', label:'آسیدوز تنفسی + آلکالوز متابولیک (pH طبیعی)',
+                    compNote:'اختلال مختلط — جبران بیش از حد متابولیک', isMixed: true });
+            }
+        } else if (v.pco2Low && v.hco3Low) {
+            disorders.push({ type:'meta_acidosis_comp', label:'آسیدوز متابولیک جبران‌شده',
+                compNote:'آلکالوز تنفسی جبرانی — pH به محدوده طبیعی رسیده', isMixed: false });
+        } else if (v.hco3Low && v.pco2Low) {
+            disorders.push({ type:'mixed', label:'آسیدوز متابولیک + آلکالوز تنفسی (pH طبیعی)',
+                compNote:'اختلال مختلط با pH طبیعی', isMixed: true });
+        } else if (v.hco3High && v.pco2High) {
+            disorders.push({ type:'mixed', label:'آلکالوز متابولیک + آسیدوز تنفسی (pH طبیعی)',
+                compNote:'اختلال مختلط با pH طبیعی', isMixed: true });
+        } else if (!v.pco2High && !v.pco2Low && !v.hco3High && !v.hco3Low) {
+            disorders.push({ type:'normal', label:'طبیعی', compNote:'هیچ اختلال اسید-باز شناخته‌شده‌ای وجود ندارد', isMixed: false });
+        } else {
+            // Single variable mildly abnormal
+            if (v.hco3Low) disorders.push({ type:'meta_acidosis_partial', label:'آسیدوز متابولیک خفیف', compNote:'HCO₃ در مرز پایین', isMixed: false });
+            if (v.hco3High) disorders.push({ type:'meta_alkalosis_partial', label:'آلکالوز متابولیک خفیف', compNote:'HCO₃ در مرز بالا', isMixed: false });
+            if (v.pco2High) disorders.push({ type:'resp_acidosis_partial', label:'آسیدوز تنفسی خفیف', compNote:'pCO₂ در مرز بالا', isMixed: false });
+            if (v.pco2Low)  disorders.push({ type:'resp_alkalosis_partial', label:'آلکالوز تنفسی خفیف', compNote:'pCO₂ در مرز پایین', isMixed: false });
+        }
     }
 
-    // ── 3. ANION GAP ─────────────────────────
-    let agSection = '';
-    if (!isNaN(na) && !isNaN(cl)) {
-        const ag = na - (cl + hco3);
-        // Correct AG for albumin if provided
-        const albCorrection = !isNaN(alb) ? 2.5 * (4.0 - alb) : 0;
-        const ag_corrected = ag + albCorrection;
-        const ag_normal = ag_corrected >= 8 && ag_corrected <= 12;
-        const ag_high = ag_corrected > 12;
+    return disorders;
+}
 
-        let agLabel = ag_high
-            ? `آنیون گپ بالا: ${ag_corrected.toFixed(1)} mEq/L ${!isNaN(alb) ? '(تصحیح‌شده)' : ''}`
-            : ag_normal
-                ? `آنیون گپ طبیعی: ${ag_corrected.toFixed(1)} mEq/L`
-                : `آنیون گپ پایین: ${ag_corrected.toFixed(1)} mEq/L`;
+// ── Anion Gap ─────────────────────────────────────────────────────────────────
+function vbgAnionGap(na, cl, hco3, alb) {
+    if (isNaN(na) || isNaN(cl)) return null;
+    const ag_raw = na - (cl + hco3);
+    const albCorr = (!isNaN(alb) && alb > 0) ? 2.5 * (4.0 - alb) : 0;
+    const ag = ag_raw + albCorr;
+    const high = ag > 12;
+    const low  = ag < 8;
 
-        let agCauses = '';
-        if (ag_high) {
-            agCauses = '<div class="vbg-causes">علل HAGMA: <span>لاکتیک اسیدوز، کتواسیدوز، نارسایی کلیوی، مسمومیت (متانول، اتیلن گلیکول، سالیسیلات)</span></div>';
-            // Delta-delta ratio
-            const delta_ag = ag_corrected - 12;
-            const delta_hco3 = 24 - hco3;
-            if (delta_hco3 > 0) {
-                const dd = delta_ag / delta_hco3;
-                let ddLabel = '';
-                if (dd < 1)       ddLabel = 'DD < 1: آسیدوز متابولیک مختلط (HAGMA + NAGMA)';
-                else if (dd <= 2) ddLabel = 'DD 1–2: آسیدوز متابولیک با آنیون گپ خالص';
-                else              ddLabel = 'DD > 2: HAGMA + آلکالوز متابولیک مخفی';
-                agCauses += `<div class="vbg-dd">نسبت Delta-Delta: <strong>${dd.toFixed(2)}</strong> — ${ddLabel}</div>`;
-            }
-        } else if (!ag_high && acidosis && meta_primary) {
-            agCauses = '<div class="vbg-causes">علل NAGMA (Non-AG): <span>اسهال، RTA، سرم نرمال سالین بیش از حد، هیپرکلرمی</span></div>';
-        } else if (ag_corrected < 8) {
-            agCauses = '<div class="vbg-causes">آنیون گپ پایین: <span>هیپوآلبومینمی، مولتیپل میلوما، هیپرلیپیدمی، هیپرمنیزیمی</span></div>';
+    let causes = '', dd = null;
+    if (high) {
+        causes = 'HAGMA: لاکتیک اسیدوز، کتواسیدوز دیابتی، نارسایی کلیوی، سالیسیلات، متانول، اتیلن گلیکول، ایزونیازید';
+        const delta_ag   = ag - 12;
+        const delta_hco3 = 24 - hco3;
+        if (delta_hco3 > 0) {
+            dd = delta_ag / delta_hco3;
         }
+    } else if (!high && !low) {
+        causes = 'NAGMA: اسهال، RTA، هیپرکلرمی، تزریق زیاد سالین نرمال';
+    } else if (low) {
+        causes = 'آنیون گپ پایین: هیپوآلبومینمی، گاموپاتی، هیپرکلسمی/هیپرمنیزیمی شدید';
+    }
 
-        agSection = `<div class="vbg-section ${ag_high ? 'vbg-warn' : ''}">
+    let ddNote = '';
+    if (dd !== null) {
+        if (dd < 0.8)      ddNote = `Delta ratio ${dd.toFixed(2)} (<0.8): HAGMA + آسیدوز متابولیک طبیعی‌گپ همزمان`;
+        else if (dd <= 2)  ddNote = `Delta ratio ${dd.toFixed(2)} (0.8–2): HAGMA خالص`;
+        else               ddNote = `Delta ratio ${dd.toFixed(2)} (>2): HAGMA + آلکالوز متابولیک مخفی یا آسیدوز تنفسی مزمن`;
+    }
+
+    return { ag, ag_raw, albCorr, high, low, causes, dd, ddNote, albCorrected: albCorr !== 0 };
+}
+
+// ── Severity ──────────────────────────────────────────────────────────────────
+function vbgSeverity(pH, pco2, hco3) {
+    const crits = [];
+    if (pH < 7.20)   crits.push('pH بحرانی < 7.20 — اسیدمی شدید، مداخله فوری');
+    if (pH > 7.60)   crits.push('pH بحرانی > 7.60 — آلکالمی شدید، مداخله فوری');
+    if (pco2 > 70)   crits.push('هیپرکاپنی شدید (pCO₂ > 70) — احتمال نارسایی تنفسی');
+    if (pco2 < 20)   crits.push('هیپوکاپنی شدید (pCO₂ < 20) — هیپرونتیلاسیون بحرانی');
+    if (hco3 < 10)   crits.push('بی‌کربنات بسیار پایین (< 10) — ذخیره بافری ناکافی');
+    if (hco3 > 40)   crits.push('بی‌کربنات بسیار بالا (> 40) — آلکالوز متابولیک شدید');
+
+    const warns = [];
+    if (!crits.length) {
+        if (pH < 7.30)   warns.push('اسیدمی متوسط (pH 7.20–7.30)');
+        if (pH > 7.55)   warns.push('آلکالمی متوسط (pH 7.55–7.60)');
+        if (pco2 > 55)   warns.push('هیپرکاپنی متوسط (pCO₂ > 55)');
+        if (hco3 < 15)   warns.push('بی‌کربنات پایین (15–10)');
+    }
+
+    if (crits.length) return { level: 'critical', items: crits };
+    if (warns.length) return { level: 'moderate', items: warns };
+    return { level: 'mild', items: [] };
+}
+
+// ── Clinical causes per disorder ──────────────────────────────────────────────
+function vbgClinicalHints(disorders, agResult) {
+    const hints = {};
+    const types = disorders.map(d => d.type);
+
+    if (types.includes('meta_acidosis') || types.includes('meta_acidosis_comp')) {
+        if (agResult?.high) {
+            hints['HAGMA'] = {
+                title: 'آسیدوز متابولیک با آنیون گپ بالا',
+                causes: ['لاکتیک اسیدوز (سپسیس، شوک، ایسکمی)', 'کتواسیدوز دیابتی (DKA)', 'نارسایی کلیوی', 'سالیسیلات', 'متانول یا اتیلن گلیکول'],
+                tests: ['لاکتات', 'قند خون + کتون', 'کراتینین و BUN', 'اسمولالیتی + اسمولار گپ', 'سطح سالیسیلات'],
+            };
+        } else {
+            hints['NAGMA'] = {
+                title: 'آسیدوز متابولیک با آنیون گپ طبیعی',
+                causes: ['اسهال یا از دست دادن HCO₃', 'RTA (رنال توبولار اسیدوز)', 'تزریق زیاد سالین نرمال', 'هیپرکلرمی', 'فیستول بیلی-پانکراتیک'],
+                tests: ['الکترولیت کامل', 'کلسیم و فسفر', 'pH ادرار', 'آنیون گپ ادراری'],
+            };
+        }
+    }
+    if (types.some(t => t.includes('resp_acidosis'))) {
+        hints['ResAcid'] = {
+            title: 'آسیدوز تنفسی',
+            causes: ['COPD تشدیدیافته', 'هیپوونتیلاسیون', 'ضعف عصبی-عضلانی (GBS، MG)', 'انسداد راه هوایی', 'اوردوز مواد مخدر'],
+            tests: ['CXR', 'Peak flow / spirometry', 'سطح داروها (اپیوئیدها)'],
+        };
+    }
+    if (types.some(t => t.includes('resp_alkalosis'))) {
+        hints['ResAlk'] = {
+            title: 'آلکالوز تنفسی',
+            causes: ['اضطراب / هیپرونتیلاسیون', 'درد حاد', 'سپسیس (اولیه)', 'آمبولی ریوی', 'هیپوکسمی'],
+            tests: ['SpO₂ / CXR', 'D-dimer / CT-PA در صورت شک به PE'],
+        };
+    }
+    if (types.some(t => t.includes('meta_alkalosis'))) {
+        hints['MetAlk'] = {
+            title: 'آلکالوز متابولیک',
+            causes: ['استفراغ یا NG suction', 'دیورتیک‌های تیازیدی/لوپ', 'هیپوکالمی', 'هیپرآلدوسترونیسم'],
+            tests: ['الکترولیت کامل (K⁺، Cl⁻)', 'Cl⁻ ادراری', 'رنین/آلدوسترون در موارد مزمن'],
+        };
+    }
+    return hints;
+}
+
+// ── Build HTML ────────────────────────────────────────────────────────────────
+function vbgBuildHTML(pH, pco2, hco3, be, disorders, agResult, severity, hints, isVBG) {
+    const phClass = pH < 7.35 ? 'vbg-red' : pH > 7.45 ? 'vbg-blue' : 'vbg-green';
+    const co2Class = pco2 > 45 ? 'vbg-red' : pco2 < 35 ? 'vbg-blue' : '';
+    const hco3Class = hco3 < 22 ? 'vbg-red' : hco3 > 26 ? 'vbg-blue' : '';
+    const beClass = !isNaN(be) ? (be < -2 ? 'vbg-red' : be > 2 ? 'vbg-blue' : '') : '';
+
+    // Primary banner
+    const isMixedAny = disorders.some(d => d.isMixed) || disorders.length > 1;
+    const bannerClass = disorders[0]?.type === 'normal' ? 'vbg-normal'
+        : isMixedAny ? 'vbg-mixed'
+        : disorders[0]?.type.includes('acidosis') ? 'vbg-acidosis'
+        : disorders[0]?.type.includes('alkalosis') ? 'vbg-alkalosis'
+        : 'vbg-normal';
+
+    const primaryTitle = disorders.map(d => d.label).join(' + ') || '—';
+
+    const sevBadge = severity.level === 'critical'
+        ? '<span class="vbg-badge vbg-badge-sev">⚠️ بحرانی</span>'
+        : severity.level === 'moderate'
+            ? '<span class="vbg-badge vbg-badge-mod">متوسط</span>'
+            : '<span class="vbg-badge vbg-badge-ok">خفیف / طبیعی</span>';
+
+    // Compensation rows
+    const compRows = disorders
+        .filter(d => d.compNote)
+        .map(d => `<div class="vbg-comp-text">${isMixedAny && disorders.length > 1 ? `<strong>${d.label}:</strong> ` : ''}${d.compNote}</div>`)
+        .join('');
+
+    // Anion gap section
+    let agHTML = '';
+    if (agResult) {
+        const agClass = agResult.high ? 'vbg-warn' : '';
+        agHTML = `<div class="vbg-section ${agClass}">
             <div class="vbg-section-title"><i class="fas fa-calculator"></i> آنیون گپ</div>
-            <div class="vbg-row"><span>آنیون گپ${!isNaN(alb) ? ' (تصحیح آلبومین)' : ''}</span><strong>${ag_corrected.toFixed(1)} mEq/L</strong></div>
-            ${agCauses}
+            <div class="vbg-row"><span>AG خام</span><strong>${agResult.ag_raw.toFixed(1)} mEq/L</strong></div>
+            ${agResult.albCorrected ? `<div class="vbg-row"><span>AG تصحیح آلبومین</span><strong>${agResult.ag.toFixed(1)} mEq/L</strong></div>` : ''}
+            <div class="vbg-row"><span>تفسیر</span><strong class="${agResult.high ? 'vbg-red' : agResult.low ? 'vbg-blue' : 'vbg-green'}">${agResult.high ? 'بالا (HAGMA)' : agResult.low ? 'پایین' : 'طبیعی'}</strong></div>
+            ${agResult.causes ? `<div class="vbg-causes">${agResult.causes}</div>` : ''}
+            ${agResult.ddNote ? `<div class="vbg-dd"><i class="fas fa-divide"></i> ${agResult.ddNote}</div>` : ''}
         </div>`;
     }
 
-    // ── 4. CLINICAL CONTEXT ──────────────────
-    const beAbnormal = !isNaN(be) && Math.abs(be) > 2;
-    let beNote = '';
-    if (!isNaN(be)) {
-        if (be < -2)       beNote = `Base Excess: ${be.toFixed(1)} — کمبود بیکربنات / زمینه متابولیک اسیدی`;
-        else if (be > 2)   beNote = `Base Excess: ${be.toFixed(1)} — اضافه بیکربنات / زمینه متابولیک قلیایی`;
-        else               beNote = `Base Excess: ${be.toFixed(1)} — طبیعی`;
+    // Severity section
+    let sevHTML = '';
+    if (severity.items.length) {
+        sevHTML = `<div class="vbg-section ${severity.level === 'critical' ? 'vbg-warn' : ''}">
+            <div class="vbg-section-title"><i class="fas fa-triangle-exclamation"></i> ${severity.level === 'critical' ? 'هشدار بحرانی' : 'هشدار'}</div>
+            ${severity.items.map(s => `<div class="vbg-comp-text">⚠️ ${s}</div>`).join('')}
+        </div>`;
     }
 
-    // Severity
-    let severity = '';
-    const ph_diff = Math.abs(pH - 7.40);
-    if (ph_diff < 0.05)      severity = '<span class="vbg-badge vbg-badge-ok">جبران‌شده / طبیعی</span>';
-    else if (ph_diff < 0.10) severity = '<span class="vbg-badge vbg-badge-mild">خفیف</span>';
-    else if (ph_diff < 0.15) severity = '<span class="vbg-badge vbg-badge-mod">متوسط</span>';
-    else                     severity = '<span class="vbg-badge vbg-badge-sev">شدید — مداخله فوری</span>';
+    // Clinical hints
+    let hintsHTML = '';
+    if (Object.keys(hints).length) {
+        hintsHTML = Object.values(hints).map(h => `
+            <div class="vbg-section">
+                <div class="vbg-section-title"><i class="fas fa-stethoscope"></i> ${h.title}</div>
+                <div class="vbg-causes"><strong>علل:</strong> ${h.causes.join('، ')}</div>
+                <div class="vbg-causes"><strong>بررسی‌های پیشنهادی:</strong> ${h.tests.join('، ')}</div>
+            </div>`).join('');
+    }
 
-    // Build result HTML
-    result.innerHTML = `
-        <div class="vbg-primary ${primaryClass}">
-            <div class="vbg-primary-label">${primaryLabel}</div>
-            <div class="vbg-primary-severity">${severity}</div>
+    // VBG disclaimer
+    const vbgNote = isVBG ? `<div class="vbg-section">
+        <div class="vbg-section-title"><i class="fas fa-info-circle"></i> نکته VBG</div>
+        <div class="vbg-comp-text">مقادیر وریدی (VBG) تقریباً ۰.۰۳–۰.۰۵ واحد کمتر از pH شریانی هستند. pCO₂ وریدی معمولاً ۶–۸ mmHg بالاتر است. HCO₃ وریدی معادل شریانی است. برای ارزیابی دقیق اکسیژناسیون از ABG استفاده کنید.</div>
+    </div>` : '';
+
+    return `
+        <div class="vbg-primary ${bannerClass}">
+            <div class="vbg-primary-label">${primaryTitle}</div>
+            <div class="vbg-primary-severity">${sevBadge}</div>
         </div>
 
         <div class="vbg-section">
-            <div class="vbg-section-title"><i class="fas fa-stethoscope"></i> مقادیر ورودی</div>
-            <div class="vbg-row"><span>pH</span><strong class="${pH < 7.35 ? 'vbg-red' : pH > 7.45 ? 'vbg-blue' : 'vbg-green'}">${pH.toFixed(2)}</strong></div>
-            <div class="vbg-row"><span>pCO₂</span><strong class="${pco2 > 45 ? 'vbg-red' : pco2 < 35 ? 'vbg-blue' : ''}">${pco2.toFixed(1)} mmHg</strong></div>
-            <div class="vbg-row"><span>HCO₃⁻</span><strong class="${hco3 < 22 ? 'vbg-red' : hco3 > 26 ? 'vbg-blue' : ''}">${hco3.toFixed(1)} mEq/L</strong></div>
-            ${!isNaN(be) ? `<div class="vbg-row"><span>Base Excess</span><strong class="${be < -2 ? 'vbg-red' : be > 2 ? 'vbg-blue' : ''}">${be > 0 ? '+' : ''}${be.toFixed(1)}</strong></div>` : ''}
+            <div class="vbg-section-title"><i class="fas fa-flask"></i> مقادیر</div>
+            <div class="vbg-row"><span>pH</span><strong class="${phClass}">${_vbgFmt(pH,2)}</strong></div>
+            <div class="vbg-row"><span>pCO₂</span><strong class="${co2Class}">${_vbgFmt(pco2,1)} mmHg</strong></div>
+            <div class="vbg-row"><span>HCO₃⁻</span><strong class="${hco3Class}">${_vbgFmt(hco3,1)} mEq/L</strong></div>
+            ${!isNaN(be) ? `<div class="vbg-row"><span>Base Excess</span><strong class="${beClass}">${be >= 0 ? '+' : ''}${_vbgFmt(be,1)}</strong></div>` : ''}
         </div>
 
-        ${compLabel ? `<div class="vbg-section">
-            <div class="vbg-section-title"><i class="fas fa-arrows-left-right"></i> جبران</div>
-            <div class="vbg-comp-text">${compLabel}</div>
+        ${compRows ? `<div class="vbg-section">
+            <div class="vbg-section-title"><i class="fas fa-arrows-left-right"></i> تحلیل جبران</div>
+            ${compRows}
         </div>` : ''}
 
-        ${agSection}
+        ${agHTML}
+        ${sevHTML}
+        ${hintsHTML}
+        ${vbgNote}
 
-        ${beNote ? `<div class="vbg-section">
-            <div class="vbg-section-title"><i class="fas fa-vial"></i> Base Excess</div>
-            <div class="vbg-comp-text">${beNote}</div>
-        </div>` : ''}
-
-        ${warnings.length ? `<div class="vbg-section vbg-warn">
-            <div class="vbg-section-title"><i class="fas fa-triangle-exclamation"></i> هشدار</div>
-            ${warnings.map(w => `<div class="vbg-comp-text">⚠️ ${w}</div>`).join('')}
-        </div>` : ''}
-
-        <div class="vbg-disclaimer"><i class="fas fa-user-doctor"></i> این تفسیر ابزار کمکی است — تصمیم بالینی باید توسط پزشک گرفته شود.</div>
+        <div class="vbg-disclaimer"><i class="fas fa-user-doctor"></i> این تفسیر ابزار کمکی آموزشی است — تصمیم بالینی نهایی با پزشک است.</div>
     `;
+}
 
-    result.style.display = 'block';
+// ── Main entry point ──────────────────────────────────────────────────────────
+window.interpretVBG = function() {
+    const pH   = PersianNumbers.parseNumber(document.getElementById('vbgPH')?.value);
+    const pco2 = PersianNumbers.parseNumber(document.getElementById('vbgPCO2')?.value);
+    const hco3 = PersianNumbers.parseNumber(document.getElementById('vbgHCO3')?.value);
+    const beRaw = document.getElementById('vbgBE')?.value || '';
+    const be   = beRaw !== '' ? PersianNumbers.parseNumber(beRaw) : NaN;
+    const na   = PersianNumbers.parseNumber(document.getElementById('vbgNa')?.value);
+    const cl   = PersianNumbers.parseNumber(document.getElementById('vbgCl')?.value);
+    const alb  = PersianNumbers.parseNumber(document.getElementById('vbgAlbumin')?.value);
+    const resultEl = document.getElementById('vbgResult');
+    // Detect mode from checkbox if present, else assume VBG
+    const isVBG = !document.getElementById('vbgModeABG')?.checked;
+
+    if (isNaN(pH)   || pH < 6.5  || pH > 8.0)  { showToast('خطا','pH را بین 6.5 و 8.0 وارد کنید','error'); return; }
+    if (isNaN(pco2) || pco2 < 5  || pco2 > 150) { showToast('خطا','pCO₂ را وارد کنید','error'); return; }
+    if (isNaN(hco3) || hco3 < 1  || hco3 > 60)  { showToast('خطا','HCO₃ را وارد کنید','error'); return; }
+
+    const phStatus  = vbgStep1(pH);
+    const vars      = vbgStep2(pco2, hco3);
+    const disorders = vbgStep3(phStatus, pco2, hco3, vars);
+    const agResult  = vbgAnionGap(na, cl, hco3, alb);
+    const severity  = vbgSeverity(pH, pco2, hco3);
+    const hints     = vbgClinicalHints(disorders, agResult);
+
+    resultEl.innerHTML = vbgBuildHTML(pH, pco2, hco3, be, disorders, agResult, severity, hints, isVBG);
+    resultEl.style.display = 'block';
     haptic(40);
-    setTimeout(() => result.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+    setTimeout(() => resultEl.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);
 };
+
