@@ -4252,17 +4252,30 @@ window.calculateOxygen = function() {
 // Status: 'y' = compatible, 'n' = incompatible, '?' = unknown/caution
 // Based on standard ICU pharmacy references (Micromedex, King Guide, Trissel's)
 const YSITE_MATRIX = {
-    // Sources: Trissel's 2024, King Guide, Micromedex, Lexicomp
-    // 'y'=compatible, 'n'=incompatible, '?'=insufficient data
+    // 'y' = Compatible (well-established Y-site data)
+    // 'n' = Incompatible (precipitation/physical incompatibility confirmed)
+    // 'v' = Verify locally (conflicting or limited evidence)
+    // '?' = No reliable Y-site data found
+
+    // ── AMIODARONE ──
     'amiodarone|dobutamine':'y', 'amiodarone|dopamine':'y', 'amiodarone|fentanyl':'y',
-    'amiodarone|heparin':'n', 'amiodarone|insulin':'?', 'amiodarone|labetalol':'?',
+    'amiodarone|heparin':'v',    // conflicting data — some formulations incompatible
+    'amiodarone|insulin':'?', 'amiodarone|labetalol':'?',
     'amiodarone|lasix':'n', 'amiodarone|lidocaine':'y', 'amiodarone|midazolam':'y',
-    'amiodarone|norepinephrine':'y', 'amiodarone|octreotide':'?', 'amiodarone|pantoprazole':'n',
-    'amiodarone|tng':'y', 'amiodarone|morphine':'y', 'amiodarone|propofol':'y',
-    'amiodarone|vancomycin':'?', 'amiodarone|piperacillin':'n', 'amiodarone|ceftriaxone':'?',
-    'amiodarone|meropenem':'?', 'amiodarone|potassium':'y', 'amiodarone|magnesium':'y',
-    'amiodarone|dexamethasone':'?', 'amiodarone|hydrocortisone':'?', 'amiodarone|ranitidine':'y',
-    'amiodarone|phenytoin':'n', 'amiodarone|sodium_bicarb':'n', 'amiodarone|atropine':'?',
+    'amiodarone|norepinephrine':'y', 'amiodarone|octreotide':'?',
+    'amiodarone|pantoprazole':'n', 'amiodarone|tng':'y',
+    'amiodarone|morphine':'y', 'amiodarone|propofol':'y',
+    'amiodarone|vancomycin':'?', 'amiodarone|piperacillin':'n',
+    'amiodarone|ceftriaxone':'?', 'amiodarone|meropenem':'?',
+    'amiodarone|potassium':'y', 'amiodarone|magnesium':'y',
+    'amiodarone|dexamethasone':'?', 'amiodarone|hydrocortisone':'?',
+    'amiodarone|ranitidine':'y', 'amiodarone|phenytoin':'n',
+    'amiodarone|sodium_bicarb':'n', 'amiodarone|atropine':'?',
+    'amiodarone|cefazolin':'?', 'amiodarone|ceftazidime':'?',
+    'amiodarone|acetaminophen':'?', 'amiodarone|levetiracetam':'?',
+    'amiodarone|dobutamine':'y',
+
+    // ── DOBUTAMINE ──
     'dobutamine|dopamine':'y', 'dobutamine|fentanyl':'y', 'dobutamine|heparin':'y',
     'dobutamine|insulin':'?', 'dobutamine|labetalol':'y', 'dobutamine|lasix':'n',
     'dobutamine|lidocaine':'y', 'dobutamine|midazolam':'y', 'dobutamine|norepinephrine':'y',
@@ -4271,6 +4284,10 @@ const YSITE_MATRIX = {
     'dobutamine|piperacillin':'?', 'dobutamine|ceftriaxone':'y', 'dobutamine|meropenem':'?',
     'dobutamine|potassium':'y', 'dobutamine|magnesium':'y', 'dobutamine|ranitidine':'y',
     'dobutamine|sodium_bicarb':'n', 'dobutamine|dexamethasone':'y', 'dobutamine|atropine':'y',
+    'dobutamine|cefazolin':'?', 'dobutamine|ceftazidime':'?',
+    'dobutamine|acetaminophen':'y', 'dobutamine|levetiracetam':'y',
+
+    // ── DOPAMINE ──
     'dopamine|fentanyl':'y', 'dopamine|heparin':'y', 'dopamine|insulin':'y',
     'dopamine|labetalol':'y', 'dopamine|lasix':'n', 'dopamine|lidocaine':'y',
     'dopamine|midazolam':'y', 'dopamine|norepinephrine':'y', 'dopamine|octreotide':'?',
@@ -4279,127 +4296,210 @@ const YSITE_MATRIX = {
     'dopamine|ceftriaxone':'y', 'dopamine|meropenem':'y', 'dopamine|potassium':'y',
     'dopamine|magnesium':'y', 'dopamine|ranitidine':'y', 'dopamine|dexamethasone':'y',
     'dopamine|hydrocortisone':'y', 'dopamine|sodium_bicarb':'n', 'dopamine|atropine':'y',
+    'dopamine|cefazolin':'y', 'dopamine|ceftazidime':'y',
+    'dopamine|acetaminophen':'y', 'dopamine|levetiracetam':'y',
+
+    // ── FENTANYL ──
     'fentanyl|heparin':'y', 'fentanyl|insulin':'?', 'fentanyl|labetalol':'y',
     'fentanyl|lasix':'n', 'fentanyl|lidocaine':'y', 'fentanyl|midazolam':'y',
-    'fentanyl|norepinephrine':'y', 'fentanyl|octreotide':'?', 'fentanyl|pantoprazole':'n',
-    'fentanyl|tng':'y', 'fentanyl|morphine':'y', 'fentanyl|propofol':'y',
-    'fentanyl|vancomycin':'y', 'fentanyl|piperacillin':'y', 'fentanyl|ceftriaxone':'y',
-    'fentanyl|meropenem':'y', 'fentanyl|potassium':'y', 'fentanyl|magnesium':'y',
-    'fentanyl|ranitidine':'y', 'fentanyl|dexamethasone':'y', 'fentanyl|hydrocortisone':'y',
+    'fentanyl|norepinephrine':'v', // conflicting at high concentration
+    'fentanyl|octreotide':'?', 'fentanyl|pantoprazole':'n', 'fentanyl|tng':'y',
+    'fentanyl|morphine':'y', 'fentanyl|propofol':'y', 'fentanyl|vancomycin':'y',
+    'fentanyl|piperacillin':'y', 'fentanyl|ceftriaxone':'y', 'fentanyl|meropenem':'y',
+    'fentanyl|potassium':'y', 'fentanyl|magnesium':'y', 'fentanyl|ranitidine':'y',
+    'fentanyl|dexamethasone':'y', 'fentanyl|hydrocortisone':'y',
+    'fentanyl|sodium_bicarb':'?', 'fentanyl|atropine':'y',
+    'fentanyl|cefazolin':'y', 'fentanyl|ceftazidime':'y',
+    'fentanyl|acetaminophen':'y', 'fentanyl|levetiracetam':'y',
+
+    // ── HEPARIN ──
     'heparin|insulin':'y', 'heparin|labetalol':'?', 'heparin|lasix':'y',
     'heparin|lidocaine':'y', 'heparin|midazolam':'y', 'heparin|norepinephrine':'n',
-    'heparin|octreotide':'y', 'heparin|pantoprazole':'n', 'heparin|tng':'y',
+    'heparin|octreotide':'y', 'heparin|pantoprazole':'n',
+    'heparin|tng':'v', // conflicting in some formulations
     'heparin|morphine':'y', 'heparin|propofol':'y', 'heparin|vancomycin':'n',
     'heparin|piperacillin':'y', 'heparin|ceftriaxone':'y', 'heparin|meropenem':'?',
     'heparin|potassium':'y', 'heparin|magnesium':'y', 'heparin|ranitidine':'y',
     'heparin|dexamethasone':'y', 'heparin|hydrocortisone':'y', 'heparin|sodium_bicarb':'y',
+    'heparin|acetaminophen':'y', 'heparin|levetiracetam':'y',
+
+    // ── INSULIN ──
     'insulin|labetalol':'?', 'insulin|lasix':'?', 'insulin|lidocaine':'?',
     'insulin|midazolam':'?', 'insulin|norepinephrine':'?', 'insulin|octreotide':'?',
     'insulin|pantoprazole':'n', 'insulin|tng':'?', 'insulin|morphine':'?',
     'insulin|propofol':'?', 'insulin|vancomycin':'?', 'insulin|potassium':'y',
     'insulin|magnesium':'?', 'insulin|ranitidine':'?', 'insulin|sodium_bicarb':'?',
+
+    // ── LABETALOL ──
     'labetalol|lasix':'?', 'labetalol|lidocaine':'y', 'labetalol|midazolam':'y',
     'labetalol|norepinephrine':'?', 'labetalol|octreotide':'?', 'labetalol|pantoprazole':'?',
     'labetalol|tng':'y', 'labetalol|morphine':'y', 'labetalol|propofol':'y',
     'labetalol|vancomycin':'?', 'labetalol|potassium':'y', 'labetalol|magnesium':'y',
     'labetalol|ranitidine':'y', 'labetalol|sodium_bicarb':'n',
+    'labetalol|acetaminophen':'y', 'labetalol|levetiracetam':'?',
+
+    // ── LASIX (FUROSEMIDE) ──
     'lasix|lidocaine':'?', 'lasix|midazolam':'n', 'lasix|norepinephrine':'?',
     'lasix|octreotide':'?', 'lasix|pantoprazole':'y', 'lasix|tng':'?',
-    'lasix|morphine':'n', 'lasix|propofol':'n', 'lasix|vancomycin':'n',
+    'lasix|morphine':'n', 'lasix|propofol':'n',
+    'lasix|vancomycin':'v', // some reports of compatibility, verify locally
     'lasix|piperacillin':'y', 'lasix|ceftriaxone':'y', 'lasix|meropenem':'y',
     'lasix|potassium':'y', 'lasix|magnesium':'y', 'lasix|ranitidine':'n',
     'lasix|dexamethasone':'y', 'lasix|hydrocortisone':'y', 'lasix|sodium_bicarb':'y',
+    'lasix|acetaminophen':'y', 'lasix|levetiracetam':'?',
+
+    // ── LIDOCAINE ──
     'lidocaine|midazolam':'y', 'lidocaine|norepinephrine':'y', 'lidocaine|octreotide':'?',
     'lidocaine|pantoprazole':'?', 'lidocaine|tng':'y', 'lidocaine|morphine':'y',
     'lidocaine|propofol':'y', 'lidocaine|vancomycin':'y', 'lidocaine|potassium':'y',
     'lidocaine|magnesium':'y', 'lidocaine|ranitidine':'y', 'lidocaine|sodium_bicarb':'n',
+
+    // ── MIDAZOLAM ──
     'midazolam|norepinephrine':'y', 'midazolam|octreotide':'?', 'midazolam|pantoprazole':'n',
     'midazolam|tng':'y', 'midazolam|morphine':'y', 'midazolam|propofol':'y',
     'midazolam|vancomycin':'y', 'midazolam|piperacillin':'?', 'midazolam|ceftriaxone':'y',
     'midazolam|meropenem':'y', 'midazolam|potassium':'y', 'midazolam|magnesium':'y',
     'midazolam|ranitidine':'y', 'midazolam|dexamethasone':'y', 'midazolam|sodium_bicarb':'?',
+    'midazolam|acetaminophen':'y', 'midazolam|levetiracetam':'y',
+
+    // ── NOREPINEPHRINE ──
     'norepinephrine|octreotide':'?', 'norepinephrine|pantoprazole':'n', 'norepinephrine|tng':'y',
     'norepinephrine|morphine':'y', 'norepinephrine|propofol':'y', 'norepinephrine|vancomycin':'y',
     'norepinephrine|piperacillin':'?', 'norepinephrine|ceftriaxone':'y', 'norepinephrine|meropenem':'?',
     'norepinephrine|potassium':'y', 'norepinephrine|magnesium':'y', 'norepinephrine|ranitidine':'y',
     'norepinephrine|dexamethasone':'y', 'norepinephrine|sodium_bicarb':'n',
+    'norepinephrine|acetaminophen':'y', 'norepinephrine|levetiracetam':'y',
+    'norepinephrine|hydrocortisone':'y',
+
+    // ── OCTREOTIDE ──
     'octreotide|pantoprazole':'?', 'octreotide|tng':'?', 'octreotide|morphine':'?',
     'octreotide|propofol':'?', 'octreotide|vancomycin':'?', 'octreotide|potassium':'?',
-    'octreotide|magnesium':'?', 'octreotide|ranitidine':'?',
+
+    // ── PANTOPRAZOLE ──
     'pantoprazole|tng':'n', 'pantoprazole|morphine':'n', 'pantoprazole|propofol':'n',
-    'pantoprazole|vancomycin':'n', 'pantoprazole|piperacillin':'y', 'pantoprazole|ceftriaxone':'n',
+    'pantoprazole|vancomycin':'v', // limited data — verify locally
+    'pantoprazole|piperacillin':'y', 'pantoprazole|ceftriaxone':'n',
     'pantoprazole|meropenem':'y', 'pantoprazole|potassium':'?', 'pantoprazole|magnesium':'?',
-    'pantoprazole|ranitidine':'n', 'pantoprazole|dexamethasone':'?', 'pantoprazole|sodium_bicarb':'n',
-    'pantoprazole|atropine':'?',
+    'pantoprazole|ranitidine':'n', 'pantoprazole|dexamethasone':'?',
+    'pantoprazole|sodium_bicarb':'n', 'pantoprazole|atropine':'?',
+    'pantoprazole|acetaminophen':'?', 'pantoprazole|levetiracetam':'?',
+    'pantoprazole|cefazolin':'?', 'pantoprazole|ceftazidime':'?',
+
+    // ── TNG (NITROGLYCERIN) ──
     'tng|morphine':'y', 'tng|propofol':'?', 'tng|vancomycin':'y',
     'tng|piperacillin':'?', 'tng|ceftriaxone':'?', 'tng|potassium':'y',
     'tng|magnesium':'y', 'tng|ranitidine':'y', 'tng|dexamethasone':'y',
-    'tng|sodium_bicarb':'?', 'tng|atropine':'y',
+    'tng|acetaminophen':'?', 'tng|levetiracetam':'?',
+
+    // ── MORPHINE ──
     'morphine|propofol':'y', 'morphine|vancomycin':'y', 'morphine|piperacillin':'n',
     'morphine|ceftriaxone':'n', 'morphine|meropenem':'y', 'morphine|potassium':'y',
     'morphine|magnesium':'y', 'morphine|ranitidine':'y', 'morphine|dexamethasone':'y',
     'morphine|hydrocortisone':'y', 'morphine|sodium_bicarb':'?', 'morphine|atropine':'y',
+    'morphine|cefazolin':'y', 'morphine|ceftazidime':'?',
+    'morphine|acetaminophen':'y', 'morphine|levetiracetam':'y',
+
+    // ── PROPOFOL ──
     'propofol|vancomycin':'n', 'propofol|piperacillin':'y', 'propofol|ceftriaxone':'?',
     'propofol|meropenem':'y', 'propofol|potassium':'y', 'propofol|magnesium':'y',
     'propofol|ranitidine':'?', 'propofol|dexamethasone':'y', 'propofol|hydrocortisone':'?',
+    'propofol|acetaminophen':'?', 'propofol|levetiracetam':'?',
+
+    // ── VANCOMYCIN ──
     'vancomycin|piperacillin':'n', 'vancomycin|ceftriaxone':'n', 'vancomycin|meropenem':'y',
     'vancomycin|potassium':'y', 'vancomycin|magnesium':'y', 'vancomycin|ranitidine':'y',
-    'vancomycin|dexamethasone':'y', 'vancomycin|hydrocortisone':'y', 'vancomycin|sodium_bicarb':'?',
+    'vancomycin|dexamethasone':'y', 'vancomycin|hydrocortisone':'y',
+    'vancomycin|sodium_bicarb':'?', 'vancomycin|atropine':'y',
+    'vancomycin|cefazolin':'n', 'vancomycin|ceftazidime':'n',
+    'vancomycin|acetaminophen':'y', 'vancomycin|levetiracetam':'y',
+
+    // ── PIPERACILLIN-TAZOBACTAM ──
     'piperacillin|ceftriaxone':'n', 'piperacillin|meropenem':'?', 'piperacillin|potassium':'y',
     'piperacillin|magnesium':'y', 'piperacillin|ranitidine':'y', 'piperacillin|dexamethasone':'y',
     'piperacillin|hydrocortisone':'y', 'piperacillin|sodium_bicarb':'?', 'piperacillin|atropine':'y',
+    'piperacillin|cefazolin':'n', 'piperacillin|ceftazidime':'?',
+    'piperacillin|acetaminophen':'y', 'piperacillin|levetiracetam':'y',
+
+    // ── CEFTRIAXONE ──
     'ceftriaxone|meropenem':'?', 'ceftriaxone|potassium':'y', 'ceftriaxone|magnesium':'n',
     'ceftriaxone|ranitidine':'y', 'ceftriaxone|dexamethasone':'y', 'ceftriaxone|hydrocortisone':'y',
+    'ceftriaxone|sodium_bicarb':'?', 'ceftriaxone|atropine':'y',
+    'ceftriaxone|cefazolin':'?', 'ceftriaxone|ceftazidime':'?',
+    'ceftriaxone|acetaminophen':'y', 'ceftriaxone|levetiracetam':'y',
+
+    // ── MEROPENEM ──
     'meropenem|potassium':'y', 'meropenem|magnesium':'y', 'meropenem|ranitidine':'y',
     'meropenem|dexamethasone':'y', 'meropenem|hydrocortisone':'y', 'meropenem|sodium_bicarb':'?',
+    'meropenem|acetaminophen':'y', 'meropenem|levetiracetam':'y',
+
+    // ── POTASSIUM CHLORIDE ──
     'potassium|magnesium':'y', 'potassium|ranitidine':'y', 'potassium|dexamethasone':'y',
     'potassium|hydrocortisone':'y', 'potassium|sodium_bicarb':'?', 'potassium|atropine':'y',
+    'potassium|cefazolin':'y', 'potassium|ceftazidime':'y',
+    'potassium|acetaminophen':'y', 'potassium|levetiracetam':'y',
+
+    // ── MAGNESIUM SULFATE ──
     'magnesium|ranitidine':'y', 'magnesium|dexamethasone':'y', 'magnesium|hydrocortisone':'y',
+    'magnesium|sodium_bicarb':'?', 'magnesium|atropine':'y',
+    'magnesium|cefazolin':'?', 'magnesium|ceftazidime':'?',
+    'magnesium|acetaminophen':'y', 'magnesium|levetiracetam':'y', 'magnesium|ceftriaxone':'n',
+
+    // ── RANITIDINE ──
     'ranitidine|dexamethasone':'y', 'ranitidine|hydrocortisone':'y', 'ranitidine|sodium_bicarb':'y',
+    'ranitidine|acetaminophen':'y', 'ranitidine|levetiracetam':'y',
+
+    // ── DEXAMETHASONE ──
     'dexamethasone|hydrocortisone':'?', 'dexamethasone|sodium_bicarb':'?',
-    'sodium_bicarb|phenytoin':'n',
+    'dexamethasone|acetaminophen':'y', 'dexamethasone|levetiracetam':'y',
+
+    // ── HYDROCORTISONE ──
+    'hydrocortisone|sodium_bicarb':'?', 'hydrocortisone|atropine':'y',
+    'hydrocortisone|ceftazidime':'?', 'hydrocortisone|acetaminophen':'?',
+    'hydrocortisone|levetiracetam':'?',
+
+    // ── SODIUM BICARBONATE ──
+    'sodium_bicarb|phenytoin':'n', 'sodium_bicarb|cefazolin':'?',
+    'sodium_bicarb|ceftazidime':'?', 'sodium_bicarb|acetaminophen':'?',
+    'sodium_bicarb|levetiracetam':'y',
+
+    // ── ATROPINE ──
+    'atropine|cefazolin':'y', 'atropine|ceftazidime':'y',
+    'atropine|acetaminophen':'y', 'atropine|levetiracetam':'?', 'atropine|phenytoin':'?',
+
+    // ── VASOPRESSIN ──
+
+    // ── EPINEPHRINE ──
+    'epinephrine|ceftazidime':'?', 'epinephrine|acetaminophen':'y',
+    'epinephrine|levetiracetam':'?', 'epinephrine|phenytoin':'n',
+
+    // ── DEXMEDETOMIDINE ──
+
     // ── CEFAZOLIN ──
-    'cefazolin|dopamine':'y', 'cefazolin|heparin':'y', 'cefazolin|midazolam':'?',
-    'cefazolin|morphine':'y', 'cefazolin|potassium':'y', 'cefazolin|magnesium':'y',
-    'cefazolin|vancomycin':'n', 'cefazolin|ceftriaxone':'?', 'cefazolin|meropenem':'?',
-    'cefazolin|ranitidine':'y', 'cefazolin|dexamethasone':'y', 'cefazolin|hydrocortisone':'y',
-    'cefazolin|sodium_bicarb':'?', 'cefazolin|atropine':'y', 'cefazolin|fentanyl':'y',
-    'cefazolin|norepinephrine':'?', 'cefazolin|propofol':'?', 'cefazolin|piperacillin':'n',
-    'cefazolin|amiodarone':'n', 'cefazolin|pantoprazole':'?', 'cefazolin|lasix':'y',
+    'cefazolin|ceftazidime':'?', 'cefazolin|acetaminophen':'y', 'cefazolin|levetiracetam':'y',
+    'cefazolin|phenytoin':'n', 'cefazolin|vancomycin':'n',
 
     // ── CEFTAZIDIME ──
-    'ceftazidime|dopamine':'y', 'ceftazidime|heparin':'y', 'ceftazidime|midazolam':'y',
-    'ceftazidime|morphine':'?', 'ceftazidime|potassium':'y', 'ceftazidime|magnesium':'y',
-    'ceftazidime|vancomycin':'n', 'ceftazidime|ceftriaxone':'?', 'ceftazidime|meropenem':'?',
-    'ceftazidime|ranitidine':'y', 'ceftazidime|dexamethasone':'y', 'ceftazidime|hydrocortisone':'y',
-    'ceftazidime|sodium_bicarb':'?', 'ceftazidime|atropine':'y', 'ceftazidime|fentanyl':'y',
-    'ceftazidime|norepinephrine':'?', 'ceftazidime|propofol':'?', 'ceftazidime|piperacillin':'?',
-    'ceftazidime|amiodarone':'?', 'ceftazidime|pantoprazole':'?', 'ceftazidime|lasix':'y',
-    'ceftazidime|cefazolin':'?',
+    'ceftazidime|acetaminophen':'y', 'ceftazidime|levetiracetam':'y',
+    'ceftazidime|phenytoin':'?', 'ceftazidime|vancomycin':'n',
 
-    // ── ACETAMINOPHEN IV (Apotel) ──
-    'acetaminophen|dopamine':'y', 'acetaminophen|heparin':'y', 'acetaminophen|midazolam':'y',
-    'acetaminophen|morphine':'y', 'acetaminophen|fentanyl':'y', 'acetaminophen|potassium':'y',
-    'acetaminophen|magnesium':'y', 'acetaminophen|vancomycin':'y', 'acetaminophen|ceftriaxone':'y',
-    'acetaminophen|meropenem':'y', 'acetaminophen|piperacillin':'y', 'acetaminophen|dexamethasone':'y',
-    'acetaminophen|hydrocortisone':'?', 'acetaminophen|ranitidine':'y', 'acetaminophen|norepinephrine':'y',
-    'acetaminophen|propofol':'?', 'acetaminophen|sodium_bicarb':'?', 'acetaminophen|atropine':'y',
-    'acetaminophen|pantoprazole':'?', 'acetaminophen|amiodarone':'?', 'acetaminophen|lasix':'y',
-    'acetaminophen|cefazolin':'y', 'acetaminophen|ceftazidime':'y', 'acetaminophen|tng':'?',
-    'acetaminophen|dobutamine':'y', 'acetaminophen|lidocaine':'y', 'acetaminophen|labetalol':'y',
+    // ── ACETAMINOPHEN / LEVETIRACETAM / PHENYTOIN ──
+    'acetaminophen|levetiracetam':'y', 'acetaminophen|phenytoin':'?',
+    'levetiracetam|phenytoin':'?',
 
-    // ── LEVETIRACETAM (Keppra) ──
-    'levetiracetam|dopamine':'y', 'levetiracetam|heparin':'y', 'levetiracetam|midazolam':'y',
-    'levetiracetam|morphine':'y', 'levetiracetam|fentanyl':'y', 'levetiracetam|potassium':'y',
-    'levetiracetam|magnesium':'y', 'levetiracetam|vancomycin':'y', 'levetiracetam|ceftriaxone':'y',
-    'levetiracetam|meropenem':'y', 'levetiracetam|piperacillin':'y', 'levetiracetam|dexamethasone':'y',
-    'levetiracetam|ranitidine':'y', 'levetiracetam|norepinephrine':'y', 'levetiracetam|propofol':'?',
-    'levetiracetam|sodium_bicarb':'y', 'levetiracetam|atropine':'y', 'levetiracetam|pantoprazole':'?',
-    'levetiracetam|amiodarone':'?', 'levetiracetam|lasix':'?', 'levetiracetam|cefazolin':'y',
-    'levetiracetam|ceftazidime':'y', 'levetiracetam|acetaminophen':'y', 'levetiracetam|phenytoin':'?',
-    'levetiracetam|hydrocortisone':'?', 'levetiracetam|dobutamine':'y', 'levetiracetam|tng':'?',
-
+    // ── CIPROFLOXACIN ──
+    'ciprofloxacin|heparin':'n', 'ciprofloxacin|dopamine':'?', 'ciprofloxacin|dobutamine':'?',
+    'ciprofloxacin|norepinephrine':'?', 'ciprofloxacin|fentanyl':'y', 'ciprofloxacin|midazolam':'y',
+    'ciprofloxacin|morphine':'?', 'ciprofloxacin|propofol':'?', 'ciprofloxacin|vancomycin':'n',
+    'ciprofloxacin|piperacillin':'n', 'ciprofloxacin|ceftriaxone':'n', 'ciprofloxacin|ceftazidime':'n',
+    'ciprofloxacin|cefazolin':'n', 'ciprofloxacin|meropenem':'n', 'ciprofloxacin|potassium':'y',
+    'ciprofloxacin|magnesium':'n', 'ciprofloxacin|ranitidine':'y', 'ciprofloxacin|dexamethasone':'?',
+    'ciprofloxacin|hydrocortisone':'?', 'ciprofloxacin|sodium_bicarb':'n', 'ciprofloxacin|atropine':'?',
+    'ciprofloxacin|acetaminophen':'?', 'ciprofloxacin|levetiracetam':'?', 'ciprofloxacin|phenytoin':'n',
+    'ciprofloxacin|amiodarone':'?', 'ciprofloxacin|lidocaine':'?', 'ciprofloxacin|labetalol':'?',
+    'ciprofloxacin|tng':'?', 'ciprofloxacin|lasix':'?', 'ciprofloxacin|pantoprazole':'?',
+    'ciprofloxacin|insulin':'?', 'ciprofloxacin|octreotide':'?', 'ciprofloxacin|epinephrine':'?',
 };
+
 
 const YSITE_EXTRA_DRUGS = [
     { id:'morphine',       name:'مورفین',                en:'Morphine' },
@@ -4409,6 +4509,7 @@ const YSITE_EXTRA_DRUGS = [
     { id:'cefazolin',      name:'سفازولین',              en:'Cefazolin' },
     { id:'ceftazidime',    name:'سفتازیدیم',             en:'Ceftazidime' },
     { id:'ceftriaxone',    name:'سفتریاکسون',            en:'Ceftriaxone' },
+    { id:'ciprofloxacin',  name:'سیپروفلوکساسین',        en:'Ciprofloxacin' },
     { id:'meropenem',      name:'مروپنم',                en:'Meropenem' },
     { id:'potassium',      name:'پتاسیم کلراید',         en:'KCl' },
     { id:'magnesium',      name:'منیزیم سولفات',         en:'MgSO₄' },
@@ -4504,8 +4605,8 @@ function renderMatrix(selected) {
                 html += '<td class="ysite-cell ysite-same">—</td>';
             } else {
                 const status = ysiteStatus(rowId, colId);
-                const cls = status === 'y' ? 'ysite-ok' : status === 'n' ? 'ysite-no' : 'ysite-unk';
-                const icon = status === 'y' ? '✓' : status === 'n' ? '✕' : '?';
+                const cls = status === 'y' ? 'ysite-ok' : status === 'n' ? 'ysite-no' : status === 'v' ? 'ysite-verify' : 'ysite-unk';
+                const icon = status === 'y' ? '✓' : status === 'n' ? '✕' : status === 'v' ? '!' : '?';
                 html += `<td class="ysite-cell ${cls}" title="${names[ri]} + ${names[ci]}">${icon}</td>`;
             }
         });
@@ -4514,9 +4615,10 @@ function renderMatrix(selected) {
 
     html += '</tbody></table>';
     html += `<div class="ysite-legend">
-        <span class="ysite-legend-item ysite-ok">✓ سازگار</span>
-        <span class="ysite-legend-item ysite-no">✕ ناسازگار</span>
-        <span class="ysite-legend-item ysite-unk">? نامشخص</span>
+        <span class="ysite-legend-item ysite-ok">🟢 سازگار</span>
+        <span class="ysite-legend-item ysite-no">🔴 ناسازگار</span>
+        <span class="ysite-legend-item ysite-verify">🟡 محدود / متناقض</span>
+        <span class="ysite-legend-item ysite-unk">⚪ بدون داده</span>
     </div>`;
 
     matrix.innerHTML = html;
