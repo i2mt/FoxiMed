@@ -2011,7 +2011,6 @@ function syncThemeModeButtons() {
     document.querySelectorAll('#themeModeButtons .theme-mode-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.mode === mode);
     });
-    if (DOM.themeModeSelect) DOM.themeModeSelect.value = mode;
 }
 
 // ============================================
@@ -2042,7 +2041,6 @@ function toggleTheme() {
     document.body.classList.toggle('dark-mode', AppState.theme === 'dark');
     AppState.settings.darkMode = AppState.theme === 'dark';
     AppState.settings.themeMode = AppState.theme === 'dark' ? 'dark' : 'light';
-    if (DOM.themeModeSelect) DOM.themeModeSelect.value = AppState.settings.themeMode;
     saveSettings();
     const meta = document.getElementById('themeColorMeta');
     if (meta) meta.content = AppState.theme === 'dark' ? '#1f2937' : '#ffffff';
@@ -2052,6 +2050,7 @@ function toggleTheme() {
     if (DOM.darkModeToggle) DOM.darkModeToggle.checked = AppState.theme === 'dark';
     localStorage.setItem('theme', AppState.theme);
     fixVolumeButtonColors();
+    syncThemeModeButtons();
 }
 
 function loadTheme() {
