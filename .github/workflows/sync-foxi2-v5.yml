@@ -1,0 +1,34 @@
+name: One-time FoxiMed 5.1 sync
+
+on:
+  push:
+    branches:
+      - sync/foxi2-v5.1.0
+    paths:
+      - .github/workflows/sync-foxi2-v5.yml
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out destination branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Copy the tested foxi2 release
+        shell: bash
+        run: |
+          set -euo pipefail
+          sync_source="$RUNNER_TEMP/foxi2-source"
+          git clone --filter=blob:none --no-checkout https://github.com/i2mt/foxi2.git "$sync_source"
+          git -C "$sync_source" checkout 112955b5c316378948249e9036b99e316183351f
+          rsync --archive --delete --exclude='.git/' "$sync_source/" ./
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git diff --cached --quiet || git commit -m "Release FoxiMed 5.1"
+          git push origin HEAD:sync/foxi2-v5.1.0
