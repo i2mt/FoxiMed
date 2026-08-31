@@ -51,7 +51,7 @@
     --radius-lg: 1.25rem;
     --radius-xl: 1.5rem;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font-persian: 'Vazirmatn', 'Mitra', Tahoma, 'Arial Unicode MS', sans-serif;
+    --font-persian: 'Vazirmatn', Tahoma, 'Arial Unicode MS', sans-serif;
     --font-latin: 'Roboto', 'Segoe UI', Arial, sans-serif;
     --font-mono: 'Roboto Mono', 'Courier New', monospace;
 }
@@ -100,6 +100,20 @@
 .dark-mode .modal-header {
     background: var(--surface-elevated) !important;
     border: 1px solid #374151 !important;
+}
+
+/* The tab-bar's own box-shadow overpaint (see base .tab-bar rule) must
+   match whatever the tab-bar's ACTUAL background is in each mode — the
+   base rule's box-shadow uses var(--surface) to match its own light-mode
+   background, but dark mode overrides the background to
+   var(--surface-elevated) above. Missing this override was the real,
+   root cause of a persistent visible seam at the very bottom of the
+   screen in dark mode specifically: the overpaint was quietly painting
+   the wrong (too-dark) color the whole time, not a viewport-height or
+   safe-area problem at all — confirmed by inspecting exact pixel colors
+   from a real device screenshot. */
+.dark-mode .tab-bar {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 120px 0 0 var(--surface-elevated) !important;
 }
 
 .dark-mode .control-group {
@@ -372,14 +386,7 @@
 /* ===============================
    FONT SETUP
    =============================== */
-@font-face {
-    font-family: 'Mitra';
-    src: url('fonts/Mitra.eot');
-    src: url('fonts/Mitra.eot?#iefix') format('embedded-opentype'), url('fonts/Mitra.woff2') format('woff2'), url('fonts/Mitra.woff') format('woff'), url('fonts/Mitra.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+/* Local Mitra files were removed; Vazirmatn/Tahoma fallbacks avoid 404s. */
 
 *,
 *::before,
@@ -683,146 +690,138 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     max-width: 320px;
     width: 100%;
     text-align: center;
 }
 
-.loading-logo {
-    width: 96px;
-    height: 96px;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 4px;
-    animation: loadingPulse 2s ease-in-out infinite;
+.loading-fox {
+    --loading-progress: 0%;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.22));
 }
-
-@keyframes loadingPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-    }
-
-    50% {
-        transform: scale(1.04);
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
-    }
+.loading-fox::after {
+    content: '';
+    position: absolute;
+    inset: 16%;
+    border-radius: 50%;
+    background: rgba(249, 115, 22, 0.2);
+    filter: blur(24px);
+    animation: loadingFoxGlow 2.4s ease-in-out infinite;
 }
-
-.loading-logo-img {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
+.loading-fox-base,
+.loading-fox-fill {
+    position: absolute;
+    inset: 0;
+    -webkit-mask: url('icons/fox-mark-clean-mask.png') center / contain no-repeat;
+    mask: url('icons/fox-mark-clean-mask.png') center / contain no-repeat;
+}
+.loading-fox-base {
+    background: rgba(255, 255, 255, 0.13);
+}
+.loading-fox-fill {
+    background: linear-gradient(180deg, #fed7aa 0%, #fb923c 42%, #ea580c 100%);
+    clip-path: inset(calc(100% - var(--loading-progress)) 0 0 0);
+    transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    filter: drop-shadow(0 0 12px rgba(251, 146, 60, 0.55));
+}
+@keyframes loadingFoxGlow {
+    0%, 100% { opacity: 0.45; transform: scale(0.94); }
+    50% { opacity: 0.85; transform: scale(1.08); }
 }
 
 .loading-app-name {
-    font-size: 26px;
-    font-weight: 800;
-    color: #60a5fa;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.96);
     font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
+    letter-spacing: -0.6px;
+    line-height: 1;
+}
+.loading-app-name span {
+    color: #fb923c;
+}
+.loading-app-name strong {
+    color: rgba(255, 255, 255, 0.96);
+    font-weight: 500;
 }
 
 .loading-tagline {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.58);
     font-family: var(--font-persian);
     direction: rtl;
+    letter-spacing: 0.2px;
 }
 
 .loading-bar-wrap {
     width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.2);
+    max-width: 210px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.12);
     border-radius: 99px;
     overflow: hidden;
-    margin: 8px 0 2px;
+    margin: 18px 0 4px;
 }
 
 .loading-bar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #93c5fd, white);
+    background: linear-gradient(90deg, #ea580c, #fdba74);
     border-radius: 99px;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .loading-status {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.6);
     font-family: var(--font-persian);
     direction: rtl;
     min-height: 16px;
 }
 
-.loading-tips {
-    margin-top: 20px;
-    height: 48px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.loading-tip {
-    position: absolute;
-    width: 100%;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-persian);
-    direction: rtl;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
-    line-height: 1.5;
+.loading-meta {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 9px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.38);
+    font: 500 10px/1.4 var(--font-persian);
+    direction: rtl;
 }
-
-.loading-tip.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.loading-version {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 24px;
-    font-family: 'Vazirmatn', sans-serif;
-    direction: ltr;
+.loading-meta-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fb923c;
+    box-shadow: 0 0 8px rgba(251, 146, 60, 0.75);
 }
 
 .loading-credit {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-top: 6px;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.3);
+    margin-top: 4px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.24);
     font-family: 'Roboto', sans-serif;
     direction: ltr;
 }
 
-.loading-credit i {
-    font-size: 10px;
-    opacity: 0.7;
-}
-
 .loading-credit strong {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.42);
     font-weight: 600;
     letter-spacing: 0.3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loading-fox::after { animation: none; }
+    .loading-fox-fill { transition-duration: 0.01ms; }
 }
 
 /* ===============================
@@ -830,8 +829,8 @@ select {
    =============================== */
 .app-container {
     height: 100vh;
-    height: 100dvh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100); /* fallback for browsers with no dvh support */
+    height: 100dvh; /* wins when supported — correctly handles iOS's standalone-PWA viewport, unlike the JS-measured value above which can be a frame stale at launch and leave a gap */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -865,16 +864,34 @@ select {
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-md);
+    width: 48px;
+    height: 50px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.25rem;
+    box-shadow: none;
     flex-shrink: 0;
+}
+.header-fox-mark {
+    width: 46px;
+    height: 46px;
+    display: block;
+    background: linear-gradient(155deg, #fb923c 0%, #ea580c 58%, #9a3412 100%);
+    -webkit-mask: url('icons/fox-mark-clean-mask.png') center / contain no-repeat;
+    mask: url('icons/fox-mark-clean-mask.png') center / contain no-repeat;
+    filter: none;
+}
+.dark-mode .logo {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.dark-mode .header-fox-mark {
+    background: linear-gradient(155deg, #fed7aa 0%, #fb923c 45%, #ea580c 100%);
+    filter: none;
 }
 
 .logo-text h1 {
@@ -940,7 +957,19 @@ select {
 
 .tab-pane.active {
     display: block;
+    animation: tabPaneIn 0.22s ease;
 }
+
+@keyframes tabPaneIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tab-pane.active { animation: none; }
+}
+
+body.low-power-mode .tab-pane.active { animation: none; }
 
 .tab-bar {
     position: fixed;
@@ -956,18 +985,17 @@ select {
     padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
     z-index: 1000;
     min-height: calc(56px + env(safe-area-inset-bottom, 0px));
-}
-
-/* Paint surface color into the home indicator gap below the tab bar */
-.tab-bar::after {
-    content: '';
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: env(safe-area-inset-bottom, 0px);
-    background: var(--surface);
-    z-index: -1;
+    /* Overpaint below the tab bar with solid surface color. This is a pure
+       paint effect (box-shadow never affects layout/position), so unlike
+       the previous ::after + negative z-index approach, it can't be pushed
+       behind other content by an unrelated stacking-context quirk, and it
+       doesn't depend on getting env(safe-area-inset-bottom) pixel-exact —
+       it simply always covers anything below the tab bar out to 120px,
+       comfortably exceeding any real device's home-indicator zone. Fixes a
+       persistent gap reported specifically in iOS's installed/standalone
+       PWA mode, where position:fixed;bottom:0 has a long-documented
+       history of not perfectly reaching the true screen edge. */
+    box-shadow: 0 120px 0 0 var(--surface);
 }
 
 .tab-item {
@@ -997,7 +1025,20 @@ select {
     color: white;
     background: var(--gradient-primary);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    animation: tabItemPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+@keyframes tabItemPop {
+    0% { transform: scale(0.88); }
+    60% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tab-item.active { animation: none; }
+}
+
+body.low-power-mode .tab-item.active { animation: none; }
 
 .tab-item i {
     font-size: 16px;
@@ -1542,6 +1583,7 @@ select {
 .dose-input-wrapper input {
     width: 100%;
     padding: 12px 100px 12px 12px;
+    text-indent: 44px;
     background: var(--surface-elevated);
     border: 2px solid var(--border);
     border-radius: 10px;
@@ -1937,6 +1979,52 @@ select {
     direction: rtl;
 }
 
+.tools-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    margin-bottom: 8px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-tertiary);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+.tools-search:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+.tools-search > i { color: var(--primary); font-size: 13px; }
+.tools-search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 13px;
+    text-align: right;
+}
+.tools-search input::placeholder { color: var(--text-tertiary); }
+.tools-search-clear {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--surface-elevated);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.tools-search-clear[hidden], .tools-search-empty[hidden] { display: none !important; }
+.tools-search-empty { margin: 18px 0; color: var(--text-secondary); font-size: 13px; text-align: center; }
+#toolsTab .is-filtered-out { display: none !important; }
+
 .converter-grid,
 .tools-grid {
     display: grid;
@@ -2254,6 +2342,54 @@ select {
     justify-content: center;
 }
 
+/* ============================================
+   WHAT'S NEW MODAL
+   ============================================ */
+.whats-new-content {
+    max-width: 420px;
+}
+.whats-new-header h3 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.whats-new-version-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+.whats-new-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.whats-new-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+.whats-new-item i {
+    color: var(--success, #22c55e);
+    font-size: 15px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+.whats-new-dismiss {
+    width: 100%;
+}
+
 .modal-close:hover {
     color: var(--text-primary);
 }
@@ -2263,30 +2399,6 @@ select {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     max-height: calc(90vh - 80px);
-}
-
-.settings-group {
-    margin-bottom: var(--spacing-xl);
-}
-
-.settings-group h4 {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.1rem;
-    color: var(--primary);
-    direction: rtl;
-}
-
-.setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--border);
-    direction: rtl;
-    min-height: 44px;
 }
 
 .switch {
@@ -2334,32 +2446,6 @@ select {
 
 .switch input:checked+.slider:before {
     transform: translateX(-20px);
-}
-
-.setting-btn {
-    width: 100%;
-    padding: 1rem;
-    background: var(--surface-elevated);
-    border: 2px solid var(--border);
-    border-radius: var(--radius-md);
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    font-weight: 600;
-    margin-top: var(--spacing-sm);
-    direction: rtl;
-    min-height: 44px;
-    font-family: var(--font-persian);
-}
-
-.setting-btn:hover {
-    background: var(--primary-light);
-    border-color: var(--primary);
-    color: var(--primary);
 }
 
 .toast {
@@ -2558,9 +2644,13 @@ select {
     }
 
     .logo {
-        width: 30px;
-        height: 30px;
-        font-size: 13px;
+        width: 42px;
+        height: 44px;
+    }
+
+    .header-fox-mark {
+        width: 40px;
+        height: 40px;
     }
 
     .logo-text h1 {
@@ -2887,6 +2977,7 @@ select {
 
     .dose-input-wrapper input {
         padding: 10px 72px 10px 10px !important;
+        text-indent: 31px !important;
         font-size: 16px !important;
         border-radius: 8px;
     }
@@ -3496,26 +3587,6 @@ select {
     color: var(--text-tertiary);
     padding: 40px 20px;
     direction: rtl;
-}
-
-.about-info {
-    padding: 12px;
-    background: var(--surface-elevated);
-    border-radius: 10px;
-    margin-bottom: 12px;
-    direction: rtl;
-}
-
-.about-info p {
-    padding: 6px 0;
-    border-bottom: 1px dashed var(--border-light);
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.about-info p:last-child {
-    border-bottom: none;
 }
 
 .manual-inputs-grid {
@@ -4623,171 +4694,6 @@ input[type="search"]::placeholder {
     padding: 12px 16px 0 !important;
     overflow-y: auto;
     padding-bottom: max(20px, env(safe-area-inset-bottom)) !important;
-}
-
-.settings-group {
-    margin-bottom: 14px !important;
-    padding-bottom: 14px !important;
-    border-bottom: 1px solid var(--border);
-}
-
-.settings-group:last-of-type {
-    margin-bottom: 0 !important;
-    border-bottom: none;
-}
-
-.settings-group h4 {
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    color: var(--text-tertiary) !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px !important;
-    margin-top: 0 !important;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.setting-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px 0 !important;
-    border-bottom: 1px solid var(--border-light);
-    min-height: unset !important;
-}
-
-.setting-item:last-of-type {
-    border-bottom: none;
-}
-
-.setting-item span {
-    font-size: 13px !important;
-    color: var(--text-primary);
-}
-
-.settings-btn-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.setting-btn {
-    padding: 8px 10px !important;
-    font-size: 11px !important;
-    border-radius: 8px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    min-height: unset !important;
-}
-
-.setting-contact-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #0088cc, #00aaff);
-    color: white;
-    border-radius: 10px;
-    padding: 10px 14px;
-    text-decoration: none;
-    direction: rtl;
-    transition: var(--transition);
-}
-
-.setting-contact-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-}
-
-.setting-contact-btn .fab.fa-telegram {
-    font-size: 22px;
-    flex-shrink: 0;
-}
-
-.setting-contact-btn span:first-of-type {
-    flex: 1;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: var(--font-persian);
-}
-
-.contact-handle {
-    font-size: 12px;
-    font-family: var(--font-latin);
-    opacity: 0.85;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 2px 8px;
-    border-radius: 20px;
-    flex-shrink: 0;
-    direction: ltr !important;
-    unicode-bidi: isolate;
-}
-
-.about-info {
-    background: var(--surface-elevated) !important;
-    border-radius: 10px !important;
-    overflow: hidden;
-    margin-bottom: 8px !important;
-    padding: 0 !important;
-}
-
-.about-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 12px;
-    border-bottom: 1px solid var(--border-light);
-    direction: rtl;
-    font-size: 12px;
-}
-
-.about-row:last-child {
-    border-bottom: none;
-}
-
-.about-row span:first-child {
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.about-row span:last-child {
-    color: var(--text-primary);
-    font-weight: 600;
-    font-family: var(--font-latin);
-}
-
-.settings-credits {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 10px 12px;
-    font-size: 11px;
-    color: var(--text-secondary);
-    direction: ltr;
-    font-family: var(--font-latin);
-    background: var(--surface-elevated);
-    border-radius: 8px;
-    margin-top: 8px;
-    text-align: center;
-    line-height: 1.6;
-    border: 1px solid var(--border);
-}
-
-.settings-credits i {
-    font-size: 11px;
-    color: var(--primary);
-}
-
-.settings-credits strong {
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: 0.2px;
 }
 
 @media (max-width: 768px) {
@@ -7161,48 +7067,32 @@ html {
 /* ============================================
    THEME COLOR PICKER
    ============================================ */
-.theme-picker-section {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
-}
-
-.theme-picker-label {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-persian);
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 10px;
-    direction: rtl;
-}
-
-.theme-picker-label i {
-    color: var(--primary);
-    font-size: 13px;
-}
-
 .theme-swatches {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     direction: rtl;
+    padding-bottom: 2px;
 }
+.theme-swatches::-webkit-scrollbar { display: none; }
 
 .theme-swatch {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    padding: 8px 10px;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 4px;
     border-radius: 12px;
     border: 2px solid var(--border);
     background: var(--surface-elevated);
     cursor: pointer;
     transition: all 0.2s ease;
-    flex: 1;
-    min-width: 52px;
+    flex: 0 0 auto;
+    width: 58px;
 }
 
 .theme-swatch:hover {
@@ -7217,19 +7107,22 @@ html {
 }
 
 .swatch-dot {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: block;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .swatch-name {
+    width: 100%;
     font-family: var(--font-persian);
-    font-size: 10.5px;
+    font-size: 9.5px;
     color: var(--text-secondary);
     text-align: center;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .theme-swatch.active .swatch-name {
@@ -7495,6 +7388,26 @@ html {
     border-color: var(--primary);
 }
 
+.settings-select {
+    min-width: 136px;
+    max-width: 52%;
+    min-height: 38px;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-primary);
+    font: 600 12.5px/1.4 var(--font-persian);
+    direction: rtl;
+    outline: none;
+}
+.settings-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+.setting-select-row { cursor: default; }
+.dark-mode .settings-select { background: var(--surface-elevated); }
+
 .dark-mode .theme-mode-select {
     background: var(--surface-elevated);
     color: var(--text-primary);
@@ -7502,10 +7415,14 @@ html {
 }
 
 /* ============================================
-   SETTINGS FIXES & NEW COMPONENTS
+   SETTINGS MODAL — layout & spacing
+   One coherent rhythm for the whole panel:
+     16px between groups, 10px from a group's
+     heading to its first row, 11px vertical
+     padding on every row (toggle rows and the
+     stacked/button rows alike), 6px for small
+     internal gaps, 3px for a label→sublabel pair.
    ============================================ */
-
-/* Fix modal scroll — content must not clip the body */
 .modal-content {
     overflow: hidden !important;
     display: flex !important;
@@ -7519,26 +7436,75 @@ html {
     overscroll-behavior: contain !important;
 }
 
-/* Setting row that stacks label above control */
-.setting-item--block {
-    flex-direction: column !important;
-    align-items: flex-end !important;
-    gap: 8px;
-    padding: 10px 0 !important;
+.settings-group {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
 }
 
-.setting-label-full {
+.settings-group:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.settings-group h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    direction: rtl;
+}
+
+.settings-hint {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-tertiary);
+}
+
+/* Every row in the panel shares the same 11px vertical rhythm,
+   whether it's a simple toggle, a stacked label+sublabel, or the
+   label-above-control layout used by the theme-mode buttons. */
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border-light);
+    direction: rtl;
+}
+
+.setting-item:last-of-type {
+    border-bottom: none;
+}
+
+.setting-item span {
     font-size: 13px;
     color: var(--text-primary);
-    width: 100%;
-    text-align: right;
 }
 
-/* Sub-label below setting span */
+.setting-badge {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-light);
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
 .setting-label-stack {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
 }
 
 .setting-sublabel {
@@ -7547,29 +7513,235 @@ html {
     font-family: var(--font-persian);
 }
 
-/* ---- Theme mode 3-button row ---- */
-.theme-mode-btns {
-    display: flex;
-    gap: 6px;
-    width: 100%;
-    direction: rtl;
+.voice-engine-setting {
+    display: grid;
+    gap: 7px;
+    padding: 4px 0 10px;
 }
 
-.theme-mode-btn {
-    flex: 1;
-    padding: 8px 4px;
-    border: 1.5px solid var(--border);
+.voice-engine-setting > span:first-child {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.voice-engine-current {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    padding: 8px 11px;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: var(--bg-primary);
-    color: var(--text-secondary);
-    font-family: var(--font-persian);
+    background: var(--surface-elevated);
+    color: var(--text-primary);
     font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
+}
+
+.voice-engine-current i {
+    color: var(--success);
+}
+
+.voice-privacy-hint {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+.voice-privacy-hint i {
+    margin-top: 4px;
+    color: var(--success);
+}
+
+.settings-btn-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.setting-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    padding: 8px 10px;
+    font-size: 11px;
+    border-radius: 8px;
+    background: var(--surface-elevated);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-family: var(--font-persian);
+    direction: rtl;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.setting-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.setting-contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    background: linear-gradient(135deg, #0088cc, #00aaff);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    direction: rtl;
+    transition: var(--transition);
+}
+
+.setting-contact-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.setting-contact-btn .fab.fa-telegram {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.settings-group.voice-contact-highlight {
+    border-radius: 14px;
+    animation: creatorContactHighlight 1.8s ease-out 1;
+}
+@keyframes creatorContactHighlight {
+    0%, 35% { box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2); background: rgba(14, 165, 233, 0.09); }
+    100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); background: transparent; }
+}
+
+.setting-contact-btn span:first-of-type {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-persian);
+}
+
+.contact-handle {
+    font-size: 12px;
+    font-family: var(--font-latin);
+    opacity: 0.85;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    direction: ltr !important;
+    unicode-bidi: isolate;
+}
+
+.about-info {
+    background: var(--surface-elevated);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border-light);
+    direction: rtl;
+    font-size: 12px;
+}
+
+.about-row:last-child {
+    border-bottom: none;
+}
+
+.about-row span:first-child {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.about-row span:last-child {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-family: var(--font-latin);
+}
+
+.settings-credits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    text-align: center;
+    direction: ltr;
+    font-family: var(--font-latin);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.settings-credits i {
+    font-size: 11px;
+    color: var(--primary);
+}
+
+.settings-credits strong {
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.2px;
+}
+
+/* ---- Theme picker (color swatches) ---- */
+.theme-picker-section {
+    margin-top: 11px;
+    padding-top: 11px;
+    border-top: 1px solid var(--border);
+}
+
+.theme-picker-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: var(--font-persian);
+    direction: rtl;
+}
+
+.theme-picker-label i {
+    font-size: 13px;
+    color: var(--primary);
+}
+
+/* ---- Theme mode 3-button row ---- */
+.theme-mode-btns {
+    display: flex;
+    gap: 6px;
+    width: auto;
+    direction: rtl;
+}
+
+.theme-mode-btn {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
 }
 
@@ -7603,7 +7775,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding: 6px 0 2px;
+    padding: 0 0 11px;
     direction: rtl;
 }
 
@@ -7803,6 +7975,94 @@ html {
 .greeting-close:hover {
     color: white;
     background: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   OPTIONAL NAME PROMPT
+   Fixed and non-modal: it never reflows the calculator.
+   ============================================ */
+.name-prompt {
+    position: fixed;
+    top: calc(62px + env(safe-area-inset-top, 0px));
+    left: 50%;
+    z-index: 1090;
+    width: min(420px, calc(100vw - 24px));
+    transform: translate(-50%, -12px);
+    opacity: 0;
+    display: grid;
+    gap: 10px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--border));
+    border-radius: 16px;
+    background: var(--surface);
+    background: color-mix(in srgb, var(--surface) 96%, transparent);
+    color: var(--text-primary);
+    box-shadow: 0 14px 42px rgba(15, 23, 42, 0.20);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    direction: rtl;
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.name-prompt[hidden] { display: none; }
+.name-prompt.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+.name-prompt-copy { display: grid; gap: 3px; }
+.name-prompt-copy strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+}
+.name-prompt-copy strong i { color: var(--primary); }
+.name-prompt-copy > span { color: var(--text-secondary); font-size: 11.5px; }
+.name-prompt-input-row { display: flex; gap: 8px; }
+.name-prompt-input-row input {
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    padding: 0 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-persian);
+    font-size: 14px;
+    outline: none;
+}
+.name-prompt-input-row input:focus { border-color: var(--primary); }
+.name-prompt-save {
+    min-width: 70px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-family: var(--font-persian);
+    font-weight: 700;
+    cursor: pointer;
+}
+.name-prompt-save:disabled { opacity: 0.42; cursor: not-allowed; }
+.name-prompt-actions { display: flex; justify-content: flex-end; gap: 4px; }
+.name-prompt-actions button {
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 7px;
+    font-family: var(--font-persian);
+    font-size: 11.5px;
+    cursor: pointer;
+}
+.name-prompt-actions button:hover { background: var(--surface-elevated); color: var(--text-primary); }
+body.low-power-mode .name-prompt { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+@media (max-width: 380px) {
+    .name-prompt { padding: 12px; }
+    .name-prompt-copy strong { font-size: 13px; }
 }
 
 /* ============================================
@@ -8101,6 +8361,12 @@ html {
     border: 1.5px solid var(--border);
     border-radius: 8px;
     padding: 8px 100px 8px 12px;
+    /* text-align:center centers within the padding box, which is
+       asymmetric here (100px reserved on the right for the unit label,
+       12px on the left) — that shifts the centered number visibly left
+       of the box's actual visual center. text-indent nudges it back by
+       half the padding difference: (100-12)/2 = 44px. */
+    text-indent: 44px;
     font-size: 15px;
     font-weight: 600;
 }
@@ -8314,6 +8580,23 @@ html {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+}
+
+/* Oxygen cylinder size presets (5 buttons) — the general 60px min-width
+   above wraps a 5th button to a new row on narrow phones. Scoped to just
+   this container so other preset groups elsewhere keep their normal
+   sizing. */
+#oxySizePresets {
+    flex-wrap: nowrap;
+}
+#oxySizePresets .volume-preset-btn {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 6px 2px;
+    font-size: 12px;
+}
+#oxySizePresets .volume-preset-btn .unit-text {
+    font-size: 10px;
 }
 
 .manual-duration-row {
@@ -8603,6 +8886,66 @@ html {
     gap: 0;
     max-height: 85vh;
     overflow: hidden;
+    transition: top 0.28s ease, left 0.28s ease, transform 0.28s ease;
+}
+
+.tutorial-spotlight {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    border: 2px solid rgba(251, 146, 60, 0.95);
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0 0 0 9999px rgba(2, 6, 23, 0.68), 0 0 0 6px rgba(251, 146, 60, 0.18);
+    pointer-events: none;
+    transition: top 0.28s ease, left 0.28s ease, width 0.28s ease, height 0.28s ease;
+    animation: tutorialSpotlightPulse 1.8s ease-in-out infinite;
+}
+.onboarding-overlay.is-coachmark .tutorial-spotlight { display: block; }
+.onboarding-overlay.is-coachmark .onboarding-backdrop {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+.onboarding-overlay.is-coachmark .tutorial-box {
+    position: fixed;
+    z-index: 2;
+    max-height: min(62vh, 460px);
+    padding-top: 18px;
+    animation: tutorialCoachIn 0.25s ease both;
+    overflow-y: auto;
+}
+.onboarding-overlay.is-coachmark .tutorial-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    font-size: 1.35rem;
+}
+.onboarding-overlay.is-coachmark .tutorial-dots { margin-bottom: 10px; }
+.onboarding-overlay.is-coachmark .tutorial-nav { margin-top: 12px; }
+.tutorial-coach-arrow {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%);
+    border: 13px solid transparent;
+}
+.onboarding-overlay.is-coachmark .tutorial-coach-arrow { display: block; }
+.tutorial-coach-arrow.arrow-down {
+    border-top-color: var(--surface);
+}
+.tutorial-coach-arrow.arrow-up {
+    border-bottom-color: var(--surface);
+}
+@keyframes tutorialSpotlightPulse {
+    0%, 100% { border-color: rgba(251, 146, 60, 0.78); }
+    50% { border-color: #fff7ed; }
+}
+@keyframes tutorialCoachIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .tutorial-dots {
@@ -8660,6 +9003,71 @@ html {
     font-size: 1.8rem;
     margin-bottom: 4px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.tutorial-fox-icon {
+    width: 124px;
+    height: 116px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.tutorial-fox-mark {
+    display: block;
+    width: 112px;
+    height: 112px;
+    background: linear-gradient(155deg, #fb923c 0%, #ea580c 58%, #9a3412 100%);
+    -webkit-mask: url('icons/fox-mark-clean-mask.png') center / contain no-repeat;
+    mask: url('icons/fox-mark-clean-mask.png') center / contain no-repeat;
+}
+
+.tutorial-assistant-icon {
+    position: relative;
+    background: color-mix(in srgb, var(--primary-light) 78%, var(--surface) 22%);
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.12);
+}
+.tutorial-assistant-icon .tutorial-fox-mark { width: 62px; height: 62px; }
+.tutorial-assistant-icon > i {
+    position: absolute;
+    inset-inline-end: -3px;
+    bottom: -3px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.tutorial-ask-demo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px dashed color-mix(in srgb, var(--primary) 58%, var(--border) 42%);
+    border-radius: 11px;
+    color: var(--primary);
+    background: var(--primary-light);
+    font: 600 12px/1.5 var(--font-persian);
+    direction: rtl;
+}
+.tutorial-ask-demo i { animation: tutorialNudgeDown 1.4s ease-in-out infinite; }
+@keyframes tutorialNudgeDown { 50% { transform: translateY(4px); } }
+
+@media (max-height: 720px) {
+    .loading-fox { width: 172px; height: 172px; margin-bottom: 6px; }
+    .tutorial-box { padding-top: 18px; }
+    .tutorial-dots { margin-bottom: 12px; }
+    .tutorial-slide { gap: 8px; }
+    .tutorial-icon { width: 62px; height: 62px; }
+    .tutorial-fox-icon { width: 94px; height: 86px; }
+    .tutorial-fox-mark { width: 84px; height: 84px; }
+    .tutorial-body { line-height: 1.65; }
+    .tutorial-nav { margin-top: 12px; }
 }
 
 .tutorial-title {
@@ -8959,6 +9367,21 @@ html {
 .ysite-legend-item.ysite-no     { color: #dc2626; }
 .ysite-legend-item.ysite-verify { color: #b45309; }
 .ysite-legend-item.ysite-unk    { color: #64748b; }
+
+.ysite-clinical-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 9px 12px;
+    border-top: 1px solid var(--border);
+    background: rgba(245, 158, 11, 0.08);
+    color: var(--text-secondary);
+    direction: rtl;
+    font-family: var(--font-persian);
+    font-size: 10.5px;
+    line-height: 1.65;
+}
+.ysite-clinical-note i { color: #d97706; margin-top: 3px; flex-shrink: 0; }
 
 .dark-mode .ysite-legend-item.ysite-ok     { color: #4ade80; }
 .dark-mode .ysite-legend-item.ysite-no     { color: #f87171; }
@@ -9578,4 +10001,280 @@ input[style*="display:none"] {
     margin-top: 1px;
     flex-shrink: 0;
     color: var(--text-tertiary);
+}
+
+
+/* ============================================
+   Favorite stars on every tool, and the shared "quick row" building
+   block used by the modern app shell's Home/Search/Favorites screens
+   (see further down) to display favorited/recent/found tools. Stars
+   stay available regardless of which app shell is active — otherwise
+   the modern shell's Favorites screen would have no way to ever gain
+   content for someone who stays on the classic tab layout.
+   ============================================ */
+
+/* ---- Favorites / Recents quick-access ---- */
+.tools-quick-access {
+    margin-bottom: 14px;
+}
+
+.tools-quick-section-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 4px 6px;
+    font-family: var(--font-persian);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: 0.02em;
+    direction: rtl;
+}
+
+.tools-quick-section-label i {
+    font-size: 11px;
+    color: var(--primary);
+    opacity: 0.85;
+}
+
+.tools-quick-row-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tool-quick-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 12px;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    cursor: pointer;
+    direction: rtl;
+    text-align: right;
+    transition: var(--transition);
+}
+
+.tool-quick-row:active {
+    border-color: var(--primary);
+}
+
+.tool-quick-row .accordion-icon-wrap {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.tool-quick-row-title {
+    font-family: var(--font-persian);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ---- Favorite star button, injected into each accordion-header ---- */
+.tool-fav-btn {
+    background: none;
+    border: none;
+    padding: 6px;
+    margin-inline-start: -6px;
+    color: var(--border);
+    font-size: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: inline-flex;
+}
+
+.tool-fav-btn.active {
+    color: #f59e0b;
+}
+
+/* ============================================
+   MODERN APP SHELL — Home / Search / Favorites navigation.
+   Reuses the existing amber/fox palette (--primary, --gradient-primary,
+   --surface, --border, etc.) throughout — this is a layout/structure
+   redesign, not a new color system, per the chosen direction.
+   ============================================ */
+
+.tab-bar-modern {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 6px 4px;
+    padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+    min-height: calc(56px + env(safe-area-inset-bottom, 0px));
+    /* Same iOS-standalone-PWA safe-area overpaint fix as .tab-bar. */
+    box-shadow: 0 120px 0 0 var(--surface);
+}
+
+.tab-item-modern {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    max-width: 90px;
+    border-radius: 12px;
+    min-height: 44px;
+    padding: 6px 4px;
+    font-family: var(--font-persian);
+    font-size: 11px;
+}
+
+.tab-item-modern:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.tab-item-modern.active {
+    color: white;
+    background: var(--gradient-primary);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tab-item-modern i {
+    font-size: 18px;
+}
+
+/* ---- Home screen ---- */
+.home-search-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-tertiary);
+    font-family: var(--font-persian);
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;
+    text-align: right;
+    transition: var(--transition);
+}
+
+.home-search-entry:active {
+    border-color: var(--primary);
+}
+
+.home-search-entry i {
+    color: var(--primary);
+    font-size: 15px;
+}
+
+.home-section-label {
+    font-family: var(--font-persian);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin: 4px 4px 10px;
+    direction: rtl;
+}
+
+.home-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-bottom: 24px;
+}
+
+.home-category-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 12px;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.home-category-tile:active {
+    transform: scale(0.97);
+    border-color: var(--primary);
+}
+
+.home-category-tile .accordion-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 20px;
+}
+
+.home-category-tile span {
+    font-family: var(--font-persian);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* ---- Search screen ---- */
+.modern-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    background: var(--surface-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    direction: rtl;
+}
+
+.modern-search-bar:focus-within {
+    border-color: var(--primary);
+}
+
+.modern-search-bar i {
+    color: var(--text-tertiary);
+    font-size: 14px;
+}
+
+.modern-search-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: var(--font-persian);
+    font-size: 14px;
+    color: var(--text-primary);
+    direction: rtl;
+    text-align: right;
+}
+
+.modern-search-bar input::placeholder {
+    color: var(--text-tertiary);
+}
+
+/* Leave scroll room at the bottom so the last row/tile never sits
+   underneath the fixed modern bottom nav. */
+#homeTab, #searchTab, #favoritesTab {
+    padding-bottom: 76px;
 }

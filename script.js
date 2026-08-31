@@ -13,6 +13,275 @@
 // ============================================
 // APP STATE & CONFIGURATION
 // ============================================
+
+// Single source of truth for the "What's New" feature below — bump this
+// alongside the other version strings (index.html's two display spots,
+// manifest.json, service-worker.js's CACHE_NAME) on every release, and add
+// a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
+// points people would actually notice, not an engineering changelog.
+const APP_VERSION = '5.1.0';
+
+const CHANGELOG = {
+    '5.1.0': [
+        'دستیار هوشمند فارسی با فرمان صوتی آفلاین برای محاسبات و ابزارهای بالینی',
+        'پوستهٔ رنگی جدید «DreamFire» و ظاهر تازه‌تر برنامه',
+        'پیش‌فرض‌های قابل تنظیم برای نوع پمپ و حجم محلول هر بخش',
+        'راهنمای کامل‌تر، حالت کم‌مصرف و بهبود گستردهٔ دقت و پایداری'
+    ],
+    '5.0.40': [
+        'تشخیص بهتر میکروست و فرمان کامل فوروزماید روی آیفون',
+        'رنگ روشن و اصلی روباه در حالت آمادهٔ دستیار'
+    ],
+    '5.0.39': [
+        'پیش‌فرض قابل تنظیم برای نوع پمپ و حجم محلول هر بخش',
+        'ثبت مطمئن قد و وزن گفتاری داخل کارت BMI',
+        'درک بهتر فوروزماید، میکروست و عبارت‌های کوتاه روی میکروفن گوشی'
+    ],
+    '5.0.38': [
+        'تشخیص بهتر پنتوپرازول در فرمان‌های صوتی Rizeh',
+        'کادر تأیید کوتاه‌تر و ورودی متنی ثابت در پایین دستیار',
+        'روباه بزرگ‌تر در صفحه شروع برنامه'
+    ],
+    '5.0.37': [
+        'استفاده یکپارچه از Rizeh برای تشخیص آفلاین فارسی',
+        'حذف گزینه‌های آزمایشی Whisper که روی گوشی نتیجه ضعیف‌تری داشتند',
+        'تنظیمات ساده‌تر و توضیح روشن‌تر درباره حریم خصوصی صدا'
+    ],
+    '5.0.36': [
+        'راهنمای مرحله‌ای با اشاره مستقیم به بخش‌های واقعی برنامه',
+        'ثابت ماندن جای روباه هنگام نمایش پاسخ‌های دستیار',
+        'روباه بزرگ‌تر و واضح‌تر در شروع برنامه و راهنما',
+        'لحن طبیعی‌تر و محاوره‌ای‌تر پاسخ‌های دستیار'
+    ],
+    '5.0.35': [
+        'راهنمای کامل‌تر برای تنظیمات، تم‌ها و دستیار صوتی',
+        'دسترسی مستقیم به فهرست توانایی‌های دستیار',
+        'نمایش واضح‌تر نشان روباه در سربرگ و صفحه آغاز',
+        'نمونه‌های روشن‌تر برای شروع سریع کار با دستیار'
+    ],
+    '5.0.34': [
+        'انتخاب Rizeh در حالت خودکار بر اساس نتیجه بهتر آزمون‌های فارسی',
+        'درک بهتر شکل‌های آوایی رایج در گفت‌وگوی فارسی Whisper',
+        'نادیده گرفتن خروجی‌های تکراری ناشی از صدای ثابت محیط',
+        'ظاهر حرفه‌ای‌تر آغاز برنامه و بازخورد متحرک پردازش و دانلود صدا'
+    ],
+    '5.0.33': [
+        'ادامه خودکار دانلود Whisper پس از قطع کوتاه یا ناپایداری اتصال',
+        'نمایش واضح تلاش دوباره هنگام اختلال شبکه',
+        'بازگشت سریع‌تر به Rizeh وقتی میزبان Whisper در دسترس نیست'
+    ],
+    '5.0.32': [
+        'رفع توقف و شروع دوباره بارگذاری Whisper در اولین استفاده',
+        'نمایش درصد کلی و دقیق دانلود برای هر سه موتور صوتی',
+        'بازگشت مرحله‌ای از Whisper Base به Tiny و سپس Rizeh'
+    ],
+    '5.0.31': [
+        'Whisper Base و Tiny آفلاین برای گوشی‌های سازگار با WebGPU',
+        'انتخاب خودکار موتور صدا بر اساس توان دستگاه با بازگشت امن به Rizeh',
+        'امکان انتخاب دستی موتور تشخیص گفتار از تنظیمات'
+    ],
+    '5.0.30': [
+        'پوشش گفتار طبیعی برای همه ابزارهای بالینی و مبدل فشار',
+        'گفت‌وگوی دوستانه دقیق‌تر و جلوگیری از پاسخ ساختگی به فرمان ناشناخته',
+        'جستجوی سریع ابزارها و ظاهر حرفه‌ای‌تر دستیار صوتی'
+    ],
+    '5.0.29': [
+        'بازیابی دقیق‌تر عبارت‌های هپارین، انسولین رگولار و BMI در گفتار فارسی',
+        'حفظ قد و وزن در جمله‌های محاوره‌ای BMI و باز کردن مستقیم ابزار مربوط'
+    ],
+    '5.0.28': [
+        'بهبود تشخیص نام‌های پزشکی و مخفف‌های فارسی در دستیار صوتی',
+        'اصلاح مسیر «درصد سوختگی» و جلوگیری از اشتباه با غلظت درصدی',
+        'نمونه‌دستورهای فارسی و بازیابی عبارت‌های ناقص Rizeh'
+    ],
+    '5.0.27': [
+        'راهنمای واضح‌تر برای شروع دستیار صوتی و نمایش بهتر روباه در حالت روشن',
+        'درخواست اختیاری نام پس از آشنایی اولیه با برنامه، با امکان یادآوری بعدی یا رد دائمی',
+        'نام کاربر همچنان فقط روی همان دستگاه ذخیره می‌شود و از تنظیمات قابل ویرایش است',
+        'اصلاح محاسبه معکوس دوزهای میکروگرمی و الزام وزن برای دوزهای وزنی'
+    ],
+    '5.0.26': [
+        'موتور صوتی سبک‌تر Rizeh برای پایداری بهتر روی گوشی‌های کم‌حافظه',
+        'بازگشت به بخش صدا بدون بارگذاری دوباره‌ی مدل',
+        'امکان تلاش آنلاین با اجازه‌ی روشن کاربر در صورت آماده‌نشدن موتور آفلاین'
+    ],
+    '5.0.0': [
+        'دستیار صوتی هوشمند فارسی — کاملاً آفلاین، بدون نیاز به اینترنت، برای ثبت سریع محاسبات با صدا',
+        'پوسته رنگی جدید «DreamFire»',
+        'حالت کم‌مصرف جدید در تنظیمات — روان‌تر روی گوشی‌های قدیمی‌تر',
+        'ابزارهای بخش «ابزارها» اکنون دسته‌بندی‌شده و جمع‌وجورتر',
+        'رفع اشکالات متعدد و افزایش پایداری کلی برنامه'
+    ]
+};
+
+// Version 4 did not record a What's New version. Capture its durable storage
+// footprint before startup creates any Version 5 defaults, so returning users
+// see the major-release summary once while genuinely new installs keep the
+// normal onboarding-only experience.
+const HAS_PRE_V5_INSTALL = [
+    'sw_first_install',
+    'theme',
+    'onboardingSeen',
+    'calculationHistory',
+    'pwaNeverShow',
+    'userName'
+].some(function (key) {
+    try { return localStorage.getItem(key) !== null; } catch (e) { return false; }
+});
+
+// Version 5 starts a fresh personalization cycle. The completion marker is
+// written only after the person actively enters a name, so a name inherited
+// from an earlier release cannot silently count as consent for this version.
+const USER_NAME_CAPTURE_VERSION = '5.1';
+const USER_NAME_CAPTURE_VERSION_KEY = 'foximed_user_name_version';
+(function resetLegacyUserNameForVersion5() {
+    try {
+        if (localStorage.getItem(USER_NAME_CAPTURE_VERSION_KEY) !== USER_NAME_CAPTURE_VERSION) {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('foximed_name_prompt');
+        }
+    } catch (e) { /* local storage may be unavailable in private contexts */ }
+})();
+
+function getLastSeenVersion() {
+    try { return localStorage.getItem('foximed_last_seen_version'); } catch (e) { return null; }
+}
+function setLastSeenVersion(v) {
+    try { localStorage.setItem('foximed_last_seen_version', v); } catch (e) {}
+}
+
+// Shows the What's New modal. `force`=true (from the Settings button) always
+// shows it regardless of whether it's been seen. The automatic check on app
+// load only shows it for an actual UPGRADE from a previously-seen version —
+// deliberately not on a fresh install, since onboarding already covers that,
+// and not for the very first time this feature ships (no prior version to
+// have "changed" from).
+function showWhatsNewModal(force) {
+    const modal = document.getElementById('whatsNewModal');
+    const list = document.getElementById('whatsNewList');
+    const badge = document.getElementById('whatsNewVersionBadge');
+    if (!modal || !list) return;
+
+    const entries = CHANGELOG[APP_VERSION] || [];
+    if (!force && entries.length === 0) return;
+
+    badge.textContent = 'نسخه ' + APP_VERSION;
+    list.innerHTML = entries.length
+        ? entries.map(function (item) { return '<div class="whats-new-item"><i class="fas fa-circle-check"></i><span>' + item + '</span></div>'; }).join('')
+        : '<div class="whats-new-item"><i class="fas fa-circle-check"></i><span>در این نسخه مشکلات جزئی برطرف شده است.</span></div>';
+
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+    setLastSeenVersion(APP_VERSION);
+}
+
+function checkForWhatsNewOnLoad() {
+    const lastSeen = getLastSeenVersion();
+    // No record at all = fresh install; just mark current version as seen
+    // without showing anything, so the FIRST time this feature ships it
+    // doesn't retroactively show a changelog to existing users out of
+    // nowhere, and new installs don't see it either (onboarding covers that).
+    if (!lastSeen) {
+        setLastSeenVersion(APP_VERSION);
+        if (HAS_PRE_V5_INSTALL) {
+            setTimeout(function () { showWhatsNewModal(false); }, 600);
+        }
+        return;
+    }
+    if (lastSeen !== APP_VERSION) {
+        setTimeout(function () { showWhatsNewModal(false); }, 600);
+    }
+}
+
+// ============================================
+// AUTOMATIC LOW-END DEVICE DETECTION
+// ============================================
+// Best-effort heuristic used ONLY to pick a sensible default for Low Power
+// Mode the first time (and every time thereafter) the app runs, as long as
+// the person hasn't manually touched the toggle in Settings — see
+// lowPowerModeManual below. deviceMemory/hardwareConcurrency are static
+// hardware facts, so re-checking on every launch is cheap and always gives
+// the same answer for a given phone.
+//
+// Known limitation: navigator.deviceMemory is Chromium/Android-only —
+// Safari/iOS never exposes it, so on iPhones this falls back to
+// hardwareConcurrency alone, which is a much weaker signal since Apple
+// doesn't vary core counts much across tiers. Someone on an older-but-not-
+// ancient iPhone that still lags may need to flip the toggle manually —
+// this is a "get most people a good default," not a guarantee.
+function detectLowEndDevice() {
+    try {
+        const mem = navigator.deviceMemory; // GB of RAM, Chromium/Android only
+        const cores = navigator.hardwareConcurrency; // supported almost everywhere
+
+        if (typeof mem === 'number' && mem <= 3) return true;
+        if (typeof cores === 'number' && cores <= 4) return true;
+        return false;
+    } catch (e) {
+        return false;
+    }
+}
+
+// Runs synchronously at script load — before any DOMContentLoaded handler,
+// including the one that reads localStorage into AppState.settings — so
+// that by the time the rest of the app looks at appSettings.lowPowerMode,
+// the auto-detected value (if applicable) is already sitting in
+// localStorage and gets picked up like any other saved setting, with no
+// special-casing needed elsewhere.
+//
+// Also runs a "did the app actually finish loading last time?" watchdog.
+// appSettings.__loadWatchdog is set here, at the very start of every
+// launch, and only cleared by hideLoadingScreen() once loading genuinely
+// completes. If it's still set when we get here, the PREVIOUS launch never
+// made it that far — hung, crashed, got force-closed, whatever the cause —
+// which is a much more direct signal that this device/session is
+// struggling than any static hardware guess. When that happens we force
+// Low Power Mode on for this launch (unless the person set it manually),
+// so a device that got stuck once doesn't get stuck again on the very next
+// open — critically, this decision is made BEFORE the loading screen (and
+// therefore before any voice-model warmup) even starts, so it protects the next
+// launch even if that one never reaches Settings either.
+(function autoDetectLowPowerModeIfNeeded() {
+    try {
+        const raw = localStorage.getItem('appSettings');
+        const saved = raw ? JSON.parse(raw) : {};
+
+        const lastLoadNeverFinished = !!saved.__loadWatchdog;
+        saved.__loadWatchdog = Date.now();
+
+        if (!saved.lowPowerModeManual) {
+            const auto = lastLoadNeverFinished ? true : detectLowEndDevice();
+            saved.lowPowerMode = auto;
+        }
+        localStorage.setItem('appSettings', JSON.stringify(saved));
+    } catch (e) { /* localStorage unavailable — defaults apply as before */ }
+})();
+
+// Best-effort REAL-TIME responsiveness probe, running alongside the loading
+// screen animation. Static device-tier guessing (deviceMemory/cores) can
+// miss plenty of devices — especially iPhones, which don't expose
+// deviceMemory at all — so this measures actual frame timing on THIS launch
+// and lets a device that proves itself slow right now override the guess,
+// even if it looked fine on paper. Five samples finish well before
+// finishLoadingWithOptionalVoiceWarmup() is called (~2.4s into the loading
+// sequence), so the result is ready in time to matter.
+let __measuredFrameGapMs = null;
+(function measureFrameResponsiveness() {
+    let last = null;
+    const samples = [];
+    function tick(ts) {
+        if (last !== null) samples.push(ts - last);
+        last = ts;
+        if (samples.length < 5) {
+            requestAnimationFrame(tick);
+        } else {
+            samples.sort(function (a, b) { return a - b; });
+            __measuredFrameGapMs = samples[Math.floor(samples.length / 2)]; // median — one bad frame shouldn't skew this
+        }
+    }
+    try { requestAnimationFrame(tick); } catch (e) { /* no rAF — leave __measuredFrameGapMs null, just skip this signal */ }
+})();
+
 const AppState = {
     selectedDrug: 'heparin',
     infusionMethod: 'syringe',
@@ -37,7 +306,14 @@ const AppState = {
         saveHistory: true,
         hapticFeedback: true,
         colorTheme: 'fox',
-        themeMode: 'light'
+        themeMode: 'light',
+        voiceOutput: false,
+        lowPowerMode: false,
+        lowPowerModeManual: false, // true once the person has touched the toggle themselves — from then on, auto-detection never overwrites their choice
+        defaultInfusionMethod: 'syringe',
+        defaultSyringeVolume: 'auto',
+        defaultInfusionVolume: 'auto',
+        voiceLogAutoTelegram: false // off by default — see voice-commands.js: automatic sending is a different privacy posture than the manual-export design, so it only runs once explicitly turned on
     },
     reverseMode: false
 };
@@ -99,24 +375,27 @@ const AppState = {
     loadingScreen.style.background = gradient;
 }
 
-    let tipIndex = 0;
-    function rotateTip() {
-        const tips = document.querySelectorAll('.loading-tip');
-        if (!tips.length) return;
-        tips[tipIndex % tips.length].classList.remove('active');
-        tipIndex = (tipIndex + 1) % tips.length;
-        tips[tipIndex].classList.add('active');
-    }
-
     window.loadingProgress = function(pct, status) {
         const bar    = document.getElementById('loadingBar');
         const stat   = document.getElementById('loadingStatus');
-        if (bar)  bar.style.width  = pct + '%';
+        const fox    = document.getElementById('loadingFox');
+        const value  = Math.max(0, Math.min(100, Number(pct) || 0));
+        if (bar)  bar.style.width  = value + '%';
+        if (fox)  fox.style.setProperty('--loading-progress', value + '%');
         if (stat) stat.textContent = status;
     };
 
     window.hideLoadingScreen = function() {
         const screen = document.getElementById('loadingScreen');
+        // Loading has genuinely finished — clear the watchdog set at script
+        // start, regardless of whether the screen element itself is still
+        // there, so next launch doesn't wrongly think this one got stuck.
+        try {
+            const raw = localStorage.getItem('appSettings');
+            const saved = raw ? JSON.parse(raw) : {};
+            delete saved.__loadWatchdog;
+            localStorage.setItem('appSettings', JSON.stringify(saved));
+        } catch (e) { /* non-fatal */ }
         if (!screen) return;
         screen.classList.add('fade-out');
         setTimeout(() => {
@@ -132,12 +411,10 @@ const AppState = {
 
     document.addEventListener('DOMContentLoaded', () => {
         applyThemeToLoadingScreen();
-        const tipInterval = setInterval(rotateTip, 1800);
         let i = 0;
         function runStep() {
             if (i >= steps.length) {
-                clearInterval(tipInterval);
-                setTimeout(window.hideLoadingScreen, 300);
+                finishLoadingWithOptionalVoiceWarmup();
                 return;
             }
             loadingProgress(steps[i].pct, steps[i].status);
@@ -146,6 +423,95 @@ const AppState = {
         }
         setTimeout(runStep, 300);
     });
+
+    // If the on-device voice model was already downloaded in a PREVIOUS session
+    // (i.e. the person has clearly used voice before), get it fully ready
+    // during this already-expected loading wait, so opening the Voice tab
+    // later is instant instead of triggering a second, separate wait. If
+    // it was never downloaded before, this check is nearly instant and
+    // changes nothing — voice stays fully on-demand for people who've
+    // never used it, exactly as before. A hard 10s timeout guarantees this
+    // can never hold up the loading screen indefinitely even if something
+    // unexpected happens (e.g. a corrupted cache entry).
+    // Skipped entirely in low power mode: this front-loads a full WASM
+    // model init (real memory + CPU cost) onto every single app launch,
+    // regardless of whether Voice gets used again that session — on a
+    // low-RAM device that's a bad trade for a "might save a few seconds
+    // later" convenience. Low power mode keeps voice fully on-demand
+    // instead, same as if it had never been used before.
+    function isLowPowerMode() {
+        // Read straight from localStorage rather than AppState.settings —
+        // this runs at DOMContentLoaded, potentially before the main
+        // settings-loading code elsewhere in the file has populated
+        // AppState yet, and localStorage access is synchronous/cheap
+        // either way.
+        try {
+            const saved = JSON.parse(localStorage.getItem('appSettings') || '{}');
+            return !!saved.lowPowerMode;
+        } catch (e) { return false; }
+    }
+
+    // Persists a fresh "this device is struggling" finding so it protects
+    // every launch from now on, not just this one — without ever touching
+    // a value the person set manually in Settings. Used when a live signal
+    // (real frame jank, or the warmup itself timing out) proves a device is
+    // slow even though the static device-tier guess said otherwise.
+    function forceLowPowerModeIfNotManual() {
+        try {
+            const raw = localStorage.getItem('appSettings');
+            const saved = raw ? JSON.parse(raw) : {};
+            if (saved.lowPowerModeManual) return;
+            saved.lowPowerMode = true;
+            localStorage.setItem('appSettings', JSON.stringify(saved));
+            AppState.settings.lowPowerMode = true; // keep the in-memory copy in sync too, in case Settings gets opened later this same session
+        } catch (e) { /* non-fatal */ }
+    }
+
+    function finishLoadingWithOptionalVoiceWarmup() {
+        // Live signal wins over the static guess: if THIS launch is
+        // already visibly janky (slow frame timing measured since page
+        // start — see measureFrameResponsiveness above), don't add a heavy
+        // WASM warmup on top of it, no matter what deviceMemory/cores said.
+        // 40ms ≈ sub-25fps, comfortably above normal jitter on any real
+        // device but a clear sign the main thread is struggling right now.
+        const liveJank = typeof __measuredFrameGapMs === 'number' && __measuredFrameGapMs > 40;
+        if (liveJank) forceLowPowerModeIfNotManual();
+
+        if (liveJank || isLowPowerMode() || !window.VoiceEngine || typeof window.VoiceEngine.isModelCached !== 'function') {
+            setTimeout(window.hideLoadingScreen, 300);
+            return;
+        }
+        window.VoiceEngine.isModelCached().then(function (cached) {
+            if (!cached) {
+                setTimeout(window.hideLoadingScreen, 300);
+                return;
+            }
+            loadingProgress(97, 'در حال آماده‌سازی موتور صوتی...');
+            const warmup = window.VoiceEngine.preload();
+            let warmupFinished = false;
+            warmup.then(function () { warmupFinished = true; });
+            const timeout = new Promise(function (resolve) { setTimeout(resolve, 6000); });
+            Promise.race([warmup, timeout]).then(function () {
+                if (!warmupFinished) {
+                    // It didn't finish in a reasonable window — this phone
+                    // just demonstrated it can't casually absorb the warmup,
+                    // regardless of what any heuristic guessed beforehand.
+                    // Actually STOP the in-flight download/instantiation
+                    // (instead of leaving it running in the background,
+                    // which is what used to cause lag persisting well after
+                    // the loading screen was gone) and lock in Low Power
+                    // Mode so this doesn't get attempted again next launch.
+                    if (window.VoiceEngine && typeof window.VoiceEngine.cancelPreload === 'function') {
+                        window.VoiceEngine.cancelPreload();
+                    }
+                    forceLowPowerModeIfNotManual();
+                }
+                setTimeout(window.hideLoadingScreen, 300);
+            });
+        }).catch(function () {
+            setTimeout(window.hideLoadingScreen, 300);
+        });
+    }
 })();
 
 // ============================================
@@ -488,7 +854,18 @@ const DOM = {
     selectedDrugIcon: document.getElementById('selectedDrugIcon'),
     selectedDrugName: document.getElementById('selectedDrugName'),
     selectedDrugDesc: document.getElementById('selectedDrugDesc'),
-    methodBtns: document.querySelectorAll('.method-btn-compact'),
+    // Scoped to .method-selector-compact specifically — '.method-btn-compact'
+    // alone is also used by the ventilator/nutrition gender selectors and
+    // the VBG mode selector elsewhere on the page, and previously matched
+    // ALL of them here. Since this list gets the click listener below that
+    // unconditionally sets AppState.infusionMethod = this.dataset.method,
+    // clicking any of those OTHER buttons (which have no data-method
+    // attribute) was silently corrupting AppState.infusionMethod to
+    // undefined — breaking the next drug calculation with a hard crash in
+    // updateVolumeOptions(). Real bug, reachable via manual taps too, not
+    // just voice commands — voice commands just triggered it reliably
+    // enough to surface it during testing.
+    methodBtns: document.querySelectorAll('.method-selector-compact .method-btn-compact'),
     volumeOptions: document.getElementById('volumeOptions'),
     customVolume: document.getElementById('customVolume'),
     customVolumeContainer: document.getElementById('customVolumeContainer'),
@@ -535,6 +912,7 @@ const DOM = {
     closeSettings: document.getElementById('closeSettings'),
     closeHistory: document.getElementById('closeHistory'),
     largeFontToggle: document.getElementById('largeFontToggle'),
+    lowPowerModeToggle: document.getElementById('lowPowerModeToggle'),
     doseAlertToggle: document.getElementById('doseAlertToggle'),
     compatAlertToggle: document.getElementById('compatAlertToggle'),
     saveHistoryToggle: document.getElementById('saveHistoryToggle'),
@@ -732,8 +1110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadDrugGrid();
     selectDrug('heparin');
-    initCompatibilityDropdowns();
     loadDrugLibrary();
+    initVoiceTab();
+    checkForWhatsNewOnLoad();
 });
 
 function initializeApp() {
@@ -756,6 +1135,7 @@ function initializeApp() {
     setupMobileNumericKeyboard();
     initializeConverters();
     initializeTools();
+    setupToolsSearch();
 
     let resizeTimeout;
     window.addEventListener('resize', () => {
@@ -792,15 +1172,58 @@ function initializeApp() {
             const note = document.getElementById('vbgModeNote');
             if (note) note.innerHTML = isABG
                 ? '<i class="fas fa-info-circle"></i> حالت ABG: مقادیر شریانی مستقیم تفسیر می‌شوند.'
-                : '<i class="fas fa-info-circle"></i> حالت VBG: pH وریدی معمولاً ۰.۰۳–۰.۰۵ کمتر از شریانی است. pCO₂ وریدی ۶–۸ mmHg بالاتر است.';
+                : '<i class="fas fa-info-circle"></i> حالت VBG: pH وریدی معمولاً \u2068۰.۰۳–۰.۰۵\u2069 کمتر از شریانی است. pCO₂ وریدی \u2068۶–۸ mmHg\u2069 بالاتر است.';
         });
     });
     setupThemePicker();
     setupUpdateDetection();
     setupThemeModeListener();
     setupUserName();
+    setupNamePrompt();
     setTimeout(showGreetingBanner, 3200);
     setupHelpPopovers();
+}
+
+function setupToolsSearch() {
+    const input = document.getElementById('toolsSearch');
+    const clearButton = document.getElementById('toolsSearchClear');
+    const emptyMessage = document.getElementById('toolsSearchEmpty');
+    if (!input) return;
+
+    const items = Array.from(document.querySelectorAll('#toolsTab .accordion-item'));
+    const sections = Array.from(document.querySelectorAll('#toolsTab .accordion-section'));
+    const normalizeSearchText = (value) => String(value || '')
+        .toLowerCase()
+        .replace(/[يى]/g, 'ی')
+        .replace(/ك/g, 'ک')
+        .replace(/[ۀة]/g, 'ه')
+        .replace(/\u200c/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    const applyFilter = () => {
+        const query = normalizeSearchText(input.value);
+        let visibleCount = 0;
+        items.forEach((item) => {
+            const matches = !query || normalizeSearchText(item.textContent).includes(query);
+            item.classList.toggle('is-filtered-out', !matches);
+            if (matches) visibleCount++;
+        });
+        sections.forEach((section) => {
+            const hasVisibleItem = Array.from(section.querySelectorAll('.accordion-item'))
+                .some((item) => !item.classList.contains('is-filtered-out'));
+            section.classList.toggle('is-filtered-out', !hasVisibleItem);
+        });
+        if (clearButton) clearButton.hidden = !query;
+        if (emptyMessage) emptyMessage.hidden = visibleCount !== 0;
+    };
+
+    input.addEventListener('input', applyFilter);
+    if (clearButton) clearButton.addEventListener('click', () => {
+        input.value = '';
+        applyFilter();
+        input.focus();
+    });
 }
 
 function setupMobileOptimizations() {
@@ -828,10 +1251,25 @@ function loadSettings() {
     }
     if (DOM.darkModeToggle) DOM.darkModeToggle.checked = AppState.settings.darkMode;
     if (DOM.largeFontToggle) DOM.largeFontToggle.checked = AppState.settings.largeFont;
+    if (DOM.lowPowerModeToggle) DOM.lowPowerModeToggle.checked = AppState.settings.lowPowerMode;
+    const lowPowerAutoNote = document.getElementById('lowPowerModeAutoNote');
+    if (lowPowerAutoNote) lowPowerAutoNote.style.display = AppState.settings.lowPowerModeManual ? 'none' : 'inline-block';
+
     if (DOM.doseAlertToggle) DOM.doseAlertToggle.checked = AppState.settings.doseAlerts;
     if (DOM.compatAlertToggle) DOM.compatAlertToggle.checked = AppState.settings.compatAlerts;
     if (DOM.saveHistoryToggle) DOM.saveHistoryToggle.checked = AppState.settings.saveHistory;
     if (DOM.hapticToggle) DOM.hapticToggle.checked = AppState.settings.hapticFeedback !== false;
+    const voiceLogAutoTelegramToggle = document.getElementById('voiceLogAutoTelegramToggle');
+    if (voiceLogAutoTelegramToggle) voiceLogAutoTelegramToggle.checked = !!AppState.settings.voiceLogAutoTelegram;
+    const defaultMethodSelect = document.getElementById('defaultInfusionMethodSelect');
+    const defaultSyringeVolumeSelect = document.getElementById('defaultSyringeVolumeSelect');
+    const defaultInfusionVolumeSelect = document.getElementById('defaultInfusionVolumeSelect');
+    const preferredMethod = AppState.settings.defaultInfusionMethod === 'infusion' ? 'infusion' : 'syringe';
+    AppState.infusionMethod = preferredMethod;
+    if (defaultMethodSelect) defaultMethodSelect.value = preferredMethod;
+    if (defaultSyringeVolumeSelect) defaultSyringeVolumeSelect.value = String(AppState.settings.defaultSyringeVolume || 'auto');
+    if (defaultInfusionVolumeSelect) defaultInfusionVolumeSelect.value = String(AppState.settings.defaultInfusionVolume || 'auto');
+    syncCalculatorMethodButtons();
     if (DOM.themeModeSelect) DOM.themeModeSelect.value = AppState.settings.themeMode || 'light';
     applySettings();
     syncThemeModeButtons();
@@ -861,6 +1299,8 @@ function applySettings() {
     }
     if (AppState.settings.largeFont) document.body.classList.add('large-font');
     else document.body.classList.remove('large-font');
+    if (AppState.settings.lowPowerMode) document.body.classList.add('low-power-mode');
+    else document.body.classList.remove('low-power-mode');
     const savedColor = AppState.settings.colorTheme || 'default';
     applyTheme(savedColor);
     fixVolumeButtonColors();
@@ -1125,11 +1565,35 @@ function getEffectiveTotalDrug() {
     return AppState.ampouleCount * ampoule.strength;
 }
 
+function syncCalculatorMethodButtons() {
+    if (!DOM.methodBtns) return;
+    DOM.methodBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.method === AppState.infusionMethod);
+    });
+    fixMethodButtonTextColor();
+}
+
+function getPreferredSolutionVolume(method, availableVolumes, drugDefault) {
+    const settingKey = method === 'infusion' ? 'defaultInfusionVolume' : 'defaultSyringeVolume';
+    const configured = AppState.settings[settingKey];
+    if (configured === undefined || configured === null || configured === '' || configured === 'auto') return drugDefault;
+    const numeric = Number(configured);
+    return availableVolumes.includes(numeric) ? numeric : drugDefault;
+}
+
 function updateVolumeOptions() {
     const drug = drugDatabase[AppState.selectedDrug];
-    const method = AppState.infusionMethod;
+    let method = AppState.infusionMethod;
+    // Defensive fallback: if infusionMethod is ever missing or invalid for
+    // this drug (shouldn't happen now that DOM.methodBtns is correctly
+    // scoped, but this keeps a future regression from being a hard crash),
+    // fall back to 'syringe' and self-heal the state rather than throwing.
+    if (!drug.defaultSolutionVolumes[method]) {
+        method = 'syringe';
+        AppState.infusionMethod = method;
+    }
     const volumes = drug.defaultSolutionVolumes[method];
-    const defaultVol = drug.defaultVolume[method];
+    const defaultVol = getPreferredSolutionVolume(method, volumes, drug.defaultVolume[method]);
     if (!DOM.volumeOptions) return;
     DOM.volumeOptions.innerHTML = '';
     volumes.forEach(volume => {
@@ -1559,6 +2023,14 @@ function setupEventListeners() {
     if (DOM.closeHistory) DOM.closeHistory.addEventListener('click', () => {
         if (DOM.historyModal) { DOM.historyModal.classList.remove('active'); document.body.classList.remove('no-scroll'); }
     });
+    const closeWhatsNewBtn = document.getElementById('closeWhatsNew');
+    const whatsNewDismissBtn = document.getElementById('whatsNewDismissBtn');
+    const whatsNewModalEl = document.getElementById('whatsNewModal');
+    function closeWhatsNewModal() {
+        if (whatsNewModalEl) { whatsNewModalEl.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+    }
+    if (closeWhatsNewBtn) closeWhatsNewBtn.addEventListener('click', closeWhatsNewModal);
+    if (whatsNewDismissBtn) whatsNewDismissBtn.addEventListener('click', closeWhatsNewModal);
     if (DOM.drugSearch) DOM.drugSearch.addEventListener('input', function() {
         const term = this.value.toLowerCase();
         document.querySelectorAll('.drug-item-compact').forEach(card => {
@@ -1615,50 +2087,199 @@ function setupEventListeners() {
         });
     });
 }
-
+// ============================================
+// SETTINGS EVENT LISTENERS
+// ============================================
 function setupSettingsEventListeners() {
-    if (DOM.darkModeToggle) DOM.darkModeToggle.addEventListener('change', function() {
-        AppState.settings.darkMode = this.checked;
-        AppState.settings.themeMode = this.checked ? 'dark' : 'light';
-        if (DOM.themeModeSelect) DOM.themeModeSelect.value = AppState.settings.themeMode;
-        saveSettings();
-        applySettings();
+    // Dark mode toggle (from settings modal)
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', function() {
+            AppState.settings.darkMode = this.checked;
+            AppState.settings.themeMode = this.checked ? 'dark' : 'light';
+            if (DOM.themeModeSelect) DOM.themeModeSelect.value = AppState.settings.themeMode;
+            saveSettings();
+            applySettings();
+        });
+    }
+
+    // Large font toggle
+    const largeFontToggle = document.getElementById('largeFontToggle');
+    if (largeFontToggle) {
+        largeFontToggle.addEventListener('change', function() {
+            AppState.settings.largeFont = this.checked;
+            saveSettings();
+            applySettings();
+        });
+    }
+
+    // Low power mode toggle
+    const lowPowerModeToggle = document.getElementById('lowPowerModeToggle');
+    if (lowPowerModeToggle) {
+        lowPowerModeToggle.addEventListener('change', function() {
+            AppState.settings.lowPowerMode = this.checked;
+            AppState.settings.lowPowerModeManual = true; // person chose explicitly — auto-detection stops touching this from now on
+            const lowPowerAutoNote = document.getElementById('lowPowerModeAutoNote');
+            if (lowPowerAutoNote) lowPowerAutoNote.style.display = 'none';
+            saveSettings();
+            applySettings();
+        });
+    }
+
+    const defaultInfusionMethodSelect = document.getElementById('defaultInfusionMethodSelect');
+    const defaultSyringeVolumeSelect = document.getElementById('defaultSyringeVolumeSelect');
+    const defaultInfusionVolumeSelect = document.getElementById('defaultInfusionVolumeSelect');
+    if (defaultInfusionMethodSelect) {
+        defaultInfusionMethodSelect.addEventListener('change', function() {
+            AppState.settings.defaultInfusionMethod = this.value === 'infusion' ? 'infusion' : 'syringe';
+            AppState.infusionMethod = AppState.settings.defaultInfusionMethod;
+            saveSettings();
+            syncCalculatorMethodButtons();
+            updateVolumeOptions();
+            clearResults();
+        });
+    }
+    [defaultSyringeVolumeSelect, defaultInfusionVolumeSelect].forEach(function(select) {
+        if (!select) return;
+        select.addEventListener('change', function() {
+            const key = this.id === 'defaultInfusionVolumeSelect' ? 'defaultInfusionVolume' : 'defaultSyringeVolume';
+            AppState.settings[key] = this.value || 'auto';
+            saveSettings();
+            const appliesNow = (key === 'defaultInfusionVolume' && AppState.infusionMethod === 'infusion') ||
+                (key === 'defaultSyringeVolume' && AppState.infusionMethod === 'syringe');
+            if (appliesNow) {
+                updateVolumeOptions();
+                clearResults();
+            }
+        });
     });
-    if (DOM.largeFontToggle) DOM.largeFontToggle.addEventListener('change', function() {
-        AppState.settings.largeFont = this.checked;
-        saveSettings();
-        applySettings();
-    });
-    if (DOM.doseAlertToggle) DOM.doseAlertToggle.addEventListener('change', function() {
-        AppState.settings.doseAlerts = this.checked;
-        saveSettings();
-    });
-    if (DOM.compatAlertToggle) DOM.compatAlertToggle.addEventListener('change', function() {
-        AppState.settings.compatAlerts = this.checked;
-        saveSettings();
-    });
-    if (DOM.saveHistoryToggle) DOM.saveHistoryToggle.addEventListener('change', function() {
-        AppState.settings.saveHistory = this.checked;
-        saveSettings();
-    });
-    if (DOM.clearHistoryBtn) DOM.clearHistoryBtn.addEventListener('click', function() {
-        if (confirm('آیا از پاک کردن تاریخچه اطمینان دارید؟')) {
-            localStorage.removeItem('calculationHistory');
-            showToast('تاریخچه پاک شد', 'تمامی محاسبات ذخیره شده حذف شدند.', 'success');
-        }
-    });
-    if (DOM.hapticToggle) DOM.hapticToggle.addEventListener('change', function() {
-        AppState.settings.hapticFeedback = this.checked;
-        saveSettings();
-        if (this.checked) haptic(40);
-    });
-    if (DOM.exportDataBtn) DOM.exportDataBtn.addEventListener('click', exportHistory);
-    if (DOM.themeModeSelect) DOM.themeModeSelect.addEventListener('change', function() {
-        AppState.settings.themeMode = this.value;
-        saveSettings();
-        applyThemeMode();
-        if (DOM.darkModeToggle) DOM.darkModeToggle.checked = AppState.settings.darkMode;
-    });
+
+    // Dose alerts
+    const doseAlertToggle = document.getElementById('doseAlertToggle');
+    if (doseAlertToggle) {
+        doseAlertToggle.addEventListener('change', function() {
+            AppState.settings.doseAlerts = this.checked;
+            saveSettings();
+        });
+    }
+
+    // Compatibility alerts
+    const compatAlertToggle = document.getElementById('compatAlertToggle');
+    if (compatAlertToggle) {
+        compatAlertToggle.addEventListener('change', function() {
+            AppState.settings.compatAlerts = this.checked;
+            saveSettings();
+        });
+    }
+
+    // Save history
+    const saveHistoryToggle = document.getElementById('saveHistoryToggle');
+    if (saveHistoryToggle) {
+        saveHistoryToggle.addEventListener('change', function() {
+            AppState.settings.saveHistory = this.checked;
+            saveSettings();
+        });
+    }
+
+    // Clear calculation history (settings modal)
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+    if (clearHistoryBtn) {
+        clearHistoryBtn.addEventListener('click', function() {
+            if (confirm('آیا از پاک کردن تاریخچه اطمینان دارید؟')) {
+                localStorage.removeItem('calculationHistory');
+                showToast('تاریخچه پاک شد', 'تمامی محاسبات ذخیره شده حذف شدند.', 'success');
+            }
+        });
+    }
+
+    // Haptic feedback
+    const hapticToggle = document.getElementById('hapticToggle');
+    if (hapticToggle) {
+        hapticToggle.addEventListener('change', function() {
+            AppState.settings.hapticFeedback = this.checked;
+            saveSettings();
+            if (this.checked) haptic(40);
+        });
+    }
+
+    // Export data
+    const exportDataBtn = document.getElementById('exportDataBtn');
+    if (exportDataBtn) {
+        exportDataBtn.addEventListener('click', exportHistory);
+    }
+
+    // Voice assistant "unrecognized phrases" learning log — auto-send
+    // toggle, manual Telegram send, plain-text export, and clear.
+    const voiceLogAutoTelegramToggle = document.getElementById('voiceLogAutoTelegramToggle');
+    if (voiceLogAutoTelegramToggle) {
+        voiceLogAutoTelegramToggle.addEventListener('change', function() {
+            AppState.settings.voiceLogAutoTelegram = this.checked;
+            saveSettings();
+        });
+    }
+
+    const sendVoiceLogBtn = document.getElementById('sendVoiceLogBtn');
+    if (sendVoiceLogBtn) {
+        sendVoiceLogBtn.addEventListener('click', function() {
+            if (!window.VoiceCommands || typeof window.VoiceCommands.sendUnrecognizedLogToTelegram !== 'function') return;
+            const log = typeof window.VoiceCommands.getUnrecognizedLog === 'function' ? window.VoiceCommands.getUnrecognizedLog() : [];
+            if (!log.length) {
+                showToast('اطلاع', 'فهرست خالی است — چیزی برای ارسال وجود ندارد', 'info');
+                return;
+            }
+            const origHTML = sendVoiceLogBtn.innerHTML;
+            sendVoiceLogBtn.disabled = true;
+            sendVoiceLogBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال ارسال...';
+            window.VoiceCommands.sendUnrecognizedLogToTelegram(false).then(function (result) {
+                if (result && result.ok) {
+                    showToast('ارسال شد', result.sent + ' عبارت با موفقیت به تلگرام ارسال شد', 'success');
+                } else {
+                    showToast('خطا در ارسال', 'اتصال برقرار نشد — دوباره امتحان کنید یا از «خروجی گرفتن» استفاده کنید', 'error');
+                }
+            }).finally(function () {
+                sendVoiceLogBtn.disabled = false;
+                sendVoiceLogBtn.innerHTML = origHTML;
+            });
+        });
+    }
+
+    const exportVoiceLogBtn = document.getElementById('exportVoiceLogBtn');
+    if (exportVoiceLogBtn) {
+        exportVoiceLogBtn.addEventListener('click', function() {
+            if (!window.VoiceCommands || typeof window.VoiceCommands.exportUnrecognizedLogAsText !== 'function') return;
+            const text = window.VoiceCommands.exportUnrecognizedLogAsText();
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `FoxiMed-VoiceLog-${new Date().toISOString().slice(0,10)}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    }
+
+    const clearVoiceLogBtn = document.getElementById('clearVoiceLogBtn');
+    if (clearVoiceLogBtn) {
+        clearVoiceLogBtn.addEventListener('click', function() {
+            if (!window.VoiceCommands || typeof window.VoiceCommands.clearUnrecognizedLog !== 'function') return;
+            if (confirm('آیا از پاک کردن فهرست عبارات درک‌نشده اطمینان دارید؟')) {
+                window.VoiceCommands.clearUnrecognizedLog();
+                showToast('پاک شد', 'فهرست عبارات درک‌نشده حذف شد', 'success');
+            }
+        });
+    }
+
+    // Theme mode dropdown (if still present – fallback)
+    const themeModeSelect = document.getElementById('themeModeSelect');
+    if (themeModeSelect) {
+        themeModeSelect.addEventListener('change', function() {
+            AppState.settings.themeMode = this.value;
+            saveSettings();
+            applyThemeMode();
+            if (DOM.darkModeToggle) DOM.darkModeToggle.checked = AppState.settings.darkMode;
+        });
+    }
+
     // Theme mode 3-button row
     const themeBtns = document.querySelectorAll('#themeModeButtons .theme-mode-btn');
     themeBtns.forEach(btn => {
@@ -1669,26 +2290,38 @@ function setupSettingsEventListeners() {
             syncThemeModeButtons();
         });
     });
-    if (DOM.checkUpdateBtn) DOM.checkUpdateBtn.addEventListener('click', async function() {
-        this.disabled = true;
-        const origHTML = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال بررسی...';
-        try {
-            const reg = await navigator.serviceWorker.getRegistration();
-            if (reg) {
-                await reg.update();
-                if (reg.waiting) {
-                    showUpdateBanner();
-                } else {
-                    showToast('بروز است', 'شما آخرین نسخه FoxiMed را دارید', 'success');
+
+    // Check for updates
+    const checkUpdateBtn = document.getElementById('checkUpdateBtn');
+    if (checkUpdateBtn) {
+        checkUpdateBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            const origHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال بررسی...';
+            try {
+                const reg = await navigator.serviceWorker.getRegistration();
+                if (reg) {
+                    await reg.update();
+                    if (reg.waiting) {
+                        showUpdateBanner();
+                    } else {
+                        showToast('بروز است', 'شما آخرین نسخه FoxiMed را دارید', 'success');
+                    }
                 }
+            } catch(e) {
+                showToast('خطا', 'بررسی به‌روزرسانی ممکن نشد', 'error');
             }
-        } catch(e) {
-            showToast('خطا', 'بررسی به‌روزرسانی ممکن نشد', 'error');
-        }
-        setTimeout(() => { this.disabled = false; this.innerHTML = origHTML; }, 1500);
-    });
+            setTimeout(() => { this.disabled = false; this.innerHTML = origHTML; }, 1500);
+        });
+    }
 }
+
+// ============================================
+// VOICE ASSISTANT
+// Moved out to voice-recognition.js / voice-commands.js / voice-ui.js
+// for maintainability. Loaded after this file; initVoiceTab() below
+// resolves to voice-ui.js's window.initVoiceTab at call time.
+// ============================================
 
 // ============================================
 // MANUAL CALCULATION
@@ -1942,7 +2575,6 @@ function calculateManualInfusion() {
     }
 
     // Normalize drug amount to the dose unit's base unit
-    // e.g. drug in mg, dose in mcg → convert drug to mcg for concentration
     let drugAmountNorm = drugAmount;
     if (drugUnit === 'g' && (doseUnit.includes('mg') || doseUnit.includes('mcg'))) drugAmountNorm *= 1000;
     if (drugUnit === 'mg' && doseUnit.includes('mcg')) drugAmountNorm *= 1000;
@@ -1989,8 +2621,12 @@ function calculateManualInfusion() {
 // TAB MANAGEMENT
 // ============================================
 function switchTab(tabName) {
-    DOM.tabItems.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
-    DOM.tabPanes.forEach(pane => {
+    const tabItems = document.querySelectorAll('.tab-item');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    const previousTab = AppState.currentTab;
+
+    tabItems.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
+    tabPanes.forEach(pane => {
         const isActive = pane.id === tabName + 'Tab';
         pane.classList.toggle('active', isActive);
         pane.style.display = isActive ? 'block' : 'none';
@@ -2000,6 +2636,23 @@ function switchTab(tabName) {
     if (tabName === 'tools') {
         initializeTools();
         initializeConverters();
+    }
+    if (tabName === 'voice' && window.VoiceEngine && typeof window.VoiceEngine.preload === 'function') {
+        // Start the model download/load only once the person actually
+        // opens the Voice tab, not unconditionally at app startup. This
+        // still gets ahead of an explicit mic tap (so by the time they
+        // press the button it may already be ready, or visibly loading
+        // with real progress instead of starting stone-cold) without
+        // taxing every single app launch regardless of whether voice is
+        // ever used that session.
+        window.VoiceEngine.preload();
+    }
+    if (tabName === 'voice') {
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (window.VoiceUI && typeof window.VoiceUI.stabilizeLayout === 'function') {
+                window.VoiceUI.stabilizeLayout();
+            }
+        }));
     }
 }
 
@@ -2253,6 +2906,9 @@ function initializeTools() {
             sel.appendChild(opt);
         });
     });
+    // Favorite-star / recents tracking used to feed the modern home shell,
+    // which has been removed — classic mode never had a screen to surface
+    // them, so there's nothing left to initialize here.
 }
 
 function calculateBMI() {
@@ -2266,10 +2922,28 @@ function calculateBMI() {
     else if (bmi < 25)   { cat = 'طبیعی';       color = '#34d399'; }
     else if (bmi < 30)   { cat = 'اضافه وزن';   color = '#fbbf24'; }
     else                 { cat = 'چاقی';         color = '#f87171'; }
-    resultDiv.innerHTML = renderConverterResult([
+    let html = renderConverterResult([
         { label: 'BMI', value: PersianNumbers.formatNumber(bmi, 1) + ' kg/m²' },
         { label: 'وضعیت', value: `<span style="color:${color};font-weight:700;">${cat}</span>` }
     ]);
+    // Show how much weight would need to change to reach the normal BMI
+    // range (18.5–24.9) — only when outside it, since inside it there's
+    // nothing to advise beyond the "طبیعی" status already shown above.
+    const hM = height / 100;
+    if (bmi < 18.5) {
+        const targetMin = 18.5 * hM * hM;
+        const toGain = targetMin - weight;
+        if (toGain > 0) {
+            html += `<p class="tool-note"><i class="fas fa-info-circle"></i> برای رسیدن به محدوده طبیعی BMI، حدود ${PersianNumbers.formatNumber(toGain, 1)} کیلوگرم افزایش وزن لازم است.</p>`;
+        }
+    } else if (bmi >= 25) {
+        const targetMax = 24.9 * hM * hM;
+        const toLose = weight - targetMax;
+        if (toLose > 0) {
+            html += `<p class="tool-note"><i class="fas fa-info-circle"></i> برای رسیدن به محدوده طبیعی BMI، حدود ${PersianNumbers.formatNumber(toLose, 1)} کیلوگرم کاهش وزن لازم است.</p>`;
+        }
+    }
+    resultDiv.innerHTML = html;
     resultDiv.style.display = 'block';
     refreshAccordion(resultDiv);
 }
@@ -2452,15 +3126,12 @@ function loadDrugLibrary() {
     if (container.children.length > 0) { wireDrugLibrarySearch(); return; }
 
     Object.values(drugDatabase).forEach(drug => {
-        // Format dose range with proper LTR isolation for numbers
-        // Inside loadDrugLibrary, replace the doseRangeDisplay block with:
-let doseRangeDisplay = '--';
-if (drug.typicalDoseRange) {
-    const minFormatted = drug.typicalDoseRange.min.toFixed(1);
-    const maxFormatted = drug.typicalDoseRange.max.toFixed(1);
-    // Force LTR and use Latin numbers
-    doseRangeDisplay = `<span dir="ltr" style="display:inline-block; unicode-bidi:isolate; font-family: monospace;">${minFormatted}–${maxFormatted} ${drug.typicalDoseRange.unit}</span>`;
-}
+        let doseRangeDisplay = '--';
+        if (drug.typicalDoseRange) {
+            const minFormatted = drug.typicalDoseRange.min.toFixed(1);
+            const maxFormatted = drug.typicalDoseRange.max.toFixed(1);
+            doseRangeDisplay = `<span dir="ltr" style="display:inline-block; unicode-bidi:isolate; font-family: monospace;">${minFormatted}–${maxFormatted} ${drug.typicalDoseRange.unit}</span>`;
+        }
         const maxConc = drug.maxSafeConcentration || '--';
         const solutions = drug.solutionType.join(' / ');
         const compatible = (drug.ySiteCompatibilities?.compatible || []).slice(0, 5);
@@ -2473,6 +3144,7 @@ if (drug.typicalDoseRange) {
         const item = document.createElement('div');
         item.className = 'accordion-item qref-accordion-item';
         item.style.setProperty('--drug-color', drug.color);
+        item.dataset.drugId = drug.id;
         item.dataset.drugName = drug.persianName.toLowerCase() + ' ' + drug.englishName.toLowerCase();
         item.innerHTML =
             '<div class="qref-row" data-body-id="drug-body-' + drug.id + '">' +
@@ -2663,6 +3335,15 @@ function updateDoseRangeIndicator() {
         return;
     }
     const { min, max, unit } = drug.typicalDoseRange;
+    const activeUnit = AppState.useWeight && drug.weightBased?.active
+        ? drug.weightBased.unit
+        : (drug.weightBased?.nonWeightUnit || drug.standardUnit);
+    // A weight-based range must never be shown beside an absolute dose (or
+    // vice versa): that would make an unrelated value look reassuringly safe.
+    if (String(unit || '').toLowerCase() !== String(activeUnit || '').toLowerCase()) {
+        if (DOM.doseRangeIndicator) DOM.doseRangeIndicator.style.display = 'none';
+        return;
+    }
     let status, color, text;
     if (val < min * 0.8) {
         status = 'low'; color = '#60a5fa';
@@ -2675,7 +3356,7 @@ function updateDoseRangeIndicator() {
         text = `بالاتر از محدوده معمول — بررسی شود`;
     } else {
         status = 'danger'; color = '#f87171';
-        text = `خارج از محدوده ایمن — دوز را بررسی کنید`;
+        text = `بسیار خارج از محدوده معمول — دوز را بررسی کنید`;
     }
     if (DOM.doseRangeDot) DOM.doseRangeDot.style.background = color;
     if (DOM.doseRangeText) { DOM.doseRangeText.textContent = text; DOM.doseRangeText.style.color = color; }
@@ -2697,15 +3378,39 @@ function calculateReverse() {
         return;
     }
     DOM.doctorOrder.style.borderColor = '';
-    const totalDrug = AppState.ampouleCount * ampoule.strength;
+    const totalDrug = getEffectiveTotalDrug();
+    if (totalDrug === null) {
+        showToast('خطا', 'لطفاً مقدار دارو را وارد کنید', 'error');
+        if (DOM.customAmountInput) DOM.customAmountInput.focus();
+        return;
+    }
     const concentration = totalDrug / AppState.solutionVolume;
-    let derivedDose = pumpRateVal * concentration;
     const unit = AppState.useWeight && drug.weightBased?.active ? drug.weightBased.unit : (drug.weightBased?.nonWeightUnit || drug.standardUnit);
-    const isPerMin = unit && unit.toLowerCase().includes('min');
-    if (isPerMin) derivedDose = derivedDose / 60;
-    const isPerKg = unit && unit.toLowerCase().includes('kg');
-    const weight = AppState.useWeight ? (parseFloat(DOM.patientWeight?.dataset.numericValue) || 1) : 1;
-    if (isPerKg && AppState.useWeight) derivedDose = derivedDose / weight;
+    let weight = null;
+    if (unit && unit.toLowerCase().includes('/kg')) {
+        weight = DOM.patientWeight?.dataset.numericValue
+            ? parseFloat(DOM.patientWeight.dataset.numericValue)
+            : PersianNumbers.parseNumber(DOM.patientWeight?.value);
+        if (!weight || isNaN(weight) || weight <= 0) {
+            showToast('خطا', 'برای محاسبه دوز وزنی، وزن بیمار را وارد کنید', 'error');
+            DOM.patientWeight?.focus();
+            return;
+        }
+    }
+    let derivedDose;
+    try {
+        derivedDose = window.FoxiCalcCore.reverseInfusionDose({
+            pumpRate: pumpRateVal,
+            totalDrug,
+            solutionVolume: AppState.solutionVolume,
+            drugUnit: ampoule.unit,
+            doseUnit: unit,
+            weight
+        });
+    } catch (error) {
+        showToast('خطا', 'واحدهای دارو برای محاسبه معکوس سازگار نیستند', 'error');
+        return;
+    }
     const duration = AppState.solutionVolume / pumpRateVal;
     displayResultsReverse(totalDrug, concentration, pumpRateVal, derivedDose, duration, ampoule.unit, unit);
     generateStepByStepGuide(drug, totalDrug, concentration, pumpRateVal, derivedDose);
@@ -2845,7 +3550,6 @@ function measureTabBarHeight() {
     const rect = tabBar.getBoundingClientRect();
     const height = rect.height;
     if (height > 20) {
-        // Set directly on the element — bypasses any env() first-render issue
         mainContent.style.bottom = height + 'px';
         document.documentElement.style.setProperty('--tab-bar-height', height + 'px');
         return true;
@@ -2866,8 +3570,6 @@ function setupTabBarMeasurement() {
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden) setTimeout(measureTabBarHeight, 200);
     });
-    // visualViewport fires when iOS finishes calculating safe area insets
-    // This is the key fix for the first-load gap on iOS PWA
     if (window.visualViewport) {
         window.visualViewport.addEventListener('resize', measureTabBarHeight);
     }
@@ -2899,12 +3601,12 @@ function setupOfflineIndicator() {
     window.addEventListener('online', update);
     if (!navigator.onLine) update();
 }
+
 // ============================================
 // SWIPE GESTURE FOR TAB SWITCHING (Mobile)
 // ============================================
-
 function initSwipe() {
-    if (window.innerWidth > 768) return; // desktop only
+    if (window.innerWidth > 768) return;
     const container = document.querySelector('.main-content');
     if (!container) return;
 
@@ -2912,13 +3614,11 @@ function initSwipe() {
     let touchStartY = 0;
     let touchEndX = 0;
     let touchEndY = 0;
-    let swipeLocked = false; // true when touch started inside a h-scrollable element
+    let swipeLocked = false;
     const minHorizontalDistance = 80;
     const maxVerticalDistance = 50;
 
     function isInsideHScrollable(el) {
-        // Walk up the DOM — if any ancestor (before .main-content) is
-        // horizontally scrollable and actually has overflow to scroll, lock swipe.
         while (el && el !== container) {
             const style = window.getComputedStyle(el);
             const overflowX = style.overflowX;
@@ -2936,34 +3636,28 @@ function initSwipe() {
     }, { passive: true });
 
     container.addEventListener('touchend', (e) => {
-        if (swipeLocked) return; // touch started in drug list or similar — ignore
-
+        if (swipeLocked) return;
         touchEndX = e.changedTouches[0].screenX;
         touchEndY = e.changedTouches[0].screenY;
-
         const diffX = Math.abs(touchEndX - touchStartX);
         const diffY = Math.abs(touchEndY - touchStartY);
-
         if (diffX < minHorizontalDistance || diffY > diffX) return;
-
         const direction = (touchEndX - touchStartX) > 0 ? 'right' : 'left';
-        const tabs = ['calculator', 'drugs', 'tools'];
+        const tabs = ['calculator', 'drugs', 'tools', 'voice'];
         const current = AppState.currentTab;
         let newIndex = tabs.indexOf(current);
-
         if (direction === 'right') {
             newIndex = (newIndex - 1 + tabs.length) % tabs.length;
         } else {
             newIndex = (newIndex + 1) % tabs.length;
         }
-
         if (newIndex !== tabs.indexOf(current)) {
             switchTab(tabs[newIndex]);
             haptic(20);
         }
     }, { passive: true });
 }
-// ============================================
+
 // ============================================
 // REVERSE TOOLTIP
 // ============================================
@@ -2989,6 +3683,9 @@ function setupOnboarding() {
     const overlay = document.getElementById('onboardingOverlay');
     if (!overlay) return;
 
+    const tutorialBox = overlay.querySelector('.tutorial-box');
+    const spotlight = document.getElementById('tutorialSpotlight');
+    const coachArrow = document.getElementById('tutorialCoachArrow');
     const slidesContainer = document.getElementById('tutorialSlides');
     const dotsContainer = document.getElementById('tutorialDots');
     const nextBtn = document.getElementById('tutorialNextBtn');
@@ -2997,8 +3694,8 @@ function setupOnboarding() {
 
     const slides = slidesContainer ? Array.from(slidesContainer.querySelectorAll('.tutorial-slide')) : [];
     let current = 0;
+    let returnTab = 'calculator';
 
-    // Build dots
     if (dotsContainer && slides.length) {
         slides.forEach((_, i) => {
             const dot = document.createElement('span');
@@ -3015,11 +3712,96 @@ function setupOnboarding() {
         });
     }
 
-    function goTo(idx) {
+    // Preview a tour tab without calling switchTab(). Entering the voice tab
+    // normally starts the offline model preload; a visual tutorial must not
+    // download ~55 MB merely because the user advanced to a coach mark.
+    function showTourTab(tabName) {
+        if (!tabName) return;
+        document.querySelectorAll('.tab-item').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.tab === tabName);
+        });
+        document.querySelectorAll('.tab-pane').forEach(pane => {
+            const active = pane.id === tabName + 'Tab';
+            pane.classList.toggle('active', active);
+            pane.style.display = active ? 'block' : 'none';
+        });
+    }
+
+    function resetCoachPosition() {
+        overlay.classList.remove('is-coachmark', 'arrow-up', 'arrow-down');
+        if (spotlight) spotlight.removeAttribute('style');
+        if (coachArrow) {
+            coachArrow.removeAttribute('style');
+            coachArrow.classList.remove('arrow-up', 'arrow-down');
+        }
+        if (tutorialBox) {
+            tutorialBox.style.removeProperty('top');
+            tutorialBox.style.removeProperty('left');
+            tutorialBox.style.removeProperty('transform');
+        }
+    }
+
+    function positionCoachMark() {
+        if (!tutorialBox || !slides[current]) return;
+        const selector = slides[current].dataset.tourTarget;
+        const target = selector ? document.querySelector(selector) : null;
+        if (!target) {
+            resetCoachPosition();
+            return;
+        }
+
+        const rect = target.getBoundingClientRect();
+        if (!rect.width || !rect.height) {
+            resetCoachPosition();
+            return;
+        }
+
+        overlay.classList.add('is-coachmark');
+        const pad = 8;
+        const spotLeft = Math.max(5, rect.left - pad);
+        const spotTop = Math.max(5, rect.top - pad);
+        const spotRight = Math.min(window.innerWidth - 5, rect.right + pad);
+        const spotBottom = Math.min(window.innerHeight - 5, rect.bottom + pad);
+        if (spotlight) {
+            spotlight.style.left = spotLeft + 'px';
+            spotlight.style.top = spotTop + 'px';
+            spotlight.style.width = Math.max(24, spotRight - spotLeft) + 'px';
+            spotlight.style.height = Math.max(24, spotBottom - spotTop) + 'px';
+            spotlight.style.borderRadius = Math.min(20, Math.max(10, rect.height * 0.22)) + 'px';
+        }
+
+        tutorialBox.style.transform = 'none';
+        requestAnimationFrame(() => {
+            const cardWidth = tutorialBox.offsetWidth;
+            const cardHeight = tutorialBox.offsetHeight;
+            const gap = 22;
+            const margin = 12;
+            const roomAbove = rect.top - gap - margin;
+            const roomBelow = window.innerHeight - rect.bottom - gap - margin;
+            const placeBelow = roomBelow >= cardHeight || roomBelow > roomAbove;
+            let top = placeBelow ? rect.bottom + gap : rect.top - cardHeight - gap;
+            top = Math.max(margin, Math.min(window.innerHeight - cardHeight - margin, top));
+            let left = rect.left + rect.width / 2 - cardWidth / 2;
+            left = Math.max(margin, Math.min(window.innerWidth - cardWidth - margin, left));
+            tutorialBox.style.top = top + 'px';
+            tutorialBox.style.left = left + 'px';
+
+            if (coachArrow) {
+                const arrowX = Math.max(left + 24, Math.min(left + cardWidth - 24, rect.left + rect.width / 2));
+                coachArrow.classList.toggle('arrow-up', placeBelow);
+                coachArrow.classList.toggle('arrow-down', !placeBelow);
+                coachArrow.style.left = arrowX + 'px';
+                coachArrow.style.top = (placeBelow ? top - 13 : top + cardHeight + 13) + 'px';
+            }
+        });
+    }
+
+    function goTo(idx, withHaptic = true) {
         if (!slides.length) return;
         slides[current].classList.remove('active');
         current = Math.max(0, Math.min(idx, slides.length - 1));
         slides[current].classList.add('active');
+        showTourTab(slides[current].dataset.tourTab || returnTab);
         updateDots();
         const isLast = current === slides.length - 1;
         if (nextBtn) {
@@ -3027,14 +3809,25 @@ function setupOnboarding() {
                 ? '<i class="fas fa-check"></i> <span>شروع</span>'
                 : '<span>بعدی</span> <i class="fas fa-arrow-left"></i>';
         }
-        haptic(15);
+        requestAnimationFrame(() => requestAnimationFrame(positionCoachMark));
+        if (withHaptic) haptic(15);
     }
 
     function closeTutorial() {
+        resetCoachPosition();
+        showTourTab(returnTab);
         overlay.classList.remove('visible');
         setTimeout(() => { overlay.style.display = 'none'; }, 400);
         if (dontShowChk && dontShowChk.checked) localStorage.setItem('onboardingSeen', 'true');
     }
+
+    function openTutorial() {
+        returnTab = (typeof AppState !== 'undefined' && AppState.currentTab) || 'calculator';
+        overlay.style.display = 'flex';
+        goTo(0, false);
+        requestAnimationFrame(() => overlay.classList.add('visible'));
+    }
+    overlay._openTutorial = openTutorial;
 
     if (nextBtn) nextBtn.addEventListener('click', () => {
         if (current < slides.length - 1) goTo(current + 1);
@@ -3042,8 +3835,8 @@ function setupOnboarding() {
     });
     if (skipBtn) skipBtn.addEventListener('click', () => { closeTutorial(); });
     overlay.querySelector('.onboarding-backdrop')?.addEventListener('click', closeTutorial);
+    window.addEventListener('resize', positionCoachMark, { passive: true });
 
-    // Touch swipe support on slides
     let touchStartX = 0;
     if (slidesContainer) {
         slidesContainer.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
@@ -3053,19 +3846,13 @@ function setupOnboarding() {
         }, { passive: true });
     }
 
-    // Show if not seen before
     const seen = localStorage.getItem('onboardingSeen');
     if (!seen) {
-        setTimeout(() => {
-            overlay.style.display = 'flex';
-            requestAnimationFrame(() => overlay.classList.add('visible'));
-        }, 3500); // after loading screen and greeting
+        setTimeout(openTutorial, 3500);
     }
 }
 
-// Expose tutorial for settings "show again" button
 window.showTutorial = function() {
-    // Close settings modal first if open
     const settingsModal = document.getElementById('settingsModal');
     if (settingsModal && settingsModal.classList.contains('active')) {
         settingsModal.classList.remove('active');
@@ -3073,15 +3860,7 @@ window.showTutorial = function() {
     }
     const overlay = document.getElementById('onboardingOverlay');
     if (!overlay) return;
-    // Reset to slide 1
-    const slides = overlay.querySelectorAll('.tutorial-slide');
-    slides.forEach((s, i) => s.classList.toggle('active', i === 0));
-    const dots = overlay.querySelectorAll('.tutorial-dot');
-    dots.forEach((d, i) => d.classList.toggle('active', i === 0));
-    const nextBtn = document.getElementById('tutorialNextBtn');
-    if (nextBtn) nextBtn.innerHTML = '<span>بعدی</span> <i class="fas fa-arrow-left"></i>';
-    overlay.style.display = 'flex';
-    requestAnimationFrame(() => overlay.classList.add('visible'));
+    if (typeof overlay._openTutorial === 'function') overlay._openTutorial();
 };
 
 // ============================================
@@ -3238,6 +4017,22 @@ const THEMES = {
             '--gradient-primary': 'linear-gradient(135deg,#4ade80 0%,#2dd4bf 100%)',
             '--secondary':        '#86efac',
         }
+    },
+    dreamfire: {
+        light: {
+            '--primary':          '#9f1239',
+            '--primary-dark':     '#7f0f2e',
+            '--primary-light':    'rgba(159,18,57,0.1)',
+            '--gradient-primary': 'linear-gradient(135deg,#be123c 0%,#4c0519 100%)',
+            '--secondary':        '#d4af7a',
+        },
+        dark: {
+            '--primary':          '#e0447e',
+            '--primary-dark':     '#c2255f',
+            '--primary-light':    'rgba(224,68,126,0.15)',
+            '--gradient-primary': 'linear-gradient(135deg,#e0447e 0%,#7c2d5e 100%)',
+            '--secondary':        '#e8c98a',
+        }
     }
 };
 
@@ -3275,7 +4070,6 @@ function setupThemePicker() {
 // ============================================
 // ACCORDION
 // ============================================
-// Floating accordion close bar — appears at top when user scrolls past header
 let _accordionFloatBar = null;
 let _accordionScrollHandler = null;
 
@@ -3290,8 +4084,6 @@ function removeAccordionFloatBar() {
 
 function addAccordionFloatBar(item, headerBtn) {
     removeAccordionFloatBar();
-
-    // Get title from the header
     const titleEl = headerBtn.querySelector('.accordion-title');
     const iconEl  = headerBtn.querySelector('.accordion-icon-wrap i');
     const title   = titleEl ? titleEl.textContent : 'بستن';
@@ -3312,11 +4104,9 @@ function addAccordionFloatBar(item, headerBtn) {
     document.body.appendChild(bar);
     _accordionFloatBar = bar;
 
-    // Show/hide based on whether header is out of view
     const pane = document.querySelector('.tab-pane.active') || window;
     _accordionScrollHandler = () => {
         const headerRect = headerBtn.getBoundingClientRect();
-        // Header scrolled above visible area
         if (headerRect.bottom < 60) {
             bar.classList.add('visible');
         } else {
@@ -3332,7 +4122,6 @@ function toggleAccordion(headerBtn) {
     const chevron = headerBtn.querySelector('.accordion-chevron');
     const isOpen = item.classList.contains('open');
 
-    // Close any other open accordion
     document.querySelectorAll('.accordion-item.open').forEach(openItem => {
         if (openItem !== item) {
             openItem.classList.remove('open');
@@ -3361,7 +4150,6 @@ function toggleAccordion(headerBtn) {
     }
 }
 
-// Android back button
 window.addEventListener('popstate', () => {
     const openItem = document.querySelector('.accordion-item.open');
     if (openItem) {
@@ -3722,8 +4510,8 @@ window.updateDoseRangeIndicator = updateDoseRangeIndicator;
 function getGreeting() {
     const h   = new Date().getHours();
     const raw = (localStorage.getItem('userName') || '').trim();
-    const n   = raw ? '\u2066' + raw + '\u2069' : '';   // LTR-isolated name
-    const app = '\u2066FoxiMed\u2069';                   // LTR-isolated app name
+    const n   = raw ? '\u2066' + raw + '\u2069' : '';
+    const app = '\u2066FoxiMed\u2069';
 
     const morning = n ? [
         `صبح بخیر ${n} عزیز 🌅`,
@@ -3816,7 +4604,6 @@ function showGreetingBanner() {
     banner.classList.remove('banner-hiding');
     banner.classList.add('banner-visible');
 
-    // Auto-dismiss after 4.5 s
     let autoDismiss = setTimeout(dismissBanner, 4500);
 
     function dismissBanner() {
@@ -3828,16 +4615,43 @@ function showGreetingBanner() {
     closeBtn.addEventListener('click', dismissBanner);
 }
 
+function normalizePersonalName(name) {
+    const firstPart = String(name || '').trim().split(/\s+/)[0] || '';
+    return firstPart
+        .normalize('NFKD')
+        .toLowerCase()
+        .replace(/[\u0300-\u036f\u064b-\u065f\u0670]/g, '')
+        .replace(/[يى]/g, 'ی')
+        .replace(/[ۀة]/g, 'ه')
+        .replace(/[^a-z\u0600-\u06ff]/g, '');
+}
+
+function isHediyehName(name) {
+    const normalized = normalizePersonalName(name);
+    return /^(?:هدیه|هدی|هدو)$/.test(normalized) ||
+        /^(?:hedi(?:e|eh|ye|yeh)?|hedy(?:e|eh)?|hedo{1,2}|hdo)$/.test(normalized);
+}
+
+function saveUserNameValue(name) {
+    const cleanName = String(name || '').trim().slice(0, 30);
+    if (!cleanName) return false;
+    localStorage.setItem('userName', cleanName);
+    localStorage.setItem(USER_NAME_CAPTURE_VERSION_KEY, USER_NAME_CAPTURE_VERSION);
+    window.dispatchEvent(new CustomEvent('foximed:user-name-changed', { detail: { name: cleanName } }));
+    if (isHediyehName(cleanName)) {
+        showToast('خوش اومدی', 'ممنونم، چه اسم قشنگی، مطمئنم خودتم مثل اسمت جذابی!', 'success');
+    }
+    return true;
+}
+
 function setupUserName() {
     const input   = document.getElementById('userNameInput');
     const saveBtn = document.getElementById('userNameSaveBtn');
     const hint    = document.getElementById('userNameHint');
     if (!input || !saveBtn) return;
 
-    // Get stored name
     let storedName = localStorage.getItem('userName') || '';
 
-    // Helper: update button active state based on current input vs stored name
     function updateButtonState() {
         const currentValue = input.value.trim();
         const isValid = currentValue !== '' && currentValue !== storedName;
@@ -3848,14 +4662,11 @@ function setupUserName() {
         }
     }
 
-    // Helper: save name (only if button is active)
     function saveName() {
-        if (!saveBtn.classList.contains('active')) return; // prevent saving empty/duplicate
-
+        if (!saveBtn.classList.contains('active')) return;
         const newName = input.value.trim();
-        localStorage.setItem('userName', newName);
-        storedName = newName;   // update internal stored reference
-
+        saveUserNameValue(newName);
+        storedName = newName;
         if (hint) {
             hint.textContent = newName ? `نام ذخیره شد: ${newName}` : 'نامی ذخیره نشده';
             hint.classList.add('hint-saved');
@@ -3864,24 +4675,14 @@ function setupUserName() {
                 hint.classList.remove('hint-saved');
             }, 2000);
         }
-
-        // After saving, button should become inactive (no pending change)
         updateButtonState();
     }
 
-    // Set initial value
     input.value = storedName;
-
-    // Initial button state
     updateButtonState();
 
-    // Event: input changes
     input.addEventListener('input', updateButtonState);
-
-    // Event: save button click
     saveBtn.addEventListener('click', saveName);
-
-    // Event: Enter key in input field
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -3891,6 +4692,64 @@ function setupUserName() {
             }
         }
     });
+
+    window.addEventListener('foximed:user-name-changed', (event) => {
+        storedName = event.detail && event.detail.name ? event.detail.name : '';
+        input.value = storedName;
+        updateButtonState();
+    });
+}
+
+// Version 5 requires one fresh, explicit name entry from everyone, including
+// people whose name was stored by an earlier version. The prompt stays out of
+// the way of onboarding and other modals, but it has no skip path and returns
+// on later launches until a name is saved.
+function setupNamePrompt() {
+    const captureComplete = () =>
+        localStorage.getItem(USER_NAME_CAPTURE_VERSION_KEY) === USER_NAME_CAPTURE_VERSION &&
+        !!(localStorage.getItem('userName') || '').trim();
+    if (captureComplete()) return;
+
+    const prompt = document.getElementById('namePrompt');
+    const input = document.getElementById('namePromptInput');
+    const save = document.getElementById('namePromptSave');
+    if (!prompt || !input || !save) return;
+
+    function anotherOverlayIsOpen() {
+        const onboarding = document.getElementById('onboardingOverlay');
+        if (onboarding && (onboarding.classList.contains('visible') || onboarding.style.display === 'flex')) return true;
+        return !!document.querySelector('.modal.active, .reverse-tooltip-overlay.visible');
+    }
+    function revealWhenClear() {
+        if (captureComplete()) return;
+        if (anotherOverlayIsOpen()) {
+            setTimeout(revealWhenClear, 1200);
+            return;
+        }
+        prompt.hidden = false;
+        requestAnimationFrame(() => prompt.classList.add('is-visible'));
+    }
+    setTimeout(revealWhenClear, 1800);
+
+    function closePrompt() {
+        prompt.classList.remove('is-visible');
+        setTimeout(() => { prompt.hidden = true; }, 230);
+    }
+    function saveFromPrompt() {
+        const name = input.value.trim();
+        if (!name || !saveUserNameValue(name)) return;
+        closePrompt();
+        haptic(20);
+    }
+
+    input.addEventListener('input', () => { save.disabled = !input.value.trim(); });
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && input.value.trim()) {
+            event.preventDefault();
+            saveFromPrompt();
+        }
+    });
+    save.addEventListener('click', saveFromPrompt);
 }
 
 // ============================================
@@ -3917,31 +4776,20 @@ function setupHelpPopovers() {
         const key = btn.dataset.help;
         const text = HELP_TEXTS[key];
         if (!text) return;
-
-        // Set text (support \n as line breaks)
         popoverText.innerHTML = text.replace(/\n/g, '<br>');
-
-        // Position: below the button
         popover.style.display = 'block';
         const btnRect = btn.getBoundingClientRect();
         const popRect = popover.getBoundingClientRect();
         const scrollY = window.scrollY || 0;
-
         let top = btnRect.bottom + scrollY + 8;
         let left = btnRect.left - popRect.width / 2 + btnRect.width / 2;
-
-        // Clamp to screen edges
         const margin = 12;
         left = Math.max(margin, Math.min(left, window.innerWidth - popRect.width - margin));
-
         popover.style.top = top + 'px';
         popover.style.left = left + 'px';
-
-        // Arrow horizontal position relative to popover
         const arrowLeft = (btnRect.left + btnRect.width / 2) - left;
         popover.querySelector('.help-popover-arrow').style.right = 'auto';
         popover.querySelector('.help-popover-arrow').style.left = Math.max(12, arrowLeft) + 'px';
-
         activeBtn = btn;
         btn.classList.add('active');
     }
@@ -3951,7 +4799,6 @@ function setupHelpPopovers() {
         if (activeBtn) { activeBtn.classList.remove('active'); activeBtn = null; }
     }
 
-    // Delegate — works for dynamically added buttons too
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.help-icon');
         if (btn) {
@@ -3963,7 +4810,6 @@ function setupHelpPopovers() {
         if (!popover.contains(e.target)) hidePopover();
     });
 
-    // Close on scroll or resize
     document.addEventListener('scroll', hidePopover, { passive: true });
     window.addEventListener('resize', hidePopover, { passive: true });
 }
@@ -4195,7 +5041,6 @@ function setupOxygenCalculator() {
             fixVolumeButtonColors();
         });
     });
-    // Wire Persian input normalization
     ['oxyCylinderSize','oxyPressure','oxyFlow'].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
@@ -4204,7 +5049,6 @@ function setupOxygenCalculator() {
             if (normalized !== this.value) this.value = normalized;
         });
     });
-    // Set default size
     if (sizeInput) sizeInput.value = '5';
 }
 
@@ -4218,10 +5062,7 @@ window.calculateOxygen = function() {
     if (!pressure     || isNaN(pressure)     || pressure <= 0)     { showToast('خطا', 'فشار کپسول را وارد کنید', 'error'); return; }
     if (!flow         || isNaN(flow)         || flow <= 0)         { showToast('خطا', 'جریان اکسیژن را وارد کنید', 'error'); return; }
 
-    // Total gas volume = cylinder volume (L) × pressure (bar)
-    // 1 bar ≈ 1 atm for practical purposes; at atmospheric pressure (1 bar) the gas expands to pressure × size liters
     const totalVolume = cylinderSize * pressure;
-    // Apply 10% safety reserve — don't use the last 10%
     const usableVolume = totalVolume * 0.9;
     const durationMinutes = usableVolume / flow;
     const hours = Math.floor(durationMinutes / 60);
@@ -4619,6 +5460,7 @@ function renderMatrix(selected) {
         <span class="ysite-legend-item ysite-verify">🟡 محدود / متناقض</span>
         <span class="ysite-legend-item ysite-unk">⚪ بدون داده</span>
     </div>`;
+    html += '<div class="ysite-clinical-note"><i class="fas fa-triangle-exclamation"></i><span>سازگاری به غلظت، حلال، فرمولاسیون و زمان تماس وابسته است؛ پیش از تزریق با منبع دارویی به‌روز بیمارستان یا داروساز بررسی کنید.</span></div>';
 
     matrix.innerHTML = html;
     haptic(15);
@@ -4627,20 +5469,16 @@ function renderMatrix(selected) {
     setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 }
 
-// setupYSiteChecker wired in initializeApp
-
 // ============================================
 // VENTILATOR TIDAL VOLUME CALCULATOR
 // ============================================
 function setupVentilatorCalc() {
-    // Gender buttons
     const genderBtns = document.querySelectorAll('#ventGenderBtns .method-btn-compact');
     genderBtns.forEach(btn => btn.addEventListener('click', function() {
         genderBtns.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
     }));
 
-    // Method tabs
     const tabs = document.querySelectorAll('#ventMethodTabs .vent-tab');
     tabs.forEach(tab => tab.addEventListener('click', function() {
         tabs.forEach(t => t.classList.remove('active'));
@@ -4666,18 +5504,13 @@ window.calculateVentTV = function() {
         if (!heightCm || isNaN(heightCm) || heightCm < 100 || heightCm > 230) {
             showToast('خطا', 'قد را به درستی وارد کنید (100–230 cm)', 'error'); return;
         }
-
     } else if (method === 'ulna') {
         const ulna = PersianNumbers.parseNumber(document.getElementById('ventUlna')?.value);
         if (!ulna || isNaN(ulna)) { showToast('خطا', 'طول اولنا را وارد کنید', 'error'); return; }
-        // Kwok & Whitelaw formula (PMID 1574843)
-        // Male:   height = 3.294 * ulna + 82.7
-        // Female: height = 3.316 * ulna + 81.3  (simplified)
         heightCm = gender === 'male' ? (3.294 * ulna + 82.7) : (3.316 * ulna + 81.3);
         estimationNote = `قد تخمینی از طول اولنا (${ulna} cm): <strong>${heightCm.toFixed(1)} cm</strong>`;
     }
 
-    // PBW (Predicted Body Weight) — ARDSNet formula
     const heightInch = heightCm / 2.54;
     const pbw = gender === 'male'
         ? 50 + 2.3 * (heightInch - 60)
@@ -4685,7 +5518,6 @@ window.calculateVentTV = function() {
 
     if (pbw < 20) { showToast('خطا', 'قد وارد شده خیلی کوتاه است', 'error'); return; }
 
-    // TV at different mL/kg
     const tv4  = pbw * 4;
     const tv6  = pbw * 6;
     const tv7  = pbw * 7;
@@ -4746,7 +5578,6 @@ window.calculateNutrition = function() {
     if (!height || isNaN(height) || height < 100) { showToast('خطا', 'قد را وارد کنید', 'error'); return; }
     if (!age    || isNaN(age)    || age < 1)      { showToast('خطا', 'سن را وارد کنید', 'error'); return; }
 
-    // Harris-Benedict BMR
     let bmr_hb, bmr_ms;
     if (gender === 'male') {
         bmr_hb = 66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age);
@@ -4756,13 +5587,9 @@ window.calculateNutrition = function() {
         bmr_ms = 10 * weight + 6.25 * height - 5 * age - 161;
     }
 
-    // TEE (Total Energy Expenditure) with stress factor
-    // ICU patients typically sedentary activity factor = 1.0-1.1
     const activityFactor = 1.05;
-    const tee_hb = Math.round(bmr_hb * activityFactor * stress);
     const tee_ms = Math.round(bmr_ms * activityFactor * stress);
 
-    // Protein requirements by condition
     let proteinMin, proteinMax, proteinNote;
     if (stress <= 1.1) {
         proteinMin = 0.8; proteinMax = 1.0;
@@ -4783,16 +5610,10 @@ window.calculateNutrition = function() {
     const protMinKcal = Math.round(protMinG * 4);
     const protMaxKcal = Math.round(protMaxG * 4);
 
-    // Non-protein calories
     const npcMin = tee_ms - protMaxKcal;
-    const npcMax = tee_ms - protMinKcal;
-
-    // Enteral rate suggestion (assuming 1 kcal/mL standard formula)
     const enteralRateMin = Math.round(npcMin / 24);
     const enteralRateMax = Math.round(tee_ms / 24);
-
-    // Fluid from enteral feeding
-    const fluidFromFeed = Math.round(enteralRateMax * 0.85); // ~85% of volume is free water
+    const fluidFromFeed = Math.round(enteralRateMax * 0.85);
 
     resultDiv.innerHTML = `
         <div class="nut-section">
@@ -4820,7 +5641,6 @@ window.calculateNutrition = function() {
     setTimeout(() => resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 };
 
-// Gender buttons for nutrition
 (function setupNutritionGender() {
     document.addEventListener('DOMContentLoaded', () => {
         const genderBtns = document.querySelectorAll('#nutGenderBtns .method-btn-compact');
@@ -5206,4 +6026,3 @@ window.interpretVBG = function() {
     haptic(40);
     setTimeout(() => resultEl.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);
 };
-

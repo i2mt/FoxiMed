@@ -10,9 +10,10 @@
     <meta charset="UTF-8">
     <meta name="author" content="Mohammad Mahdi Taghavi">
     <meta name="copyright" content="© 2025 Mohammad Mahdi Taghavi. CC BY-NC 4.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#0f172a" id="themeColorMeta">
     <title>FoxiMed | دستیار محاسبات بالینی</title>
     <meta name="description" content="دستیار هوشمند پرستاری — FoxiMed">
@@ -25,32 +26,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=43">
+    <link rel="stylesheet" href="voice-assistant.css?v=43">
 </head>
 <body>
 
     <!-- Loading Screen -->
     <div id="loadingScreen" class="loading-screen">
         <div class="loading-content">
-            <div class="loading-logo">
-                <img src="icons/icon-192.png" alt="FoxiMed" class="loading-logo-img" onerror="this.style.display='none';document.querySelector('.loading-logo-icon').style.display='flex'">
-                <div class="loading-logo-icon" style="display:none;"><i class="fas fa-syringe"></i></div>
+            <div class="loading-fox" id="loadingFox" aria-hidden="true">
+                <span class="loading-fox-base"></span>
+                <span class="loading-fox-fill"></span>
             </div>
-            <div class="loading-app-name">FoxiMed</div>
-            <div class="loading-tagline">محاسبه‌گر هوشمند</div>
+            <div class="loading-app-name"><span>Foxi</span><strong>Med</strong></div>
+            <div class="loading-tagline">همراه بالینی پرستار</div>
             <div class="loading-bar-wrap">
                 <div class="loading-bar" id="loadingBar"></div>
             </div>
             <div class="loading-status" id="loadingStatus">در حال بارگذاری پایگاه داده دارویی...</div>
-            <div class="loading-tips" id="loadingTips">
-                <div class="loading-tip active">💊 محاسبه دقیق دوز برای داروهای رایج </div>
-                <div class="loading-tip">🧠 ارزیابی بیمار: GCS و درصد سطح سوختگی</div>
-                <div class="loading-tip">📐 ابزارهای بالینی: BMI، BSA، CrCl و مبدل‌های واحد</div>
-                <div class="loading-tip">🔒 کاملاً آفلاین — بدون نیاز به اینترنت</div>
+            <div class="loading-meta">
+                <span>نسخه 5.1.0</span>
+                <span class="loading-meta-dot" aria-hidden="true"></span>
+                <span>آماده برای کار آفلاین</span>
             </div>
-            <div class="loading-version">نسخه 4.2.8</div>
             <div class="loading-credit">
-                <i class="fas fa-code"></i>
                 <span>Designed &amp; developed by</span>
                 <strong>Mohammad Mahdi Taghavi</strong>
             </div>
@@ -102,7 +101,7 @@
     <header class="app-header">
         <div class="header-content">
             <div class="logo-section">
-                <div class="logo"><i class="fas fa-syringe"></i></div>
+                <div class="logo" aria-hidden="true"><span class="header-fox-mark"></span></div>
                 <div class="logo-text">
                     <h1>FoxiMed</h1>
                     <p>ابزار هوشمند پرستاری</p>
@@ -118,6 +117,10 @@
                 <button class="icon-btn" id="settingsBtn" title="تنظیمات">
                     <i class="fas fa-cog"></i>
                 </button>
+                <div class="voice-indicator" id="voiceIndicator" style="display:none;">
+                    <span class="voice-dot"></span>
+                    <span class="voice-label">ضبط</span>
+                </div>
             </div>
         </div>
     </header>
@@ -127,6 +130,19 @@
         <span class="greeting-text" id="greetingText"></span>
         <button class="greeting-close" id="greetingClose" aria-label="بستن"><i class="fas fa-times"></i></button>
     </div>
+
+    <!-- A compact, non-modal profile invitation. It is fixed above the page,
+         so showing it never changes the calculator's height or alignment. -->
+    <aside class="name-prompt" id="namePrompt" hidden aria-labelledby="namePromptTitle">
+        <div class="name-prompt-copy">
+            <strong id="namePromptTitle"><i class="fas fa-user-nurse" aria-hidden="true"></i> لطفاً نامتان را دوباره وارد کنید</strong>
+            <span>برای شخصی‌سازی نسخهٔ ۵ لازم است؛ نام فقط روی همین دستگاه ذخیره می‌شود.</span>
+        </div>
+        <div class="name-prompt-input-row">
+            <input type="text" id="namePromptInput" maxlength="30" autocomplete="name" placeholder="نام شما">
+            <button type="button" class="name-prompt-save" id="namePromptSave" disabled>ذخیره</button>
+        </div>
+    </aside>
 
     <!-- Main App Container -->
     <div class="app-container">
@@ -395,6 +411,12 @@
             <!-- Unified Tools + Converters Tab -->
             <div class="tab-pane" id="toolsTab">
                 <div class="tools-container">
+                    <div class="tools-search" role="search">
+                        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="toolsSearch" placeholder="جستجوی ابزار؛ مثلاً برادن یا فشار" autocomplete="off" aria-label="جستجوی ابزارهای بالینی">
+                        <button type="button" id="toolsSearchClear" class="tools-search-clear" aria-label="پاک کردن جستجو" hidden><i class="fas fa-xmark"></i></button>
+                    </div>
+                    <p class="tools-search-empty" id="toolsSearchEmpty" hidden>ابزاری با این عبارت پیدا نشد.</p>
 
                     <!-- Section 1: Patient Assessment -->
                     <div class="accordion-section">
@@ -403,7 +425,7 @@
                             <span>ارزیابی بیمار</span>
                         </div>
                         <div class="accordion-list">
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="gcsAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><i class="fas fa-brain"></i></div>
                                 <div class="accordion-title-wrap">
@@ -481,7 +503,7 @@
                         </div>
 
                         <!-- RASS -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="rassAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"><i class="fas fa-bed-pulse"></i></div>
                                 <div class="accordion-title-wrap">
@@ -575,7 +597,7 @@
                         </div>
 
                         <!-- Braden Scale -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="bradenAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#10b981,#0d9488)"><i class="fas fa-shield-heart"></i></div>
                                 <div class="accordion-title-wrap">
@@ -693,7 +715,7 @@
                         </div>
 
                         <!-- Morse Fall Scale -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="morseAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fas fa-person-falling"></i></div>
                                 <div class="accordion-title-wrap">
@@ -802,7 +824,7 @@
                         </div>
 
                         <!-- Oxygen Cylinder Calculator -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="oxygenAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#0ea5e9,#38bdf8)"><i class="fas fa-lungs"></i></div>
                                 <div class="accordion-title-wrap">
@@ -823,6 +845,14 @@
                                                         <input type="text" inputmode="decimal" id="oxyCylinderSize" class="oxy-input" placeholder="۱۰">
                                                         <span class="oxy-unit">لیتر</span>
                                                     </div>
+                                                </div>
+                                                <!-- Cylinder size quick picks — right under the volume field they set -->
+                                                <div class="manual-volume-presets" id="oxySizePresets" style="padding:0 14px 10px; margin-top:2px;">
+                                                    <button class="volume-preset-btn" data-oxysize="2"><span class="number">2</span><span class="unit-text">L</span></button>
+                                                    <button class="volume-preset-btn active" data-oxysize="5"><span class="number">5</span><span class="unit-text">L</span></button>
+                                                    <button class="volume-preset-btn" data-oxysize="10"><span class="number">10</span><span class="unit-text">L</span></button>
+                                                    <button class="volume-preset-btn" data-oxysize="20"><span class="number">20</span><span class="unit-text">L</span></button>
+                                                    <button class="volume-preset-btn" data-oxysize="40"><span class="number">40</span><span class="unit-text">L</span></button>
                                                 </div>
                                             </div>
                                             <div class="calc-toggle-item">
@@ -845,17 +875,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Cylinder size quick picks -->
-                                    <div class="control-group" style="margin-top:6px;">
-                                        <label><i class="fas fa-cylinder"></i> سایز کپسول متداول</label>
-                                        <div class="manual-volume-presets" id="oxySizePresets">
-                                            <button class="volume-preset-btn" data-oxysize="2"><span class="number">2</span><span class="unit-text">L</span></button>
-                                            <button class="volume-preset-btn active" data-oxysize="5"><span class="number">5</span><span class="unit-text">L</span></button>
-                                            <button class="volume-preset-btn" data-oxysize="10"><span class="number">10</span><span class="unit-text">L</span></button>
-                                            <button class="volume-preset-btn" data-oxysize="20"><span class="number">20</span><span class="unit-text">L</span></button>
-                                            <button class="volume-preset-btn" data-oxysize="40"><span class="number">40</span><span class="unit-text">L</span></button>
-                                        </div>
-                                    </div>
                                     <button class="calculate-btn-enhanced gradient" onclick="calculateOxygen()">
                                         <i class="fas fa-calculator"></i><span>محاسبه</span>
                                     </button>
@@ -874,7 +893,7 @@
                         </div>
 
                         <!-- Burns TBSA -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="burnsAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f97316,#ef4444)"><i class="fas fa-fire"></i></div>
                                 <div class="accordion-title-wrap">
@@ -971,7 +990,7 @@
                         </div>
                         <div class="accordion-list">
                             <!-- BMI -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="bmiAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#667eea,#764ba2)"><i class="fas fa-weight-scale"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1003,7 +1022,7 @@
                             </div>
 
                             <!-- Y-Site Compatibility Matrix -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="ysiteAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)"><i class="fas fa-vials"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1027,7 +1046,7 @@
 
 
                             <!-- BSA -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="bsaAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><i class="fas fa-ruler-combined"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1067,7 +1086,7 @@
                             </div>
 
                             <!-- IBW -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="ibwAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#43e97b,#38f9d7)"><i class="fas fa-person"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1107,7 +1126,7 @@
                             </div>
 
                             <!-- Ventilator Tidal Volume -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="ventilatorAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#0ea5e9,#22d3ee)"><i class="fas fa-lungs-virus"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1177,7 +1196,7 @@
                             </div>
 
                             <!-- Nutritional Calculator -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="nutritionAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f59e0b,#10b981)"><i class="fas fa-utensils"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1252,11 +1271,11 @@
                             </div>
 
                             <!-- VBG Interpreter -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="vbgAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#dc2626,#7c3aed)"><i class="fas fa-droplet"></i></div>
                                     <div class="accordion-title-wrap">
-                                        <span class="accordion-title">تفسیر گازهای خون وریدی</span>
+                                        <span class="accordion-title">تفسیر گازهای خونی</span>
                                         <span class="accordion-sub">VBG Interpretation — ABG</span>
                                     </div>
                                     <i class="fas fa-chevron-down accordion-chevron"></i>
@@ -1268,7 +1287,7 @@
                                         <button class="method-btn-compact gradient" data-mode="abg"><i class="fas fa-heart-pulse"></i> ABG — شریانی</button>
                                     </div>
                                     <input type="checkbox" id="vbgModeABG" style="display:none;">
-                                    <p class="tool-note" id="vbgModeNote"><i class="fas fa-info-circle"></i> حالت VBG: pH وریدی معمولاً ۰.۰۳–۰.۰۵ کمتر از شریانی است. pCO₂ وریدی ۶–۸ mmHg بالاتر است.</p>
+                                    <p class="tool-note" id="vbgModeNote"><i class="fas fa-info-circle"></i> حالت VBG: pH وریدی معمولاً &#8296;۰.۰۳–۰.۰۵&#8297; کمتر از شریانی است. pCO₂ وریدی &#8296;۶–۸ mmHg&#8297; بالاتر است.</p>
                                     <div class="calc-toggles-stack">
                                         <div class="calc-toggle-item">
                                             <div class="oxy-input-row">
@@ -1342,7 +1361,7 @@
                             </div>
 
                             <!-- CrCl -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="crclAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#fa709a,#fee140)">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:block; margin:0 auto;">
@@ -1409,7 +1428,7 @@
                         </div>
                         <div class="accordion-list">
                             <!-- Drip Rate -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="dripAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#43e97b,#38f9d7)"><i class="fas fa-droplet"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1449,7 +1468,7 @@
                             </div>
 
                             <!-- Unit Converter -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="unitAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#667eea,#764ba2)"><i class="fas fa-balance-scale"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1483,7 +1502,7 @@
                             </div>
 
                             <!-- Electrolyte Converter -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="electrolyteAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><i class="fas fa-bolt"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1519,7 +1538,7 @@
                             </div>
 
                             <!-- Percentage Converter -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="percentageAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><i class="fas fa-percent"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1550,7 +1569,7 @@
                             </div>
 
                             <!-- Temperature Converter -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="tempAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#fa709a,#fee140)"><i class="fas fa-temperature-half"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1576,7 +1595,7 @@
                             </div>
 
                             <!-- Weight Converter -->
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="weightAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)"><i class="fas fa-weight-hanging"></i></div>
                                     <div class="accordion-title-wrap">
@@ -1608,7 +1627,7 @@
                         </div>
 
                         <!-- Pressure Converter -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="pressureAccordionItem">
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"><i class="fas fa-gauge"></i></div>
                                 <div class="accordion-title-wrap">
@@ -1646,14 +1665,107 @@
                     </div>
                 </div>
             </div>
+<div id="voiceTab" class="tab-pane" style="display:none;">
+    <div class="voice-container">
+
+        <!-- Environment notice (iOS standalone limits / unsupported browser) -->
+        <div class="voice-env-banner" id="voiceEnvBanner" style="display:none;">
+            <i class="fas fa-circle-info voice-env-icon"></i>
+            <div class="voice-env-text" id="voiceEnvBannerText"></div>
+            <button type="button" class="voice-env-action" id="voiceEnvBannerAction" style="display:none;"></button>
         </div>
 
-        <!-- Bottom Tab Navigation -->
-        <div class="tab-bar">
-            <button class="tab-item active" data-tab="calculator"><i class="fas fa-calculator"></i><span>محاسبه</span></button>
-            <button class="tab-item" data-tab="drugs"><i class="fas fa-book-medical"></i><span>مرجع</span></button>
-            <button class="tab-item" data-tab="tools"><i class="fas fa-tools"></i><span>ابزارها</span></button>
+        <!-- Header: flex row so the TTS toggle never overlaps the centered title -->
+        <div class="voice-header">
+            <button type="button" class="voice-capabilities-btn" id="voiceCapabilitiesBtn" data-command="چه کارهایی بلدی؟" aria-label="نمایش توانایی‌های دستیار" title="توانایی‌های دستیار"><i class="fas fa-circle-question" aria-hidden="true"></i></button>
+            <div class="voice-title">
+                <i class="fa-solid fa-wand-magic-sparkles voice-icon"></i>
+                <span>دستیار هوشمند</span>
+            </div>
+            <button type="button" class="voice-tts-toggle" id="voiceTtsToggle" aria-label="پاسخ صوتی خاموش است"><i class="fas fa-volume-xmark"></i></button>
         </div>
+
+        <!-- Fox mark: FoxiMed's mascot doubling as the assistant's "face" —
+             the dominant element on this page by design -->
+        <div class="voice-orb-zone">
+            <button type="button" class="voice-orb-container is-idle" id="voiceOrbContainer" aria-label="برای شروع یا پایان شنیدن، روباه را لمس کنید">
+                <span class="voice-ambient-glow" aria-hidden="true"></span>
+                <span class="voice-ripple" aria-hidden="true"></span>
+                <span class="voice-ripple" aria-hidden="true"></span>
+                <span class="voice-ripple" aria-hidden="true"></span>
+                <span class="voice-eye-spark left" aria-hidden="true"></span>
+                <span class="voice-eye-spark right" aria-hidden="true"></span>
+                <span class="voice-fox-mark" id="voiceOrb" aria-hidden="true"></span>
+                <span class="voice-tap-hint" aria-hidden="true"><i class="fas fa-microphone"></i><span>برای صحبت لمس کنید</span></span>
+            </button>
+        </div>
+        <div class="voice-status" id="voiceStatus">روباه را لمس کنید یا دستور را تایپ کنید</div>
+        <div class="voice-model-progress" id="voiceModelProgress" style="display:none;">
+            <div class="voice-model-progress-track">
+                <div class="voice-model-progress-fill" id="voiceModelProgressFill"></div>
+            </div>
+            <div class="voice-model-progress-label" id="voiceModelProgressLabel"></div>
+        </div>
+
+        <!-- Result (dynamic) -->
+        <div class="voice-result" id="voiceResult" style="display:none;"></div>
+
+        <!-- Text fallback — redesigned, moved up as a real secondary input -->
+        <div class="voice-text-fallback-wrap">
+            <div class="voice-text-fallback">
+                <i class="fas fa-keyboard voice-text-icon" aria-hidden="true"></i>
+                <input type="text" id="voiceTextInput" placeholder="یا دستور را تایپ کنید…" inputmode="text" autocomplete="off" />
+                <button type="button" id="voiceTextSend" aria-label="ارسال دستور"><i class="fas fa-arrow-left"></i></button>
+            </div>
+            <!-- Live drug-name suggestions as the person types — mainly
+                 for hard-to-pronounce/uncommon drug names that the offline
+                 voice model can't reliably recognize by voice at all, so
+                 typing needs to be genuinely fast, not just a fallback. -->
+            <div class="voice-autocomplete" id="voiceAutocomplete" style="display:none;"></div>
+        </div>
+
+        <!-- Example chips — single-row horizontal scroll, hides while busy -->
+        <div class="voice-examples" id="voiceExamples">
+            <div class="voice-chips">
+                <button type="button" class="voice-example-chip" data-command="هپارین ۱۲ واحد/کیلوگرم/ساعت وزن ۷۰"><i class="fas fa-syringe voice-chip-icon" aria-hidden="true"></i> هپارین</button>
+                <button type="button" class="voice-example-chip" data-command="شاخص توده بدنی وزن ۷۵ قد ۱۷۵"><i class="fas fa-weight-scale voice-chip-icon" aria-hidden="true"></i> شاخص توده</button>
+                <button type="button" class="voice-example-chip" data-command="گلاسکو ۴ ۵ ۶"><i class="fas fa-brain voice-chip-icon" aria-hidden="true"></i> گلاسکو</button>
+                <button type="button" class="voice-example-chip" data-command="قطره ۵۰۰ میلی‌لیتر در ۸ ساعت"><i class="fas fa-droplet voice-chip-icon" aria-hidden="true"></i> قطره</button>
+                <button type="button" class="voice-example-chip" data-command="تبدیل ۲۰ mEq سدیم به mg"><i class="fas fa-flask voice-chip-icon" aria-hidden="true"></i> تبدیل</button>
+                <button type="button" class="voice-example-chip" data-command="تاریک"><i class="fas fa-moon voice-chip-icon" aria-hidden="true"></i> تاریک</button>
+                <button type="button" class="voice-example-chip" data-command="سازگاری هپارین و وانکومایسین"><i class="fas fa-vials voice-chip-icon" aria-hidden="true"></i> سازگاری</button>
+                <button type="button" class="voice-example-chip" data-command="چه کارهایی بلدی؟"><i class="fas fa-circle-question voice-chip-icon" aria-hidden="true"></i> چه کارهایی بلدی؟</button>
+            </div>
+        </div>
+
+        <!-- History -->
+        <div class="voice-history-section" id="voiceHistory" style="display:none;">
+            <div class="voice-history-head">
+                <span class="voice-history-label">تاریخچه</span>
+                <button type="button" class="voice-clear-history" id="voiceClearHistoryBtn">پاک کردن</button>
+            </div>
+            <div class="voice-history-list" id="voiceHistoryList"></div>
+        </div>
+
+</div>
+</div>
+    </div>
+</div>
+
+    <!-- Bottom Tab Navigation — deliberately a sibling of .app-container,
+         not nested inside it. .app-container has overflow:hidden, and iOS
+         Safari has a well-documented history of not correctly escaping
+         position:fixed descendants of an overflow:hidden ancestor to the
+         TRUE viewport edge — instead positioning them relative to that
+         ancestor's own box, which can be imprecisely calculated. Keeping
+         this at the true document root, exactly like the modals below
+         already are, sidesteps that class of bug entirely rather than
+         trying to out-calculate it. -->
+    <div class="tab-bar">
+        <button class="tab-item active" data-tab="calculator"><i class="fas fa-calculator"></i><span>محاسبه</span></button>
+        <button class="tab-item" data-tab="drugs"><i class="fas fa-book-medical"></i><span>مرجع</span></button>
+        <button class="tab-item" data-tab="tools"><i class="fas fa-tools"></i><span>ابزارها</span></button>
+        <button class="tab-item" data-tab="voice"><i class="fas fa-microphone"></i><span>دستیار</span></button>
     </div>
 
     <!-- Settings Modal -->
@@ -1681,19 +1793,26 @@
                 <div class="settings-group">
                     <h4><i class="fas fa-palette"></i> ظاهر</h4>
 
-                    <!-- Theme mode: 3 buttons -->
-                    <div class="setting-item setting-item--block">
-                        <span class="setting-label-full">حالت نمایش</span>
+                    <!-- Theme mode: compact icon-only 3-way switch, same row as its label -->
+                    <div class="setting-item">
+                        <span>حالت نمایش</span>
                         <div class="theme-mode-btns" id="themeModeButtons">
-                            <button class="theme-mode-btn" data-mode="light"><i class="fas fa-sun"></i> روشن</button>
-                            <button class="theme-mode-btn" data-mode="dark"><i class="fas fa-moon"></i> تاریک</button>
-                            <button class="theme-mode-btn" data-mode="auto"><i class="fas fa-circle-half-stroke"></i> خودکار</button>
+                            <button class="theme-mode-btn" data-mode="light" title="روشن" aria-label="روشن"><i class="fas fa-sun"></i></button>
+                            <button class="theme-mode-btn" data-mode="dark" title="تاریک" aria-label="تاریک"><i class="fas fa-moon"></i></button>
+                            <button class="theme-mode-btn" data-mode="auto" title="خودکار" aria-label="خودکار"><i class="fas fa-circle-half-stroke"></i></button>
                         </div>
                     </div>
 
                     <div class="setting-item">
                         <span>فونت بزرگ</span>
                         <label class="switch"><input type="checkbox" id="largeFontToggle"><span class="slider"></span></label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label-stack">
+                            <span>حالت کم‌مصرف <span id="lowPowerModeAutoNote" class="setting-badge" style="display:none;">خودکار</span></span>
+                            <span class="setting-sublabel">کاهش حرکت‌ها و جلوه‌های سنگین؛ آماده‌سازی مدل صدا فقط هنگام استفاده</span>
+                        </div>
+                        <label class="switch"><input type="checkbox" id="lowPowerModeToggle"><span class="slider"></span></label>
                     </div>
                     <div class="setting-item">
                         <div class="setting-label-stack">
@@ -1726,8 +1845,44 @@
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#22c55e,#14b8a6)"></span>
                                 <span class="swatch-name">Lynx</span>
                             </button>
+                            <button class="theme-swatch" data-theme="dreamfire" title="DreamFire">
+                                <span class="swatch-dot" style="background:linear-gradient(135deg,#be123c,#4c0519)"></span>
+                                <span class="swatch-name">Dreamfire</span>
+                            </button>
                         </div>
                     </div>
+                </div>
+
+                <!-- Calculator defaults -->
+                <div class="settings-group">
+                    <h4><i class="fas fa-pump-medical"></i> پیش‌فرض ماشین‌حساب</h4>
+                    <p class="settings-hint">برای هماهنگی با تجهیزات رایج بخش؛ هنگام هر محاسبه همچنان قابل تغییر است.</p>
+                    <label class="setting-item setting-select-row" for="defaultInfusionMethodSelect">
+                        <span>دستگاه پیش‌فرض</span>
+                        <select id="defaultInfusionMethodSelect" class="settings-select">
+                            <option value="syringe">پمپ سرنگ</option>
+                            <option value="infusion">پمپ انفوزیون</option>
+                        </select>
+                    </label>
+                    <label class="setting-item setting-select-row" for="defaultSyringeVolumeSelect">
+                        <span>حجم پمپ سرنگ</span>
+                        <select id="defaultSyringeVolumeSelect" class="settings-select">
+                            <option value="auto">پیش‌فرض دارو</option>
+                            <option value="10">۱۰ cc</option>
+                            <option value="20">۲۰ cc</option>
+                            <option value="50">۵۰ cc</option>
+                        </select>
+                    </label>
+                    <label class="setting-item setting-select-row" for="defaultInfusionVolumeSelect">
+                        <span>حجم پمپ انفوزیون</span>
+                        <select id="defaultInfusionVolumeSelect" class="settings-select">
+                            <option value="auto">پیش‌فرض دارو</option>
+                            <option value="100">۱۰۰ cc</option>
+                            <option value="250">۲۵۰ cc</option>
+                            <option value="500">۵۰۰ cc</option>
+                            <option value="1000">۱۰۰۰ cc</option>
+                        </select>
+                    </label>
                 </div>
 
                 <!-- Notifications -->
@@ -1757,7 +1912,7 @@
                 </div>
 
                 <!-- Contact -->
-                <div class="settings-group">
+                <div class="settings-group" id="creatorContact">
                     <h4><i class="fas fa-headset"></i> ارتباط با ما</h4>
                     <a class="setting-contact-btn" href="https://t.me/i_2mt" target="_blank" rel="noopener">
                         <i class="fab fa-telegram"></i>
@@ -1766,17 +1921,47 @@
                     </a>
                 </div>
 
+                <!-- Voice recognition engine -->
+                <div class="settings-group">
+                    <h4><i class="fas fa-wave-square"></i> تشخیص گفتار</h4>
+                    <div class="voice-engine-setting">
+                        <span>موتور فعال</span>
+                        <strong class="voice-engine-current"><i class="fas fa-circle-check"></i> Rizeh — آفلاین</strong>
+                        <span class="setting-sublabel">گزینه پایدار فعلی برای فرمان‌های فارسی فاکسی‌مد</span>
+                    </div>
+                    <p class="settings-hint voice-privacy-hint"><i class="fas fa-shield-halved"></i> تشخیص صدا روی همین دستگاه انجام می‌شود و فایل صوتی از گوشی خارج نمی‌شود.</p>
+                </div>
+
+                <!-- Voice Assistant Learning Log -->
+                <div class="settings-group">
+                    <h4><i class="fas fa-microphone-lines"></i> بهبود دستیار صوتی</h4>
+                    <p class="settings-hint">عبارت‌هایی که دستیار صوتی متوجه نشده روی گوشی ذخیره می‌شود تا برای بررسی ارسال شود.</p>
+                    <div class="setting-item">
+                        <div class="setting-label-stack">
+                            <span>ارسال خودکار به تلگرام</span>
+                            <span class="setting-sublabel">هر ۲۰ مورد جدید خودش ارسال می‌شود</span>
+                        </div>
+                        <label class="switch"><input type="checkbox" id="voiceLogAutoTelegramToggle"><span class="slider"></span></label>
+                    </div>
+                    <div class="settings-btn-row">
+                        <button class="setting-btn gradient" id="sendVoiceLogBtn"><i class="fab fa-telegram"></i> ارسال به تلگرام</button>
+                        <button class="setting-btn" id="exportVoiceLogBtn"><i class="fas fa-file-export"></i> خروجی گرفتن</button>
+                        <button class="setting-btn" id="clearVoiceLogBtn"><i class="fas fa-trash"></i> پاک کردن فهرست</button>
+                    </div>
+                </div>
+
                 <!-- About -->
                 <div class="settings-group">
                     <h4><i class="fas fa-info-circle"></i> درباره</h4>
                     <div class="about-info">
-                        <div class="about-row"><span>نسخه</span><span>4.2.8</span></div>
+                        <div class="about-row"><span>نسخه</span><span>5.1.0</span></div>
                         <div class="about-row"><span>تعداد داروها</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
                     <div class="settings-btn-row">
                         <button class="setting-btn gradient" id="checkUpdateBtn"><i class="fas fa-sync-alt"></i> بررسی به‌روزرسانی</button>
                         <button class="setting-btn gradient" onclick="showTutorial()"><i class="fas fa-graduation-cap"></i> راهنمای برنامه</button>
+                        <button class="setting-btn gradient" onclick="showWhatsNewModal(true)"><i class="fa-solid fa-wand-magic-sparkles"></i> چه خبر؟</button>
                     </div>
                     <div class="settings-credits">
                         <i class="fas fa-code"></i>
@@ -1802,9 +1987,26 @@
         </div>
     </div>
 
+    <!-- What's New Modal -->
+    <div class="modal" id="whatsNewModal">
+        <div class="modal-content whats-new-content">
+            <div class="modal-header whats-new-header">
+                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> چه چیزهای جدیدی اضافه شده؟</h3>
+                <button class="modal-close" id="closeWhatsNew">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="whats-new-version-badge" id="whatsNewVersionBadge"></div>
+                <div class="whats-new-list" id="whatsNewList"></div>
+                <button class="setting-btn gradient whats-new-dismiss" id="whatsNewDismissBtn">متوجه شدم</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Tutorial Overlay (slide-based) -->
     <div id="onboardingOverlay" class="onboarding-overlay" style="display:none;">
         <div class="onboarding-backdrop"></div>
+        <div class="tutorial-spotlight" id="tutorialSpotlight" aria-hidden="true"></div>
+        <div class="tutorial-coach-arrow" id="tutorialCoachArrow" aria-hidden="true"></div>
         <div class="onboarding-box tutorial-box">
             <!-- Slide indicators -->
             <div class="tutorial-dots" id="tutorialDots"></div>
@@ -1813,14 +2015,14 @@
             <div class="tutorial-slides" id="tutorialSlides">
 
                 <!-- Slide 1: Welcome -->
-                <div class="tutorial-slide active">
-                    <div class="tutorial-icon" style="background:var(--gradient-primary)"><i class="fas fa-syringe"></i></div>
+                <div class="tutorial-slide active" data-tour-tab="calculator">
+                    <div class="tutorial-icon tutorial-fox-icon" aria-hidden="true"><span class="tutorial-fox-mark"></span></div>
                     <h2 class="tutorial-title">به FoxiMed خوش آمدید</h2>
                     <p class="tutorial-body">دستیار هوشمند محاسبات دارویی برای پرستاران و پزشکان ICU — آفلاین، سریع و دقیق.</p>
                 </div>
 
                 <!-- Slide 2: Drug calculator -->
-                <div class="tutorial-slide">
+                <div class="tutorial-slide" data-tour-target=".selected-drug-compact" data-tour-tab="calculator">
                     <div class="tutorial-icon" style="background:linear-gradient(135deg,#f97316,#dc2626)"><i class="fas fa-calculator"></i></div>
                     <h2 class="tutorial-title">محاسبه‌گر دارویی</h2>
                     <p class="tutorial-body">از تب اول دارو را انتخاب کنید، روش تزریق و حجم محلول را تنظیم کنید، دوز پزشک را وارد کنید و دکمه محاسبه را بزنید — سرعت پمپ فوری نمایش داده می‌شود.</p>
@@ -1828,7 +2030,7 @@
                 </div>
 
                 <!-- Slide 3: Drug reference -->
-                <div class="tutorial-slide">
+                <div class="tutorial-slide" data-tour-target=".tab-item[data-tab='drugs']" data-tour-tab="calculator">
                     <div class="tutorial-icon" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"><i class="fas fa-book-medical"></i></div>
                     <h2 class="tutorial-title">مرجع سریع داروها</h2>
                     <p class="tutorial-body">تب دوم مرجع کامل هر دارو است — سازگاری، دوز معمول، نکات تهیه و اخطارها. روی هر دارو ضربه بزنید تا اطلاعات کامل را ببینید.</p>
@@ -1836,7 +2038,7 @@
                 </div>
 
                 <!-- Slide 4: Tools -->
-                <div class="tutorial-slide">
+                <div class="tutorial-slide" data-tour-target=".tab-item[data-tab='tools']" data-tour-tab="calculator">
                     <div class="tutorial-icon" style="background:linear-gradient(135deg,#10b981,#0d9488)"><i class="fas fa-toolbox"></i></div>
                     <h2 class="tutorial-title">ابزارهای بالینی</h2>
                     <p class="tutorial-body">تب سوم شامل ابزارهای کلینیکی است: GCS، RASS، Braden، Morse، محاسبه BMI و BSA، کپسول اکسیژن، مبدل‌های واحد و محاسبه‌گر دستی.</p>
@@ -1844,7 +2046,7 @@
                 </div>
 
                 <!-- Slide 5: History -->
-                <div class="tutorial-slide">
+                <div class="tutorial-slide" data-tour-target="#historyBtn" data-tour-tab="calculator">
                     <div class="tutorial-icon" style="background:linear-gradient(135deg,#8b5cf6,#d946ef)"><i class="fas fa-history"></i></div>
                     <h2 class="tutorial-title">تاریخچه محاسبات</h2>
                     <p class="tutorial-body">دکمه ساعت در نوار بالا تاریخچه تمام محاسبات شما را نشان می‌دهد. می‌توانید هر محاسبه قبلی را دوباره بارگذاری کنید.</p>
@@ -1852,15 +2054,32 @@
                 </div>
 
                 <!-- Slide 6: Settings & themes -->
-                <div class="tutorial-slide">
+                <div class="tutorial-slide" data-tour-target="#settingsBtn" data-tour-tab="calculator">
                     <div class="tutorial-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fas fa-cog"></i></div>
                     <h2 class="tutorial-title">تنظیمات و تم</h2>
                     <p class="tutorial-body">دکمه چرخ‌دنده در بالا تنظیمات را باز می‌کند. می‌توانید نام خود را وارد کنید، حالت تاریک/روشن/خودکار را انتخاب کنید و از 5 تم رنگی مختلف استفاده کنید.</p>
                     <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> دکمه نیمه‌ماه در نوار بالا هم تم را فوری تغییر می‌دهد.</div>
                 </div>
 
-                <!-- Slide 7: Ready -->
-                <div class="tutorial-slide">
+                <!-- Slide 7: Voice assistant -->
+                <div class="tutorial-slide" data-tour-target=".tab-item[data-tab='voice']" data-tour-tab="calculator">
+                    <div class="tutorial-icon tutorial-assistant-icon" aria-hidden="true"><span class="tutorial-fox-mark"></span><i class="fas fa-microphone"></i></div>
+                    <h2 class="tutorial-title">دستیار صوتی</h2>
+                    <p class="tutorial-body">از تب «دستیار»، روباه بزرگ را لمس کنید و درخواستتان را طبیعی بگویید. می‌تواند محاسبه‌گر و داروی مرتبط را باز کند، مقدارهای گفته‌شده را وارد کند، تم را تغییر دهد و به گفت‌وگوهای کوتاه پاسخ دهد.</p>
+                    <div class="tutorial-ask-demo"><i class="fas fa-arrow-down" aria-hidden="true"></i><span>برای دیدن نمونه‌ها بپرسید: «چه کارهایی بلدی؟»</span></div>
+                    <div class="tutorial-tip"><i class="fas fa-shield-heart"></i> دستورهای بالینی پیش از اجرا برای تأیید شما نمایش داده می‌شوند. بار اول ممکن است مدل آفلاین دانلود شود.</div>
+                </div>
+
+                <!-- Slide 8: Assistant capabilities -->
+                <div class="tutorial-slide" data-tour-target="#voiceCapabilitiesBtn" data-tour-tab="voice">
+                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#f97316,#f59e0b)"><i class="fas fa-circle-question"></i></div>
+                    <h2 class="tutorial-title">از فاکسی بپرسید چه بلد است</h2>
+                    <p class="tutorial-body">دکمه علامت سؤال، فهرست توانایی‌ها و نمونه جمله‌های قابل‌فهم را نشان می‌دهد. می‌توانید همان سؤال را با صدا یا متن هم بپرسید: «چه کارهایی بلدی؟»</p>
+                    <div class="tutorial-tip"><i class="fas fa-microphone"></i> برای شروع شنیدن، روباه بزرگ وسط صفحه را لمس کنید.</div>
+                </div>
+
+                <!-- Slide 9: Ready -->
+                <div class="tutorial-slide" data-tour-tab="calculator">
                     <div class="tutorial-icon" style="background:linear-gradient(135deg,#22c55e,#0ea5e9)"><i class="fas fa-check-double"></i></div>
                     <h2 class="tutorial-title">آماده‌اید!</h2>
                     <p class="tutorial-body">FoxiMed کاملاً آفلاین کار می‌کند. می‌توانید آن را به صفحه اصلی گوشی خود اضافه کنید تا مثل یک اپلیکیشن باز شود.</p>
@@ -1895,11 +2114,16 @@
 
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
-    <script src="script.js"></script>
+    <script src="calculation-core.js?v=34"></script>
+    <script src="script.js?v=44"></script>
+    <script src="koochik-asr.js?v=36"></script>
+    <script src="voice-recognition.js?v=42"></script>
+    <script src="voice-commands.js?v=42"></script>
+    <script src="voice-ui.js?v=42"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js');
+                navigator.serviceWorker.register('service-worker.js?v=44', { updateViaCache: 'none' });
             });
         }
     </script>
