@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=43">
-    <link rel="stylesheet" href="voice-assistant.css?v=43">
+    <link rel="stylesheet" href="voice-assistant.css?v=43">\n    <link rel="stylesheet" href="drug-reference.css?v=1">
 </head>
 <body>
 
@@ -396,15 +396,35 @@
                 </div>
             </div>
 
-            <!-- Drugs Tab (Quick Reference) -->
+            <!-- Clinical Drug Reference (separate from calculator drug database) -->
             <div class="tab-pane" id="drugsTab">
-                <div class="drugs-container">
-                    <h2><i class="fas fa-book-medical"></i> مرجع سریع داروها</h2>
-                    <div class="drugs-search">
-                        <input type="text" id="librarySearch" placeholder="جستجو در مرجع دارویی...">
-                        <i class="fas fa-search"></i>
+                <div class="drug-reference-container">
+                    <div class="drug-reference-heading">
+                        <div class="drug-reference-heading-icon"><i class="fas fa-book-medical" aria-hidden="true"></i></div>
+                        <div>
+                            <h2>مرجع دارویی</h2>
+                            <p>جستجوی داروها و مرور اطلاعات بالینی · Drug Reference</p>
+                        </div>
                     </div>
-                    <div class="drugs-library" id="drugLibrary"></div>
+                    <div class="drug-reference-list-view" id="drugReferenceListView">
+                        <div class="drug-reference-search" role="search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <input type="search" id="drugReferenceSearch" placeholder="نام فارسی، انگلیسی یا نام ژنریک..." autocomplete="off" aria-label="جستجو در مرجع دارویی">
+                            <button type="button" class="drug-reference-clear" id="drugReferenceClear" aria-label="پاک کردن جستجو" hidden><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="drug-reference-filters" id="drugReferenceFilters" aria-label="دسته‌بندی داروها">
+                            <button type="button" class="drug-reference-filter active" data-drug-filter="all">همه داروها</button>
+                            <button type="button" class="drug-reference-filter" data-drug-filter="antibiotic">آنتی‌بیوتیک‌ها</button>
+                            <button type="button" class="drug-reference-filter" data-drug-filter="cardio">قلب و عروق / اورژانس</button>
+                            <button type="button" class="drug-reference-filter" data-drug-filter="anticoagulant">ضدانعقاد و ضدپلاکت</button>
+                            <button type="button" class="drug-reference-filter" data-drug-filter="analgesic">مسکن و آرام‌بخش</button>
+                        </div>
+                        <p class="drug-reference-count" id="drugReferenceCount" aria-live="polite"></p>
+                        <div class="drug-reference-preview" id="drugReferencePreview" hidden aria-live="polite"></div>
+                        <div class="drug-reference-grid" id="drugReferenceGrid"></div>
+                        <div class="drug-reference-empty" style="margin-top:14px"><i class="fas fa-circle-info"></i>این نسخه نمایشی است. اطلاعات دارویی باید پیش از استفاده بالینی با منابع معتبر بازبینی شوند.</div>
+                    </div>
+                    <div class="drug-reference-detail" id="drugReferenceDetail" hidden></div>
                 </div>
             </div>
 
@@ -2255,7 +2275,7 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=45"></script>
+    <script src="script.js?v=46"></script>\n    <script src="drug-reference-data.js?v=1"></script>\n    <script src="drug-reference.js?v=1"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=43"></script>
@@ -2263,7 +2283,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=45', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=46', { updateViaCache: 'none' });
             });
         }
     </script>
