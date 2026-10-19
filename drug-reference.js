@@ -15,7 +15,7 @@
     '<section class="drug-reference-section' + (wide ? ' wide' : '') + '"><h3><i class="fas ' + icon + '" aria-hidden="true"></i>' + escapeHTML(title) + '</h3>' + content + '</section>';
   function matches(drug, term) {
     if (!term) return true;
-    const searchable = [drug.fa, drug.en, drug.classFa, drug.classEn, ...(drug.synonyms || [])].map(normalize).join(' ');
+    const searchable = normalize([drug.fa, drug.en, drug.classFa, drug.classEn, ...(drug.synonyms || [])].join(' '));
     return searchable.includes(normalize(term));
   }
   function renderList() {
