@@ -1124,7 +1124,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadDrugGrid();
     selectDrug('heparin');
-    loadDrugLibrary();
     initVoiceTab();
     checkForWhatsNewOnLoad();
 });
@@ -2647,7 +2646,7 @@ function switchTab(tabName) {
         pane.style.display = isActive ? 'block' : 'none';
     });
     AppState.currentTab = tabName;
-    if (tabName === 'drugs') loadDrugLibrary();
+    if (tabName === 'drugs' && typeof window.initDrugReference === 'function') window.initDrugReference();
     if (tabName === 'tools') {
         initializeTools();
         initializeConverters();
