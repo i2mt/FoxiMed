@@ -34,7 +34,10 @@
   const section = (title, icon, content, wide) => '<section class="drug-reference-section' + (wide ? ' wide' : '') + '"><h3><i class="fas ' + icon + '" aria-hidden="true"></i>' + esc(title) + '</h3>' + content + '</section>';
   function matches(d, term) {
     if (!term) return true;
-    return normalize([d.fa, d.en, d.classFa, d.classEn, ...(d.synonyms || []), ...(d.brands || []), d.sourceText || ''].join(' ')).includes(normalize(term));
+    if (!d.__searchText) {
+      d.__searchText = normalize([d.fa, d.en, d.classFa, d.classEn, ...(d.synonyms || []), ...(d.brands || []), d.sourceText || ''].join(' '));
+    }
+    return d.__searchText.includes(normalize(term));
   }
   function detailHTML(d) {
     if (d.sourceText) {
