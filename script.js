@@ -21,7 +21,7 @@
 // points people would actually notice, not an engineering changelog.
 const APP_VERSION = '5.3.2';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.3.2-drug-reference-redesign';
+const RELEASE_NOTES_REVISION = '5.3.2-drug-reference-764-monographs';
 
 const CHANGELOG = {
     '5.3.2': [
