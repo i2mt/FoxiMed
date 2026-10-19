@@ -38,6 +38,7 @@ const urlsToCache = [
     './drug-reference-book-07.js?v=1',
     './drug-reference-book-08.js?v=1',
     './drug-reference-book-09.js?v=1',
+    './drug-reference-book-10.js?v=1',
     './manifest.json',
     './icons/icon-192.png',
     './icons/icon-512.png',
