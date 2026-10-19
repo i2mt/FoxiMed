@@ -3,6 +3,22 @@
   'use strict';
   const data = () => {
     const book = Array.isArray(window.FoxiMedDrugBookData) ? window.FoxiMedDrugBookData : [];
+    // The PDF extractor sometimes reverses English word order on Persian-first
+    // headings. Correct those names for display/search while preserving the source text.
+    book.forEach(d => {
+      if (!d || !d.sourceText) return;
+      const firstLine = d.sourceText.split('\n')[0] || '';
+      const faPos = firstLine.search(/[\u0600-\u06ff]/);
+      const enPos = firstLine.search(/[A-Za-z]/);
+      if (faPos < 0 || enPos < 0 || enPos < faPos) return;
+      const rawEnglish = firstLine.slice(enPos).replace(/[?():,]+/g, ' ').replace(/\s+/g, ' ').trim();
+      if (normalize(d.en) !== normalize(rawEnglish)) return; // already corrected
+      const corrected = rawEnglish.split(/\s+/).reverse().join(' ').trim();
+      if (corrected && corrected !== d.en) {
+        d.synonyms = [...new Set([...(d.synonyms || []), d.en, corrected])];
+        d.en = corrected;
+      }
+    });
     const base = Array.isArray(window.FoxiMedDrugReferenceData) ? window.FoxiMedDrugReferenceData : [];
     const extra = Array.isArray(window.FoxiMedDrugCatalog) ? window.FoxiMedDrugCatalog : [];
     const seen = new Set();
