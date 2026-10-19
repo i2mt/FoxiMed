@@ -2,10 +2,11 @@
 (function () {
   'use strict';
   const data = () => {
+    const book = Array.isArray(window.FoxiMedDrugBookData) ? window.FoxiMedDrugBookData : [];
     const base = Array.isArray(window.FoxiMedDrugReferenceData) ? window.FoxiMedDrugReferenceData : [];
     const extra = Array.isArray(window.FoxiMedDrugCatalog) ? window.FoxiMedDrugCatalog : [];
     const seen = new Set();
-    return base.concat(extra).filter(d => d && d.id && !seen.has(d.id) && seen.add(d.id));
+    return book.concat(base, extra).filter(d => d && d.id && !seen.has(d.id) && seen.add(d.id));
   };
   const state = { openId: null, filter: 'all', initialized: false, floatBar: null, scrollHandler: null };
   const $ = id => document.getElementById(id);
@@ -17,9 +18,15 @@
   const section = (title, icon, content, wide) => '<section class="drug-reference-section' + (wide ? ' wide' : '') + '"><h3><i class="fas ' + icon + '" aria-hidden="true"></i>' + esc(title) + '</h3>' + content + '</section>';
   function matches(d, term) {
     if (!term) return true;
-    return normalize([d.fa, d.en, d.classFa, d.classEn, ...(d.synonyms || []), ...(d.brands || [])].join(' ')).includes(normalize(term));
+    return normalize([d.fa, d.en, d.classFa, d.classEn, ...(d.synonyms || []), ...(d.brands || []), d.sourceText || ''].join(' ')).includes(normalize(term));
   }
   function detailHTML(d) {
+    if (d.sourceText) {
+      const sourceSections = Array.isArray(d.sections) && d.sections.length
+        ? d.sections.map(s => section(s.title || 'اطلاعات منبع', 'fa-book-medical', '<div style="white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;font-size:.92rem">' + esc(s.text || '') + '</div>', true)).join('')
+        : section('متن منبع', 'fa-book-medical', '<div style="white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;font-size:.92rem">' + esc(d.sourceText) + '</div>', true);
+      return '<div class="drug-reference-clinical-warning"><i class="fas fa-book-medical"></i> <strong>منبع:</strong> داروهای ژنریک ایران (اطلاعات نسخهٔ PDF با فرادادهٔ سال ۲۰۰۸). متن منبع برای حفظ امانت تغییر محتوایی داده نشده است؛ برای تصمیم‌گیری بالینی، آن را با منابع و پروتکل‌های جاری تطبیق دهید.</div>' + '<div class="drug-reference-detail-body">' + sourceSections + '</div>';
+    }
     const brands = [...new Set([...(d.brands || []), ...(d.synonyms || []).filter(s => /[A-Za-z]/.test(s))])];
     return '<div class="drug-reference-clinical-warning"><i class="fas fa-triangle-exclamation"></i> <strong>نسخه آزمایشی:</strong> اطلاعات این رکورد بازبینی بالینی نشده است؛ برای تصمیم‌گیری درباره تجویز یا دوز به آن اتکا نکنید.</div>' +
       '<div class="drug-reference-detail-body">' +
