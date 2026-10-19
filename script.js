@@ -19,17 +19,17 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.2.0';
-// Keep the major Version 5 introduction featured while maintenance work
-// continues. A separate revision lets people who saw an earlier 5.2 note see
-// this complete feature summary once, without changing the public app version.
-const RELEASE_NOTES_REVISION = '5.2.0-major-humpty';
+const APP_VERSION = '5.3.2';
+// Increment this revision whenever a meaningful release note is added.
+const RELEASE_NOTES_REVISION = '5.3.2-drug-reference-redesign';
 
 const CHANGELOG = {
-    // Keep the current release focused on the major Version 5 upgrade. A
-    // person coming directly from Version 4 should be introduced to the
-    // assistant, theme, Humpty Dumpty scale and major usability work—not
-    // implementation details from the latest maintenance pass.
+    '5.3.2': [
+        'تب مرجع دارویی بازطراحی شده است؛ داروها در کارت‌های فشرده و بازشونده نمایش داده می‌شوند.',
+        'جست‌وجوی مرجع دارویی با نام ژنریک انگلیسی، نام فارسی و نام‌های تجاری آسان‌تر شده است.',
+        'ساختار جزئیات دارو بخش‌های جداگانه‌ای برای کاربرد، مکانیسم اثر، دوز، هشدارها، مراقبت‌های پرستاری، بارداری، نارسایی کلیوی و تداخلات دارد.',
+        'محتوای منبع‌محور مرجع دارویی در حال تکمیل است؛ برای تصمیم‌گیری بالینی، اطلاعات باید با منابع و پروتکل‌های جاری تطبیق داده شوند.'
+    ],
     '5.2.0': [
         'دستیار هوشمند فارسی با فرمان صوتی آفلاین برای محاسبات و ابزارهای بالینی',
         'پوستهٔ رنگی جدید «DreamFire» و ظاهر تازه‌تر برنامه',
