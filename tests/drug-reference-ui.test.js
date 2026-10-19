@@ -53,41 +53,97 @@ const server = http.createServer((req,res) => {
     await p.locator('#drugReferencePrevious').click();
     await p.locator('[data-drug-filter=antibiotic]').click();assert(await p.locator('.drug-reference-card').count()>0);
     await p.locator('[data-drug-filter=all]').click();passed.push('pagination and category controls');
+    const density=[];
     for(const width of [1280,390,320]){
       await p.setViewportSize({width,height:900});
-      const layout=await p.locator('.drug-reference-card').evaluateAll(cards=>cards.slice(0,8).map(c=>{const b=c.getBoundingClientRect();return {x:b.x,width:b.width,top:b.top,bottom:b.bottom}}));
+      const layout=await p.locator('.drug-reference-card').evaluateAll(cards=>cards.slice(0,8).map(c=>{const b=c.getBoundingClientRect();return {x:b.x,width:b.width,top:b.top,bottom:b.bottom,height:b.height}}));
       for(let i=1;i<layout.length;i++){assert.equal(layout[i].x,layout[0].x);assert.equal(layout[i].width,layout[0].width);assert(layout[i].top>=layout[i-1].bottom);}
       assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      assert.equal(await p.locator('[data-drug-comprehensive]').count(),0);
+      assert.equal(await p.locator('#drugReferenceGrid .drug-reference-more').count(),0);
+      assert(!(await p.locator('.drug-reference-card').first().innerText()).match(/حاملگی|شیردهی|بارداری|Reopro/));
       const card=p.locator('.drug-reference-card').first();
-      await card.locator('[data-drug-toggle]').click();await card.locator('.drug-reference-source-footer').waitFor();
+      // The icon and text are part of the same full-width button.
+      await card.locator('.accordion-icon-wrap').click();await card.locator('.drug-reference-source-footer').waitFor();
       assert.equal(await p.locator('.drug-reference-card.open').count(),1);
-      assert.equal(await p.locator('.drug-reference-clinical-warning,.drug-reference-float-bar').count(),0);
+      assert.equal(await card.locator('.drug-reference-comprehensive').count(),0);
+      const summary=await card.locator('.drug-reference-overview').innerText();
+      assert(summary.includes('اندیکاسیون'));assert(summary.includes('Injection'));
+      assert(!summary.includes('مصرف در حاملگی'));assert(!summary.includes('مصرف در شیر'));
+      assert.equal(await card.locator('[data-drug-comprehensive]').count(),1);
+      assert.equal(await p.locator('.drug-reference-clinical-warning').count(),0);
       assert((await card.locator('.drug-reference-source-footer').innerText()).startsWith('منبع:'));
-      const overlaps=await card.locator('[data-drug-close]').first().evaluate(el=>{const a=el.getBoundingClientRect(),b=document.querySelector('#settingsBtn').getBoundingClientRect();return a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top});assert(!overlaps);
-      await card.locator('[data-drug-close]').first().click();
-      assert.equal(await p.locator('.drug-reference-card.open').count(),0);
-      assert(!await p.locator('#settingsModal').evaluate(e=>e.classList.contains('active')));
+      // The second tap closes without opening another view.
+      await card.locator('.accordion-title').click();assert.equal(await p.locator('.drug-reference-card.open').count(),0);
+      await card.locator('[data-drug-toggle]').press('Enter');await card.locator('[data-drug-comprehensive]').waitFor();
+      await card.locator('[data-drug-comprehensive]').click();
+      await card.locator('.drug-reference-comprehensive').waitFor();
+      assert((await card.locator('.drug-reference-comprehensive').innerText()).includes('مصرف در حاملگی'));
+      assert.equal(await card.locator('.drug-reference-source-footer').count(),1);
+      assert.equal(await p.locator('.drug-reference-card.open').count(),1);
+      await card.locator('[data-drug-overview]').click();await card.locator('.drug-reference-overview').waitFor();
+      assert.equal(await card.locator('.drug-reference-comprehensive').count(),0);
+      await card.locator('[data-drug-comprehensive]').press('Escape');assert.equal(await p.locator('.drug-reference-card.open').count(),0);
+      if(process.env.FOXIMED_SCREENSHOT_DIR){fs.mkdirSync(process.env.FOXIMED_SCREENSHOT_DIR,{recursive:true});await p.screenshot({path:path.join(process.env.FOXIMED_SCREENSHOT_DIR,'drugs-'+width+'.png')});}
+      const drugHeight=layout[0].height;
+      await p.locator('.tab-item[data-tab=tools]').click();
+      const toolHeight=await p.locator('#gcsAccordionItem').evaluate(e=>e.getBoundingClientRect().height);
+      assert(Math.abs(drugHeight-toolHeight)<=4,`density differs from Tools: ${drugHeight} vs ${toolHeight}`);
+      if(process.env.FOXIMED_SCREENSHOT_DIR)await p.screenshot({path:path.join(process.env.FOXIMED_SCREENSHOT_DIR,'tools-'+width+'.png')});
+      const toolStyle=await p.locator('#gcsAccordionItem').evaluate(e=>({radius:getComputedStyle(e).borderRadius,background:getComputedStyle(e).backgroundColor}));
+      await p.locator('.tab-item[data-tab=drugs]').click();
+      const drugStyle=await card.evaluate(e=>({radius:getComputedStyle(e).borderRadius,background:getComputedStyle(e).backgroundColor}));assert.deepEqual(drugStyle,toolStyle);
+      density.push({width,drugHeight,toolHeight});
+      // Scroll the actual pane, then exercise the same floating control Tools uses.
       await card.locator('[data-drug-toggle]').click();await card.locator('.drug-reference-source-footer').waitFor();
-      await card.locator('[data-drug-close]').first().press('Escape');assert.equal(await p.locator('.drug-reference-card.open').count(),0);
+      await p.waitForTimeout(450);
+      assert(!await p.locator('.accordion-float-bar').isVisible());
+      await p.locator('#drugsTab').evaluate(e=>{e.scrollTop+=250});
+      await p.locator('.accordion-float-bar.visible').waitFor({state:'visible'});
+      const safe=()=>p.evaluate(()=>{
+        const bar=document.querySelector('.accordion-float-bar').getBoundingClientRect(),header=document.querySelector('.app-header').getBoundingClientRect(),settings=document.querySelector('#settingsBtn'),b=settings.getBoundingClientRect();
+        return {below:bar.top>=header.bottom-.5,settingsHit:document.elementFromPoint(b.x+b.width/2,b.y+b.height/2)?.closest('#settingsBtn')===settings};
+      });
+      assert.deepEqual(await safe(),{below:true,settingsHit:true});
+      await p.locator('.app-header').evaluate(e=>e.style.paddingTop='23px');await p.waitForTimeout(60);assert.deepEqual(await safe(),{below:true,settingsHit:true});
+      await p.locator('.app-header').evaluate(e=>e.style.paddingTop='');
+      await p.locator('.tab-item[data-tab=tools]').click();assert.equal(await p.locator('.accordion-float-bar').count(),0);
+      await p.locator('.tab-item[data-tab=drugs]').click();await p.locator('.accordion-float-bar.visible').waitFor();
+      assert.equal(await p.locator('.accordion-float-bar').count(),1);
+      await p.locator('.accordion-float-close').click();assert.equal(await p.locator('.drug-reference-card.open').count(),0);
+      assert.equal(await p.locator('.accordion-float-bar').count(),0);
+      assert(!await p.locator('#settingsModal').evaluate(e=>e.classList.contains('active')));
     }
-    passed.push('one card per row at 1280/390/320; no overflow; footer only; click/Escape closing and header separation');
+    passed.push('compact headers match Tools heights/radius/surfaces at 1280/390/320; whole-header click and keyboard toggling');
+    passed.push('overview then explicit comprehensive view; no pregnancy/lactation in collapsed headers or overview metadata; one source footer');
+    passed.push('shared scroll close bar stays below actual/resized header; Settings hit target clear; no stale bars on tab changes');
     const longId=await p.evaluate(()=>[...window.FoxiMedDrugBookIndex].sort((a,b)=>b.en.length-a.en.length)[0].id);
     await p.evaluate(id=>openDrugReferenceDrug(id),longId);
-    await p.locator('.drug-reference-card.open .drug-reference-source-footer').waitFor();
+    await p.locator('.drug-reference-card.open [data-drug-comprehensive]').waitFor();
     assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-    await p.locator('.drug-reference-card.open [data-drug-close]').last().click();
+    await p.locator('.drug-reference-card.open [data-drug-toggle]').click();
     const longest=await p.evaluate(()=>window.FoxiMedDrugBookData?.length||0);assert.equal(longest,0);
-    // All chunks remain lazy; exercise a later chunk and a longer monograph.
     await p.evaluate(()=>openDrugReferenceDrug('vancomycin-hydrochlorid'));
-    await p.locator('.drug-reference-card.open .drug-reference-source-footer').waitFor();
-    assert((await p.locator('.drug-reference-card.open .drug-reference-source-text').allTextContents()).join('').length>2000);
-    await p.locator('.drug-reference-card.open [data-drug-close]').last().click();
-    passed.push('long generic name and long multi-page monograph');
+    await p.locator('.drug-reference-card.open [data-drug-comprehensive]').waitFor();
+    const shortText=(await p.locator('.drug-reference-card.open .drug-reference-source-text').allTextContents()).join('');
+    await p.locator('.drug-reference-card.open [data-drug-comprehensive]').click();
+    assert((await p.locator('.drug-reference-card.open .drug-reference-source-text').allTextContents()).join('').length>shortText.length);
+    if(process.env.FOXIMED_SCREENSHOT_DIR)await p.screenshot({path:path.join(process.env.FOXIMED_SCREENSHOT_DIR,'comprehensive.png')});
+    await p.locator('.drug-reference-card.open [data-drug-overview]').click();
+    if(process.env.FOXIMED_SCREENSHOT_DIR)await p.screenshot({path:path.join(process.env.FOXIMED_SCREENSHOT_DIR,'overview.png')});
+    await p.locator('.drug-reference-card.open [data-drug-toggle]').click();
+    passed.push('long names do not overflow; multi-page comprehensive content stays behind the second action');
     await p.locator('#settingsBtn').click();assert(await p.locator('#settingsModal').evaluate(e=>e.classList.contains('active')));
     await p.evaluate(()=>{document.querySelector('#settingsModal').classList.remove('active');document.body.classList.remove('no-scroll')});
     await p.locator('.tab-item[data-tab=tools]').click();assert(await p.locator('#toolsTab').isVisible());
     await p.locator('#toolsSearch').fill('GCS');await p.waitForTimeout(160);await p.locator('#toolsSearchClear').click();
-    passed.push('Settings opens independently; Tools search/clear preserved');assert.deepEqual(errors,[]);await c.close();
+    await p.locator('#gcsAccordionItem .accordion-header').click();await p.waitForTimeout(450);
+    await p.locator('#toolsTab').evaluate(e=>{e.scrollTop+=230});
+    await p.locator('.accordion-float-bar.visible').waitFor();
+    assert(await p.locator('.accordion-float-bar').evaluate(e=>e.getBoundingClientRect().top>=document.querySelector('.app-header').getBoundingClientRect().bottom-.5));
+    await p.locator('.accordion-float-close').click();assert(!await p.locator('#gcsAccordionItem').evaluate(e=>e.classList.contains('open')));
+    passed.push('Settings, Tools search/clear, and Tools own accordion/floating close continue working');
+    assert.deepEqual(errors,[]);await c.close();
     // Network failure, retry, stale response, and missing optional fields.
     const e=await context();let requests=0;
     await e.route('**/drug-reference-catalog.js*',async r=>{const response=await r.fetch();await r.fulfill({response,body:(await response.text())+'\nwindow.FoxiMedDrugCatalog.push({id:"optional-fixture",en:"Optional fixture"});'});});
@@ -99,6 +155,6 @@ const server = http.createServer((req,res) => {
     await q.evaluate(()=>openDrugReferenceDrug('optional-fixture'));await q.locator('[data-drug-card=optional-fixture] .drug-reference-source-footer').waitFor();
     assert(!(await q.locator('[data-drug-card=optional-fixture]').innerText()).includes('undefined'));
     passed.push('network failure/retry; rapid record switching; absent optional fields');await e.close();
-    console.log(JSON.stringify({status:'PASS',passed},null,2));
+    console.log(JSON.stringify({status:'PASS',density,passed},null,2));
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(e=>{server.close();console.error(e);process.exit(1)});

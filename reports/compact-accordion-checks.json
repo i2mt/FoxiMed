@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "test": "drug-reference-data.test.js",
+      "status": "PASS"
+    },
+    {
+      "test": "drug-reference-cache.test.js",
+      "status": "PASS"
+    },
+    {
+      "test": "voice-pipeline-smoke.test.js",
+      "status": "PASS"
+    },
+    {
+      "test": "drug-reference-ui.test.js",
+      "status": "PASS"
+    }
+  ],
+  "syntax": "All 32 root/test JavaScript files pass node --check",
+  "scope": "Local Chromium and source checks; not deployed"
+}

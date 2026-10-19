@@ -1,12 +1,31 @@
 {
   "status": "PASS",
+  "density": [
+    {
+      "width": 1280,
+      "drugHeight": 66,
+      "toolHeight": 66
+    },
+    {
+      "width": 390,
+      "drugHeight": 66,
+      "toolHeight": 66
+    },
+    {
+      "width": 320,
+      "drugHeight": 66,
+      "toolHeight": 66
+    }
+  ],
   "passed": [
     "initial results bounded to 40; no eager book requests",
     "Persian, English, brand, partial/normalized and empty searches",
     "pagination and category controls",
-    "one card per row at 1280/390/320; no overflow; footer only; click/Escape closing and header separation",
-    "long generic name and long multi-page monograph",
-    "Settings opens independently; Tools search/clear preserved",
+    "compact headers match Tools heights/radius/surfaces at 1280/390/320; whole-header click and keyboard toggling",
+    "overview then explicit comprehensive view; no pregnancy/lactation in collapsed headers or overview metadata; one source footer",
+    "shared scroll close bar stays below actual/resized header; Settings hit target clear; no stale bars on tab changes",
+    "long names do not overflow; multi-page comprehensive content stays behind the second action",
+    "Settings, Tools search/clear, and Tools own accordion/floating close continue working",
     "network failure/retry; rapid record switching; absent optional fields"
   ]
 }

@@ -21,11 +21,11 @@
 // points people would actually notice, not an engineering changelog.
 const APP_VERSION = '5.3.2';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.3.2-drug-reference-lazy-details';
+const RELEASE_NOTES_REVISION = '5.3.2-drug-reference-two-stage-accordion';
 
 const CHANGELOG = {
     '5.3.2': [
-        'مرجع دارویی با کارت‌های تک‌ستونه و دکمهٔ اطلاعات بیشتر بازطراحی شده است.',
+        'مرجع دارویی با کارت‌های فشرده مانند ابزارها، خلاصهٔ بازشونده و جزئیات کامل در مرحلهٔ بعد بازطراحی شده است.',
         'جست‌وجوی مرجع دارویی با نام ژنریک انگلیسی، نام فارسی و نام‌های تجاری آسان‌تر شده است.',
         'ساختار جزئیات دارو بخش‌های جداگانه‌ای برای کاربرد، مکانیسم اثر، دوز، هشدارها، مراقبت‌های پرستاری، بارداری، نارسایی کلیوی و تداخلات دارد.',
         'اطلاعات کامل داروها هنگام باز کردن جزئیات بارگذاری می‌شوند؛ جستجو و فهرست اولیه سبک‌تر شده‌اند.'
@@ -2638,6 +2638,7 @@ function switchTab(tabName) {
     const tabItems = document.querySelectorAll('.tab-item');
     const tabPanes = document.querySelectorAll('.tab-pane');
     const previousTab = AppState.currentTab;
+    removeAccordionFloatBar();
 
     tabItems.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
     tabPanes.forEach(pane => {
@@ -2650,6 +2651,8 @@ function switchTab(tabName) {
     if (tabName === 'tools') {
         initializeTools();
         initializeConverters();
+        const openTool = document.querySelector('#toolsTab .accordion-item.open');
+        if (openTool) addAccordionFloatBar(openTool, openTool.querySelector('.accordion-header'));
     }
     if (tabName === 'voice' && window.VoiceEngine && typeof window.VoiceEngine.preload === 'function') {
         // Start the model download/load only once the person actually
@@ -4086,48 +4089,76 @@ function setupThemePicker() {
 // ============================================
 let _accordionFloatBar = null;
 let _accordionScrollHandler = null;
+let _accordionScrollPane = null;
+let _accordionResizeObserver = null;
 
 function removeAccordionFloatBar() {
     if (_accordionFloatBar) { _accordionFloatBar.remove(); _accordionFloatBar = null; }
     if (_accordionScrollHandler) {
-        const pane = document.querySelector('.tab-pane.active');
-        if (pane) pane.removeEventListener('scroll', _accordionScrollHandler);
+        if (_accordionScrollPane) _accordionScrollPane.removeEventListener('scroll', _accordionScrollHandler);
+        window.removeEventListener('scroll', _accordionScrollHandler);
+        window.removeEventListener('resize', _accordionScrollHandler);
         _accordionScrollHandler = null;
     }
+    if (_accordionResizeObserver) { _accordionResizeObserver.disconnect(); _accordionResizeObserver = null; }
+    _accordionScrollPane = null;
 }
 
-function addAccordionFloatBar(item, headerBtn) {
+// Shared Tools/Drug Reference behavior: show the close bar only while the
+// expanded card remains in view and its header has scrolled out of the pane.
+function addAccordionFloatBar(item, headerBtn, onClose) {
     removeAccordionFloatBar();
     const titleEl = headerBtn.querySelector('.accordion-title');
-    const iconEl  = headerBtn.querySelector('.accordion-icon-wrap i');
-    const title   = titleEl ? titleEl.textContent : 'بستن';
-    const iconClass = iconEl ? iconEl.className : 'fas fa-chevron-up';
-
+    const iconEl = headerBtn.querySelector('.accordion-icon-wrap i');
+    const title = titleEl ? titleEl.textContent : 'بستن';
+    const pane = item.closest('.tab-pane');
+    const appHeader = document.querySelector('.app-header');
     const bar = document.createElement('div');
     bar.className = 'accordion-float-bar';
-    bar.innerHTML = `
-        <div class="accordion-float-left">
-            <i class="${iconClass}"></i>
-            <span>${title}</span>
-        </div>
-        <button class="accordion-float-close"><i class="fas fa-times"></i> بستن</button>
-    `;
-    bar.querySelector('.accordion-float-close').addEventListener('click', () => {
-        toggleAccordion(headerBtn);
+    bar.setAttribute('role', 'group');
+    bar.setAttribute('aria-label', 'بستن اطلاعات بازشده');
+    bar.hidden = true;
+    bar.inert = true;
+    bar.style.display = 'none';
+    bar.innerHTML = '<div class="accordion-float-left"><i aria-hidden="true"></i><span></span></div>' +
+        '<button type="button" class="accordion-float-close"><i class="fas fa-times" aria-hidden="true"></i> بستن</button>';
+    bar.querySelector('.accordion-float-left i').className = iconEl ? iconEl.className : 'fas fa-chevron-up';
+    bar.querySelector('.accordion-float-left span').textContent = title;
+    bar.querySelector('button').setAttribute('aria-label', 'بستن ' + title);
+    bar.querySelector('button').addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (typeof onClose === 'function') onClose();
+        else toggleAccordion(headerBtn);
+        if (headerBtn.isConnected) {
+            headerBtn.focus({ preventScroll: true });
+            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     });
     document.body.appendChild(bar);
     _accordionFloatBar = bar;
-
-    const pane = document.querySelector('.tab-pane.active') || window;
+    _accordionScrollPane = pane;
     _accordionScrollHandler = () => {
-        const headerRect = headerBtn.getBoundingClientRect();
-        if (headerRect.bottom < 60) {
-            bar.classList.add('visible');
-        } else {
-            bar.classList.remove('visible');
-        }
+        // Use actual boundaries, including mobile/safe-area header heights.
+        // A hidden bar has no layout or pointer target over Settings.
+        const top = Math.max(0, appHeader?.getBoundingClientRect().bottom || 0, pane?.getBoundingClientRect().top || 0);
+        const active = item.isConnected && item.classList.contains('open') && (!pane || pane.classList.contains('active'));
+        const visible = active && headerBtn.getBoundingClientRect().bottom <= top && item.getBoundingClientRect().bottom > top;
+        bar.style.top = top + 'px';
+        bar.hidden = !visible;
+        bar.inert = !visible;
+        bar.style.display = visible ? 'flex' : 'none';
+        bar.classList.toggle('visible', visible);
     };
-    pane.addEventListener('scroll', _accordionScrollHandler, { passive: true });
+    if (pane) pane.addEventListener('scroll', _accordionScrollHandler, { passive: true });
+    window.addEventListener('scroll', _accordionScrollHandler, { passive: true });
+    window.addEventListener('resize', _accordionScrollHandler, { passive: true });
+    if (typeof ResizeObserver === 'function') {
+        _accordionResizeObserver = new ResizeObserver(_accordionScrollHandler);
+        if (appHeader) _accordionResizeObserver.observe(appHeader);
+        if (pane) _accordionResizeObserver.observe(pane);
+    }
+    _accordionScrollHandler();
 }
 
 function toggleAccordion(headerBtn) {

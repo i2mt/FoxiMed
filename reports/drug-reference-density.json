@@ -1,0 +1,16 @@
+{
+  "viewport": 390,
+  "metrics": [
+    {
+      "phase": "previous",
+      "cardHeight": 175.375,
+      "initialBookRequests": 0
+    },
+    {
+      "phase": "current",
+      "cardHeight": 66,
+      "initialBookRequests": 0
+    }
+  ],
+  "icon_assets": "Font Awesome 6.4.0 CSS/fonts supplied locally to the QA browser; no application dependency changes"
+}

@@ -1,5 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
+  "revision": "compact-tools-style-two-stage-accordion",
   "self_hash_excluded": true,
   "files": [
     {
@@ -10,9 +11,9 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 2821,
-      "sha256": "79b187af151552359bedbb5776dbf7376935d4ddd62fa940a8881b6919b97055",
-      "reason": "Manual upload, verification and reproduction instructions."
+      "bytes": 3130,
+      "sha256": "acea316d7f183830aa5c449aee7933bb1a496413652083959dbce5b434ed0c08",
+      "reason": "Current cumulative-package instructions, two-stage interactions and asset versions."
     },
     {
       "path": "drug-reference-book-01.js",
@@ -88,27 +89,39 @@
     },
     {
       "path": "drug-reference.css",
-      "bytes": 6496,
-      "sha256": "8adf888104ac82f89a96c062430c816300e56162f4928a86158a0da9ff1b4e3c",
-      "reason": "Tools-style single-column responsive cards, readable details, accessible controls and muted source footer."
+      "bytes": 6343,
+      "sha256": "80ad97a84e506e244b5a1e8014ac38c4a0a23967ed92169b60638d8bf6b80ce0",
+      "reason": "Tools-sized 66 px headers using its existing classes, colors and chevron; long names wrap only when opened."
     },
     {
       "path": "drug-reference.js",
-      "bytes": 13927,
-      "sha256": "e74c9db5b01dfbe13809b774dc3fb249b678d93aafe2e31259b216574f3a125d",
-      "reason": "Cached metadata search, 40-result paging, lazy details, in-card close controls, retry and async race handling."
+      "bytes": 19024,
+      "sha256": "645c7c7db1cd58110083b4e00dd49b9234fe3d200826e5c4a9703a0cbdb8116b",
+      "reason": "Compact full-header accordions, source-supported overview then explicit comprehensive details, and shared Tools close helper."
     },
     {
       "path": "index.html",
       "bytes": 184022,
-      "sha256": "64e33236f6602b8d489e22be562aa1e416d1965a3349aea79540c102748eb33c",
-      "reason": "Replace eager book scripts with index, add paging controls, remove obsolete detail placeholder and repeated warning, bump asset URLs."
+      "sha256": "b76ce42cf189be886ea1916bca0c28b717cb17ff8b0918d296c86e035205640e",
+      "reason": "Current stylesheet/script/service-worker URL revisions for the compact accordion release."
+    },
+    {
+      "path": "reports/COMPACT-ACCORDION-UPDATE.md",
+      "bytes": 4111,
+      "sha256": "2a8b8c36e0de2fdaf57c12823bcbe994d1561b94cea71d327b79eaa89c5c4792",
+      "reason": "Latest revision requirements, changes, actual density measurements, checks and upload guidance."
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "bytes": 14651,
-      "sha256": "a2f0cd0aa14b25150edc58efd433d47382ae6b15e2b4e17e7f5bc1c9daf6b4b0",
-      "reason": "Root causes, every changed file, data audit, checks, repository/deployment status and limitations."
+      "bytes": 16770,
+      "sha256": "5e77651fd6425b1305bfd53bca89e67a8ca12157b2d6f42da5e7404931cf05cb",
+      "reason": "Updated cumulative report including shared scrolling-close behavior and current verification limits."
+    },
+    {
+      "path": "reports/compact-accordion-checks.json",
+      "bytes": 492,
+      "sha256": "ae37107cc02a4bfbc390e010b7ffaf924836d3a888417e083874f3833f2d9210",
+      "reason": "Current full data/cache/voice/UI and JavaScript syntax check results."
     },
     {
       "path": "reports/drug-data-audit.json",
@@ -129,16 +142,22 @@
       "reason": "Complete source-entry review queue; no clinical validation implied."
     },
     {
+      "path": "reports/drug-reference-density.json",
+      "bytes": 353,
+      "sha256": "807107f7ae647b383fbf4e08c2d469f54edf40e2042767cac0b3f95e9b6c3695",
+      "reason": "390 px before/after card-height measurement using the actual Font Awesome 6.4.0 icons in the QA browser."
+    },
+    {
       "path": "reports/drug-reference-performance.json",
-      "bytes": 1009,
-      "sha256": "367452d27279493212f1ac22f0a11369043140615f47d36f69b79c5be4f09c61",
-      "reason": "Measured local before/after startup payload and interaction sample."
+      "bytes": 1185,
+      "sha256": "4ebcb0efbc6ccef4b712cccf8474267bbee5c6b2e7e8bc8cbeb4e6b132e30d95",
+      "reason": "Historical first performance-repair sample, labelled separately from this layout revision."
     },
     {
       "path": "reports/drug-reference-ui-results.json",
-      "bytes": 520,
-      "sha256": "7ee812426f6bf277402554f8aa0ce8b12eab828f224900226bf0c3528e6cfcf5",
-      "reason": "Successful rendered suite output."
+      "bytes": 1114,
+      "sha256": "6d602cf37d6ab509132bcce446bc99abc85d36ad622c52c8d4c75466d9776a9a",
+      "reason": "Current passing rendered UI suite with 66 px Drugs/Tools measurements at three viewport widths."
     },
     {
       "path": "reports/drug-source-duplicate-headings.json",
@@ -148,9 +167,9 @@
     },
     {
       "path": "script.js",
-      "bytes": 303671,
-      "sha256": "702d5aa2e0a27d9ae22d506fc80e8383b4c4e8e18e6e7d177e32199b6bae8383",
-      "reason": "Update existing release notes for the new loading/layout behavior and revision; no runtime voice changes."
+      "bytes": 306122,
+      "sha256": "a5b09a9c2282f685804aa783f63865c6893317ba69c30a732921f93895c3becd",
+      "reason": "Share Tools floating-close behavior with Drugs; observe actual pane/header boundaries, clean up listeners and restore bars safely on tab changes."
     },
     {
       "path": "scripts/drug-reference-original-ids.json",
@@ -173,8 +192,14 @@
     {
       "path": "service-worker.js",
       "bytes": 7170,
-      "sha256": "3c9bc5a88ee92d0c0967595fe5c03d5732a069950f61d6c24de5e3bc3e8cdafb",
-      "reason": "New app cache revision, small-index precache, on-demand versioned book cache; preserve model cache."
+      "sha256": "4b472382b73ac2252b7c9b238d79d56c25f7271daa0ebfb441fe26b7716e50a6",
+      "reason": "Updated app cache namespace and current asset references; original lazy-book and voice-model cache logic retained."
+    },
+    {
+      "path": "style.css",
+      "bytes": 233512,
+      "sha256": "8141744378270362cb4e509f3ac87bbe24baec87779ae23b6d2e5bd13a68b6c5",
+      "reason": "Constrain long titles inside the shared floating close bar; all other styles retained."
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -190,9 +215,9 @@
     },
     {
       "path": "tests/drug-reference-ui.test.js",
-      "bytes": 9155,
-      "sha256": "d593ce166d03e2e34b214584a7bb860a66e9d661fd995036e087e13276eac21b",
-      "reason": "Optional real Chromium regression suite for desktop/mobile widths and async behavior."
+      "bytes": 14580,
+      "sha256": "e4c12c4669567f70089161aab1d3acc33713ffa669443b7fccaefab4d3eb6db6",
+      "reason": "Regression coverage for Tools-matched density, two-stage details, full header clicks, keyboard, safe scrolling close bars and existing interactions."
     },
     {
       "path": "tests/voice-pipeline-smoke.test.js",

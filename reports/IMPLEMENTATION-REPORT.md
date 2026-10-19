@@ -2,17 +2,19 @@
 
 ## Result
 
-The Drug Reference now uses one full-width card per row, the Tools tab's existing theme variables and surface treatments, a dedicated “اطلاعات بیشتر” button, and structured inline details. Source attribution is a single muted sentence at the bottom of the information, with a link to the corresponding original PDF page. Repeated warning and source banners were removed as requested. Close controls remain inside each expanded card; the app header is unobstructed.
+The Drug Reference now uses one compact, full-width card per row. Its collapsed headers match the Tools accordion dimensions, colors, typography, icons, chevron, and tap behavior. First tap opens an overview; “اطلاعات بیشتر” appears only at the bottom of that overview and opens the comprehensive monograph. Dedicated pregnancy/breastfeeding sections appear only at the comprehensive level. See `COMPACT-ACCORDION-UPDATE.md` for the latest revision and 66 px card measurements. Source attribution remains a single muted sentence at the bottom of either information level, with a link to the corresponding original PDF page. Repeated warning and source banners were removed as requested. The Drugs tab reuses the Tools floating-close helper. It appears after the open header scrolls away and stays below the actual app header; Settings remains unobstructed.
 
 ## Root causes
 
 - The original CSS explicitly switched between two and three columns. Small fonts, an entire clickable card header, and inconsistent available metadata made the results hard to scan.
 - Ten numbered book scripts totaling about 7.97 MB were loaded synchronously before the application script finished startup. Each search called a function that revisited every source heading, rebuilt the combined dataset, and searched full monograph bodies. Every render rebuilt over a thousand cards, including when opening or closing a single drug.
-- Drug details appended a fixed floating close bar to `document.body`, borrowing shared accordion positioning, using a hard-coded scroll/header threshold, and surviving outside the Drugs tab's component boundary. Its visibility, pointer events, stacking, and responsive positioning could conflict with the header. The replacement removes that overlay and its scroll listener entirely. Browser tests verify that the new close controls do not intersect Settings and never open it.
+- Drug details appended a fixed floating close bar to `document.body`, borrowing shared accordion positioning, using a hard-coded scroll/header threshold, and surviving outside the Drugs tab's component boundary. Its visibility, pointer events, stacking, and responsive positioning could conflict with the header. The current revision uses the same helper for Tools and Drugs, observes the exact scroll pane, measures actual header/safe-area bounds, hides inactive controls, and cleans up listeners on closure or tab changes. Browser tests verify the close bar stays below Settings, including after simulated header-height changes.
 - The local `Validate voice pipeline source` command failed with `page must register the v45 service worker`: the test also hard-coded release 5.2.0 and an old release-note revision, while this snapshot identifies itself as 5.3.2 and registers worker v47. Those assertions now check consistency with the current version and a versioned worker URL. Voice runtime files were not changed. GitHub's actual latest failed-job logs could not be retrieved, so this is a reproduced snapshot failure, not a claim about unseen logs.
 - PDF font dictionaries encoded compound lam-alef glyphs in a way that extractors either omitted them, emitted `R`/combining artifacts, or reversed their letters. The importer fixes that decoding in a temporary extraction-only PDF copy, then normalizes the resulting glyph. The original supplied PDF is preserved byte-for-byte. White heading spans identify record boundaries, with wrapped headings grouped together; bibliography and publisher pages are excluded.
 
 ## Performance and behavior
+
+The numeric before/after sample below was recorded during the first performance repair, before the compact accordion revision. It is retained as historical evidence. The current UI retains the same small index, lazy chunks, and 40-result paging; current density measurements are in `drug-reference-density.json`.
 
 A small name/brand/class index replaces eager monograph scripts. Results are paginated in groups of 40. Search normalization and metadata are prepared once, search input is debounced by 80 ms, exact names precede prefix and other matches, and opening a record changes only that card. A record loads its corresponding chunk once and reuses the result. Failed loads show retry controls, and switching records during a pending request cannot replace the wrong card.
 
@@ -57,10 +59,10 @@ Passed locally:
 - Checks against combined monographs, non-monograph extraction debris, corruption in headings, and quarantined aliases.
 - Service-worker tests for no eager book precache, cached detail access offline, and extraction-revision isolation.
 - Existing voice-pipeline smoke suite, including its simulated worker lifecycle tests. Its logged simulated worker crash is an intentional fixture and the suite finishes PASS.
-- Rendered Chromium tests at 1280, 390, and 320 px: single-column alignment, no horizontal overflow, short/long names, long monographs, missing optional fields, source footer placement, Persian/English/brand/normalized/partial and empty searches, result paging, category buttons, one expanded record, click/Escape closure, Settings separation, Tools search/clear, request failure/retry, and switching records during an in-flight load. No page JavaScript errors occurred.
+- Rendered Chromium tests at 1280, 390, and 320 px: single-column alignment, no horizontal overflow, 66 px closed card headers matching Tools, short/long names, two-level details, long monographs, missing optional fields, source footer placement, Persian/English/brand/normalized/partial and empty searches, result paging, category buttons, one expanded record, click/Escape closure, Settings separation, Tools search/clear, request failure/retry, and switching records during an in-flight load. No page JavaScript errors occurred.
 - HTML local script/style references resolve. Updated source, cache, and voice checks are wired into the supplied Pages workflow.
 
-Limitations: external font/icon CDNs were blocked in the local browser harness, so layout was inspected using installed fallback fonts. This was Chromium viewport testing, not physical iOS/Android or Safari testing. The full remote Emscripten/model build, actual microphone recognition, GitHub Actions run, and live deployment were not performed.
+Limitations: external font CDNs were blocked in the local harness, so Persian/Latin layout was inspected using installed fallback fonts. For the latest visual inspection, Font Awesome 6.4.0 CSS/fonts were supplied locally to the QA browser to verify the actual icons and chevrons; no application dependencies were added. This was Chromium viewport testing, not physical iOS/Android or Safari testing. The full remote Emscripten/model build, actual microphone recognition, GitHub Actions run, and live deployment were not performed.
 
 ## Repository, pull request, and deployment status
 
@@ -70,12 +72,13 @@ Your remaining actions are to reconcile against any newer repository changes, up
 
 ## Every changed or added file
 
-See the following table and `replacement-files.json` for exact paths and integrity hashes. The three old alphabetical book files are unreferenced in the supplied HTML and were left untouched; this update does not load them.
+The exact current inventory, SHA-256 hashes, and reasons are in `replacement-files.json`. The latest UI revision changes `drug-reference.js`, `drug-reference.css`, the shared close helper in `script.js`, its text-overflow rule in `style.css`, version references in `index.html` and `service-worker.js`, the UI regression suite, and the associated instructions/reports. The catalogue and PDF bytes are unchanged from the previous delivery. The older data repair and its repeatable importer remain included in this cumulative package.
+
 
 | File | Reason |
 | --- | --- |
 | `.github/workflows/pages-sherpa-koochik.yml` | Run drug schema/cache/syntax checks before the existing voice build. |
-| `UPLOAD-INSTRUCTIONS.md` | Manual upload, verification and reproduction instructions. |
+| `UPLOAD-INSTRUCTIONS.md` | Current cumulative-package instructions, two-stage interactions and asset versions. |
 | `drug-reference-book-01.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
 | `drug-reference-book-02.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
 | `drug-reference-book-03.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
@@ -88,23 +91,27 @@ See the following table and `replacement-files.json` for exact paths and integri
 | `drug-reference-book-10.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
 | `drug-reference-index.js` | Small generated metadata index; startup no longer loads complete monographs. |
 | `drug-reference-source.pdf` | Unchanged original PDF copied under the path used by footer page links. |
-| `drug-reference.css` | Tools-style single-column responsive cards, readable details, accessible controls and muted source footer. |
-| `drug-reference.js` | Cached metadata search, 40-result paging, lazy details, in-card close controls, retry and async race handling. |
-| `index.html` | Replace eager book scripts with index, add paging controls, remove obsolete detail placeholder and repeated warning, bump asset URLs. |
-| `reports/IMPLEMENTATION-REPORT.md` | Root causes, every changed file, data audit, checks, repository/deployment status and limitations. |
+| `drug-reference.css` | Tools-sized 66 px headers using its existing classes, colors and chevron; long names wrap only when opened. |
+| `drug-reference.js` | Compact full-header accordions, source-supported overview then explicit comprehensive details, and shared Tools close helper. |
+| `index.html` | Current stylesheet/script/service-worker URL revisions for the compact accordion release. |
+| `reports/COMPACT-ACCORDION-UPDATE.md` | Latest revision requirements, changes, actual density measurements, checks and upload guidance. |
+| `reports/IMPLEMENTATION-REPORT.md` | Updated cumulative report including shared scrolling-close behavior and current verification limits. |
+| `reports/compact-accordion-checks.json` | Current full data/cache/voice/UI and JavaScript syntax check results. |
 | `reports/drug-data-audit.json` | Machine-readable extraction/validation counts and unresolved-review totals. |
 | `reports/drug-data-corrections.csv` | Before/after metadata journal with original IDs, PDF pages and verification limits. |
 | `reports/drug-data-review.csv` | Complete source-entry review queue; no clinical validation implied. |
-| `reports/drug-reference-performance.json` | Measured local before/after startup payload and interaction sample. |
-| `reports/drug-reference-ui-results.json` | Successful rendered suite output. |
+| `reports/drug-reference-density.json` | 390 px before/after card-height measurement using the actual Font Awesome 6.4.0 icons in the QA browser. |
+| `reports/drug-reference-performance.json` | Historical first performance-repair sample, labelled separately from this layout revision. |
+| `reports/drug-reference-ui-results.json` | Current passing rendered UI suite with 66 px Drugs/Tools measurements at three viewport widths. |
 | `reports/drug-source-duplicate-headings.json` | Retained duplicate/incomplete English source headings for review. |
-| `script.js` | Update existing release notes for the new loading/layout behavior and revision; no runtime voice changes. |
+| `script.js` | Share Tools floating-close behavior with Drugs; observe actual pane/header boundaries, clean up listeners and restore bars safely on tab changes. |
 | `scripts/drug-reference-original-ids.json` | Original 764-entry identity map for reproducible ID preservation. |
 | `scripts/drug-reference-overrides.json` | Documented, sourced exclusion of ambiguous acetaminophen brand aliases. |
 | `scripts/rebuild-drug-reference.py` | Repeatable PDF boundary/ligature extraction, stable-ID mapping, metadata and audit generation. |
-| `service-worker.js` | New app cache revision, small-index precache, on-demand versioned book cache; preserve model cache. |
+| `service-worker.js` | Updated app cache namespace and current asset references; original lazy-book and voice-model cache logic retained. |
+| `style.css` | Constrain long titles inside the shared floating close bar; all other styles retained. |
 | `tests/drug-reference-cache.test.js` | Exercise lazy caching, offline reuse and revision isolation. |
 | `tests/drug-reference-data.test.js` | Validate the complete dataset, relationships, source status and preserved IDs. |
-| `tests/drug-reference-ui.test.js` | Optional real Chromium regression suite for desktop/mobile widths and async behavior. |
+| `tests/drug-reference-ui.test.js` | Regression coverage for Tools-matched density, two-stage details, full header clicks, keyboard, safe scrolling close bars and existing interactions. |
 | `tests/voice-pipeline-smoke.test.js` | Replace obsolete release-specific assertions with current-version consistency checks. |
-| `reports/replacement-files.json` | Exact replacement inventory and SHA-256 integrity hashes; excludes its own hash. |
+| `reports/replacement-files.json` | Exact replacement inventory and integrity hashes; excludes its own hash. |
