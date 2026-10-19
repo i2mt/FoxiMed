@@ -23,7 +23,13 @@
     const count = $('drugReferenceCount');
     if (!grid) return;
     const term = $('drugReferenceSearch')?.value || '';
-    const filtered = data().filter(d => matches(d, term) && (state.filter === 'all' || (d.classEn || '').toLowerCase().includes(state.filter) || (d.classFa || '').includes(state.filter)));
+    const filterIds = {
+      antibiotic: ['ceftriaxone', 'vancomycin'],
+      cardio: ['amiodarone', 'adenosine', 'epinephrine', 'norepinephrine', 'nitroglycerin', 'furosemide'],
+      anticoagulant: ['heparin', 'enoxaparin', 'aspirin'],
+      analgesic: ['paracetamol', 'ibuprofen', 'morphine', 'fentanyl', 'midazolam']
+    };
+    const filtered = data().filter(d => matches(d, term) && (state.filter === 'all' || (filterIds[state.filter] || []).includes(d.id)));
     if (count) count.textContent = filtered.length + ' دارو از ' + data().length + ' رکورد نمایشی';
     if (!filtered.length) {
       grid.innerHTML = '<div class="drug-reference-empty" style="grid-column:1/-1"><i class="fas fa-magnifying-glass"></i>دارویی با این عبارت پیدا نشد. نام فارسی، انگلیسی یا نام جایگزین را امتحان کنید.</div>';
