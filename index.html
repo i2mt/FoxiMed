@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=43">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
-    <link rel="stylesheet" href="drug-reference.css?v=2">
+    <link rel="stylesheet" href="drug-reference.css?v=3">
 </head>
 <body>
 
@@ -422,9 +422,12 @@
                         </div>
                         <p class="drug-reference-count" id="drugReferenceCount" aria-live="polite"></p>
                         <div class="drug-reference-grid" id="drugReferenceGrid"></div>
-                        <div class="drug-reference-empty" style="margin-top:14px"><i class="fas fa-circle-info"></i>این نسخه نمایشی است. اطلاعات دارویی باید پیش از استفاده بالینی با منابع معتبر بازبینی شوند.</div>
+                        <nav class="drug-reference-pagination" id="drugReferencePagination" aria-label="صفحات نتایج دارویی" hidden>
+                            <button type="button" id="drugReferencePrevious">قبلی</button>
+                            <span id="drugReferencePage" dir="ltr" aria-live="polite"></span>
+                            <button type="button" id="drugReferenceNext">بعدی</button>
+                        </nav>
                     </div>
-                    <div class="drug-reference-detail" id="drugReferenceDetail" hidden></div>
                 </div>
             </div>
 
@@ -2275,20 +2278,11 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=48"></script>
+    <script src="script.js?v=49"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
-    <script src="drug-reference-book-01.js?v=1"></script>
-    <script src="drug-reference-book-02.js?v=1"></script>
-    <script src="drug-reference-book-03.js?v=1"></script>
-    <script src="drug-reference-book-04.js?v=1"></script>
-    <script src="drug-reference-book-05.js?v=1"></script>
-    <script src="drug-reference-book-06.js?v=1"></script>
-    <script src="drug-reference-book-07.js?v=1"></script>
-    <script src="drug-reference-book-08.js?v=1"></script>
-    <script src="drug-reference-book-09.js?v=1"></script>
-    <script src="drug-reference-book-10.js?v=1"></script>
-    <script src="drug-reference.js?v=3"></script>
+    <script src="drug-reference-index.js?v=1"></script>
+    <script src="drug-reference.js?v=4"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=43"></script>
@@ -2296,7 +2290,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=47', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=48', { updateViaCache: 'none' });
             });
         }
     </script>

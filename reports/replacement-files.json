@@ -1,0 +1,204 @@
+{
+  "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
+  "self_hash_excluded": true,
+  "files": [
+    {
+      "path": ".github/workflows/pages-sherpa-koochik.yml",
+      "bytes": 7304,
+      "sha256": "933230c4004b174062cf22333f12d7dc488c5f0cf372f26338915a37a8dd858e",
+      "reason": "Run drug schema/cache/syntax checks before the existing voice build."
+    },
+    {
+      "path": "UPLOAD-INSTRUCTIONS.md",
+      "bytes": 2821,
+      "sha256": "79b187af151552359bedbb5776dbf7376935d4ddd62fa940a8881b6919b97055",
+      "reason": "Manual upload, verification and reproduction instructions."
+    },
+    {
+      "path": "drug-reference-book-01.js",
+      "bytes": 661415,
+      "sha256": "3b6ca2c67d58b579b8ce3c0a8065c7c904a6d8f4ba87c9c6733606c8cad0e1fb",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-02.js",
+      "bytes": 702550,
+      "sha256": "32b08763cda7c0f3e7ec2878848047505ecb36f1c118b4cbe01905f7674264db",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-03.js",
+      "bytes": 778581,
+      "sha256": "aa4faa53e7186ed04b0bf0ce5372103ebb879345765ad6cf02ecfdaa42fafcd1",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-04.js",
+      "bytes": 909197,
+      "sha256": "185f98bea6aacf6179ee9218b40edc2d7ed772e880cecfe3c8a655a53b718a4d",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-05.js",
+      "bytes": 714827,
+      "sha256": "c4281d0ee8b4e007c87c2ffff84868957270f66fe7afababb15c18e0a1ff7410",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-06.js",
+      "bytes": 921146,
+      "sha256": "97d69d81a4bd5af01761060dc4b57b7d7236ba55b611bbb80ddf6e4f1cfcc662",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-07.js",
+      "bytes": 746995,
+      "sha256": "3a93cf62d9576878f1ceb6dfb210bd0d614b1c77f06fa52834492fe6ba76531b",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-08.js",
+      "bytes": 726101,
+      "sha256": "99fe3ae4b60b8f9a891461150b938fa6d5fd0cd8a58fd7a8252dfe3104087c7e",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-09.js",
+      "bytes": 658305,
+      "sha256": "e8bf7091456e56f81d83b556b30b66711641b64c5e501afb488fd9c80c2de4db",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-book-10.js",
+      "bytes": 903180,
+      "sha256": "b3581c31f5bb5869509b958aa32362439abb446704574be06b27ce755d3827cb",
+      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status."
+    },
+    {
+      "path": "drug-reference-index.js",
+      "bytes": 310178,
+      "sha256": "665efa40c35ccc7c527a551ad64808c372d92bc05921952bf09c13110faefbf3",
+      "reason": "Small generated metadata index; startup no longer loads complete monographs."
+    },
+    {
+      "path": "drug-reference-source.pdf",
+      "bytes": 12760136,
+      "sha256": "a765a31b8d8bd86f9477da3ca1b50fad3a13a2da8158612ec7653cce3140a896",
+      "reason": "Unchanged original PDF copied under the path used by footer page links."
+    },
+    {
+      "path": "drug-reference.css",
+      "bytes": 6496,
+      "sha256": "8adf888104ac82f89a96c062430c816300e56162f4928a86158a0da9ff1b4e3c",
+      "reason": "Tools-style single-column responsive cards, readable details, accessible controls and muted source footer."
+    },
+    {
+      "path": "drug-reference.js",
+      "bytes": 13927,
+      "sha256": "e74c9db5b01dfbe13809b774dc3fb249b678d93aafe2e31259b216574f3a125d",
+      "reason": "Cached metadata search, 40-result paging, lazy details, in-card close controls, retry and async race handling."
+    },
+    {
+      "path": "index.html",
+      "bytes": 184022,
+      "sha256": "64e33236f6602b8d489e22be562aa1e416d1965a3349aea79540c102748eb33c",
+      "reason": "Replace eager book scripts with index, add paging controls, remove obsolete detail placeholder and repeated warning, bump asset URLs."
+    },
+    {
+      "path": "reports/IMPLEMENTATION-REPORT.md",
+      "bytes": 14651,
+      "sha256": "a2f0cd0aa14b25150edc58efd433d47382ae6b15e2b4e17e7f5bc1c9daf6b4b0",
+      "reason": "Root causes, every changed file, data audit, checks, repository/deployment status and limitations."
+    },
+    {
+      "path": "reports/drug-data-audit.json",
+      "bytes": 782,
+      "sha256": "24d0d3b6f700db567ac1250531749d24e20c8366721b884033d78eb23d5f3fe0",
+      "reason": "Machine-readable extraction/validation counts and unresolved-review totals."
+    },
+    {
+      "path": "reports/drug-data-corrections.csv",
+      "bytes": 152175,
+      "sha256": "7c149da671b1788f029b31817e35fc0118208379c16ffd7dbf321fd1ba2ba191",
+      "reason": "Before/after metadata journal with original IDs, PDF pages and verification limits."
+    },
+    {
+      "path": "reports/drug-data-review.csv",
+      "bytes": 100075,
+      "sha256": "21bc3a4fe0e641d0c45ebdb7624af218d51a97e2f8286701c6882b4353bd1715",
+      "reason": "Complete source-entry review queue; no clinical validation implied."
+    },
+    {
+      "path": "reports/drug-reference-performance.json",
+      "bytes": 1009,
+      "sha256": "367452d27279493212f1ac22f0a11369043140615f47d36f69b79c5be4f09c61",
+      "reason": "Measured local before/after startup payload and interaction sample."
+    },
+    {
+      "path": "reports/drug-reference-ui-results.json",
+      "bytes": 520,
+      "sha256": "7ee812426f6bf277402554f8aa0ce8b12eab828f224900226bf0c3528e6cfcf5",
+      "reason": "Successful rendered suite output."
+    },
+    {
+      "path": "reports/drug-source-duplicate-headings.json",
+      "bytes": 925,
+      "sha256": "26851dc4ca8dc1f2fdf7a30bfc62f870e0c30f455f33bf9c92929e88ac435c00",
+      "reason": "Retained duplicate/incomplete English source headings for review."
+    },
+    {
+      "path": "script.js",
+      "bytes": 303671,
+      "sha256": "702d5aa2e0a27d9ae22d506fc80e8383b4c4e8e18e6e7d177e32199b6bae8383",
+      "reason": "Update existing release notes for the new loading/layout behavior and revision; no runtime voice changes."
+    },
+    {
+      "path": "scripts/drug-reference-original-ids.json",
+      "bytes": 188633,
+      "sha256": "a86837f1aefc36f95d687c1faa6834148b63a135779d3b59612f281dc321607d",
+      "reason": "Original 764-entry identity map for reproducible ID preservation."
+    },
+    {
+      "path": "scripts/drug-reference-overrides.json",
+      "bytes": 805,
+      "sha256": "27fd9a40a8661d9af31803f874bbd2032ad5e84fe17b87ea486d9272252027fe",
+      "reason": "Documented, sourced exclusion of ambiguous acetaminophen brand aliases."
+    },
+    {
+      "path": "scripts/rebuild-drug-reference.py",
+      "bytes": 12700,
+      "sha256": "15777b4ca193ecc477128193ea673fb60c8e7998fa7aa872801df2f3c88ff7ab",
+      "reason": "Repeatable PDF boundary/ligature extraction, stable-ID mapping, metadata and audit generation."
+    },
+    {
+      "path": "service-worker.js",
+      "bytes": 7170,
+      "sha256": "3c9bc5a88ee92d0c0967595fe5c03d5732a069950f61d6c24de5e3bc3e8cdafb",
+      "reason": "New app cache revision, small-index precache, on-demand versioned book cache; preserve model cache."
+    },
+    {
+      "path": "tests/drug-reference-cache.test.js",
+      "bytes": 2170,
+      "sha256": "35933898eca108480832957be4a2cd3c88c0a2ad64e60d322bdc7cba870ec3c7",
+      "reason": "Exercise lazy caching, offline reuse and revision isolation."
+    },
+    {
+      "path": "tests/drug-reference-data.test.js",
+      "bytes": 3640,
+      "sha256": "54966d3b383833a7c7e067561f1d66321e3bf3618c8b4c9f91ea3afd6d91a6a2",
+      "reason": "Validate the complete dataset, relationships, source status and preserved IDs."
+    },
+    {
+      "path": "tests/drug-reference-ui.test.js",
+      "bytes": 9155,
+      "sha256": "d593ce166d03e2e34b214584a7bb860a66e9d661fd995036e087e13276eac21b",
+      "reason": "Optional real Chromium regression suite for desktop/mobile widths and async behavior."
+    },
+    {
+      "path": "tests/voice-pipeline-smoke.test.js",
+      "bytes": 48748,
+      "sha256": "9b30796f786a83fafb79924a609069074c7ba1bff02227eff44de3b94e42f02c",
+      "reason": "Replace obsolete release-specific assertions with current-version consistency checks."
+    }
+  ]
+}

@@ -1,0 +1,10128 @@
+[
+  {
+    "id": "abciximab",
+    "en": "Abciximab",
+    "fa": "آبسیکسیماب",
+    "brands": [
+      "Reopro"
+    ],
+    "synonyms": [
+      "Abciximab",
+      "Reopro"
+    ]
+  },
+  {
+    "id": "acarbose",
+    "en": "Acarbose",
+    "fa": "آکاربوز",
+    "brands": [
+      "prandese",
+      "precose"
+    ],
+    "synonyms": [
+      "Acarbose",
+      "prandese",
+      "precose"
+    ]
+  },
+  {
+    "id": "acenocumarol",
+    "en": "Acenocumarol",
+    "fa": "اسنوکومارول",
+    "brands": [
+      "Acenocumarin",
+      "sintrom"
+    ],
+    "synonyms": [
+      "Acenocumarol",
+      "Acenocumarin",
+      "sintrom"
+    ]
+  },
+  {
+    "id": "acetaminophen-paracetamol",
+    "en": "Acetaminophen paracetamol",
+    "fa": "استامینوفن",
+    "brands": [
+      "Acephen",
+      "Anacin",
+      "Aspirin",
+      "Feverall",
+      "Veopap",
+      "Panadol",
+      "Tylenol"
+    ],
+    "synonyms": [
+      "Acetaminophen paracetamol",
+      "Acephen",
+      "Anacin",
+      "Aspirin",
+      "Feverall",
+      "Veopap",
+      "Panadol",
+      "Tylenol"
+    ]
+  },
+  {
+    "id": "codeine-acetaminophen",
+    "en": "codeine Acetaminophen",
+    "fa": "استامینوفن کدئین",
+    "brands": [
+      "Acet-Codeinal phenophen"
+    ],
+    "synonyms": [
+      "codeine Acetaminophen",
+      "Acet-Codeinal phenophen"
+    ]
+  },
+  {
+    "id": "acetazolamide",
+    "en": "Acetazolamide",
+    "fa": "استازو̄مید",
+    "brands": [
+      "Dazamide",
+      "Diamox",
+      "Diamox sequels"
+    ],
+    "synonyms": [
+      "Acetazolamide",
+      "Dazamide",
+      "Diamox",
+      "Diamox sequels"
+    ]
+  },
+  {
+    "id": "acid-acetic",
+    "en": "Acid Acetic",
+    "fa": "استیک اسید",
+    "brands": [
+      "Aci-Jel",
+      "vosol"
+    ],
+    "synonyms": [
+      "Acid Acetic",
+      "Aci-Jel",
+      "vosol"
+    ]
+  },
+  {
+    "id": "acetone",
+    "en": "Acetone",
+    "fa": "استون",
+    "brands": [],
+    "synonyms": [
+      "Acetone"
+    ]
+  },
+  {
+    "id": "chloride-acetylcholine",
+    "en": "chloride Acetylcholine",
+    "fa": "اسیتل کولین کلراید",
+    "brands": [
+      "Miochol"
+    ],
+    "synonyms": [
+      "chloride Acetylcholine",
+      "Miochol"
+    ]
+  },
+  {
+    "id": "acetylcysteine",
+    "en": "Acetylcysteine",
+    "fa": "استیل سیستئین",
+    "brands": [
+      "Acetadote",
+      "Mucomyst",
+      "Mucosil",
+      "Parvolx"
+    ],
+    "synonyms": [
+      "Acetylcysteine",
+      "Acetadote",
+      "Mucomyst",
+      "Mucosil",
+      "Parvolx"
+    ]
+  },
+  {
+    "id": "acetyl-salicylic-acid-a-s-a",
+    "en": "Acetyl Salicylic Acid A.S.A",
+    "fa": "اسید سالیسیلیک استیل",
+    "brands": [
+      "A.S.A",
+      "Ascriptin",
+      "Aspergum",
+      "Bufferin",
+      "Ecotrin",
+      "Empirin"
+    ],
+    "synonyms": [
+      "Acetyl Salicylic Acid A.S.A",
+      "A.S.A",
+      "Ascriptin",
+      "Aspergum",
+      "Bufferin",
+      "Ecotrin",
+      "Empirin"
+    ]
+  },
+  {
+    "id": "acitretin",
+    "en": "Acitretin",
+    "fa": "آسیترتین",
+    "brands": [
+      "Soriatane",
+      "Neotigason"
+    ],
+    "synonyms": [
+      "Acitretin",
+      "Soriatane",
+      "Neotigason"
+    ]
+  },
+  {
+    "id": "chacoal-activated",
+    "en": "chacoal Activated",
+    "fa": "اکتیویتد شارکول",
+    "brands": [
+      "Aque-Actidose"
+    ],
+    "synonyms": [
+      "chacoal Activated",
+      "Aque-Actidose"
+    ]
+  },
+  {
+    "id": "complex-prithrombin-activated",
+    "en": "complex prithrombin Activated",
+    "fa": "اکتیویتد پروترومبین کمپلکس",
+    "brands": [],
+    "synonyms": [
+      "complex prithrombin Activated"
+    ]
+  },
+  {
+    "id": "acyclovir-systemic",
+    "en": "Acyclovir systemic",
+    "fa": "آسیکلوویر",
+    "brands": [
+      "Zovirax",
+      "Avirax"
+    ],
+    "synonyms": [
+      "Acyclovir systemic",
+      "Zovirax",
+      "Avirax"
+    ]
+  },
+  {
+    "id": "topical-ophtalmic-acyclovir",
+    "en": "Topical ophtalmic Acyclovir",
+    "fa": "آسیکلوویر افتالمیک ، تاپیکال",
+    "brands": [
+      "Avirax"
+    ],
+    "synonyms": [
+      "Topical ophtalmic Acyclovir",
+      "Avirax"
+    ]
+  },
+  {
+    "id": "dipivoxil-adefovir",
+    "en": "Dipivoxil Adefovir",
+    "fa": "آدفوویردی پی وکسیل",
+    "brands": [
+      "Hepseva"
+    ],
+    "synonyms": [
+      "Dipivoxil Adefovir",
+      "Hepseva"
+    ]
+  },
+  {
+    "id": "adenosine",
+    "en": "Adenosine",
+    "fa": "آدنوزین",
+    "brands": [
+      "Adenoscan",
+      "Adenocard"
+    ],
+    "synonyms": [
+      "Adenosine",
+      "Adenoscan",
+      "Adenocard"
+    ]
+  },
+  {
+    "id": "cold-adalt",
+    "en": "cold Adalt",
+    "fa": "آدالت کلد",
+    "brands": [
+      "Dristan",
+      "Corisan"
+    ],
+    "synonyms": [
+      "cold Adalt",
+      "Dristan",
+      "Corisan"
+    ]
+  },
+  {
+    "id": "albendazole",
+    "en": "Albendazole",
+    "fa": "آلبندازول",
+    "brands": [
+      "Eskazole",
+      "Zentel",
+      "Albenz"
+    ],
+    "synonyms": [
+      "Albendazole",
+      "Eskazole",
+      "Zentel",
+      "Albenz"
+    ]
+  },
+  {
+    "id": "albumin-human",
+    "en": "Albumin Human",
+    "fa": "آلبومین",
+    "brands": [
+      "Albital",
+      "Albasol",
+      "Albuman"
+    ],
+    "synonyms": [
+      "Albumin Human",
+      "Albital",
+      "Albasol",
+      "Albuman"
+    ]
+  },
+  {
+    "id": "alendronate-sodium",
+    "en": "Alendronate Sodium",
+    "fa": "آلندرونات",
+    "brands": [
+      "Fosamax"
+    ],
+    "synonyms": [
+      "Alendronate Sodium",
+      "Fosamax"
+    ]
+  },
+  {
+    "id": "hydrochloride-alfentanil",
+    "en": "Hydrochloride Alfentanil",
+    "fa": "آلفنتانیل هیدروکلراید",
+    "brands": [
+      "Alfenta"
+    ],
+    "synonyms": [
+      "Hydrochloride Alfentanil",
+      "Alfenta"
+    ]
+  },
+  {
+    "id": "extract-allergenic",
+    "en": "Extract Allergenic",
+    "fa": "آلرژنیک اکسترکت",
+    "brands": [
+      "Alavac",
+      "Alk",
+      "Albay",
+      "Oralgen",
+      "Venomil"
+    ],
+    "synonyms": [
+      "Extract Allergenic",
+      "Alavac",
+      "Alk",
+      "Albay",
+      "Oralgen",
+      "Venomil"
+    ]
+  },
+  {
+    "id": "allopurinol",
+    "en": "Allopurinol",
+    "fa": "آلوپرینول",
+    "brands": [
+      "Zyloprim",
+      "Purinol",
+      "Apo-Allopurinol"
+    ],
+    "synonyms": [
+      "Allopurinol",
+      "Zyloprim",
+      "Purinol",
+      "Apo-Allopurinol"
+    ]
+  },
+  {
+    "id": "alprazolam",
+    "en": "Alprazolam",
+    "fa": "آلپرازو̄م",
+    "brands": [
+      "Xanax",
+      "Xenax",
+      "Apo-Alpraz"
+    ],
+    "synonyms": [
+      "Alprazolam",
+      "Xanax",
+      "Xenax",
+      "Apo-Alpraz"
+    ]
+  },
+  {
+    "id": "alprenolol-hcl",
+    "en": "Alprenolol Hcl",
+    "fa": "آلپرنوال",
+    "brands": [
+      "Aptin"
+    ],
+    "synonyms": [
+      "Alprenolol Hcl",
+      "Aptin"
+    ]
+  },
+  {
+    "id": "chloride-aluminum",
+    "en": "chloride Aluminum",
+    "fa": "آلومینیوم کلراید",
+    "brands": [
+      "Anhydrol Forte",
+      "Driclor",
+      "Drysol"
+    ],
+    "synonyms": [
+      "chloride Aluminum",
+      "Anhydrol Forte",
+      "Driclor",
+      "Drysol"
+    ]
+  },
+  {
+    "id": "hydroxide-alumium",
+    "en": "Hydroxide Alumium",
+    "fa": "آلومینیوم هیدروکساید",
+    "brands": [
+      "Alterna Gel",
+      "Alu-cap",
+      "Alu-Tab",
+      "Amphojel"
+    ],
+    "synonyms": [
+      "Hydroxide Alumium",
+      "Alterna Gel",
+      "Alu-cap",
+      "Alu-Tab",
+      "Amphojel"
+    ]
+  },
+  {
+    "id": "mgs-aluminium",
+    "en": "Mgs Aluminium",
+    "fa": "آلومینیوم ام جی اس",
+    "brands": [
+      "Magel",
+      "Di-Gel",
+      "Gastryl",
+      "Mylanta"
+    ],
+    "synonyms": [
+      "Mgs Aluminium",
+      "Magel",
+      "Di-Gel",
+      "Gastryl",
+      "Mylanta"
+    ]
+  },
+  {
+    "id": "hydroxide-magnesium-aluminium",
+    "en": "Hydroxide Magnesium-Aluminium",
+    "fa": "آلومینیوم - منیزیوم هیدروکساید",
+    "brands": [
+      "Ripan",
+      "Losopan"
+    ],
+    "synonyms": [
+      "Hydroxide Magnesium-Aluminium",
+      "Ripan",
+      "Losopan"
+    ]
+  },
+  {
+    "id": "hydrochloride-amamtadine",
+    "en": "Hydrochloride Amamtadine",
+    "fa": "آمانتادین هیدروکلراید",
+    "brands": [
+      "Endentadina",
+      "Symmetrel"
+    ],
+    "synonyms": [
+      "Hydrochloride Amamtadine",
+      "Endentadina",
+      "Symmetrel"
+    ]
+  },
+  {
+    "id": "chloride-ambenonium",
+    "en": "Chloride Ambenonium",
+    "fa": "آمبنونیوم کلراید",
+    "brands": [
+      "Mytelase"
+    ],
+    "synonyms": [
+      "Chloride Ambenonium",
+      "Mytelase"
+    ]
+  },
+  {
+    "id": "sulfate-as-amikacin",
+    "en": "sulfate as Amikacin",
+    "fa": "آمیکاسین از سولفات",
+    "brands": [
+      "Amikin",
+      "Biklin"
+    ],
+    "synonyms": [
+      "sulfate as Amikacin",
+      "Amikin",
+      "Biklin"
+    ]
+  },
+  {
+    "id": "hydrochloride-amiloride",
+    "en": "Hydrochloride Amiloride",
+    "fa": "آمیلوراید هیدروکلراید",
+    "brands": [
+      "Midamor",
+      "Moduretic",
+      "Amilmaxaco"
+    ],
+    "synonyms": [
+      "Hydrochloride Amiloride",
+      "Midamor",
+      "Moduretic",
+      "Amilmaxaco"
+    ]
+  },
+  {
+    "id": "hydrochlorothiazide-amiloride",
+    "en": "Hydrochlorothiazide/Amiloride",
+    "fa": "آمیلوراید / هیدروکلروتیازاید",
+    "brands": [
+      "Amilmaxaco",
+      "Moduretic",
+      "Midamor"
+    ],
+    "synonyms": [
+      "Hydrochlorothiazide/Amiloride",
+      "Amilmaxaco",
+      "Moduretic",
+      "Midamor"
+    ]
+  },
+  {
+    "id": "infusion-aminoacid",
+    "en": "Infusion Aminoacid",
+    "fa": "آمینو اسید اینفیوژن",
+    "brands": [
+      "Aminess",
+      "Aminostab",
+      "Aminoplex"
+    ],
+    "synonyms": [
+      "Infusion Aminoacid",
+      "Aminess",
+      "Aminostab",
+      "Aminoplex"
+    ]
+  },
+  {
+    "id": "acid-aminocaproic",
+    "en": "Acid Aminocaproic",
+    "fa": "آمینوکاپروئیک اسید",
+    "brands": [
+      "Amikar"
+    ],
+    "synonyms": [
+      "Acid Aminocaproic",
+      "Amikar"
+    ]
+  },
+  {
+    "id": "aminoglutethimide",
+    "en": "Aminoglutethimide",
+    "fa": "آمینوگلوتتماید",
+    "brands": [
+      "Drimetene",
+      "Cytadren"
+    ],
+    "synonyms": [
+      "Aminoglutethimide",
+      "Drimetene",
+      "Cytadren"
+    ]
+  },
+  {
+    "id": "aminophylline",
+    "en": "Aminophylline",
+    "fa": "آمینوفیلین",
+    "brands": [
+      "Phyllocontin",
+      "Truphylline",
+      "Amoline",
+      "Somophlline"
+    ],
+    "synonyms": [
+      "Aminophylline",
+      "Phyllocontin",
+      "Truphylline",
+      "Amoline",
+      "Somophlline"
+    ]
+  },
+  {
+    "id": "hydrochloride-amiodarone",
+    "en": "Hydrochloride Amiodarone",
+    "fa": "آمیودارون هیدروکلراید",
+    "brands": [
+      "Pacerone",
+      "Cordarone"
+    ],
+    "synonyms": [
+      "Hydrochloride Amiodarone",
+      "Pacerone",
+      "Cordarone"
+    ]
+  },
+  {
+    "id": "hydrochloride-amitriptyline",
+    "en": "Hydrochloride Amitriptyline",
+    "fa": "آمی تریپتیلین هیدروکلراید",
+    "brands": [
+      "Amitril",
+      "Elavil",
+      "Endop",
+      "Enovil",
+      "Domical",
+      "Mevaril"
+    ],
+    "synonyms": [
+      "Hydrochloride Amitriptyline",
+      "Amitril",
+      "Elavil",
+      "Endop",
+      "Enovil",
+      "Domical",
+      "Mevaril"
+    ]
+  },
+  {
+    "id": "r-besylate-amilodipine",
+    "en": "Rت Besylate Amilodipine",
+    "fa": "آمیلودپین بی سی",
+    "brands": [
+      "Norvac",
+      "Amolor - lstin"
+    ],
+    "synonyms": [
+      "Rت Besylate Amilodipine",
+      "Norvac",
+      "Amolor - lstin"
+    ]
+  },
+  {
+    "id": "alum-ammonium",
+    "en": "Alum Ammonium",
+    "fa": "آمونیوم آلوم",
+    "brands": [],
+    "synonyms": [
+      "Alum Ammonium"
+    ]
+  },
+  {
+    "id": "ammonium",
+    "en": "Ammonium",
+    "fa": "آمونیوم کلراید",
+    "brands": [
+      "chlorammonic"
+    ],
+    "synonyms": [
+      "Ammonium",
+      "chlorammonic"
+    ]
+  },
+  {
+    "id": "ammonium-2",
+    "en": "Ammonium",
+    "fa": "آمونیوم هیدروکساید",
+    "brands": [
+      "Traspica"
+    ],
+    "synonyms": [
+      "Ammonium",
+      "Traspica"
+    ]
+  },
+  {
+    "id": "amodiaquine",
+    "en": "Amodiaquine",
+    "fa": "آمودیاکوئین اچ سی ال",
+    "brands": [
+      "Basoquine"
+    ],
+    "synonyms": [
+      "Amodiaquine",
+      "Basoquine"
+    ]
+  },
+  {
+    "id": "amoxicillin",
+    "en": "Amoxicillin",
+    "fa": "آموکسی سیلین",
+    "brands": [
+      "Amoxil",
+      "Dispermox",
+      "Novamoxin",
+      "Trimox"
+    ],
+    "synonyms": [
+      "Amoxicillin",
+      "Amoxil",
+      "Dispermox",
+      "Novamoxin",
+      "Trimox"
+    ]
+  },
+  {
+    "id": "amphotericin",
+    "en": "Amphotericin",
+    "fa": "آمفوتریسین بی",
+    "brands": [
+      "Ambisome",
+      "Fungzone",
+      "Abelcet",
+      "Amhocin"
+    ],
+    "synonyms": [
+      "Amphotericin",
+      "Ambisome",
+      "Fungzone",
+      "Abelcet",
+      "Amhocin"
+    ]
+  },
+  {
+    "id": "ampicillin",
+    "en": "Ampicillin",
+    "fa": "آمپی سیلین",
+    "brands": [
+      "Omnipen",
+      "Penbritin",
+      "Ampicin",
+      "Principen"
+    ],
+    "synonyms": [
+      "Ampicillin",
+      "Omnipen",
+      "Penbritin",
+      "Ampicin",
+      "Principen"
+    ]
+  },
+  {
+    "id": "lactate-amrinone",
+    "en": "Lactate Amrinone",
+    "fa": "آمرینون ̄کتات",
+    "brands": [
+      "Inecor"
+    ],
+    "synonyms": [
+      "Lactate Amrinone",
+      "Inecor"
+    ]
+  },
+  {
+    "id": "nitrite-amyl",
+    "en": "Nitrite Amyl",
+    "fa": "آمیل نیتریت",
+    "brands": [],
+    "synonyms": [
+      "Nitrite Amyl"
+    ]
+  },
+  {
+    "id": "a-anthocyanoside",
+    "en": "A Anthocyanoside",
+    "fa": "آنتویسانوزید آ",
+    "brands": [
+      "E - Difrarel"
+    ],
+    "synonyms": [
+      "A Anthocyanoside",
+      "E - Difrarel"
+    ]
+  },
+  {
+    "id": "globulin-immune-d-anti",
+    "en": "Globulin Immune D-Anti",
+    "fa": "آنتی -دی ایمنو گلوبولین",
+    "brands": [
+      "Rhogam",
+      "Gamulin Rh"
+    ],
+    "synonyms": [
+      "Globulin Immune D-Anti",
+      "Rhogam",
+      "Gamulin Rh"
+    ]
+  },
+  {
+    "id": "antihemorrhoid",
+    "en": "Antihemorrhoid",
+    "fa": "آنتی هموروئید.",
+    "brands": [
+      "Xyloproct"
+    ],
+    "synonyms": [
+      "Antihemorrhoid",
+      "Xyloproct"
+    ]
+  },
+  {
+    "id": "decongestant-antihistamin",
+    "en": "Decongestant Antihistamin",
+    "fa": "آنتی هیستامیندکونژستانت",
+    "brands": [
+      "Naldeecon"
+    ],
+    "synonyms": [
+      "Decongestant Antihistamin",
+      "Naldeecon"
+    ]
+  },
+  {
+    "id": "sr-decongestant-antihistauin",
+    "en": "SR Decongestant Antihistauin",
+    "fa": "آنتی هیستامیندکونژستانت اس آر",
+    "brands": [],
+    "synonyms": [
+      "SR Decongestant Antihistauin"
+    ]
+  },
+  {
+    "id": "serm-venum-antiscorpion",
+    "en": "Serm Venum Antiscorpion",
+    "fa": "آنتی اسکورپیون ونوم سرم",
+    "brands": [
+      "Antivenum Scorpion"
+    ],
+    "synonyms": [
+      "Serm Venum Antiscorpion",
+      "Antivenum Scorpion"
+    ]
+  },
+  {
+    "id": "serum-venum-antisnak",
+    "en": "Serum Venum Antisnak",
+    "fa": "آنتی اسنک ونوم سرم",
+    "brands": [
+      "Polyvalent",
+      "Snake Antivenom"
+    ],
+    "synonyms": [
+      "Serum Venum Antisnak",
+      "Polyvalent",
+      "Snake Antivenom"
+    ]
+  },
+  {
+    "id": "hcl-apomorphine",
+    "en": "Hcl Apomorphine",
+    "fa": "آپومورفین اج سی ال",
+    "brands": [],
+    "synonyms": [
+      "Hcl Apomorphine"
+    ]
+  },
+  {
+    "id": "aprotinin",
+    "en": "Aprotinin",
+    "fa": "آپروتینین",
+    "brands": [
+      "Trasylol"
+    ],
+    "synonyms": [
+      "Aprotinin",
+      "Trasylol"
+    ]
+  },
+  {
+    "id": "hcl-arginine",
+    "en": "Hcl Arginine",
+    "fa": "آرژینین اچ سی ال",
+    "brands": [
+      "gene-R"
+    ],
+    "synonyms": [
+      "Hcl Arginine",
+      "gene-R"
+    ]
+  },
+  {
+    "id": "trioxide-arsenic",
+    "en": "Trioxide Arsenic",
+    "fa": "آرسنیک تری اکساید",
+    "brands": [
+      "Trisenox"
+    ],
+    "synonyms": [
+      "Trioxide Arsenic",
+      "Trisenox"
+    ]
+  },
+  {
+    "id": "saliva-artifical",
+    "en": "Saliva Artifical",
+    "fa": "آرتیفیکال سالیوا",
+    "brands": [],
+    "synonyms": [
+      "Saliva Artifical"
+    ]
+  },
+  {
+    "id": "tears-artifical",
+    "en": "Tears Artifical",
+    "fa": "آرتیفیکال تی یر س",
+    "brands": [
+      "Moisture Dropst",
+      "Tearisol"
+    ],
+    "synonyms": [
+      "Tears Artifical",
+      "Moisture Dropst",
+      "Tearisol"
+    ]
+  },
+  {
+    "id": "a-s-a-acetylsalicylic-acid",
+    "en": "A.S.A Acetylsalicylic Acid",
+    "fa": "آ . اس.آ",
+    "brands": [],
+    "synonyms": [
+      "A.S.A Acetylsalicylic Acid"
+    ]
+  },
+  {
+    "id": "codeine-a-s-a",
+    "en": "codeine A.S.A",
+    "fa": "آ . اس . آ کدئین",
+    "brands": [
+      "Empirin"
+    ],
+    "synonyms": [
+      "codeine A.S.A",
+      "Empirin"
+    ]
+  },
+  {
+    "id": "vitaminc-acid-ascorbic",
+    "en": "Vitaminc Acid Ascorbic",
+    "fa": "اسکوربیک اسید ویتامین سی",
+    "brands": [
+      "Cecon",
+      "Cevi-Bide",
+      "Dul-C"
+    ],
+    "synonyms": [
+      "Vitaminc Acid Ascorbic",
+      "Cecon",
+      "Cevi-Bide",
+      "Dul-C"
+    ]
+  },
+  {
+    "id": "asparginase",
+    "en": "Asparginase",
+    "fa": "آسپاراژ یناز",
+    "brands": [
+      "Kidrolase",
+      "Elspar"
+    ],
+    "synonyms": [
+      "Asparginase",
+      "Kidrolase",
+      "Elspar"
+    ]
+  },
+  {
+    "id": "atenolol",
+    "en": "Atenolol",
+    "fa": "آتنولول",
+    "brands": [
+      "Tenormin",
+      "Apo-Atenolol"
+    ],
+    "synonyms": [
+      "Atenolol",
+      "Tenormin",
+      "Apo-Atenolol"
+    ]
+  },
+  {
+    "id": "atorvastatin",
+    "en": "Atorvastatin",
+    "fa": "آتورواستاتین کلسیم",
+    "brands": [
+      "Lipitor"
+    ],
+    "synonyms": [
+      "Atorvastatin",
+      "Lipitor"
+    ]
+  },
+  {
+    "id": "r-besylate-atracurium",
+    "en": "Rت Besylate Atracurium",
+    "fa": "آتراکوریوم بی سی",
+    "brands": [
+      "Tracrium"
+    ],
+    "synonyms": [
+      "Rت Besylate Atracurium",
+      "Tracrium"
+    ]
+  },
+  {
+    "id": "sulfate-atropin",
+    "en": "sulfate Atropin",
+    "fa": "آتروپین سولفات",
+    "brands": [
+      "Atropisol",
+      "Minims Atropina",
+      "Atrosulf"
+    ],
+    "synonyms": [
+      "sulfate Atropin",
+      "Atropisol",
+      "Minims Atropina",
+      "Atrosulf"
+    ]
+  },
+  {
+    "id": "azathioprine",
+    "en": "Azathioprine",
+    "fa": "آزاتیوپرین",
+    "brands": [
+      "Imuran",
+      "Azasan"
+    ],
+    "synonyms": [
+      "Azathioprine",
+      "Imuran",
+      "Azasan"
+    ]
+  },
+  {
+    "id": "azithromycin",
+    "en": "Azithromycin",
+    "fa": "آزیترومایسین",
+    "brands": [
+      "zithromax"
+    ],
+    "synonyms": [
+      "Azithromycin",
+      "zithromax"
+    ]
+  },
+  {
+    "id": "bacitracin",
+    "en": "Bacitracin",
+    "fa": "باسیتراسین",
+    "brands": [
+      "AK-Tracin",
+      "Baciguent"
+    ],
+    "synonyms": [
+      "Bacitracin",
+      "AK-Tracin",
+      "Baciguent"
+    ]
+  },
+  {
+    "id": "baclofen",
+    "en": "Baclofen",
+    "fa": "باکلوفن",
+    "brands": [
+      "Lioresal"
+    ],
+    "synonyms": [
+      "Baclofen",
+      "Lioresal"
+    ]
+  },
+  {
+    "id": "salt-balanced",
+    "en": "Salt Balanced",
+    "fa": "با̄نسد سالت",
+    "brands": [],
+    "synonyms": [
+      "Salt Balanced"
+    ]
+  },
+  {
+    "id": "balanced-salt-plus-glutathione",
+    "en": "Balanced Salt Plus Glutathione",
+    "fa": "چشم شستشوی محلول",
+    "brands": [
+      "Plus BBS"
+    ],
+    "synonyms": [
+      "Balanced Salt Plus Glutathione",
+      "Plus BBS"
+    ]
+  },
+  {
+    "id": "sulfat-barium",
+    "en": "Sulfat Barium",
+    "fa": "باریوم سولفات",
+    "brands": [
+      "Barex.Baricon",
+      "Baro-CAT",
+      "Baroflave",
+      "Barosperse"
+    ],
+    "synonyms": [
+      "Sulfat Barium",
+      "Barex.Baricon",
+      "Baro-CAT",
+      "Baroflave",
+      "Barosperse"
+    ]
+  },
+  {
+    "id": "intravesical-bcg",
+    "en": "Intravesical BCG",
+    "fa": "ب.ث.ژ اینراوزیکال",
+    "brands": [
+      "Pacis",
+      "Tice BCG",
+      "Immu Cyst",
+      "theracys"
+    ],
+    "synonyms": [
+      "Intravesical BCG",
+      "Pacis",
+      "Tice BCG",
+      "Immu Cyst",
+      "theracys"
+    ]
+  },
+  {
+    "id": "carmustine-bcnu",
+    "en": "Carmustine BCNU",
+    "fa": "بی سی ان یو- کارموستین",
+    "brands": [],
+    "synonyms": [
+      "Carmustine BCNU"
+    ]
+  },
+  {
+    "id": "beclomethasone-dipropionate",
+    "en": "Beclomethasone Dipropionate",
+    "fa": "بکلومتازوندیپروپیونات",
+    "brands": [
+      "Beclate-Beclo-Rino",
+      "Beclovent",
+      "Beconase.Becotide.Vancenase",
+      "Vanceril"
+    ],
+    "synonyms": [
+      "Beclomethasone Dipropionate",
+      "Beclate-Beclo-Rino",
+      "Beclovent",
+      "Beconase.Becotide.Vancenase",
+      "Vanceril"
+    ]
+  },
+  {
+    "id": "r-b-p-belladonna",
+    "en": "Rدونا پی. بی B.P Belladonna",
+    "fa": "ب",
+    "brands": [
+      "Donatal"
+    ],
+    "synonyms": [
+      "Rدونا پی. بی B.P Belladonna",
+      "Donatal"
+    ]
+  },
+  {
+    "id": "acid-benzoic",
+    "en": "Acid Benzoic",
+    "fa": "بنزوئیک اسید",
+    "brands": [
+      "Drazoic"
+    ],
+    "synonyms": [
+      "Acid Benzoic",
+      "Drazoic"
+    ]
+  },
+  {
+    "id": "benzocaine",
+    "en": "Benzocaine",
+    "fa": "بنزوکائین",
+    "brands": [
+      "Orajel",
+      "Americaine"
+    ],
+    "synonyms": [
+      "Benzocaine",
+      "Orajel",
+      "Americaine"
+    ]
+  },
+  {
+    "id": "peroxide-benzoyl",
+    "en": "Peroxide Benzoyl",
+    "fa": "بنزوئیل پراکساید",
+    "brands": [
+      "Accid",
+      "Acneran",
+      "Benzac",
+      "Benzogel",
+      "Zeroxin-5"
+    ],
+    "synonyms": [
+      "Peroxide Benzoyl",
+      "Accid",
+      "Acneran",
+      "Benzac",
+      "Benzogel",
+      "Zeroxin-5"
+    ]
+  },
+  {
+    "id": "r-mesylate-benztropine",
+    "en": "Rت Mesylate Benztropine",
+    "fa": "بنزتروپین مزی",
+    "brands": [
+      "Cogention",
+      "Akitan"
+    ],
+    "synonyms": [
+      "Rت Mesylate Benztropine",
+      "Cogention",
+      "Akitan"
+    ]
+  },
+  {
+    "id": "hcl-benzydamine",
+    "en": "HCL Benzydamine",
+    "fa": "بنزیدامین اچ سی ال",
+    "brands": [
+      "Andolex",
+      "Tantum",
+      "Difflam"
+    ],
+    "synonyms": [
+      "HCL Benzydamine",
+      "Andolex",
+      "Tantum",
+      "Difflam"
+    ]
+  },
+  {
+    "id": "benzoate-benzyl",
+    "en": "Benzoate Benzyl",
+    "fa": "بنزیل بنزوات",
+    "brands": [
+      "Hemril",
+      "pulemx",
+      "Benylate"
+    ],
+    "synonyms": [
+      "Benzoate Benzyl",
+      "Hemril",
+      "pulemx",
+      "Benylate"
+    ]
+  },
+  {
+    "id": "hydroxynaphtaate-bephenium",
+    "en": "Hydroxynaphtaate Bephenium",
+    "fa": "بفنیوم هیدروکسی نافتات",
+    "brands": [
+      "Alcopar"
+    ],
+    "synonyms": [
+      "Hydroxynaphtaate Bephenium",
+      "Alcopar"
+    ]
+  },
+  {
+    "id": "beractant",
+    "en": "Beractant",
+    "fa": "براکتانت",
+    "brands": [
+      "Survanta"
+    ],
+    "synonyms": [
+      "Beractant",
+      "Survanta"
+    ]
+  },
+  {
+    "id": "betacarotene",
+    "en": "Betacarotene",
+    "fa": "بتاکاروتن",
+    "brands": [
+      "Max-Caro",
+      "Provatene",
+      "Solatene"
+    ],
+    "synonyms": [
+      "Betacarotene",
+      "Max-Caro",
+      "Provatene",
+      "Solatene"
+    ]
+  },
+  {
+    "id": "systemic-betametasone",
+    "en": "systemic Betametasone",
+    "fa": "بتامتازون سیستمیک",
+    "brands": [
+      "Betacortal",
+      "Betnelan",
+      "Betnesol",
+      "Celestone",
+      "Loracort",
+      "Prelestone",
+      "Selestoject"
+    ],
+    "synonyms": [
+      "systemic Betametasone",
+      "Betacortal",
+      "Betnelan",
+      "Betnesol",
+      "Celestone",
+      "Loracort",
+      "Prelestone",
+      "Selestoject"
+    ]
+  },
+  {
+    "id": "betamethasone-as-valerate",
+    "en": "Betamethasone as valerate",
+    "fa": "بتامتازون",
+    "brands": [
+      "Betacoltal",
+      "Betatrex",
+      "Beta.val",
+      "Betnorate.",
+      "Ectosone",
+      "Valisone"
+    ],
+    "synonyms": [
+      "Betamethasone as valerate",
+      "Betacoltal",
+      "Betatrex",
+      "Beta.val",
+      "Betnorate.",
+      "Ectosone",
+      "Valisone"
+    ]
+  },
+  {
+    "id": "a-l-betamethasone",
+    "en": "A.L Betamethasone",
+    "fa": "بتامتازون ال . آ. .",
+    "brands": [
+      "Betacortal LA - Celeston Soluspan.Chronoclose"
+    ],
+    "synonyms": [
+      "A.L Betamethasone",
+      "Betacortal LA - Celeston Soluspan.Chronoclose"
+    ]
+  },
+  {
+    "id": "betaxolol-ashcl",
+    "en": "Betaxolol ashcl",
+    "fa": "بتاکسولول",
+    "brands": [
+      "5 Betoptic",
+      "Betoptic"
+    ],
+    "synonyms": [
+      "Betaxolol ashcl",
+      "5 Betoptic",
+      "Betoptic"
+    ]
+  },
+  {
+    "id": "chloride-bethanechol",
+    "en": "Chloride Bethanechol",
+    "fa": "بتانکول کلراید",
+    "brands": [
+      "Duroid",
+      "myotonachol.Urabeth",
+      "Urecholine"
+    ],
+    "synonyms": [
+      "Chloride Bethanechol",
+      "Duroid",
+      "myotonachol.Urabeth",
+      "Urecholine"
+    ]
+  },
+  {
+    "id": "blosynthesis-somatropine-somatropine",
+    "en": "Blosynthesis Somatropine Somatropine",
+    "fa": "سوماتروپین بیوسنتزیس",
+    "brands": [],
+    "synonyms": [
+      "Blosynthesis Somatropine Somatropine"
+    ]
+  },
+  {
+    "id": "biperioen",
+    "en": "Biperioen",
+    "fa": "بایپریدین",
+    "brands": [
+      "Akineton"
+    ],
+    "synonyms": [
+      "Biperioen",
+      "Akineton"
+    ]
+  },
+  {
+    "id": "bisacodyl",
+    "en": "Bisacodyl",
+    "fa": "بیزاکودیل",
+    "brands": [
+      "Bisacolax",
+      "Dacodyl TabsDeficol",
+      "Dulcolax",
+      "Theralax Suppositories"
+    ],
+    "synonyms": [
+      "Bisacodyl",
+      "Bisacolax",
+      "Dacodyl TabsDeficol",
+      "Dulcolax",
+      "Theralax Suppositories"
+    ]
+  },
+  {
+    "id": "bismuth-subcitrate-bismuth-oxide",
+    "en": "Bismuth Subcitrate Bismuth Oxide",
+    "fa": "سیترات ساب بیسموت",
+    "brands": [
+      "Bismol",
+      "Stomux",
+      "Bismed",
+      "Pepto"
+    ],
+    "synonyms": [
+      "Bismuth Subcitrate Bismuth Oxide",
+      "Bismol",
+      "Stomux",
+      "Bismed",
+      "Pepto"
+    ]
+  },
+  {
+    "id": "bleomycin-assulfate",
+    "en": "Bleomycin assulfate",
+    "fa": "بلئومایسین",
+    "brands": [
+      "Bleo",
+      "Blenoxane"
+    ],
+    "synonyms": [
+      "Bleomycin assulfate",
+      "Bleo",
+      "Blenoxane"
+    ]
+  },
+  {
+    "id": "borax",
+    "en": "Borax",
+    "fa": "بوراکس",
+    "brands": [],
+    "synonyms": [
+      "Borax"
+    ]
+  },
+  {
+    "id": "acid-boric",
+    "en": "Acid Boric",
+    "fa": "بوریک اسید",
+    "brands": [
+      "Bofax",
+      "Hydralin"
+    ],
+    "synonyms": [
+      "Acid Boric",
+      "Bofax",
+      "Hydralin"
+    ]
+  },
+  {
+    "id": "botulinum-toxin-type-a-a",
+    "en": "Botulinum toxin Type A A",
+    "fa": "تیپ توکسین بوتولینیوم",
+    "brands": [
+      "Botox",
+      "Dysport"
+    ],
+    "synonyms": [
+      "Botulinum toxin Type A A",
+      "Botox",
+      "Dysport"
+    ]
+  },
+  {
+    "id": "antitoxin-monovalent-botulism",
+    "en": "Antitoxin Monovalent Botulism",
+    "fa": "بوتولیسم منووا̄نت آنتی توکسین",
+    "brands": [],
+    "synonyms": [
+      "Antitoxin Monovalent Botulism"
+    ]
+  },
+  {
+    "id": "bovactant",
+    "en": "Bovactant",
+    "fa": "بواکتانت",
+    "brands": [
+      "Alveofact"
+    ],
+    "synonyms": [
+      "Bovactant",
+      "Alveofact"
+    ]
+  },
+  {
+    "id": "r-tosylate-bretylium",
+    "en": "Rت Tosylate Bretylium",
+    "fa": "بریتیلیوم توسی",
+    "brands": [
+      "Bretylol",
+      "Bretylate"
+    ],
+    "synonyms": [
+      "Rت Tosylate Bretylium",
+      "Bretylol",
+      "Bretylate"
+    ]
+  },
+  {
+    "id": "tartarate-brimonidine",
+    "en": "Tartarate Brimonidine",
+    "fa": "بریمونیدین تارتارات",
+    "brands": [
+      "Alphagan"
+    ],
+    "synonyms": [
+      "Tartarate Brimonidine",
+      "Alphagan"
+    ]
+  },
+  {
+    "id": "brinzolamide",
+    "en": "Brinzolamide",
+    "fa": "برینزو̄مید",
+    "brands": [
+      "Azopt"
+    ],
+    "synonyms": [
+      "Brinzolamide",
+      "Azopt"
+    ]
+  },
+  {
+    "id": "hcl-bromhexine",
+    "en": "HCL Bromhexine",
+    "fa": "برم هگزین اچ.سی .ال",
+    "brands": [
+      "Bisolvon"
+    ],
+    "synonyms": [
+      "HCL Bromhexine",
+      "Bisolvon"
+    ]
+  },
+  {
+    "id": "bromocriptine-as-mesylate",
+    "en": "Bromocriptine as Mesylate",
+    "fa": "برموکریپتین",
+    "brands": [
+      "Pariodel .Minobromocription"
+    ],
+    "synonyms": [
+      "Bromocriptine as Mesylate",
+      "Pariodel .Minobromocription"
+    ]
+  },
+  {
+    "id": "budesonide",
+    "en": "Budesonide",
+    "fa": "بودزوناید",
+    "brands": [
+      "Pulmicort",
+      "Respules",
+      "Pulmicort Turbuhaler"
+    ],
+    "synonyms": [
+      "Budesonide",
+      "Pulmicort",
+      "Respules",
+      "Pulmicort Turbuhaler"
+    ]
+  },
+  {
+    "id": "hcl-bupivacaine",
+    "en": "HCL Bupivacaine",
+    "fa": "بوپیواکائین اچ.سی.ال",
+    "brands": [
+      "Sensorcaine .Marcaine"
+    ],
+    "synonyms": [
+      "HCL Bupivacaine",
+      "Sensorcaine .Marcaine"
+    ]
+  },
+  {
+    "id": "hcl-as-buprenorphine",
+    "en": "HCL as Buprenorphine",
+    "fa": "بوپرنورفین اچ.سی.ال",
+    "brands": [
+      "Buprexin.Buprenex"
+    ],
+    "synonyms": [
+      "HCL as Buprenorphine",
+      "Buprexin.Buprenex"
+    ]
+  },
+  {
+    "id": "hcl-bupropion",
+    "en": "HCL Bupropion",
+    "fa": "بوپروپیون اچ سی ال",
+    "brands": [
+      "Welibutrin.Wellbutrin SR"
+    ],
+    "synonyms": [
+      "HCL Bupropion",
+      "Welibutrin.Wellbutrin SR"
+    ]
+  },
+  {
+    "id": "burn-ointment-for-minorburns",
+    "en": "Burn Ointment For minorburns",
+    "fa": "اونیتمنت بورن",
+    "brands": [
+      "Burn Ointment - Najo",
+      "Dermilon"
+    ],
+    "synonyms": [
+      "Burn Ointment For minorburns",
+      "Burn Ointment - Najo",
+      "Dermilon"
+    ]
+  },
+  {
+    "id": "acetate-busereline",
+    "en": "Acetate Busereline",
+    "fa": "بوسرلین استات",
+    "brands": [
+      "Suprefact",
+      "Suprecure"
+    ],
+    "synonyms": [
+      "Acetate Busereline",
+      "Suprefact",
+      "Suprecure"
+    ]
+  },
+  {
+    "id": "hcl-buspirone",
+    "en": "HCL Buspirone",
+    "fa": "بوسپیرون اچ . سی ال",
+    "brands": [
+      "Buspirax",
+      "Buspar"
+    ],
+    "synonyms": [
+      "HCL Buspirone",
+      "Buspirax",
+      "Buspar"
+    ]
+  },
+  {
+    "id": "busulfan",
+    "en": "BusulFan",
+    "fa": "بوسولفان",
+    "brands": [
+      "Myleran"
+    ],
+    "synonyms": [
+      "BusulFan",
+      "Myleran"
+    ]
+  },
+  {
+    "id": "cabergolin",
+    "en": "Cabergolin",
+    "fa": "کابرگولین",
+    "brands": [
+      "Dostinex"
+    ],
+    "synonyms": [
+      "Cabergolin",
+      "Dostinex"
+    ]
+  },
+  {
+    "id": "cade-oil",
+    "en": "Cade Oil",
+    "fa": "کاداویل",
+    "brands": [
+      "Goodron"
+    ],
+    "synonyms": [
+      "Cade Oil",
+      "Goodron"
+    ]
+  },
+  {
+    "id": "d-calamine",
+    "en": "D-Calamine",
+    "fa": "کا̄مین -دی",
+    "brands": [
+      "Lvarest",
+      "Calamax"
+    ],
+    "synonyms": [
+      "D-Calamine",
+      "Lvarest",
+      "Calamax"
+    ]
+  },
+  {
+    "id": "calcipotriol",
+    "en": "Calcipotriol",
+    "fa": "کلسی پوتریول",
+    "brands": [
+      "Dovenex"
+    ],
+    "synonyms": [
+      "Calcipotriol",
+      "Dovenex"
+    ]
+  },
+  {
+    "id": "salmon-cacitonin",
+    "en": "Salmon Cacitonin",
+    "fa": "کلسی تونین",
+    "brands": [
+      "miacalcin",
+      "Calcimar"
+    ],
+    "synonyms": [
+      "Salmon Cacitonin",
+      "miacalcin",
+      "Calcimar"
+    ]
+  },
+  {
+    "id": "calcipotriol-2",
+    "en": "Calcipotriol",
+    "fa": "کلسی پوتریول",
+    "brands": [
+      "Dovonex"
+    ],
+    "synonyms": [
+      "Calcipotriol",
+      "Dovonex"
+    ]
+  },
+  {
+    "id": "calcitriol",
+    "en": "Calcitriol",
+    "fa": "کلسی تریول",
+    "brands": [
+      "Rocaltrol",
+      "Calcijex"
+    ],
+    "synonyms": [
+      "Calcitriol",
+      "Rocaltrol",
+      "Calcijex"
+    ]
+  },
+  {
+    "id": "d-calcium",
+    "en": "D-Calcium",
+    "fa": "کلسیم -دی",
+    "brands": [],
+    "synonyms": [
+      "D-Calcium"
+    ]
+  },
+  {
+    "id": "r-dobesilate-calcium",
+    "en": "Rت DOBESILATE CALCIUM",
+    "fa": "کلسیمدو بوسی",
+    "brands": [],
+    "synonyms": [
+      "Rت DOBESILATE CALCIUM"
+    ]
+  },
+  {
+    "id": "forte-calcium",
+    "en": "Forte Calcium",
+    "fa": "کلسیم فورت",
+    "brands": [],
+    "synonyms": [
+      "Forte Calcium"
+    ]
+  },
+  {
+    "id": "gluconate-calcium",
+    "en": "Gluconate Calcium",
+    "fa": "کلسیم گلوکونات",
+    "brands": [
+      "Kalcinate"
+    ],
+    "synonyms": [
+      "Gluconate Calcium",
+      "Kalcinate"
+    ]
+  },
+  {
+    "id": "pantothenate-calcium",
+    "en": "Pantothenate Calcium",
+    "fa": "کلسیم پنتوتنات",
+    "brands": [
+      "Pantholin"
+    ],
+    "synonyms": [
+      "Pantothenate Calcium",
+      "Pantholin"
+    ]
+  },
+  {
+    "id": "supplements-calcium",
+    "en": "Supplements Calcium",
+    "fa": "شربت کلسیم",
+    "brands": [],
+    "synonyms": [
+      "Supplements Calcium"
+    ]
+  },
+  {
+    "id": "camphor",
+    "en": "Camphor",
+    "fa": "کامفور",
+    "brands": [
+      "campholinit"
+    ],
+    "synonyms": [
+      "Camphor",
+      "campholinit"
+    ]
+  },
+  {
+    "id": "capecitabine",
+    "en": "Capecitabine",
+    "fa": "کاپی سیتابین",
+    "brands": [
+      "Xeloda"
+    ],
+    "synonyms": [
+      "Capecitabine",
+      "Xeloda"
+    ]
+  },
+  {
+    "id": "sulfate-capreomycin",
+    "en": "Sulfate Capreomycin",
+    "fa": "کاپرئومایسین سولفات",
+    "brands": [
+      "Capastat Sulfate",
+      "Ogostal"
+    ],
+    "synonyms": [
+      "Sulfate Capreomycin",
+      "Capastat Sulfate",
+      "Ogostal"
+    ]
+  },
+  {
+    "id": "capsaicin",
+    "en": "Capsaicin",
+    "fa": "کپ سایسین",
+    "brands": [],
+    "synonyms": [
+      "Capsaicin"
+    ]
+  },
+  {
+    "id": "capsicum",
+    "en": "Capsicum",
+    "fa": "کپسیکوم",
+    "brands": [
+      "Capsin",
+      "Capsamol"
+    ],
+    "synonyms": [
+      "Capsicum",
+      "Capsin",
+      "Capsamol"
+    ]
+  },
+  {
+    "id": "captopril",
+    "en": "Captopril",
+    "fa": "کاپتوپریل",
+    "brands": [
+      "Capoten"
+    ],
+    "synonyms": [
+      "Captopril",
+      "Capoten"
+    ]
+  },
+  {
+    "id": "carbachol",
+    "en": "Carbachol",
+    "fa": "کارباکول",
+    "brands": [
+      "Miostat",
+      "Isopto Cacarbachol",
+      "Carbotic",
+      "Carbastat"
+    ],
+    "synonyms": [
+      "Carbachol",
+      "Miostat",
+      "Isopto Cacarbachol",
+      "Carbotic",
+      "Carbastat"
+    ]
+  },
+  {
+    "id": "carbamazepine",
+    "en": "Carbamazepine",
+    "fa": "کاربامازپین",
+    "brands": [
+      "CCarbatrol",
+      "Epitol",
+      "Mazepine",
+      "Tegretol",
+      "Timonil"
+    ],
+    "synonyms": [
+      "Carbamazepine",
+      "CCarbatrol",
+      "Epitol",
+      "Mazepine",
+      "Tegretol",
+      "Timonil"
+    ]
+  },
+  {
+    "id": "carbamid-peroxide",
+    "en": "Carbamid Peroxide",
+    "fa": "کاربامایدپروکساید",
+    "brands": [
+      "Orajel",
+      "Proxigel",
+      "Cankaid",
+      "Debrox",
+      "Gly-oxide"
+    ],
+    "synonyms": [
+      "Carbamid Peroxide",
+      "Orajel",
+      "Proxigel",
+      "Cankaid",
+      "Debrox",
+      "Gly-oxide"
+    ]
+  },
+  {
+    "id": "disodium-carbenicillin",
+    "en": "Disodium Carbenicillin",
+    "fa": "کاربنی سیلیندی سدیم",
+    "brands": [
+      "Geopen",
+      "Pyopen",
+      "Goocillin"
+    ],
+    "synonyms": [
+      "Disodium Carbenicillin",
+      "Geopen",
+      "Pyopen",
+      "Goocillin"
+    ]
+  },
+  {
+    "id": "sodium-indanyl-carbenicillin",
+    "en": "Sodium Indanyl Carbenicillin",
+    "fa": "کاربنی سیلین ایندانیل",
+    "brands": [
+      "Geocillin",
+      "Geopen oral"
+    ],
+    "synonyms": [
+      "Sodium Indanyl Carbenicillin",
+      "Geocillin",
+      "Geopen oral"
+    ]
+  },
+  {
+    "id": "r-caroplatin",
+    "en": "Rتین Caroplatin",
+    "fa": "کاربوپ",
+    "brands": [
+      "Paraplatin",
+      "Carbosol",
+      "Carbosin"
+    ],
+    "synonyms": [
+      "Rتین Caroplatin",
+      "Paraplatin",
+      "Carbosol",
+      "Carbosin"
+    ]
+  },
+  {
+    "id": "carmustine",
+    "en": "Carmustine",
+    "fa": "کارموستین بی سی ان یو",
+    "brands": [
+      "Gliade",
+      "Bicnu"
+    ],
+    "synonyms": [
+      "Carmustine",
+      "Gliade",
+      "Bicnu"
+    ]
+  },
+  {
+    "id": "carnitine-l-carnitine",
+    "en": "Carnitine-L Carnitine",
+    "fa": "کارنیتین ال - کارنیتین",
+    "brands": [
+      "Carnitor"
+    ],
+    "synonyms": [
+      "Carnitine-L Carnitine",
+      "Carnitor"
+    ]
+  },
+  {
+    "id": "carvedilol",
+    "en": "Carvedilol",
+    "fa": "کارودیلول",
+    "brands": [
+      "Eucardic",
+      "Coreg"
+    ],
+    "synonyms": [
+      "Carvedilol",
+      "Eucardic",
+      "Coreg"
+    ]
+  },
+  {
+    "id": "sodium-cefaazolin",
+    "en": "Sodium Cefaazolin",
+    "fa": "سفازولین سدیم",
+    "brands": [
+      "Ancef",
+      "Zolicef",
+      "Kefzol"
+    ],
+    "synonyms": [
+      "Sodium Cefaazolin",
+      "Ancef",
+      "Zolicef",
+      "Kefzol"
+    ]
+  },
+  {
+    "id": "hydrochloride-cefepime",
+    "en": "hydrochloride Cefepime",
+    "fa": "سفپیم هیدروکلراید",
+    "brands": [
+      "Maxipime"
+    ],
+    "synonyms": [
+      "hydrochloride Cefepime",
+      "Maxipime"
+    ]
+  },
+  {
+    "id": "cefixime",
+    "en": "Cefixime",
+    "fa": "سفیکسیم",
+    "brands": [
+      "Caphoral",
+      "Suprax"
+    ],
+    "synonyms": [
+      "Cefixime",
+      "Caphoral",
+      "Suprax"
+    ]
+  },
+  {
+    "id": "sodium-cefotaxime",
+    "en": "sodium Cefotaxime",
+    "fa": "سفوتاکسیم سدیم",
+    "brands": [
+      "Claforan"
+    ],
+    "synonyms": [
+      "sodium Cefotaxime",
+      "Claforan"
+    ]
+  },
+  {
+    "id": "ceftazidime-as-pentahydrate",
+    "en": "Ceftazidime as pentahydrate",
+    "fa": "سفتازیدیم",
+    "brands": [
+      "Ceptaz",
+      "Fortaz",
+      "Tazicef",
+      "Tazidime"
+    ],
+    "synonyms": [
+      "Ceftazidime as pentahydrate",
+      "Ceptaz",
+      "Fortaz",
+      "Tazicef",
+      "Tazidime"
+    ]
+  },
+  {
+    "id": "ceftizoxime",
+    "en": "Ceftizoxime",
+    "fa": "سفتی زوکسایم",
+    "brands": [
+      "Ceftix",
+      "Cefizox"
+    ],
+    "synonyms": [
+      "Ceftizoxime",
+      "Ceftix",
+      "Cefizox"
+    ]
+  },
+  {
+    "id": "ceftriaxone",
+    "en": "Ceftriaxone",
+    "fa": "سفتریاکسون",
+    "brands": [
+      "Rocephalin",
+      "Rocephin"
+    ],
+    "synonyms": [
+      "Ceftriaxone",
+      "Rocephalin",
+      "Rocephin"
+    ]
+  },
+  {
+    "id": "cafuroxime",
+    "en": "Cafuroxime",
+    "fa": "سفوروکسایم",
+    "brands": [
+      "Zinacef",
+      "Ceftin"
+    ],
+    "synonyms": [
+      "Cafuroxime",
+      "Zinacef",
+      "Ceftin"
+    ]
+  },
+  {
+    "id": "celecoxib",
+    "en": "Celecoxib",
+    "fa": "سلکسیب",
+    "brands": [
+      "Celebrex"
+    ],
+    "synonyms": [
+      "Celecoxib",
+      "Celebrex"
+    ]
+  },
+  {
+    "id": "cephalexin",
+    "en": "Cephalexin",
+    "fa": "سفالکسین",
+    "brands": [
+      "Keftab",
+      "Keflex",
+      "Ceporex",
+      "Novolexin"
+    ],
+    "synonyms": [
+      "Cephalexin",
+      "Keftab",
+      "Keflex",
+      "Ceporex",
+      "Novolexin"
+    ]
+  },
+  {
+    "id": "sodium-cephalothin",
+    "en": "sodium Cephalothin",
+    "fa": "سفالوتین سدیم",
+    "brands": [
+      "Ceporacin",
+      "Keflin"
+    ],
+    "synonyms": [
+      "sodium Cephalothin",
+      "Ceporacin",
+      "Keflin"
+    ]
+  },
+  {
+    "id": "cephradine",
+    "en": "Cephradine",
+    "fa": "سفرادین",
+    "brands": [
+      "velosef",
+      "Sefril"
+    ],
+    "synonyms": [
+      "Cephradine",
+      "velosef",
+      "Sefril"
+    ]
+  },
+  {
+    "id": "hydrochloride-citirizine",
+    "en": "hydrochloride Citirizine",
+    "fa": "سیتریزین هیدروکلراید",
+    "brands": [
+      "Zyrtec"
+    ],
+    "synonyms": [
+      "hydrochloride Citirizine",
+      "Zyrtec"
+    ]
+  },
+  {
+    "id": "c-cetrimide",
+    "en": "C-Cetrimide",
+    "fa": "ستریماید - سی",
+    "brands": [
+      "Crodex",
+      "Savlon"
+    ],
+    "synonyms": [
+      "C-Cetrimide",
+      "Crodex",
+      "Savlon"
+    ]
+  },
+  {
+    "id": "b-cetylpyridium",
+    "en": "B-Cetylpyridium",
+    "fa": "ستیل پیریدیوم - بی",
+    "brands": [],
+    "synonyms": [
+      "B-Cetylpyridium"
+    ]
+  },
+  {
+    "id": "chloride-cetylpyridium",
+    "en": "chloride Cetylpyridium",
+    "fa": "ستیل پیریدیوم کلراید",
+    "brands": [],
+    "synonyms": [
+      "chloride Cetylpyridium"
+    ]
+  },
+  {
+    "id": "activated-charcoal",
+    "en": "Activated Charcoal",
+    "fa": "شارکول اکتیویتد",
+    "brands": [],
+    "synonyms": [
+      "Activated Charcoal"
+    ]
+  },
+  {
+    "id": "cold-children",
+    "en": "Cold Children",
+    "fa": "چیلدرن کولد",
+    "brands": [
+      "Doricidin",
+      "Demilets"
+    ],
+    "synonyms": [
+      "Cold Children",
+      "Doricidin",
+      "Demilets"
+    ]
+  },
+  {
+    "id": "chlorambucil",
+    "en": "Chlorambucil",
+    "fa": "کلر آمبوسیل",
+    "brands": [
+      "Linfolysin",
+      "Leukeran"
+    ],
+    "synonyms": [
+      "Chlorambucil",
+      "Linfolysin",
+      "Leukeran"
+    ]
+  },
+  {
+    "id": "chloramphenicol",
+    "en": "Chloramphenicol",
+    "fa": "کلرامفنیکل",
+    "brands": [
+      "Linfolysin",
+      "Leukeran"
+    ],
+    "synonyms": [
+      "Chloramphenicol",
+      "Linfolysin",
+      "Leukeran"
+    ]
+  },
+  {
+    "id": "chloramphenicol-oph",
+    "en": "Chloramphenicol OPH",
+    "fa": "کلرامفنیکل",
+    "brands": [
+      "Ophthochlor",
+      "Chlorafair"
+    ],
+    "synonyms": [
+      "Chloramphenicol OPH",
+      "Ophthochlor",
+      "Chlorafair"
+    ]
+  },
+  {
+    "id": "chlordiazepoxide",
+    "en": "Chlordiazepoxide",
+    "fa": "کلردیازپوکساید",
+    "brands": [
+      "Mitran",
+      "librium"
+    ],
+    "synonyms": [
+      "Chlordiazepoxide",
+      "Mitran",
+      "librium"
+    ]
+  },
+  {
+    "id": "gluconate-chlorhexidine",
+    "en": "Gluconate Chlorhexidine",
+    "fa": "کلرهگزیدین گلوکونات",
+    "brands": [],
+    "synonyms": [
+      "Gluconate Chlorhexidine"
+    ]
+  },
+  {
+    "id": "detergent-gluconate-chlorhexidine",
+    "en": "Detergent+ Gluconate Chlorhexidine",
+    "fa": "کلرهگزیدین گلوکانات + دترجنت",
+    "brands": [
+      "Betasept"
+    ],
+    "synonyms": [
+      "Detergent+ Gluconate Chlorhexidine",
+      "Betasept"
+    ]
+  },
+  {
+    "id": "mustard-nitrogen-hcl-chlormethine",
+    "en": "Mustard Nitrogen Hcl Chlormethine",
+    "fa": "نیتروژن موستارد کلرمتین اچ سی ال",
+    "brands": [
+      "Mustargen"
+    ],
+    "synonyms": [
+      "Mustard Nitrogen Hcl Chlormethine",
+      "Mustargen"
+    ]
+  },
+  {
+    "id": "sulfat-phosphate-as-chloroquine",
+    "en": "sulfat & phosphate as Chloroquine",
+    "fa": "کلروکین فسفات و سولفات",
+    "brands": [
+      "Resochin",
+      "Aralen"
+    ],
+    "synonyms": [
+      "sulfat & phosphate as Chloroquine",
+      "Resochin",
+      "Aralen"
+    ]
+  },
+  {
+    "id": "chloroxylenol",
+    "en": "Chloroxylenol",
+    "fa": "کلرگزیلنول",
+    "brands": [
+      "Dettol"
+    ],
+    "synonyms": [
+      "Chloroxylenol",
+      "Dettol"
+    ]
+  },
+  {
+    "id": "maleate-chlorpheniramine",
+    "en": "Maleate Chlorpheniramine",
+    "fa": "کلر فنیر آمین مالئات",
+    "brands": [
+      "Alermine",
+      "Chlorspan",
+      "Histray",
+      "Teldrin",
+      "Tryrnegen"
+    ],
+    "synonyms": [
+      "Maleate Chlorpheniramine",
+      "Alermine",
+      "Chlorspan",
+      "Histray",
+      "Teldrin",
+      "Tryrnegen"
+    ]
+  },
+  {
+    "id": "hydrochloride-chlorpromazine",
+    "en": "Hydrochloride Chlorpromazine",
+    "fa": "کلر پرومازین هیدروکلراید",
+    "brands": [
+      "Largactil",
+      "Thorazine",
+      "Chlorzine"
+    ],
+    "synonyms": [
+      "Hydrochloride Chlorpromazine",
+      "Largactil",
+      "Thorazine",
+      "Chlorzine"
+    ]
+  },
+  {
+    "id": "chlropropamide",
+    "en": "Chlropropamide",
+    "fa": "کلروپروپاماید",
+    "brands": [
+      "Diabinese",
+      "Stabinol",
+      "Glucamide"
+    ],
+    "synonyms": [
+      "Chlropropamide",
+      "Diabinese",
+      "Stabinol",
+      "Glucamide"
+    ]
+  },
+  {
+    "id": "chlorthalidone",
+    "en": "Chlorthalidone",
+    "fa": "کلرتالیدون",
+    "brands": [
+      "Hydidone",
+      "Thalitone",
+      "Hygroton"
+    ],
+    "synonyms": [
+      "Chlorthalidone",
+      "Hydidone",
+      "Thalitone",
+      "Hygroton"
+    ]
+  },
+  {
+    "id": "cholestyramine",
+    "en": "Cholestyramine",
+    "fa": "کلستیرامین",
+    "brands": [
+      "Novo - cholamine",
+      "Questran"
+    ],
+    "synonyms": [
+      "Cholestyramine",
+      "Novo - cholamine",
+      "Questran"
+    ]
+  },
+  {
+    "id": "ciclosporin",
+    "en": "Ciclosporin",
+    "fa": "سیکلوسپورین",
+    "brands": [
+      "Neoral",
+      "sangcya"
+    ],
+    "synonyms": [
+      "Ciclosporin",
+      "Neoral",
+      "sangcya"
+    ]
+  },
+  {
+    "id": "cimetidine",
+    "en": "Cimetidine",
+    "fa": "سایمتیدین",
+    "brands": [
+      "Tagamet",
+      "APO - cimetidine"
+    ],
+    "synonyms": [
+      "Cimetidine",
+      "Tagamet",
+      "APO - cimetidine"
+    ]
+  },
+  {
+    "id": "cinnarizine",
+    "en": "Cinnarizine",
+    "fa": "سیناریزین",
+    "brands": [
+      "Stugeron",
+      "Cinaziere"
+    ],
+    "synonyms": [
+      "Cinnarizine",
+      "Stugeron",
+      "Cinaziere"
+    ]
+  },
+  {
+    "id": "systemic-ciprofloxacin",
+    "en": "Systemic Ciprofloxacin",
+    "fa": "سیپروفلوکساسین سیستماتیک",
+    "brands": [
+      "CiproxR",
+      "Cipro"
+    ],
+    "synonyms": [
+      "Systemic Ciprofloxacin",
+      "CiproxR",
+      "Cipro"
+    ]
+  },
+  {
+    "id": "monohydrate-as-cisapride",
+    "en": "monohydrate as Cisapride",
+    "fa": "سیساپراید از منو هیدرات",
+    "brands": [
+      "Alimix",
+      "Propulsid"
+    ],
+    "synonyms": [
+      "monohydrate as Cisapride",
+      "Alimix",
+      "Propulsid"
+    ]
+  },
+  {
+    "id": "r-besylate-cisatracurium",
+    "en": "Rت Besylate Cisatracurium",
+    "fa": "سیساتراکوریوم بیسی",
+    "brands": [
+      "Nimbex"
+    ],
+    "synonyms": [
+      "Rت Besylate Cisatracurium",
+      "Nimbex"
+    ]
+  },
+  {
+    "id": "r-r-platinum-cis-cisplatin",
+    "en": "Rتین سیس - پRتینوم Platinum Cis Cisplatin",
+    "fa": "سیسپ",
+    "brands": [
+      "Platinol",
+      "Abiplatin",
+      "Plutistin"
+    ],
+    "synonyms": [
+      "Rتین سیس - پRتینوم Platinum Cis Cisplatin",
+      "Platinol",
+      "Abiplatin",
+      "Plutistin"
+    ]
+  },
+  {
+    "id": "hydrobromide-citalopram",
+    "en": "Hydrobromide Citalopram",
+    "fa": "سیتالوپرام هیدروبروماید",
+    "brands": [
+      "Celexa"
+    ],
+    "synonyms": [
+      "Hydrobromide Citalopram",
+      "Celexa"
+    ]
+  },
+  {
+    "id": "citicoline-as-sodium-salt",
+    "en": "Citicoline as Sodium Salt",
+    "fa": "سیتیکولین",
+    "brands": [
+      "Acticolin",
+      "Citidel"
+    ],
+    "synonyms": [
+      "Citicoline as Sodium Salt",
+      "Acticolin",
+      "Citidel"
+    ]
+  },
+  {
+    "id": "acid-citric",
+    "en": "Acid Citric",
+    "fa": "اسید سیتریک",
+    "brands": [
+      "Citrosteril"
+    ],
+    "synonyms": [
+      "Acid Citric",
+      "Citrosteril"
+    ]
+  },
+  {
+    "id": "r-cladribine",
+    "en": "Rدریبین Cladribine",
+    "fa": "ک",
+    "brands": [
+      "Leustatin"
+    ],
+    "synonyms": [
+      "Rدریبین Cladribine",
+      "Leustatin"
+    ]
+  },
+  {
+    "id": "r-clarithromycin",
+    "en": "Rریترومایسین Clarithromycin",
+    "fa": "ک",
+    "brands": [
+      "Biaxin"
+    ],
+    "synonyms": [
+      "Rریترومایسین Clarithromycin",
+      "Biaxin"
+    ]
+  },
+  {
+    "id": "fumarate-clemastine",
+    "en": "Fumarate Clemastine",
+    "fa": "کلماستین فومارات",
+    "brands": [
+      "Tavist Allergy",
+      "Tavegil"
+    ],
+    "synonyms": [
+      "Fumarate Clemastine",
+      "Tavist Allergy",
+      "Tavegil"
+    ]
+  },
+  {
+    "id": "c-clidinium",
+    "en": "C - Clidinium",
+    "fa": "کلیدینیوم - سی",
+    "brands": [
+      "Librax",
+      "Clindex",
+      "Corium"
+    ],
+    "synonyms": [
+      "C - Clidinium",
+      "Librax",
+      "Clindex",
+      "Corium"
+    ]
+  },
+  {
+    "id": "hydrochloride-clindamycin",
+    "en": "Hydrochloride Clindamycin",
+    "fa": "کلیندامایسین هیدروکلراید",
+    "brands": [
+      "Dalavin",
+      "cleocin"
+    ],
+    "synonyms": [
+      "Hydrochloride Clindamycin",
+      "Dalavin",
+      "cleocin"
+    ]
+  },
+  {
+    "id": "clobazam",
+    "en": "Clobazam",
+    "fa": "کلوبازام",
+    "brands": [
+      "Frisium",
+      "Urbanol",
+      "Urbadan"
+    ],
+    "synonyms": [
+      "Clobazam",
+      "Frisium",
+      "Urbanol",
+      "Urbadan"
+    ]
+  },
+  {
+    "id": "propionate-clobetasol",
+    "en": "propionate Clobetasol",
+    "fa": "کلوبتازول پروپیونات",
+    "brands": [
+      "Temovate",
+      "Dermovate"
+    ],
+    "synonyms": [
+      "propionate Clobetasol",
+      "Temovate",
+      "Dermovate"
+    ]
+  },
+  {
+    "id": "hcl-clobutinol",
+    "en": "Hcl Clobutinol",
+    "fa": "کلوبوتینول اچ سی ال",
+    "brands": [
+      "Lomisat",
+      "Silomat"
+    ],
+    "synonyms": [
+      "Hcl Clobutinol",
+      "Lomisat",
+      "Silomat"
+    ]
+  },
+  {
+    "id": "clofazimine",
+    "en": "Clofazimine",
+    "fa": "کلوفازیمین",
+    "brands": [
+      "Lamprene"
+    ],
+    "synonyms": [
+      "Clofazimine",
+      "Lamprene"
+    ]
+  },
+  {
+    "id": "clofibrate",
+    "en": "Clofibrate",
+    "fa": "کلوفیبرات",
+    "brands": [
+      "s-Atromid"
+    ],
+    "synonyms": [
+      "Clofibrate",
+      "s-Atromid"
+    ]
+  },
+  {
+    "id": "clomiphene",
+    "en": "Clomiphene",
+    "fa": "کلومیفن",
+    "brands": [
+      "clomid",
+      "Milophene",
+      "Serophene"
+    ],
+    "synonyms": [
+      "Clomiphene",
+      "clomid",
+      "Milophene",
+      "Serophene"
+    ]
+  },
+  {
+    "id": "hydrochloride-clomipramine",
+    "en": "Hydrochloride Clomipramine",
+    "fa": "کلومیپرامین هیدروکلراید",
+    "brands": [
+      "Tranquax",
+      "Anafranil"
+    ],
+    "synonyms": [
+      "Hydrochloride Clomipramine",
+      "Tranquax",
+      "Anafranil"
+    ]
+  },
+  {
+    "id": "hydrochloride-clonidine",
+    "en": "Hydrochloride clonidine",
+    "fa": "کلونیدین هیدروکلراید",
+    "brands": [
+      "catapres",
+      "Dixarit",
+      "Duraclon"
+    ],
+    "synonyms": [
+      "Hydrochloride clonidine",
+      "catapres",
+      "Dixarit",
+      "Duraclon"
+    ]
+  },
+  {
+    "id": "bisulfate-clopidogrel",
+    "en": "Bisulfate Clopidogrel",
+    "fa": "کلوپیدوگرل بی سولفات",
+    "brands": [
+      "plavix"
+    ],
+    "synonyms": [
+      "Bisulfate Clopidogrel",
+      "plavix"
+    ]
+  },
+  {
+    "id": "clotrimazole",
+    "en": "Clotrimazole",
+    "fa": "کلوتریمازول",
+    "brands": [
+      "femcare",
+      "lotrimin",
+      "Myvelex",
+      "canesten"
+    ],
+    "synonyms": [
+      "Clotrimazole",
+      "femcare",
+      "lotrimin",
+      "Myvelex",
+      "canesten"
+    ]
+  },
+  {
+    "id": "sodium-cloxacillin",
+    "en": "Sodium Cloxacillin",
+    "fa": "کلوگراسیلین سدیم",
+    "brands": [
+      "Tegopen",
+      "orbenin"
+    ],
+    "synonyms": [
+      "Sodium Cloxacillin",
+      "Tegopen",
+      "orbenin"
+    ]
+  },
+  {
+    "id": "clozapin",
+    "en": "Clozapin",
+    "fa": "کلوزاپین",
+    "brands": [
+      "leponex",
+      "clozarit"
+    ],
+    "synonyms": [
+      "Clozapin",
+      "leponex",
+      "clozarit"
+    ]
+  },
+  {
+    "id": "tar-coal",
+    "en": "Tar Coal",
+    "fa": "کول تار",
+    "brands": [],
+    "synonyms": [
+      "Tar Coal"
+    ]
+  },
+  {
+    "id": "phosphate-codeine",
+    "en": "Phosphate Codeine",
+    "fa": "کدئین فسفات",
+    "brands": [
+      "Evacode",
+      "Paveral"
+    ],
+    "synonyms": [
+      "Phosphate Codeine",
+      "Evacode",
+      "Paveral"
+    ]
+  },
+  {
+    "id": "colchicine",
+    "en": "Colchicine",
+    "fa": "کلشی سین",
+    "brands": [
+      "Colchimax"
+    ],
+    "synonyms": [
+      "Colchicine",
+      "Colchimax"
+    ]
+  },
+  {
+    "id": "palmitate-colfosceril",
+    "en": "Palmitate Colfosceril",
+    "fa": "کولفوسکریل پالمیتات",
+    "brands": [
+      "Neonatal Exosurf"
+    ],
+    "synonyms": [
+      "Palmitate Colfosceril",
+      "Neonatal Exosurf"
+    ]
+  },
+  {
+    "id": "estrogen-conjugated",
+    "en": "Estrogen Conjugated",
+    "fa": "کانژوگیتد استروژن",
+    "brands": [
+      "cenestin",
+      "premarin",
+      "progens",
+      "Estrocon"
+    ],
+    "synonyms": [
+      "Estrogen Conjugated",
+      "cenestin",
+      "premarin",
+      "progens",
+      "Estrocon"
+    ]
+  },
+  {
+    "id": "contraceptives-de-hd-ld",
+    "en": "Contraceptives DE-HD-LD",
+    "fa": "کنتراسپتیو",
+    "brands": [
+      "Norgestrel",
+      "Ethinyl Estradiol",
+      "ovcon"
+    ],
+    "synonyms": [
+      "Contraceptives DE-HD-LD",
+      "Norgestrel",
+      "Ethinyl Estradiol",
+      "ovcon"
+    ]
+  },
+  {
+    "id": "copper-sulfate",
+    "en": "Copper sulfate",
+    "fa": "کوپرسولفات",
+    "brands": [
+      "Metacuprol",
+      "coppertarco"
+    ],
+    "synonyms": [
+      "Copper sulfate",
+      "Metacuprol",
+      "coppertarco"
+    ]
+  },
+  {
+    "id": "acth-corticotropin",
+    "en": "ACTH Corticotropin",
+    "fa": "کورتیکوتروپین ای سی تی اچ",
+    "brands": [
+      "Acthar",
+      "Acton Prolon",
+      "Cortrophin Gel"
+    ],
+    "synonyms": [
+      "ACTH Corticotropin",
+      "Acthar",
+      "Acton Prolon",
+      "Cortrophin Gel"
+    ]
+  },
+  {
+    "id": "sodium-cromolyn",
+    "en": "Sodium Cromolyn",
+    "fa": "کرومولین سدیم",
+    "brands": [
+      "Intal",
+      "Nalcrom",
+      "Opticrom",
+      "Nesalcrom"
+    ],
+    "synonyms": [
+      "Sodium Cromolyn",
+      "Intal",
+      "Nalcrom",
+      "Opticrom",
+      "Nesalcrom"
+    ]
+  },
+  {
+    "id": "cromolyn-sodium-oph",
+    "en": "Cromolyn sodium oph",
+    "fa": "سدیم کرومولین",
+    "brands": [
+      "opticrom"
+    ],
+    "synonyms": [
+      "Cromolyn sodium oph",
+      "opticrom"
+    ]
+  },
+  {
+    "id": "crotamiton",
+    "en": "Crotamiton",
+    "fa": "کروتامیتون",
+    "brands": [
+      "Eurax"
+    ],
+    "synonyms": [
+      "Crotamiton",
+      "Eurax"
+    ]
+  },
+  {
+    "id": "sr-cumarin",
+    "en": "SR Cumarin",
+    "fa": "کومارین اس آر",
+    "brands": [
+      "Lysedem- Lodema -Venalot"
+    ],
+    "synonyms": [
+      "SR Cumarin",
+      "Lysedem- Lodema -Venalot"
+    ]
+  },
+  {
+    "id": "hydrochloride-cyclopentolate",
+    "en": "Hydrochloride Cyclopentolate",
+    "fa": "سیکلوپنتو̄ت هیدروکلراید",
+    "brands": [
+      "Pentolair",
+      "cyclogyl"
+    ],
+    "synonyms": [
+      "Hydrochloride Cyclopentolate",
+      "Pentolair",
+      "cyclogyl"
+    ]
+  },
+  {
+    "id": "cyclophosphamide",
+    "en": "Cyclophosphamide",
+    "fa": "سیکلوفسفاماید",
+    "brands": [
+      "cytoxan",
+      "Neosar",
+      "Endoxan"
+    ],
+    "synonyms": [
+      "Cyclophosphamide",
+      "cytoxan",
+      "Neosar",
+      "Endoxan"
+    ]
+  },
+  {
+    "id": "cycloserine",
+    "en": "Cycloserine",
+    "fa": "سیکلوسرین",
+    "brands": [
+      "Closine",
+      "Seromycin"
+    ],
+    "synonyms": [
+      "Cycloserine",
+      "Closine",
+      "Seromycin"
+    ]
+  },
+  {
+    "id": "cyclosporine",
+    "en": "Cyclosporine",
+    "fa": "سیکلوسپورین",
+    "brands": [
+      "Neoral",
+      "Sandimmue",
+      "Gengraf"
+    ],
+    "synonyms": [
+      "Cyclosporine",
+      "Neoral",
+      "Sandimmue",
+      "Gengraf"
+    ]
+  },
+  {
+    "id": "hydrochloride-ciproheptadine",
+    "en": "Hydrochloride Ciproheptadine",
+    "fa": "سیپرو هپتادین هیدروکلراید",
+    "brands": [
+      "Periactin"
+    ],
+    "synonyms": [
+      "Hydrochloride Ciproheptadine",
+      "Periactin"
+    ]
+  },
+  {
+    "id": "acetate-cyproterone",
+    "en": "Acetate Cyproterone",
+    "fa": "سیپروترون استات",
+    "brands": [
+      "Cyprostate",
+      "Androcur"
+    ],
+    "synonyms": [
+      "Acetate Cyproterone",
+      "Cyprostate",
+      "Androcur"
+    ]
+  },
+  {
+    "id": "compound-cyproterone",
+    "en": "Compound Cyproterone",
+    "fa": "سیپروترون کومپاند",
+    "brands": [
+      "Diane"
+    ],
+    "synonyms": [
+      "Compound Cyproterone",
+      "Diane"
+    ]
+  },
+  {
+    "id": "cytarabine",
+    "en": "Cytarabine",
+    "fa": "سیتارابین",
+    "brands": [
+      "Cytosar -u",
+      "Alexa"
+    ],
+    "synonyms": [
+      "Cytarabine",
+      "Cytosar -u",
+      "Alexa"
+    ]
+  },
+  {
+    "id": "dacrbazine-dtic",
+    "en": "Dacrbazine DTIC",
+    "fa": "داکاربازین",
+    "brands": [
+      "DTIC -Dome",
+      "Imidazole Carbonamid"
+    ],
+    "synonyms": [
+      "Dacrbazine DTIC",
+      "DTIC -Dome",
+      "Imidazole Carbonamid"
+    ]
+  },
+  {
+    "id": "daclizumab",
+    "en": "Daclizumab",
+    "fa": "داکلی زوماب",
+    "brands": [
+      "Zenapax"
+    ],
+    "synonyms": [
+      "Daclizumab",
+      "Zenapax"
+    ]
+  },
+  {
+    "id": "d-actinomycin-dactinomycin",
+    "en": "D- Actinomycin Dactinomycin",
+    "fa": "داکتینومایسین ایتنومایسین -دی",
+    "brands": [
+      "Lyorac",
+      "Cosmagen"
+    ],
+    "synonyms": [
+      "D- Actinomycin Dactinomycin",
+      "Lyorac",
+      "Cosmagen"
+    ]
+  },
+  {
+    "id": "sodium-dalteparin",
+    "en": "sodium Dalteparin",
+    "fa": "دالتپارین سدیم",
+    "brands": [
+      "Fragmin"
+    ],
+    "synonyms": [
+      "sodium Dalteparin",
+      "Fragmin"
+    ]
+  },
+  {
+    "id": "danazol",
+    "en": "Danazol",
+    "fa": "دانازول",
+    "brands": [
+      "Danocrine",
+      "Cyclomen"
+    ],
+    "synonyms": [
+      "Danazol",
+      "Danocrine",
+      "Cyclomen"
+    ]
+  },
+  {
+    "id": "sodium-dantrolene",
+    "en": "Sodium Dantrolene",
+    "fa": "دانترولن سدیم",
+    "brands": [
+      "Dantrium"
+    ],
+    "synonyms": [
+      "Sodium Dantrolene",
+      "Dantrium"
+    ]
+  },
+  {
+    "id": "dapsone-dds",
+    "en": "Dapsone DDS",
+    "fa": "داپسون",
+    "brands": [
+      "Avlosulfon"
+    ],
+    "synonyms": [
+      "Dapsone DDS",
+      "Avlosulfon"
+    ]
+  },
+  {
+    "id": "daunorubicin-hcl",
+    "en": "Daunorubicin HCL",
+    "fa": "دانوروبیسین",
+    "brands": [
+      "DNR",
+      "Cerubidine"
+    ],
+    "synonyms": [
+      "Daunorubicin HCL",
+      "DNR",
+      "Cerubidine"
+    ]
+  },
+  {
+    "id": "deferiprone",
+    "en": "Deferiprone",
+    "fa": "دفریپرون",
+    "brands": [],
+    "synonyms": [
+      "Deferiprone"
+    ]
+  },
+  {
+    "id": "deferoxamin-mesylate",
+    "en": "Deferoxamin Mesylate",
+    "fa": "دفروکسامین",
+    "brands": [
+      "Desferal"
+    ],
+    "synonyms": [
+      "Deferoxamin Mesylate",
+      "Desferal"
+    ]
+  },
+  {
+    "id": "hcl-dehydroemetine",
+    "en": "HCL Dehydroemetine",
+    "fa": "دهیدروامتین اچ سی ال",
+    "brands": [],
+    "synonyms": [
+      "HCL Dehydroemetine"
+    ]
+  },
+  {
+    "id": "hydrochloride-desipramine",
+    "en": "Hydrochloride Desipramine",
+    "fa": "دزی پرامین هیدروکلراید",
+    "brands": [
+      "Pertofrance-Norpramin"
+    ],
+    "synonyms": [
+      "Hydrochloride Desipramine",
+      "Pertofrance-Norpramin"
+    ]
+  },
+  {
+    "id": "desmopressin-acetate",
+    "en": "Desmopressin Acetate",
+    "fa": "دسموپریسین",
+    "brands": [
+      "Stimate",
+      "DDAVP"
+    ],
+    "synonyms": [
+      "Desmopressin Acetate",
+      "Stimate",
+      "DDAVP"
+    ]
+  },
+  {
+    "id": "desoxycorticosterone",
+    "en": "Desoxycorticosterone",
+    "fa": "دزوکسی کورتیکواسترون",
+    "brands": [
+      "Doca Acetate- Percorten Acetate - Precorten Pivalat"
+    ],
+    "synonyms": [
+      "Desoxycorticosterone",
+      "Doca Acetate- Percorten Acetate - Precorten Pivalat"
+    ]
+  },
+  {
+    "id": "dexamethasone",
+    "en": "Dexamethasone",
+    "fa": "دگزامتازون",
+    "brands": [
+      "Dalalone- Decadrol- Decadron- Decaject- Dexameth- Deronil- Dexacen- Dexasone- Dexon￾Dexone- Hexadrol- Solurex"
+    ],
+    "synonyms": [
+      "Dexamethasone",
+      "Dalalone- Decadrol- Decadron- Decaject- Dexameth- Deronil- Dexacen- Dexasone- Dexon￾Dexone- Hexadrol- Solurex"
+    ]
+  },
+  {
+    "id": "phosphate-sodium-dexamethasone",
+    "en": "phosphate sodium Dexamethasone",
+    "fa": "دگزامتازون سدیم فسفات",
+    "brands": [
+      "Respihaler-Decadron"
+    ],
+    "synonyms": [
+      "phosphate sodium Dexamethasone",
+      "Respihaler-Decadron"
+    ]
+  },
+  {
+    "id": "sulfate-dexamphetamine",
+    "en": "sulfate Dexamphetamine",
+    "fa": "دگزا آمفتامین",
+    "brands": [
+      "Dexampen- Dexedrine- ferndex"
+    ],
+    "synonyms": [
+      "sulfate Dexamphetamine",
+      "Dexampen- Dexedrine- ferndex"
+    ]
+  },
+  {
+    "id": "maleate-dexehlorpheniramine",
+    "en": "Maleate Dexehlorpheniramine",
+    "fa": "دکس کلرفنیرامین",
+    "brands": [
+      "Dexchlor- poladext. Dpolaramine-polavyem"
+    ],
+    "synonyms": [
+      "Maleate Dexehlorpheniramine",
+      "Dexchlor- poladext. Dpolaramine-polavyem"
+    ]
+  },
+  {
+    "id": "dexpanthenol-pantothenic-acid",
+    "en": "Dexpanthenol Pantothenic Acid",
+    "fa": "پانتنول دکس",
+    "brands": [
+      "Dexol- Ilopan- Pantholerm"
+    ],
+    "synonyms": [
+      "Dexpanthenol Pantothenic Acid",
+      "Dexol- Ilopan- Pantholerm"
+    ]
+  },
+  {
+    "id": "dextranomer",
+    "en": "Dextranomer",
+    "fa": "دکتسرانومر",
+    "brands": [
+      "Debrian"
+    ],
+    "synonyms": [
+      "Dextranomer",
+      "Debrian"
+    ]
+  },
+  {
+    "id": "dextromethorphan-hbr",
+    "en": "Dextromethorphan HBR",
+    "fa": "دکسترومتورفان",
+    "brands": [
+      "Cremacoat- Delsym- Sucrets cough control"
+    ],
+    "synonyms": [
+      "Dextromethorphan HBR",
+      "Cremacoat- Delsym- Sucrets cough control"
+    ]
+  },
+  {
+    "id": "p-dextromethorphan",
+    "en": "P-Dextromethorphan",
+    "fa": "دکسترومتورفان- پی",
+    "brands": [
+      "Ambenyl"
+    ],
+    "synonyms": [
+      "P-Dextromethorphan",
+      "Ambenyl"
+    ]
+  },
+  {
+    "id": "dextrose-d-gluose",
+    "en": "Dextrose D-Gluose",
+    "fa": "دکستروز",
+    "brands": [
+      "D2",
+      "5W- D5W-D10W-D20W-D30W-D38",
+      "5W-D40W-D50W-D60W-D70W"
+    ],
+    "synonyms": [
+      "Dextrose D-Gluose",
+      "D2",
+      "5W- D5W-D10W-D20W-D30W-D38",
+      "5W-D40W-D50W-D60W-D70W"
+    ]
+  },
+  {
+    "id": "diazpam",
+    "en": "Diazpam",
+    "fa": "دیازپام",
+    "brands": [
+      "Apo-Diazpam",
+      "Diazemuls",
+      "E-Pam",
+      "Meval",
+      "Novodipam",
+      "Valiam",
+      "Vivol"
+    ],
+    "synonyms": [
+      "Diazpam",
+      "Apo-Diazpam",
+      "Diazemuls",
+      "E-Pam",
+      "Meval",
+      "Novodipam",
+      "Valiam",
+      "Vivol"
+    ]
+  },
+  {
+    "id": "diazoxide",
+    "en": "Diazoxide",
+    "fa": "دیازوکساید",
+    "brands": [
+      "Hyperstat I.V",
+      "proglycem"
+    ],
+    "synonyms": [
+      "Diazoxide",
+      "Hyperstat I.V",
+      "proglycem"
+    ]
+  },
+  {
+    "id": "sodium-diclofenac",
+    "en": "Sodium Diclofenac",
+    "fa": "دیکلوفناک سدیم",
+    "brands": [
+      "voltaren"
+    ],
+    "synonyms": [
+      "Sodium Diclofenac",
+      "voltaren"
+    ]
+  },
+  {
+    "id": "didanosine",
+    "en": "Didanosine",
+    "fa": "دید آنوزین",
+    "brands": [
+      "Videxec",
+      "Videx"
+    ],
+    "synonyms": [
+      "Didanosine",
+      "Videxec",
+      "Videx"
+    ]
+  },
+  {
+    "id": "dienestrol",
+    "en": "Dienestrol",
+    "fa": "دای نسترول",
+    "brands": [
+      "dV",
+      "Estraguard",
+      "Ortho Dienestrol"
+    ],
+    "synonyms": [
+      "Dienestrol",
+      "dV",
+      "Estraguard",
+      "Ortho Dienestrol"
+    ]
+  },
+  {
+    "id": "citrate-diethylcarbamazine",
+    "en": "Citrate Diethylcarbamazine",
+    "fa": "دی اتیل کاربامازین سیترات",
+    "brands": [
+      "Hetvazan",
+      "Banocide"
+    ],
+    "synonyms": [
+      "Citrate Diethylcarbamazine",
+      "Hetvazan",
+      "Banocide"
+    ]
+  },
+  {
+    "id": "diethylstilbestrol",
+    "en": "Diethylstilbestrol",
+    "fa": "دی اتیل استیل بسترول",
+    "brands": [
+      "DES",
+      "Stilphostvol"
+    ],
+    "synonyms": [
+      "Diethylstilbestrol",
+      "DES",
+      "Stilphostvol"
+    ]
+  },
+  {
+    "id": "digestive",
+    "en": "Digestive",
+    "fa": "دایجبستیو",
+    "brands": [],
+    "synonyms": [
+      "Digestive"
+    ]
+  },
+  {
+    "id": "digoxin",
+    "en": "Digoxin",
+    "fa": "دیگوکسین",
+    "brands": [
+      "Lanoxin",
+      "Digitek"
+    ],
+    "synonyms": [
+      "Digoxin",
+      "Lanoxin",
+      "Digitek"
+    ]
+  },
+  {
+    "id": "digoxin-immune-fab",
+    "en": "Digoxin Immune FAB",
+    "fa": "ایمنوفاب دیگوکسین",
+    "brands": [
+      "Digibind"
+    ],
+    "synonyms": [
+      "Digoxin Immune FAB",
+      "Digibind"
+    ]
+  },
+  {
+    "id": "mesylate-dihydroergotamine",
+    "en": "Mesylate Dihydroergotamine",
+    "fa": "دی هیدروارگوتامین",
+    "brands": [
+      "Miganal"
+    ],
+    "synonyms": [
+      "Mesylate Dihydroergotamine",
+      "Miganal"
+    ]
+  },
+  {
+    "id": "diloxanide-furoate",
+    "en": "Diloxanide Furoate",
+    "fa": "دلوکسانید",
+    "brands": [],
+    "synonyms": [
+      "Diloxanide Furoate"
+    ]
+  },
+  {
+    "id": "hydrochloride-diltiazem",
+    "en": "Hydrochloride Diltiazem",
+    "fa": "دیلتیازم هیدروکلراید",
+    "brands": [
+      "Cardizem"
+    ],
+    "synonyms": [
+      "Hydrochloride Diltiazem",
+      "Cardizem"
+    ]
+  },
+  {
+    "id": "hydrinate-dimen",
+    "en": "Hydrinate Dimen",
+    "fa": "دیمن هیدرینات",
+    "brands": [
+      "Triptone"
+    ],
+    "synonyms": [
+      "Hydrinate Dimen",
+      "Triptone"
+    ]
+  },
+  {
+    "id": "dimercapol",
+    "en": "Dimercapol",
+    "fa": "دیمرکاپرول",
+    "brands": [
+      "BAL in oil"
+    ],
+    "synonyms": [
+      "Dimercapol",
+      "BAL in oil"
+    ]
+  },
+  {
+    "id": "activated-dimethicone",
+    "en": "Activated Dimethicone",
+    "fa": "دایمتیکون اکتی ویتد",
+    "brands": [],
+    "synonyms": [
+      "Activated Dimethicone"
+    ]
+  },
+  {
+    "id": "sulfoxide-dimethyl",
+    "en": "Sulfoxide Dimethyl",
+    "fa": "دایمتیل سولفوکساید",
+    "brands": [
+      "-50Rimso"
+    ],
+    "synonyms": [
+      "Sulfoxide Dimethyl",
+      "-50Rimso"
+    ]
+  },
+  {
+    "id": "compound-diphenhydramin",
+    "en": "Compound Diphenhydramin",
+    "fa": "دیفن هیدرامین کامپاند",
+    "brands": [],
+    "synonyms": [
+      "Compound Diphenhydramin"
+    ]
+  },
+  {
+    "id": "hydrochlorid-diphenhydramine",
+    "en": "Hydrochlorid Diphenhydramine",
+    "fa": "دیفن هیدرامین هیدروکلراید",
+    "brands": [
+      "Benadryl",
+      "Banophen"
+    ],
+    "synonyms": [
+      "Hydrochlorid Diphenhydramine",
+      "Benadryl",
+      "Banophen"
+    ]
+  },
+  {
+    "id": "r-diphenoxylate",
+    "en": "Rت Diphenoxylate",
+    "fa": "دیفنوکسی",
+    "brands": [
+      "Legen",
+      "Lomanate",
+      "Lomotil",
+      "Lono X"
+    ],
+    "synonyms": [
+      "Rت Diphenoxylate",
+      "Legen",
+      "Lomanate",
+      "Lomotil",
+      "Lono X"
+    ]
+  },
+  {
+    "id": "equine-antitoxin-diphteria",
+    "en": "Equine Antitoxin Diphteria",
+    "fa": "دیفتریا آنتی توکسین",
+    "brands": [],
+    "synonyms": [
+      "Equine Antitoxin Diphteria"
+    ]
+  },
+  {
+    "id": "diophteria-and-tetanus-toxoids-adsorbed",
+    "en": "Diophteria and tetanus toxoids Adsorbed",
+    "fa": "توکسوئید تتانوس و دیفتریا",
+    "brands": [],
+    "synonyms": [
+      "Diophteria and tetanus toxoids Adsorbed"
+    ]
+  },
+  {
+    "id": "dipyridamol",
+    "en": "Dipyridamol",
+    "fa": "دیپیریدامول",
+    "brands": [
+      "Persantine"
+    ],
+    "synonyms": [
+      "Dipyridamol",
+      "Persantine"
+    ]
+  },
+  {
+    "id": "phosphate-disopyramide",
+    "en": "phosphate Disopyramide",
+    "fa": "دیسوپیرامید فسفات",
+    "brands": [
+      "Rythmodan",
+      "Norpace"
+    ],
+    "synonyms": [
+      "phosphate Disopyramide",
+      "Rythmodan",
+      "Norpace"
+    ]
+  },
+  {
+    "id": "dithranol",
+    "en": "Dithranol",
+    "fa": "دیترانول آنترالین",
+    "brands": [
+      "Lasan",
+      "Micanol",
+      "Anthraforte"
+    ],
+    "synonyms": [
+      "Dithranol",
+      "Lasan",
+      "Micanol",
+      "Anthraforte"
+    ]
+  },
+  {
+    "id": "docusate-sodium-and-sorbitol",
+    "en": "Docusate Sodium and sorbitol",
+    "fa": "سدیم دوکوزات",
+    "brands": [
+      "Diocto",
+      "cloace"
+    ],
+    "synonyms": [
+      "Docusate Sodium and sorbitol",
+      "Diocto",
+      "cloace"
+    ]
+  },
+  {
+    "id": "hydrochloride-donepezil",
+    "en": "Hydrochloride Donepezil",
+    "fa": "دونیپزیل هیدروکلراید",
+    "brands": [
+      "Aricept"
+    ],
+    "synonyms": [
+      "Hydrochloride Donepezil",
+      "Aricept"
+    ]
+  },
+  {
+    "id": "hydrochloride-dobutamine",
+    "en": "Hydrochloride Dobutamine",
+    "fa": "دوبوتامین هیدروکلراید",
+    "brands": [
+      "Dobutrex"
+    ],
+    "synonyms": [
+      "Hydrochloride Dobutamine",
+      "Dobutrex"
+    ]
+  },
+  {
+    "id": "docetexel",
+    "en": "Docetexel",
+    "fa": "داکتاکسل",
+    "brands": [
+      "Taxotere"
+    ],
+    "synonyms": [
+      "Docetexel",
+      "Taxotere"
+    ]
+  },
+  {
+    "id": "hydrochloride-dopamine",
+    "en": "Hydrochloride Dopamine",
+    "fa": "دوپامین هیدروکلراید",
+    "brands": [
+      "Dopastat",
+      "Intvopin"
+    ],
+    "synonyms": [
+      "Hydrochloride Dopamine",
+      "Dopastat",
+      "Intvopin"
+    ]
+  },
+  {
+    "id": "hydrochloride-dorzolamide",
+    "en": "Hydrochloride Dorzolamide",
+    "fa": "دورزو̄مید",
+    "brands": [
+      "Trusopt"
+    ],
+    "synonyms": [
+      "Hydrochloride Dorzolamide",
+      "Trusopt"
+    ]
+  },
+  {
+    "id": "doxapram-hcl",
+    "en": "Doxapram HCl",
+    "fa": "دوکساپرام",
+    "brands": [
+      "Dopram"
+    ],
+    "synonyms": [
+      "Doxapram HCl",
+      "Dopram"
+    ]
+  },
+  {
+    "id": "hydrochloride-doxepin",
+    "en": "Hydrochloride Doxepin",
+    "fa": "دوکسپین هیدروکلراید",
+    "brands": [
+      "Adapin",
+      "sinequan",
+      "Triadapin",
+      "Zonalon"
+    ],
+    "synonyms": [
+      "Hydrochloride Doxepin",
+      "Adapin",
+      "sinequan",
+      "Triadapin",
+      "Zonalon"
+    ]
+  },
+  {
+    "id": "doxorubicin-hcl",
+    "en": "Doxorubicin HCl",
+    "fa": "دوکسوروبیسین",
+    "brands": [
+      "Adriamycin",
+      "Rabex",
+      "ADR"
+    ],
+    "synonyms": [
+      "Doxorubicin HCl",
+      "Adriamycin",
+      "Rabex",
+      "ADR"
+    ]
+  },
+  {
+    "id": "doxycycline",
+    "en": "Doxycycline",
+    "fa": "داکسی سیکلین",
+    "brands": [
+      "Doryx",
+      "Doxy",
+      "Ak-Ramycin",
+      "Ak-Ratabs",
+      "Doxy-Demmon",
+      "Sk-Doxycyline",
+      "Vibiamycin",
+      "Vibra￾Tabs",
+      "Vivox"
+    ],
+    "synonyms": [
+      "Doxycycline",
+      "Doryx",
+      "Doxy",
+      "Ak-Ramycin",
+      "Ak-Ratabs",
+      "Doxy-Demmon",
+      "Sk-Doxycyline",
+      "Vibiamycin",
+      "Vibra￾Tabs",
+      "Vivox"
+    ]
+  },
+  {
+    "id": "droperidel",
+    "en": "Droperidel",
+    "fa": "دروپریدول",
+    "brands": [
+      "Inapsine"
+    ],
+    "synonyms": [
+      "Droperidel",
+      "Inapsine"
+    ]
+  },
+  {
+    "id": "compound-droperidol",
+    "en": "Compound Droperidol",
+    "fa": "دروپریدول کامپاند",
+    "brands": [
+      "Innovar"
+    ],
+    "synonyms": [
+      "Compound Droperidol",
+      "Innovar"
+    ]
+  },
+  {
+    "id": "drotrecoyin-alfa-activated",
+    "en": "Drotrecoyin alfa Activated",
+    "fa": "آلفا دروتریکوگین",
+    "brands": [
+      "Xigris"
+    ],
+    "synonyms": [
+      "Drotrecoyin alfa Activated",
+      "Xigris"
+    ]
+  },
+  {
+    "id": "dydrogestrone",
+    "en": "Dydrogestrone",
+    "fa": "دیدروژسترون",
+    "brands": [
+      "Duphaston"
+    ],
+    "synonyms": [
+      "Dydrogestrone",
+      "Duphaston"
+    ]
+  },
+  {
+    "id": "iodide-echothiophate",
+    "en": "Iodide Echothiophate",
+    "fa": "اکوتیوفات یدیدا",
+    "brands": [
+      "odide",
+      "Phospholine"
+    ],
+    "synonyms": [
+      "Iodide Echothiophate",
+      "odide",
+      "Phospholine"
+    ]
+  },
+  {
+    "id": "edetate-calcium-disodium-calcium-edta",
+    "en": "Edetate Calcium Disodium Calcium Edta",
+    "fa": "سدیم کلسیمدی ادتات",
+    "brands": [
+      "Calcium Disodium Versenate"
+    ],
+    "synonyms": [
+      "Edetate Calcium Disodium Calcium Edta",
+      "Calcium Disodium Versenate"
+    ]
+  },
+  {
+    "id": "dicobalt-edetate",
+    "en": "Dicobalt Edetate",
+    "fa": "ادتاتدی کوبالت",
+    "brands": [],
+    "synonyms": [
+      "Dicobalt Edetate"
+    ]
+  },
+  {
+    "id": "edetate-disodium-edta",
+    "en": "Edetate Disodium EDTA",
+    "fa": "سدیم ادتاتدی",
+    "brands": [
+      "Endrate"
+    ],
+    "synonyms": [
+      "Edetate Disodium EDTA",
+      "Endrate"
+    ]
+  },
+  {
+    "id": "ophthalmic-sodium-edetate",
+    "en": "Ophthalmic Sodium Edetate",
+    "fa": "ادتات سدیم افتالمیک",
+    "brands": [],
+    "synonyms": [
+      "Ophthalmic Sodium Edetate"
+    ]
+  },
+  {
+    "id": "chloride-edrophonium",
+    "en": "Chloride Edrophonium",
+    "fa": "ادروفونیوم کلراید",
+    "brands": [
+      "Enlon",
+      "Reversol",
+      "Tensilon"
+    ],
+    "synonyms": [
+      "Chloride Edrophonium",
+      "Enlon",
+      "Reversol",
+      "Tensilon"
+    ]
+  },
+  {
+    "id": "hcl-emetine",
+    "en": "HCL Emetine",
+    "fa": "امتین اچ سی ال",
+    "brands": [
+      "Hemometine"
+    ],
+    "synonyms": [
+      "HCL Emetine",
+      "Hemometine"
+    ]
+  },
+  {
+    "id": "maleate-enalapril",
+    "en": "Maleate Enalapril",
+    "fa": "انا̄پریل مالئات",
+    "brands": [
+      "Vasotec"
+    ],
+    "synonyms": [
+      "Maleate Enalapril",
+      "Vasotec"
+    ]
+  },
+  {
+    "id": "enflurane",
+    "en": "Enflurane",
+    "fa": "انفلوران",
+    "brands": [
+      "Etrane",
+      "Ethrane"
+    ],
+    "synonyms": [
+      "Enflurane",
+      "Etrane",
+      "Ethrane"
+    ]
+  },
+  {
+    "id": "enoxaparin-sodium",
+    "en": "Enoxaparin Sodium",
+    "fa": "انوکساپارین",
+    "brands": [
+      "Lovenox"
+    ],
+    "synonyms": [
+      "Enoxaparin Sodium",
+      "Lovenox"
+    ]
+  },
+  {
+    "id": "eosin",
+    "en": "Eosin",
+    "fa": "ائوزین",
+    "brands": [
+      "Lovenox"
+    ],
+    "synonyms": [
+      "Eosin",
+      "Lovenox"
+    ]
+  },
+  {
+    "id": "sulfate-or-hcl-ephedrine",
+    "en": "Sulfate or HCL Ephedrine",
+    "fa": "افدرین اچ سی ال یا سولفات",
+    "brands": [
+      "Pretz-D",
+      "Vatronol",
+      "Ectasule Minus",
+      "Efedvon"
+    ],
+    "synonyms": [
+      "Sulfate or HCL Ephedrine",
+      "Pretz-D",
+      "Vatronol",
+      "Ectasule Minus",
+      "Efedvon"
+    ]
+  },
+  {
+    "id": "epinephrine",
+    "en": "Epinephrine",
+    "fa": "اپینفرین",
+    "brands": [
+      "Adrenalin",
+      "Epifrin",
+      "Epitrate"
+    ],
+    "synonyms": [
+      "Epinephrine",
+      "Adrenalin",
+      "Epifrin",
+      "Epitrate"
+    ]
+  },
+  {
+    "id": "hydrochloride-epirubicin",
+    "en": "Hydrochloride Epirubicin",
+    "fa": "اپی روبیسین هیدروکلراید",
+    "brands": [
+      "Ellence"
+    ],
+    "synonyms": [
+      "Hydrochloride Epirubicin",
+      "Ellence"
+    ]
+  },
+  {
+    "id": "erythropoietin-alfa-epoetin",
+    "en": "Erythropoietin Alfa Epoetin",
+    "fa": "ایپویتین آلفا اریتروپوتین",
+    "brands": [],
+    "synonyms": [
+      "Erythropoietin Alfa Epoetin"
+    ]
+  },
+  {
+    "id": "ergotamin-c-c",
+    "en": "Ergotamin-C C -",
+    "fa": "ارگوتامین",
+    "brands": [
+      "Ergo",
+      "Ercat"
+    ],
+    "synonyms": [
+      "Ergotamin-C C -",
+      "Ergo",
+      "Ercat"
+    ]
+  },
+  {
+    "id": "tartrate-ergotamine",
+    "en": "Tartrate Ergotamine",
+    "fa": "ارگوتامین تارترات",
+    "brands": [
+      "Cafergot",
+      "Ergomar",
+      "Ergastat",
+      "Migergot",
+      "Wigraine"
+    ],
+    "synonyms": [
+      "Tartrate Ergotamine",
+      "Cafergot",
+      "Ergomar",
+      "Ergastat",
+      "Migergot",
+      "Wigraine"
+    ]
+  },
+  {
+    "id": "erythromycin",
+    "en": "Erythromycin",
+    "fa": "اریترومایسین",
+    "brands": [
+      "E.E.S",
+      "Eryped"
+    ],
+    "synonyms": [
+      "Erythromycin",
+      "E.E.S",
+      "Eryped"
+    ]
+  },
+  {
+    "id": "ophtalmic-erythromycin",
+    "en": "ophtalmic Erythromycin",
+    "fa": "اریترومایسین افتالمیک",
+    "brands": [
+      "Ilotycin"
+    ],
+    "synonyms": [
+      "ophtalmic Erythromycin",
+      "Ilotycin"
+    ]
+  },
+  {
+    "id": "topical-erythromycin",
+    "en": "Topical Erythromycin",
+    "fa": "اریترومایسین تاپیکال",
+    "brands": [
+      "Erycette",
+      "Eoymax",
+      "Akne-Mycin"
+    ],
+    "synonyms": [
+      "Topical Erythromycin",
+      "Erycette",
+      "Eoymax",
+      "Akne-Mycin"
+    ]
+  },
+  {
+    "id": "erythropietin-epoetin-alfa",
+    "en": "Erythropietin Epoetin Alfa",
+    "fa": "اریتروپوئیتین",
+    "brands": [
+      "Epogen",
+      "procrit",
+      "Eprex"
+    ],
+    "synonyms": [
+      "Erythropietin Epoetin Alfa",
+      "Epogen",
+      "procrit",
+      "Eprex"
+    ]
+  },
+  {
+    "id": "hydrochloride-esmolol",
+    "en": "Hydrochloride Esmolol",
+    "fa": "اسمولول کلراید",
+    "brands": [
+      "Brevibloc"
+    ],
+    "synonyms": [
+      "Hydrochloride Esmolol",
+      "Brevibloc"
+    ]
+  },
+  {
+    "id": "sr-estradiol",
+    "en": "SR Estradiol",
+    "fa": "استرادیول اس آر",
+    "brands": [
+      "Estraderm"
+    ],
+    "synonyms": [
+      "SR Estradiol",
+      "Estraderm"
+    ]
+  },
+  {
+    "id": "valerate-estradiol",
+    "en": "Valerate Estradiol",
+    "fa": "استرادیول ولرات",
+    "brands": [
+      "Dioval",
+      "Delestrogen",
+      "Estrace"
+    ],
+    "synonyms": [
+      "Valerate Estradiol",
+      "Dioval",
+      "Delestrogen",
+      "Estrace"
+    ]
+  },
+  {
+    "id": "topical-estradiol",
+    "en": "Topical Estradiol",
+    "fa": "استرادیول تاپیکال",
+    "brands": [],
+    "synonyms": [
+      "Topical Estradiol"
+    ]
+  },
+  {
+    "id": "etanercept",
+    "en": "Etanercept",
+    "fa": "اتانرسپت",
+    "brands": [
+      "Enbrel"
+    ],
+    "synonyms": [
+      "Etanercept",
+      "Enbrel"
+    ]
+  },
+  {
+    "id": "lactate-ethacridine",
+    "en": "Lactate Ethacridine",
+    "fa": "اتاکریدین ̄کتات",
+    "brands": [
+      "Acrinol",
+      "Metifx",
+      "Rivanol"
+    ],
+    "synonyms": [
+      "Lactate Ethacridine",
+      "Acrinol",
+      "Metifx",
+      "Rivanol"
+    ]
+  },
+  {
+    "id": "phosphate-sodium-estramutine",
+    "en": "phosphate Sodium Estramutine",
+    "fa": "استراموستین سدیم فسفات",
+    "brands": [
+      "Emcyt",
+      "Estracyt"
+    ],
+    "synonyms": [
+      "phosphate Sodium Estramutine",
+      "Emcyt",
+      "Estracyt"
+    ]
+  },
+  {
+    "id": "acid-ethacrynic",
+    "en": "Acid Ethacrynic",
+    "fa": "اتاکرینیک اسید",
+    "brands": [
+      "Edecrin"
+    ],
+    "synonyms": [
+      "Acid Ethacrynic",
+      "Edecrin"
+    ]
+  },
+  {
+    "id": "hcl-ethambutol",
+    "en": "HCL Ethambutol",
+    "fa": "اتامبوتول اچ سی ال",
+    "brands": [
+      "Myambutol",
+      "Etibi"
+    ],
+    "synonyms": [
+      "HCL Ethambutol",
+      "Myambutol",
+      "Etibi"
+    ]
+  },
+  {
+    "id": "ether",
+    "en": "Ether",
+    "fa": "اتر",
+    "brands": [
+      "OG"
+    ],
+    "synonyms": [
+      "Ether",
+      "OG"
+    ]
+  },
+  {
+    "id": "estradiol-ethinyl",
+    "en": "Estradiol Ethinyl",
+    "fa": "اتینیل استرادیول",
+    "brands": [
+      "Feminone",
+      "Esscriptsizel"
+    ],
+    "synonyms": [
+      "Estradiol Ethinyl",
+      "Feminone",
+      "Esscriptsizel"
+    ]
+  },
+  {
+    "id": "oil-ethiodized",
+    "en": "Oil Ethiodized",
+    "fa": "اتیودایزد اویل",
+    "brands": [
+      "Ethiodol"
+    ],
+    "synonyms": [
+      "Oil Ethiodized",
+      "Ethiodol"
+    ]
+  },
+  {
+    "id": "ethionamide",
+    "en": "Ethionamide",
+    "fa": "اتیونامید",
+    "brands": [
+      "Sc-Trecator"
+    ],
+    "synonyms": [
+      "Ethionamide",
+      "Sc-Trecator"
+    ]
+  },
+  {
+    "id": "ethosuximide",
+    "en": "Ethosuximide",
+    "fa": "اتوسوکسماید",
+    "brands": [
+      "Zarontin",
+      "petinimid",
+      "Emeside"
+    ],
+    "synonyms": [
+      "Ethosuximide",
+      "Zarontin",
+      "petinimid",
+      "Emeside"
+    ]
+  },
+  {
+    "id": "disodium-etidronate",
+    "en": "Disodium Etidronate",
+    "fa": "اتیدروناتدی سدیم",
+    "brands": [
+      "Etidron",
+      "Didronel"
+    ],
+    "synonyms": [
+      "Disodium Etidronate",
+      "Etidron",
+      "Didronel"
+    ]
+  },
+  {
+    "id": "etomidate",
+    "en": "Etomidate",
+    "fa": "اتومیدیت",
+    "brands": [
+      "Amidate"
+    ],
+    "synonyms": [
+      "Etomidate",
+      "Amidate"
+    ]
+  },
+  {
+    "id": "etoposide",
+    "en": "Etoposide",
+    "fa": "اتوپوساید",
+    "brands": [
+      "Vepesid",
+      "Toposar",
+      "Etopophos"
+    ],
+    "synonyms": [
+      "Etoposide",
+      "Vepesid",
+      "Toposar",
+      "Etopophos"
+    ]
+  },
+  {
+    "id": "exemestane",
+    "en": "Exemestane",
+    "fa": "اکسیمستان",
+    "brands": [
+      "Aromasin"
+    ],
+    "synonyms": [
+      "Exemestane",
+      "Aromasin"
+    ]
+  },
+  {
+    "id": "etretinate",
+    "en": "Etretinate",
+    "fa": "اتریتینات",
+    "brands": [
+      "Tigason",
+      "Tegison"
+    ],
+    "synonyms": [
+      "Etretinate",
+      "Tigason",
+      "Tegison"
+    ]
+  },
+  {
+    "id": "expectorant",
+    "en": "Expectorant",
+    "fa": "اکسپکتورانت",
+    "brands": [],
+    "synonyms": [
+      "Expectorant"
+    ]
+  },
+  {
+    "id": "expextorant",
+    "en": "Expextorant",
+    "fa": "اکسپکتورانت کدئین",
+    "brands": [],
+    "synonyms": [
+      "Expextorant"
+    ]
+  },
+  {
+    "id": "factor-vii-vii",
+    "en": "Factor VII VII",
+    "fa": "فاکتور",
+    "brands": [],
+    "synonyms": [
+      "Factor VII VII"
+    ]
+  },
+  {
+    "id": "factor-viii-antihemophylic-factor-viii",
+    "en": "Factor VIII Antihemophylic Factor VIII",
+    "fa": "فاکتور",
+    "brands": [],
+    "synonyms": [
+      "Factor VIII Antihemophylic Factor VIII"
+    ]
+  },
+  {
+    "id": "factor-ix-complex-ix",
+    "en": "Factor IX Complex IX",
+    "fa": "کمپلکس فاکتور",
+    "brands": [
+      "Amiafix",
+      "Konyne-HT",
+      "Profilnine Heat",
+      "treated",
+      "proplext",
+      "proplex-sx-T"
+    ],
+    "synonyms": [
+      "Factor IX Complex IX",
+      "Amiafix",
+      "Konyne-HT",
+      "Profilnine Heat",
+      "treated",
+      "proplext",
+      "proplex-sx-T"
+    ]
+  },
+  {
+    "id": "famotidine",
+    "en": "Famotidine",
+    "fa": "فاموتیدین",
+    "brands": [
+      "Famoted.pepcid.shafa famotidine"
+    ],
+    "synonyms": [
+      "Famotidine",
+      "Famoted.pepcid.shafa famotidine"
+    ]
+  },
+  {
+    "id": "fenofibrate",
+    "en": "Fenofibrate",
+    "fa": "فنوفیبرات",
+    "brands": [
+      "Antara",
+      "Lofibra",
+      "Tricor",
+      "Triglide"
+    ],
+    "synonyms": [
+      "Fenofibrate",
+      "Antara",
+      "Lofibra",
+      "Tricor",
+      "Triglide"
+    ]
+  },
+  {
+    "id": "fentanyle-as-citrate",
+    "en": "Fentanyle as Citrate",
+    "fa": "فنتانیل",
+    "brands": [
+      "sublimase",
+      "Durogesic"
+    ],
+    "synonyms": [
+      "Fentanyle as Citrate",
+      "sublimase",
+      "Durogesic"
+    ]
+  },
+  {
+    "id": "ferric-oxide-saccharated",
+    "en": "Ferric Oxide Saccharated",
+    "fa": "اکساید فریک",
+    "brands": [
+      "Ferrivenin",
+      "Ferrovon",
+      "Ferrum-Hausmann",
+      "Unifer. Venofer"
+    ],
+    "synonyms": [
+      "Ferric Oxide Saccharated",
+      "Ferrivenin",
+      "Ferrovon",
+      "Ferrum-Hausmann",
+      "Unifer. Venofer"
+    ]
+  },
+  {
+    "id": "ferrous-glycine-sulfate",
+    "en": "Ferrous Glycine Sulfate",
+    "fa": "گلیسین فروس",
+    "brands": [
+      "Apo Ferrous Sulfate",
+      "Feosol-Fer-in-sol",
+      "Fer-iron",
+      "Fero-Grad",
+      "Fero Gradumet",
+      "Ferralyn",
+      "Fer￾riron",
+      "Fesolfor Mol- Iron-Novo Ferrou sulfa",
+      "PMS Ferrous sulfate",
+      "Slow FE"
+    ],
+    "synonyms": [
+      "Ferrous Glycine Sulfate",
+      "Apo Ferrous Sulfate",
+      "Feosol-Fer-in-sol",
+      "Fer-iron",
+      "Fero-Grad",
+      "Fero Gradumet",
+      "Ferralyn",
+      "Fer￾riron",
+      "Fesolfor Mol- Iron-Novo Ferrou sulfa",
+      "PMS Ferrous sulfate",
+      "Slow FE"
+    ]
+  },
+  {
+    "id": "r-acid-folic-sulfate-glycine-ferrous",
+    "en": "Rیسین - فولیک اسید Acid Folic /Sulfate Glycine -Ferrous",
+    "fa": "فروس سولفات گ",
+    "brands": [
+      "Cofol-Ferfol-Ferfolice"
+    ],
+    "synonyms": [
+      "Rیسین - فولیک اسید Acid Folic /Sulfate Glycine -Ferrous",
+      "Cofol-Ferfol-Ferfolice"
+    ]
+  },
+  {
+    "id": "hydrochloride-fexofenadine",
+    "en": "Hydrochloride Fexofenadine",
+    "fa": "فکسوفنادین هیدروکلراید",
+    "brands": [
+      "Allegra"
+    ],
+    "synonyms": [
+      "Hydrochloride Fexofenadine",
+      "Allegra"
+    ]
+  },
+  {
+    "id": "fibrinogen",
+    "en": "Fibrinogen",
+    "fa": "فیبرینوژن",
+    "brands": [
+      "Human Fibrinogen"
+    ],
+    "synonyms": [
+      "Fibrinogen",
+      "Human Fibrinogen"
+    ]
+  },
+  {
+    "id": "fibrinolysin",
+    "en": "Fibrinolysin",
+    "fa": "فیبرینو̄یزین",
+    "brands": [
+      "Elase"
+    ],
+    "synonyms": [
+      "Fibrinolysin",
+      "Elase"
+    ]
+  },
+  {
+    "id": "filgrastim-gcsf",
+    "en": "Filgrastim GCSF",
+    "fa": "فیلگراستیم",
+    "brands": [
+      "Neopogen"
+    ],
+    "synonyms": [
+      "Filgrastim GCSF",
+      "Neopogen"
+    ]
+  },
+  {
+    "id": "finasteride",
+    "en": "Finasteride",
+    "fa": "فیناستراید",
+    "brands": [
+      "Proscar",
+      "Propecia"
+    ],
+    "synonyms": [
+      "Finasteride",
+      "Proscar",
+      "Propecia"
+    ]
+  },
+  {
+    "id": "flecainide",
+    "en": "Flecainide",
+    "fa": "فلکاینید",
+    "brands": [
+      "Tambocor"
+    ],
+    "synonyms": [
+      "Flecainide",
+      "Tambocor"
+    ]
+  },
+  {
+    "id": "fluconazole",
+    "en": "Fluconazole",
+    "fa": "فلوکونازول",
+    "brands": [
+      "Diflucan"
+    ],
+    "synonyms": [
+      "Fluconazole",
+      "Diflucan"
+    ]
+  },
+  {
+    "id": "flucytosine",
+    "en": "Flucytosine",
+    "fa": "فلوستیوزین",
+    "brands": [
+      "Ancobon"
+    ],
+    "synonyms": [
+      "Flucytosine",
+      "Ancobon"
+    ]
+  },
+  {
+    "id": "phosphate-fludarabine",
+    "en": "phosphate Fludarabine",
+    "fa": "فلودارابین فسفات",
+    "brands": [
+      "Fludara"
+    ],
+    "synonyms": [
+      "phosphate Fludarabine",
+      "Fludara"
+    ]
+  },
+  {
+    "id": "acetat-fludrocortisone",
+    "en": "Acetat Fludrocortisone",
+    "fa": "فلودروکورتیزون استات",
+    "brands": [
+      "Florinet"
+    ],
+    "synonyms": [
+      "Acetat Fludrocortisone",
+      "Florinet"
+    ]
+  },
+  {
+    "id": "flumazenil",
+    "en": "Flumazenil",
+    "fa": "فلومازنیل",
+    "brands": [
+      "Romazicon .Anexate"
+    ],
+    "synonyms": [
+      "Flumazenil",
+      "Romazicon .Anexate"
+    ]
+  },
+  {
+    "id": "sodium-fluorecein",
+    "en": "Sodium Fluorecein",
+    "fa": "فلورسئین سدیم",
+    "brands": [
+      "Funduscein",
+      "Fluorescite",
+      "Ak- Fluor"
+    ],
+    "synonyms": [
+      "Sodium Fluorecein",
+      "Funduscein",
+      "Fluorescite",
+      "Ak- Fluor"
+    ]
+  },
+  {
+    "id": "fluride-as-sodium-salt",
+    "en": "Fluride as sodium salt",
+    "fa": "فلوراید",
+    "brands": [
+      "Fluocal",
+      "Zymafluor",
+      "Duraphat"
+    ],
+    "synonyms": [
+      "Fluride as sodium salt",
+      "Fluocal",
+      "Zymafluor",
+      "Duraphat"
+    ]
+  },
+  {
+    "id": "fluorometholone",
+    "en": "Fluorometholone",
+    "fa": "فلوئورومتولون",
+    "brands": [
+      "Flucort",
+      "Fluor-Opophthalmic",
+      "FML forte",
+      "Fmlliquifilm ophthalmic",
+      "FML S.O.P"
+    ],
+    "synonyms": [
+      "Fluorometholone",
+      "Flucort",
+      "Fluor-Opophthalmic",
+      "FML forte",
+      "Fmlliquifilm ophthalmic",
+      "FML S.O.P"
+    ]
+  },
+  {
+    "id": "fluorouracil-systemic",
+    "en": "Fluorouracil Systemic",
+    "fa": "فلوئوراسیل",
+    "brands": [
+      "Adrucil - Efudex - Fluroplex"
+    ],
+    "synonyms": [
+      "Fluorouracil Systemic",
+      "Adrucil - Efudex - Fluroplex"
+    ]
+  },
+  {
+    "id": "topical-fluorouracil",
+    "en": "Topical Fluorouracil",
+    "fa": "فلوئوراسیل تاپیکال",
+    "brands": [
+      "Adrucil - Efudex- Fluroplex"
+    ],
+    "synonyms": [
+      "Topical Fluorouracil",
+      "Adrucil - Efudex- Fluroplex"
+    ]
+  },
+  {
+    "id": "fluoxetine-az-hcl",
+    "en": "Fluoxetine az HCl",
+    "fa": "فلئوکستین",
+    "brands": [
+      "Lorazacy Oxetine",
+      "Prozac"
+    ],
+    "synonyms": [
+      "Fluoxetine az HCl",
+      "Lorazacy Oxetine",
+      "Prozac"
+    ]
+  },
+  {
+    "id": "flupenthixol",
+    "en": "Flupenthixol",
+    "fa": "فلوپنتیکسول",
+    "brands": [
+      "Fluanxol"
+    ],
+    "synonyms": [
+      "Flupenthixol",
+      "Fluanxol"
+    ]
+  },
+  {
+    "id": "fluphenazine",
+    "en": "Fluphenazine",
+    "fa": "فلوفنازین",
+    "brands": [
+      "Modecate- Decanoate",
+      "Permitilhydrochloride",
+      "Prolixin",
+      "Hydrochloride"
+    ],
+    "synonyms": [
+      "Fluphenazine",
+      "Modecate- Decanoate",
+      "Permitilhydrochloride",
+      "Prolixin",
+      "Hydrochloride"
+    ]
+  },
+  {
+    "id": "flurazepam-as-hcl",
+    "en": "Flurazepam as HCl",
+    "fa": "فلورازپام",
+    "brands": [
+      "Apo-Flurazepam",
+      "Dalmane",
+      "Durapam",
+      "Fluzepam",
+      "Noro Flupam",
+      "Sam-Pam",
+      "Somnol"
+    ],
+    "synonyms": [
+      "Flurazepam as HCl",
+      "Apo-Flurazepam",
+      "Dalmane",
+      "Durapam",
+      "Fluzepam",
+      "Noro Flupam",
+      "Sam-Pam",
+      "Somnol"
+    ]
+  },
+  {
+    "id": "flutamide",
+    "en": "Flutamide",
+    "fa": "فلوتامید",
+    "brands": [
+      "Eulexin"
+    ],
+    "synonyms": [
+      "Flutamide",
+      "Eulexin"
+    ]
+  },
+  {
+    "id": "fluticasone-as-propionate",
+    "en": "Fluticasone as propionate",
+    "fa": "فلوتیکازون",
+    "brands": [
+      "Cutivate. Flixotide. Evohaler 125. flonase. flovest"
+    ],
+    "synonyms": [
+      "Fluticasone as propionate",
+      "Cutivate. Flixotide. Evohaler 125. flonase. flovest"
+    ]
+  },
+  {
+    "id": "maleate-fluvoxamine",
+    "en": "Maleate Fluvoxamine",
+    "fa": "فلووکسامین ما̄ت",
+    "brands": [
+      "Alfa-Fluroxamine",
+      "Luvox- Voxam"
+    ],
+    "synonyms": [
+      "Maleate Fluvoxamine",
+      "Alfa-Fluroxamine",
+      "Luvox- Voxam"
+    ]
+  },
+  {
+    "id": "acid-folic",
+    "en": "Acid Folic",
+    "fa": "فولیک اسید",
+    "brands": [
+      "Folvite"
+    ],
+    "synonyms": [
+      "Acid Folic",
+      "Folvite"
+    ]
+  },
+  {
+    "id": "alfa-follitropine",
+    "en": "Alfa Follitropine",
+    "fa": "فولیتروپین آلفا",
+    "brands": [
+      "F-Gonal"
+    ],
+    "synonyms": [
+      "Alfa Follitropine",
+      "F-Gonal"
+    ]
+  },
+  {
+    "id": "beta-follitropn",
+    "en": "Beta Follitropn",
+    "fa": "فولیتروپین بتا",
+    "brands": [
+      "Follistim"
+    ],
+    "synonyms": [
+      "Beta Follitropn",
+      "Follistim"
+    ]
+  },
+  {
+    "id": "fomepizole",
+    "en": "Fomepizole",
+    "fa": "فومپیزول",
+    "brands": [
+      "Antizol"
+    ],
+    "synonyms": [
+      "Fomepizole",
+      "Antizol"
+    ]
+  },
+  {
+    "id": "fumarate-formoterol",
+    "en": "Fumarate Formoterol",
+    "fa": "فورموترول فومارات",
+    "brands": [
+      "Oxis -Foradil"
+    ],
+    "synonyms": [
+      "Fumarate Formoterol",
+      "Oxis -Foradil"
+    ]
+  },
+  {
+    "id": "fosfestrol-as-tetrasodium-salt",
+    "en": "Fosfestrol as Tetrasodium Salt",
+    "fa": "فوسفسترول",
+    "brands": [
+      "stilphostrol .Honvol"
+    ],
+    "synonyms": [
+      "Fosfestrol as Tetrasodium Salt",
+      "stilphostrol .Honvol"
+    ]
+  },
+  {
+    "id": "furazolidone",
+    "en": "Furazolidone",
+    "fa": "فورازولیدون",
+    "brands": [
+      "Furoxone"
+    ],
+    "synonyms": [
+      "Furazolidone",
+      "Furoxone"
+    ]
+  },
+  {
+    "id": "furosemide",
+    "en": "Furosemide",
+    "fa": "فوروزماید",
+    "brands": [
+      "Lasix-Norosemide.SK-Forosemide.Uritol"
+    ],
+    "synonyms": [
+      "Furosemide",
+      "Lasix-Norosemide.SK-Forosemide.Uritol"
+    ]
+  },
+  {
+    "id": "gabapentin",
+    "en": "Gabapentin",
+    "fa": "گاباپنتین",
+    "brands": [
+      "Neurontin"
+    ],
+    "synonyms": [
+      "Gabapentin",
+      "Neurontin"
+    ]
+  },
+  {
+    "id": "hydrobromide-galantamine",
+    "en": "Hydrobromide Galantamine",
+    "fa": "گا̄نتامین هیدروکلراید",
+    "brands": [
+      "Reminyl"
+    ],
+    "synonyms": [
+      "Hydrobromide Galantamine",
+      "Reminyl"
+    ]
+  },
+  {
+    "id": "gamma-benzene-hydrochloride-lindane",
+    "en": "Gamma Benzene Hydrochloride Lindane",
+    "fa": "گامابنزن",
+    "brands": [],
+    "synonyms": [
+      "Gamma Benzene Hydrochloride Lindane"
+    ]
+  },
+  {
+    "id": "gancyclovir",
+    "en": "Gancyclovir",
+    "fa": "گان سیکلوویر",
+    "brands": [
+      "Cytovene"
+    ],
+    "synonyms": [
+      "Gancyclovir",
+      "Cytovene"
+    ]
+  },
+  {
+    "id": "modified-gelatin",
+    "en": "Modified Gelatin",
+    "fa": "ژ̄تین مودیفاید",
+    "brands": [],
+    "synonyms": [
+      "Modified Gelatin"
+    ]
+  },
+  {
+    "id": "gemfibrozil",
+    "en": "Gemfibrozil",
+    "fa": "جیم فیبروزیل",
+    "brands": [
+      "Lopid"
+    ],
+    "synonyms": [
+      "Gemfibrozil",
+      "Lopid"
+    ]
+  },
+  {
+    "id": "hydrochloride-gemcitabine",
+    "en": "Hydrochloride Gemcitabine",
+    "fa": "جم سیتابین هیدروکلراید",
+    "brands": [
+      "Gemzar"
+    ],
+    "synonyms": [
+      "Hydrochloride Gemcitabine",
+      "Gemzar"
+    ]
+  },
+  {
+    "id": "sulfate-gentamicin",
+    "en": "Sulfate Gentamicin",
+    "fa": "جنتامایسین سولفات",
+    "brands": [
+      "Cidomycin",
+      "Garamycin",
+      "Genoptic"
+    ],
+    "synonyms": [
+      "Sulfate Gentamicin",
+      "Cidomycin",
+      "Garamycin",
+      "Genoptic"
+    ]
+  },
+  {
+    "id": "caproate-gestonorone",
+    "en": "Caproate Gestonorone",
+    "fa": "ژستونورون کاپروات",
+    "brands": [],
+    "synonyms": [
+      "Caproate Gestonorone"
+    ]
+  },
+  {
+    "id": "r-glibenclamide",
+    "en": "Rمید Glibenclamide",
+    "fa": "گلی بن ک",
+    "brands": [
+      "Daonil",
+      "Diabeta",
+      "Euglucon"
+    ],
+    "synonyms": [
+      "Rمید Glibenclamide",
+      "Daonil",
+      "Diabeta",
+      "Euglucon"
+    ]
+  },
+  {
+    "id": "r-gliclazide",
+    "en": "Rزید Gliclazide",
+    "fa": "گلیک",
+    "brands": [],
+    "synonyms": [
+      "Rزید Gliclazide"
+    ]
+  },
+  {
+    "id": "glucagon",
+    "en": "Glucagon",
+    "fa": "گلوکاگون",
+    "brands": [
+      "Glucagen Emergency kit"
+    ],
+    "synonyms": [
+      "Glucagon",
+      "Glucagen Emergency kit"
+    ]
+  },
+  {
+    "id": "glycerol-glycerine",
+    "en": "Glycerol Glycerine",
+    "fa": "گلیسیرین گلیسرول",
+    "brands": [
+      "Fleet Babylax",
+      "Glycerol",
+      "Glyrol"
+    ],
+    "synonyms": [
+      "Glycerol Glycerine",
+      "Fleet Babylax",
+      "Glycerol",
+      "Glyrol"
+    ]
+  },
+  {
+    "id": "thiomalate-sodium-gold",
+    "en": "Thiomalate sodium Gold",
+    "fa": "گلد سدیم تیوما̄ت",
+    "brands": [
+      "Aurolate"
+    ],
+    "synonyms": [
+      "Thiomalate sodium Gold",
+      "Aurolate"
+    ]
+  },
+  {
+    "id": "gonadorelin",
+    "en": "Gonadorelin",
+    "fa": "گونادورلین",
+    "brands": [
+      "Factrel",
+      "Lutrepulse"
+    ],
+    "synonyms": [
+      "Gonadorelin",
+      "Factrel",
+      "Lutrepulse"
+    ]
+  },
+  {
+    "id": "hydrochloride-granisetron",
+    "en": "Hydrochloride Granisetron",
+    "fa": "گرانیسترون هیدروکلراید",
+    "brands": [
+      "Kytril"
+    ],
+    "synonyms": [
+      "Hydrochloride Granisetron",
+      "Kytril"
+    ]
+  },
+  {
+    "id": "griseofulvin",
+    "en": "Griseofulvin",
+    "fa": "گریزئوفولوین",
+    "brands": [
+      "V Grifulvin"
+    ],
+    "synonyms": [
+      "Griseofulvin",
+      "V Grifulvin"
+    ]
+  },
+  {
+    "id": "guaifenesin",
+    "en": "Guaifenesin",
+    "fa": "گایافنزین",
+    "brands": [
+      "Guiatuss"
+    ],
+    "synonyms": [
+      "Guaifenesin",
+      "Guiatuss"
+    ]
+  },
+  {
+    "id": "haloperidol",
+    "en": "Haloperidol",
+    "fa": "هالوپریدول",
+    "brands": [
+      "Peridol",
+      "Haldol"
+    ],
+    "synonyms": [
+      "Haloperidol",
+      "Peridol",
+      "Haldol"
+    ]
+  },
+  {
+    "id": "halotane",
+    "en": "Halotane",
+    "fa": "هالوتان",
+    "brands": [
+      "Haothane"
+    ],
+    "synonyms": [
+      "Halotane",
+      "Haothane"
+    ]
+  },
+  {
+    "id": "hematinic",
+    "en": "Hematinic",
+    "fa": "هماتینیک",
+    "brands": [
+      "Auorin"
+    ],
+    "synonyms": [
+      "Hematinic",
+      "Auorin"
+    ]
+  },
+  {
+    "id": "hemodialysis-concentrate-solution",
+    "en": "Hemodialysis Concentrate solution",
+    "fa": "کنسانتره همودیالیز",
+    "brands": [],
+    "synonyms": [
+      "Hemodialysis Concentrate solution"
+    ]
+  },
+  {
+    "id": "hepatitis-b-immune-globulin",
+    "en": "Hepatitis B Immune Globulin",
+    "fa": "ایمنوگلوبولین هپاتیت",
+    "brands": [
+      "Bay Help B",
+      "Nabi-HB"
+    ],
+    "synonyms": [
+      "Hepatitis B Immune Globulin",
+      "Bay Help B",
+      "Nabi-HB"
+    ]
+  },
+  {
+    "id": "hepatitis-b-vaccine",
+    "en": "Hepatitis B vaccine",
+    "fa": "واکسن هپاتیت",
+    "brands": [
+      "Engerix-B",
+      "Recombivax HB"
+    ],
+    "synonyms": [
+      "Hepatitis B vaccine",
+      "Engerix-B",
+      "Recombivax HB"
+    ]
+  },
+  {
+    "id": "r-hexamethylmelamine",
+    "en": "Rمین Hexamethylmelamine",
+    "fa": "هگزامتیل م",
+    "brands": [
+      "Hexalen"
+    ],
+    "synonyms": [
+      "Rمین Hexamethylmelamine",
+      "Hexalen"
+    ]
+  },
+  {
+    "id": "homatropine-hbr",
+    "en": "Homatropine HBr",
+    "fa": "هوماتروپین",
+    "brands": [
+      "AK-Homatropine",
+      "Homatrine",
+      "Homatrocel",
+      "IsoptoHomatropine"
+    ],
+    "synonyms": [
+      "Homatropine HBr",
+      "AK-Homatropine",
+      "Homatrine",
+      "Homatrocel",
+      "IsoptoHomatropine"
+    ]
+  },
+  {
+    "id": "hcl-hydralazine",
+    "en": "Hcl Hydralazine",
+    "fa": "هیدرا̄زین",
+    "brands": [
+      "Alazine",
+      "Apresoline",
+      "Dralzine"
+    ],
+    "synonyms": [
+      "Hcl Hydralazine",
+      "Alazine",
+      "Apresoline",
+      "Dralzine"
+    ]
+  },
+  {
+    "id": "topical-acetate-hydrocortisone",
+    "en": "Topical Acetate Hydrocortisone",
+    "fa": "هیدروکورتیزون استات موضعی",
+    "brands": [
+      "Anusol-Hc",
+      "Calde",
+      "Crot",
+      "Cortaid"
+    ],
+    "synonyms": [
+      "Topical Acetate Hydrocortisone",
+      "Anusol-Hc",
+      "Calde",
+      "Crot",
+      "Cortaid"
+    ]
+  },
+  {
+    "id": "ophthalmic-acetate-hydrocoartisone",
+    "en": "Ophthalmic Acetate Hydrocoartisone",
+    "fa": "هیدروکورتیزون استات چشمی",
+    "brands": [
+      "Hydrocortistab",
+      "Biasone"
+    ],
+    "synonyms": [
+      "Ophthalmic Acetate Hydrocoartisone",
+      "Hydrocortistab",
+      "Biasone"
+    ]
+  },
+  {
+    "id": "hydrogen-peroaide-saline-solution",
+    "en": "Hydrogen Peroaide saline solution",
+    "fa": "پروکساید هیدروژن",
+    "brands": [],
+    "synonyms": [
+      "Hydrogen Peroaide saline solution"
+    ]
+  },
+  {
+    "id": "sulfate-hydroxyehloroauine",
+    "en": "sulfate Hydroxyehloroauine",
+    "fa": "هیدروکسی کلروکین سولفات",
+    "brands": [
+      "Playaenilsulfate"
+    ],
+    "synonyms": [
+      "sulfate Hydroxyehloroauine",
+      "Playaenilsulfate"
+    ]
+  },
+  {
+    "id": "hydroxyurea",
+    "en": "Hydroxyurea",
+    "fa": "هیدروکسی اوره",
+    "brands": [
+      "Hydrea"
+    ],
+    "synonyms": [
+      "Hydroxyurea",
+      "Hydrea"
+    ]
+  },
+  {
+    "id": "hyoscine-n-butyl-bromide",
+    "en": "Hyoscine N-Butyl Bromide",
+    "fa": "هیوسین",
+    "brands": [
+      "Buscopan"
+    ],
+    "synonyms": [
+      "Hyoscine N-Butyl Bromide",
+      "Buscopan"
+    ]
+  },
+  {
+    "id": "ichthyol-ichthammol",
+    "en": "Ichthyol Ichthammol",
+    "fa": "ایکتیول",
+    "brands": [],
+    "synonyms": [
+      "Ichthyol Ichthammol"
+    ]
+  },
+  {
+    "id": "idarubicin-hcl",
+    "en": "Idarubicin Hcl",
+    "fa": "آیداروبیسین",
+    "brands": [
+      "Idamycin"
+    ],
+    "synonyms": [
+      "Idarubicin Hcl",
+      "Idamycin"
+    ]
+  },
+  {
+    "id": "ophthalmic-idoxurine",
+    "en": "Ophthalmic Idoxurine",
+    "fa": "آیدوکس یوریدین",
+    "brands": [
+      "Stoxil",
+      "Dendricl",
+      "Heplex",
+      "Herplex Liquifilm"
+    ],
+    "synonyms": [
+      "Ophthalmic Idoxurine",
+      "Stoxil",
+      "Dendricl",
+      "Heplex",
+      "Herplex Liquifilm"
+    ]
+  },
+  {
+    "id": "ifosfamide",
+    "en": "Ifosfamide",
+    "fa": "ایفوسفامید",
+    "brands": [
+      "Ifex"
+    ],
+    "synonyms": [
+      "Ifosfamide",
+      "Ifex"
+    ]
+  },
+  {
+    "id": "imiglucerase",
+    "en": "Imiglucerase",
+    "fa": "ایمی گلوسراز",
+    "brands": [],
+    "synonyms": [
+      "Imiglucerase"
+    ]
+  },
+  {
+    "id": "r-sodium-cilastatin-imipenem",
+    "en": "Rستاتین سدیم Sodium Cilastatin-Imipenem",
+    "fa": "ایمی پنم - سی",
+    "brands": [
+      "Primaxin"
+    ],
+    "synonyms": [
+      "Rستاتین سدیم Sodium Cilastatin-Imipenem",
+      "Primaxin"
+    ]
+  },
+  {
+    "id": "hetastarch-hes-hydroxyethyl-starch",
+    "en": "Hetastarch Hes Hydroxyethyl Starch",
+    "fa": "هتاستارچ",
+    "brands": [
+      "Hespan"
+    ],
+    "synonyms": [
+      "Hetastarch Hes Hydroxyethyl Starch",
+      "Hespan"
+    ]
+  },
+  {
+    "id": "hcl-imipramine",
+    "en": "Hcl Imipramine",
+    "fa": "ایمی پرامین",
+    "brands": [
+      "Impril",
+      "Ianimine",
+      "Nodopramine",
+      "Pramine",
+      "Ipramine"
+    ],
+    "synonyms": [
+      "Hcl Imipramine",
+      "Impril",
+      "Ianimine",
+      "Nodopramine",
+      "Pramine",
+      "Ipramine"
+    ]
+  },
+  {
+    "id": "imiquimod",
+    "en": "Imiquimod",
+    "fa": "ایمی گوایمود",
+    "brands": [],
+    "synonyms": [
+      "Imiquimod"
+    ]
+  },
+  {
+    "id": "immune-globulin-intramuscular",
+    "en": "Immune Globulin Intramuscular",
+    "fa": "ایمنوگلوبولین",
+    "brands": [
+      "BayGam"
+    ],
+    "synonyms": [
+      "Immune Globulin Intramuscular",
+      "BayGam"
+    ]
+  },
+  {
+    "id": "immunoglobulin-intravenous-iglv",
+    "en": "Immunoglobulin Intravenous IGLV",
+    "fa": "ایمنوگلوبولین",
+    "brands": [
+      "Ganumex",
+      "Carimune"
+    ],
+    "synonyms": [
+      "Immunoglobulin Intravenous IGLV",
+      "Ganumex",
+      "Carimune"
+    ]
+  },
+  {
+    "id": "indomethacin",
+    "en": "Indomethacin",
+    "fa": "ایندومتاسین",
+    "brands": [
+      "Indameth",
+      "Indocid",
+      "Indocin",
+      "Indocin SR",
+      "Indo-Lemmon"
+    ],
+    "synonyms": [
+      "Indomethacin",
+      "Indameth",
+      "Indocid",
+      "Indocin",
+      "Indocin SR",
+      "Indo-Lemmon"
+    ]
+  },
+  {
+    "id": "infliximab",
+    "en": "Infliximab",
+    "fa": "اینفلکسمیب",
+    "brands": [
+      "Remicade"
+    ],
+    "synonyms": [
+      "Infliximab",
+      "Remicade"
+    ]
+  },
+  {
+    "id": "vaccine-virus-influenza",
+    "en": "Vaccine Virus Influenza",
+    "fa": "آنفو̄نزا ویروس واکسن",
+    "brands": [],
+    "synonyms": [
+      "Vaccine Virus Influenza"
+    ]
+  },
+  {
+    "id": "repellent-insect",
+    "en": "Repellent Insect",
+    "fa": "اینسکت رپه لنت",
+    "brands": [
+      "Flypel"
+    ],
+    "synonyms": [
+      "Repellent Insect",
+      "Flypel"
+    ]
+  },
+  {
+    "id": "insulin-biphasic-isophane",
+    "en": "Insulin Biphasic Isophane",
+    "fa": "انسولین",
+    "brands": [
+      "Iumulin 70",
+      "Mix-Iard",
+      "Nooolin 70"
+    ],
+    "synonyms": [
+      "Insulin Biphasic Isophane",
+      "Iumulin 70",
+      "Mix-Iard",
+      "Nooolin 70"
+    ]
+  },
+  {
+    "id": "insulin-injection-human-reyular-insulin",
+    "en": "Insulin Injection Human Reyular Insulin",
+    "fa": "اینجکشن انسولین",
+    "brands": [
+      "Humulin",
+      "Nooolin R",
+      "Regular Insulin",
+      "Regular Purified Pork Insuline",
+      "Velasukin",
+      "Velo￾sulin Human"
+    ],
+    "synonyms": [
+      "Insulin Injection Human Reyular Insulin",
+      "Humulin",
+      "Nooolin R",
+      "Regular Insulin",
+      "Regular Purified Pork Insuline",
+      "Velasukin",
+      "Velo￾sulin Human"
+    ]
+  },
+  {
+    "id": "nph-isephane-insulin",
+    "en": "NPH Isephane Insulin",
+    "fa": "انسولین ان پی اچ",
+    "brands": [
+      "Humulin N",
+      "Insulatird",
+      "Nooolin N",
+      "NPH"
+    ],
+    "synonyms": [
+      "NPH Isephane Insulin",
+      "Humulin N",
+      "Insulatird",
+      "Nooolin N",
+      "NPH"
+    ]
+  },
+  {
+    "id": "intraperitoneal-dialysis-solution",
+    "en": "Intraperitoneal Dialysis Solution",
+    "fa": "سولوشن اینتراپرتئونالدیالیز",
+    "brands": [],
+    "synonyms": [
+      "Intraperitoneal Dialysis Solution"
+    ]
+  },
+  {
+    "id": "clioquinol-iodochlorhydroxyquin",
+    "en": "clioquinol Iodochlorhydroxyquin",
+    "fa": "یدوکلرهیدروکسی کین",
+    "brands": [
+      "Vioform",
+      "Iorofer"
+    ],
+    "synonyms": [
+      "clioquinol Iodochlorhydroxyquin",
+      "Vioform",
+      "Iorofer"
+    ]
+  },
+  {
+    "id": "iodoquinol-diiodohydroxyquindine",
+    "en": "Iodoquinol Diiodohydroxyquindine",
+    "fa": "یدوکینول",
+    "brands": [
+      "Diodoquin",
+      "Moebiquin",
+      "Seboquin",
+      "Yodoxin"
+    ],
+    "synonyms": [
+      "Iodoquinol Diiodohydroxyquindine",
+      "Diodoquin",
+      "Moebiquin",
+      "Seboquin",
+      "Yodoxin"
+    ]
+  },
+  {
+    "id": "ipecac",
+    "en": "Ipecac",
+    "fa": "اپیکاک",
+    "brands": [
+      "Ipeca"
+    ],
+    "synonyms": [
+      "Ipecac",
+      "Ipeca"
+    ]
+  },
+  {
+    "id": "bromide-ipratropium",
+    "en": "Bromide Ipratropium",
+    "fa": "ایپراتروپیوم بروماید",
+    "brands": [
+      "Arovent"
+    ],
+    "synonyms": [
+      "Bromide Ipratropium",
+      "Arovent"
+    ]
+  },
+  {
+    "id": "s-ipratropium",
+    "en": "s-Ipratropium",
+    "fa": "ایپراتروپیوم - اس",
+    "brands": [],
+    "synonyms": [
+      "s-Ipratropium"
+    ]
+  },
+  {
+    "id": "irinotecan-hydrochloride",
+    "en": "Irinotecan -Hydrochloride",
+    "fa": "ایرینوتکان",
+    "brands": [
+      "Camptosar"
+    ],
+    "synonyms": [
+      "Irinotecan -Hydrochloride",
+      "Camptosar"
+    ]
+  },
+  {
+    "id": "iron-dextran-complex",
+    "en": "Iron Dextran Complex",
+    "fa": "کمپلکس ایروندکستران",
+    "brands": [
+      "Feostat",
+      "Feronium",
+      "Imferon"
+    ],
+    "synonyms": [
+      "Iron Dextran Complex",
+      "Feostat",
+      "Feronium",
+      "Imferon"
+    ]
+  },
+  {
+    "id": "isocarboxazid",
+    "en": "Isocarboxazid",
+    "fa": "ایزوکربوکسازید",
+    "brands": [
+      "Merplan"
+    ],
+    "synonyms": [
+      "Isocarboxazid",
+      "Merplan"
+    ]
+  },
+  {
+    "id": "isoflurane",
+    "en": "Isoflurane",
+    "fa": "ایزوفلوران",
+    "brands": [
+      "Forane"
+    ],
+    "synonyms": [
+      "Isoflurane",
+      "Forane"
+    ]
+  },
+  {
+    "id": "isoniazid",
+    "en": "Isoniazid",
+    "fa": "ایزونیازید",
+    "brands": [
+      "INH",
+      "Isotamine",
+      "Laniazid",
+      "Nydrozid",
+      "TMS",
+      "Isoniazid",
+      "Rimifon",
+      "Ieebacon in"
+    ],
+    "synonyms": [
+      "Isoniazid",
+      "INH",
+      "Isotamine",
+      "Laniazid",
+      "Nydrozid",
+      "TMS",
+      "Isoniazid",
+      "Rimifon",
+      "Ieebacon in"
+    ]
+  },
+  {
+    "id": "isoproterenol-hcl",
+    "en": "Isoproterenol HCl",
+    "fa": "ایزوپروترنول",
+    "brands": [
+      "Isuprel - Mistometer-Norisodrine"
+    ],
+    "synonyms": [
+      "Isoproterenol HCl",
+      "Isuprel - Mistometer-Norisodrine"
+    ]
+  },
+  {
+    "id": "dinitrate-isosorbide",
+    "en": "Dinitrate Isosorbide",
+    "fa": "ایزوسوربایددی نیترات",
+    "brands": [
+      "Coronex",
+      "Dilavrate-SR",
+      "Iso-Bid",
+      "Isonate",
+      "Isordil",
+      "Isotrate",
+      "N... Sorbide",
+      "Onset",
+      "sorate",
+      "Sor￾bitrate",
+      "sorbitrates"
+    ],
+    "synonyms": [
+      "Dinitrate Isosorbide",
+      "Coronex",
+      "Dilavrate-SR",
+      "Iso-Bid",
+      "Isonate",
+      "Isordil",
+      "Isotrate",
+      "N... Sorbide",
+      "Onset",
+      "sorate",
+      "Sor￾bitrate",
+      "sorbitrates"
+    ]
+  },
+  {
+    "id": "isoxsuprine-hcl",
+    "en": "Isoxsuprine HCl",
+    "fa": "ایزوکسوپرین",
+    "brands": [
+      "Uoxsuprine",
+      "Uasolidan"
+    ],
+    "synonyms": [
+      "Isoxsuprine HCl",
+      "Uoxsuprine",
+      "Uasolidan"
+    ]
+  },
+  {
+    "id": "kallidinogenase",
+    "en": "Kallidinogenase",
+    "fa": "کالیدینوژناز",
+    "brands": [
+      "Padutin"
+    ],
+    "synonyms": [
+      "Kallidinogenase",
+      "Padutin"
+    ]
+  },
+  {
+    "id": "kanamycin-as-sulfate-or-acid-sulfate",
+    "en": "Kanamycin As sulfate or Acid Sulfate",
+    "fa": "کانامایسین",
+    "brands": [
+      "Anamid",
+      "Kantrex",
+      "Klebcil"
+    ],
+    "synonyms": [
+      "Kanamycin As sulfate or Acid Sulfate",
+      "Anamid",
+      "Kantrex",
+      "Klebcil"
+    ]
+  },
+  {
+    "id": "ketamine-hcl",
+    "en": "Ketamine HCl",
+    "fa": "کتامین",
+    "brands": [
+      "Katalar"
+    ],
+    "synonyms": [
+      "Ketamine HCl",
+      "Katalar"
+    ]
+  },
+  {
+    "id": "ketocanazole-systemic",
+    "en": "Ketocanazole systemic",
+    "fa": "کتوکونازول",
+    "brands": [
+      "Nizoral"
+    ],
+    "synonyms": [
+      "Ketocanazole systemic",
+      "Nizoral"
+    ]
+  },
+  {
+    "id": "ketoconazole-topical",
+    "en": "Ketoconazole Topical",
+    "fa": "کتوکونازول",
+    "brands": [
+      "NIzoral"
+    ],
+    "synonyms": [
+      "Ketoconazole Topical",
+      "NIzoral"
+    ]
+  },
+  {
+    "id": "tromethamine-ketorolac",
+    "en": "Tromethamine Ketorolac",
+    "fa": "کتورو̄ک",
+    "brands": [
+      "Toradol",
+      "Acular"
+    ],
+    "synonyms": [
+      "Tromethamine Ketorolac",
+      "Toradol",
+      "Acular"
+    ]
+  },
+  {
+    "id": "ketotifen-fumarate",
+    "en": "Ketotifen Fumarate",
+    "fa": "کتوتیفن",
+    "brands": [
+      "Zaditor",
+      "Zaditen"
+    ],
+    "synonyms": [
+      "Ketotifen Fumarate",
+      "Zaditor",
+      "Zaditen"
+    ]
+  },
+  {
+    "id": "levocarnitine-carnitine-l",
+    "en": "Levocarnitine Carnitine-L",
+    "fa": "ال - کارنیتین - لووکارنیتین",
+    "brands": [
+      "Carnitor",
+      "Carnitine"
+    ],
+    "synonyms": [
+      "Levocarnitine Carnitine-L",
+      "Carnitor",
+      "Carnitine"
+    ]
+  },
+  {
+    "id": "lactulose",
+    "en": "Lactulose",
+    "fa": "̄کتولوز",
+    "brands": [
+      "Chronulac",
+      "Cephulac"
+    ],
+    "synonyms": [
+      "Lactulose",
+      "Chronulac",
+      "Cephulac"
+    ]
+  },
+  {
+    "id": "lamivudine",
+    "en": "Lamivudine",
+    "fa": "̄میوودین",
+    "brands": [
+      "Biovudine",
+      "Epicir",
+      "Lamivudine - Exiv"
+    ],
+    "synonyms": [
+      "Lamivudine",
+      "Biovudine",
+      "Epicir",
+      "Lamivudine - Exiv"
+    ]
+  },
+  {
+    "id": "lamotrigine",
+    "en": "Lamotrigine",
+    "fa": "̄موتریژین",
+    "brands": [
+      "Lamobiogine",
+      "Lamictal"
+    ],
+    "synonyms": [
+      "Lamotrigine",
+      "Lamobiogine",
+      "Lamictal"
+    ]
+  },
+  {
+    "id": "latanoprost",
+    "en": "Latanoprost",
+    "fa": "̄تانوپروست",
+    "brands": [
+      "Xalatan"
+    ],
+    "synonyms": [
+      "Latanoprost",
+      "Xalatan"
+    ]
+  },
+  {
+    "id": "letrozole",
+    "en": "Letrozole",
+    "fa": "لتروزول",
+    "brands": [
+      "Femara"
+    ],
+    "synonyms": [
+      "Letrozole",
+      "Femara"
+    ]
+  },
+  {
+    "id": "leucovorin-ascalcium",
+    "en": "Leucovorin ascalcium",
+    "fa": "لوکوورین",
+    "brands": [
+      "Wellcovorin"
+    ],
+    "synonyms": [
+      "Leucovorin ascalcium",
+      "Wellcovorin"
+    ]
+  },
+  {
+    "id": "leuprolide-acetate",
+    "en": "Leuprolide Acetate",
+    "fa": "لووپرولید",
+    "brands": [
+      "Enanton",
+      "Lucrin",
+      "Lupron",
+      "Lupron Vepot"
+    ],
+    "synonyms": [
+      "Leuprolide Acetate",
+      "Enanton",
+      "Lucrin",
+      "Lupron",
+      "Lupron Vepot"
+    ]
+  },
+  {
+    "id": "levamisole-as-hcl",
+    "en": "Levamisole as HCL",
+    "fa": "لوامیزول",
+    "brands": [
+      "Ergamisol",
+      "Ketrax",
+      "Vermizol"
+    ],
+    "synonyms": [
+      "Levamisole as HCL",
+      "Ergamisol",
+      "Ketrax",
+      "Vermizol"
+    ]
+  },
+  {
+    "id": "levarterenol-norepinephrin-bitartrate",
+    "en": "Levarterenol Norepinephrin Bitartrate",
+    "fa": "لوارترنول",
+    "brands": [],
+    "synonyms": [
+      "Levarterenol Norepinephrin Bitartrate"
+    ]
+  },
+  {
+    "id": "levodopa",
+    "en": "Levodopa",
+    "fa": "لودوپا",
+    "brands": [
+      "Larodopa",
+      "Dopar"
+    ],
+    "synonyms": [
+      "Levodopa",
+      "Larodopa",
+      "Dopar"
+    ]
+  },
+  {
+    "id": "b-levodopa",
+    "en": "B - Levodopa",
+    "fa": "لوودوپا - ب",
+    "brands": [],
+    "synonyms": [
+      "B - Levodopa"
+    ]
+  },
+  {
+    "id": "c-levodopa",
+    "en": "C - Levodopa",
+    "fa": "لوودوپا - سی",
+    "brands": [
+      "L - Dorma - C Sinemet"
+    ],
+    "synonyms": [
+      "C - Levodopa",
+      "L - Dorma - C Sinemet"
+    ]
+  },
+  {
+    "id": "levonorgestrel",
+    "en": "Levonorgestrel",
+    "fa": "لوونورژسترل",
+    "brands": [
+      "Microval",
+      "Ovrette"
+    ],
+    "synonyms": [
+      "Levonorgestrel",
+      "Microval",
+      "Ovrette"
+    ]
+  },
+  {
+    "id": "r-implant-levonorgestrel",
+    "en": "Rنت Implant Levonorgestrel",
+    "fa": "لوونورژسترل ایمپ",
+    "brands": [],
+    "synonyms": [
+      "Rنت Implant Levonorgestrel"
+    ]
+  },
+  {
+    "id": "sodium-levothyroxine",
+    "en": "Sodium Levothyroxine",
+    "fa": "لووتیروکسین سدیم",
+    "brands": [
+      "Levothroid",
+      "Levoxine.Synthroid",
+      "Synthrox",
+      "Syroxine"
+    ],
+    "synonyms": [
+      "Sodium Levothyroxine",
+      "Levothroid",
+      "Levoxine.Synthroid",
+      "Synthrox",
+      "Syroxine"
+    ]
+  },
+  {
+    "id": "lidocaine",
+    "en": "Lidocaine",
+    "fa": "لیدوکائین",
+    "brands": [
+      "Xylocaine"
+    ],
+    "synonyms": [
+      "Lidocaine",
+      "Xylocaine"
+    ]
+  },
+  {
+    "id": "epinephrine-lidocaine",
+    "en": "Epinephrine - Lidocaine",
+    "fa": "لیدوکائین - اپی نفرین",
+    "brands": [
+      "E.Persocaine"
+    ],
+    "synonyms": [
+      "Epinephrine - Lidocaine",
+      "E.Persocaine"
+    ]
+  },
+  {
+    "id": "lidocaine-h-topical-h",
+    "en": "Lidocaine - H Topical H -",
+    "fa": "لیدوکائین",
+    "brands": [],
+    "synonyms": [
+      "Lidocaine - H Topical H -"
+    ]
+  },
+  {
+    "id": "p-ledocaine",
+    "en": "P- Ledocaine",
+    "fa": "لیدوکائین - پ",
+    "brands": [
+      "Emia - Xyla -P"
+    ],
+    "synonyms": [
+      "P- Ledocaine",
+      "Emia - Xyla -P"
+    ]
+  },
+  {
+    "id": "dextrose-hcl-lidocaine",
+    "en": "Dextrose & HCL Lidocaine",
+    "fa": "لیدوکائین اچ سی ال -دکستروز",
+    "brands": [],
+    "synonyms": [
+      "Dextrose & HCL Lidocaine"
+    ]
+  },
+  {
+    "id": "lindane-gama-benzene-hexachloride",
+    "en": "Lindane Gama Benzene Hexachloride",
+    "fa": "لیندان",
+    "brands": [
+      "Kwell",
+      "Kwildane",
+      "Scabene"
+    ],
+    "synonyms": [
+      "Lindane Gama Benzene Hexachloride",
+      "Kwell",
+      "Kwildane",
+      "Scabene"
+    ]
+  },
+  {
+    "id": "lipid-infusion",
+    "en": "Lipid infusion",
+    "fa": "اینفیوژن",
+    "brands": [],
+    "synonyms": [
+      "Lipid infusion"
+    ]
+  },
+  {
+    "id": "lisinopril",
+    "en": "Lisinopril",
+    "fa": "لیزینوپریل",
+    "brands": [
+      "Lisinoraz-Modapril-Prinivil-2 Estril"
+    ],
+    "synonyms": [
+      "Lisinopril",
+      "Lisinoraz-Modapril-Prinivil-2 Estril"
+    ]
+  },
+  {
+    "id": "carbonate-lithium",
+    "en": "Carbonate Lithium",
+    "fa": "کربنات لیتیوم",
+    "brands": [
+      "Eskalith-Eskalith CR-Lithane.Lithiram.Lithobid.Lithonate"
+    ],
+    "synonyms": [
+      "Carbonate Lithium",
+      "Eskalith-Eskalith CR-Lithane.Lithiram.Lithobid.Lithonate"
+    ]
+  },
+  {
+    "id": "lomustine",
+    "en": "Lomustine",
+    "fa": "لوموستین",
+    "brands": [
+      "Ceenu.Ccnu"
+    ],
+    "synonyms": [
+      "Lomustine",
+      "Ceenu.Ccnu"
+    ]
+  },
+  {
+    "id": "hcl-loperamide",
+    "en": "HCl Loperamide",
+    "fa": "لوپرامید اچ سی ال",
+    "brands": [
+      "Imodium.Lomidex.Lopabid.Pepto Diarrhea Control"
+    ],
+    "synonyms": [
+      "HCl Loperamide",
+      "Imodium.Lomidex.Lopabid.Pepto Diarrhea Control"
+    ]
+  },
+  {
+    "id": "loratadine",
+    "en": "Loratadine",
+    "fa": "لوراتادین",
+    "brands": [
+      "Claritin. Lorated. Lorath"
+    ],
+    "synonyms": [
+      "Loratadine",
+      "Claritin. Lorated. Lorath"
+    ]
+  },
+  {
+    "id": "lorazepam",
+    "en": "Lorazepam",
+    "fa": "لورازپام",
+    "brands": [
+      "Alzapam-Atvian.Loraz"
+    ],
+    "synonyms": [
+      "Lorazepam",
+      "Alzapam-Atvian.Loraz"
+    ]
+  },
+  {
+    "id": "potassium-losartan",
+    "en": "potassium Losartan",
+    "fa": "لوزارتان پتاسیم",
+    "brands": [
+      "Cozzar-Losaten-Lozar-Pozarex"
+    ],
+    "synonyms": [
+      "potassium Losartan",
+      "Cozzar-Losaten-Lozar-Pozarex"
+    ]
+  },
+  {
+    "id": "lovastatine",
+    "en": "Lovastatine",
+    "fa": "لوواستاتین",
+    "brands": [
+      "Lipostin. Mevacor. Mevinolin"
+    ],
+    "synonyms": [
+      "Lovastatine",
+      "Lipostin. Mevacor. Mevinolin"
+    ]
+  },
+  {
+    "id": "lynestrenol",
+    "en": "Lynestrenol",
+    "fa": "̄ینسترونول",
+    "brands": [
+      "minilyn"
+    ],
+    "synonyms": [
+      "Lynestrenol",
+      "minilyn"
+    ]
+  },
+  {
+    "id": "acetate-mafenide",
+    "en": "Acetate Mafenide",
+    "fa": "مافناید استات",
+    "brands": [
+      "Sulfamylon"
+    ],
+    "synonyms": [
+      "Acetate Mafenide",
+      "Sulfamylon"
+    ]
+  },
+  {
+    "id": "hydroxide-magnesium",
+    "en": "Hydroxide Magnesium",
+    "fa": "منیزیوم هیدروکساید",
+    "brands": [
+      "Milk of Magnesia"
+    ],
+    "synonyms": [
+      "Hydroxide Magnesium",
+      "Milk of Magnesia"
+    ]
+  },
+  {
+    "id": "oxide-magnesium",
+    "en": "Oxide Magnesium",
+    "fa": "منیزیوم اکساید",
+    "brands": [
+      "Mag-Ox",
+      "Maox",
+      "Par-Mag"
+    ],
+    "synonyms": [
+      "Oxide Magnesium",
+      "Mag-Ox",
+      "Maox",
+      "Par-Mag"
+    ]
+  },
+  {
+    "id": "sulfate-magnesium",
+    "en": "Sulfate Magnesium",
+    "fa": "منیزیوم سولفات",
+    "brands": [
+      "Salt Epsom"
+    ],
+    "synonyms": [
+      "Sulfate Magnesium",
+      "Salt Epsom"
+    ]
+  },
+  {
+    "id": "manitol",
+    "en": "Manitol",
+    "fa": "مانیتول",
+    "brands": [
+      "Resectisol",
+      "Osmitrol"
+    ],
+    "synonyms": [
+      "Manitol",
+      "Resectisol",
+      "Osmitrol"
+    ]
+  },
+  {
+    "id": "hydrochloride-maprotilin",
+    "en": "Hydrochloride Maprotilin",
+    "fa": "ماپروتیلین هیدروکلراید",
+    "brands": [
+      "Ludiomil"
+    ],
+    "synonyms": [
+      "Hydrochloride Maprotilin",
+      "Ludiomil"
+    ]
+  },
+  {
+    "id": "measles-vaccine-live-attenuated",
+    "en": "Measles Vaccine Live Attenuated",
+    "fa": "سرخک واکسن",
+    "brands": [],
+    "synonyms": [
+      "Measles Vaccine Live Attenuated"
+    ]
+  },
+  {
+    "id": "measles-and-rubella-virus-vaccine",
+    "en": "Measles and Rubella virus Vaccine",
+    "fa": "سرخچه و سرخک واکسن",
+    "brands": [],
+    "synonyms": [
+      "Measles and Rubella virus Vaccine"
+    ]
+  },
+  {
+    "id": "mebendazol",
+    "en": "Mebendazol",
+    "fa": "مبندازول",
+    "brands": [
+      "Vermox"
+    ],
+    "synonyms": [
+      "Mebendazol",
+      "Vermox"
+    ]
+  },
+  {
+    "id": "hydrochloride-mebeverine",
+    "en": "Hydrochloride Mebeverine",
+    "fa": "مبه ورین هیدروکلراید",
+    "brands": [
+      "Ponstan"
+    ],
+    "synonyms": [
+      "Hydrochloride Mebeverine",
+      "Ponstan"
+    ]
+  },
+  {
+    "id": "acetate-medroxyprogesterone",
+    "en": "Acetate Medroxyprogesterone",
+    "fa": "مدروکسی پروژسترون استات",
+    "brands": [
+      "Provera",
+      "Amen"
+    ],
+    "synonyms": [
+      "Acetate Medroxyprogesterone",
+      "Provera",
+      "Amen"
+    ]
+  },
+  {
+    "id": "acid-mefnamic",
+    "en": "Acid Mefnamic",
+    "fa": "مفنامیک اسید",
+    "brands": [
+      "Ponstel",
+      "Panstan"
+    ],
+    "synonyms": [
+      "Acid Mefnamic",
+      "Ponstel",
+      "Panstan"
+    ]
+  },
+  {
+    "id": "mefloquine-hydrochloride",
+    "en": "Mefloquine Hydrochloride",
+    "fa": "مفلوکئین",
+    "brands": [],
+    "synonyms": [
+      "Mefloquine Hydrochloride"
+    ]
+  },
+  {
+    "id": "acetate-megestrol",
+    "en": "Acetate Megestrol",
+    "fa": "مژسترول استات",
+    "brands": [
+      "Megace"
+    ],
+    "synonyms": [
+      "Acetate Megestrol",
+      "Megace"
+    ]
+  },
+  {
+    "id": "antimonate-meglumine",
+    "en": "Antimonate Meglumine",
+    "fa": "مگلومین آنتیمونات",
+    "brands": [
+      "Glucantime"
+    ],
+    "synonyms": [
+      "Antimonate Meglumine",
+      "Glucantime"
+    ]
+  },
+  {
+    "id": "compound-meglumin",
+    "en": "Compound Meglumin",
+    "fa": "مگلومین کامپاند",
+    "brands": [
+      "Glucantime"
+    ],
+    "synonyms": [
+      "Compound Meglumin",
+      "Glucantime"
+    ]
+  },
+  {
+    "id": "melphalan",
+    "en": "Melphalan",
+    "fa": "ملفا̄ن",
+    "brands": [
+      "Alkeran"
+    ],
+    "synonyms": [
+      "Melphalan",
+      "Alkeran"
+    ]
+  },
+  {
+    "id": "meningococal-vaccine-killed",
+    "en": "Meningococal Vaccine Killed",
+    "fa": "متنگوکوک واکسن",
+    "brands": [],
+    "synonyms": [
+      "Meningococal Vaccine Killed"
+    ]
+  },
+  {
+    "id": "hmg-menotropins",
+    "en": "HMG Menotropins",
+    "fa": "منوتروپین اچ ام جی",
+    "brands": [
+      "Repronex",
+      "Pergonal"
+    ],
+    "synonyms": [
+      "HMG Menotropins",
+      "Repronex",
+      "Pergonal"
+    ]
+  },
+  {
+    "id": "r-salicylat-menthol",
+    "en": "Rت Salicylat Menthol",
+    "fa": "منتول سالیسی",
+    "brands": [
+      "Ben - Gay",
+      "Calmycine",
+      "Mantan",
+      "Daphyne"
+    ],
+    "synonyms": [
+      "Rت Salicylat Menthol",
+      "Ben - Gay",
+      "Calmycine",
+      "Mantan",
+      "Daphyne"
+    ]
+  },
+  {
+    "id": "sulfate-mephentermine",
+    "en": "Sulfate Mephentermine",
+    "fa": "مفن ترمین سولفات",
+    "brands": [
+      "Myamine"
+    ],
+    "synonyms": [
+      "Sulfate Mephentermine",
+      "Myamine"
+    ]
+  },
+  {
+    "id": "hydrochloride-mepivacaine",
+    "en": "Hydrochloride Mepivacaine",
+    "fa": "مپی واکائین",
+    "brands": [
+      "Carbocaine",
+      "Isocaine",
+      "Polocaine"
+    ],
+    "synonyms": [
+      "Hydrochloride Mepivacaine",
+      "Carbocaine",
+      "Isocaine",
+      "Polocaine"
+    ]
+  },
+  {
+    "id": "meropenem",
+    "en": "Meropenem",
+    "fa": "مروپنم",
+    "brands": [
+      "Merrem"
+    ],
+    "synonyms": [
+      "Meropenem",
+      "Merrem"
+    ]
+  },
+  {
+    "id": "mesalazine-mesalamine",
+    "en": "Mesalazine Mesalamine",
+    "fa": "مسا̄مین",
+    "brands": [
+      "Canasa",
+      "Asacol"
+    ],
+    "synonyms": [
+      "Mesalazine Mesalamine",
+      "Canasa",
+      "Asacol"
+    ]
+  },
+  {
+    "id": "mesna",
+    "en": "Mesna",
+    "fa": "مسنا",
+    "brands": [
+      "Mesnex"
+    ],
+    "synonyms": [
+      "Mesna",
+      "Mesnex"
+    ]
+  },
+  {
+    "id": "sulfate-metaproterenol",
+    "en": "Sulfate Metaproterenol",
+    "fa": "متاپروترونول سولفات",
+    "brands": [
+      "Alupent"
+    ],
+    "synonyms": [
+      "Sulfate Metaproterenol",
+      "Alupent"
+    ]
+  },
+  {
+    "id": "hydrocholoride-metformine",
+    "en": "Hydrocholoride Metformine",
+    "fa": "متفورمین هیدروکلراید",
+    "brands": [
+      "Fortamet",
+      "Glucophage",
+      "Riomet"
+    ],
+    "synonyms": [
+      "Hydrocholoride Metformine",
+      "Fortamet",
+      "Glucophage",
+      "Riomet"
+    ]
+  },
+  {
+    "id": "hydrochloride-methadone",
+    "en": "Hydrochloride Methadone",
+    "fa": "متادون هیدروکلراید",
+    "brands": [
+      "Dolophine"
+    ],
+    "synonyms": [
+      "Hydrochloride Methadone",
+      "Dolophine"
+    ]
+  },
+  {
+    "id": "methenamine-mandelate",
+    "en": "Methenamine Mandelate",
+    "fa": "متنامین",
+    "brands": [
+      "Mandometh",
+      "Mandelamine"
+    ],
+    "synonyms": [
+      "Methenamine Mandelate",
+      "Mandometh",
+      "Mandelamine"
+    ]
+  },
+  {
+    "id": "methimazole",
+    "en": "Methimazole",
+    "fa": "متی مازول",
+    "brands": [
+      "Tapazole"
+    ],
+    "synonyms": [
+      "Methimazole",
+      "Tapazole"
+    ]
+  },
+  {
+    "id": "methocarbamol",
+    "en": "Methocarbamol",
+    "fa": "متوکاربامول",
+    "brands": [
+      "Robaxin",
+      "Carbacot"
+    ],
+    "synonyms": [
+      "Methocarbamol",
+      "Robaxin",
+      "Carbacot"
+    ]
+  },
+  {
+    "id": "methotrexate",
+    "en": "Methotrexate",
+    "fa": "متوترکسات",
+    "brands": [
+      "Trexall"
+    ],
+    "synonyms": [
+      "Methotrexate",
+      "Trexall"
+    ]
+  },
+  {
+    "id": "methoxalen-systemic",
+    "en": "Methoxalen Systemic",
+    "fa": "متوکسالن",
+    "brands": [
+      "Ultramop",
+      "Oxsoralen"
+    ],
+    "synonyms": [
+      "Methoxalen Systemic",
+      "Ultramop",
+      "Oxsoralen"
+    ]
+  },
+  {
+    "id": "methoxalen-topical",
+    "en": "Methoxalen Topical",
+    "fa": "متوکسالن",
+    "brands": [
+      "Oxsoralen"
+    ],
+    "synonyms": [
+      "Methoxalen Topical",
+      "Oxsoralen"
+    ]
+  },
+  {
+    "id": "cellulose-methyl",
+    "en": "Cellulose Methyl",
+    "fa": "متیل سلولز",
+    "brands": [
+      "Celevac",
+      "Citrucel",
+      "Murocel"
+    ],
+    "synonyms": [
+      "Cellulose Methyl",
+      "Celevac",
+      "Citrucel",
+      "Murocel"
+    ]
+  },
+  {
+    "id": "methyldopa",
+    "en": "Methyldopa",
+    "fa": "متیلدوپا",
+    "brands": [
+      "Aldomet"
+    ],
+    "synonyms": [
+      "Methyldopa",
+      "Aldomet"
+    ]
+  },
+  {
+    "id": "blue-methylen",
+    "en": "Blue Methylen",
+    "fa": "متیلن بلو",
+    "brands": [
+      "Blue Urolene"
+    ],
+    "synonyms": [
+      "Blue Methylen",
+      "Blue Urolene"
+    ]
+  },
+  {
+    "id": "methyl-ergonovine-maleate",
+    "en": "Methyl ergonovine Maleate",
+    "fa": "ارگونوین متیل",
+    "brands": [
+      "Methergine"
+    ],
+    "synonyms": [
+      "Methyl ergonovine Maleate",
+      "Methergine"
+    ]
+  },
+  {
+    "id": "hydrochloride-methylphenidate",
+    "en": "hydrochloride Methylphenidate",
+    "fa": "متیل فنیدات هیدروکلراید",
+    "brands": [
+      "Ritalin",
+      "Methylin"
+    ],
+    "synonyms": [
+      "hydrochloride Methylphenidate",
+      "Ritalin",
+      "Methylin"
+    ]
+  },
+  {
+    "id": "methylprenisolone",
+    "en": "Methylprenisolone",
+    "fa": "متیل پردنیزولون",
+    "brands": [
+      "Medrol - Depo"
+    ],
+    "synonyms": [
+      "Methylprenisolone",
+      "Medrol - Depo"
+    ]
+  },
+  {
+    "id": "r-salicylate-methyl",
+    "en": "Rت Salicylate Methyl",
+    "fa": "متیل سالیسی",
+    "brands": [
+      "Ben - Gay",
+      "Surin",
+      "Tevagestine"
+    ],
+    "synonyms": [
+      "Rت Salicylate Methyl",
+      "Ben - Gay",
+      "Surin",
+      "Tevagestine"
+    ]
+  },
+  {
+    "id": "methyltestostrone",
+    "en": "Methyltestostrone",
+    "fa": "متیل تستوسترون",
+    "brands": [
+      "Metandren",
+      "Android"
+    ],
+    "synonyms": [
+      "Methyltestostrone",
+      "Metandren",
+      "Android"
+    ]
+  },
+  {
+    "id": "hydrochloride-metoclopramide",
+    "en": "Hydrochloride Metoclopramide",
+    "fa": "متوکلوپرامید هیدروکلراید",
+    "brands": [
+      "Clopra",
+      "Reglan",
+      "Plasil"
+    ],
+    "synonyms": [
+      "Hydrochloride Metoclopramide",
+      "Clopra",
+      "Reglan",
+      "Plasil"
+    ]
+  },
+  {
+    "id": "tartrate-metoprolol",
+    "en": "Tartrate Metoprolol",
+    "fa": "متوپرولول تارترات",
+    "brands": [
+      "Lopressor"
+    ],
+    "synonyms": [
+      "Tartrate Metoprolol",
+      "Lopressor"
+    ]
+  },
+  {
+    "id": "metronidazole",
+    "en": "Metronidazole",
+    "fa": "مترونیدازول",
+    "brands": [
+      "Flagyl",
+      "Novo - Nidazole",
+      "Protostat"
+    ],
+    "synonyms": [
+      "Metronidazole",
+      "Flagyl",
+      "Novo - Nidazole",
+      "Protostat"
+    ]
+  },
+  {
+    "id": "metyrapone",
+    "en": "Metyrapone",
+    "fa": "متی راپون",
+    "brands": [],
+    "synonyms": [
+      "Metyrapone"
+    ]
+  },
+  {
+    "id": "hydrochoride-mexiletine",
+    "en": "Hydrochoride Mexiletine",
+    "fa": "مکسی لیتین",
+    "brands": [
+      "Mexitil"
+    ],
+    "synonyms": [
+      "Hydrochoride Mexiletine",
+      "Mexitil"
+    ]
+  },
+  {
+    "id": "nitrate-miconazole",
+    "en": "Nitrate Miconazole",
+    "fa": "مایکونازول نیترات",
+    "brands": [
+      "Micatin",
+      "Femizol"
+    ],
+    "synonyms": [
+      "Nitrate Miconazole",
+      "Micatin",
+      "Femizol"
+    ]
+  },
+  {
+    "id": "midazolam",
+    "en": "Midazolam",
+    "fa": "میدازو̄م",
+    "brands": [
+      "Versed"
+    ],
+    "synonyms": [
+      "Midazolam",
+      "Versed"
+    ]
+  },
+  {
+    "id": "milrinine",
+    "en": "Milrinine",
+    "fa": "میلرینون",
+    "brands": [],
+    "synonyms": [
+      "Milrinine"
+    ]
+  },
+  {
+    "id": "oil-mineral",
+    "en": "Oil Mineral",
+    "fa": "مینرال اویل",
+    "brands": [],
+    "synonyms": [
+      "Oil Mineral"
+    ]
+  },
+  {
+    "id": "systemic-minoxidil",
+    "en": "Systemic Minoxidil",
+    "fa": "ماینوکسیدیل سیستمیک",
+    "brands": [
+      "Loniten"
+    ],
+    "synonyms": [
+      "Systemic Minoxidil",
+      "Loniten"
+    ]
+  },
+  {
+    "id": "topical-minoxidil",
+    "en": "Topical Minoxidil",
+    "fa": "ماینوکسیدیل تاپیکال",
+    "brands": [
+      "Rogaine"
+    ],
+    "synonyms": [
+      "Topical Minoxidil",
+      "Rogaine"
+    ]
+  },
+  {
+    "id": "mitomycin",
+    "en": "Mitomycin",
+    "fa": "میتومایسین",
+    "brands": [
+      "Mitozytrex"
+    ],
+    "synonyms": [
+      "Mitomycin",
+      "Mitozytrex"
+    ]
+  },
+  {
+    "id": "mitotan",
+    "en": "Mitotan",
+    "fa": "میتوتان",
+    "brands": [
+      "Lysodren"
+    ],
+    "synonyms": [
+      "Mitotan",
+      "Lysodren"
+    ]
+  },
+  {
+    "id": "mitoxantrone-hydrochloride",
+    "en": "Mitoxantrone Hydrochloride",
+    "fa": "میتوکسانترون",
+    "brands": [
+      "Novantrone"
+    ],
+    "synonyms": [
+      "Mitoxantrone Hydrochloride",
+      "Novantrone"
+    ]
+  },
+  {
+    "id": "chloride-mivacurim",
+    "en": "chloride Mivacurim",
+    "fa": "میواکوریوم کلراید",
+    "brands": [
+      "Mivacran"
+    ],
+    "synonyms": [
+      "chloride Mivacurim",
+      "Mivacran"
+    ]
+  },
+  {
+    "id": "moclobemide",
+    "en": "Moclobemide",
+    "fa": "مکلوبماید",
+    "brands": [],
+    "synonyms": [
+      "Moclobemide"
+    ]
+  },
+  {
+    "id": "molgramostin-gmcsf",
+    "en": "Molgramostin GMCSF",
+    "fa": "مولگراموستیم",
+    "brands": [],
+    "synonyms": [
+      "Molgramostin GMCSF"
+    ]
+  },
+  {
+    "id": "monobenzon",
+    "en": "Monobenzon",
+    "fa": "منوبنزون",
+    "brands": [],
+    "synonyms": [
+      "Monobenzon"
+    ]
+  },
+  {
+    "id": "sodium-montelukast",
+    "en": "Sodium Montelukast",
+    "fa": "مونته لوکاست",
+    "brands": [
+      "Singulair"
+    ],
+    "synonyms": [
+      "Sodium Montelukast",
+      "Singulair"
+    ]
+  },
+  {
+    "id": "morphine-sulfate",
+    "en": "Morphine Sulfate",
+    "fa": "مورفین",
+    "brands": [
+      "Avinza"
+    ],
+    "synonyms": [
+      "Morphine Sulfate",
+      "Avinza"
+    ]
+  },
+  {
+    "id": "multivitamin",
+    "en": "Multivitamin",
+    "fa": "مولتی ویتامین",
+    "brands": [],
+    "synonyms": [
+      "Multivitamin"
+    ]
+  },
+  {
+    "id": "r-iron-plus-multivitamin",
+    "en": "Rس ایرون Iron Plus multivitamin",
+    "fa": "مولتی ویتامین پ",
+    "brands": [],
+    "synonyms": [
+      "Rس ایرون Iron Plus multivitamin"
+    ]
+  },
+  {
+    "id": "r-mineral-plus-multivitamin",
+    "en": "Rس مینرال Mineral Plus multivitamin",
+    "fa": "مولتی ویتامین پ",
+    "brands": [],
+    "synonyms": [
+      "Rس مینرال Mineral Plus multivitamin"
+    ]
+  },
+  {
+    "id": "therapeutic-multivitamin",
+    "en": "Therapeutic multivitamin",
+    "fa": "مولتی ویتامین تراپیوتیک",
+    "brands": [],
+    "synonyms": [
+      "Therapeutic multivitamin"
+    ]
+  },
+  {
+    "id": "mumps-virus-vaccine-live",
+    "en": "Mumps Virus Vaccine Live",
+    "fa": "اوریون واکسن",
+    "brands": [],
+    "synonyms": [
+      "Mumps Virus Vaccine Live"
+    ]
+  },
+  {
+    "id": "mupirocin",
+    "en": "Mupirocin",
+    "fa": "موپیروسین",
+    "brands": [
+      "Bactroban"
+    ],
+    "synonyms": [
+      "Mupirocin",
+      "Bactroban"
+    ]
+  },
+  {
+    "id": "mofetil-myocophenolate",
+    "en": "Mofetil Myocophenolate",
+    "fa": "مایکوفنو̄ت موفتیل",
+    "brands": [
+      "Cellcept"
+    ],
+    "synonyms": [
+      "Mofetil Myocophenolate",
+      "Cellcept"
+    ]
+  },
+  {
+    "id": "sodium-nafcillin",
+    "en": "Sodium Nafcillin",
+    "fa": "نفسیلین سدیم",
+    "brands": [
+      "Nafcil",
+      "Nallopen",
+      "unipen"
+    ],
+    "synonyms": [
+      "Sodium Nafcillin",
+      "Nafcil",
+      "Nallopen",
+      "unipen"
+    ]
+  },
+  {
+    "id": "acid-nalidixic",
+    "en": "Acid Nalidixic",
+    "fa": "نالیدیکسیک اسید",
+    "brands": [
+      "Gram Neg"
+    ],
+    "synonyms": [
+      "Acid Nalidixic",
+      "Gram Neg"
+    ]
+  },
+  {
+    "id": "hydrochloride-naloxane",
+    "en": "Hydrochloride Naloxane",
+    "fa": "نالوکسان هیدروکلراید",
+    "brands": [
+      "Narcan"
+    ],
+    "synonyms": [
+      "Hydrochloride Naloxane",
+      "Narcan"
+    ]
+  },
+  {
+    "id": "hydrochloride-naltrexone",
+    "en": "Hydrochloride Naltrexone",
+    "fa": "نالترکسون هیدرکلراید",
+    "brands": [
+      "Revia",
+      "Depada"
+    ],
+    "synonyms": [
+      "Hydrochloride Naltrexone",
+      "Revia",
+      "Depada"
+    ]
+  },
+  {
+    "id": "nandrolone-decanoate",
+    "en": "Nandrolone Decanoate",
+    "fa": "ناندرولوندکانوات",
+    "brands": [
+      "Durabolin-Deca"
+    ],
+    "synonyms": [
+      "Nandrolone Decanoate",
+      "Durabolin-Deca"
+    ]
+  },
+  {
+    "id": "phenpropionate-nandrolone",
+    "en": "Phenpropionate Nandrolone",
+    "fa": "ناندرولون فن پروپیونات",
+    "brands": [
+      "Anabolin LA",
+      "Analone",
+      "Durabolin",
+      "Nandrobolic"
+    ],
+    "synonyms": [
+      "Phenpropionate Nandrolone",
+      "Anabolin LA",
+      "Analone",
+      "Durabolin",
+      "Nandrobolic"
+    ]
+  },
+  {
+    "id": "antazoline-naphazolin",
+    "en": "Antazoline /Naphazolin",
+    "fa": "نفازولین/ آنتازولین",
+    "brands": [
+      "AK-Con",
+      "Albalon",
+      "Naphcon",
+      "privine",
+      "Vasocon"
+    ],
+    "synonyms": [
+      "Antazoline /Naphazolin",
+      "AK-Con",
+      "Albalon",
+      "Naphcon",
+      "privine",
+      "Vasocon"
+    ]
+  },
+  {
+    "id": "naphazoline",
+    "en": "Naphazoline",
+    "fa": "نفازولین",
+    "brands": [
+      "Nafazir"
+    ],
+    "synonyms": [
+      "Naphazoline",
+      "Nafazir"
+    ]
+  },
+  {
+    "id": "naproxen",
+    "en": "Naproxen",
+    "fa": "ناپروکسن",
+    "brands": [
+      "Naprosyn"
+    ],
+    "synonyms": [
+      "Naproxen",
+      "Naprosyn"
+    ]
+  },
+  {
+    "id": "natamycin",
+    "en": "Natamycin",
+    "fa": "ناتامایسین",
+    "brands": [
+      "Natocyn"
+    ],
+    "synonyms": [
+      "Natamycin",
+      "Natocyn"
+    ]
+  },
+  {
+    "id": "nelfinavir-mesylate",
+    "en": "Nelfinavir Mesylate",
+    "fa": "نلفیناویر",
+    "brands": [
+      "Viracept"
+    ],
+    "synonyms": [
+      "Nelfinavir Mesylate",
+      "Viracept"
+    ]
+  },
+  {
+    "id": "neostigmine",
+    "en": "Neostigmine",
+    "fa": "نئوستیگمین",
+    "brands": [
+      "Prostigmin"
+    ],
+    "synonyms": [
+      "Neostigmine",
+      "Prostigmin"
+    ]
+  },
+  {
+    "id": "nevirapine",
+    "en": "Nevirapine",
+    "fa": "نویراپین",
+    "brands": [
+      "Viramune"
+    ],
+    "synonyms": [
+      "Nevirapine",
+      "Viramune"
+    ]
+  },
+  {
+    "id": "niclosomide",
+    "en": "Niclosomide",
+    "fa": "نیکلوزامید",
+    "brands": [
+      "Niclocide"
+    ],
+    "synonyms": [
+      "Niclosomide",
+      "Niclocide"
+    ]
+  },
+  {
+    "id": "nicotine",
+    "en": "Nicotine",
+    "fa": "نیکوتین",
+    "brands": [
+      "Niac",
+      "Nicobid",
+      "Nico-Span-Novoniacin"
+    ],
+    "synonyms": [
+      "Nicotine",
+      "Niac",
+      "Nicobid",
+      "Nico-Span-Novoniacin"
+    ]
+  },
+  {
+    "id": "nifedipine",
+    "en": "Nifedipine",
+    "fa": "نیفیدیپین",
+    "brands": [
+      "Procardia",
+      "Adalat"
+    ],
+    "synonyms": [
+      "Nifedipine",
+      "Procardia",
+      "Adalat"
+    ]
+  },
+  {
+    "id": "nimodipine",
+    "en": "Nimodipine",
+    "fa": "نیمودیپین",
+    "brands": [
+      "Nimotop"
+    ],
+    "synonyms": [
+      "Nimodipine",
+      "Nimotop"
+    ]
+  },
+  {
+    "id": "nitrazepam",
+    "en": "Nitrazepam",
+    "fa": "نیترازپام",
+    "brands": [
+      "Mogadm"
+    ],
+    "synonyms": [
+      "Nitrazepam",
+      "Mogadm"
+    ]
+  },
+  {
+    "id": "nitrofurantoin",
+    "en": "Nitrofurantoin",
+    "fa": "نیتروفورانتوئین",
+    "brands": [
+      "Furadantin"
+    ],
+    "synonyms": [
+      "Nitrofurantoin",
+      "Furadantin"
+    ]
+  },
+  {
+    "id": "nitrofurazone",
+    "en": "Nitrofurazone",
+    "fa": "نیتروفورازون",
+    "brands": [
+      "Furacin"
+    ],
+    "synonyms": [
+      "Nitrofurazone",
+      "Furacin"
+    ]
+  },
+  {
+    "id": "nitroglycerin",
+    "en": "Nitroglycerin",
+    "fa": "نیتروگلیسیرین",
+    "brands": [
+      "Nitro-Bid",
+      "Nitrocantin",
+      "Nitroglyn"
+    ],
+    "synonyms": [
+      "Nitroglycerin",
+      "Nitro-Bid",
+      "Nitrocantin",
+      "Nitroglyn"
+    ]
+  },
+  {
+    "id": "nitroprusside-sodium",
+    "en": "Nitroprusside sodium",
+    "fa": "نیتروپروساید",
+    "brands": [
+      "Nitropress",
+      "Nipride"
+    ],
+    "synonyms": [
+      "Nitroprusside sodium",
+      "Nitropress",
+      "Nipride"
+    ]
+  },
+  {
+    "id": "oxide-nitrous",
+    "en": "Oxide Nitrous",
+    "fa": "نیتروس اکساید",
+    "brands": [],
+    "synonyms": [
+      "Oxide Nitrous"
+    ]
+  },
+  {
+    "id": "bitartrate-norepinephrine",
+    "en": "Bitartrate Norepinephrine",
+    "fa": "نوراپی نفرین",
+    "brands": [
+      "lerophed"
+    ],
+    "synonyms": [
+      "Bitartrate Norepinephrine",
+      "lerophed"
+    ]
+  },
+  {
+    "id": "hcl-nortriptyline",
+    "en": "HCl Nortriptyline",
+    "fa": "نورتریپتیلین هیدروکلراید",
+    "brands": [
+      "Pametor",
+      "Aventyl"
+    ],
+    "synonyms": [
+      "HCl Nortriptyline",
+      "Pametor",
+      "Aventyl"
+    ]
+  },
+  {
+    "id": "nystatin-oral-local",
+    "en": "Nystatin oral-Local",
+    "fa": "نیستاتین",
+    "brands": [
+      "Mycostatin",
+      "Mykinal",
+      "Nadostine",
+      "Nilstat",
+      "Nyaderm",
+      "Nystex",
+      "O-V Station"
+    ],
+    "synonyms": [
+      "Nystatin oral-Local",
+      "Mycostatin",
+      "Mykinal",
+      "Nadostine",
+      "Nilstat",
+      "Nyaderm",
+      "Nystex",
+      "O-V Station"
+    ]
+  },
+  {
+    "id": "vaginal-topical-nystatin",
+    "en": "Vaginal-Topical Nystatin",
+    "fa": "نیستاتین تاپیکال-واژینال",
+    "brands": [
+      "Korostatin",
+      "Micostatin",
+      "Mykino",
+      "Nilstat"
+    ],
+    "synonyms": [
+      "Vaginal-Topical Nystatin",
+      "Korostatin",
+      "Micostatin",
+      "Mykino",
+      "Nilstat"
+    ]
+  },
+  {
+    "id": "obidonice-chloride",
+    "en": "Obidonice Chloride",
+    "fa": "اوبیدوکسیم",
+    "brands": [
+      "Toxagonin"
+    ],
+    "synonyms": [
+      "Obidonice Chloride",
+      "Toxagonin"
+    ]
+  },
+  {
+    "id": "octreotide-acetate",
+    "en": "Octreotide Acetate",
+    "fa": "اکترئوتاید",
+    "brands": [
+      "Sandostatin"
+    ],
+    "synonyms": [
+      "Octreotide Acetate",
+      "Sandostatin"
+    ]
+  },
+  {
+    "id": "ofloxacin-systemic",
+    "en": "Ofloxacin systemic",
+    "fa": "اوفلوکساسین",
+    "brands": [
+      "Floxin",
+      "ocuflox",
+      "floxin",
+      "otic"
+    ],
+    "synonyms": [
+      "Ofloxacin systemic",
+      "Floxin",
+      "ocuflox",
+      "floxin",
+      "otic"
+    ]
+  },
+  {
+    "id": "olanzapine",
+    "en": "Olanzapine",
+    "fa": "آ̄نزاپین",
+    "brands": [
+      "Zyprexa"
+    ],
+    "synonyms": [
+      "Olanzapine",
+      "Zyprexa"
+    ]
+  },
+  {
+    "id": "omeperazole",
+    "en": "Omeperazole",
+    "fa": "امپرازول",
+    "brands": [
+      "Prilosec",
+      "Losec"
+    ],
+    "synonyms": [
+      "Omeperazole",
+      "Prilosec",
+      "Losec"
+    ]
+  },
+  {
+    "id": "ondansetron-hcl",
+    "en": "Ondansetron HCl",
+    "fa": "اندانسترون",
+    "brands": [
+      "Zofran"
+    ],
+    "synonyms": [
+      "Ondansetron HCl",
+      "Zofran"
+    ]
+  },
+  {
+    "id": "solution-bath-ophthalmic",
+    "en": "Solution Bath Ophthalmic",
+    "fa": "افتالمیک بث سولوشن",
+    "brands": [],
+    "synonyms": [
+      "Solution Bath Ophthalmic"
+    ]
+  },
+  {
+    "id": "s-r-o-salt-rehydration-oral",
+    "en": "S.R.O Salt Rehydration Oral",
+    "fa": "اورال ره هیدریشن سالت اُ - آر - اس",
+    "brands": [],
+    "synonyms": [
+      "S.R.O Salt Rehydration Oral"
+    ]
+  },
+  {
+    "id": "orlistat",
+    "en": "Orlistat",
+    "fa": "اورلیستات",
+    "brands": [
+      "Xenical"
+    ],
+    "synonyms": [
+      "Orlistat",
+      "Xenical"
+    ]
+  },
+  {
+    "id": "phoshate-oseltamivir",
+    "en": "Phoshate Oseltamivir",
+    "fa": "اوسل تامیور فسفات",
+    "brands": [
+      "Tamiflu"
+    ],
+    "synonyms": [
+      "Phoshate Oseltamivir",
+      "Tamiflu"
+    ]
+  },
+  {
+    "id": "r-oxaliplatin",
+    "en": "Rتین Oxaliplatin",
+    "fa": "اوکسالیپ",
+    "brands": [
+      "Eloxatin"
+    ],
+    "synonyms": [
+      "Rتین Oxaliplatin",
+      "Eloxatin"
+    ]
+  },
+  {
+    "id": "oxandrolone",
+    "en": "Oxandrolone",
+    "fa": "اکساندرولون",
+    "brands": [
+      "Oxadrin"
+    ],
+    "synonyms": [
+      "Oxandrolone",
+      "Oxadrin"
+    ]
+  },
+  {
+    "id": "oxazepam",
+    "en": "Oxazepam",
+    "fa": "اگزازپام",
+    "brands": [
+      "Ox-Pam",
+      "serax",
+      "zapex"
+    ],
+    "synonyms": [
+      "Oxazepam",
+      "Ox-Pam",
+      "serax",
+      "zapex"
+    ]
+  },
+  {
+    "id": "oxacar-bazepin",
+    "en": "Oxacar bazepin",
+    "fa": "اوکساکاربازپین",
+    "brands": [
+      "Trileptal"
+    ],
+    "synonyms": [
+      "Oxacar bazepin",
+      "Trileptal"
+    ]
+  },
+  {
+    "id": "oxybutynin-chloride",
+    "en": "OxyButynin Chloride",
+    "fa": "اوکسیبوتینین",
+    "brands": [
+      "Ditropan"
+    ],
+    "synonyms": [
+      "OxyButynin Chloride",
+      "Ditropan"
+    ]
+  },
+  {
+    "id": "oxymetholone",
+    "en": "Oxymetholone",
+    "fa": "اوکسی متولون",
+    "brands": [
+      "Anapolon",
+      "Anadrol"
+    ],
+    "synonyms": [
+      "Oxymetholone",
+      "Anapolon",
+      "Anadrol"
+    ]
+  },
+  {
+    "id": "oxytetracycline",
+    "en": "Oxytetracycline",
+    "fa": "اکسی تتراسایکلین",
+    "brands": [
+      "E.P.mycin",
+      "Terramycin",
+      "Uri-Tet"
+    ],
+    "synonyms": [
+      "Oxytetracycline",
+      "E.P.mycin",
+      "Terramycin",
+      "Uri-Tet"
+    ]
+  },
+  {
+    "id": "oxytocin",
+    "en": "Oxytocin",
+    "fa": "اکسی توسین",
+    "brands": [
+      "syntocinon",
+      "Pitocin"
+    ],
+    "synonyms": [
+      "Oxytocin",
+      "syntocinon",
+      "Pitocin"
+    ]
+  },
+  {
+    "id": "paclitaxel",
+    "en": "Paclitaxel",
+    "fa": "پاکلیتاکسل",
+    "brands": [
+      "Taxol"
+    ],
+    "synonyms": [
+      "Paclitaxel",
+      "Taxol"
+    ]
+  },
+  {
+    "id": "disodium-pamidronate",
+    "en": "Disodium Pamidronate",
+    "fa": "پامیدروناتدی سدیم",
+    "brands": [
+      "Aredia"
+    ],
+    "synonyms": [
+      "Disodium Pamidronate",
+      "Aredia"
+    ]
+  },
+  {
+    "id": "pancreatin",
+    "en": "Pancreatin",
+    "fa": "پانکراتین",
+    "brands": [
+      "Digepepsin",
+      "Creon"
+    ],
+    "synonyms": [
+      "Pancreatin",
+      "Digepepsin",
+      "Creon"
+    ]
+  },
+  {
+    "id": "bromide-pancuronium",
+    "en": "Bromide Pancuronium",
+    "fa": "پانکرونیوم بروماید",
+    "brands": [],
+    "synonyms": [
+      "Bromide Pancuronium"
+    ]
+  },
+  {
+    "id": "pantoprazole",
+    "en": "Pantoprazole",
+    "fa": "پانتوپرازول",
+    "brands": [
+      "Protonix"
+    ],
+    "synonyms": [
+      "Pantoprazole",
+      "Protonix"
+    ]
+  },
+  {
+    "id": "hcl-papaverine",
+    "en": "Hcl Papaverine",
+    "fa": "پاپاورین هیدروکلراید",
+    "brands": [
+      "Pavagen",
+      "Pavabid"
+    ],
+    "synonyms": [
+      "Hcl Papaverine",
+      "Pavagen",
+      "Pavabid"
+    ]
+  },
+  {
+    "id": "para-aminobenzoic-paba",
+    "en": "Para-Aminobenzoic PABA",
+    "fa": "اسید پاراآمینوبنزوئیک",
+    "brands": [
+      "Pabanol"
+    ],
+    "synonyms": [
+      "Para-Aminobenzoic PABA",
+      "Pabanol"
+    ]
+  },
+  {
+    "id": "paraamino-benzoicacid-k-paba-k",
+    "en": "Paraamino Benzoicacid-K PABA-K",
+    "fa": "ک - اسید پاراآمینوبنزوئیک",
+    "brands": [],
+    "synonyms": [
+      "Paraamino Benzoicacid-K PABA-K"
+    ]
+  },
+  {
+    "id": "para-amino-benzoicacid-p-paba-p",
+    "en": "Para Amino Benzoicacid-P PABA-P",
+    "fa": "پی - اسید پاراآمینوبنزوئیک",
+    "brands": [],
+    "synonyms": [
+      "Para Amino Benzoicacid-P PABA-P"
+    ]
+  },
+  {
+    "id": "paraformaldehyde",
+    "en": "Paraformaldehyde",
+    "fa": "پارافرمالدئید",
+    "brands": [],
+    "synonyms": [
+      "Paraformaldehyde"
+    ]
+  },
+  {
+    "id": "parathormon",
+    "en": "Parathormon",
+    "fa": "پاراتورمون",
+    "brands": [],
+    "synonyms": [
+      "Parathormon"
+    ]
+  },
+  {
+    "id": "paromomycin-as-sulfate",
+    "en": "Paromomycin as sulfate",
+    "fa": "پارومومایسین",
+    "brands": [
+      "Humatin"
+    ],
+    "synonyms": [
+      "Paromomycin as sulfate",
+      "Humatin"
+    ]
+  },
+  {
+    "id": "u-paromomycin",
+    "en": "U-Paromomycin",
+    "fa": "پارومومایسین - یو",
+    "brands": [],
+    "synonyms": [
+      "U-Paromomycin"
+    ]
+  },
+  {
+    "id": "sodium-amino-salicylate-pas",
+    "en": "sodium amino salicylate PAS",
+    "fa": "ت آمینوسالیسی سدیم",
+    "brands": [],
+    "synonyms": [
+      "sodium amino salicylate PAS"
+    ]
+  },
+  {
+    "id": "v-blue-patent",
+    "en": "V blue Patent",
+    "fa": "پاتنت بلو وی",
+    "brands": [],
+    "synonyms": [
+      "V blue Patent"
+    ]
+  },
+  {
+    "id": "pegaspargase-peg-l-asparaginase",
+    "en": "Pegaspargase PEG-L-Asparaginase",
+    "fa": "پگاسپارگاس",
+    "brands": [
+      "Oncaspar"
+    ],
+    "synonyms": [
+      "Pegaspargase PEG-L-Asparaginase",
+      "Oncaspar"
+    ]
+  },
+  {
+    "id": "r-penicillamine",
+    "en": "Rمین Penicillamine",
+    "fa": "پنی سی",
+    "brands": [
+      "Depen",
+      "Cuprimine"
+    ],
+    "synonyms": [
+      "Rمین Penicillamine",
+      "Depen",
+      "Cuprimine"
+    ]
+  },
+  {
+    "id": "penicilin-g-g",
+    "en": "Penicilin G G",
+    "fa": "سیلین پنی",
+    "brands": [
+      "Pfizerpen.PEN"
+    ],
+    "synonyms": [
+      "Penicilin G G",
+      "Pfizerpen.PEN"
+    ]
+  },
+  {
+    "id": "v-penicillin",
+    "en": "V Penicillin",
+    "fa": "پنی سیلین وی",
+    "brands": [
+      "Betpen-VK",
+      "Biotic V Powder"
+    ],
+    "synonyms": [
+      "V Penicillin",
+      "Betpen-VK",
+      "Biotic V Powder"
+    ]
+  },
+  {
+    "id": "pentagastrin",
+    "en": "Pentagastrin",
+    "fa": "پنتاگاسترین",
+    "brands": [
+      "Reptarlon"
+    ],
+    "synonyms": [
+      "Pentagastrin",
+      "Reptarlon"
+    ]
+  },
+  {
+    "id": "isoethionate-pentamidine",
+    "en": "Isoethionate Pentamidine",
+    "fa": "پنتامیدین ایزوتیونات",
+    "brands": [
+      "300 Pentan"
+    ],
+    "synonyms": [
+      "Isoethionate Pentamidine",
+      "300 Pentan"
+    ]
+  },
+  {
+    "id": "pentazocine",
+    "en": "Pentazocine",
+    "fa": "پنتازوسین",
+    "brands": [
+      "talwin Fortral"
+    ],
+    "synonyms": [
+      "Pentazocine",
+      "talwin Fortral"
+    ]
+  },
+  {
+    "id": "pentoxifylline",
+    "en": "Pentoxifylline",
+    "fa": "پنتوکسیفیلین",
+    "brands": [
+      "APO-Pentoxifylline",
+      "Trental"
+    ],
+    "synonyms": [
+      "Pentoxifylline",
+      "APO-Pentoxifylline",
+      "Trental"
+    ]
+  },
+  {
+    "id": "peritoneal-dialysis-solution",
+    "en": "Peritoneal Dialysis Solution",
+    "fa": "سولوشن پریتونئالدیالیز",
+    "brands": [],
+    "synonyms": [
+      "Peritoneal Dialysis Solution"
+    ]
+  },
+  {
+    "id": "perphenazine",
+    "en": "Perphenazine",
+    "fa": "پرفنازین",
+    "brands": [
+      "Cycozin",
+      "Phenazin",
+      "Trilafon"
+    ],
+    "synonyms": [
+      "Perphenazine",
+      "Cycozin",
+      "Phenazin",
+      "Trilafon"
+    ]
+  },
+  {
+    "id": "pethioinehcl",
+    "en": "Pethioinehcl",
+    "fa": "پتدین هیدروکلراید",
+    "brands": [
+      "Pemerol"
+    ],
+    "synonyms": [
+      "Pethioinehcl",
+      "Pemerol"
+    ]
+  },
+  {
+    "id": "sodium-phenobarbital",
+    "en": "Sodium Phenobarbital",
+    "fa": "فنوباربیتال سدیم",
+    "brands": [
+      "Barbito",
+      "Luminal",
+      "Phenotal",
+      "Solfoton"
+    ],
+    "synonyms": [
+      "Sodium Phenobarbital",
+      "Barbito",
+      "Luminal",
+      "Phenotal",
+      "Solfoton"
+    ]
+  },
+  {
+    "id": "r-mesylate-phentolamine",
+    "en": "Rت Mesylate Phentolamine",
+    "fa": "فنتو̄مین مسی",
+    "brands": [
+      "Regitine"
+    ],
+    "synonyms": [
+      "Rت Mesylate Phentolamine",
+      "Regitine"
+    ]
+  },
+  {
+    "id": "systemic-phenytoin",
+    "en": "systemic Phenytoin",
+    "fa": "فنی توئین",
+    "brands": [
+      "Dilantin",
+      "Diphen",
+      "Diphenylan",
+      "Hydantic",
+      "Phenytoin - Gerot"
+    ],
+    "synonyms": [
+      "systemic Phenytoin",
+      "Dilantin",
+      "Diphen",
+      "Diphenylan",
+      "Hydantic",
+      "Phenytoin - Gerot"
+    ]
+  },
+  {
+    "id": "phenytoin",
+    "en": "Phenytoin",
+    "fa": "فنیتوئین کامپاند",
+    "brands": [],
+    "synonyms": [
+      "Phenytoin"
+    ]
+  },
+  {
+    "id": "phytonadion",
+    "en": "Phytonadion",
+    "fa": "فیتونادیون",
+    "brands": [],
+    "synonyms": [
+      "Phytonadion"
+    ]
+  },
+  {
+    "id": "pilocarpine-hclornitrate",
+    "en": "Pilocarpine Hclornitrate",
+    "fa": "پیلوکارپین",
+    "brands": [
+      "Adsarbocarpine",
+      "Akarpine",
+      "Biocarpine"
+    ],
+    "synonyms": [
+      "Pilocarpine Hclornitrate",
+      "Adsarbocarpine",
+      "Akarpine",
+      "Biocarpine"
+    ]
+  },
+  {
+    "id": "bramide-pipecuronium",
+    "en": "bramide Pipecuronium",
+    "fa": "پیپکورونیوم بروماید",
+    "brands": [
+      "Arduan"
+    ],
+    "synonyms": [
+      "bramide Pipecuronium",
+      "Arduan"
+    ]
+  },
+  {
+    "id": "piroxicam-systemic",
+    "en": "Piroxicam systemic",
+    "fa": "پیروکسیکام",
+    "brands": [
+      "Alpex",
+      "Camoxy",
+      "Lopirox",
+      "Roxicam"
+    ],
+    "synonyms": [
+      "Piroxicam systemic",
+      "Alpex",
+      "Camoxy",
+      "Lopirox",
+      "Roxicam"
+    ]
+  },
+  {
+    "id": "polymyxin-b-sulfate-systemic",
+    "en": "Polymyxin B sulfate systemic",
+    "fa": "سولفات بی پنیمیکسین",
+    "brands": [
+      "Aeroporin"
+    ],
+    "synonyms": [
+      "Polymyxin B sulfate systemic",
+      "Aeroporin"
+    ]
+  },
+  {
+    "id": "chloride-potasium",
+    "en": "Chloride Potasium",
+    "fa": "پتاسیم کلراید",
+    "brands": [
+      "Cena-k",
+      "Kaochlor",
+      "Kaochlars-f",
+      "Kaon-cl",
+      "Potasalan"
+    ],
+    "synonyms": [
+      "Chloride Potasium",
+      "Cena-k",
+      "Kaochlor",
+      "Kaochlars-f",
+      "Kaon-cl",
+      "Potasalan"
+    ]
+  },
+  {
+    "id": "prazosin-as-hcl",
+    "en": "Prazosin as Hcl",
+    "fa": "پرازوسین",
+    "brands": [
+      "Minipress",
+      "Pazo",
+      "Prazosin"
+    ],
+    "synonyms": [
+      "Prazosin as Hcl",
+      "Minipress",
+      "Pazo",
+      "Prazosin"
+    ]
+  },
+  {
+    "id": "prednisone",
+    "en": "Prednisone",
+    "fa": "پردینزون",
+    "brands": [
+      "Orasone",
+      "Meticorten"
+    ],
+    "synonyms": [
+      "Prednisone",
+      "Orasone",
+      "Meticorten"
+    ]
+  },
+  {
+    "id": "microfine-acetate-prednisolone",
+    "en": "Microfine Acetate Prednisolone",
+    "fa": "پردنیزولون استات میکروفاین",
+    "brands": [
+      "Aktate",
+      "Econopred Ophtalmic"
+    ],
+    "synonyms": [
+      "Microfine Acetate Prednisolone",
+      "Aktate",
+      "Econopred Ophtalmic"
+    ]
+  },
+  {
+    "id": "forte-prednisolone",
+    "en": "forte Prednisolone",
+    "fa": "پردنیزولون فورت",
+    "brands": [],
+    "synonyms": [
+      "forte Prednisolone"
+    ]
+  },
+  {
+    "id": "f-prilocaine",
+    "en": "f-Prilocaine",
+    "fa": "پریلوکائین اف",
+    "brands": [
+      "Citanest"
+    ],
+    "synonyms": [
+      "f-Prilocaine",
+      "Citanest"
+    ]
+  },
+  {
+    "id": "primaquine-as-phosphate",
+    "en": "Primaquine as phosphate",
+    "fa": "پریماکین",
+    "brands": [],
+    "synonyms": [
+      "Primaquine as phosphate"
+    ]
+  },
+  {
+    "id": "primidone",
+    "en": "Primidone",
+    "fa": "پریمیدون",
+    "brands": [
+      "Myidone",
+      "Mysoline",
+      "Sertan"
+    ],
+    "synonyms": [
+      "Primidone",
+      "Myidone",
+      "Mysoline",
+      "Sertan"
+    ]
+  },
+  {
+    "id": "progestrone",
+    "en": "Progestrone",
+    "fa": "پروژسترون",
+    "brands": [
+      "Bay progest",
+      "Femotrone",
+      "Gestrol 50"
+    ],
+    "synonyms": [
+      "Progestrone",
+      "Bay progest",
+      "Femotrone",
+      "Gestrol 50"
+    ]
+  },
+  {
+    "id": "propranolol-hcl",
+    "en": "Propranolol Hcl",
+    "fa": "پروپرانولول",
+    "brands": [
+      "Arlocardyl",
+      "Inderal",
+      "Procardin",
+      "Proprated"
+    ],
+    "synonyms": [
+      "Propranolol Hcl",
+      "Arlocardyl",
+      "Inderal",
+      "Procardin",
+      "Proprated"
+    ]
+  },
+  {
+    "id": "pyrazinamide",
+    "en": "Pyrazinamide",
+    "fa": "پیرازینامید",
+    "brands": [
+      "Abidi Pyrazinamide"
+    ],
+    "synonyms": [
+      "Pyrazinamide",
+      "Abidi Pyrazinamide"
+    ]
+  },
+  {
+    "id": "pyrimethamine",
+    "en": "Pyrimethamine",
+    "fa": "پریمتامین",
+    "brands": [
+      "Daraprim"
+    ],
+    "synonyms": [
+      "Pyrimethamine",
+      "Daraprim"
+    ]
+  },
+  {
+    "id": "zinc-pyrithione",
+    "en": "zinc Pyrithione",
+    "fa": "پرنییون زنیک",
+    "brands": [],
+    "synonyms": [
+      "zinc Pyrithione"
+    ]
+  },
+  {
+    "id": "pyrvinium-as-pamoate",
+    "en": "Pyrvinium as Pamoate",
+    "fa": "پیرونییوم",
+    "brands": [
+      "Ranquim",
+      "Pyrvicide"
+    ],
+    "synonyms": [
+      "Pyrvinium as Pamoate",
+      "Ranquim",
+      "Pyrvicide"
+    ]
+  },
+  {
+    "id": "quinacrine-hcl",
+    "en": "Quinacrine Hcl",
+    "fa": "کیناکرین",
+    "brands": [
+      "Atabrine"
+    ],
+    "synonyms": [
+      "Quinacrine Hcl",
+      "Atabrine"
+    ]
+  },
+  {
+    "id": "quinine",
+    "en": "Quinine",
+    "fa": "کینین",
+    "brands": [
+      "Novoquinine",
+      "Quin260",
+      "Ouinamm",
+      "Quine",
+      "Quinite",
+      "Quiphile",
+      "Strema"
+    ],
+    "synonyms": [
+      "Quinine",
+      "Novoquinine",
+      "Quin260",
+      "Ouinamm",
+      "Quine",
+      "Quinite",
+      "Quiphile",
+      "Strema"
+    ]
+  },
+  {
+    "id": "rabies-immune-globulin-rig",
+    "en": "Rabies Immune Globulin RIG",
+    "fa": "ایمنوگلوبولین رابیز",
+    "brands": [],
+    "synonyms": [
+      "Rabies Immune Globulin RIG"
+    ]
+  },
+  {
+    "id": "rabies-vaccine-adsor-bed",
+    "en": "Rabies Vaccine Adsor bed",
+    "fa": "واکسن رابیز",
+    "brands": [],
+    "synonyms": [
+      "Rabies Vaccine Adsor bed"
+    ]
+  },
+  {
+    "id": "ranitidine-hcl",
+    "en": "Ranitidine HCl",
+    "fa": "رانیتیدین",
+    "brands": [
+      "Zantac"
+    ],
+    "synonyms": [
+      "Ranitidine HCl",
+      "Zantac"
+    ]
+  },
+  {
+    "id": "hydrochloride-remifentanil",
+    "en": "Hydrochloride Remifentanil",
+    "fa": "رمیفنتانیل هیدروکلراید",
+    "brands": [],
+    "synonyms": [
+      "Hydrochloride Remifentanil"
+    ]
+  },
+  {
+    "id": "repaglinide",
+    "en": "Repaglinide",
+    "fa": "ریپاگلینید",
+    "brands": [],
+    "synonyms": [
+      "Repaglinide"
+    ]
+  },
+  {
+    "id": "reserpine",
+    "en": "Reserpine",
+    "fa": "رزرپین",
+    "brands": [
+      "Serpalan",
+      "Serpasil",
+      "serpate",
+      "sk-Reserpine"
+    ],
+    "synonyms": [
+      "Reserpine",
+      "Serpalan",
+      "Serpasil",
+      "serpate",
+      "sk-Reserpine"
+    ]
+  },
+  {
+    "id": "resorcinol-s",
+    "en": "Resorcinol-S",
+    "fa": "رزورسینول",
+    "brands": [
+      "Acnaid"
+    ],
+    "synonyms": [
+      "Resorcinol-S",
+      "Acnaid"
+    ]
+  },
+  {
+    "id": "ribavirin",
+    "en": "Ribavirin",
+    "fa": "ریباویرین",
+    "brands": [
+      "Copegus",
+      "Rebetol",
+      "Virazole"
+    ],
+    "synonyms": [
+      "Ribavirin",
+      "Copegus",
+      "Rebetol",
+      "Virazole"
+    ]
+  },
+  {
+    "id": "rifabutin",
+    "en": "Rifabutin",
+    "fa": "ریفابوتین",
+    "brands": [
+      "mycobutin"
+    ],
+    "synonyms": [
+      "Rifabutin",
+      "mycobutin"
+    ]
+  },
+  {
+    "id": "rifampin-rifampicin",
+    "en": "Rifampin Rifampicin",
+    "fa": "ریفامپین",
+    "brands": [
+      "Rifadin",
+      "Rimactane",
+      "Rafact"
+    ],
+    "synonyms": [
+      "Rifampin Rifampicin",
+      "Rifadin",
+      "Rimactane",
+      "Rafact"
+    ]
+  },
+  {
+    "id": "ringer-s",
+    "en": "Ringer’s",
+    "fa": "رینگر",
+    "brands": [],
+    "synonyms": [
+      "Ringer’s"
+    ]
+  },
+  {
+    "id": "lactated-ringer",
+    "en": "Lactated Ringer",
+    "fa": "رینگر̄کتات",
+    "brands": [],
+    "synonyms": [
+      "Lactated Ringer"
+    ]
+  },
+  {
+    "id": "risperidone",
+    "en": "Risperidone",
+    "fa": "ریسپریدون",
+    "brands": [
+      "Risperdal"
+    ],
+    "synonyms": [
+      "Risperidone",
+      "Risperdal"
+    ]
+  },
+  {
+    "id": "ritodrine-hcl",
+    "en": "Ritodrine HCl",
+    "fa": "ریتودرین",
+    "brands": [
+      "Utopar"
+    ],
+    "synonyms": [
+      "Ritodrine HCl",
+      "Utopar"
+    ]
+  },
+  {
+    "id": "tartrate-rivastigmin",
+    "en": "Tartrate Rivastigmin",
+    "fa": "ریواستیگمین تارترات",
+    "brands": [
+      "Exelon"
+    ],
+    "synonyms": [
+      "Tartrate Rivastigmin",
+      "Exelon"
+    ]
+  },
+  {
+    "id": "ropinirole-hydrochloride",
+    "en": "Ropinirole Hydrochloride",
+    "fa": "روبینیرول",
+    "brands": [
+      "Requip"
+    ],
+    "synonyms": [
+      "Ropinirole Hydrochloride",
+      "Requip"
+    ]
+  },
+  {
+    "id": "sodium-sacharin",
+    "en": "Sodium Sacharin",
+    "fa": "ساخارین سدیم",
+    "brands": [],
+    "synonyms": [
+      "Sodium Sacharin"
+    ]
+  },
+  {
+    "id": "salbutamol",
+    "en": "Salbutamol",
+    "fa": "سالبوتامول",
+    "brands": [
+      "Albuterol",
+      "Proventil",
+      "Ventolin"
+    ],
+    "synonyms": [
+      "Salbutamol",
+      "Albuterol",
+      "Proventil",
+      "Ventolin"
+    ]
+  },
+  {
+    "id": "compound-acid-salicylic",
+    "en": "compound Acid Salicylic",
+    "fa": "سالیسیلیک اسید کامپاند",
+    "brands": [
+      "Calicylic",
+      "compound w",
+      "Hydrisalic",
+      "salacid"
+    ],
+    "synonyms": [
+      "compound Acid Salicylic",
+      "Calicylic",
+      "compound w",
+      "Hydrisalic",
+      "salacid"
+    ]
+  },
+  {
+    "id": "salmeterol-xinafoate",
+    "en": "Salmeterol Xinafoate",
+    "fa": "سالمترول",
+    "brands": [
+      "Diskus Serevent"
+    ],
+    "synonyms": [
+      "Salmeterol Xinafoate",
+      "Diskus Serevent"
+    ]
+  },
+  {
+    "id": "hydrobromide-scopolamine",
+    "en": "Hydrobromide Scopolamine",
+    "fa": "اسکوپو̄مین هیدروبروماید",
+    "brands": [
+      "Scop -Transdem"
+    ],
+    "synonyms": [
+      "Hydrobromide Scopolamine",
+      "Scop -Transdem"
+    ]
+  },
+  {
+    "id": "secretin",
+    "en": "Secretin",
+    "fa": "سکرتین",
+    "brands": [
+      "Ferring -Secretin"
+    ],
+    "synonyms": [
+      "Secretin",
+      "Ferring -Secretin"
+    ]
+  },
+  {
+    "id": "selegiline-hydrochloride",
+    "en": "Selegiline Hydrochloride",
+    "fa": "سلژیلین",
+    "brands": [
+      "Atapryl",
+      "Carbex",
+      "Eldepryl",
+      "Selpak"
+    ],
+    "synonyms": [
+      "Selegiline Hydrochloride",
+      "Atapryl",
+      "Carbex",
+      "Eldepryl",
+      "Selpak"
+    ]
+  },
+  {
+    "id": "sufide-selenium",
+    "en": "Sufide Selenium",
+    "fa": "سلنیوم سولفاید",
+    "brands": [
+      "Selsum"
+    ],
+    "synonyms": [
+      "Sufide Selenium",
+      "Selsum"
+    ]
+  },
+  {
+    "id": "sertraline-hydrochloride",
+    "en": "Sertraline Hydrochloride",
+    "fa": "سرترالین",
+    "brands": [
+      "Zoloft"
+    ],
+    "synonyms": [
+      "Sertraline Hydrochloride",
+      "Zoloft"
+    ]
+  },
+  {
+    "id": "sevoflurane",
+    "en": "Sevoflurane",
+    "fa": "سووفلوران",
+    "brands": [],
+    "synonyms": [
+      "Sevoflurane"
+    ]
+  },
+  {
+    "id": "citrate-sildenafil",
+    "en": "Citrate Sildenafil",
+    "fa": "سیلدنافیل سیترات",
+    "brands": [
+      "Viagra"
+    ],
+    "synonyms": [
+      "Citrate Sildenafil",
+      "Viagra"
+    ]
+  },
+  {
+    "id": "silver-sulfadiazine",
+    "en": "Silver sulfadiazine",
+    "fa": "سیلورسولفادیازین",
+    "brands": [
+      "Silvadene"
+    ],
+    "synonyms": [
+      "Silver sulfadiazine",
+      "Silvadene"
+    ]
+  },
+  {
+    "id": "ointment-eye-simple",
+    "en": "ointment eye Simple",
+    "fa": "سیمپل ای اوینتمنت",
+    "brands": [],
+    "synonyms": [
+      "ointment eye Simple"
+    ]
+  },
+  {
+    "id": "simvastatin",
+    "en": "Simvastatin",
+    "fa": "سیم واستاتین",
+    "brands": [
+      "Zocor"
+    ],
+    "synonyms": [
+      "Simvastatin",
+      "Zocor"
+    ]
+  },
+  {
+    "id": "sirolimus",
+    "en": "Sirolimus",
+    "fa": "سیرولیموس",
+    "brands": [
+      "Rapamune"
+    ],
+    "synonyms": [
+      "Sirolimus",
+      "Rapamune"
+    ]
+  },
+  {
+    "id": "r-pas-aminosalicylate-sodium",
+    "en": "Rت PAS Aminosalicylate Sodium",
+    "fa": "سدیم آمینوسالیسی",
+    "brands": [],
+    "synonyms": [
+      "Rت PAS Aminosalicylate Sodium"
+    ]
+  },
+  {
+    "id": "bicarbonate-sodium",
+    "en": "Bicarbonate Sodium",
+    "fa": "سدیم بی کربنات",
+    "brands": [
+      "Neut",
+      "Soda",
+      "Mint"
+    ],
+    "synonyms": [
+      "Bicarbonate Sodium",
+      "Neut",
+      "Soda",
+      "Mint"
+    ]
+  },
+  {
+    "id": "phosphate-cellulose-sodium",
+    "en": "phosphate Cellulose Sodium",
+    "fa": "سدیم سلولز فسفات",
+    "brands": [],
+    "synonyms": [
+      "phosphate Cellulose Sodium"
+    ]
+  },
+  {
+    "id": "sodium-chloride-for-irrigation",
+    "en": "Sodium Chloride For Irrigation",
+    "fa": "کلراید سدیم",
+    "brands": [],
+    "synonyms": [
+      "Sodium Chloride For Irrigation"
+    ]
+  },
+  {
+    "id": "sodium-chloride-nacl",
+    "en": "Sodium Chloride NaCl",
+    "fa": "کلراید سدیم",
+    "brands": [
+      "Ayrsaline",
+      "Prets",
+      "Salinex"
+    ],
+    "synonyms": [
+      "Sodium Chloride NaCl",
+      "Ayrsaline",
+      "Prets",
+      "Salinex"
+    ]
+  },
+  {
+    "id": "ophthalmic-chloride-sodium",
+    "en": "Ophthalmic Chloride Sodium",
+    "fa": "سدیم کلراید افتالمیک",
+    "brands": [
+      "AK-Nacl",
+      "Nuro-128 Ophthalmic"
+    ],
+    "synonyms": [
+      "Ophthalmic Chloride Sodium",
+      "AK-Nacl",
+      "Nuro-128 Ophthalmic"
+    ]
+  },
+  {
+    "id": "sodium-chloride-intravenous-drip",
+    "en": "Sodium Chloride Intravenous drip",
+    "fa": "اینتراونوس کلراید سدیم",
+    "brands": [
+      "salt-slo"
+    ],
+    "synonyms": [
+      "Sodium Chloride Intravenous drip",
+      "salt-slo"
+    ]
+  },
+  {
+    "id": "fluoride-sodium",
+    "en": "Fluoride Sodium",
+    "fa": "سدیم فلوراید",
+    "brands": [
+      "Fluocal",
+      "Fluoritabs",
+      "Karidium",
+      "Zymaflu"
+    ],
+    "synonyms": [
+      "Fluoride Sodium",
+      "Fluocal",
+      "Fluoritabs",
+      "Karidium",
+      "Zymaflu"
+    ]
+  },
+  {
+    "id": "hyaloronate-sodium",
+    "en": "Hyaloronate Sodium",
+    "fa": "سدیم هیالورونات",
+    "brands": [
+      "Healon",
+      "Amvisc"
+    ],
+    "synonyms": [
+      "Hyaloronate Sodium",
+      "Healon",
+      "Amvisc"
+    ]
+  },
+  {
+    "id": "lactate-sodium",
+    "en": "Lactate Sodium",
+    "fa": "سدیم ̄کتات",
+    "brands": [],
+    "synonyms": [
+      "Lactate Sodium"
+    ]
+  },
+  {
+    "id": "nitrite-sodium",
+    "en": "Nitrite Sodium",
+    "fa": "سدیم نیتریت",
+    "brands": [],
+    "synonyms": [
+      "Nitrite Sodium"
+    ]
+  },
+  {
+    "id": "sulfonate-polystyrene-sodium",
+    "en": "sulfonate Polystyrene Sodium",
+    "fa": "سدیم پلی استرین",
+    "brands": [
+      "SPS",
+      "Kayexalate"
+    ],
+    "synonyms": [
+      "sulfonate Polystyrene Sodium",
+      "SPS",
+      "Kayexalate"
+    ]
+  },
+  {
+    "id": "r-salicylate-sodium",
+    "en": "Rت Salicylate Sodium",
+    "fa": "سدیم سالیسی",
+    "brands": [
+      "Uracel"
+    ],
+    "synonyms": [
+      "Rت Salicylate Sodium",
+      "Uracel"
+    ]
+  },
+  {
+    "id": "salfate-tetradecyl-sodium",
+    "en": "Salfate Tetradecyl Sodium",
+    "fa": "سدیم تترادسیل سولفات",
+    "brands": [
+      "1% Sotradecol"
+    ],
+    "synonyms": [
+      "Salfate Tetradecyl Sodium",
+      "1% Sotradecol"
+    ]
+  },
+  {
+    "id": "thiosulfate-sodium",
+    "en": "Thiosulfate Sodium",
+    "fa": "سدیم تیوسولفات",
+    "brands": [
+      "Thiosulfin"
+    ],
+    "synonyms": [
+      "Thiosulfate Sodium",
+      "Thiosulfin"
+    ]
+  },
+  {
+    "id": "somatostatin",
+    "en": "Somatostatin",
+    "fa": "سوماتواستاتین",
+    "brands": [
+      "Stilamin"
+    ],
+    "synonyms": [
+      "Somatostatin",
+      "Stilamin"
+    ]
+  },
+  {
+    "id": "somatropin",
+    "en": "Somatropin",
+    "fa": "سوماتروپین",
+    "brands": [
+      "Genotropin",
+      "Humatrope",
+      "Nutropin",
+      "serostim",
+      "saizen"
+    ],
+    "synonyms": [
+      "Somatropin",
+      "Genotropin",
+      "Humatrope",
+      "Nutropin",
+      "serostim",
+      "saizen"
+    ]
+  },
+  {
+    "id": "sorbitol",
+    "en": "Sorbitol",
+    "fa": "سوربیتول",
+    "brands": [
+      "Eva",
+      "sorbex",
+      "Glucitol",
+      "sorbax"
+    ],
+    "synonyms": [
+      "Sorbitol",
+      "Eva",
+      "sorbex",
+      "Glucitol",
+      "sorbax"
+    ]
+  },
+  {
+    "id": "sotalol",
+    "en": "Sotalol",
+    "fa": "سوتالول",
+    "brands": [
+      "Betapace",
+      "Betapace AF"
+    ],
+    "synonyms": [
+      "Sotalol",
+      "Betapace",
+      "Betapace AF"
+    ]
+  },
+  {
+    "id": "spectinomycin",
+    "en": "Spectinomycin",
+    "fa": "اسپکتینومایسین",
+    "brands": [
+      "Trobicin"
+    ],
+    "synonyms": [
+      "Spectinomycin",
+      "Trobicin"
+    ]
+  },
+  {
+    "id": "spiramycin",
+    "en": "Spiramycin",
+    "fa": "اسپیرامایسین",
+    "brands": [
+      "Rovamycin",
+      "Dicorvin"
+    ],
+    "synonyms": [
+      "Spiramycin",
+      "Rovamycin",
+      "Dicorvin"
+    ]
+  },
+  {
+    "id": "spironolaction",
+    "en": "Spironolaction",
+    "fa": "اسپیرونو̄کتون",
+    "brands": [
+      "Aldacton"
+    ],
+    "synonyms": [
+      "Spironolaction",
+      "Aldacton"
+    ]
+  },
+  {
+    "id": "sodium-stibogluconate",
+    "en": "sodium Stibogluconate",
+    "fa": "استیبوگلوکونات سدیم",
+    "brands": [],
+    "synonyms": [
+      "sodium Stibogluconate"
+    ]
+  },
+  {
+    "id": "strptokinase",
+    "en": "Strptokinase",
+    "fa": "استرپتوکیناز",
+    "brands": [
+      "Streptase"
+    ],
+    "synonyms": [
+      "Strptokinase",
+      "Streptase"
+    ]
+  },
+  {
+    "id": "sulfate-streptomycin",
+    "en": "Sulfate Streptomycin",
+    "fa": "استرپتومایسین سولفات",
+    "brands": [],
+    "synonyms": [
+      "Sulfate Streptomycin"
+    ]
+  },
+  {
+    "id": "streptozocin",
+    "en": "Streptozocin",
+    "fa": "استرپتوزوسین",
+    "brands": [],
+    "synonyms": [
+      "Streptozocin"
+    ]
+  },
+  {
+    "id": "succimer",
+    "en": "Succimer",
+    "fa": "سوکسیمر",
+    "brands": [
+      "Chemet"
+    ],
+    "synonyms": [
+      "Succimer",
+      "Chemet"
+    ]
+  },
+  {
+    "id": "chloride-succinylcholine",
+    "en": "chloride Succinylcholine",
+    "fa": "ساکسینیل کولین کلراید",
+    "brands": [
+      "Anectione",
+      "sucostrin",
+      "Incert"
+    ],
+    "synonyms": [
+      "chloride Succinylcholine",
+      "Anectione",
+      "sucostrin",
+      "Incert"
+    ]
+  },
+  {
+    "id": "sucralfate",
+    "en": "Sucralfate",
+    "fa": "سوکرالفیت",
+    "brands": [
+      "Carafate"
+    ],
+    "synonyms": [
+      "Sucralfate",
+      "Carafate"
+    ]
+  },
+  {
+    "id": "citrate-sufentanil",
+    "en": "Citrate Sufentanil",
+    "fa": "سوفنتانیل سیترات",
+    "brands": [
+      "Sufenta"
+    ],
+    "synonyms": [
+      "Citrate Sufentanil",
+      "Sufenta"
+    ]
+  },
+  {
+    "id": "tamaxifen-citrate",
+    "en": "Tamaxifen citrate",
+    "fa": "تاموکسیفن سیترات",
+    "brands": [
+      "Tomofen",
+      "Nolvadex"
+    ],
+    "synonyms": [
+      "Tamaxifen citrate",
+      "Tomofen",
+      "Nolvadex"
+    ]
+  },
+  {
+    "id": "terbutalinesufate",
+    "en": "Terbutalinesufate",
+    "fa": "تربوتالین سولفات",
+    "brands": [
+      "Brethaine",
+      "Brerhine",
+      "Bricanyl"
+    ],
+    "synonyms": [
+      "Terbutalinesufate",
+      "Brethaine",
+      "Brerhine",
+      "Bricanyl"
+    ]
+  },
+  {
+    "id": "terfenadine",
+    "en": "Terfenadine",
+    "fa": "ترفنادین",
+    "brands": [
+      "Ieldane",
+      "Seldane"
+    ],
+    "synonyms": [
+      "Terfenadine",
+      "Ieldane",
+      "Seldane"
+    ]
+  },
+  {
+    "id": "testosterone-enanthate",
+    "en": "Testosterone enanthate",
+    "fa": "تستسترون",
+    "brands": [
+      "Androl.A",
+      "Andryl",
+      "Delatest",
+      "Malogex"
+    ],
+    "synonyms": [
+      "Testosterone enanthate",
+      "Androl.A",
+      "Andryl",
+      "Delatest",
+      "Malogex"
+    ]
+  },
+  {
+    "id": "tetracaine-hcl-ophthalrnic",
+    "en": "Tetracaine Hcl ophthalrnic",
+    "fa": "تتراکائین",
+    "brands": [
+      "Pantocaine"
+    ],
+    "synonyms": [
+      "Tetracaine Hcl ophthalrnic",
+      "Pantocaine"
+    ]
+  },
+  {
+    "id": "tetracycline-opthalmic",
+    "en": "Tetracycline opthalmic",
+    "fa": "تتراسایکلین چشمی",
+    "brands": [
+      "Achromycin"
+    ],
+    "synonyms": [
+      "Tetracycline opthalmic",
+      "Achromycin"
+    ]
+  },
+  {
+    "id": "tetracycline-topical",
+    "en": "Tetracycline Topical",
+    "fa": "تتراسایکلین موضعی",
+    "brands": [
+      "Achromycin"
+    ],
+    "synonyms": [
+      "Tetracycline Topical",
+      "Achromycin"
+    ]
+  },
+  {
+    "id": "tetracycline-hcl-systemic",
+    "en": "Tetracycline Hcl systemic",
+    "fa": "تتراسایکلین",
+    "brands": [
+      "Achromycin",
+      "Achromycin u",
+      "Nor-jec",
+      "Noootetra",
+      "Panmycin",
+      "Retet"
+    ],
+    "synonyms": [
+      "Tetracycline Hcl systemic",
+      "Achromycin",
+      "Achromycin u",
+      "Nor-jec",
+      "Noootetra",
+      "Panmycin",
+      "Retet"
+    ]
+  },
+  {
+    "id": "theophylline-anhydrous",
+    "en": "Theophylline Anhydrous",
+    "fa": "تئوفیلین",
+    "brands": [
+      "Bronkodyl",
+      "Duraphyl",
+      "Elixcon",
+      "Elixophyllin"
+    ],
+    "synonyms": [
+      "Theophylline Anhydrous",
+      "Bronkodyl",
+      "Duraphyl",
+      "Elixcon",
+      "Elixophyllin"
+    ]
+  },
+  {
+    "id": "thermorub",
+    "en": "Thermorub",
+    "fa": "ترموراب",
+    "brands": [
+      "Uicksuaporub"
+    ],
+    "synonyms": [
+      "Thermorub",
+      "Uicksuaporub"
+    ]
+  },
+  {
+    "id": "thiabendazole",
+    "en": "Thiabendazole",
+    "fa": "تیابندازول",
+    "brands": [
+      "Mintezol"
+    ],
+    "synonyms": [
+      "Thiabendazole",
+      "Mintezol"
+    ]
+  },
+  {
+    "id": "thiethylperazine-diamaleate",
+    "en": "Thiethylperazine Diamaleate",
+    "fa": "تی اتیل پرازین",
+    "brands": [
+      "Iorecam"
+    ],
+    "synonyms": [
+      "Thiethylperazine Diamaleate",
+      "Iorecam"
+    ]
+  },
+  {
+    "id": "thiopental-sodium",
+    "en": "Thiopental Sodium",
+    "fa": "تیوپنتال سدیم",
+    "brands": [
+      "Pentothal"
+    ],
+    "synonyms": [
+      "Thiopental Sodium",
+      "Pentothal"
+    ]
+  },
+  {
+    "id": "thioridazine-hcl",
+    "en": "Thioridazine Hcl",
+    "fa": "تیوریدازین",
+    "brands": [
+      "Mellaril",
+      "Millazine",
+      "Nouoridazine",
+      "Ihioril"
+    ],
+    "synonyms": [
+      "Thioridazine Hcl",
+      "Mellaril",
+      "Millazine",
+      "Nouoridazine",
+      "Ihioril"
+    ]
+  },
+  {
+    "id": "thiotepa",
+    "en": "Thiotepa",
+    "fa": "تیوتپا",
+    "brands": [
+      "Ispa"
+    ],
+    "synonyms": [
+      "Thiotepa",
+      "Ispa"
+    ]
+  },
+  {
+    "id": "thiothixene",
+    "en": "Thiothixene",
+    "fa": "تیوتکسین",
+    "brands": [
+      "Navane"
+    ],
+    "synonyms": [
+      "Thiothixene",
+      "Navane"
+    ]
+  },
+  {
+    "id": "thyroid",
+    "en": "Thyroid",
+    "fa": "تیروئید",
+    "brands": [
+      "Armour Ihyroid",
+      "Thrar",
+      "Westhroid"
+    ],
+    "synonyms": [
+      "Thyroid",
+      "Armour Ihyroid",
+      "Thrar",
+      "Westhroid"
+    ]
+  },
+  {
+    "id": "thyrotropin",
+    "en": "Thyrotropin",
+    "fa": "تیروتروپین",
+    "brands": [
+      "Thytropar"
+    ],
+    "synonyms": [
+      "Thyrotropin",
+      "Thytropar"
+    ]
+  },
+  {
+    "id": "timololmaleate",
+    "en": "Timololmaleate",
+    "fa": "تیمولول",
+    "brands": [
+      "Timoptic",
+      "Blocadren"
+    ],
+    "synonyms": [
+      "Timololmaleate",
+      "Timoptic",
+      "Blocadren"
+    ]
+  },
+  {
+    "id": "tobramycinsulfate",
+    "en": "Tobramycinsulfate",
+    "fa": "توبرامایسین",
+    "brands": [
+      "Tobre Nebcin"
+    ],
+    "synonyms": [
+      "Tobramycinsulfate",
+      "Tobre Nebcin"
+    ]
+  },
+  {
+    "id": "tolazamide",
+    "en": "Tolazamide",
+    "fa": "تو̄زامید",
+    "brands": [
+      "Tolinase"
+    ],
+    "synonyms": [
+      "Tolazamide",
+      "Tolinase"
+    ]
+  },
+  {
+    "id": "tolazoline-mcl",
+    "en": "Tolazoline Mcl",
+    "fa": "تو̄زولین",
+    "brands": [
+      "Tolinase"
+    ],
+    "synonyms": [
+      "Tolazoline Mcl",
+      "Tolinase"
+    ]
+  },
+  {
+    "id": "tolmetin-sodium",
+    "en": "Tolmetin sodium",
+    "fa": "تولمتین",
+    "brands": [
+      "Toectin",
+      "Tolectin DS"
+    ],
+    "synonyms": [
+      "Tolmetin sodium",
+      "Toectin",
+      "Tolectin DS"
+    ]
+  },
+  {
+    "id": "tolnaftate",
+    "en": "Tolnaftate",
+    "fa": "تولنفتات",
+    "brands": [
+      "Aftote",
+      "Pitrex",
+      "Tinectin"
+    ],
+    "synonyms": [
+      "Tolnaftate",
+      "Aftote",
+      "Pitrex",
+      "Tinectin"
+    ]
+  },
+  {
+    "id": "tranexamic-acid",
+    "en": "Tranexamic Acid",
+    "fa": "تران کسامیک اسید",
+    "brands": [
+      "Tronsamin",
+      "cyklokpron"
+    ],
+    "synonyms": [
+      "Tranexamic Acid",
+      "Tronsamin",
+      "cyklokpron"
+    ]
+  },
+  {
+    "id": "tranylcyprominesulfate",
+    "en": "Tranylcyprominesulfate",
+    "fa": "ترانیل سیپرومین",
+    "brands": [
+      "parnate"
+    ],
+    "synonyms": [
+      "Tranylcyprominesulfate",
+      "parnate"
+    ]
+  },
+  {
+    "id": "tretinoin",
+    "en": "Tretinoin",
+    "fa": "ترتینوئین",
+    "brands": [
+      "Retin-A",
+      "Retinic Acid",
+      "Vitamin A Acid"
+    ],
+    "synonyms": [
+      "Tretinoin",
+      "Retin-A",
+      "Retinic Acid",
+      "Vitamin A Acid"
+    ]
+  },
+  {
+    "id": "triiamcinolonea-cetonide-topical",
+    "en": "Triiamcinolonea cetonide Topical",
+    "fa": "موضعی تریامسینولون",
+    "brands": [
+      "Acetospam",
+      "Azmacort",
+      "Trama cort"
+    ],
+    "synonyms": [
+      "Triiamcinolonea cetonide Topical",
+      "Acetospam",
+      "Azmacort",
+      "Trama cort"
+    ]
+  },
+  {
+    "id": "triamcinolone-nonog",
+    "en": "Triamcinolone nonog",
+    "fa": "تریامسینولون",
+    "brands": [
+      "Kenacomb"
+    ],
+    "synonyms": [
+      "Triamcinolone nonog",
+      "Kenacomb"
+    ]
+  },
+  {
+    "id": "triclocarban",
+    "en": "Triclocarban",
+    "fa": "تریکلوکاربان",
+    "brands": [
+      "Nobacter",
+      "Gamophen"
+    ],
+    "synonyms": [
+      "Triclocarban",
+      "Nobacter",
+      "Gamophen"
+    ]
+  },
+  {
+    "id": "trifluoperazine-dihydrochloride",
+    "en": "Trifluoperazine dihydrochloride",
+    "fa": "تری فلئوپرازین -دی هیدروکلراید",
+    "brands": [
+      "Nouoflarozine",
+      "Solazine",
+      "Stelazine",
+      "suprazine",
+      "Terfluzine",
+      "Triflurin"
+    ],
+    "synonyms": [
+      "Trifluoperazine dihydrochloride",
+      "Nouoflarozine",
+      "Solazine",
+      "Stelazine",
+      "suprazine",
+      "Terfluzine",
+      "Triflurin"
+    ]
+  },
+  {
+    "id": "trifluridine",
+    "en": "Trifluridine",
+    "fa": "تری فلوریدین",
+    "brands": [
+      "Uiroptic",
+      "Triherpine"
+    ],
+    "synonyms": [
+      "Trifluridine",
+      "Uiroptic",
+      "Triherpine"
+    ]
+  },
+  {
+    "id": "trimethaphan-camsylate",
+    "en": "Trimethaphan Camsylate",
+    "fa": "تری متافان",
+    "brands": [
+      "Arfonad"
+    ],
+    "synonyms": [
+      "Trimethaphan Camsylate",
+      "Arfonad"
+    ]
+  },
+  {
+    "id": "trimipramine-mesilate",
+    "en": "Trimipramine Mesilate",
+    "fa": "تری میپرامین",
+    "brands": [
+      "Surmontil"
+    ],
+    "synonyms": [
+      "Trimipramine Mesilate",
+      "Surmontil"
+    ]
+  },
+  {
+    "id": "triple-sulfat-vaginal",
+    "en": "Triple Sulfat Vaginal",
+    "fa": "سولفات تریپل",
+    "brands": [
+      "Daytosult",
+      "Femquard",
+      "Yune-sult",
+      "Sulfa-gua"
+    ],
+    "synonyms": [
+      "Triple Sulfat Vaginal",
+      "Daytosult",
+      "Femquard",
+      "Yune-sult",
+      "Sulfa-gua"
+    ]
+  },
+  {
+    "id": "tropicamide",
+    "en": "Tropicamide",
+    "fa": "تروپیکامید",
+    "brands": [
+      "Tropicacyl",
+      "Mydriacyl"
+    ],
+    "synonyms": [
+      "Tropicamide",
+      "Tropicacyl",
+      "Mydriacyl"
+    ]
+  },
+  {
+    "id": "urokinase",
+    "en": "Urokinase",
+    "fa": "اوروکیناز",
+    "brands": [
+      "Opencath",
+      "Abbokinase"
+    ],
+    "synonyms": [
+      "Urokinase",
+      "Opencath",
+      "Abbokinase"
+    ]
+  },
+  {
+    "id": "ursodeoxycholic-acid",
+    "en": "Ursodeoxycholic Acid",
+    "fa": "یورسودزوکسی کولیک اسید",
+    "brands": [
+      "Actigall",
+      "UDCA",
+      "Urso",
+      "Ursodiol",
+      "Ursofalk"
+    ],
+    "synonyms": [
+      "Ursodeoxycholic Acid",
+      "Actigall",
+      "UDCA",
+      "Urso",
+      "Ursodiol",
+      "Ursofalk"
+    ]
+  },
+  {
+    "id": "valproate-sodium",
+    "en": "Valproate sodium",
+    "fa": "والپرات سدیم",
+    "brands": [
+      "Depacon"
+    ],
+    "synonyms": [
+      "Valproate sodium",
+      "Depacon"
+    ]
+  },
+  {
+    "id": "valsartan",
+    "en": "Valsartan",
+    "fa": "والسارتان",
+    "brands": [
+      "Diovan"
+    ],
+    "synonyms": [
+      "Valsartan",
+      "Diovan"
+    ]
+  },
+  {
+    "id": "vancomycin-hydrochlorid",
+    "en": "Vancomycin Hydrochlorid",
+    "fa": "وانکومایسین هیدروکلراید",
+    "brands": [
+      "Vancocin"
+    ],
+    "synonyms": [
+      "Vancomycin Hydrochlorid",
+      "Vancocin"
+    ]
+  },
+  {
+    "id": "varicella-virus-vaccine-live",
+    "en": "Varicella virus vaccine Live",
+    "fa": "واکسن ویروس واریس",
+    "brands": [
+      "x Variva"
+    ],
+    "synonyms": [
+      "Varicella virus vaccine Live",
+      "x Variva"
+    ]
+  },
+  {
+    "id": "vasopressin",
+    "en": "Vasopressin",
+    "fa": "وازوپرسین",
+    "brands": [
+      "Diapid"
+    ],
+    "synonyms": [
+      "Vasopressin",
+      "Diapid"
+    ]
+  },
+  {
+    "id": "verapamil-hydrochloride",
+    "en": "Verapamil Hydrochloride",
+    "fa": "وراپامیل هیدروکلراید",
+    "brands": [
+      "Veramil",
+      "Calan"
+    ],
+    "synonyms": [
+      "Verapamil Hydrochloride",
+      "Veramil",
+      "Calan"
+    ]
+  },
+  {
+    "id": "venlafaxin-hcl-r",
+    "en": "Venlafaxin HCl Rفاکسین",
+    "fa": "ون",
+    "brands": [
+      "Effexor"
+    ],
+    "synonyms": [
+      "Venlafaxin HCl Rفاکسین",
+      "Effexor"
+    ]
+  },
+  {
+    "id": "vidarabin-monohydrate",
+    "en": "Vidarabin Monohydrate",
+    "fa": "ویدارابین مونوهیدرات",
+    "brands": [
+      "Adenine Arabinoside",
+      "ARA-A",
+      "Vira-A"
+    ],
+    "synonyms": [
+      "Vidarabin Monohydrate",
+      "Adenine Arabinoside",
+      "ARA-A",
+      "Vira-A"
+    ]
+  },
+  {
+    "id": "vinblastine-sulfate-r",
+    "en": "Vinblastine sulfate سولفات Rستین",
+    "fa": "وین ب",
+    "brands": [
+      "Velban",
+      "Velbe",
+      "VLB"
+    ],
+    "synonyms": [
+      "Vinblastine sulfate سولفات Rستین",
+      "Velban",
+      "Velbe",
+      "VLB"
+    ]
+  },
+  {
+    "id": "vincristine-sulfat",
+    "en": "Vincristine sulfat",
+    "fa": "وین کریستین",
+    "brands": [
+      "LCR",
+      "Oncovin",
+      "VCR"
+    ],
+    "synonyms": [
+      "Vincristine sulfat",
+      "LCR",
+      "Oncovin",
+      "VCR"
+    ]
+  },
+  {
+    "id": "vindesine-sulfate",
+    "en": "Vindesine sulfate",
+    "fa": "ویندزین سولفات",
+    "brands": [
+      "Enison",
+      "Eldisine"
+    ],
+    "synonyms": [
+      "Vindesine sulfate",
+      "Enison",
+      "Eldisine"
+    ]
+  },
+  {
+    "id": "vitamin-a-ophtalmic",
+    "en": "Vitamin A Ophtalmic",
+    "fa": "افتالمیک ویتامین",
+    "brands": [
+      "A-Ocuite"
+    ],
+    "synonyms": [
+      "Vitamin A Ophtalmic",
+      "A-Ocuite"
+    ]
+  },
+  {
+    "id": "vitamin-d-a",
+    "en": "Vitamin D+A",
+    "fa": "ویتامین آ-د",
+    "brands": [],
+    "synonyms": [
+      "Vitamin D+A"
+    ]
+  },
+  {
+    "id": "vitamin-d-a-topical",
+    "en": "Vitamin D+A Topical",
+    "fa": "ویتامین آ + د توپیکال",
+    "brands": [],
+    "synonyms": [
+      "Vitamin D+A Topical"
+    ]
+  },
+  {
+    "id": "vitamin-e-e",
+    "en": "Vitamin E E",
+    "fa": "ویتامین",
+    "brands": [
+      "Aquasol E",
+      "CEN-E",
+      "ferol",
+      "G ordo- Vite E",
+      "Tocopherol",
+      "Vita- Pluse E"
+    ],
+    "synonyms": [
+      "Vitamin E E",
+      "Aquasol E",
+      "CEN-E",
+      "ferol",
+      "G ordo- Vite E",
+      "Tocopherol",
+      "Vita- Pluse E"
+    ]
+  },
+  {
+    "id": "vitamin-k-phytonadione",
+    "en": "Vitamin K Phytonadione",
+    "fa": "فیتونادیون ویتامین",
+    "brands": [
+      "Aqua mephyton",
+      "konakion",
+      "mephyton",
+      "phylloquinone"
+    ],
+    "synonyms": [
+      "Vitamin K Phytonadione",
+      "Aqua mephyton",
+      "konakion",
+      "mephyton",
+      "phylloquinone"
+    ]
+  },
+  {
+    "id": "warfarin-sodium",
+    "en": "Warfarin Sodium",
+    "fa": "وارفارین سدیم",
+    "brands": [
+      "coufarin",
+      "coumadin sodium",
+      "pan warfin",
+      "warilone",
+      "warnerin"
+    ],
+    "synonyms": [
+      "Warfarin Sodium",
+      "coufarin",
+      "coumadin sodium",
+      "pan warfin",
+      "warilone",
+      "warnerin"
+    ]
+  },
+  {
+    "id": "yellow-fever-vaccine-live",
+    "en": "Yellow Fever Vaccine live",
+    "fa": "واکسن یلوفیور",
+    "brands": [],
+    "synonyms": [
+      "Yellow Fever Vaccine live"
+    ]
+  },
+  {
+    "id": "yohimbine-hcl",
+    "en": "Yohimbine HCL",
+    "fa": "یوهیمبین",
+    "brands": [
+      "Aphrodyne HCL",
+      "Corynine HCL"
+    ],
+    "synonyms": [
+      "Yohimbine HCL",
+      "Aphrodyne HCL",
+      "Corynine HCL"
+    ]
+  },
+  {
+    "id": "zafirlukast",
+    "en": "Zafirlukast",
+    "fa": "زافیرلوکاست",
+    "brands": [
+      "Accolole"
+    ],
+    "synonyms": [
+      "Zafirlukast",
+      "Accolole"
+    ]
+  },
+  {
+    "id": "zidovudine-azidothymidine-azt",
+    "en": "Zidovudine Azidothymidine AZT",
+    "fa": "زیدوودین",
+    "brands": [
+      "Retrovir"
+    ],
+    "synonyms": [
+      "Zidovudine Azidothymidine AZT",
+      "Retrovir"
+    ]
+  },
+  {
+    "id": "zinc-oxide",
+    "en": "Zinc oxide",
+    "fa": "زینک اکسید",
+    "brands": [
+      "Desitine",
+      "Dermit"
+    ],
+    "synonyms": [
+      "Zinc oxide",
+      "Desitine",
+      "Dermit"
+    ]
+  },
+  {
+    "id": "zinc-salfate",
+    "en": "Zinc salfate",
+    "fa": "زنیک سولفات",
+    "brands": [],
+    "synonyms": [
+      "Zinc salfate"
+    ]
+  },
+  {
+    "id": "zinc-undecylenate",
+    "en": "Zinc undecylenate",
+    "fa": "ژنیک آندسیلنات",
+    "brands": [
+      "Mycodecyl",
+      "Desenex"
+    ],
+    "synonyms": [
+      "Zinc undecylenate",
+      "Mycodecyl",
+      "Desenex"
+    ]
+  }
+]

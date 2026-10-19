@@ -1,0 +1,50 @@
+{
+  "before": {
+    "firstTabMs": 38.19999999925494,
+    "cards": 1169,
+    "monographRequests": 10,
+    "drugJsBytes": 8035317,
+    "errors": []
+  },
+  "after": {
+    "firstTabMs": 18.300000000745058,
+    "cards": 40,
+    "monographRequests": 0,
+    "drugJsBytes": 378553,
+    "errors": [],
+    "searches": [
+      {
+        "term": "استامینوفن",
+        "count": 4,
+        "elapsedMs": 161
+      },
+      {
+        "term": "Acetaminophen",
+        "count": 3,
+        "elapsedMs": 159
+      },
+      {
+        "term": "Tylenol",
+        "count": 1,
+        "elapsedMs": 161
+      },
+      {
+        "term": "سفترياكسون",
+        "count": 1,
+        "elapsedMs": 159
+      },
+      {
+        "term": "xxyyzz-no-drug",
+        "count": 0,
+        "elapsedMs": 157
+      }
+    ],
+    "viewportsPassed": [
+      1280,
+      390,
+      320
+    ],
+    "toolsTab": "PASS",
+    "footer": "منبع: داروهای ژنریک ایران · صفحات PDF: 23، 24 · نسخهٔ اصلی."
+  }
+}

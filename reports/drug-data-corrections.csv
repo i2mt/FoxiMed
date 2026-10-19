@@ -1,0 +1,1006 @@
+id,field,before,after,pdf_pages,verification
+a-c-a,record,,A.C.A,"24,25",recovered PDF heading; not clinically validated
+acarbose,brands,"[""prandese"", ""precose""]","[""precose/prandese""]","25,26",source-layout-extracted; not clinically validated
+acenocumarol,brands,"[""Acenocumarin"", ""sintrom""]","[""sintrom/Acenocumarin""]","26,27",source-layout-extracted; not clinically validated
+acetaminophen-paracetamol,en,"""Acetaminophen paracetamol""","""Acetaminophen(paracetamol)""","27,28",source-layout-extracted; not clinically validated
+acetaminophen-paracetamol,brands,"[""Acephen"", ""Anacin"", ""Aspirin"", ""Feverall"", ""Veopap"", ""Panadol"", ""Tylenol""]","[""Acephen"", ""Feverall"", ""Veopap"", ""Panadol"", ""Tylenol""]","27,28",source-layout-extracted; not clinically validated
+codeine-acetaminophen,en,"""codeine Acetaminophen""","""Acetaminophen codeine""","28,29",source-layout-extracted; not clinically validated
+acetazolamide,fa,"""استازو̄مید""","""استازولامید""","29,30",source-layout-extracted; not clinically validated
+acetazolamide,brands,"[""Dazamide"", ""Diamox"", ""Diamox sequels""]","[""Dazamide / Diamox / Diamox sequels""]","29,30",source-layout-extracted; not clinically validated
+acid-acetic,en,"""Acid Acetic""","""Acetic Acid""","30,31",source-layout-extracted; not clinically validated
+acid-acetic,brands,"[""Aci-Jel"", ""vosol""]","[""Aci-Jel/vosol""]","30,31",source-layout-extracted; not clinically validated
+chloride-acetylcholine,en,"""chloride Acetylcholine""","""Acetylcholine chloride""","31,32",source-layout-extracted; not clinically validated
+acetylcysteine,brands,"[""Acetadote"", ""Mucomyst"", ""Mucosil"", ""Parvolx""]","[""Acetadote/Mucomyst/Mucosil/Parvolx""]","32,33",source-layout-extracted; not clinically validated
+acetyl-salicylic-acid-a-s-a,en,"""Acetyl Salicylic Acid A.S.A""","""Acetyl Salicylic Acid (A.S.A)""","33,34,35",source-layout-extracted; not clinically validated
+acetyl-salicylic-acid-a-s-a,fa,"""اسید سالیسیلیک استیل""","""استیل سالیسیلیک اسید""","33,34,35",source-layout-extracted; not clinically validated
+acetyl-salicylic-acid-a-s-a,brands,"[""A.S.A"", ""Ascriptin"", ""Aspergum"", ""Bufferin"", ""Ecotrin"", ""Empirin""]","[""A.S.A/Ascriptin/Aspergum/Bufferin/Ecotrin/Empirin""]","33,34,35",source-layout-extracted; not clinically validated
+acitretin,brands,"[""Soriatane"", ""Neotigason""]","[""Neotigason/Soriatane""]","35,36",source-layout-extracted; not clinically validated
+chacoal-activated,en,"""chacoal Activated""","""Activated chacoal""","36,37",source-layout-extracted; not clinically validated
+chacoal-activated,brands,"[""Aque-Actidose""]","[""Actidose-Aque""]","36,37",source-layout-extracted; not clinically validated
+complex-prithrombin-activated,en,"""complex prithrombin Activated""","""Activated prithrombin complex""","37,38",source-layout-extracted; not clinically validated
+acyclovir-systemic,en,"""Acyclovir systemic""","""Acyclovir ( systemic)""","38,39,40",source-layout-extracted; not clinically validated
+acyclovir-systemic,brands,"[""Zovirax"", ""Avirax""]","[""Avirax/Zovirax""]","38,39,40",source-layout-extracted; not clinically validated
+topical-ophtalmic-acyclovir,en,"""Topical ophtalmic Acyclovir""","""Acyclovir ( ophtalmic , Topical )""",40,source-layout-extracted; not clinically validated
+topical-ophtalmic-acyclovir,fa,"""آسیکلوویر افتالمیک ، تاپیکال""","""آسیکلوویر افتالمیک ،تاپیکال""",40,source-layout-extracted; not clinically validated
+dipivoxil-adefovir,en,"""Dipivoxil Adefovir""","""Adefovir Dipivoxil""","40,41",source-layout-extracted; not clinically validated
+dipivoxil-adefovir,fa,"""آدفوویردی پی وکسیل""","""آدفوویر دی پی وکسیل""","40,41",source-layout-extracted; not clinically validated
+adenosine,brands,"[""Adenoscan"", ""Adenocard""]","[""Adenocard /Adenoscan""]","41,42,43",source-layout-extracted; not clinically validated
+cold-adalt,en,"""cold Adalt""","""Adalt cold""",43,source-layout-extracted; not clinically validated
+cold-adalt,brands,"[""Dristan"", ""Corisan""]","[""Corisan/Dristan""]",43,source-layout-extracted; not clinically validated
+albendazole,brands,"[""Eskazole"", ""Zentel"", ""Albenz""]","[""Eskazole/Zentel/Albenz""]","43,44",source-layout-extracted; not clinically validated
+albumin-human,en,"""Albumin Human""","""Albumin ( Human)""","44,45",source-layout-extracted; not clinically validated
+albumin-human,brands,"[""Albital"", ""Albasol"", ""Albuman""]","[""Albital/Albasol/Albuman""]","44,45",source-layout-extracted; not clinically validated
+hydrochloride-alfentanil,en,"""Hydrochloride Alfentanil""","""Alfentanil Hydrochloride""","47,48",source-layout-extracted; not clinically validated
+extract-allergenic,en,"""Extract Allergenic""","""Allergenic Extract""",48,source-layout-extracted; not clinically validated
+extract-allergenic,brands,"[""Alavac"", ""Alk"", ""Albay"", ""Oralgen"", ""Venomil""]","[""Alavac/Alk/Albay/Oralgen/Venomil""]",48,source-layout-extracted; not clinically validated
+allopurinol,brands,"[""Zyloprim"", ""Purinol"", ""Apo-Allopurinol""]","[""Zyloprim/Purinol/Apo-Allopurinol""]","48,49,50",source-layout-extracted; not clinically validated
+alprazolam,fa,"""آلپرازو̄م""","""آلپرازولام""","50,51",source-layout-extracted; not clinically validated
+alprazolam,brands,"[""Xanax"", ""Xenax"", ""Apo-Alpraz""]","[""Xanax/Xenax/Apo-Alpraz""]","50,51",source-layout-extracted; not clinically validated
+alprostadin-prostaglandin-e1,record,,Alprostadin (Prostaglandin E1),52,recovered PDF heading; not clinically validated
+chloride-aluminum,en,"""chloride Aluminum""","""Aluminum chloride""",52,source-layout-extracted; not clinically validated
+chloride-aluminum,brands,"[""Anhydrol Forte"", ""Driclor"", ""Drysol""]","[""Anhydrol Forte/Driclor/Drysol""]",52,source-layout-extracted; not clinically validated
+hydroxide-alumium,en,"""Hydroxide Alumium""","""Alumium Hydroxide""","52,53,54",source-layout-extracted; not clinically validated
+hydroxide-alumium,brands,"[""Alterna Gel"", ""Alu-cap"", ""Alu-Tab"", ""Amphojel""]","[""Alterna Gel/Alu-cap /Alu-Tab/Amphojel""]","52,53,54",source-layout-extracted; not clinically validated
+mgs-aluminium,en,"""Mgs Aluminium""","""Aluminium Mgs""",54,source-layout-extracted; not clinically validated
+mgs-aluminium,brands,"[""Magel"", ""Di-Gel"", ""Gastryl"", ""Mylanta""]","[""Magel/Di-Gel /Gastryl/Mylanta""]",54,source-layout-extracted; not clinically validated
+hydroxide-magnesium-aluminium,en,"""Hydroxide Magnesium-Aluminium""","""Aluminium-Magnesium Hydroxide""","54,55",source-layout-extracted; not clinically validated
+hydroxide-magnesium-aluminium,fa,"""آلومینیوم - منیزیوم هیدروکساید""","""برای اطلاعات بیشتر به هیدروکسید آلومینیوم و هیدروکسید منیزیوم مراجعه شود . - آلومینیوم -منیزیوم هیدروکساید""","54,55",source-layout-extracted; not clinically validated
+hydroxide-magnesium-aluminium,brands,"[""Ripan"", ""Losopan""]","[""Losopan/Ripan""]","54,55",source-layout-extracted; not clinically validated
+hydrochloride-amamtadine,en,"""Hydrochloride Amamtadine""","""Amamtadine Hydrochloride""","55,56,57",source-layout-extracted; not clinically validated
+hydrochloride-amamtadine,brands,"[""Endentadina"", ""Symmetrel""]","[""Symmetrel/Endentadina""]","55,56,57",source-layout-extracted; not clinically validated
+chloride-ambenonium,en,"""Chloride Ambenonium""","""Ambenonium Chloride""","57,58",source-layout-extracted; not clinically validated
+sulfate-as-amikacin,en,"""sulfate as Amikacin""","""Amikacin (as sulfate )""","58,59",source-layout-extracted; not clinically validated
+sulfate-as-amikacin,brands,"[""Amikin"", ""Biklin""]","[""Biklin/Amikin""]","58,59",source-layout-extracted; not clinically validated
+hydrochloride-amiloride,en,"""Hydrochloride Amiloride""","""Amiloride Hydrochloride""","59,60",source-layout-extracted; not clinically validated
+hydrochloride-amiloride,brands,"[""Midamor"", ""Moduretic"", ""Amilmaxaco""]","[""Midamor/Moduretic/Amilmaxaco""]","59,60",source-layout-extracted; not clinically validated
+hydrochlorothiazide-amiloride,en,"""Hydrochlorothiazide/Amiloride""","""Amiloride/Hydrochlorothiazide""","60,61",source-layout-extracted; not clinically validated
+hydrochlorothiazide-amiloride,fa,"""آمیلوراید / هیدروکلروتیازاید""","""/ آمیلوراید /هیدروکلروتیازاید""","60,61",source-layout-extracted; not clinically validated
+hydrochlorothiazide-amiloride,brands,"[""Amilmaxaco"", ""Moduretic"", ""Midamor""]","[""Amilmaxaco/Moduretic/Midamor""]","60,61",source-layout-extracted; not clinically validated
+infusion-aminoacid,en,"""Infusion Aminoacid""","""Aminoacid Infusion""","61,62",source-layout-extracted; not clinically validated
+infusion-aminoacid,brands,"[""Aminess"", ""Aminostab"", ""Aminoplex""]","[""Aminess/Aminostab/Aminoplex""]","61,62",source-layout-extracted; not clinically validated
+acid-aminocaproic,en,"""Acid Aminocaproic""","""Aminocaproic Acid""","62,63",source-layout-extracted; not clinically validated
+aminoglutethimide,fa,"""آمینوگلوتتماید""","""بی خطر بودن دارو طی شیر دهی ثابت نشده است. آمینوگلوتتماید""","63,64",source-layout-extracted; not clinically validated
+aminoglutethimide,brands,"[""Drimetene"", ""Cytadren""]","[""Cytadren/Drimetene""]","63,64",source-layout-extracted; not clinically validated
+aminophylline,brands,"[""Phyllocontin"", ""Truphylline"", ""Amoline"", ""Somophlline""]","[""Phyllocontin/Truphylline/Amoline/Somophlline""]","64,65",source-layout-extracted; not clinically validated
+hydrochloride-amiodarone,en,"""Hydrochloride Amiodarone""","""Amiodarone Hydrochloride""","65,66,67",source-layout-extracted; not clinically validated
+hydrochloride-amiodarone,brands,"[""Pacerone"", ""Cordarone""]","[""Cordarone/Pacerone""]","65,66,67",source-layout-extracted; not clinically validated
+hydrochloride-amitriptyline,en,"""Hydrochloride Amitriptyline""","""Amitriptyline Hydrochloride""","67,68",source-layout-extracted; not clinically validated
+hydrochloride-amitriptyline,brands,"[""Amitril"", ""Elavil"", ""Endop"", ""Enovil"", ""Domical"", ""Mevaril""]","[""Amitril/Elavil/Endop/Enovil/Domical /Mevaril""]","67,68",source-layout-extracted; not clinically validated
+r-besylate-amilodipine,en,"""Rت Besylate Amilodipine""","""Amilodipine Besylate""","68,69,70",source-layout-extracted; not clinically validated
+r-besylate-amilodipine,fa,"""آمیلودپین بی سی""","""آمیلودپین بی سیلات""","68,69,70",source-layout-extracted; not clinically validated
+r-besylate-amilodipine,brands,"[""Norvac"", ""Amolor - lstin""]","[""Norvac/Amolor - lstin""]","68,69,70",source-layout-extracted; not clinically validated
+alum-ammonium,en,"""Alum Ammonium""","""Ammonium Alum""",70,source-layout-extracted; not clinically validated
+ammonium-2,fa,"""آمونیوم هیدروکساید""","""آمونیوم کلراید""","70,71",source-layout-extracted; not clinically validated
+ammonium-2,brands,"[""Traspica""]","[""chlorammonic""]","70,71",source-layout-extracted; not clinically validated
+ammonium,fa,"""آمونیوم کلراید""","""آمونیوم هیدروکساید""","71,72",source-layout-extracted; not clinically validated
+ammonium,brands,"[""chlorammonic""]","[""Traspica""]","71,72",source-layout-extracted; not clinically validated
+amoxicillin,brands,"[""Amoxil"", ""Dispermox"", ""Novamoxin"", ""Trimox""]","[""Amoxil/Dispermox/Novamoxin/Trimox""]","72,73,74",source-layout-extracted; not clinically validated
+amphotericin,brands,"[""Ambisome"", ""Fungzone"", ""Abelcet"", ""Amhocin""]","[""Ambisome/Fungzone/Abelcet/Amhocin""]","74,75",source-layout-extracted; not clinically validated
+ampicillin,brands,"[""Omnipen"", ""Penbritin"", ""Ampicin"", ""Principen""]","[""Omnipen/Penbritin/Ampicin/Principen""]","75,76,77",source-layout-extracted; not clinically validated
+lactate-amrinone,en,"""Lactate Amrinone""","""Amrinone Lactate""","77,78",source-layout-extracted; not clinically validated
+lactate-amrinone,fa,"""آمرینون ̄کتات""","""آمرینون لاکتات""","77,78",source-layout-extracted; not clinically validated
+nitrite-amyl,en,"""Nitrite Amyl""","""Amyl Nitrite""","78,79",source-layout-extracted; not clinically validated
+a-anthocyanoside,en,"""A Anthocyanoside""","""Anthocyanoside A""",79,source-layout-extracted; not clinically validated
+a-anthocyanoside,brands,"[""E - Difrarel""]","[""Difrarel - E""]",79,source-layout-extracted; not clinically validated
+globulin-immune-d-anti,en,"""Globulin Immune D-Anti""","""Anti-D Immune Globulin""","79,80",source-layout-extracted; not clinically validated
+globulin-immune-d-anti,brands,"[""Rhogam"", ""Gamulin Rh""]","[""Rhogam/Gamulin Rh""]","79,80",source-layout-extracted; not clinically validated
+antihemophilic-factor-viii,record,,Antihemophilic Factor (VIII),"80,81",recovered PDF heading; not clinically validated
+antihemorrhoid,fa,"""آنتی هموروئید.""","""آنتی هموروئید""","81,82",source-layout-extracted; not clinically validated
+decongestant-antihistamin,en,"""Decongestant Antihistamin""","""Antihistamin Decongestant""",82,source-layout-extracted; not clinically validated
+decongestant-antihistamin,fa,"""آنتی هیستامیندکونژستانت""","""آنتی هیستامین دکونژستانت""",82,source-layout-extracted; not clinically validated
+sr-decongestant-antihistauin,en,"""SR Decongestant Antihistauin""","""Antihistauin Decongestant SR""",82,source-layout-extracted; not clinically validated
+sr-decongestant-antihistauin,fa,"""آنتی هیستامیندکونژستانت اس آر""","""آنتی هیستامین دکونژستانت اس آر""",82,source-layout-extracted; not clinically validated
+serm-venum-antiscorpion,en,"""Serm Venum Antiscorpion""","""Antiscorpion Venum Serm""",83,source-layout-extracted; not clinically validated
+serm-venum-antiscorpion,brands,"[""Antivenum Scorpion""]","[""Scorpion Antivenum""]",83,source-layout-extracted; not clinically validated
+serum-venum-antisnak,en,"""Serum Venum Antisnak""","""Antisnak Venum Serum""","83,84",source-layout-extracted; not clinically validated
+serum-venum-antisnak,brands,"[""Polyvalent"", ""Snake Antivenom""]","[""Polyvalent/Snake Antivenom""]","83,84",source-layout-extracted; not clinically validated
+hcl-apomorphine,en,"""Hcl Apomorphine""","""Apomorphine Hcl""","84,85",source-layout-extracted; not clinically validated
+hcl-arginine,en,"""Hcl Arginine""","""Arginine Hcl""",86,source-layout-extracted; not clinically validated
+hcl-arginine,brands,"[""gene-R""]","[""R-gene""]",86,source-layout-extracted; not clinically validated
+trioxide-arsenic,en,"""Trioxide Arsenic""","""Arsenic Trioxide""","86,87,88",source-layout-extracted; not clinically validated
+saliva-artifical,en,"""Saliva Artifical""","""Artifical Saliva""","88,89",source-layout-extracted; not clinically validated
+tears-artifical,en,"""Tears Artifical""","""Artifical Tears""",89,source-layout-extracted; not clinically validated
+tears-artifical,brands,"[""Moisture Dropst"", ""Tearisol""]","[""Moisture Dropst/Tearisol""]",89,source-layout-extracted; not clinically validated
+a-s-a-acetylsalicylic-acid,en,"""A.S.A Acetylsalicylic Acid""","""A.S.A (Acetylsalicylic Acid )""",89,source-layout-extracted; not clinically validated
+a-s-a-acetylsalicylic-acid,fa,"""آ . اس.آ""","""آ. اس.آ""",89,source-layout-extracted; not clinically validated
+codeine-a-s-a,en,"""codeine A.S.A""","""A.S.A codeine""",89,source-layout-extracted; not clinically validated
+codeine-a-s-a,fa,"""آ . اس . آ کدئین""","""آ .اس .آ کدئین""",89,source-layout-extracted; not clinically validated
+vitaminc-acid-ascorbic,en,"""Vitaminc Acid Ascorbic""","""Ascorbic Acid (Vitaminc)""",89,source-layout-extracted; not clinically validated
+vitaminc-acid-ascorbic,brands,"[""Cecon"", ""Cevi-Bide"", ""Dul-C""]","[""Cecon/Cevi-Bide/Dul-C""]",89,source-layout-extracted; not clinically validated
+asparginase,brands,"[""Kidrolase"", ""Elspar""]","[""Elspar/Kidrolase""]","89,90,91",source-layout-extracted; not clinically validated
+atenolol,brands,"[""Tenormin"", ""Apo-Atenolol""]","[""Tenormin/Apo-Atenolol""]","91,92",source-layout-extracted; not clinically validated
+r-besylate-atracurium,en,"""Rت Besylate Atracurium""","""Atracurium Besylate""","93,94",source-layout-extracted; not clinically validated
+r-besylate-atracurium,fa,"""آتراکوریوم بی سی""","""آتراکوریوم بی سیلات""","93,94",source-layout-extracted; not clinically validated
+sulfate-atropin,en,"""sulfate Atropin""","""Atropin sulfate""","94,95,96",source-layout-extracted; not clinically validated
+sulfate-atropin,brands,"[""Atropisol"", ""Minims Atropina"", ""Atrosulf""]","[""Atropisol/Minims Atropina/Atrosulf""]","94,95,96",source-layout-extracted; not clinically validated
+azathioprine,brands,"[""Imuran"", ""Azasan""]","[""Azasan/Imuran""]","96,97,98",source-layout-extracted; not clinically validated
+bacitracin,brands,"[""AK-Tracin"", ""Baciguent""]","[""AK-Tracin/Baciguent""]",101,source-layout-extracted; not clinically validated
+salt-balanced,en,"""Salt Balanced""","""Balanced Salt""",103,source-layout-extracted; not clinically validated
+salt-balanced,fa,"""با̄نسد سالت""","""بالانسد سالت""",103,source-layout-extracted; not clinically validated
+balanced-salt-plus-glutathione,fa,"""چشم شستشوی محلول""","""محلول شستشوی چشم""","103,104",source-layout-extracted; not clinically validated
+balanced-salt-plus-glutathione,brands,"[""Plus BBS""]","[""BBS Plus""]","103,104",source-layout-extracted; not clinically validated
+sulfat-barium,en,"""Sulfat Barium""","""Barium Sulfat""","104,105",source-layout-extracted; not clinically validated
+sulfat-barium,brands,"[""Barex.Baricon"", ""Baro-CAT"", ""Baroflave"", ""Barosperse""]","[""Barex.Baricon/Baro-CAT,Baroflave/Barosperse""]","104,105",source-layout-extracted; not clinically validated
+intravesical-bcg,en,"""Intravesical BCG""","""BCG (Intravesical)""","105,106",source-layout-extracted; not clinically validated
+intravesical-bcg,brands,"[""Pacis"", ""Tice BCG"", ""Immu Cyst"", ""theracys""]","[""Pacis/Tice BCG/Immu Cyst/theracys""]","105,106",source-layout-extracted; not clinically validated
+carmustine-bcnu,en,"""Carmustine BCNU""","""BCNU (Carmustine)""",106,source-layout-extracted; not clinically validated
+carmustine-bcnu,fa,"""بی سی ان یو- کارموستین""","""بی سی ان یو -کارموستین""",106,source-layout-extracted; not clinically validated
+beclomethasone-dipropionate,fa,"""بکلومتازوندیپروپیونات""","""به اطلاعات مربوط به کارموستین مراجعه شود بکلومتازون دیپروپیونات""","106,107",source-layout-extracted; not clinically validated
+beclomethasone-dipropionate,brands,"[""Beclate-Beclo-Rino"", ""Beclovent"", ""Beconase.Becotide.Vancenase"", ""Vanceril""]","[""Beclate-Beclo-Rino/Beclovent/Beconase.Becotide.Vancenase/Vanceril""]","106,107",source-layout-extracted; not clinically validated
+r-b-p-belladonna,en,"""Rدونا پی. بی B.P Belladonna""","""Belladonna P.B""","107,108,109",source-layout-extracted; not clinically validated
+r-b-p-belladonna,fa,"""ب""","""بلادونا پی .بی""","107,108,109",source-layout-extracted; not clinically validated
+acid-benzoic,en,"""Acid Benzoic""","""Benzoic Acid""",109,source-layout-extracted; not clinically validated
+benzocaine,brands,"[""Orajel"", ""Americaine""]","[""Americaine/Orajel""]","109,110",source-layout-extracted; not clinically validated
+peroxide-benzoyl,en,"""Peroxide Benzoyl""","""Benzoyl Peroxide""",111,source-layout-extracted; not clinically validated
+peroxide-benzoyl,brands,"[""Accid"", ""Acneran"", ""Benzac"", ""Benzogel"", ""Zeroxin-5""]","[""Accid/Acneran/Benzac/Benzogel/Zeroxin-5""]",111,source-layout-extracted; not clinically validated
+r-mesylate-benztropine,en,"""Rت Mesylate Benztropine""","""Benztropine Mesylate""","111,112,113",source-layout-extracted; not clinically validated
+r-mesylate-benztropine,fa,"""بنزتروپین مزی""","""بنزتروپین مزیلات""","111,112,113",source-layout-extracted; not clinically validated
+r-mesylate-benztropine,brands,"[""Cogention"", ""Akitan""]","[""Akitan/Cogention""]","111,112,113",source-layout-extracted; not clinically validated
+hcl-benzydamine,en,"""HCL Benzydamine""","""Benzydamine HCL""",113,source-layout-extracted; not clinically validated
+hcl-benzydamine,brands,"[""Andolex"", ""Tantum"", ""Difflam""]","[""Andolex/Tantum/Difflam""]",113,source-layout-extracted; not clinically validated
+benzoate-benzyl,en,"""Benzoate Benzyl""","""Benzyl Benzoate""","113,114",source-layout-extracted; not clinically validated
+benzoate-benzyl,brands,"[""Hemril"", ""pulemx"", ""Benylate""]","[""Hemril/pulemx/Benylate""]","113,114",source-layout-extracted; not clinically validated
+hydroxynaphtaate-bephenium,en,"""Hydroxynaphtaate Bephenium""","""Bephenium Hydroxynaphtaate""","114,115",source-layout-extracted; not clinically validated
+betacarotene,brands,"[""Max-Caro"", ""Provatene"", ""Solatene""]","[""Max-Caro/Provatene/Solatene""]","116,117",source-layout-extracted; not clinically validated
+betahistine-2-hcl,record,,Betahistine 2 HCL,"117,118",recovered PDF heading; not clinically validated
+betametazone-disodium-phosphate-ophthalmic-otic,record,,Betametazone Disodium Phosphate.(Ophthalmic-otic),118,recovered PDF heading; not clinically validated
+systemic-betametasone,en,"""systemic Betametasone""","""Betametasone (systemic)""","118,119",source-layout-extracted; not clinically validated
+systemic-betametasone,brands,"[""Betacortal"", ""Betnelan"", ""Betnesol"", ""Celestone"", ""Loracort"", ""Prelestone"", ""Selestoject""]","[""Betacortal/Betnelan/Betnesol/Celestone/Loracort/Prelestone/Selestoject""]","118,119",source-layout-extracted; not clinically validated
+betamethasone-as-valerate,en,"""Betamethasone as valerate""","""Betamethasone (as valerate)""",120,source-layout-extracted; not clinically validated
+betamethasone-as-valerate,brands,"[""Betacoltal"", ""Betatrex"", ""Beta.val"", ""Betnorate."", ""Ectosone"", ""Valisone""]","[""Betacoltal/Betatrex/Beta.val/Betnorate./Ectosone/Valisone""]",120,source-layout-extracted; not clinically validated
+a-l-betamethasone,en,"""A.L Betamethasone""","""Betamethasone L.A.""",120,source-layout-extracted; not clinically validated
+a-l-betamethasone,fa,"""بتامتازون ال . آ. .""","""بتامتازون ال .آ""",120,source-layout-extracted; not clinically validated
+betaxolol-ashcl,en,"""Betaxolol ashcl""","""Betaxolol (ashcl)""","120,121",source-layout-extracted; not clinically validated
+betaxolol-ashcl,brands,"[""5 Betoptic"", ""Betoptic""]","[""Betoptic/Betoptic 5""]","120,121",source-layout-extracted; not clinically validated
+chloride-bethanechol,en,"""Chloride Bethanechol""","""Bethanechol Chloride""","121,122,123",source-layout-extracted; not clinically validated
+chloride-bethanechol,brands,"[""Duroid"", ""myotonachol.Urabeth"", ""Urecholine""]","[""Duroid/myotonachol.Urabeth/Urecholine""]","121,122,123",source-layout-extracted; not clinically validated
+blosynthesis-somatropine-somatropine,en,"""Blosynthesis Somatropine Somatropine""","""Blosynthesis Somatropine (Somatropine)""",123,source-layout-extracted; not clinically validated
+blosynthesis-somatropine-somatropine,fa,"""سوماتروپین بیوسنتزیس""","""بیوسنتزیس سوماتروپین""",123,source-layout-extracted; not clinically validated
+bisacodyl,brands,"[""Bisacolax"", ""Dacodyl TabsDeficol"", ""Dulcolax"", ""Theralax Suppositories""]","[""Bisacolax/Dacodyl TabsDeficol/Dulcolax/Theralax Suppositories""]","125,126",source-layout-extracted; not clinically validated
+bismuth-subcitrate-bismuth-oxide,en,"""Bismuth Subcitrate Bismuth Oxide""","""Bismuth Subcitrate (Bismuth Oxide)""","126,127",source-layout-extracted; not clinically validated
+bismuth-subcitrate-bismuth-oxide,fa,"""سیترات ساب بیسموت""","""بیسموت ساب سیترات""","126,127",source-layout-extracted; not clinically validated
+bismuth-subcitrate-bismuth-oxide,brands,"[""Bismol"", ""Stomux"", ""Bismed"", ""Pepto""]","[""Bismol/Stomux/Bismed/Pepto""]","126,127",source-layout-extracted; not clinically validated
+bleomycin-assulfate,en,"""Bleomycin assulfate""","""Bleomycin (assulfate)""","127,128",source-layout-extracted; not clinically validated
+bleomycin-assulfate,brands,"[""Bleo"", ""Blenoxane""]","[""Blenoxane/Bleo""]","127,128",source-layout-extracted; not clinically validated
+acid-boric,en,"""Acid Boric""","""Boric Acid""","128,129",source-layout-extracted; not clinically validated
+acid-boric,brands,"[""Bofax"", ""Hydralin""]","[""Hydralin/Bofax""]","128,129",source-layout-extracted; not clinically validated
+botulinum-toxin-type-a-a,en,"""Botulinum toxin Type A A""","""Botulinum toxin Type A""","129,130",source-layout-extracted; not clinically validated
+botulinum-toxin-type-a-a,fa,"""تیپ توکسین بوتولینیوم""","""بوتولینیوم توکسین تیپ""","129,130",source-layout-extracted; not clinically validated
+botulinum-toxin-type-a-a,brands,"[""Botox"", ""Dysport""]","[""Dysport/ Botox""]","129,130",source-layout-extracted; not clinically validated
+antitoxin-monovalent-botulism,en,"""Antitoxin Monovalent Botulism""","""Botulism Monovalent Antitoxin""",130,source-layout-extracted; not clinically validated
+antitoxin-monovalent-botulism,fa,"""بوتولیسم منووا̄نت آنتی توکسین""","""بوتولیسم منووالانت آنتی توکسین""",130,source-layout-extracted; not clinically validated
+r-tosylate-bretylium,en,"""Rت Tosylate Bretylium""","""Bretylium Tosylate""","131,132",source-layout-extracted; not clinically validated
+r-tosylate-bretylium,fa,"""بریتیلیوم توسی""","""بریتیلیوم توسیلات""","131,132",source-layout-extracted; not clinically validated
+r-tosylate-bretylium,brands,"[""Bretylol"", ""Bretylate""]","[""Bretylate/Bretylol""]","131,132",source-layout-extracted; not clinically validated
+tartarate-brimonidine,en,"""Tartarate Brimonidine""","""Brimonidine Tartarate""","132,133",source-layout-extracted; not clinically validated
+brinzolamide,fa,"""برینزو̄مید""","""برینزولامید""","133,134",source-layout-extracted; not clinically validated
+hcl-bromhexine,en,"""HCL Bromhexine""","""Bromhexine HCL""","134,135",source-layout-extracted; not clinically validated
+bromocriptine-as-mesylate,en,"""Bromocriptine as Mesylate""","""Bromocriptine (as Mesylate)""","135,136,137",source-layout-extracted; not clinically validated
+bromocriptine-as-mesylate,brands,"[""Pariodel .Minobromocription""]","[""Minobromocription. Pariodel""]","135,136,137",source-layout-extracted; not clinically validated
+budesonide,brands,"[""Pulmicort"", ""Respules"", ""Pulmicort Turbuhaler""]","[""Pulmicort/Respules/Pulmicort Turbuhaler""]","137,138",source-layout-extracted; not clinically validated
+hcl-bupivacaine,en,"""HCL Bupivacaine""","""Bupivacaine HCL""","138,139,140",source-layout-extracted; not clinically validated
+hcl-bupivacaine,brands,"[""Sensorcaine .Marcaine""]","[""Marcaine. Sensorcaine""]","138,139,140",source-layout-extracted; not clinically validated
+hcl-as-buprenorphine,en,"""HCL as Buprenorphine""","""Buprenorphine (as HCL)""","140,141",source-layout-extracted; not clinically validated
+hcl-as-buprenorphine,brands,"[""Buprexin.Buprenex""]","[""Buprenex.Buprexin""]","140,141",source-layout-extracted; not clinically validated
+buprenorphin-hcl-naloxone-hcl,record,,Buprenorphin HCL/ Naloxone HCL,"141,142",recovered PDF heading; not clinically validated
+hcl-bupropion,en,"""HCL Bupropion""","""Bupropion HCL""","142,143,144",source-layout-extracted; not clinically validated
+burn-ointment-for-minorburns,en,"""Burn Ointment For minorburns""","""Burn Ointment (For minorburns)""",144,source-layout-extracted; not clinically validated
+burn-ointment-for-minorburns,fa,"""اونیتمنت بورن""","""بورن اونیتمنت""",144,source-layout-extracted; not clinically validated
+burn-ointment-for-minorburns,brands,"[""Burn Ointment - Najo"", ""Dermilon""]","[""Burn Ointment - Najo/Dermilon""]",144,source-layout-extracted; not clinically validated
+acetate-busereline,en,"""Acetate Busereline""","""Busereline Acetate""","144,145",source-layout-extracted; not clinically validated
+acetate-busereline,brands,"[""Suprefact"", ""Suprecure""]","[""Suprecure/Suprefact""]","144,145",source-layout-extracted; not clinically validated
+hcl-buspirone,en,"""HCL Buspirone""","""Buspirone HCL""","145,146",source-layout-extracted; not clinically validated
+hcl-buspirone,fa,"""بوسپیرون اچ . سی ال""","""بوسپیرون اچ .سی ال""","145,146",source-layout-extracted; not clinically validated
+hcl-buspirone,brands,"[""Buspirax"", ""Buspar""]","[""Buspar/Buspirax""]","145,146",source-layout-extracted; not clinically validated
+cade-oil,fa,"""کاداویل""","""ادامه بدهد. کاداویل""",150,source-layout-extracted; not clinically validated
+d-calamine,en,"""D-Calamine""","""Calamine-D""","150,151",source-layout-extracted; not clinically validated
+d-calamine,fa,"""کا̄مین -دی""","""کالامین -دی""","150,151",source-layout-extracted; not clinically validated
+d-calamine,brands,"[""Lvarest"", ""Calamax""]","[""Calamax/Lvarest""]","150,151",source-layout-extracted; not clinically validated
+calcipotriol-2,brands,"[""Dovonex""]","[""Dovenex""]","151,152",source-layout-extracted; not clinically validated
+salmon-cacitonin,en,"""Salmon Cacitonin""","""Cacitonin(Salmon)""","152,153",source-layout-extracted; not clinically validated
+salmon-cacitonin,brands,"[""miacalcin"", ""Calcimar""]","[""Calcimar/miacalcin""]","152,153",source-layout-extracted; not clinically validated
+calcipotriol,brands,"[""Dovenex""]","[""Dovonex""]","153,154",source-layout-extracted; not clinically validated
+calcitriol,brands,"[""Rocaltrol"", ""Calcijex""]","[""Calcijex/Rocaltrol""]","154,155,156",source-layout-extracted; not clinically validated
+calcium-carbonate-chlorid-gluconate,record,,"Calcium (Carbonate , Chlorid , Gluconate","156,157",recovered PDF heading; not clinically validated
+d-calcium,en,"""D-Calcium""","""Calcium-D""","157,158",source-layout-extracted; not clinically validated
+r-dobesilate-calcium,en,"""Rت DOBESILATE CALCIUM""","""CALCIUM DOBESILATE""",158,source-layout-extracted; not clinically validated
+r-dobesilate-calcium,fa,"""کلسیمدو بوسی""","""کلسیم دو بوسیلات""",158,source-layout-extracted; not clinically validated
+forte-calcium,en,"""Forte Calcium""","""Calcium Forte""","158,159",source-layout-extracted; not clinically validated
+gluconate-calcium,en,"""Gluconate Calcium""","""Calcium Gluconate""","159,160,161",source-layout-extracted; not clinically validated
+pantothenate-calcium,en,"""Pantothenate Calcium""","""Calcium Pantothenate""","161,162",source-layout-extracted; not clinically validated
+supplements-calcium,en,"""Supplements Calcium""","""Calcium Supplements""","162,163",source-layout-extracted; not clinically validated
+sulfate-capreomycin,en,"""Sulfate Capreomycin""","""Capreomycin Sulfate""","164,165",source-layout-extracted; not clinically validated
+sulfate-capreomycin,brands,"[""Capastat Sulfate"", ""Ogostal""]","[""Capastat Sulfate/Ogostal""]","164,165",source-layout-extracted; not clinically validated
+capsicum,brands,"[""Capsin"", ""Capsamol""]","[""Capsamol/Capsin""]","165,166",source-layout-extracted; not clinically validated
+carbachol,brands,"[""Miostat"", ""Isopto Cacarbachol"", ""Carbotic"", ""Carbastat""]","[""Miostat/Isopto Cacarbachol/Carbotic/Carbastat""]","168,169",source-layout-extracted; not clinically validated
+carbamazepine,brands,"[""CCarbatrol"", ""Epitol"", ""Mazepine"", ""Tegretol"", ""Timonil""]","[""CCarbatrol/Epitol/Mazepine/Tegretol/Timonil""]","169,170,171",source-layout-extracted; not clinically validated
+carbamid-peroxide,brands,"[""Orajel"", ""Proxigel"", ""Cankaid"", ""Debrox"", ""Gly-oxide""]","[""Orajel/Proxigel/Cankaid/Debrox/Gly-oxide""]",172,source-layout-extracted; not clinically validated
+disodium-carbenicillin,en,"""Disodium Carbenicillin""","""Carbenicillin Disodium""","173,174",source-layout-extracted; not clinically validated
+disodium-carbenicillin,fa,"""کاربنی سیلیندی سدیم""","""کاربنی سیلین دی سدیم""","173,174",source-layout-extracted; not clinically validated
+disodium-carbenicillin,brands,"[""Geopen"", ""Pyopen"", ""Goocillin""]","[""Geopen/Pyopen/Goocillin""]","173,174",source-layout-extracted; not clinically validated
+sodium-indanyl-carbenicillin,en,"""Sodium Indanyl Carbenicillin""","""Carbenicillin Indanyl Sodium""","174,175,176",source-layout-extracted; not clinically validated
+sodium-indanyl-carbenicillin,brands,"[""Geocillin"", ""Geopen oral""]","[""Geocillin/Geopen oral""]","174,175,176",source-layout-extracted; not clinically validated
+r-caroplatin,en,"""Rتین Caroplatin""","""Caroplatin""","176,177",source-layout-extracted; not clinically validated
+r-caroplatin,fa,"""کاربوپ""","""کاربوپلاتین""","176,177",source-layout-extracted; not clinically validated
+r-caroplatin,brands,"[""Paraplatin"", ""Carbosol"", ""Carbosin""]","[""Paraplatin/Carbosol/Carbosin""]","176,177",source-layout-extracted; not clinically validated
+carmustine,fa,"""کارموستین بی سی ان یو""","""کارموستینبی سی ان یو""","177,178",source-layout-extracted; not clinically validated
+carmustine,brands,"[""Gliade"", ""Bicnu""]","[""Bicnu/Gliade""]","177,178",source-layout-extracted; not clinically validated
+carnitine-l-carnitine,en,"""Carnitine-L Carnitine""","""Carnitine (L-Carnitine)""",179,source-layout-extracted; not clinically validated
+carnitine-l-carnitine,fa,"""کارنیتین ال - کارنیتین""","""کارنیتین ال -کارنیتین""",179,source-layout-extracted; not clinically validated
+carvedilol,brands,"[""Eucardic"", ""Coreg""]","[""Coreg/Eucardic""]","179,180,181",source-layout-extracted; not clinically validated
+sodium-cefaazolin,en,"""Sodium Cefaazolin""","""Cefaazolin Sodium""","181,182",source-layout-extracted; not clinically validated
+sodium-cefaazolin,brands,"[""Ancef"", ""Zolicef"", ""Kefzol""]","[""Ancef/Zolicef/Kefzol""]","181,182",source-layout-extracted; not clinically validated
+hydrochloride-cefepime,en,"""hydrochloride Cefepime""","""Cefepime hydrochloride""","182,183",source-layout-extracted; not clinically validated
+cefixime,brands,"[""Caphoral"", ""Suprax""]","[""Suprax/Caphoral""]","183,184",source-layout-extracted; not clinically validated
+sodium-cefotaxime,en,"""sodium Cefotaxime""","""Cefotaxime sodium""","184,185",source-layout-extracted; not clinically validated
+ceftazidime-as-pentahydrate,en,"""Ceftazidime as pentahydrate""","""Ceftazidime (as pentahydrate)""","185,186,187",source-layout-extracted; not clinically validated
+ceftazidime-as-pentahydrate,brands,"[""Ceptaz"", ""Fortaz"", ""Tazicef"", ""Tazidime""]","[""Ceptaz/Fortaz/Tazicef/Tazidime""]","185,186,187",source-layout-extracted; not clinically validated
+ceftizoxime,brands,"[""Ceftix"", ""Cefizox""]","[""Cefizox/Ceftix""]","187,188",source-layout-extracted; not clinically validated
+ceftriaxone,brands,"[""Rocephalin"", ""Rocephin""]","[""Rocephin/Rocephalin""]","188,189",source-layout-extracted; not clinically validated
+cafuroxime,brands,"[""Zinacef"", ""Ceftin""]","[""Ceftin/Zinacef""]","189,190,191",source-layout-extracted; not clinically validated
+cephalexin,brands,"[""Keftab"", ""Keflex"", ""Ceporex"", ""Novolexin""]","[""Keftab/Keflex/Ceporex/Novolexin""]","192,193,194",source-layout-extracted; not clinically validated
+sodium-cephalothin,en,"""sodium Cephalothin""","""Cephalothin sodium""",194,source-layout-extracted; not clinically validated
+sodium-cephalothin,brands,"[""Ceporacin"", ""Keflin""]","[""Keflin/Ceporacin""]",194,source-layout-extracted; not clinically validated
+cephradine,fa,"""سفرادین""","""بعلت تشابه زیاد جهت اطلاعات بیشتر به مراجعه شود. سفرادین""","194,195",source-layout-extracted; not clinically validated
+cephradine,brands,"[""velosef"", ""Sefril""]","[""Sefril/velosef""]","194,195",source-layout-extracted; not clinically validated
+hydrochloride-citirizine,en,"""hydrochloride Citirizine""","""Citirizine hydrochloride""","195,196",source-layout-extracted; not clinically validated
+c-cetrimide,en,"""C-Cetrimide""","""Cetrimide-C""",196,source-layout-extracted; not clinically validated
+c-cetrimide,fa,"""ستریماید - سی""","""ستریماید -سی""",196,source-layout-extracted; not clinically validated
+c-cetrimide,brands,"[""Crodex"", ""Savlon""]","[""Savlon/Crodex""]",196,source-layout-extracted; not clinically validated
+b-cetylpyridium,en,"""B-Cetylpyridium""","""Cetylpyridium-B""","196,197",source-layout-extracted; not clinically validated
+b-cetylpyridium,fa,"""ستیل پیریدیوم - بی""","""محلول رقیق شده را باید در اتوکلاو ۱۱۵-۱۱۶درجه سانتیگراد به مدت ۱۵دقیقه استریل نمود - ستیل پیریدیوم -بی""","196,197",source-layout-extracted; not clinically validated
+chloride-cetylpyridium,en,"""chloride Cetylpyridium""","""Cetylpyridium chloride""",197,source-layout-extracted; not clinically validated
+activated-charcoal,en,"""Activated Charcoal""","""Charcoal (Activated)""",197,source-layout-extracted; not clinically validated
+cold-children,en,"""Cold Children""","""Children Cold""",197,source-layout-extracted; not clinically validated
+cold-children,fa,"""چیلدرن کولد""","""به مراجعه شود. چیلدرن کولد""",197,source-layout-extracted; not clinically validated
+cold-children,brands,"[""Doricidin"", ""Demilets""]","[""Demilets/Doricidin""]",197,source-layout-extracted; not clinically validated
+chlorambucil,brands,"[""Linfolysin"", ""Leukeran""]","[""Leukeran/Linfolysin""]","197,198,199",source-layout-extracted; not clinically validated
+chloramphenicol,brands,"[""Linfolysin"", ""Leukeran""]","[""Leukeran/Linfolysin""]","199,200",source-layout-extracted; not clinically validated
+chloramphenicol-oph,en,"""Chloramphenicol OPH""","""Chloramphenicol (OPH)""",201,source-layout-extracted; not clinically validated
+chloramphenicol-oph,brands,"[""Ophthochlor"", ""Chlorafair""]","[""Chlorafair/Ophthochlor""]",201,source-layout-extracted; not clinically validated
+chlroamphenicol-systemic,record,,chlroamphenicol (systemic),"201,202",recovered PDF heading; not clinically validated
+chlordiazepoxide,brands,"[""Mitran"", ""librium""]","[""librium / Mitran""]","202,203",source-layout-extracted; not clinically validated
+gluconate-chlorhexidine,en,"""Gluconate Chlorhexidine""","""Chlorhexidine Gluconate""","203,204",source-layout-extracted; not clinically validated
+detergent-gluconate-chlorhexidine,en,"""Detergent+ Gluconate Chlorhexidine""","""Chlorhexidine Gluconate +Detergent""",204,source-layout-extracted; not clinically validated
+detergent-gluconate-chlorhexidine,fa,"""کلرهگزیدین گلوکانات + دترجنت""","""+ کلرهگزیدین گلوکانات +دترجنت""",204,source-layout-extracted; not clinically validated
+mustard-nitrogen-hcl-chlormethine,en,"""Mustard Nitrogen Hcl Chlormethine""","""Chlormethine Hcl(Nitrogen Mustard)""","204,205",source-layout-extracted; not clinically validated
+mustard-nitrogen-hcl-chlormethine,fa,"""نیتروژن موستارد کلرمتین اچ سی ال""","""نیتروژن موستاردکلرمتین اچ سی ال""","204,205",source-layout-extracted; not clinically validated
+sulfat-phosphate-as-chloroquine,en,"""sulfat & phosphate as Chloroquine""","""Chloroquine ( as phosphate & sulfat)""","205,206,207",source-layout-extracted; not clinically validated
+sulfat-phosphate-as-chloroquine,fa,"""کلروکین فسفات و سولفات""","""& کلروکینفسفات و سولفات""","205,206,207",source-layout-extracted; not clinically validated
+sulfat-phosphate-as-chloroquine,brands,"[""Resochin"", ""Aralen""]","[""Aralen / Resochin""]","205,206,207",source-layout-extracted; not clinically validated
+maleate-chlorpheniramine,en,"""Maleate Chlorpheniramine""","""Chlorpheniramine Maleate""","207,208,209",source-layout-extracted; not clinically validated
+maleate-chlorpheniramine,brands,"[""Alermine"", ""Chlorspan"", ""Histray"", ""Teldrin"", ""Tryrnegen""]","[""Alermine/Chlorspan/Histray/Teldrin/Tryrnegen""]","207,208,209",source-layout-extracted; not clinically validated
+hydrochloride-chlorpromazine,en,"""Hydrochloride Chlorpromazine""","""Chlorpromazine Hydrochloride""","209,210,211",source-layout-extracted; not clinically validated
+hydrochloride-chlorpromazine,brands,"[""Largactil"", ""Thorazine"", ""Chlorzine""]","[""Largactil/Thorazine/Chlorzine""]","209,210,211",source-layout-extracted; not clinically validated
+chlropropamide,brands,"[""Diabinese"", ""Stabinol"", ""Glucamide""]","[""Diabinese/Stabinol/Glucamide""]","211,212,213",source-layout-extracted; not clinically validated
+chlorthalidone,brands,"[""Hydidone"", ""Thalitone"", ""Hygroton""]","[""Hydidone / Thalitone / Hygroton""]","213,214,215",source-layout-extracted; not clinically validated
+cholecalciferol-vitamin-d,record,,Cholecalciferol(vitamin  D,215,recovered PDF heading; not clinically validated
+cholestyramine,fa,"""کلستیرامین""","""به مراجعه شود کلستیرامین""","215,216",source-layout-extracted; not clinically validated
+cholestyramine,brands,"[""Novo - cholamine"", ""Questran""]","[""Novo - cholamine / Questran""]","215,216",source-layout-extracted; not clinically validated
+chorionic-gonadotropin-human-h-c-g,record,,"Chorionic Gonadotropin , Human (H.C.G)","216,217,218",recovered PDF heading; not clinically validated
+ciclosporin,brands,"[""Neoral"", ""sangcya""]","[""sangcya / Neoral""]","218,219",source-layout-extracted; not clinically validated
+cimetidine,brands,"[""Tagamet"", ""APO - cimetidine""]","[""Tagamet / APO - cimetidine""]","219,220",source-layout-extracted; not clinically validated
+cinnarizine,brands,"[""Stugeron"", ""Cinaziere""]","[""Cinaziere/Stugeron""]","220,221",source-layout-extracted; not clinically validated
+systemic-ciprofloxacin,en,"""Systemic Ciprofloxacin""","""Ciprofloxacin(Systemic)""","221,222,223",source-layout-extracted; not clinically validated
+systemic-ciprofloxacin,brands,"[""CiproxR"", ""Cipro""]","[""Cipro/CiproxR""]","221,222,223",source-layout-extracted; not clinically validated
+ciprofloxacin-hydrochloride-ophtalmic,record,,Ciprofloxacin Hydrochloride(ophtalmic,"223,224",recovered PDF heading; not clinically validated
+monohydrate-as-cisapride,en,"""monohydrate as Cisapride""","""Cisapride (as monohydrate)""","224,225",source-layout-extracted; not clinically validated
+monohydrate-as-cisapride,fa,"""سیساپراید از منو هیدرات""","""سیساپرایداز منو هیدرات""","224,225",source-layout-extracted; not clinically validated
+monohydrate-as-cisapride,brands,"[""Alimix"", ""Propulsid""]","[""Propulsid/Alimix""]","224,225",source-layout-extracted; not clinically validated
+r-besylate-cisatracurium,en,"""Rت Besylate Cisatracurium""","""Cisatracurium Besylate""","225,226,227",source-layout-extracted; not clinically validated
+r-besylate-cisatracurium,fa,"""سیساتراکوریوم بیسی""","""سیساتراکوریوم بیسیلات""","225,226,227",source-layout-extracted; not clinically validated
+r-r-platinum-cis-cisplatin,en,"""Rتین سیس - پRتینوم Platinum Cis Cisplatin""","""Cisplatin (Cis Platinum)""","227,228",source-layout-extracted; not clinically validated
+r-r-platinum-cis-cisplatin,fa,"""سیسپ""","""سیسپلاتین سیس -پلاتینوم""","227,228",source-layout-extracted; not clinically validated
+r-r-platinum-cis-cisplatin,brands,"[""Platinol"", ""Abiplatin"", ""Plutistin""]","[""Platinol/Abiplatin/Plutistin""]","227,228",source-layout-extracted; not clinically validated
+hydrobromide-citalopram,en,"""Hydrobromide Citalopram""","""Citalopram Hydrobromide""","228,229",source-layout-extracted; not clinically validated
+citicoline-as-sodium-salt,en,"""Citicoline as Sodium Salt""","""Citicoline (as Sodium Salt)""",230,source-layout-extracted; not clinically validated
+citicoline-as-sodium-salt,brands,"[""Acticolin"", ""Citidel""]","[""Citidel/Acticolin""]",230,source-layout-extracted; not clinically validated
+acid-citric,en,"""Acid Citric""","""Citric Acid""","230,231",source-layout-extracted; not clinically validated
+r-cladribine,en,"""Rدریبین Cladribine""","""Cladribine""","231,232",source-layout-extracted; not clinically validated
+r-cladribine,fa,"""ک""","""کلادریبین""","231,232",source-layout-extracted; not clinically validated
+r-clarithromycin,en,"""Rریترومایسین Clarithromycin""","""Clarithromycin""","232,233",source-layout-extracted; not clinically validated
+r-clarithromycin,fa,"""ک""","""کلاریترومایسین""","232,233",source-layout-extracted; not clinically validated
+fumarate-clemastine,en,"""Fumarate Clemastine""","""Clemastine Fumarate""","234,235",source-layout-extracted; not clinically validated
+fumarate-clemastine,brands,"[""Tavist Allergy"", ""Tavegil""]","[""Tavist Allergy/Tavegil""]","234,235",source-layout-extracted; not clinically validated
+c-clidinium,en,"""C - Clidinium""","""Clidinium - C""","235,236",source-layout-extracted; not clinically validated
+c-clidinium,fa,"""کلیدینیوم - سی""","""کلیدینیوم -سی""","235,236",source-layout-extracted; not clinically validated
+c-clidinium,brands,"[""Librax"", ""Clindex"", ""Corium""]","[""Librax/Clindex/Corium""]","235,236",source-layout-extracted; not clinically validated
+hydrochloride-clindamycin,en,"""Hydrochloride Clindamycin""","""Clindamycin Hydrochloride""","236,237,238",source-layout-extracted; not clinically validated
+hydrochloride-clindamycin,brands,"[""Dalavin"", ""cleocin""]","[""cleocin / Dalavin/""]","236,237,238",source-layout-extracted; not clinically validated
+clobazam,brands,"[""Frisium"", ""Urbanol"", ""Urbadan""]","[""Frisium / Urbanol / Urbadan""]","238,239",source-layout-extracted; not clinically validated
+propionate-clobetasol,en,"""propionate Clobetasol""","""Clobetasol propionate""","239,240",source-layout-extracted; not clinically validated
+propionate-clobetasol,brands,"[""Temovate"", ""Dermovate""]","[""Dermovate / Temovate""]","239,240",source-layout-extracted; not clinically validated
+hcl-clobutinol,en,"""Hcl Clobutinol""","""Clobutinol Hcl""","240,241",source-layout-extracted; not clinically validated
+hcl-clobutinol,brands,"[""Lomisat"", ""Silomat""]","[""Silomat / Lomisat""]","240,241",source-layout-extracted; not clinically validated
+clofibrate,brands,"[""s-Atromid""]","[""Atromid-s""]","242,243",source-layout-extracted; not clinically validated
+clomiphene,brands,"[""clomid"", ""Milophene"", ""Serophene""]","[""clomid / Milophene / Serophene""]","243,244",source-layout-extracted; not clinically validated
+hydrochloride-clomipramine,en,"""Hydrochloride Clomipramine""","""Clomipramine Hydrochloride""","244,245",source-layout-extracted; not clinically validated
+hydrochloride-clomipramine,brands,"[""Tranquax"", ""Anafranil""]","[""Anafranil / Tranquax""]","244,245",source-layout-extracted; not clinically validated
+clonazepam,record,,clonazepam,"245,246,247",recovered PDF heading; not clinically validated
+hydrochloride-clonidine,en,"""Hydrochloride clonidine""","""clonidine Hydrochloride""","247,248",source-layout-extracted; not clinically validated
+hydrochloride-clonidine,brands,"[""catapres"", ""Dixarit"", ""Duraclon""]","[""catapres / Dixarit / Duraclon""]","247,248",source-layout-extracted; not clinically validated
+bisulfate-clopidogrel,en,"""Bisulfate Clopidogrel""","""Clopidogrel Bisulfate""","249,250",source-layout-extracted; not clinically validated
+clotrimazole,brands,"[""femcare"", ""lotrimin"", ""Myvelex"", ""canesten""]","[""femcare /lotrimin /Myvelex / canesten""]","250,251",source-layout-extracted; not clinically validated
+sodium-cloxacillin,en,"""Sodium Cloxacillin""","""Cloxacillin Sodium""","251,252",source-layout-extracted; not clinically validated
+sodium-cloxacillin,brands,"[""Tegopen"", ""orbenin""]","[""orbenin / Tegopen""]","251,252",source-layout-extracted; not clinically validated
+clozapin,brands,"[""leponex"", ""clozarit""]","[""clozarit / leponex""]","252,253,254",source-layout-extracted; not clinically validated
+tar-coal,en,"""Tar Coal""","""Coal Tar""",254,source-layout-extracted; not clinically validated
+co-amoxiclav-amoxicillin-and-potassium-clavulante,record,,Co-Amoxiclav(Amoxicillin and Potassium Clavulante),"255,256",recovered PDF heading; not clinically validated
+phosphate-codeine,en,"""Phosphate Codeine""","""Codeine Phosphate""","256,257",source-layout-extracted; not clinically validated
+phosphate-codeine,brands,"[""Evacode"", ""Paveral""]","[""Paveral/Evacode""]","256,257",source-layout-extracted; not clinically validated
+palmitate-colfosceril,en,"""Palmitate Colfosceril""","""Colfosceril Palmitate""","259,260",source-layout-extracted; not clinically validated
+palmitate-colfosceril,brands,"[""Neonatal Exosurf""]","[""Exosurf Neonatal""]","259,260",source-layout-extracted; not clinically validated
+colistin-sulphate,record,,colistin sulphate,260,recovered PDF heading; not clinically validated
+estrogen-conjugated,en,"""Estrogen Conjugated""","""Conjugated Estrogen""","260,261,262",source-layout-extracted; not clinically validated
+estrogen-conjugated,brands,"[""cenestin"", ""premarin"", ""progens"", ""Estrocon""]","[""cenestin / premarin / progens /Estrocon""]","260,261,262",source-layout-extracted; not clinically validated
+contraceptives-de-hd-ld,brands,"[""Norgestrel"", ""Ethinyl Estradiol"", ""ovcon""]","[""Norgestrel / Ethinyl Estradiol /ovcon""]","262,263,264",source-layout-extracted; not clinically validated
+copper-sulfate,brands,"[""Metacuprol"", ""coppertarco""]","[""coppertarco / Metacuprol""]","264,265",source-layout-extracted; not clinically validated
+acth-corticotropin,en,"""ACTH Corticotropin""","""Corticotropin(ACTH)""","265,266",source-layout-extracted; not clinically validated
+acth-corticotropin,brands,"[""Acthar"", ""Acton Prolon"", ""Cortrophin Gel""]","[""Acthar/Acton Prolon/Cortrophin Gel""]","265,266",source-layout-extracted; not clinically validated
+co-trimoxazole-trimethoprim-sulfamethoxazole,record,,CO - Trimoxazole (Trimethoprim - sulfamethoxazole,"266,267,268,269",recovered PDF heading; not clinically validated
+sodium-cromolyn,en,"""Sodium Cromolyn""","""Cromolyn Sodium""","269,270",source-layout-extracted; not clinically validated
+sodium-cromolyn,brands,"[""Intal"", ""Nalcrom"", ""Opticrom"", ""Nesalcrom""]","[""Intal/Nalcrom/Opticrom/Nesalcrom""]","269,270",source-layout-extracted; not clinically validated
+cromolyn-sodium-oph,en,"""Cromolyn sodium oph""","""Cromolyn sodium (oph)""","270,271",source-layout-extracted; not clinically validated
+cromolyn-sodium-oph,fa,"""سدیم کرومولین""","""کرومولین سدیم""","270,271",source-layout-extracted; not clinically validated
+sr-cumarin,en,"""SR Cumarin""","""Cumarin SR""","271,272",source-layout-extracted; not clinically validated
+cyanocobalamin-vitamin-b12,record,,Cyanocobalamin (vitamin B12),272,recovered PDF heading; not clinically validated
+hydrochloride-cyclopentolate,en,"""Hydrochloride Cyclopentolate""","""Cyclopentolate Hydrochloride""","272,273",source-layout-extracted; not clinically validated
+hydrochloride-cyclopentolate,fa,"""سیکلوپنتو̄ت هیدروکلراید""","""مراجعه شود به سیکلوپنتولات هیدروکلراید""","272,273",source-layout-extracted; not clinically validated
+hydrochloride-cyclopentolate,brands,"[""Pentolair"", ""cyclogyl""]","[""cyclogyl/ Pentolair""]","272,273",source-layout-extracted; not clinically validated
+cyclophosphamide,brands,"[""cytoxan"", ""Neosar"", ""Endoxan""]","[""cytoxan/ Neosar/Endoxan""]","273,274",source-layout-extracted; not clinically validated
+cycloserine,brands,"[""Closine"", ""Seromycin""]","[""Seromycin/Closine""]","275,276",source-layout-extracted; not clinically validated
+cyclosporine,brands,"[""Neoral"", ""Sandimmue"", ""Gengraf""]","[""Neoral/Sandimmue/Gengraf""]","276,277,278",source-layout-extracted; not clinically validated
+hydrochloride-ciproheptadine,en,"""Hydrochloride Ciproheptadine""","""Ciproheptadine Hydrochloride""","278,279",source-layout-extracted; not clinically validated
+acetate-cyproterone,en,"""Acetate Cyproterone""","""Cyproterone Acetate""","279,280",source-layout-extracted; not clinically validated
+acetate-cyproterone,brands,"[""Cyprostate"", ""Androcur""]","[""Androcur/Cyprostate""]","279,280",source-layout-extracted; not clinically validated
+compound-cyproterone,en,"""Compound Cyproterone""","""Cyproterone Compound""",280,source-layout-extracted; not clinically validated
+cysteamin-bitartrate-phosphocysteamine,record,,Cysteamin Bitartrate (Phosphocysteamine,"280,281",recovered PDF heading; not clinically validated
+cytarabine,brands,"[""Cytosar -u"", ""Alexa""]","[""Cytosar -u/Alexa""]","281,282,283",source-layout-extracted; not clinically validated
+dacrbazine-dtic,en,"""Dacrbazine DTIC""","""Dacrbazine (DTIC)""","283,284,285",source-layout-extracted; not clinically validated
+dacrbazine-dtic,brands,"[""DTIC -Dome"", ""Imidazole Carbonamid""]","[""DTIC -Dome/Imidazole Carbonamid""]","283,284,285",source-layout-extracted; not clinically validated
+d-actinomycin-dactinomycin,en,"""D- Actinomycin Dactinomycin""","""Dactinomycin (Actinomycin -D)""","286,287,288",source-layout-extracted; not clinically validated
+d-actinomycin-dactinomycin,brands,"[""Lyorac"", ""Cosmagen""]","[""Cosmagen/ Lyorac""]","286,287,288",source-layout-extracted; not clinically validated
+sodium-dalteparin,en,"""sodium Dalteparin""","""Dalteparin sodium""","288,289,290",source-layout-extracted; not clinically validated
+danazol,brands,"[""Danocrine"", ""Cyclomen""]","[""Cyclomen , Danocrine""]","290,291,292",source-layout-extracted; not clinically validated
+sodium-dantrolene,en,"""Sodium Dantrolene""","""Dantrolene Sodium""","292,293,294",source-layout-extracted; not clinically validated
+dapsone-dds,en,"""Dapsone DDS""","""Dapsone (DDS)""","294,295,296,297",source-layout-extracted; not clinically validated
+daunorubicin-hcl,brands,"[""DNR"", ""Cerubidine""]","[""Cerubidine/DNR""]","297,298,299",source-layout-extracted; not clinically validated
+hcl-dehydroemetine,en,"""HCL Dehydroemetine""","""Dehydroemetine HCL""",302,source-layout-extracted; not clinically validated
+hydrochloride-desipramine,en,"""Hydrochloride Desipramine""","""Desipramine Hydrochloride""","302,303,304",source-layout-extracted; not clinically validated
+hydrochloride-desipramine,brands,"[""Pertofrance-Norpramin""]","[""Norpramin-Pertofrance""]","302,303,304",source-layout-extracted; not clinically validated
+desmopressin-acetate,brands,"[""Stimate"", ""DDAVP""]","[""DDAVP, Stimate""]","304,305,306",source-layout-extracted; not clinically validated
+dexamethasone,brands,"[""Dalalone- Decadrol- Decadron- Decaject- Dexameth- Deronil- Dexacen- Dexasone- Dexon￾Dexone- Hexadrol- Solurex""]","[""Dexone- Hexadrol- Solurex""]","307,308,309,310",source-layout-extracted; not clinically validated
+phosphate-sodium-dexamethasone,en,"""phosphate sodium Dexamethasone""","""Dexamethasone sodium phosphate""",310,source-layout-extracted; not clinically validated
+phosphate-sodium-dexamethasone,brands,"[""Respihaler-Decadron""]","[""Decadron-Respihaler""]",310,source-layout-extracted; not clinically validated
+sulfate-dexamphetamine,en,"""sulfate Dexamphetamine""","""Dexamphetamine sulfate""","310,311,312",source-layout-extracted; not clinically validated
+maleate-dexehlorpheniramine,en,"""Maleate Dexehlorpheniramine""","""Dexehlorpheniramine Maleate""","312,313",source-layout-extracted; not clinically validated
+dexpanthenol-pantothenic-acid,en,"""Dexpanthenol Pantothenic Acid""","""Dexpanthenol (Pantothenic Acid""","313,314",source-layout-extracted; not clinically validated
+dexpanthenol-pantothenic-acid,fa,"""پانتنول دکس""","""دکس پانتنول""","313,314",source-layout-extracted; not clinically validated
+dextran-40,record,,Dextran 40,"314,315,316",recovered PDF heading; not clinically validated
+p-dextromethorphan,en,"""P-Dextromethorphan""","""Dextromethorphan-P""",318,source-layout-extracted; not clinically validated
+p-dextromethorphan,fa,"""دکسترومتورفان- پی""","""دکسترومتورفان -پی""",318,source-layout-extracted; not clinically validated
+dextrose-d-gluose,en,"""Dextrose D-Gluose""","""Dextrose (D-Gluose)""","318,319",source-layout-extracted; not clinically validated
+dextrose-d-gluose,brands,"[""D2"", ""5W- D5W-D10W-D20W-D30W-D38"", ""5W-D40W-D50W-D60W-D70W""]","[""D2/5W- D5W-D10W-D20W-D30W-D38/5W-D40W-D50W-D60W-D70W""]","318,319",source-layout-extracted; not clinically validated
+dextrose-alcohol,record,,Dextrose  Alcohol,"319,320",recovered PDF heading; not clinically validated
+diazpam,brands,"[""Apo-Diazpam"", ""Diazemuls"", ""E-Pam"", ""Meval"", ""Novodipam"", ""Valiam"", ""Vivol""]","[""Apo-Diazpam , Diazemuls, E-Pam, Meval, Novodipam, Valiam, Vivol""]","320,321,322",source-layout-extracted; not clinically validated
+diazoxide,brands,"[""Hyperstat I.V"", ""proglycem""]","[""Hyperstat I.V , proglycem""]","322,323,324,325",source-layout-extracted; not clinically validated
+sodium-diclofenac,en,"""Sodium Diclofenac""","""Diclofenac Sodium""","325,326,327",source-layout-extracted; not clinically validated
+dicyclomine-hydrochloride,record,,Dicyclomine Hydrochloride,"327,328",recovered PDF heading; not clinically validated
+didanosine,brands,"[""Videxec"", ""Videx""]","[""Videx/Videxec""]","328,329",source-layout-extracted; not clinically validated
+dienestrol,brands,"[""dV"", ""Estraguard"", ""Ortho Dienestrol""]","[""dV, Estraguard, Ortho Dienestrol""]","329,330",source-layout-extracted; not clinically validated
+citrate-diethylcarbamazine,en,"""Citrate Diethylcarbamazine""","""Diethylcarbamazine Citrate""","330,331",source-layout-extracted; not clinically validated
+citrate-diethylcarbamazine,brands,"[""Hetvazan"", ""Banocide""]","[""Banocide , Hetvazan""]","330,331",source-layout-extracted; not clinically validated
+diethylstilbestrol,brands,"[""DES"", ""Stilphostvol""]","[""Stilphostvol/ DES""]","331,332",source-layout-extracted; not clinically validated
+digoxin,brands,"[""Lanoxin"", ""Digitek""]","[""Digitek/ Lanoxin""]","332,333,334,335",source-layout-extracted; not clinically validated
+digoxin-immune-fab,fa,"""ایمنوفاب دیگوکسین""","""دیگوکسین ایمنوفاب""","335,336",source-layout-extracted; not clinically validated
+mesylate-dihydroergotamine,en,"""Mesylate Dihydroergotamine""","""Dihydroergotamine Mesylate""","336,337",source-layout-extracted; not clinically validated
+dihydrotachysterol-vitamin-d,record,,Dihydrotachysterol (vitamin  D,337,recovered PDF heading; not clinically validated
+diloxanide-furoate,fa,"""دلوکسانید""","""به مراجعه شود. دلوکسانید""",337,source-layout-extracted; not clinically validated
+hydrochloride-diltiazem,en,"""Hydrochloride Diltiazem""","""Diltiazem Hydrochloride""","338,339",source-layout-extracted; not clinically validated
+hydrinate-dimen,en,"""Hydrinate Dimen""","""Dimen Hydrinate""","339,340,341",source-layout-extracted; not clinically validated
+activated-dimethicone,en,"""Activated Dimethicone""","""Dimethicone (Activated)""",342,source-layout-extracted; not clinically validated
+sulfoxide-dimethyl,en,"""Sulfoxide Dimethyl""","""Dimethyl Sulfoxide""",343,source-layout-extracted; not clinically validated
+sulfoxide-dimethyl,brands,"[""-50Rimso""]","[""Rimso-50""]",343,source-layout-extracted; not clinically validated
+compound-diphenhydramin,en,"""Compound Diphenhydramin""","""Diphenhydramin Compound""",343,source-layout-extracted; not clinically validated
+hydrochlorid-diphenhydramine,en,"""Hydrochlorid Diphenhydramine""","""Diphenhydramine Hydrochlorid""","343,344,345",source-layout-extracted; not clinically validated
+hydrochlorid-diphenhydramine,brands,"[""Benadryl"", ""Banophen""]","[""Banophen/ Benadryl""]","343,344,345",source-layout-extracted; not clinically validated
+r-diphenoxylate,en,"""Rت Diphenoxylate""","""Diphenoxylate""","345,346,347",source-layout-extracted; not clinically validated
+r-diphenoxylate,fa,"""دیفنوکسی""","""دیفنوکسیلات""","345,346,347",source-layout-extracted; not clinically validated
+r-diphenoxylate,brands,"[""Legen"", ""Lomanate"", ""Lomotil"", ""Lono X""]","[""Legen/ Lomanate/ Lomotil/ Lono X""]","345,346,347",source-layout-extracted; not clinically validated
+equine-antitoxin-diphteria,en,"""Equine Antitoxin Diphteria""","""Diphteria Antitoxin Equine""","347,348",source-layout-extracted; not clinically validated
+diphtheria-toxoid-tetanus-toxoid-pertussis-vaccine-adsorbed-dtp,record,,Diphtheria Toxoid + Tetanus Toxoid + Pertussis Vaccine Adsorbed (DTP),348,recovered PDF heading; not clinically validated
+diophteria-and-tetanus-toxoids-adsorbed,en,"""Diophteria and tetanus toxoids Adsorbed""","""Diophteria and tetanus toxoids , Adsorbed""","348,349,350",source-layout-extracted; not clinically validated
+diophteria-and-tetanus-toxoids-adsorbed,fa,"""توکسوئید تتانوس و دیفتریا""","""دیفتریا و تتانوس توکسوئید""","348,349,350",source-layout-extracted; not clinically validated
+phosphate-disopyramide,en,"""phosphate Disopyramide""","""Disopyramide phosphate""","351,352",source-layout-extracted; not clinically validated
+phosphate-disopyramide,brands,"[""Rythmodan"", ""Norpace""]","[""Norpace, Rythmodan""]","351,352",source-layout-extracted; not clinically validated
+dithranol,brands,"[""Lasan"", ""Micanol"", ""Anthraforte""]","[""Lasan/Micanol/ Anthraforte""]",353,source-layout-extracted; not clinically validated
+docusate-sodium-and-sorbitol,fa,"""سدیم دوکوزات""","""دوکوزات سدیم""","353,354",source-layout-extracted; not clinically validated
+docusate-sodium-and-sorbitol,brands,"[""Diocto"", ""cloace""]","[""cloace , Diocto""]","353,354",source-layout-extracted; not clinically validated
+hydrochloride-donepezil,en,"""Hydrochloride Donepezil""","""Donepezil Hydrochloride""","354,355",source-layout-extracted; not clinically validated
+hydrochloride-dobutamine,en,"""Hydrochloride Dobutamine""","""Dobutamine Hydrochloride""","355,356,357",source-layout-extracted; not clinically validated
+hydrochloride-dopamine,en,"""Hydrochloride Dopamine""","""Dopamine Hydrochloride""","358,359,360",source-layout-extracted; not clinically validated
+hydrochloride-dopamine,brands,"[""Dopastat"", ""Intvopin""]","[""Intvopin/ Dopastat""]","358,359,360",source-layout-extracted; not clinically validated
+hydrochloride-dorzolamide,en,"""Hydrochloride Dorzolamide""","""Dorzolamide Hydrochloride""","360,361",source-layout-extracted; not clinically validated
+hydrochloride-dorzolamide,fa,"""دورزو̄مید""","""دورزولامید""","360,361",source-layout-extracted; not clinically validated
+hydrochloride-doxepin,en,"""Hydrochloride Doxepin""","""Doxepin Hydrochloride""","363,364,365",source-layout-extracted; not clinically validated
+hydrochloride-doxepin,brands,"[""Adapin"", ""sinequan"", ""Triadapin"", ""Zonalon""]","[""Adapin, sinequan, Triadapin , Zonalon""]","363,364,365",source-layout-extracted; not clinically validated
+doxorubicin-hcl,brands,"[""Adriamycin"", ""Rabex"", ""ADR""]","[""Adriamycin, Rabex, ADR""]","365,366,367",source-layout-extracted; not clinically validated
+doxycycline,brands,"[""Doryx"", ""Doxy"", ""Ak-Ramycin"", ""Ak-Ratabs"", ""Doxy-Demmon"", ""Sk-Doxycyline"", ""Vibiamycin"", ""Vibra￾Tabs"", ""Vivox""]","[""Tabs/Vivox""]","367,368,369",source-layout-extracted; not clinically validated
+compound-droperidol,en,"""Compound Droperidol""","""Droperidol Compound""",371,source-layout-extracted; not clinically validated
+drotrecoyin-alfa-activated,en,"""Drotrecoyin alfa Activated""","""Drotrecoyin alfa (Activated)""","371,372",source-layout-extracted; not clinically validated
+drotrecoyin-alfa-activated,fa,"""آلفا دروتریکوگین""","""دروتریکوگین آلفا""","371,372",source-layout-extracted; not clinically validated
+iodide-echothiophate,en,"""Iodide Echothiophate""","""Echothiophate Iodide""","373,374",source-layout-extracted; not clinically validated
+iodide-echothiophate,brands,"[""odide"", ""Phospholine""]","[""Phospholine/odide""]","373,374",source-layout-extracted; not clinically validated
+edetate-calcium-disodium-calcium-edta,en,"""Edetate Calcium Disodium Calcium Edta""","""Edetate Calcium Disodium (Calcium Edta)""","374,375",source-layout-extracted; not clinically validated
+edetate-calcium-disodium-calcium-edta,fa,"""سدیم کلسیمدی ادتات""","""ادتات کلسیم دی سدیم""","374,375",source-layout-extracted; not clinically validated
+dicobalt-edetate,en,"""Dicobalt Edetate""","""Edetate Dicobalt""","375,376",source-layout-extracted; not clinically validated
+dicobalt-edetate,fa,"""ادتاتدی کوبالت""","""ادتات دی کوبالت""","375,376",source-layout-extracted; not clinically validated
+edetate-disodium-edta,en,"""Edetate Disodium EDTA""","""Edetate Disodium (EDTA)""","376,377",source-layout-extracted; not clinically validated
+edetate-disodium-edta,fa,"""سدیم ادتاتدی""","""ادتات دی سدیم""","376,377",source-layout-extracted; not clinically validated
+ophthalmic-sodium-edetate,en,"""Ophthalmic Sodium Edetate""","""Edetate Sodium (Ophthalmic)""","377,378",source-layout-extracted; not clinically validated
+chloride-edrophonium,en,"""Chloride Edrophonium""","""Edrophonium Chloride""","378,379",source-layout-extracted; not clinically validated
+chloride-edrophonium,brands,"[""Enlon"", ""Reversol"", ""Tensilon""]","[""Enlon , Reversol , Tensilon""]","378,379",source-layout-extracted; not clinically validated
+hcl-emetine,en,"""HCL Emetine""","""Emetine HCL""","379,380",source-layout-extracted; not clinically validated
+maleate-enalapril,en,"""Maleate Enalapril""","""Enalapril Maleate""","380,381,382",source-layout-extracted; not clinically validated
+maleate-enalapril,fa,"""انا̄پریل مالئات""","""انالاپریل مالئات""","380,381,382",source-layout-extracted; not clinically validated
+enflurane,brands,"[""Etrane"", ""Ethrane""]","[""Ethrane/Etrane""]","382,383",source-layout-extracted; not clinically validated
+sulfate-or-hcl-ephedrine,en,"""Sulfate or HCL Ephedrine""","""Ephedrine (HCL or Sulfate)""","385,386",source-layout-extracted; not clinically validated
+sulfate-or-hcl-ephedrine,brands,"[""Pretz-D"", ""Vatronol"", ""Ectasule Minus"", ""Efedvon""]","[""Pretz-D/ Vatronol/ Ectasule Minus/ Efedvon""]","385,386",source-layout-extracted; not clinically validated
+epinephrine,brands,"[""Adrenalin"", ""Epifrin"", ""Epitrate""]","[""Adrenalin/Epifrin/Epitrate""]","386,387,388",source-layout-extracted; not clinically validated
+hydrochloride-epirubicin,en,"""Hydrochloride Epirubicin""","""Epirubicin Hydrochloride""","388,389,390",source-layout-extracted; not clinically validated
+erythropoietin-alfa-epoetin,en,"""Erythropoietin Alfa Epoetin""","""Epoetin Alfa (Erythropoietin)""","390,391,392",source-layout-extracted; not clinically validated
+ergotamin-c-c,en,"""Ergotamin-C C -""","""Ergotamin-C""","392,393",source-layout-extracted; not clinically validated
+ergotamin-c-c,brands,"[""Ergo"", ""Ercat""]","[""Ercat/Ergo""]","392,393",source-layout-extracted; not clinically validated
+tartrate-ergotamine,en,"""Tartrate Ergotamine""","""Ergotamine Tartrate""","393,394",source-layout-extracted; not clinically validated
+tartrate-ergotamine,brands,"[""Cafergot"", ""Ergomar"", ""Ergastat"", ""Migergot"", ""Wigraine""]","[""Cafergot, Ergomar, Ergastat , Migergot, Wigraine""]","393,394",source-layout-extracted; not clinically validated
+erythromycin,brands,"[""E.E.S"", ""Eryped""]","[""E.E.S , Eryped""]","394,395,396",source-layout-extracted; not clinically validated
+ophtalmic-erythromycin,en,"""ophtalmic Erythromycin""","""Erythromycin (ophtalmic)""",396,source-layout-extracted; not clinically validated
+topical-erythromycin,en,"""Topical Erythromycin""","""Erythromycin (Topical)""","396,397",source-layout-extracted; not clinically validated
+topical-erythromycin,brands,"[""Erycette"", ""Eoymax"", ""Akne-Mycin""]","[""Erycette/Eoymax/Akne-Mycin""]","396,397",source-layout-extracted; not clinically validated
+erythropietin-epoetin-alfa,en,"""Erythropietin Epoetin Alfa""","""Erythropietin (Epoetin Alfa)""","397,398",source-layout-extracted; not clinically validated
+erythropietin-epoetin-alfa,brands,"[""Epogen"", ""procrit"", ""Eprex""]","[""Epogen/procrit/Eprex""]","397,398",source-layout-extracted; not clinically validated
+hydrochloride-esmolol,en,"""Hydrochloride Esmolol""","""Esmolol Hydrochloride""","398,399,400",source-layout-extracted; not clinically validated
+sr-estradiol,en,"""SR Estradiol""","""Estradiol SR""",400,source-layout-extracted; not clinically validated
+valerate-estradiol,en,"""Valerate Estradiol""","""Estradiol Valerate""","400,401",source-layout-extracted; not clinically validated
+valerate-estradiol,brands,"[""Dioval"", ""Delestrogen"", ""Estrace""]","[""Dioval/Delestrogen/Estrace""]","400,401",source-layout-extracted; not clinically validated
+topical-estradiol,en,"""Topical Estradiol""","""Estradiol (Topical)""",401,source-layout-extracted; not clinically validated
+lactate-ethacridine,en,"""Lactate Ethacridine""","""Ethacridine Lactate""","402,403",source-layout-extracted; not clinically validated
+lactate-ethacridine,fa,"""اتاکریدین ̄کتات""","""اتاکریدین لاکتات""","402,403",source-layout-extracted; not clinically validated
+lactate-ethacridine,brands,"[""Acrinol"", ""Metifx"", ""Rivanol""]","[""Acrinol/Metifx/Rivanol""]","402,403",source-layout-extracted; not clinically validated
+phosphate-sodium-estramutine,en,"""phosphate Sodium Estramutine""","""Estramutine Sodium phosphate""","403,404",source-layout-extracted; not clinically validated
+phosphate-sodium-estramutine,brands,"[""Emcyt"", ""Estracyt""]","[""Estracyt/ Emcyt""]","403,404",source-layout-extracted; not clinically validated
+acid-ethacrynic,en,"""Acid Ethacrynic""","""Ethacrynic Acid""","404,405",source-layout-extracted; not clinically validated
+hcl-ethambutol,en,"""HCL Ethambutol""","""Ethambutol HCL""","405,406",source-layout-extracted; not clinically validated
+hcl-ethambutol,brands,"[""Myambutol"", ""Etibi""]","[""Etibi/Myambutol""]","405,406",source-layout-extracted; not clinically validated
+estradiol-ethinyl,en,"""Estradiol Ethinyl""","""Ethinyl Estradiol""",407,source-layout-extracted; not clinically validated
+estradiol-ethinyl,brands,"[""Feminone"", ""Esscriptsizel""]","[""Esscriptsizel/Feminone""]",407,source-layout-extracted; not clinically validated
+oil-ethiodized,en,"""Oil Ethiodized""","""Ethiodized Oil""","407,408",source-layout-extracted; not clinically validated
+ethionamide,brands,"[""Sc-Trecator""]","[""Trecator-Sc""]","408,409",source-layout-extracted; not clinically validated
+ethosuximide,brands,"[""Zarontin"", ""petinimid"", ""Emeside""]","[""Zarontin/petinimid/Emeside""]","409,410",source-layout-extracted; not clinically validated
+disodium-etidronate,en,"""Disodium Etidronate""","""Etidronate Disodium""","410,411",source-layout-extracted; not clinically validated
+disodium-etidronate,fa,"""اتیدروناتدی سدیم""","""اتیدرونات دی سدیم""","410,411",source-layout-extracted; not clinically validated
+disodium-etidronate,brands,"[""Etidron"", ""Didronel""]","[""Didronel/ Etidron""]","410,411",source-layout-extracted; not clinically validated
+etoposide,brands,"[""Vepesid"", ""Toposar"", ""Etopophos""]","[""Vepesid/ Toposar/ Etopophos""]","412,413",source-layout-extracted; not clinically validated
+etretinate,brands,"[""Tigason"", ""Tegison""]","[""Tegison/ Tigason""]","414,415",source-layout-extracted; not clinically validated
+factor-vii-vii,en,"""Factor VII VII""","""Factor VII""","417,418",source-layout-extracted; not clinically validated
+factor-viii-antihemophylic-factor-viii,en,"""Factor VIII Antihemophylic Factor VIII""","""Factor VIII (Antihemophylic Factor)""",418,source-layout-extracted; not clinically validated
+factor-ix-complex-ix,en,"""Factor IX Complex IX""","""Factor IX Complex""","418,419",source-layout-extracted; not clinically validated
+factor-ix-complex-ix,fa,"""کمپلکس فاکتور""","""فاکتور کمپلکس""","418,419",source-layout-extracted; not clinically validated
+factor-ix-complex-ix,brands,"[""Amiafix"", ""Konyne-HT"", ""Profilnine Heat"", ""treated"", ""proplext"", ""proplex-sx-T""]","[""Amiafix/Konyne-HT/Profilnine Heat/treated/proplext/proplex-sx-T""]","418,419",source-layout-extracted; not clinically validated
+feiba-activated-prothrombin-compleaconcentrated,record,,Feiba(Activated Prothrombin Compleaconcentrated),421,recovered PDF heading; not clinically validated
+fenofibrate,brands,"[""Antara"", ""Lofibra"", ""Tricor"", ""Triglide""]","[""Antara/Lofibra/Tricor/Triglide""]","421,422,423",source-layout-extracted; not clinically validated
+fentanyle-as-citrate,en,"""Fentanyle as Citrate""","""Fentanyle (as Citrate)""","423,424",source-layout-extracted; not clinically validated
+fentanyle-as-citrate,brands,"[""sublimase"", ""Durogesic""]","[""Durogesic/sublimase""]","423,424",source-layout-extracted; not clinically validated
+ferric-oxide-saccharated,fa,"""اکساید فریک""","""فریک اکساید""","424,425",source-layout-extracted; not clinically validated
+ferric-oxide-saccharated,brands,"[""Ferrivenin"", ""Ferrovon"", ""Ferrum-Hausmann"", ""Unifer. Venofer""]","[""Ferrivenin/ Ferrovon/ Ferrum-Hausmann/ Unifer. Venofer""]","424,425",source-layout-extracted; not clinically validated
+ferrous-glycine-sulfate,fa,"""گلیسین فروس""","""فروس گلیسین""","425,426",source-layout-extracted; not clinically validated
+ferrous-glycine-sulfate,brands,"[""Apo Ferrous Sulfate"", ""Feosol-Fer-in-sol"", ""Fer-iron"", ""Fero-Grad"", ""Fero Gradumet"", ""Ferralyn"", ""Fer￾riron"", ""Fesolfor Mol- Iron-Novo Ferrou sulfa"", ""PMS Ferrous sulfate"", ""Slow FE""]","[""riron/ Fesolfor Mol- Iron-Novo Ferrou sulfa/ PMS Ferrous sulfate/ Slow FE""]","425,426",source-layout-extracted; not clinically validated
+r-acid-folic-sulfate-glycine-ferrous,en,"""Rیسین - فولیک اسید Acid Folic /Sulfate Glycine -Ferrous""","""Ferrous- Glycine Sulfate/ Folic Acid""",426,source-layout-extracted; not clinically validated
+r-acid-folic-sulfate-glycine-ferrous,fa,"""فروس سولفات گ""","""/ فروس سولفات گلایسین -فولیک اسید""",426,source-layout-extracted; not clinically validated
+hydrochloride-fexofenadine,en,"""Hydrochloride Fexofenadine""","""Fexofenadine Hydrochloride""","426,427,428",source-layout-extracted; not clinically validated
+fibrinogen,brands,"[""Human Fibrinogen""]","[""Fibrinogen Human""]",428,source-layout-extracted; not clinically validated
+fibrinolysin,fa,"""فیبرینو̄یزین""","""فیبرینولایزین""","428,429",source-layout-extracted; not clinically validated
+filgrastim-gcsf,en,"""Filgrastim GCSF""","""Filgrastim (GCSF)""","429,430",source-layout-extracted; not clinically validated
+finasteride,brands,"[""Proscar"", ""Propecia""]","[""Propecia/Proscar""]","431,432",source-layout-extracted; not clinically validated
+phosphate-fludarabine,en,"""phosphate Fludarabine""","""Fludarabine phosphate""","437,438",source-layout-extracted; not clinically validated
+acetat-fludrocortisone,en,"""Acetat Fludrocortisone""","""Fludrocortisone Acetat""","438,439,440",source-layout-extracted; not clinically validated
+flumazenil,brands,"[""Romazicon .Anexate""]","[""Anexate. Romazicon""]","440,441",source-layout-extracted; not clinically validated
+fluocinolone-acetonide,record,,Fluocinolone Acetonide,"441,442",recovered PDF heading; not clinically validated
+sodium-fluorecein,en,"""Sodium Fluorecein""","""Fluorecein Sodium""","442,443",source-layout-extracted; not clinically validated
+sodium-fluorecein,brands,"[""Funduscein"", ""Fluorescite"", ""Ak- Fluor""]","[""Funduscein/ Fluorescite/ Ak- Fluor""]","442,443",source-layout-extracted; not clinically validated
+fluride-as-sodium-salt,en,"""Fluride as sodium salt""","""Fluride (as sodium salt)""","443,444",source-layout-extracted; not clinically validated
+fluride-as-sodium-salt,brands,"[""Fluocal"", ""Zymafluor"", ""Duraphat""]","[""Fluocal/ Zymafluor/ Duraphat""]","443,444",source-layout-extracted; not clinically validated
+fluorometholone,brands,"[""Flucort"", ""Fluor-Opophthalmic"", ""FML forte"", ""Fmlliquifilm ophthalmic"", ""FML S.O.P""]","[""Flucort/ Fluor-Opophthalmic/ FML forte/ Fmlliquifilm ophthalmic/ FML S.O.P""]",444,source-layout-extracted; not clinically validated
+fluorouracil-systemic,en,"""Fluorouracil Systemic""","""Fluorouracil (Systemic)""","445,446",source-layout-extracted; not clinically validated
+topical-fluorouracil,en,"""Topical Fluorouracil""","""Fluorouracil (Topical)""","446,447",source-layout-extracted; not clinically validated
+fluoxetine-az-hcl,en,"""Fluoxetine az HCl""","""Fluoxetine (az HCl)""","447,448,449",source-layout-extracted; not clinically validated
+fluoxetine-az-hcl,brands,"[""Lorazacy Oxetine"", ""Prozac""]","[""Lorazacy Oxetine/ Prozac""]","447,448,449",source-layout-extracted; not clinically validated
+fluphenazine,brands,"[""Modecate- Decanoate"", ""Permitilhydrochloride"", ""Prolixin"", ""Hydrochloride""]","[""Modecate- Decanoate/ Permitilhydrochloride/ Prolixin/ Hydrochloride""]","450,451,452",source-layout-extracted; not clinically validated
+flurazepam-as-hcl,en,"""Flurazepam as HCl""","""Flurazepam (as HCl""","452,453,454",source-layout-extracted; not clinically validated
+flurazepam-as-hcl,brands,"[""Apo-Flurazepam"", ""Dalmane"", ""Durapam"", ""Fluzepam"", ""Noro Flupam"", ""Sam-Pam"", ""Somnol""]","[""Apo-Flurazepam/Dalmane/Durapam/Fluzepam/Noro Flupam/ Sam-Pam/Somnol""]","452,453,454",source-layout-extracted; not clinically validated
+fluticasone-as-propionate,en,"""Fluticasone as propionate""","""Fluticasone (as propionate)""","455,456",source-layout-extracted; not clinically validated
+maleate-fluvoxamine,en,"""Maleate Fluvoxamine""","""Fluvoxamine Maleate""","456,457,458",source-layout-extracted; not clinically validated
+maleate-fluvoxamine,fa,"""فلووکسامین ما̄ت""","""فلووکسامین مالات""","456,457,458",source-layout-extracted; not clinically validated
+maleate-fluvoxamine,brands,"[""Alfa-Fluroxamine"", ""Luvox- Voxam""]","[""Alfa-Fluroxamine/ Luvox- Voxam""]","456,457,458",source-layout-extracted; not clinically validated
+acid-folic,en,"""Acid Folic""","""Folic Acid""","458,459",source-layout-extracted; not clinically validated
+alfa-follitropine,en,"""Alfa Follitropine""","""Follitropine Alfa""","459,460",source-layout-extracted; not clinically validated
+alfa-follitropine,brands,"[""F-Gonal""]","[""Gonal-F""]","459,460",source-layout-extracted; not clinically validated
+beta-follitropn,en,"""Beta Follitropn""","""Follitropn Beta""","460,461,462",source-layout-extracted; not clinically validated
+fumarate-formoterol,en,"""Fumarate Formoterol""","""Formoterol Fumarate""","463,464,465",source-layout-extracted; not clinically validated
+fumarate-formoterol,brands,"[""Oxis -Foradil""]","[""Foradil- Oxis""]","463,464,465",source-layout-extracted; not clinically validated
+fosfestrol-as-tetrasodium-salt,en,"""Fosfestrol as Tetrasodium Salt""","""Fosfestrol (as Tetrasodium Salt)""","465,466",source-layout-extracted; not clinically validated
+fosfestrol-as-tetrasodium-salt,brands,"[""stilphostrol .Honvol""]","[""Honvol. stilphostrol""]","465,466",source-layout-extracted; not clinically validated
+hydrobromide-galantamine,en,"""Hydrobromide Galantamine""","""Galantamine Hydrobromide""","472,473,474",source-layout-extracted; not clinically validated
+hydrobromide-galantamine,fa,"""گا̄نتامین هیدروکلراید""","""گالانتامین هیدروکلراید""","472,473,474",source-layout-extracted; not clinically validated
+gamma-benzene-hydrochloride-lindane,en,"""Gamma Benzene Hydrochloride Lindane""","""Gamma Benzene Hydrochloride (Lindane)""",474,source-layout-extracted; not clinically validated
+modified-gelatin,en,"""Modified Gelatin""","""Gelatin Modified""",476,source-layout-extracted; not clinically validated
+modified-gelatin,fa,"""ژ̄تین مودیفاید""","""ژلاتین مودیفاید""",476,source-layout-extracted; not clinically validated
+hydrochloride-gemcitabine,en,"""Hydrochloride Gemcitabine""","""Gemcitabine Hydrochloride""","478,479",source-layout-extracted; not clinically validated
+sulfate-gentamicin,en,"""Sulfate Gentamicin""","""Gentamicin Sulfate""","479,480,481",source-layout-extracted; not clinically validated
+sulfate-gentamicin,brands,"[""Cidomycin"", ""Garamycin"", ""Genoptic""]","[""Cidomycin/Garamycin/ Genoptic""]","479,480,481",source-layout-extracted; not clinically validated
+caproate-gestonorone,en,"""Caproate Gestonorone""","""Gestonorone Caproate""",481,source-layout-extracted; not clinically validated
+r-glibenclamide,en,"""Rمید Glibenclamide""","""Glibenclamide""","481,482,483",source-layout-extracted; not clinically validated
+r-glibenclamide,fa,"""گلی بن ک""","""گلی بن کلامید""","481,482,483",source-layout-extracted; not clinically validated
+r-glibenclamide,brands,"[""Daonil"", ""Diabeta"", ""Euglucon""]","[""Daonil/ Diabeta/ Euglucon""]","481,482,483",source-layout-extracted; not clinically validated
+r-gliclazide,en,"""Rزید Gliclazide""","""Gliclazide""","483,484",source-layout-extracted; not clinically validated
+r-gliclazide,fa,"""گلیک""","""گلیکلازید""","483,484",source-layout-extracted; not clinically validated
+glycerol-glycerine,en,"""Glycerol Glycerine""","""Glycerine (Glycerol)""","485,486",source-layout-extracted; not clinically validated
+glycerol-glycerine,brands,"[""Fleet Babylax"", ""Glycerol"", ""Glyrol""]","[""Fleet Babylax/ Glycerol/ Glyrol""]","485,486",source-layout-extracted; not clinically validated
+thiomalate-sodium-gold,en,"""Thiomalate sodium Gold""","""Gold sodium Thiomalate""","486,487",source-layout-extracted; not clinically validated
+thiomalate-sodium-gold,fa,"""گلد سدیم تیوما̄ت""","""گلد سدیم تیومالات""","486,487",source-layout-extracted; not clinically validated
+gonadorelin,brands,"[""Factrel"", ""Lutrepulse""]","[""Lutrepulse/ Factrel""]","487,488",source-layout-extracted; not clinically validated
+hydrochloride-granisetron,en,"""Hydrochloride Granisetron""","""Granisetron Hydrochloride""","488,489",source-layout-extracted; not clinically validated
+griseofulvin,brands,"[""V Grifulvin""]","[""Grifulvin V""]","489,490,491",source-layout-extracted; not clinically validated
+haloperidol,brands,"[""Peridol"", ""Haldol""]","[""Haldol/Peridol""]","493,494,495",source-layout-extracted; not clinically validated
+hemodialysis-concentrate-solution,fa,"""کنسانتره همودیالیز""","""همودیالیز کنسانتره""",497,source-layout-extracted; not clinically validated
+heporin-sodium,record,,Heporin Sodium,"497,498,499,500",recovered PDF heading; not clinically validated
+hepatitis-b-immune-globulin,fa,"""ایمنوگلوبولین هپاتیت""","""هپاتیت ایمنوگلوبولین""","500,501",source-layout-extracted; not clinically validated
+hepatitis-b-immune-globulin,brands,"[""Bay Help B"", ""Nabi-HB""]","[""Bay Help B/Nabi-HB""]","500,501",source-layout-extracted; not clinically validated
+hepatitis-b-vaccine,fa,"""واکسن هپاتیت""","""هپاتیت واکسن""","501,502",source-layout-extracted; not clinically validated
+hepatitis-b-vaccine,brands,"[""Engerix-B"", ""Recombivax HB""]","[""Engerix-B/Recombivax HB""]","501,502",source-layout-extracted; not clinically validated
+r-hexamethylmelamine,en,"""Rمین Hexamethylmelamine""","""Hexamethylmelamine""","502,503",source-layout-extracted; not clinically validated
+r-hexamethylmelamine,fa,"""هگزامتیل م""","""هگزامتیل ملامین""","502,503",source-layout-extracted; not clinically validated
+homatropine-hbr,brands,"[""AK-Homatropine"", ""Homatrine"", ""Homatrocel"", ""IsoptoHomatropine""]","[""AK-Homatropine/Homatrine/Homatrocel/IsoptoHomatropine""]","503,504",source-layout-extracted; not clinically validated
+hcl-hydralazine,en,"""Hcl Hydralazine""","""Hydralazine Hcl""","504,505,506",source-layout-extracted; not clinically validated
+hcl-hydralazine,fa,"""هیدرا̄زین""","""هیدرالازین""","504,505,506",source-layout-extracted; not clinically validated
+hcl-hydralazine,brands,"[""Alazine"", ""Apresoline"", ""Dralzine""]","[""Alazine/Apresoline/Dralzine""]","504,505,506",source-layout-extracted; not clinically validated
+hydrochlorothiazide,record,,Hydrochlorothiazide,"506,507,508",recovered PDF heading; not clinically validated
+hydrocortisone-systemin,record,,Hydrocortisone (systemin),"508,509,510,511,512",recovered PDF heading; not clinically validated
+topical-acetate-hydrocortisone,en,"""Topical Acetate Hydrocortisone""","""Hydrocortisone Acetate(Topical)""","512,513",source-layout-extracted; not clinically validated
+topical-acetate-hydrocortisone,brands,"[""Anusol-Hc"", ""Calde"", ""Crot"", ""Cortaid""]","[""Anusol-Hc/Calde/Crot/Cortaid""]","512,513",source-layout-extracted; not clinically validated
+ophthalmic-acetate-hydrocoartisone,en,"""Ophthalmic Acetate Hydrocoartisone""","""Hydrocoartisone Acetate(Ophthalmic)""",513,source-layout-extracted; not clinically validated
+ophthalmic-acetate-hydrocoartisone,brands,"[""Hydrocortistab"", ""Biasone""]","[""Biasone/Hydrocortistab""]",513,source-layout-extracted; not clinically validated
+hydrogen-peroaide-saline-solution,fa,"""پروکساید هیدروژن""","""هیدروژن پروکساید""","513,514",source-layout-extracted; not clinically validated
+hydroquinone,record,,Hydroquinone,"514,515",recovered PDF heading; not clinically validated
+sulfate-hydroxyehloroauine,en,"""sulfate Hydroxyehloroauine""","""Hydroxyehloroauine sulfate""","515,516,517",source-layout-extracted; not clinically validated
+hydroxyzine-hcl,record,,Hydroxyzine Hcl,"518,519,520,521",recovered PDF heading; not clinically validated
+ibuprofen,record,,Ibuprofen,"523,524,525",recovered PDF heading; not clinically validated
+ichthyol-ichthammol,en,"""Ichthyol Ichthammol""","""Ichthyol ( Ichthammol)""",525,source-layout-extracted; not clinically validated
+ophthalmic-idoxurine,en,"""Ophthalmic Idoxurine""","""Idoxurine(Ophthalmic)""","527,528",source-layout-extracted; not clinically validated
+ophthalmic-idoxurine,brands,"[""Stoxil"", ""Dendricl"", ""Heplex"", ""Herplex Liquifilm""]","[""Stoxil/Dendricl/Heplex/Herplex Liquifilm""]","527,528",source-layout-extracted; not clinically validated
+r-sodium-cilastatin-imipenem,en,"""Rستاتین سدیم Sodium Cilastatin-Imipenem""","""Imipenem-Cilastatin Sodium""","531,532,533",source-layout-extracted; not clinically validated
+r-sodium-cilastatin-imipenem,fa,"""ایمی پنم - سی""","""ایمی پنم -سیلاستاتین سدیم""","531,532,533",source-layout-extracted; not clinically validated
+hetastarch-hes-hydroxyethyl-starch,en,"""Hetastarch Hes Hydroxyethyl Starch""","""Hetastarch(Hes , Hydroxyethyl Starch)""","533,534",source-layout-extracted; not clinically validated
+hcl-imipramine,en,"""Hcl Imipramine""","""Imipramine Hcl""","534,535,536,537",source-layout-extracted; not clinically validated
+hcl-imipramine,brands,"[""Impril"", ""Ianimine"", ""Nodopramine"", ""Pramine"", ""Ipramine""]","[""Impril /Ianimine /Nodopramine /Pramine /Ipramine""]","534,535,536,537",source-layout-extracted; not clinically validated
+immunoglobulin-intravenous-iglv,en,"""Immunoglobulin Intravenous IGLV""","""Immunoglobulin Intravenous (IGLV)""","538,539",source-layout-extracted; not clinically validated
+immunoglobulin-intravenous-iglv,brands,"[""Ganumex"", ""Carimune""]","[""Carimune/Ganumex""]","538,539",source-layout-extracted; not clinically validated
+indomethacin,brands,"[""Indameth"", ""Indocid"", ""Indocin"", ""Indocin SR"", ""Indo-Lemmon""]","[""Indameth/Indocid/Indocin/Indocin SR/Indo-Lemmon""]","539,540,541",source-layout-extracted; not clinically validated
+vaccine-virus-influenza,en,"""Vaccine Virus Influenza""","""Influenza Virus Vaccine""","542,543",source-layout-extracted; not clinically validated
+vaccine-virus-influenza,fa,"""آنفو̄نزا ویروس واکسن""","""آنفولانزا ویروس واکسن""","542,543",source-layout-extracted; not clinically validated
+repellent-insect,en,"""Repellent Insect""","""Insect Repellent""",543,source-layout-extracted; not clinically validated
+insulin-biphasic-isophane,brands,"[""Iumulin 70"", ""Mix-Iard"", ""Nooolin 70""]","[""Iumulin 70/30 /Mix-Iard/Nooolin 70/30""]",544,source-layout-extracted; not clinically validated
+insulin-injection-human-reyular-insulin,en,"""Insulin Injection Human Reyular Insulin""","""Insulin Injection ( Human Reyular Insulin )""","544,545,546,547,548",source-layout-extracted; not clinically validated
+insulin-injection-human-reyular-insulin,fa,"""اینجکشن انسولین""","""انسولین اینجکشن""","544,545,546,547,548",source-layout-extracted; not clinically validated
+insulin-injection-human-reyular-insulin,brands,"[""Humulin"", ""Nooolin R"", ""Regular Insulin"", ""Regular Purified Pork Insuline"", ""Velasukin"", ""Velo￾sulin Human""]","[""sulin Human""]","544,545,546,547,548",source-layout-extracted; not clinically validated
+nph-isephane-insulin,en,"""NPH Isephane Insulin""","""Insulin Isephane(NPH)""","548,549",source-layout-extracted; not clinically validated
+nph-isephane-insulin,brands,"[""Humulin N"", ""Insulatird"", ""Nooolin N"", ""NPH""]","[""Humulin N/Insulatird/Nooolin N/NPH""]","548,549",source-layout-extracted; not clinically validated
+interferon-alfa-2b-recombinant,record,,"Interferon Alfa-2b , Recombinant","549,550",recovered PDF heading; not clinically validated
+intraperitoneal-dialysis-solution,fa,"""سولوشن اینتراپرتئونالدیالیز""","""اینتراپرتئونال دیالیز سولوشن""","550,551",source-layout-extracted; not clinically validated
+clioquinol-iodochlorhydroxyquin,en,"""clioquinol Iodochlorhydroxyquin""","""Iodochlorhydroxyquin( clioquinol)""","551,552",source-layout-extracted; not clinically validated
+clioquinol-iodochlorhydroxyquin,brands,"[""Vioform"", ""Iorofer""]","[""Iorofer /Vioform""]","551,552",source-layout-extracted; not clinically validated
+iodoquinol-diiodohydroxyquindine,en,"""Iodoquinol Diiodohydroxyquindine""","""Iodoquinol (Diiodohydroxyquindine)""","552,553",source-layout-extracted; not clinically validated
+iodoquinol-diiodohydroxyquindine,brands,"[""Diodoquin"", ""Moebiquin"", ""Seboquin"", ""Yodoxin""]","[""Diodoquin/Moebiquin/Seboquin/Yodoxin""]","552,553",source-layout-extracted; not clinically validated
+bromide-ipratropium,en,"""Bromide Ipratropium""","""Ipratropium Bromide""","555,556",source-layout-extracted; not clinically validated
+s-ipratropium,en,"""s-Ipratropium""","""Ipratropium-s""",556,source-layout-extracted; not clinically validated
+s-ipratropium,fa,"""ایپراتروپیوم - اس""","""ایپراتروپیوم -اس""",556,source-layout-extracted; not clinically validated
+iron-dextran-complex,fa,"""کمپلکس ایروندکستران""","""ایرون دکستران کمپلکس""","557,558,559,560",source-layout-extracted; not clinically validated
+iron-dextran-complex,brands,"[""Feostat"", ""Feronium"", ""Imferon""]","[""Feostat, Feronium, Imferon""]","557,558,559,560",source-layout-extracted; not clinically validated
+isoniazid,brands,"[""INH"", ""Isotamine"", ""Laniazid"", ""Nydrozid"", ""TMS"", ""Isoniazid"", ""Rimifon"", ""Ieebacon in""]","[""INH, Isotamine, Laniazid, Nydrozid, TMS, Isoniazid , Rimifon , Ieebacon in""]","562,563",source-layout-extracted; not clinically validated
+dinitrate-isosorbide,en,"""Dinitrate Isosorbide""","""Isosorbide Dinitrate""","566,567,568",source-layout-extracted; not clinically validated
+dinitrate-isosorbide,fa,"""ایزوسوربایددی نیترات""","""ایزوسورباید دی نیترات""","566,567,568",source-layout-extracted; not clinically validated
+dinitrate-isosorbide,brands,"[""Coronex"", ""Dilavrate-SR"", ""Iso-Bid"", ""Isonate"", ""Isordil"", ""Isotrate"", ""N... Sorbide"", ""Onset"", ""sorate"", ""Sor￾bitrate"", ""sorbitrates""]","[""bitrate, sorbitrates""]","566,567,568",source-layout-extracted; not clinically validated
+isoxsuprine-hcl,brands,"[""Uoxsuprine"", ""Uasolidan""]","[""Uasolidan , Uoxsuprine""]","568,569,571",source-layout-extracted; not clinically validated
+kanamycin-as-sulfate-or-acid-sulfate,en,"""Kanamycin As sulfate or Acid Sulfate""","""Kanamycin (As sulfate or Acid Sulfate)""","571,572,573",source-layout-extracted; not clinically validated
+kanamycin-as-sulfate-or-acid-sulfate,brands,"[""Anamid"", ""Kantrex"", ""Klebcil""]","[""Anamid , Kantrex, Klebcil""]","571,572,573",source-layout-extracted; not clinically validated
+ketocanazole-systemic,en,"""Ketocanazole systemic""","""Ketocanazole (systemic)""","575,576,577",source-layout-extracted; not clinically validated
+ketoconazole-topical,en,"""Ketoconazole Topical""","""Ketoconazole (Topical)""",577,source-layout-extracted; not clinically validated
+tromethamine-ketorolac,en,"""Tromethamine Ketorolac""","""Ketorolac Tromethamine""","577,578",source-layout-extracted; not clinically validated
+tromethamine-ketorolac,fa,"""کتورو̄ک""","""کتورولاک""","577,578",source-layout-extracted; not clinically validated
+tromethamine-ketorolac,brands,"[""Toradol"", ""Acular""]","[""Acular/ Toradol""]","577,578",source-layout-extracted; not clinically validated
+ketotifen-fumarate,brands,"[""Zaditor"", ""Zaditen""]","[""Zaditen , Zaditor""]","578,579,581",source-layout-extracted; not clinically validated
+levocarnitine-carnitine-l,en,"""Levocarnitine Carnitine-L""","""L-Carnitine (Levocarnitine)""","581,582",source-layout-extracted; not clinically validated
+levocarnitine-carnitine-l,fa,"""ال - کارنیتین - لووکارنیتین""","""ال -کارنیتین -لووکارنیتین""","581,582",source-layout-extracted; not clinically validated
+levocarnitine-carnitine-l,brands,"[""Carnitor"", ""Carnitine""]","[""Carnitine/Carnitor""]","581,582",source-layout-extracted; not clinically validated
+lactulose,fa,"""̄کتولوز""","""لاکتولوز""","582,583",source-layout-extracted; not clinically validated
+lactulose,brands,"[""Chronulac"", ""Cephulac""]","[""Cephulac/Chronulac""]","582,583",source-layout-extracted; not clinically validated
+lamivudine,fa,"""̄میوودین""","""لامیوودین""","583,584",source-layout-extracted; not clinically validated
+lamivudine,brands,"[""Biovudine"", ""Epicir"", ""Lamivudine - Exiv""]","[""Biovudine/Epicir/Lamivudine - Exiv""]","583,584",source-layout-extracted; not clinically validated
+lamotrigine,fa,"""̄موتریژین""","""لاموتریژین""","584,585,586",source-layout-extracted; not clinically validated
+lamotrigine,brands,"[""Lamobiogine"", ""Lamictal""]","[""Lamictal/Lamobiogine""]","584,585,586",source-layout-extracted; not clinically validated
+latanoprost,fa,"""̄تانوپروست""","""لاتانوپروست""","586,587",source-layout-extracted; not clinically validated
+leucovorin-ascalcium,en,"""Leucovorin ascalcium""","""Leucovorin (ascalcium)""","588,589,590",source-layout-extracted; not clinically validated
+leuprolide-acetate,brands,"[""Enanton"", ""Lucrin"", ""Lupron"", ""Lupron Vepot""]","[""Enanton/Lucrin/Lupron/Lupron Vepot""]","590,591",source-layout-extracted; not clinically validated
+levamisole-as-hcl,en,"""Levamisole as HCL""","""Levamisole (as HCL)""","591,592",source-layout-extracted; not clinically validated
+levamisole-as-hcl,brands,"[""Ergamisol"", ""Ketrax"", ""Vermizol""]","[""Ergamisol/Ketrax/Vermizol""]","591,592",source-layout-extracted; not clinically validated
+levarterenol-norepinephrin-bitartrate,en,"""Levarterenol Norepinephrin Bitartrate""","""Levarterenol (Norepinephrin) Bitartrate""",592,source-layout-extracted; not clinically validated
+levodopa,brands,"[""Larodopa"", ""Dopar""]","[""Dopar/Larodopa""]","592,593,594",source-layout-extracted; not clinically validated
+b-levodopa,en,"""B - Levodopa""","""Levodopa - B""","594,595",source-layout-extracted; not clinically validated
+b-levodopa,fa,"""لوودوپا - ب""","""ب- لوودوپا""","594,595",source-layout-extracted; not clinically validated
+c-levodopa,en,"""C - Levodopa""","""Levodopa - C""","595,596,597",source-layout-extracted; not clinically validated
+c-levodopa,fa,"""لوودوپا - سی""","""لوودوپا -سی""","595,596,597",source-layout-extracted; not clinically validated
+levonorgestrel,brands,"[""Microval"", ""Ovrette""]","[""Ovrette/Microval""]","597,598",source-layout-extracted; not clinically validated
+r-implant-levonorgestrel,en,"""Rنت Implant Levonorgestrel""","""Levonorgestrel (Implant)""","598,599",source-layout-extracted; not clinically validated
+r-implant-levonorgestrel,fa,"""لوونورژسترل ایمپ""","""لوونورژسترل ایمپلانت""","598,599",source-layout-extracted; not clinically validated
+sodium-levothyroxine,en,"""Sodium Levothyroxine""","""Levothyroxine Sodium""","599,600,601",source-layout-extracted; not clinically validated
+sodium-levothyroxine,brands,"[""Levothroid"", ""Levoxine.Synthroid"", ""Synthrox"", ""Syroxine""]","[""Levothroid/Levoxine.Synthroid/Synthrox/Syroxine""]","599,600,601",source-layout-extracted; not clinically validated
+epinephrine-lidocaine,en,"""Epinephrine - Lidocaine""","""Lidocaine - Epinephrine""",601,source-layout-extracted; not clinically validated
+epinephrine-lidocaine,fa,"""لیدوکائین - اپی نفرین""","""لیدوکائین -اپی نفرین""",601,source-layout-extracted; not clinically validated
+epinephrine-lidocaine,brands,"[""E.Persocaine""]","[""Persocaine.E""]",601,source-layout-extracted; not clinically validated
+lidocaine-h-topical-h,en,"""Lidocaine - H Topical H -""","""Lidocaine - H (Topical)""",602,source-layout-extracted; not clinically validated
+p-ledocaine,en,"""P- Ledocaine""","""Ledocaine -P""",602,source-layout-extracted; not clinically validated
+p-ledocaine,fa,"""لیدوکائین - پ""","""لیدوکائین -پ""",602,source-layout-extracted; not clinically validated
+lidocaine-hcl,record,,Lidocaine HCL,"602,603,604",recovered PDF heading; not clinically validated
+dextrose-hcl-lidocaine,en,"""Dextrose & HCL Lidocaine""","""Lidocaine HCL  Dextrose""",604,source-layout-extracted; not clinically validated
+dextrose-hcl-lidocaine,fa,"""لیدوکائین اچ سی ال -دکستروز""","""& لیدوکائین اچ سی ال -دکستروز""",604,source-layout-extracted; not clinically validated
+lindane-gama-benzene-hexachloride,en,"""Lindane Gama Benzene Hexachloride""","""Lindane (Gama Benzene Hexachloride)""","604,605",source-layout-extracted; not clinically validated
+lindane-gama-benzene-hexachloride,brands,"[""Kwell"", ""Kwildane"", ""Scabene""]","[""Kwell/Kwildane/Scabene""]","604,605",source-layout-extracted; not clinically validated
+liothyronine-sodium-t,record,,Liothyronine Sodium T,"605,606,607",recovered PDF heading; not clinically validated
+carbonate-lithium,en,"""Carbonate Lithium""","""Lithium Carbonate""","610,611",source-layout-extracted; not clinically validated
+lomustine,brands,"[""Ceenu.Ccnu""]","[""Ccnu.Ceenu""]","611,612",source-layout-extracted; not clinically validated
+hcl-loperamide,en,"""HCl Loperamide""","""Loperamide HCl""","612,613,614",source-layout-extracted; not clinically validated
+potassium-losartan,en,"""potassium Losartan""","""Losartan potassium""","616,617,618",source-layout-extracted; not clinically validated
+lynestrenol,fa,"""̄ینسترونول""","""لاینسترونول""","619,621",source-layout-extracted; not clinically validated
+acetate-mafenide,en,"""Acetate Mafenide""","""Mafenide Acetate""","621,622",source-layout-extracted; not clinically validated
+hydroxide-magnesium,en,"""Hydroxide Magnesium""","""Magnesium Hydroxide""","622,623",source-layout-extracted; not clinically validated
+oxide-magnesium,en,"""Oxide Magnesium""","""Magnesium Oxide""",623,source-layout-extracted; not clinically validated
+oxide-magnesium,brands,"[""Mag-Ox"", ""Maox"", ""Par-Mag""]","[""Mag-Ox/Maox/Par-Mag""]",623,source-layout-extracted; not clinically validated
+sulfate-magnesium,en,"""Sulfate Magnesium""","""Magnesium Sulfate""","623,624,625",source-layout-extracted; not clinically validated
+sulfate-magnesium,brands,"[""Salt Epsom""]","[""Epsom Salt""]","623,624,625",source-layout-extracted; not clinically validated
+manitol,brands,"[""Resectisol"", ""Osmitrol""]","[""Osmitrol/Resectisol""]","625,626,627",source-layout-extracted; not clinically validated
+hydrochloride-maprotilin,en,"""Hydrochloride Maprotilin""","""Maprotilin Hydrochloride""","627,628",source-layout-extracted; not clinically validated
+measles-immune-globulin,record,,Measles Immune Globulin,"628,629",recovered PDF heading; not clinically validated
+measles-vaccine-live-attenuated,en,"""Measles Vaccine Live Attenuated""","""Measles Vaccine , Live , Attenuated""","629,630,631",source-layout-extracted; not clinically validated
+measles-vaccine-live-attenuated,fa,"""سرخک واکسن""","""واکسن سرخک""","629,630,631",source-layout-extracted; not clinically validated
+measles-and-rubella-virus-vaccine,fa,"""سرخچه و سرخک واکسن""","""واکسن سرخک و سرخچه""","631,632",source-layout-extracted; not clinically validated
+hydrochloride-mebeverine,en,"""Hydrochloride Mebeverine""","""Mebeverine Hydrochloride""","633,634",source-layout-extracted; not clinically validated
+acetate-medroxyprogesterone,en,"""Acetate Medroxyprogesterone""","""Medroxyprogesterone Acetate""","634,635",source-layout-extracted; not clinically validated
+acetate-medroxyprogesterone,brands,"[""Provera"", ""Amen""]","[""Amen/Provera""]","634,635",source-layout-extracted; not clinically validated
+acid-mefnamic,en,"""Acid Mefnamic""","""Mefnamic Acid""","635,636",source-layout-extracted; not clinically validated
+acid-mefnamic,brands,"[""Ponstel"", ""Panstan""]","[""Panstan/Ponstel""]","635,636",source-layout-extracted; not clinically validated
+acetate-megestrol,en,"""Acetate Megestrol""","""Megestrol Acetate""","637,638",source-layout-extracted; not clinically validated
+antimonate-meglumine,en,"""Antimonate Meglumine""","""Meglumine Antimonate""","638,639",source-layout-extracted; not clinically validated
+compound-meglumin,en,"""Compound Meglumin""","""Meglumin Compound""","639,640",source-layout-extracted; not clinically validated
+melphalan,fa,"""ملفا̄ن""","""ملفالان""","640,641,642",source-layout-extracted; not clinically validated
+meningococal-vaccine-killed,en,"""Meningococal Vaccine Killed""","""Meningococal Vaccine , Killed""",642,source-layout-extracted; not clinically validated
+meningococal-vaccine-killed,fa,"""متنگوکوک واکسن""","""واکسن متنگوکوک""",642,source-layout-extracted; not clinically validated
+hmg-menotropins,en,"""HMG Menotropins""","""Menotropins (HMG)""","642,643,644",source-layout-extracted; not clinically validated
+hmg-menotropins,brands,"[""Repronex"", ""Pergonal""]","[""Pergonal/Repronex""]","642,643,644",source-layout-extracted; not clinically validated
+r-salicylat-menthol,en,"""Rت Salicylat Menthol""","""Menthol Salicylat""",644,source-layout-extracted; not clinically validated
+r-salicylat-menthol,fa,"""منتول سالیسی""","""منتول سالیسیلات""",644,source-layout-extracted; not clinically validated
+r-salicylat-menthol,brands,"[""Ben - Gay"", ""Calmycine"", ""Mantan"", ""Daphyne""]","[""Ben - Gay/Calmycine/Mantan/Daphyne""]",644,source-layout-extracted; not clinically validated
+sulfate-mephentermine,en,"""Sulfate Mephentermine""","""Mephentermine Sulfate""","644,645",source-layout-extracted; not clinically validated
+hydrochloride-mepivacaine,en,"""Hydrochloride Mepivacaine""","""Mepivacaine Hydrochloride""","645,646",source-layout-extracted; not clinically validated
+hydrochloride-mepivacaine,brands,"[""Carbocaine"", ""Isocaine"", ""Polocaine""]","[""Carbocaine/Isocaine/Polocaine""]","645,646",source-layout-extracted; not clinically validated
+mequinol,record,,mequinol,"646,647",recovered PDF heading; not clinically validated
+mercaptopurine-6-mp,record,,Mercaptopurine (6 - MP),"647,648",recovered PDF heading; not clinically validated
+mesalazine-mesalamine,en,"""Mesalazine Mesalamine""","""Mesalamine (Mesalazine)""","649,650,651",source-layout-extracted; not clinically validated
+mesalazine-mesalamine,fa,"""مسا̄مین""","""مسالامین""","649,650,651",source-layout-extracted; not clinically validated
+mesalazine-mesalamine,brands,"[""Canasa"", ""Asacol""]","[""Asacol , Canasa""]","649,650,651",source-layout-extracted; not clinically validated
+sulfate-metaproterenol,en,"""Sulfate Metaproterenol""","""Metaproterenol Sulfate""","652,653,654",source-layout-extracted; not clinically validated
+hydrocholoride-metformine,en,"""Hydrocholoride Metformine""","""Metformine Hydrocholoride""","654,655",source-layout-extracted; not clinically validated
+hydrocholoride-metformine,brands,"[""Fortamet"", ""Glucophage"", ""Riomet""]","[""Fortamet/Glucophage/Riomet""]","654,655",source-layout-extracted; not clinically validated
+hydrochloride-methadone,en,"""Hydrochloride Methadone""","""Methadone Hydrochloride""","655,656,657",source-layout-extracted; not clinically validated
+methenamine-mandelate,brands,"[""Mandometh"", ""Mandelamine""]","[""Mandelamine/Mandometh""]","657,658",source-layout-extracted; not clinically validated
+methocarbamol,brands,"[""Robaxin"", ""Carbacot""]","[""Carbacot/Robaxin""]","659,660,661",source-layout-extracted; not clinically validated
+methoxalen-systemic,en,"""Methoxalen Systemic""","""Methoxalen (Systemic)""","664,665",source-layout-extracted; not clinically validated
+methoxalen-systemic,brands,"[""Ultramop"", ""Oxsoralen""]","[""Oxsoralen/Ultramop""]","664,665",source-layout-extracted; not clinically validated
+methoxalen-topical,en,"""Methoxalen Topical""","""Methoxalen (Topical)""",665,source-layout-extracted; not clinically validated
+cellulose-methyl,en,"""Cellulose Methyl""","""Methyl Cellulose""","665,666",source-layout-extracted; not clinically validated
+cellulose-methyl,brands,"[""Celevac"", ""Citrucel"", ""Murocel""]","[""Celevac/Citrucel/Murocel""]","665,666",source-layout-extracted; not clinically validated
+methyldopa,fa,"""متیلدوپا""","""متیل دوپا""","666,667",source-layout-extracted; not clinically validated
+blue-methylen,en,"""Blue Methylen""","""Methylen Blue""","667,668",source-layout-extracted; not clinically validated
+blue-methylen,brands,"[""Blue Urolene""]","[""Urolene Blue""]","667,668",source-layout-extracted; not clinically validated
+methyl-ergonovine-maleate,fa,"""ارگونوین متیل""","""متیل ارگونوین""","668,669",source-layout-extracted; not clinically validated
+hydrochloride-methylphenidate,en,"""hydrochloride Methylphenidate""","""Methylphenidate hydrochloride""","670,671",source-layout-extracted; not clinically validated
+hydrochloride-methylphenidate,brands,"[""Ritalin"", ""Methylin""]","[""Methylin/Ritalin""]","670,671",source-layout-extracted; not clinically validated
+methylprenisolone,brands,"[""Medrol - Depo""]","[""Depo - Medrol""]","671,672,673",source-layout-extracted; not clinically validated
+r-salicylate-methyl,en,"""Rت Salicylate Methyl""","""Methyl Salicylate""","673,674",source-layout-extracted; not clinically validated
+r-salicylate-methyl,fa,"""متیل سالیسی""","""متیل سالیسیلات""","673,674",source-layout-extracted; not clinically validated
+r-salicylate-methyl,brands,"[""Ben - Gay"", ""Surin"", ""Tevagestine""]","[""Ben - Gay/Surin/Tevagestine""]","673,674",source-layout-extracted; not clinically validated
+methyltestostrone,brands,"[""Metandren"", ""Android""]","[""Android/Metandren""]",674,source-layout-extracted; not clinically validated
+hydrochloride-metoclopramide,en,"""Hydrochloride Metoclopramide""","""Metoclopramide Hydrochloride""","674,675,676",source-layout-extracted; not clinically validated
+hydrochloride-metoclopramide,brands,"[""Clopra"", ""Reglan"", ""Plasil""]","[""Clopra/Reglan/Plasil""]","674,675,676",source-layout-extracted; not clinically validated
+tartrate-metoprolol,en,"""Tartrate Metoprolol""","""Metoprolol Tartrate""","676,677",source-layout-extracted; not clinically validated
+metronidazole,brands,"[""Flagyl"", ""Novo - Nidazole"", ""Protostat""]","[""Flagyl/Novo - Nidazole/Protostat""]","677,678,679",source-layout-extracted; not clinically validated
+hydrochoride-mexiletine,en,"""Hydrochoride Mexiletine""","""Mexiletine Hydrochoride""","680,681,682",source-layout-extracted; not clinically validated
+nitrate-miconazole,en,"""Nitrate Miconazole""","""Miconazole Nitrate""",682,source-layout-extracted; not clinically validated
+nitrate-miconazole,brands,"[""Micatin"", ""Femizol""]","[""Femizol/Micatin""]",682,source-layout-extracted; not clinically validated
+midazolam,fa,"""میدازو̄م""","""میدازولام""","682,683,684",source-layout-extracted; not clinically validated
+oil-mineral,en,"""Oil Mineral""","""Mineral Oil""","685,686",source-layout-extracted; not clinically validated
+systemic-minoxidil,en,"""Systemic Minoxidil""","""Minoxidil (Systemic)""","686,687",source-layout-extracted; not clinically validated
+topical-minoxidil,en,"""Topical Minoxidil""","""Minoxidil (Topical)""","687,688",source-layout-extracted; not clinically validated
+chloride-mivacurim,en,"""chloride Mivacurim""","""Mivacurim chloride""","692,693",source-layout-extracted; not clinically validated
+molgramostin-gmcsf,en,"""Molgramostin GMCSF""","""Molgramostin (GMCSF)""","694,695",source-layout-extracted; not clinically validated
+sodium-montelukast,en,"""Sodium Montelukast""","""Montelukast Sodium""","695,696",source-layout-extracted; not clinically validated
+r-iron-plus-multivitamin,en,"""Rس ایرون Iron Plus multivitamin""","""multivitamin Plus Iron""",699,source-layout-extracted; not clinically validated
+r-iron-plus-multivitamin,fa,"""مولتی ویتامین پ""","""کودکان :روزانه ۵ از شربت یا ۰/ ۶ از قطره یا طبق دستور پزشک. مولتی ویتامین پلاس ایرون""",699,source-layout-extracted; not clinically validated
+r-mineral-plus-multivitamin,en,"""Rس مینرال Mineral Plus multivitamin""","""multivitamin Plus Mineral""","699,700",source-layout-extracted; not clinically validated
+r-mineral-plus-multivitamin,fa,"""مولتی ویتامین پ""","""مولتی ویتامین پلاس مینرال""","699,700",source-layout-extracted; not clinically validated
+therapeutic-multivitamin,en,"""Therapeutic multivitamin""","""multivitamin Therapeutic""",700,source-layout-extracted; not clinically validated
+mumps-virus-vaccine-live,en,"""Mumps Virus Vaccine Live""","""Mumps Virus Vaccine , Live""","700,701",source-layout-extracted; not clinically validated
+mumps-virus-vaccine-live,fa,"""اوریون واکسن""","""واکسن اوریون""","700,701",source-layout-extracted; not clinically validated
+mofetil-myocophenolate,en,"""Mofetil Myocophenolate""","""Myocophenolate Mofetil""","702,703,704,705",source-layout-extracted; not clinically validated
+mofetil-myocophenolate,fa,"""مایکوفنو̄ت موفتیل""","""مایکوفنولات موفتیل""","702,703,704,705",source-layout-extracted; not clinically validated
+sodium-nafcillin,en,"""Sodium Nafcillin""","""Nafcillin Sodium""","705,706",source-layout-extracted; not clinically validated
+sodium-nafcillin,brands,"[""Nafcil"", ""Nallopen"", ""unipen""]","[""Nafcil/Nallopen/unipen""]","705,706",source-layout-extracted; not clinically validated
+acid-nalidixic,en,"""Acid Nalidixic""","""Nalidixic Acid""","706,707,708",source-layout-extracted; not clinically validated
+acid-nalidixic,brands,"[""Gram Neg""]","[""Neg Gram""]","706,707,708",source-layout-extracted; not clinically validated
+hydrochloride-naloxane,en,"""Hydrochloride Naloxane""","""Naloxane Hydrochloride""","708,709",source-layout-extracted; not clinically validated
+hydrochloride-naltrexone,en,"""Hydrochloride Naltrexone""","""Naltrexone Hydrochloride""","709,710,711",source-layout-extracted; not clinically validated
+hydrochloride-naltrexone,brands,"[""Revia"", ""Depada""]","[""Depada/Revia""]","709,710,711",source-layout-extracted; not clinically validated
+nandrolone-decanoate,fa,"""ناندرولوندکانوات""","""ناندرولون دکانوات""","711,712",source-layout-extracted; not clinically validated
+nandrolone-decanoate,brands,"[""Durabolin-Deca""]","[""Deca-Durabolin""]","711,712",source-layout-extracted; not clinically validated
+phenpropionate-nandrolone,en,"""Phenpropionate Nandrolone""","""Nandrolone Phenpropionate""",712,source-layout-extracted; not clinically validated
+phenpropionate-nandrolone,brands,"[""Anabolin LA"", ""Analone"", ""Durabolin"", ""Nandrobolic""]","[""Anabolin LA/Analone/Durabolin/Nandrobolic""]",712,source-layout-extracted; not clinically validated
+antazoline-naphazolin,en,"""Antazoline /Naphazolin""","""Naphazolin/ Antazoline""","712,713",source-layout-extracted; not clinically validated
+antazoline-naphazolin,fa,"""نفازولین/ آنتازولین""","""/ نفازولین /آنتازولین""","712,713",source-layout-extracted; not clinically validated
+antazoline-naphazolin,brands,"[""AK-Con"", ""Albalon"", ""Naphcon"", ""privine"", ""Vasocon""]","[""AK-Con/ Albalon/ Naphcon/ privine/Vasocon""]","712,713",source-layout-extracted; not clinically validated
+niacinamide-vitamin-b3,record,,Niacinamide(Vitamin B3),721,recovered PDF heading; not clinically validated
+nicotine,brands,"[""Niac"", ""Nicobid"", ""Nico-Span-Novoniacin""]","[""Niac/Nicobid/ Nico-Span-Novoniacin""]","722,723",source-layout-extracted; not clinically validated
+nicotinic-acid-niacin-vitamin-b3,record,,"Nicotinic Acid(Niacin, Vitamin B3)",723,recovered PDF heading; not clinically validated
+nifedipine,brands,"[""Procardia"", ""Adalat""]","[""Adalat/Procardia""]","723,724",source-layout-extracted; not clinically validated
+nitrazepam,fa,"""نیترازپام""","""دارو طی شیردهی مجاز نمی باشد. نیترازپام""","725,726",source-layout-extracted; not clinically validated
+nitroglycerin,brands,"[""Nitro-Bid"", ""Nitrocantin"", ""Nitroglyn""]","[""Nitro-Bid/Nitrocantin/Nitroglyn""]","728,729,730",source-layout-extracted; not clinically validated
+nitroprusside-sodium,brands,"[""Nitropress"", ""Nipride""]","[""Nipride/Nitropress""]","730,731,732",source-layout-extracted; not clinically validated
+oxide-nitrous,en,"""Oxide Nitrous""","""Nitrous Oxide""",732,source-layout-extracted; not clinically validated
+nonoxynol-9,record,,Nonoxynol-9,"732,733",recovered PDF heading; not clinically validated
+bitartrate-norepinephrine,en,"""Bitartrate Norepinephrine""","""Norepinephrine Bitartrate""","733,734",source-layout-extracted; not clinically validated
+hcl-nortriptyline,en,"""HCl Nortriptyline""","""Nortriptyline HCl""","734,735",source-layout-extracted; not clinically validated
+hcl-nortriptyline,brands,"[""Pametor"", ""Aventyl""]","[""Aventyl/Pametor""]","734,735",source-layout-extracted; not clinically validated
+nystatin-oral-local,en,"""Nystatin oral-Local""","""Nystatin (oral-Local)""","735,736",source-layout-extracted; not clinically validated
+nystatin-oral-local,brands,"[""Mycostatin"", ""Mykinal"", ""Nadostine"", ""Nilstat"", ""Nyaderm"", ""Nystex"", ""O-V Station""]","[""Mycostatin / Mykinal /Nadostine /Nilstat /Nyaderm /Nystex /O-V Station""]","735,736",source-layout-extracted; not clinically validated
+vaginal-topical-nystatin,en,"""Vaginal-Topical Nystatin""","""Nystatin (Topical-Vaginal)""","737,739",source-layout-extracted; not clinically validated
+vaginal-topical-nystatin,brands,"[""Korostatin"", ""Micostatin"", ""Mykino"", ""Nilstat""]","[""Korostatin/Micostatin/Mykino/Nilstat""]","737,739",source-layout-extracted; not clinically validated
+ofloxacin-systemic,en,"""Ofloxacin systemic""","""Ofloxacin (systemic)""","741,742",source-layout-extracted; not clinically validated
+ofloxacin-systemic,brands,"[""Floxin"", ""ocuflox"", ""floxin"", ""otic""]","[""Floxin/ ocuflox/ floxin/ otic""]","741,742",source-layout-extracted; not clinically validated
+olanzapine,fa,"""آ̄نزاپین""","""آلانزاپین""","742,743,744",source-layout-extracted; not clinically validated
+omega-3-fatty-acids,record,,Omega-3 Fatty Acids,744,recovered PDF heading; not clinically validated
+omega-3-marine-triglycerides,record,,Omega-3 marine Triglycerides,"744,745",recovered PDF heading; not clinically validated
+omeperazole,brands,"[""Prilosec"", ""Losec""]","[""Losec/ Prilosec""]","745,746",source-layout-extracted; not clinically validated
+solution-bath-ophthalmic,en,"""Solution Bath Ophthalmic""","""Ophthalmic Bath Solution""",748,source-layout-extracted; not clinically validated
+s-r-o-salt-rehydration-oral,en,"""S.R.O Salt Rehydration Oral""","""Oral Rehydration Salt (O.R.S)""","748,749",source-layout-extracted; not clinically validated
+s-r-o-salt-rehydration-oral,fa,"""اورال ره هیدریشن سالت اُ - آر - اس""","""اورال ره هیدریشن سالت اُ -آر -اس""","748,749",source-layout-extracted; not clinically validated
+phoshate-oseltamivir,en,"""Phoshate Oseltamivir""","""Oseltamivir Phoshate""","750,751",source-layout-extracted; not clinically validated
+r-oxaliplatin,en,"""Rتین Oxaliplatin""","""Oxaliplatin""","751,752,753",source-layout-extracted; not clinically validated
+r-oxaliplatin,fa,"""اوکسالیپ""","""اوکسالیپلاتین""","751,752,753",source-layout-extracted; not clinically validated
+oxazepam,brands,"[""Ox-Pam"", ""serax"", ""zapex""]","[""Ox-Pam , serax, zapex""]","754,755",source-layout-extracted; not clinically validated
+oxymetholone,brands,"[""Anapolon"", ""Anadrol""]","[""Anadrol , Anapolon""]","758,759",source-layout-extracted; not clinically validated
+oxytetracycline,brands,"[""E.P.mycin"", ""Terramycin"", ""Uri-Tet""]","[""E.P.mycin/ Terramycin/ Uri-Tet""]","759,760",source-layout-extracted; not clinically validated
+oxytocin,brands,"[""syntocinon"", ""Pitocin""]","[""Pitocin/ syntocinon""]","760,761,762,763",source-layout-extracted; not clinically validated
+disodium-pamidronate,en,"""Disodium Pamidronate""","""Pamidronate Disodium""","764,765",source-layout-extracted; not clinically validated
+disodium-pamidronate,fa,"""پامیدروناتدی سدیم""","""پامیدرونات دی سدیم""","764,765",source-layout-extracted; not clinically validated
+pancreatin,brands,"[""Digepepsin"", ""Creon""]","[""Creon/Digepepsin""]","765,766",source-layout-extracted; not clinically validated
+bromide-pancuronium,en,"""Bromide Pancuronium""","""Pancuronium Bromide""","767,768",source-layout-extracted; not clinically validated
+hcl-papaverine,en,"""Hcl Papaverine""","""Papaverine Hcl""","769,770",source-layout-extracted; not clinically validated
+hcl-papaverine,brands,"[""Pavagen"", ""Pavabid""]","[""Pavabid/Pavagen""]","769,770",source-layout-extracted; not clinically validated
+para-aminobenzoic-paba,en,"""Para-Aminobenzoic PABA""","""Para-Aminobenzoic (PABA)""","770,771",source-layout-extracted; not clinically validated
+para-aminobenzoic-paba,fa,"""اسید پاراآمینوبنزوئیک""","""پاراآمینوبنزوئیک اسید""","770,771",source-layout-extracted; not clinically validated
+paraamino-benzoicacid-k-paba-k,en,"""Paraamino Benzoicacid-K PABA-K""","""Paraamino Benzoicacid-K(PABA-K)""","771,772",source-layout-extracted; not clinically validated
+paraamino-benzoicacid-k-paba-k,fa,"""ک - اسید پاراآمینوبنزوئیک""","""پاراآمینوبنزوئیک اسید -ک""","771,772",source-layout-extracted; not clinically validated
+para-amino-benzoicacid-p-paba-p,en,"""Para Amino Benzoicacid-P PABA-P""","""Para Amino Benzoicacid-P(PABA-P)""",772,source-layout-extracted; not clinically validated
+para-amino-benzoicacid-p-paba-p,fa,"""پی - اسید پاراآمینوبنزوئیک""","""پاراآمینوبنزوئیک اسید -پی""",772,source-layout-extracted; not clinically validated
+paromomycin-as-sulfate,en,"""Paromomycin as sulfate""","""Paromomycin(as sulfate)""","773,774",source-layout-extracted; not clinically validated
+u-paromomycin,en,"""U-Paromomycin""","""Paromomycin-U""",774,source-layout-extracted; not clinically validated
+u-paromomycin,fa,"""پارومومایسین - یو""","""پارومومایسین -یو""",774,source-layout-extracted; not clinically validated
+sodium-amino-salicylate-pas,en,"""sodium amino salicylate PAS""","""sodium amino salicylate(PAS)""","774,775,776",source-layout-extracted; not clinically validated
+sodium-amino-salicylate-pas,fa,"""ت آمینوسالیسی سدیم""","""سدیم آمینوسالیسیلات""","774,775,776",source-layout-extracted; not clinically validated
+v-blue-patent,en,"""V blue Patent""","""Patent blue V""",776,source-layout-extracted; not clinically validated
+pediatric-gripe,record,,Pediatric gripe,776,recovered PDF heading; not clinically validated
+pegaspargase-peg-l-asparaginase,en,"""Pegaspargase PEG-L-Asparaginase""","""Pegaspargase(PEG-L-Asparaginase)""","776,777,778",source-layout-extracted; not clinically validated
+pegintrferonalfa-2a,record,,Pegintrferonalfa-2a,"778,779",recovered PDF heading; not clinically validated
+peginterferonalfa-2b,record,,Peginterferonalfa-2b,"779,780,781",recovered PDF heading; not clinically validated
+r-penicillamine,en,"""Rمین Penicillamine""","""Penicillamine""","781,782,783",source-layout-extracted; not clinically validated
+r-penicillamine,fa,"""پنی سی""","""پنی سیلامین""","781,782,783",source-layout-extracted; not clinically validated
+r-penicillamine,brands,"[""Depen"", ""Cuprimine""]","[""Cuprimine/Depen""]","781,782,783",source-layout-extracted; not clinically validated
+penicillin-6-3-3,record,,Penicillin 6.3.3,"783,784",recovered PDF heading; not clinically validated
+penicilin-g-g,en,"""Penicilin G G""","""Penicilin G""","784,785",source-layout-extracted; not clinically validated
+penicilin-g-g,fa,"""سیلین پنی""","""پنی سیلین""","784,785",source-layout-extracted; not clinically validated
+penicilin-g-g,brands,"[""Pfizerpen.PEN""]","[""PEN.Pfizerpen""]","784,785",source-layout-extracted; not clinically validated
+v-penicillin,en,"""V Penicillin""","""Penicillin V""","785,786,787",source-layout-extracted; not clinically validated
+v-penicillin,brands,"[""Betpen-VK"", ""Biotic V Powder""]","[""Betpen-VK/Biotic V Powder""]","785,786,787",source-layout-extracted; not clinically validated
+isoethionate-pentamidine,en,"""Isoethionate Pentamidine""","""Pentamidine Isoethionate""","788,789",source-layout-extracted; not clinically validated
+isoethionate-pentamidine,brands,"[""300 Pentan""]","[""Pentan 300""]","788,789",source-layout-extracted; not clinically validated
+pentazocine,brands,"[""talwin Fortral""]","[""Fortral talwin""]","790,791",source-layout-extracted; not clinically validated
+pentoxifylline,brands,"[""APO-Pentoxifylline"", ""Trental""]","[""APO-Pentoxifylline/Trental""]","791,792",source-layout-extracted; not clinically validated
+peritoneal-dialysis-solution,fa,"""سولوشن پریتونئالدیالیز""","""پریتونئال دیالیز سولوشن""","792,793",source-layout-extracted; not clinically validated
+perphenazine,brands,"[""Cycozin"", ""Phenazin"", ""Trilafon""]","[""Cycozin/Phenazin/Trilafon""]","793,794",source-layout-extracted; not clinically validated
+sodium-phenobarbital,en,"""Sodium Phenobarbital""","""Phenobarbital Sodium""","796,797,798",source-layout-extracted; not clinically validated
+sodium-phenobarbital,brands,"[""Barbito"", ""Luminal"", ""Phenotal"", ""Solfoton""]","[""Barbito/Luminal/Phenotal/Solfoton""]","796,797,798",source-layout-extracted; not clinically validated
+r-mesylate-phentolamine,en,"""Rت Mesylate Phentolamine""","""Phentolamine Mesylate""","798,799",source-layout-extracted; not clinically validated
+r-mesylate-phentolamine,fa,"""فنتو̄مین مسی""","""فنتولامین مسیلات""","798,799",source-layout-extracted; not clinically validated
+systemic-phenytoin,en,"""systemic Phenytoin""","""Phenytoin(systemic)""","800,801,802",source-layout-extracted; not clinically validated
+systemic-phenytoin,brands,"[""Dilantin"", ""Diphen"", ""Diphenylan"", ""Hydantic"", ""Phenytoin - Gerot""]","[""Dilantin/Diphen/Diphenylan/Hydantic/Phenytoin - Gerot""]","800,801,802",source-layout-extracted; not clinically validated
+pilocarpine-hclornitrate,en,"""Pilocarpine Hclornitrate""","""Pilocarpine (Hclornitrate)""","802,803",source-layout-extracted; not clinically validated
+pilocarpine-hclornitrate,brands,"[""Adsarbocarpine"", ""Akarpine"", ""Biocarpine""]","[""Adsarbocarpine/Akarpine/Biocarpine""]","802,803",source-layout-extracted; not clinically validated
+bramide-pipecuronium,en,"""bramide Pipecuronium""","""Pipecuronium bramide""","803,804",source-layout-extracted; not clinically validated
+piroxicam-systemic,en,"""Piroxicam systemic""","""Piroxicam ( systemic)""","804,805,806",source-layout-extracted; not clinically validated
+piroxicam-systemic,brands,"[""Alpex"", ""Camoxy"", ""Lopirox"", ""Roxicam""]","[""Alpex/Camoxy/Lopirox/Roxicam""]","804,805,806",source-layout-extracted; not clinically validated
+polymyxin-b-sulfate-systemic,en,"""Polymyxin B sulfate systemic""","""Polymyxin B sulfate (systemic)""","806,807",source-layout-extracted; not clinically validated
+polymyxin-b-sulfate-systemic,fa,"""سولفات بی پنیمیکسین""","""پنیمیکسین بی سولفات""","806,807",source-layout-extracted; not clinically validated
+chloride-potasium,en,"""Chloride Potasium""","""Potasium Chloride""","808,809",source-layout-extracted; not clinically validated
+chloride-potasium,brands,"[""Cena-k"", ""Kaochlor"", ""Kaochlars-f"", ""Kaon-cl"", ""Potasalan""]","[""Cena-k/Kaochlor/Kaochlars-f/Kaon-cl/Potasalan""]","808,809",source-layout-extracted; not clinically validated
+prazosin-as-hcl,en,"""Prazosin as Hcl""","""Prazosin (as Hcl)""","809,810",source-layout-extracted; not clinically validated
+prazosin-as-hcl,brands,"[""Minipress"", ""Pazo"", ""Prazosin""]","[""Minipress/Pazo/Prazosin""]","809,810",source-layout-extracted; not clinically validated
+prednisone,brands,"[""Orasone"", ""Meticorten""]","[""Meticorten/Orasone""]","811,812",source-layout-extracted; not clinically validated
+microfine-acetate-prednisolone,en,"""Microfine Acetate Prednisolone""","""Prednisolone Acetate Microfine""",812,source-layout-extracted; not clinically validated
+microfine-acetate-prednisolone,brands,"[""Aktate"", ""Econopred Ophtalmic""]","[""Aktate/Econopred Ophtalmic""]",812,source-layout-extracted; not clinically validated
+forte-prednisolone,en,"""forte Prednisolone""","""Prednisolone forte""","812,813",source-layout-extracted; not clinically validated
+f-prilocaine,en,"""f-Prilocaine""","""Prilocaine-f""",813,source-layout-extracted; not clinically validated
+primaquine-as-phosphate,en,"""Primaquine as phosphate""","""Primaquine (as phosphate)""","813,814",source-layout-extracted; not clinically validated
+primidone,brands,"[""Myidone"", ""Mysoline"", ""Sertan""]","[""Myidone/Mysoline/Sertan""]","814,815",source-layout-extracted; not clinically validated
+progestrone,brands,"[""Bay progest"", ""Femotrone"", ""Gestrol 50""]","[""Bay progest/Femotrone/Gestrol 50""]","816,817",source-layout-extracted; not clinically validated
+propranolol-hcl,brands,"[""Arlocardyl"", ""Inderal"", ""Procardin"", ""Proprated""]","[""Arlocardyl/Inderal/Procardin/Proprated""]","817,818,819",source-layout-extracted; not clinically validated
+pyrazinamide,brands,"[""Abidi Pyrazinamide""]","[""Pyrazinamide Abidi""]","819,820",source-layout-extracted; not clinically validated
+zinc-pyrithione,en,"""zinc Pyrithione""","""Pyrithione zinc""","821,822",source-layout-extracted; not clinically validated
+pyrvinium-as-pamoate,en,"""Pyrvinium as Pamoate""","""Pyrvinium (as Pamoate)""","822,823",source-layout-extracted; not clinically validated
+pyrvinium-as-pamoate,brands,"[""Ranquim"", ""Pyrvicide""]","[""Pyrvicide/Ranquim""]","822,823",source-layout-extracted; not clinically validated
+quinidine-bisulfate,record,,Quinidine Bisulfate,"825,826,827",recovered PDF heading; not clinically validated
+quinine,brands,"[""Novoquinine"", ""Quin260"", ""Ouinamm"", ""Quine"", ""Quinite"", ""Quiphile"", ""Strema""]","[""Novoquinine/Quin260/Ouinamm/Quine/Quinite/Quiphile/Strema""]","827,828,829,831",source-layout-extracted; not clinically validated
+rabies-immune-globulin-rig,en,"""Rabies Immune Globulin RIG""","""Rabies Immune Globulin (RIG)""","831,832",source-layout-extracted; not clinically validated
+rabies-immune-globulin-rig,fa,"""ایمنوگلوبولین رابیز""","""رابیز ایمنوگلوبولین""","831,832",source-layout-extracted; not clinically validated
+rabies-vaccine-adsor-bed,en,"""Rabies Vaccine Adsor bed""","""Rabies Vaccine, Adsor bed""","832,833",source-layout-extracted; not clinically validated
+rabies-vaccine-adsor-bed,fa,"""واکسن رابیز""","""رابیز واکسن""","832,833",source-layout-extracted; not clinically validated
+hydrochloride-remifentanil,en,"""Hydrochloride Remifentanil""","""Remifentanil Hydrochloride""","834,835",source-layout-extracted; not clinically validated
+reserpine,brands,"[""Serpalan"", ""Serpasil"", ""serpate"", ""sk-Reserpine""]","[""Serpalan/ Serpasil/ serpate/ sk-Reserpine""]","836,837,838",source-layout-extracted; not clinically validated
+ribavirin,brands,"[""Copegus"", ""Rebetol"", ""Virazole""]","[""Copegus/ Rebetol/ Virazole""]","839,840",source-layout-extracted; not clinically validated
+riboflavin-vitamin-b,record,,Riboflavin (Vitamin  B,840,recovered PDF heading; not clinically validated
+rifampin-rifampicin,en,"""Rifampin Rifampicin""","""Rifampin (Rifampicin)""","841,842,843",source-layout-extracted; not clinically validated
+rifampin-rifampicin,brands,"[""Rifadin"", ""Rimactane"", ""Rafact""]","[""Rifadin/ Rimactane/ Rafact""]","841,842,843",source-layout-extracted; not clinically validated
+ringer-s,fa,"""رینگر""","""’ رینگر""","843,844",source-layout-extracted; not clinically validated
+lactated-ringer,en,"""Lactated Ringer""","""Ringer Lactated""","844,845",source-layout-extracted; not clinically validated
+lactated-ringer,fa,"""رینگر̄کتات""","""رینگرلاکتات""","844,845",source-layout-extracted; not clinically validated
+tartrate-rivastigmin,en,"""Tartrate Rivastigmin""","""Rivastigmin Tartrate""","847,848",source-layout-extracted; not clinically validated
+sodium-sacharin,en,"""Sodium Sacharin""","""Sacharin Sodium""",851,source-layout-extracted; not clinically validated
+salbutamol,brands,"[""Albuterol"", ""Proventil"", ""Ventolin""]","[""Albuterol/ Proventil/ Ventolin""]","851,852,853",source-layout-extracted; not clinically validated
+compound-acid-salicylic,en,"""compound Acid Salicylic""","""Salicylic Acid compound""",853,source-layout-extracted; not clinically validated
+compound-acid-salicylic,brands,"[""Calicylic"", ""compound w"", ""Hydrisalic"", ""salacid""]","[""Calicylic/ compound w/ Hydrisalic/ salacid""]",853,source-layout-extracted; not clinically validated
+salmeterol-xinafoate,brands,"[""Diskus Serevent""]","[""Serevent Diskus""]","853,854",source-layout-extracted; not clinically validated
+hydrobromide-scopolamine,en,"""Hydrobromide Scopolamine""","""Scopolamine Hydrobromide""","854,855",source-layout-extracted; not clinically validated
+hydrobromide-scopolamine,fa,"""اسکوپو̄مین هیدروبروماید""","""اسکوپولامین هیدروبروماید""","854,855",source-layout-extracted; not clinically validated
+hydrobromide-scopolamine,brands,"[""Scop -Transdem""]","[""Transdem- Scop""]","854,855",source-layout-extracted; not clinically validated
+secretin,brands,"[""Ferring -Secretin""]","[""Secretin- Ferring""]",855,source-layout-extracted; not clinically validated
+selegiline-hydrochloride,brands,"[""Atapryl"", ""Carbex"", ""Eldepryl"", ""Selpak""]","[""Atapryl/ Carbex/ Eldepryl/ Selpak""]","855,856",source-layout-extracted; not clinically validated
+sufide-selenium,en,"""Sufide Selenium""","""Selenium Sufide""",856,source-layout-extracted; not clinically validated
+citrate-sildenafil,en,"""Citrate Sildenafil""","""Sildenafil Citrate""","858,859",source-layout-extracted; not clinically validated
+ointment-eye-simple,en,"""ointment eye Simple""","""Simple eye ointment""",860,source-layout-extracted; not clinically validated
+r-pas-aminosalicylate-sodium,en,"""Rت PAS Aminosalicylate Sodium""","""Sodium Aminosalicylate (PAS)""","862,863",source-layout-extracted; not clinically validated
+r-pas-aminosalicylate-sodium,fa,"""سدیم آمینوسالیسی""","""سدیم آمینوسالیسیلات""","862,863",source-layout-extracted; not clinically validated
+bicarbonate-sodium,en,"""Bicarbonate Sodium""","""Sodium Bicarbonate""","863,864,865",source-layout-extracted; not clinically validated
+bicarbonate-sodium,brands,"[""Neut"", ""Soda"", ""Mint""]","[""Neut/Soda/Mint""]","863,864,865",source-layout-extracted; not clinically validated
+phosphate-cellulose-sodium,en,"""phosphate Cellulose Sodium""","""Sodium Cellulose phosphate""","865,866",source-layout-extracted; not clinically validated
+sodium-chloride-for-irrigation,en,"""Sodium Chloride For Irrigation""","""Sodium Chloride (For Irrigation)""",866,source-layout-extracted; not clinically validated
+sodium-chloride-for-irrigation,fa,"""کلراید سدیم""","""سدیم کلراید""",866,source-layout-extracted; not clinically validated
+sodium-chloride-nacl,en,"""Sodium Chloride NaCl""","""Sodium Chloride (NaCl)""",866,source-layout-extracted; not clinically validated
+sodium-chloride-nacl,fa,"""کلراید سدیم""","""سدیم کلراید""",866,source-layout-extracted; not clinically validated
+sodium-chloride-nacl,brands,"[""Ayrsaline"", ""Prets"", ""Salinex""]","[""Ayrsaline/Prets/Salinex""]",866,source-layout-extracted; not clinically validated
+ophthalmic-chloride-sodium,en,"""Ophthalmic Chloride Sodium""","""Sodium Chloride (Ophthalmic)""","866,867",source-layout-extracted; not clinically validated
+ophthalmic-chloride-sodium,brands,"[""AK-Nacl"", ""Nuro-128 Ophthalmic""]","[""AK-Nacl/Nuro-128 Ophthalmic""]","866,867",source-layout-extracted; not clinically validated
+sodium-chloride-intravenous-drip,en,"""Sodium Chloride Intravenous drip""","""Sodium Chloride(Intravenous drip)""",867,source-layout-extracted; not clinically validated
+sodium-chloride-intravenous-drip,fa,"""اینتراونوس کلراید سدیم""","""سدیم کلراید اینتراونوس""",867,source-layout-extracted; not clinically validated
+sodium-chloride-intravenous-drip,brands,"[""salt-slo""]","[""slo-salt""]",867,source-layout-extracted; not clinically validated
+fluoride-sodium,en,"""Fluoride Sodium""","""Sodium Fluoride""","867,868",source-layout-extracted; not clinically validated
+fluoride-sodium,brands,"[""Fluocal"", ""Fluoritabs"", ""Karidium"", ""Zymaflu""]","[""Fluocal/ Fluoritabs/Karidium/Zymaflu""]","867,868",source-layout-extracted; not clinically validated
+hyaloronate-sodium,en,"""Hyaloronate Sodium""","""Sodium Hyaloronate""","868,869",source-layout-extracted; not clinically validated
+hyaloronate-sodium,brands,"[""Healon"", ""Amvisc""]","[""Amvisc/Healon""]","868,869",source-layout-extracted; not clinically validated
+lactate-sodium,en,"""Lactate Sodium""","""Sodium Lactate""",869,source-layout-extracted; not clinically validated
+lactate-sodium,fa,"""سدیم ̄کتات""","""سدیم لاکتات""",869,source-layout-extracted; not clinically validated
+nitrite-sodium,en,"""Nitrite Sodium""","""Sodium Nitrite""","869,870",source-layout-extracted; not clinically validated
+sulfonate-polystyrene-sodium,en,"""sulfonate Polystyrene Sodium""","""Sodium Polystyrene sulfonate""","870,871",source-layout-extracted; not clinically validated
+sulfonate-polystyrene-sodium,brands,"[""SPS"", ""Kayexalate""]","[""Kayexalate/SPS""]","870,871",source-layout-extracted; not clinically validated
+r-salicylate-sodium,en,"""Rت Salicylate Sodium""","""Sodium Salicylate""",871,source-layout-extracted; not clinically validated
+r-salicylate-sodium,fa,"""سدیم سالیسی""","""سدیم سالیسیلات""",871,source-layout-extracted; not clinically validated
+salfate-tetradecyl-sodium,en,"""Salfate Tetradecyl Sodium""","""Sodium Tetradecyl Salfate""",872,source-layout-extracted; not clinically validated
+salfate-tetradecyl-sodium,brands,"[""1% Sotradecol""]","[""Sotradecol 1%""]",872,source-layout-extracted; not clinically validated
+thiosulfate-sodium,en,"""Thiosulfate Sodium""","""Sodium Thiosulfate""","872,873",source-layout-extracted; not clinically validated
+somatropin,brands,"[""Genotropin"", ""Humatrope"", ""Nutropin"", ""serostim"", ""saizen""]","[""Genotropin/ Humatrope/Nutropin/serostim/saizen""]","873,874,875",source-layout-extracted; not clinically validated
+sorbitol,brands,"[""Eva"", ""sorbex"", ""Glucitol"", ""sorbax""]","[""Eva/sorbex/Glucitol/sorbax""]",875,source-layout-extracted; not clinically validated
+sotalol,brands,"[""Betapace"", ""Betapace AF""]","[""Betapace/ Betapace AF""]","875,876",source-layout-extracted; not clinically validated
+spiramycin,brands,"[""Rovamycin"", ""Dicorvin""]","[""Dicorvin/ Rovamycin""]","877,878",source-layout-extracted; not clinically validated
+spironolaction,fa,"""اسپیرونو̄کتون""","""اسپیرونولاکتون""","878,879",source-layout-extracted; not clinically validated
+stavudine-d4t,record,,Stavudine(d4T),"879,880,881",recovered PDF heading; not clinically validated
+sodium-stibogluconate,en,"""sodium Stibogluconate""","""Stibogluconate sodium""","881,882",source-layout-extracted; not clinically validated
+sulfate-streptomycin,en,"""Sulfate Streptomycin""","""Streptomycin Sulfate""","883,884",source-layout-extracted; not clinically validated
+chloride-succinylcholine,en,"""chloride Succinylcholine""","""Succinylcholine chloride""","886,887",source-layout-extracted; not clinically validated
+chloride-succinylcholine,brands,"[""Anectione"", ""sucostrin"", ""Incert""]","[""Anectione/ sucostrin/ Incert""]","886,887",source-layout-extracted; not clinically validated
+citrate-sufentanil,en,"""Citrate Sufentanil""","""Sufentanil Citrate""","888,889,890",source-layout-extracted; not clinically validated
+sulfacetamide-sodium-oph,record,,Sulfacetamide sodium (oph),890,recovered PDF heading; not clinically validated
+sulfadiazine,record,,Sulfadiazine,"890,891",recovered PDF heading; not clinically validated
+sulfadoxine-p,record,,Sulfadoxine-P,"891,892",recovered PDF heading; not clinically validated
+sulfasalazin,record,,Sulfasalazin,"892,893",recovered PDF heading; not clinically validated
+sulfur,record,,Sulfur,"893,894",recovered PDF heading; not clinically validated
+sultamicillin-tosilate,record,,Sultamicillin Tosilate,894,recovered PDF heading; not clinically validated
+sumatriptan-succinate,record,,Sumatriptan Succinate,"894,895,897",recovered PDF heading; not clinically validated
+tamaxifen-citrate,brands,"[""Tomofen"", ""Nolvadex""]","[""Nolvadex/Tomofen""]","897,898,899",source-layout-extracted; not clinically validated
+terbutalinesufate,brands,"[""Brethaine"", ""Brerhine"", ""Bricanyl""]","[""Brethaine/Brerhine/Bricanyl""]","899,900,901",source-layout-extracted; not clinically validated
+terfenadine,brands,"[""Ieldane"", ""Seldane""]","[""Seldane/Ieldane""]","901,902",source-layout-extracted; not clinically validated
+testosterone-enanthate,brands,"[""Androl.A"", ""Andryl"", ""Delatest"", ""Malogex""]","[""Androl.A/Andryl/Delatest/Malogex""]","902,903,904",source-layout-extracted; not clinically validated
+tetracaine-hcl-ophthalrnic-pdf-904,record,,Tetracaine Hcl (ophthalrnic),"904,905",recovered PDF heading; not clinically validated
+tetracaine-hcl-ophthalrnic,en,"""Tetracaine Hcl ophthalrnic""","""Tetracaine Hcl (ophthalrnic)""","905,906",source-layout-extracted; not clinically validated
+tetracycline-opthalmic,en,"""Tetracycline opthalmic""","""Tetracycline ( opthalmic)""","906,907",source-layout-extracted; not clinically validated
+tetracycline-topical,en,"""Tetracycline Topical""","""Tetracycline ( Topical )""",908,source-layout-extracted; not clinically validated
+tetracycline-hcl-systemic,en,"""Tetracycline Hcl systemic""","""Tetracycline Hcl (systemic)""","908,909,910,911",source-layout-extracted; not clinically validated
+tetracycline-hcl-systemic,brands,"[""Achromycin"", ""Achromycin u"", ""Nor-jec"", ""Noootetra"", ""Panmycin"", ""Retet""]","[""Achromycin/Achromycin u/Nor-jec/Noootetra/Panmycin/Retet""]","908,909,910,911",source-layout-extracted; not clinically validated
+theophylline-anhydrous,en,"""Theophylline Anhydrous""","""Theophylline (Anhydrous)""","911,912,913,914",source-layout-extracted; not clinically validated
+theophylline-anhydrous,brands,"[""Bronkodyl"", ""Duraphyl"", ""Elixcon"", ""Elixophyllin""]","[""Bronkodyl/Duraphyl/Elixcon/Elixophyllin""]","911,912,913,914",source-layout-extracted; not clinically validated
+theophylline-g,record,,Theophylline-G,914,recovered PDF heading; not clinically validated
+thiaminemcl-vitaminb,record,,Thiaminemcl(vitaminB,"916,917",recovered PDF heading; not clinically validated
+thioguanine-tg-6-thio,record,,"Thioguanine (TG,6-Thio","918,919",recovered PDF heading; not clinically validated
+thioridazine-hcl,brands,"[""Mellaril"", ""Millazine"", ""Nouoridazine"", ""Ihioril""]","[""Mellaril/Millazine/Nouoridazine/Ihioril""]","921,922,923",source-layout-extracted; not clinically validated
+thyroid,brands,"[""Armour Ihyroid"", ""Thrar"", ""Westhroid""]","[""Armour Ihyroid/Thrar/Westhroid""]","927,928,929",source-layout-extracted; not clinically validated
+timololmaleate,brands,"[""Timoptic"", ""Blocadren""]","[""Blocadren/Timoptic""]","930,931",source-layout-extracted; not clinically validated
+tobramycinsulfate,brands,"[""Tobre Nebcin""]","[""Nebcin Tobre""]","931,932,933",source-layout-extracted; not clinically validated
+tolazamide,fa,"""تو̄زامید""","""تولازامید""","933,934,935",source-layout-extracted; not clinically validated
+tolazoline-mcl,fa,"""تو̄زولین""","""تولازولین""","935,936",source-layout-extracted; not clinically validated
+tolmetin-sodium,brands,"[""Toectin"", ""Tolectin DS""]","[""Toectin/Tolectin DS""]","936,937,938",source-layout-extracted; not clinically validated
+tolnaftate,brands,"[""Aftote"", ""Pitrex"", ""Tinectin""]","[""Aftote/Pitrex/Tinectin""]","938,939",source-layout-extracted; not clinically validated
+tranexamic-acid,brands,"[""Tronsamin"", ""cyklokpron""]","[""cyklokpron / Tronsamin""]","939,940",source-layout-extracted; not clinically validated
+tretinoin,brands,"[""Retin-A"", ""Retinic Acid"", ""Vitamin A Acid""]","[""Retin-A/Retinic Acid/Vitamin A Acid""]","942,943",source-layout-extracted; not clinically validated
+triamcinolone-acetonide-systemic,record,,Triamcinolone acetonide ( systemic),"943,944,945",recovered PDF heading; not clinically validated
+triiamcinolonea-cetonide-topical,en,"""Triiamcinolonea cetonide Topical""","""Triiamcinolonea cetonide ( Topical )""",945,source-layout-extracted; not clinically validated
+triiamcinolonea-cetonide-topical,fa,"""موضعی تریامسینولون""","""تریامسینولون موضعی""",945,source-layout-extracted; not clinically validated
+triiamcinolonea-cetonide-topical,brands,"[""Acetospam"", ""Azmacort"", ""Trama cort""]","[""Acetospam/Azmacort/Trama cort""]",945,source-layout-extracted; not clinically validated
+triamterene-h,record,,Triamterene-H,"946,947,948",recovered PDF heading; not clinically validated
+triclocarban,brands,"[""Nobacter"", ""Gamophen""]","[""Gamophen/Nobacter""]",948,source-layout-extracted; not clinically validated
+trifluoperazine-dihydrochloride,brands,"[""Nouoflarozine"", ""Solazine"", ""Stelazine"", ""suprazine"", ""Terfluzine"", ""Triflurin""]","[""Nouoflarozine/ Solazine/Stelazine / suprazine/ Terfluzine/Triflurin""]","948,949,950",source-layout-extracted; not clinically validated
+trifluridine,brands,"[""Uiroptic"", ""Triherpine""]","[""Triherpine/Uiroptic""]","950,951",source-layout-extracted; not clinically validated
+trihexyphenidyl-hcl,record,,Trihexyphenidyl Hcl,"951,952,953",recovered PDF heading; not clinically validated
+triple-sulfat-vaginal,en,"""Triple Sulfat Vaginal""","""Triple Sulfat ( Vaginal )""","957,958",source-layout-extracted; not clinically validated
+triple-sulfat-vaginal,fa,"""سولفات تریپل""","""تریپل سولفات""","957,958",source-layout-extracted; not clinically validated
+triple-sulfat-vaginal,brands,"[""Daytosult"", ""Femquard"", ""Yune-sult"", ""Sulfa-gua""]","[""Daytosult/Femquard/Yune-sult/Sulfa-gua""]","957,958",source-layout-extracted; not clinically validated
+tropicamide,brands,"[""Tropicacyl"", ""Mydriacyl""]","[""Mydriacyl/Tropicacyl""]","958,959,961",source-layout-extracted; not clinically validated
+urokinase,brands,"[""Opencath"", ""Abbokinase""]","[""Abbokinase/Opencath""]","961,962",source-layout-extracted; not clinically validated
+ursodeoxycholic-acid,brands,"[""Actigall"", ""UDCA"", ""Urso"", ""Ursodiol"", ""Ursofalk""]","[""Actigall/UDCA/Urso/Ursodiol/Ursofalk""]","962,963,965",source-layout-extracted; not clinically validated
+varicella-virus-vaccine-live,en,"""Varicella virus vaccine Live""","""Varicella virus vaccine, Live""","969,970",source-layout-extracted; not clinically validated
+varicella-virus-vaccine-live,fa,"""واکسن ویروس واریس""","""واریسلا ویروس واکسن""","969,970",source-layout-extracted; not clinically validated
+varicella-virus-vaccine-live,brands,"[""x Variva""]","[""Variva x""]","969,970",source-layout-extracted; not clinically validated
+verapamil-hydrochloride,brands,"[""Veramil"", ""Calan""]","[""Calan/ Veramil""]","971,972,973",source-layout-extracted; not clinically validated
+venlafaxin-hcl-r,en,"""Venlafaxin HCl Rفاکسین""","""Venlafaxin HCl""","973,974",source-layout-extracted; not clinically validated
+venlafaxin-hcl-r,fa,"""ون""","""ونلافاکسین""","973,974",source-layout-extracted; not clinically validated
+vidarabin-monohydrate,brands,"[""Adenine Arabinoside"", ""ARA-A"", ""Vira-A""]","[""Adenine Arabinoside, ARA-A, Vira-A""]","974,975",source-layout-extracted; not clinically validated
+vinblastine-sulfate-r,en,"""Vinblastine sulfate سولفات Rستین""","""Vinblastine sulfate""","975,976,977",source-layout-extracted; not clinically validated
+vinblastine-sulfate-r,fa,"""وین ب""","""وین بلاستین سولفات""","975,976,977",source-layout-extracted; not clinically validated
+vinblastine-sulfate-r,brands,"[""Velban"", ""Velbe"", ""VLB""]","[""Velban, Velbe, VLB""]","975,976,977",source-layout-extracted; not clinically validated
+vincristine-sulfat,brands,"[""LCR"", ""Oncovin"", ""VCR""]","[""LCR/ Oncovin/ VCR""]","977,978,979",source-layout-extracted; not clinically validated
+vindesine-sulfate,fa,"""ویندزین سولفات""","""وین دزین سولفات""","979,980",source-layout-extracted; not clinically validated
+vindesine-sulfate,brands,"[""Enison"", ""Eldisine""]","[""Eldisine/Enison""]","979,980",source-layout-extracted; not clinically validated
+vitamin-a-ophtalmic,en,"""Vitamin A Ophtalmic""","""Vitamin A(Ophtalmic)""","980,981",source-layout-extracted; not clinically validated
+vitamin-a-ophtalmic,fa,"""افتالمیک ویتامین""","""ویتامین افتالمیک""","980,981",source-layout-extracted; not clinically validated
+vitamin-a-ophtalmic,brands,"[""A-Ocuite""]","[""Ocuite-A""]","980,981",source-layout-extracted; not clinically validated
+vitamin-a-retinol,record,,Vitamin A(Retinol),"981,982",recovered PDF heading; not clinically validated
+vitamin-d-a,en,"""Vitamin D+A""","""Vitamin A+D""","982,983",source-layout-extracted; not clinically validated
+vitamin-d-a,fa,"""ویتامین آ-د""","""+ ویتامین آ -د""","982,983",source-layout-extracted; not clinically validated
+vitamin-d-a-topical,en,"""Vitamin D+A Topical""","""Vitamin A+D (Topical)""",983,source-layout-extracted; not clinically validated
+vitamin-d-a-topical,fa,"""ویتامین آ + د توپیکال""","""+ ویتامین آ +د توپیکال""",983,source-layout-extracted; not clinically validated
+vitamin-e-e,en,"""Vitamin E E""","""Vitamin E""","983,984",source-layout-extracted; not clinically validated
+vitamin-e-e,brands,"[""Aquasol E"", ""CEN-E"", ""ferol"", ""G ordo- Vite E"", ""Tocopherol"", ""Vita- Pluse E""]","[""Aquasol E, CEN-E , ferol, G ordo- Vite E, Tocopherol, Vita- Pluse E""]","983,984",source-layout-extracted; not clinically validated
+vitamin-k-phytonadione,en,"""Vitamin K Phytonadione""","""Vitamin K, (Phytonadione)""","985,986,987",source-layout-extracted; not clinically validated
+vitamin-k-phytonadione,fa,"""فیتونادیون ویتامین""","""ویتامین فیتونادیون""","985,986,987",source-layout-extracted; not clinically validated
+vitamin-k-phytonadione,brands,"[""Aqua mephyton"", ""konakion"", ""mephyton"", ""phylloquinone""]","[""Aqua mephyton, konakion, mephyton, phylloquinone""]","985,986,987",source-layout-extracted; not clinically validated
+warfarin-sodium,brands,"[""coufarin"", ""coumadin sodium"", ""pan warfin"", ""warilone"", ""warnerin""]","[""coufarin/coumadin sodium/pan warfin/warilone/warnerin""]","987,988,989,991",source-layout-extracted; not clinically validated
+yellow-fever-vaccine-live,en,"""Yellow Fever Vaccine live""","""Yellow Fever Vaccine,live""","991,992",source-layout-extracted; not clinically validated
+yellow-fever-vaccine-live,fa,"""واکسن یلوفیور""","""یلوفیور واکسن""","991,992",source-layout-extracted; not clinically validated
+yohimbine-hcl,brands,"[""Aphrodyne HCL"", ""Corynine HCL""]","[""Aphrodyne HCL / Corynine HCL""]","992,993",source-layout-extracted; not clinically validated
+zidovudine-azidothymidine-azt,en,"""Zidovudine Azidothymidine AZT""","""Zidovudine (Azidothymidine , AZT)""","994,995",source-layout-extracted; not clinically validated
+zinc-oxide,brands,"[""Desitine"", ""Dermit""]","[""Dermit/Desitine""]","995,996",source-layout-extracted; not clinically validated
+zinc-undecylenate,brands,"[""Mycodecyl"", ""Desenex""]","[""Desenex / Mycodecyl""]",997,source-layout-extracted; not clinically validated

@@ -2,7 +2,7 @@
 // App shell is network-first. Rizeh VAD + offline-ASR .data/.wasm use a
 // stable cache-first model cache independent of ordinary app revisions.
 
-const CACHE_NAME = 'FoxiMed_v5.3.2';
+const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_2';
 // Include the pinned model revision. The previous deployment accidentally
 // stored Koochik bytes under a Rizeh-named cache, so reusing that namespace
 // would keep serving the wrong 127 MB .data file after this release.
@@ -14,7 +14,7 @@ const urlsToCache = [
     './style.css?v=43',
     './voice-assistant.css?v=43',
     './calculation-core.js?v=35',
-    './script.js?v=48',
+    './script.js?v=49',
     './voice-recognition.js?v=42',
     './koochik-asr.js?v=36',
     './koochik-worker.js?v=35',
@@ -25,20 +25,11 @@ const urlsToCache = [
     './voice-ui.js?v=42',
     './converters.js',
     './drugDatabase.js',
-    './drug-reference.css?v=2',
+    './drug-reference.css?v=3',
     './drug-reference-data.js?v=2',
-    './drug-reference.js?v=3',
+    './drug-reference.js?v=4',
     './drug-reference-catalog.js?v=1',
-    './drug-reference-book-01.js?v=1',
-    './drug-reference-book-02.js?v=1',
-    './drug-reference-book-03.js?v=1',
-    './drug-reference-book-04.js?v=1',
-    './drug-reference-book-05.js?v=1',
-    './drug-reference-book-06.js?v=1',
-    './drug-reference-book-07.js?v=1',
-    './drug-reference-book-08.js?v=1',
-    './drug-reference-book-09.js?v=1',
-    './drug-reference-book-10.js?v=1',
+    './drug-reference-index.js?v=1',
     './manifest.json',
     './icons/icon-192.png',
     './icons/icon-512.png',
@@ -106,6 +97,21 @@ const SW_SKIP_PATTERNS = [/\.tar\.gz(\?|$)/i, /\.gguf(\?|$)/i, /\.bin(\?|$)/i, /
 
 self.addEventListener('fetch', event => {
     if (event.request.method !== 'GET') return;
+
+    // Versioned book chunks are immutable for this extraction revision. Cache
+    // only on demand; installing the shell must not download every monograph.
+    const drugUrl = new URL(event.request.url);
+    if (drugUrl.origin === self.location.origin && /\/drug-reference-book-\d{2}\.js$/.test(drugUrl.pathname) && drugUrl.searchParams.get('v') === '2') {
+        event.respondWith((async () => {
+            const cache = await caches.open(CACHE_NAME);
+            const cached = await cache.match(event.request);
+            if (cached) return cached;
+            const response = await fetch(event.request);
+            if (response.ok) event.waitUntil(cache.put(event.request, response.clone()).catch(() => undefined));
+            return response;
+        })());
+        return;
+    }
 
     if (MODEL_ASSET_RE.test(event.request.url)) {
         event.respondWith((async () => {

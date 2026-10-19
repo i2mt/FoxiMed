@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "passed": [
+    "initial results bounded to 40; no eager book requests",
+    "Persian, English, brand, partial/normalized and empty searches",
+    "pagination and category controls",
+    "one card per row at 1280/390/320; no overflow; footer only; click/Escape closing and header separation",
+    "long generic name and long multi-page monograph",
+    "Settings opens independently; Tools search/clear preserved",
+    "network failure/retry; rapid record switching; absent optional fields"
+  ]
+}

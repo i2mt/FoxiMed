@@ -1,0 +1,828 @@
+id,en,pdf_pages,flags
+abciximab,Abciximab,"23,24",clinical-review-required;dose-unit-fraction-layout-review-required;source-recommendation-inconsistency
+a-c-a,A.C.A,"24,25",clinical-review-required;dose-unit-fraction-layout-review-required
+acarbose,Acarbose,"25,26",clinical-review-required;dose-unit-fraction-layout-review-required
+acenocumarol,Acenocumarol,"26,27",clinical-review-required;dose-unit-fraction-layout-review-required
+acetaminophen-paracetamol,Acetaminophen(paracetamol),"27,28",clinical-review-required;dose-unit-fraction-layout-review-required;source-brand-association-quarantined
+codeine-acetaminophen,Acetaminophen codeine,"28,29",clinical-review-required;dose-unit-fraction-layout-review-required
+acetazolamide,Acetazolamide,"29,30",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-acetic,Acetic Acid,"30,31",clinical-review-required;dose-unit-fraction-layout-review-required
+acetone,Acetone,31,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;short-or-unstructured-entry
+chloride-acetylcholine,Acetylcholine chloride,"31,32",clinical-review-required;dose-unit-fraction-layout-review-required
+acetylcysteine,Acetylcysteine,"32,33",clinical-review-required;dose-unit-fraction-layout-review-required
+acetyl-salicylic-acid-a-s-a,Acetyl Salicylic Acid (A.S.A),"33,34,35",clinical-review-required;dose-unit-fraction-layout-review-required
+acitretin,Acitretin,"35,36",clinical-review-required;dose-unit-fraction-layout-review-required
+chacoal-activated,Activated chacoal,"36,37",clinical-review-required;dose-unit-fraction-layout-review-required
+complex-prithrombin-activated,Activated prithrombin complex,"37,38",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+acyclovir-systemic,Acyclovir ( systemic),"38,39,40",clinical-review-required;dose-unit-fraction-layout-review-required
+topical-ophtalmic-acyclovir,"Acyclovir ( ophtalmic , Topical )",40,clinical-review-required;dose-unit-fraction-layout-review-required
+dipivoxil-adefovir,Adefovir Dipivoxil,"40,41",clinical-review-required;dose-unit-fraction-layout-review-required
+adenosine,Adenosine,"41,42,43",clinical-review-required;dose-unit-fraction-layout-review-required
+cold-adalt,Adalt cold,43,clinical-review-required;dose-unit-fraction-layout-review-required
+albendazole,Albendazole,"43,44",clinical-review-required;dose-unit-fraction-layout-review-required
+albumin-human,Albumin ( Human),"44,45",clinical-review-required;dose-unit-fraction-layout-review-required
+alendronate-sodium,Alendronate Sodium,"46,47",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-alfentanil,Alfentanil Hydrochloride,"47,48",clinical-review-required;dose-unit-fraction-layout-review-required
+extract-allergenic,Allergenic Extract,48,clinical-review-required;dose-unit-fraction-layout-review-required
+allopurinol,Allopurinol,"48,49,50",clinical-review-required;dose-unit-fraction-layout-review-required
+alprazolam,Alprazolam,"50,51",clinical-review-required;dose-unit-fraction-layout-review-required
+alprenolol-hcl,Alprenolol Hcl,"51,52",clinical-review-required;dose-unit-fraction-layout-review-required
+alprostadin-prostaglandin-e1,Alprostadin (Prostaglandin E1),52,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+chloride-aluminum,Aluminum chloride,52,clinical-review-required;dose-unit-fraction-layout-review-required
+hydroxide-alumium,Alumium Hydroxide,"52,53,54",clinical-review-required;dose-unit-fraction-layout-review-required
+mgs-aluminium,Aluminium Mgs,54,clinical-review-required;dose-unit-fraction-layout-review-required
+hydroxide-magnesium-aluminium,Aluminium-Magnesium Hydroxide,"54,55",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-amamtadine,Amamtadine Hydrochloride,"55,56,57",clinical-review-required;dose-unit-fraction-layout-review-required
+chloride-ambenonium,Ambenonium Chloride,"57,58",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-as-amikacin,Amikacin (as sulfate ),"58,59",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-amiloride,Amiloride Hydrochloride,"59,60",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochlorothiazide-amiloride,Amiloride/Hydrochlorothiazide,"60,61",clinical-review-required;dose-unit-fraction-layout-review-required
+infusion-aminoacid,Aminoacid Infusion,"61,62",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-aminocaproic,Aminocaproic Acid,"62,63",clinical-review-required;dose-unit-fraction-layout-review-required
+aminoglutethimide,Aminoglutethimide,"63,64",clinical-review-required;dose-unit-fraction-layout-review-required
+aminophylline,Aminophylline,"64,65",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-amiodarone,Amiodarone Hydrochloride,"65,66,67",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-amitriptyline,Amitriptyline Hydrochloride,"67,68",clinical-review-required;dose-unit-fraction-layout-review-required
+r-besylate-amilodipine,Amilodipine Besylate,"68,69,70",clinical-review-required;dose-unit-fraction-layout-review-required
+alum-ammonium,Ammonium Alum,70,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+ammonium-2,Ammonium,"70,71",clinical-review-required;dose-unit-fraction-layout-review-required;duplicate-English-heading-review-required
+ammonium,Ammonium,"71,72",clinical-review-required;dose-unit-fraction-layout-review-required;duplicate-English-heading-review-required
+amodiaquine,Amodiaquine,72,clinical-review-required;dose-unit-fraction-layout-review-required
+amoxicillin,Amoxicillin,"72,73,74",clinical-review-required;dose-unit-fraction-layout-review-required
+amphotericin,Amphotericin,"74,75",clinical-review-required;dose-unit-fraction-layout-review-required
+ampicillin,Ampicillin,"75,76,77",clinical-review-required;dose-unit-fraction-layout-review-required
+lactate-amrinone,Amrinone Lactate,"77,78",clinical-review-required;dose-unit-fraction-layout-review-required
+nitrite-amyl,Amyl Nitrite,"78,79",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+a-anthocyanoside,Anthocyanoside A,79,clinical-review-required;dose-unit-fraction-layout-review-required
+globulin-immune-d-anti,Anti-D Immune Globulin,"79,80",clinical-review-required;dose-unit-fraction-layout-review-required
+antihemophilic-factor-viii,Antihemophilic Factor (VIII),"80,81",clinical-review-required;dose-unit-fraction-layout-review-required
+antihemorrhoid,Antihemorrhoid,"81,82",clinical-review-required;dose-unit-fraction-layout-review-required
+decongestant-antihistamin,Antihistamin Decongestant,82,clinical-review-required;dose-unit-fraction-layout-review-required
+sr-decongestant-antihistauin,Antihistauin Decongestant SR,82,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+serm-venum-antiscorpion,Antiscorpion Venum Serm,83,clinical-review-required;dose-unit-fraction-layout-review-required
+serum-venum-antisnak,Antisnak Venum Serum,"83,84",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-apomorphine,Apomorphine Hcl,"84,85",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+aprotinin,Aprotinin,"85,86",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-arginine,Arginine Hcl,86,clinical-review-required;dose-unit-fraction-layout-review-required
+trioxide-arsenic,Arsenic Trioxide,"86,87,88",clinical-review-required;dose-unit-fraction-layout-review-required
+saliva-artifical,Artifical Saliva,"88,89",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+tears-artifical,Artifical Tears,89,clinical-review-required;dose-unit-fraction-layout-review-required
+a-s-a-acetylsalicylic-acid,A.S.A (Acetylsalicylic Acid ),89,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+codeine-a-s-a,A.S.A codeine,89,clinical-review-required;dose-unit-fraction-layout-review-required
+vitaminc-acid-ascorbic,Ascorbic Acid (Vitaminc),89,clinical-review-required;dose-unit-fraction-layout-review-required;class-unresolved-or-absent;short-or-unstructured-entry
+asparginase,Asparginase,"89,90,91",clinical-review-required;dose-unit-fraction-layout-review-required
+atenolol,Atenolol,"91,92",clinical-review-required;dose-unit-fraction-layout-review-required
+atorvastatin,Atorvastatin,"92,93",clinical-review-required;dose-unit-fraction-layout-review-required
+r-besylate-atracurium,Atracurium Besylate,"93,94",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-atropin,Atropin sulfate,"94,95,96",clinical-review-required;dose-unit-fraction-layout-review-required
+azathioprine,Azathioprine,"96,97,98",clinical-review-required;dose-unit-fraction-layout-review-required
+azithromycin,Azithromycin,"98,99,101",clinical-review-required;dose-unit-fraction-layout-review-required
+bacitracin,Bacitracin,101,clinical-review-required;dose-unit-fraction-layout-review-required
+baclofen,Baclofen,"101,102,103",clinical-review-required;dose-unit-fraction-layout-review-required
+salt-balanced,Balanced Salt,103,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+balanced-salt-plus-glutathione,Balanced Salt Plus Glutathione,"103,104",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfat-barium,Barium Sulfat,"104,105",clinical-review-required;dose-unit-fraction-layout-review-required
+intravesical-bcg,BCG (Intravesical),"105,106",clinical-review-required;dose-unit-fraction-layout-review-required
+carmustine-bcnu,BCNU (Carmustine),106,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+beclomethasone-dipropionate,Beclomethasone Dipropionate,"106,107",clinical-review-required;dose-unit-fraction-layout-review-required
+r-b-p-belladonna,Belladonna P.B,"107,108,109",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-benzoic,Benzoic Acid,109,clinical-review-required;dose-unit-fraction-layout-review-required
+benzocaine,Benzocaine,"109,110",clinical-review-required;dose-unit-fraction-layout-review-required
+peroxide-benzoyl,Benzoyl Peroxide,111,clinical-review-required;dose-unit-fraction-layout-review-required
+r-mesylate-benztropine,Benztropine Mesylate,"111,112,113",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-benzydamine,Benzydamine HCL,113,clinical-review-required;dose-unit-fraction-layout-review-required
+benzoate-benzyl,Benzyl Benzoate,"113,114",clinical-review-required;dose-unit-fraction-layout-review-required
+hydroxynaphtaate-bephenium,Bephenium Hydroxynaphtaate,"114,115",clinical-review-required;dose-unit-fraction-layout-review-required
+beractant,Beractant,"115,116",clinical-review-required;dose-unit-fraction-layout-review-required
+betacarotene,Betacarotene,"116,117",clinical-review-required;dose-unit-fraction-layout-review-required
+betahistine-2-hcl,Betahistine 2 HCL,"117,118",clinical-review-required;dose-unit-fraction-layout-review-required
+betametazone-disodium-phosphate-ophthalmic-otic,Betametazone Disodium Phosphate.(Ophthalmic-otic),118,clinical-review-required;dose-unit-fraction-layout-review-required
+systemic-betametasone,Betametasone (systemic),"118,119",clinical-review-required;dose-unit-fraction-layout-review-required
+betamethasone-as-valerate,Betamethasone (as valerate),120,clinical-review-required;dose-unit-fraction-layout-review-required
+a-l-betamethasone,Betamethasone L.A.,120,clinical-review-required;dose-unit-fraction-layout-review-required
+betaxolol-ashcl,Betaxolol (ashcl),"120,121",clinical-review-required;dose-unit-fraction-layout-review-required
+chloride-bethanechol,Bethanechol Chloride,"121,122,123",clinical-review-required;dose-unit-fraction-layout-review-required
+blosynthesis-somatropine-somatropine,Blosynthesis Somatropine (Somatropine),123,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+biperioen,Biperioen,"123,124,125",clinical-review-required;dose-unit-fraction-layout-review-required
+bisacodyl,Bisacodyl,"125,126",clinical-review-required;dose-unit-fraction-layout-review-required
+bismuth-subcitrate-bismuth-oxide,Bismuth Subcitrate (Bismuth Oxide),"126,127",clinical-review-required;dose-unit-fraction-layout-review-required
+bleomycin-assulfate,Bleomycin (assulfate),"127,128",clinical-review-required;dose-unit-fraction-layout-review-required
+borax,Borax,128,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+acid-boric,Boric Acid,"128,129",clinical-review-required;dose-unit-fraction-layout-review-required
+botulinum-toxin-type-a-a,Botulinum toxin Type A,"129,130",clinical-review-required;dose-unit-fraction-layout-review-required
+antitoxin-monovalent-botulism,Botulism Monovalent Antitoxin,130,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+bovactant,Bovactant,"130,131",clinical-review-required;dose-unit-fraction-layout-review-required
+r-tosylate-bretylium,Bretylium Tosylate,"131,132",clinical-review-required;dose-unit-fraction-layout-review-required
+tartarate-brimonidine,Brimonidine Tartarate,"132,133",clinical-review-required;dose-unit-fraction-layout-review-required
+brinzolamide,Brinzolamide,"133,134",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-bromhexine,Bromhexine HCL,"134,135",clinical-review-required;dose-unit-fraction-layout-review-required
+bromocriptine-as-mesylate,Bromocriptine (as Mesylate),"135,136,137",clinical-review-required;dose-unit-fraction-layout-review-required
+budesonide,Budesonide,"137,138",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-bupivacaine,Bupivacaine HCL,"138,139,140",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-as-buprenorphine,Buprenorphine (as HCL),"140,141",clinical-review-required;dose-unit-fraction-layout-review-required
+buprenorphin-hcl-naloxone-hcl,Buprenorphin HCL/ Naloxone HCL,"141,142",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-bupropion,Bupropion HCL,"142,143,144",clinical-review-required;dose-unit-fraction-layout-review-required
+burn-ointment-for-minorburns,Burn Ointment (For minorburns),144,clinical-review-required;dose-unit-fraction-layout-review-required
+acetate-busereline,Busereline Acetate,"144,145",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-buspirone,Buspirone HCL,"145,146",clinical-review-required;dose-unit-fraction-layout-review-required
+busulfan,BusulFan,"146,147,148,149",clinical-review-required;dose-unit-fraction-layout-review-required
+cabergolin,Cabergolin,"149,150",clinical-review-required;dose-unit-fraction-layout-review-required
+cade-oil,Cade Oil,150,clinical-review-required;dose-unit-fraction-layout-review-required;class-unresolved-or-absent
+d-calamine,Calamine-D,"150,151",clinical-review-required;dose-unit-fraction-layout-review-required
+calcipotriol-2,Calcipotriol,"151,152",clinical-review-required;dose-unit-fraction-layout-review-required;duplicate-English-heading-review-required
+salmon-cacitonin,Cacitonin(Salmon),"152,153",clinical-review-required;dose-unit-fraction-layout-review-required
+calcipotriol,Calcipotriol,"153,154",clinical-review-required;dose-unit-fraction-layout-review-required;duplicate-English-heading-review-required
+calcitriol,Calcitriol,"154,155,156",clinical-review-required;dose-unit-fraction-layout-review-required
+calcium-carbonate-chlorid-gluconate,"Calcium (Carbonate , Chlorid , Gluconate","156,157",clinical-review-required;dose-unit-fraction-layout-review-required
+d-calcium,Calcium-D,"157,158",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+r-dobesilate-calcium,CALCIUM DOBESILATE,158,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+forte-calcium,Calcium Forte,"158,159",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+gluconate-calcium,Calcium Gluconate,"159,160,161",clinical-review-required;dose-unit-fraction-layout-review-required
+pantothenate-calcium,Calcium Pantothenate,"161,162",clinical-review-required;dose-unit-fraction-layout-review-required
+supplements-calcium,Calcium Supplements,"162,163",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+camphor,Camphor,163,clinical-review-required;dose-unit-fraction-layout-review-required
+capecitabine,Capecitabine,163,clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-capreomycin,Capreomycin Sulfate,"164,165",clinical-review-required;dose-unit-fraction-layout-review-required
+capsaicin,Capsaicin,165,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+capsicum,Capsicum,"165,166",clinical-review-required;dose-unit-fraction-layout-review-required
+captopril,Captopril,"166,167,168",clinical-review-required;dose-unit-fraction-layout-review-required
+carbachol,Carbachol,"168,169",clinical-review-required;dose-unit-fraction-layout-review-required
+carbamazepine,Carbamazepine,"169,170,171",clinical-review-required;dose-unit-fraction-layout-review-required
+carbamid-peroxide,Carbamid Peroxide,172,clinical-review-required;dose-unit-fraction-layout-review-required
+disodium-carbenicillin,Carbenicillin Disodium,"173,174",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-indanyl-carbenicillin,Carbenicillin Indanyl Sodium,"174,175,176",clinical-review-required;dose-unit-fraction-layout-review-required
+r-caroplatin,Caroplatin,"176,177",clinical-review-required;dose-unit-fraction-layout-review-required
+carmustine,Carmustine,"177,178",clinical-review-required;dose-unit-fraction-layout-review-required
+carnitine-l-carnitine,Carnitine (L-Carnitine),179,clinical-review-required;dose-unit-fraction-layout-review-required
+carvedilol,Carvedilol,"179,180,181",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-cefaazolin,Cefaazolin Sodium,"181,182",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-cefepime,Cefepime hydrochloride,"182,183",clinical-review-required;dose-unit-fraction-layout-review-required
+cefixime,Cefixime,"183,184",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-cefotaxime,Cefotaxime sodium,"184,185",clinical-review-required;dose-unit-fraction-layout-review-required
+ceftazidime-as-pentahydrate,Ceftazidime (as pentahydrate),"185,186,187",clinical-review-required;dose-unit-fraction-layout-review-required
+ceftizoxime,Ceftizoxime,"187,188",clinical-review-required;dose-unit-fraction-layout-review-required
+ceftriaxone,Ceftriaxone,"188,189",clinical-review-required;dose-unit-fraction-layout-review-required
+cafuroxime,Cafuroxime,"189,190,191",clinical-review-required;dose-unit-fraction-layout-review-required
+celecoxib,Celecoxib,"191,192",clinical-review-required;dose-unit-fraction-layout-review-required
+cephalexin,Cephalexin,"192,193,194",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-cephalothin,Cephalothin sodium,194,clinical-review-required;dose-unit-fraction-layout-review-required
+cephradine,Cephradine,"194,195",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-citirizine,Citirizine hydrochloride,"195,196",clinical-review-required;dose-unit-fraction-layout-review-required
+c-cetrimide,Cetrimide-C,196,clinical-review-required;dose-unit-fraction-layout-review-required
+b-cetylpyridium,Cetylpyridium-B,"196,197",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+chloride-cetylpyridium,Cetylpyridium chloride,197,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+activated-charcoal,Charcoal (Activated),197,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+cold-children,Children Cold,197,clinical-review-required;dose-unit-fraction-layout-review-required
+chlorambucil,Chlorambucil,"197,198,199",clinical-review-required;dose-unit-fraction-layout-review-required
+chloramphenicol,Chloramphenicol,"199,200",clinical-review-required;dose-unit-fraction-layout-review-required
+chloramphenicol-oph,Chloramphenicol (OPH),201,clinical-review-required;dose-unit-fraction-layout-review-required
+chlroamphenicol-systemic,chlroamphenicol (systemic),"201,202",clinical-review-required;dose-unit-fraction-layout-review-required
+chlordiazepoxide,Chlordiazepoxide,"202,203",clinical-review-required;dose-unit-fraction-layout-review-required
+gluconate-chlorhexidine,Chlorhexidine Gluconate,"203,204",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+detergent-gluconate-chlorhexidine,Chlorhexidine Gluconate +Detergent,204,clinical-review-required;dose-unit-fraction-layout-review-required
+mustard-nitrogen-hcl-chlormethine,Chlormethine Hcl(Nitrogen Mustard),"204,205",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfat-phosphate-as-chloroquine,Chloroquine ( as phosphate & sulfat),"205,206,207",clinical-review-required;dose-unit-fraction-layout-review-required
+chloroxylenol,Chloroxylenol,207,clinical-review-required;dose-unit-fraction-layout-review-required
+maleate-chlorpheniramine,Chlorpheniramine Maleate,"207,208,209",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-chlorpromazine,Chlorpromazine Hydrochloride,"209,210,211",clinical-review-required;dose-unit-fraction-layout-review-required
+chlropropamide,Chlropropamide,"211,212,213",clinical-review-required;dose-unit-fraction-layout-review-required
+chlorthalidone,Chlorthalidone,"213,214,215",clinical-review-required;dose-unit-fraction-layout-review-required
+cholecalciferol-vitamin-d,Cholecalciferol(vitamin  D,215,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+cholestyramine,Cholestyramine,"215,216",clinical-review-required;dose-unit-fraction-layout-review-required
+chorionic-gonadotropin-human-h-c-g,"Chorionic Gonadotropin , Human (H.C.G)","216,217,218",clinical-review-required;dose-unit-fraction-layout-review-required
+ciclosporin,Ciclosporin,"218,219",clinical-review-required;dose-unit-fraction-layout-review-required
+cimetidine,Cimetidine,"219,220",clinical-review-required;dose-unit-fraction-layout-review-required
+cinnarizine,Cinnarizine,"220,221",clinical-review-required;dose-unit-fraction-layout-review-required
+systemic-ciprofloxacin,Ciprofloxacin(Systemic),"221,222,223",clinical-review-required;dose-unit-fraction-layout-review-required
+ciprofloxacin-hydrochloride-ophtalmic,Ciprofloxacin Hydrochloride(ophtalmic,"223,224",clinical-review-required;dose-unit-fraction-layout-review-required
+monohydrate-as-cisapride,Cisapride (as monohydrate),"224,225",clinical-review-required;dose-unit-fraction-layout-review-required
+r-besylate-cisatracurium,Cisatracurium Besylate,"225,226,227",clinical-review-required;dose-unit-fraction-layout-review-required
+r-r-platinum-cis-cisplatin,Cisplatin (Cis Platinum),"227,228",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrobromide-citalopram,Citalopram Hydrobromide,"228,229",clinical-review-required;dose-unit-fraction-layout-review-required
+citicoline-as-sodium-salt,Citicoline (as Sodium Salt),230,clinical-review-required;dose-unit-fraction-layout-review-required
+acid-citric,Citric Acid,"230,231",clinical-review-required;dose-unit-fraction-layout-review-required
+r-cladribine,Cladribine,"231,232",clinical-review-required;dose-unit-fraction-layout-review-required
+r-clarithromycin,Clarithromycin,"232,233",clinical-review-required;dose-unit-fraction-layout-review-required
+fumarate-clemastine,Clemastine Fumarate,"234,235",clinical-review-required;dose-unit-fraction-layout-review-required
+c-clidinium,Clidinium - C,"235,236",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-clindamycin,Clindamycin Hydrochloride,"236,237,238",clinical-review-required;dose-unit-fraction-layout-review-required
+clobazam,Clobazam,"238,239",clinical-review-required;dose-unit-fraction-layout-review-required
+propionate-clobetasol,Clobetasol propionate,"239,240",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-clobutinol,Clobutinol Hcl,"240,241",clinical-review-required;dose-unit-fraction-layout-review-required
+clofazimine,Clofazimine,"241,242",clinical-review-required;dose-unit-fraction-layout-review-required
+clofibrate,Clofibrate,"242,243",clinical-review-required;dose-unit-fraction-layout-review-required
+clomiphene,Clomiphene,"243,244",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-clomipramine,Clomipramine Hydrochloride,"244,245",clinical-review-required;dose-unit-fraction-layout-review-required
+clonazepam,clonazepam,"245,246,247",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-clonidine,clonidine Hydrochloride,"247,248",clinical-review-required;dose-unit-fraction-layout-review-required
+bisulfate-clopidogrel,Clopidogrel Bisulfate,"249,250",clinical-review-required;dose-unit-fraction-layout-review-required
+clotrimazole,Clotrimazole,"250,251",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-cloxacillin,Cloxacillin Sodium,"251,252",clinical-review-required;dose-unit-fraction-layout-review-required
+clozapin,Clozapin,"252,253,254",clinical-review-required;dose-unit-fraction-layout-review-required
+tar-coal,Coal Tar,254,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+co-amoxiclav-amoxicillin-and-potassium-clavulante,Co-Amoxiclav(Amoxicillin and Potassium Clavulante),"255,256",clinical-review-required;dose-unit-fraction-layout-review-required
+phosphate-codeine,Codeine Phosphate,"256,257",clinical-review-required;dose-unit-fraction-layout-review-required
+colchicine,Colchicine,"257,258,259",clinical-review-required;dose-unit-fraction-layout-review-required
+palmitate-colfosceril,Colfosceril Palmitate,"259,260",clinical-review-required;dose-unit-fraction-layout-review-required
+colistin-sulphate,colistin sulphate,260,clinical-review-required;dose-unit-fraction-layout-review-required
+estrogen-conjugated,Conjugated Estrogen,"260,261,262",clinical-review-required;dose-unit-fraction-layout-review-required
+contraceptives-de-hd-ld,Contraceptives DE-HD-LD,"262,263,264",clinical-review-required;dose-unit-fraction-layout-review-required
+copper-sulfate,Copper sulfate,"264,265",clinical-review-required;dose-unit-fraction-layout-review-required
+acth-corticotropin,Corticotropin(ACTH),"265,266",clinical-review-required;dose-unit-fraction-layout-review-required
+co-trimoxazole-trimethoprim-sulfamethoxazole,CO - Trimoxazole (Trimethoprim - sulfamethoxazole,"266,267,268,269",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-cromolyn,Cromolyn Sodium,"269,270",clinical-review-required;dose-unit-fraction-layout-review-required
+cromolyn-sodium-oph,Cromolyn sodium (oph),"270,271",clinical-review-required;dose-unit-fraction-layout-review-required
+crotamiton,Crotamiton,271,clinical-review-required;dose-unit-fraction-layout-review-required
+sr-cumarin,Cumarin SR,"271,272",clinical-review-required;dose-unit-fraction-layout-review-required
+cyanocobalamin-vitamin-b12,Cyanocobalamin (vitamin B12),272,clinical-review-required;dose-unit-fraction-layout-review-required;class-unresolved-or-absent;short-or-unstructured-entry
+hydrochloride-cyclopentolate,Cyclopentolate Hydrochloride,"272,273",clinical-review-required;dose-unit-fraction-layout-review-required
+cyclophosphamide,Cyclophosphamide,"273,274",clinical-review-required;dose-unit-fraction-layout-review-required
+cycloserine,Cycloserine,"275,276",clinical-review-required;dose-unit-fraction-layout-review-required
+cyclosporine,Cyclosporine,"276,277,278",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-ciproheptadine,Ciproheptadine Hydrochloride,"278,279",clinical-review-required;dose-unit-fraction-layout-review-required
+acetate-cyproterone,Cyproterone Acetate,"279,280",clinical-review-required;dose-unit-fraction-layout-review-required
+compound-cyproterone,Cyproterone Compound,280,clinical-review-required;dose-unit-fraction-layout-review-required
+cysteamin-bitartrate-phosphocysteamine,Cysteamin Bitartrate (Phosphocysteamine,"280,281",clinical-review-required;dose-unit-fraction-layout-review-required
+cytarabine,Cytarabine,"281,282,283",clinical-review-required;dose-unit-fraction-layout-review-required
+dacrbazine-dtic,Dacrbazine (DTIC),"283,284,285",clinical-review-required;dose-unit-fraction-layout-review-required
+daclizumab,Daclizumab,"285,286",clinical-review-required;dose-unit-fraction-layout-review-required
+d-actinomycin-dactinomycin,Dactinomycin (Actinomycin -D),"286,287,288",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-dalteparin,Dalteparin sodium,"288,289,290",clinical-review-required;dose-unit-fraction-layout-review-required
+danazol,Danazol,"290,291,292",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-dantrolene,Dantrolene Sodium,"292,293,294",clinical-review-required;dose-unit-fraction-layout-review-required
+dapsone-dds,Dapsone (DDS),"294,295,296,297",clinical-review-required;dose-unit-fraction-layout-review-required
+daunorubicin-hcl,Daunorubicin HCL,"297,298,299",clinical-review-required;dose-unit-fraction-layout-review-required
+deferiprone,Deferiprone,"299,300",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+deferoxamin-mesylate,Deferoxamin Mesylate,"300,301",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-dehydroemetine,Dehydroemetine HCL,302,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hydrochloride-desipramine,Desipramine Hydrochloride,"302,303,304",clinical-review-required;dose-unit-fraction-layout-review-required
+desmopressin-acetate,Desmopressin Acetate,"304,305,306",clinical-review-required;dose-unit-fraction-layout-review-required
+desoxycorticosterone,Desoxycorticosterone,"306,307",clinical-review-required;dose-unit-fraction-layout-review-required
+dexamethasone,Dexamethasone,"307,308,309,310",clinical-review-required;dose-unit-fraction-layout-review-required
+phosphate-sodium-dexamethasone,Dexamethasone sodium phosphate,310,clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-dexamphetamine,Dexamphetamine sulfate,"310,311,312",clinical-review-required;dose-unit-fraction-layout-review-required
+maleate-dexehlorpheniramine,Dexehlorpheniramine Maleate,"312,313",clinical-review-required;dose-unit-fraction-layout-review-required
+dexpanthenol-pantothenic-acid,Dexpanthenol (Pantothenic Acid,"313,314",clinical-review-required;dose-unit-fraction-layout-review-required
+dextran-40,Dextran 40,"314,315,316",clinical-review-required;dose-unit-fraction-layout-review-required
+dextranomer,Dextranomer,"316,317",clinical-review-required;dose-unit-fraction-layout-review-required
+dextromethorphan-hbr,Dextromethorphan HBR,"317,318",clinical-review-required;dose-unit-fraction-layout-review-required
+p-dextromethorphan,Dextromethorphan-P,318,clinical-review-required;dose-unit-fraction-layout-review-required
+dextrose-d-gluose,Dextrose (D-Gluose),"318,319",clinical-review-required;dose-unit-fraction-layout-review-required
+dextrose-alcohol,Dextrose  Alcohol,"319,320",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+diazpam,Diazpam,"320,321,322",clinical-review-required;dose-unit-fraction-layout-review-required
+diazoxide,Diazoxide,"322,323,324,325",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-diclofenac,Diclofenac Sodium,"325,326,327",clinical-review-required;dose-unit-fraction-layout-review-required
+dicyclomine-hydrochloride,Dicyclomine Hydrochloride,"327,328",clinical-review-required;dose-unit-fraction-layout-review-required
+didanosine,Didanosine,"328,329",clinical-review-required;dose-unit-fraction-layout-review-required
+dienestrol,Dienestrol,"329,330",clinical-review-required;dose-unit-fraction-layout-review-required
+citrate-diethylcarbamazine,Diethylcarbamazine Citrate,"330,331",clinical-review-required;dose-unit-fraction-layout-review-required
+diethylstilbestrol,Diethylstilbestrol,"331,332",clinical-review-required;dose-unit-fraction-layout-review-required
+digestive,Digestive,332,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+digoxin,Digoxin,"332,333,334,335",clinical-review-required;dose-unit-fraction-layout-review-required
+digoxin-immune-fab,Digoxin Immune FAB,"335,336",clinical-review-required;dose-unit-fraction-layout-review-required
+mesylate-dihydroergotamine,Dihydroergotamine Mesylate,"336,337",clinical-review-required;dose-unit-fraction-layout-review-required
+dihydrotachysterol-vitamin-d,Dihydrotachysterol (vitamin  D,337,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+diloxanide-furoate,Diloxanide Furoate,337,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hydrochloride-diltiazem,Diltiazem Hydrochloride,"338,339",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrinate-dimen,Dimen Hydrinate,"339,340,341",clinical-review-required;dose-unit-fraction-layout-review-required
+dimercapol,Dimercapol,"341,342",clinical-review-required;dose-unit-fraction-layout-review-required
+activated-dimethicone,Dimethicone (Activated),342,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sulfoxide-dimethyl,Dimethyl Sulfoxide,343,clinical-review-required;dose-unit-fraction-layout-review-required
+compound-diphenhydramin,Diphenhydramin Compound,343,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hydrochlorid-diphenhydramine,Diphenhydramine Hydrochlorid,"343,344,345",clinical-review-required;dose-unit-fraction-layout-review-required
+r-diphenoxylate,Diphenoxylate,"345,346,347",clinical-review-required;dose-unit-fraction-layout-review-required
+equine-antitoxin-diphteria,Diphteria Antitoxin Equine,"347,348",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+diphtheria-toxoid-tetanus-toxoid-pertussis-vaccine-adsorbed-dtp,Diphtheria Toxoid + Tetanus Toxoid + Pertussis Vaccine Adsorbed (DTP),348,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+diophteria-and-tetanus-toxoids-adsorbed,"Diophteria and tetanus toxoids , Adsorbed","348,349,350",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+dipyridamol,Dipyridamol,"350,351",clinical-review-required;dose-unit-fraction-layout-review-required
+phosphate-disopyramide,Disopyramide phosphate,"351,352",clinical-review-required;dose-unit-fraction-layout-review-required
+dithranol,Dithranol,353,clinical-review-required;dose-unit-fraction-layout-review-required
+docusate-sodium-and-sorbitol,Docusate Sodium and sorbitol,"353,354",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-donepezil,Donepezil Hydrochloride,"354,355",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-dobutamine,Dobutamine Hydrochloride,"355,356,357",clinical-review-required;dose-unit-fraction-layout-review-required
+docetexel,Docetexel,"357,358",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-dopamine,Dopamine Hydrochloride,"358,359,360",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-dorzolamide,Dorzolamide Hydrochloride,"360,361",clinical-review-required;dose-unit-fraction-layout-review-required
+doxapram-hcl,Doxapram HCl,"361,362,363",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-doxepin,Doxepin Hydrochloride,"363,364,365",clinical-review-required;dose-unit-fraction-layout-review-required
+doxorubicin-hcl,Doxorubicin HCl,"365,366,367",clinical-review-required;dose-unit-fraction-layout-review-required
+doxycycline,Doxycycline,"367,368,369",clinical-review-required;dose-unit-fraction-layout-review-required
+droperidel,Droperidel,"369,370,371",clinical-review-required;dose-unit-fraction-layout-review-required
+compound-droperidol,Droperidol Compound,371,clinical-review-required;dose-unit-fraction-layout-review-required
+drotrecoyin-alfa-activated,Drotrecoyin alfa (Activated),"371,372",clinical-review-required;dose-unit-fraction-layout-review-required
+dydrogestrone,Dydrogestrone,"372,373",clinical-review-required;dose-unit-fraction-layout-review-required
+iodide-echothiophate,Echothiophate Iodide,"373,374",clinical-review-required;dose-unit-fraction-layout-review-required
+edetate-calcium-disodium-calcium-edta,Edetate Calcium Disodium (Calcium Edta),"374,375",clinical-review-required;dose-unit-fraction-layout-review-required
+dicobalt-edetate,Edetate Dicobalt,"375,376",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+edetate-disodium-edta,Edetate Disodium (EDTA),"376,377",clinical-review-required;dose-unit-fraction-layout-review-required
+ophthalmic-sodium-edetate,Edetate Sodium (Ophthalmic),"377,378",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+chloride-edrophonium,Edrophonium Chloride,"378,379",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-emetine,Emetine HCL,"379,380",clinical-review-required;dose-unit-fraction-layout-review-required
+maleate-enalapril,Enalapril Maleate,"380,381,382",clinical-review-required;dose-unit-fraction-layout-review-required
+enflurane,Enflurane,"382,383",clinical-review-required;dose-unit-fraction-layout-review-required
+enoxaparin-sodium,Enoxaparin Sodium,"383,384",clinical-review-required;dose-unit-fraction-layout-review-required
+eosin,Eosin,"384,385",clinical-review-required;dose-unit-fraction-layout-review-required;class-unresolved-or-absent
+sulfate-or-hcl-ephedrine,Ephedrine (HCL or Sulfate),"385,386",clinical-review-required;dose-unit-fraction-layout-review-required
+epinephrine,Epinephrine,"386,387,388",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-epirubicin,Epirubicin Hydrochloride,"388,389,390",clinical-review-required;dose-unit-fraction-layout-review-required
+erythropoietin-alfa-epoetin,Epoetin Alfa (Erythropoietin),"390,391,392",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+ergotamin-c-c,Ergotamin-C,"392,393",clinical-review-required;dose-unit-fraction-layout-review-required
+tartrate-ergotamine,Ergotamine Tartrate,"393,394",clinical-review-required;dose-unit-fraction-layout-review-required
+erythromycin,Erythromycin,"394,395,396",clinical-review-required;dose-unit-fraction-layout-review-required
+ophtalmic-erythromycin,Erythromycin (ophtalmic),396,clinical-review-required;dose-unit-fraction-layout-review-required
+topical-erythromycin,Erythromycin (Topical),"396,397",clinical-review-required;dose-unit-fraction-layout-review-required
+erythropietin-epoetin-alfa,Erythropietin (Epoetin Alfa),"397,398",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-esmolol,Esmolol Hydrochloride,"398,399,400",clinical-review-required;dose-unit-fraction-layout-review-required
+sr-estradiol,Estradiol SR,400,clinical-review-required;dose-unit-fraction-layout-review-required
+valerate-estradiol,Estradiol Valerate,"400,401",clinical-review-required;dose-unit-fraction-layout-review-required
+topical-estradiol,Estradiol (Topical),401,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+etanercept,Etanercept,"401,402",clinical-review-required;dose-unit-fraction-layout-review-required
+lactate-ethacridine,Ethacridine Lactate,"402,403",clinical-review-required;dose-unit-fraction-layout-review-required
+phosphate-sodium-estramutine,Estramutine Sodium phosphate,"403,404",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-ethacrynic,Ethacrynic Acid,"404,405",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-ethambutol,Ethambutol HCL,"405,406",clinical-review-required;dose-unit-fraction-layout-review-required
+ether,Ether,"406,407",clinical-review-required;dose-unit-fraction-layout-review-required
+estradiol-ethinyl,Ethinyl Estradiol,407,clinical-review-required;dose-unit-fraction-layout-review-required
+oil-ethiodized,Ethiodized Oil,"407,408",clinical-review-required;dose-unit-fraction-layout-review-required
+ethionamide,Ethionamide,"408,409",clinical-review-required;dose-unit-fraction-layout-review-required
+ethosuximide,Ethosuximide,"409,410",clinical-review-required;dose-unit-fraction-layout-review-required
+disodium-etidronate,Etidronate Disodium,"410,411",clinical-review-required;dose-unit-fraction-layout-review-required
+etomidate,Etomidate,"411,412",clinical-review-required;dose-unit-fraction-layout-review-required
+etoposide,Etoposide,"412,413",clinical-review-required;dose-unit-fraction-layout-review-required
+exemestane,Exemestane,"413,414",clinical-review-required;dose-unit-fraction-layout-review-required
+etretinate,Etretinate,"414,415",clinical-review-required;dose-unit-fraction-layout-review-required
+expectorant,Expectorant,415,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+expextorant,Expextorant,"415,416,417",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+factor-vii-vii,Factor VII,"417,418",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+factor-viii-antihemophylic-factor-viii,Factor VIII (Antihemophylic Factor),418,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+factor-ix-complex-ix,Factor IX Complex,"418,419",clinical-review-required;dose-unit-fraction-layout-review-required
+famotidine,Famotidine,"419,420,421",clinical-review-required;dose-unit-fraction-layout-review-required
+feiba-activated-prothrombin-compleaconcentrated,Feiba(Activated Prothrombin Compleaconcentrated),421,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;persian-heading-absent;short-or-unstructured-entry
+fenofibrate,Fenofibrate,"421,422,423",clinical-review-required;dose-unit-fraction-layout-review-required
+fentanyle-as-citrate,Fentanyle (as Citrate),"423,424",clinical-review-required;dose-unit-fraction-layout-review-required
+ferric-oxide-saccharated,Ferric Oxide Saccharated,"424,425",clinical-review-required;dose-unit-fraction-layout-review-required
+ferrous-glycine-sulfate,Ferrous Glycine Sulfate,"425,426",clinical-review-required;dose-unit-fraction-layout-review-required
+r-acid-folic-sulfate-glycine-ferrous,Ferrous- Glycine Sulfate/ Folic Acid,426,clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-fexofenadine,Fexofenadine Hydrochloride,"426,427,428",clinical-review-required;dose-unit-fraction-layout-review-required
+fibrinogen,Fibrinogen,428,clinical-review-required;dose-unit-fraction-layout-review-required
+fibrinolysin,Fibrinolysin,"428,429",clinical-review-required;dose-unit-fraction-layout-review-required
+filgrastim-gcsf,Filgrastim (GCSF),"429,430",clinical-review-required;dose-unit-fraction-layout-review-required
+finasteride,Finasteride,"431,432",clinical-review-required;dose-unit-fraction-layout-review-required
+flecainide,Flecainide,"432,433",clinical-review-required;dose-unit-fraction-layout-review-required
+fluconazole,Fluconazole,"434,435",clinical-review-required;dose-unit-fraction-layout-review-required
+flucytosine,Flucytosine,"435,436,437",clinical-review-required;dose-unit-fraction-layout-review-required
+phosphate-fludarabine,Fludarabine phosphate,"437,438",clinical-review-required;dose-unit-fraction-layout-review-required
+acetat-fludrocortisone,Fludrocortisone Acetat,"438,439,440",clinical-review-required;dose-unit-fraction-layout-review-required
+flumazenil,Flumazenil,"440,441",clinical-review-required;dose-unit-fraction-layout-review-required
+fluocinolone-acetonide,Fluocinolone Acetonide,"441,442",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sodium-fluorecein,Fluorecein Sodium,"442,443",clinical-review-required;dose-unit-fraction-layout-review-required
+fluride-as-sodium-salt,Fluride (as sodium salt),"443,444",clinical-review-required;dose-unit-fraction-layout-review-required
+fluorometholone,Fluorometholone,444,clinical-review-required;dose-unit-fraction-layout-review-required
+fluorouracil-systemic,Fluorouracil (Systemic),"445,446",clinical-review-required;dose-unit-fraction-layout-review-required
+topical-fluorouracil,Fluorouracil (Topical),"446,447",clinical-review-required;dose-unit-fraction-layout-review-required
+fluoxetine-az-hcl,Fluoxetine (az HCl),"447,448,449",clinical-review-required;dose-unit-fraction-layout-review-required
+flupenthixol,Flupenthixol,"449,450",clinical-review-required;dose-unit-fraction-layout-review-required
+fluphenazine,Fluphenazine,"450,451,452",clinical-review-required;dose-unit-fraction-layout-review-required
+flurazepam-as-hcl,Flurazepam (as HCl,"452,453,454",clinical-review-required;dose-unit-fraction-layout-review-required
+flutamide,Flutamide,"454,455",clinical-review-required;dose-unit-fraction-layout-review-required
+fluticasone-as-propionate,Fluticasone (as propionate),"455,456",clinical-review-required;dose-unit-fraction-layout-review-required
+maleate-fluvoxamine,Fluvoxamine Maleate,"456,457,458",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-folic,Folic Acid,"458,459",clinical-review-required;dose-unit-fraction-layout-review-required
+alfa-follitropine,Follitropine Alfa,"459,460",clinical-review-required;dose-unit-fraction-layout-review-required
+beta-follitropn,Follitropn Beta,"460,461,462",clinical-review-required;dose-unit-fraction-layout-review-required
+fomepizole,Fomepizole,"462,463",clinical-review-required;dose-unit-fraction-layout-review-required
+fumarate-formoterol,Formoterol Fumarate,"463,464,465",clinical-review-required;dose-unit-fraction-layout-review-required
+fosfestrol-as-tetrasodium-salt,Fosfestrol (as Tetrasodium Salt),"465,466",clinical-review-required;dose-unit-fraction-layout-review-required
+furazolidone,Furazolidone,"466,467",clinical-review-required;dose-unit-fraction-layout-review-required
+furosemide,Furosemide,"467,468,469,471",clinical-review-required;dose-unit-fraction-layout-review-required
+gabapentin,Gabapentin,"471,472",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrobromide-galantamine,Galantamine Hydrobromide,"472,473,474",clinical-review-required;dose-unit-fraction-layout-review-required
+gamma-benzene-hydrochloride-lindane,Gamma Benzene Hydrochloride (Lindane),474,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+gancyclovir,Gancyclovir,"474,475",clinical-review-required;dose-unit-fraction-layout-review-required
+modified-gelatin,Gelatin Modified,476,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+gemfibrozil,Gemfibrozil,"476,477",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-gemcitabine,Gemcitabine Hydrochloride,"478,479",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-gentamicin,Gentamicin Sulfate,"479,480,481",clinical-review-required;dose-unit-fraction-layout-review-required
+caproate-gestonorone,Gestonorone Caproate,481,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+r-glibenclamide,Glibenclamide,"481,482,483",clinical-review-required;dose-unit-fraction-layout-review-required
+r-gliclazide,Gliclazide,"483,484",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+glucagon,Glucagon,"484,485",clinical-review-required;dose-unit-fraction-layout-review-required
+glycerol-glycerine,Glycerine (Glycerol),"485,486",clinical-review-required;dose-unit-fraction-layout-review-required
+thiomalate-sodium-gold,Gold sodium Thiomalate,"486,487",clinical-review-required;dose-unit-fraction-layout-review-required
+gonadorelin,Gonadorelin,"487,488",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-granisetron,Granisetron Hydrochloride,"488,489",clinical-review-required;dose-unit-fraction-layout-review-required
+griseofulvin,Griseofulvin,"489,490,491",clinical-review-required;dose-unit-fraction-layout-review-required
+guaifenesin,Guaifenesin,"491,493",clinical-review-required;dose-unit-fraction-layout-review-required
+haloperidol,Haloperidol,"493,494,495",clinical-review-required;dose-unit-fraction-layout-review-required
+halotane,Halotane,"495,496",clinical-review-required;dose-unit-fraction-layout-review-required
+hematinic,Hematinic,"496,497",clinical-review-required;dose-unit-fraction-layout-review-required
+hemodialysis-concentrate-solution,Hemodialysis Concentrate solution,497,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+heporin-sodium,Heporin Sodium,"497,498,499,500",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hepatitis-b-immune-globulin,Hepatitis B Immune Globulin,"500,501",clinical-review-required;dose-unit-fraction-layout-review-required
+hepatitis-b-vaccine,Hepatitis B vaccine,"501,502",clinical-review-required;dose-unit-fraction-layout-review-required
+r-hexamethylmelamine,Hexamethylmelamine,"502,503",clinical-review-required;dose-unit-fraction-layout-review-required
+homatropine-hbr,Homatropine HBr,"503,504",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-hydralazine,Hydralazine Hcl,"504,505,506",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochlorothiazide,Hydrochlorothiazide,"506,507,508",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrocortisone-systemin,Hydrocortisone (systemin),"508,509,510,511,512",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+topical-acetate-hydrocortisone,Hydrocortisone Acetate(Topical),"512,513",clinical-review-required;dose-unit-fraction-layout-review-required
+ophthalmic-acetate-hydrocoartisone,Hydrocoartisone Acetate(Ophthalmic),513,clinical-review-required;dose-unit-fraction-layout-review-required
+hydrogen-peroaide-saline-solution,Hydrogen Peroaide saline solution,"513,514",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hydroquinone,Hydroquinone,"514,515",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sulfate-hydroxyehloroauine,Hydroxyehloroauine sulfate,"515,516,517",clinical-review-required;dose-unit-fraction-layout-review-required
+hydroxyurea,Hydroxyurea,"517,518",clinical-review-required;dose-unit-fraction-layout-review-required
+hydroxyzine-hcl,Hydroxyzine Hcl,"518,519,520,521",clinical-review-required;dose-unit-fraction-layout-review-required
+hyoscine-n-butyl-bromide,Hyoscine N-Butyl Bromide,"521,522,523",clinical-review-required;dose-unit-fraction-layout-review-required
+ibuprofen,Ibuprofen,"523,524,525",clinical-review-required;dose-unit-fraction-layout-review-required
+ichthyol-ichthammol,Ichthyol ( Ichthammol),525,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+idarubicin-hcl,Idarubicin Hcl,"525,526,527",clinical-review-required;dose-unit-fraction-layout-review-required
+ophthalmic-idoxurine,Idoxurine(Ophthalmic),"527,528",clinical-review-required;dose-unit-fraction-layout-review-required
+ifosfamide,Ifosfamide,"528,529,530",clinical-review-required;dose-unit-fraction-layout-review-required
+imiglucerase,Imiglucerase,531,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+r-sodium-cilastatin-imipenem,Imipenem-Cilastatin Sodium,"531,532,533",clinical-review-required;dose-unit-fraction-layout-review-required
+hetastarch-hes-hydroxyethyl-starch,"Hetastarch(Hes , Hydroxyethyl Starch)","533,534",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-imipramine,Imipramine Hcl,"534,535,536,537",clinical-review-required;dose-unit-fraction-layout-review-required
+imiquimod,Imiquimod,537,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+immune-globulin-intramuscular,Immune Globulin Intramuscular,538,clinical-review-required;dose-unit-fraction-layout-review-required
+immunoglobulin-intravenous-iglv,Immunoglobulin Intravenous (IGLV),"538,539",clinical-review-required;dose-unit-fraction-layout-review-required
+indomethacin,Indomethacin,"539,540,541",clinical-review-required;dose-unit-fraction-layout-review-required
+infliximab,Infliximab,"541,542",clinical-review-required;dose-unit-fraction-layout-review-required
+vaccine-virus-influenza,Influenza Virus Vaccine,"542,543",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+repellent-insect,Insect Repellent,543,clinical-review-required;dose-unit-fraction-layout-review-required
+insulin-biphasic-isophane,Insulin Biphasic Isophane,544,clinical-review-required;dose-unit-fraction-layout-review-required
+insulin-injection-human-reyular-insulin,Insulin Injection ( Human Reyular Insulin ),"544,545,546,547,548",clinical-review-required;dose-unit-fraction-layout-review-required
+nph-isephane-insulin,Insulin Isephane(NPH),"548,549",clinical-review-required;dose-unit-fraction-layout-review-required
+interferon-alfa-2b-recombinant,"Interferon Alfa-2b , Recombinant","549,550",clinical-review-required;dose-unit-fraction-layout-review-required
+intraperitoneal-dialysis-solution,Intraperitoneal Dialysis Solution,"550,551",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+clioquinol-iodochlorhydroxyquin,Iodochlorhydroxyquin( clioquinol),"551,552",clinical-review-required;dose-unit-fraction-layout-review-required
+iodoquinol-diiodohydroxyquindine,Iodoquinol (Diiodohydroxyquindine),"552,553",clinical-review-required;dose-unit-fraction-layout-review-required
+ipecac,Ipecac,"553,554,555",clinical-review-required;dose-unit-fraction-layout-review-required
+bromide-ipratropium,Ipratropium Bromide,"555,556",clinical-review-required;dose-unit-fraction-layout-review-required
+s-ipratropium,Ipratropium-s,556,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+irinotecan-hydrochloride,Irinotecan -Hydrochloride,"556,557",clinical-review-required;dose-unit-fraction-layout-review-required
+iron-dextran-complex,Iron Dextran Complex,"557,558,559,560",clinical-review-required;dose-unit-fraction-layout-review-required
+isocarboxazid,Isocarboxazid,"560,561",clinical-review-required;dose-unit-fraction-layout-review-required
+isoflurane,Isoflurane,561,clinical-review-required;dose-unit-fraction-layout-review-required
+isoniazid,Isoniazid,"562,563",clinical-review-required;dose-unit-fraction-layout-review-required
+isoproterenol-hcl,Isoproterenol HCl,"563,564,565,566",clinical-review-required;dose-unit-fraction-layout-review-required
+dinitrate-isosorbide,Isosorbide Dinitrate,"566,567,568",clinical-review-required;dose-unit-fraction-layout-review-required
+isoxsuprine-hcl,Isoxsuprine HCl,"568,569,571",clinical-review-required;dose-unit-fraction-layout-review-required
+kallidinogenase,Kallidinogenase,571,clinical-review-required;dose-unit-fraction-layout-review-required
+kanamycin-as-sulfate-or-acid-sulfate,Kanamycin (As sulfate or Acid Sulfate),"571,572,573",clinical-review-required;dose-unit-fraction-layout-review-required
+ketamine-hcl,Ketamine HCl,"573,574,575",clinical-review-required;dose-unit-fraction-layout-review-required
+ketocanazole-systemic,Ketocanazole (systemic),"575,576,577",clinical-review-required;dose-unit-fraction-layout-review-required
+ketoconazole-topical,Ketoconazole (Topical),577,clinical-review-required;dose-unit-fraction-layout-review-required
+tromethamine-ketorolac,Ketorolac Tromethamine,"577,578",clinical-review-required;dose-unit-fraction-layout-review-required
+ketotifen-fumarate,Ketotifen Fumarate,"578,579,581",clinical-review-required;dose-unit-fraction-layout-review-required
+levocarnitine-carnitine-l,L-Carnitine (Levocarnitine),"581,582",clinical-review-required;dose-unit-fraction-layout-review-required
+lactulose,Lactulose,"582,583",clinical-review-required;dose-unit-fraction-layout-review-required
+lamivudine,Lamivudine,"583,584",clinical-review-required;dose-unit-fraction-layout-review-required
+lamotrigine,Lamotrigine,"584,585,586",clinical-review-required;dose-unit-fraction-layout-review-required
+latanoprost,Latanoprost,"586,587",clinical-review-required;dose-unit-fraction-layout-review-required
+letrozole,Letrozole,"587,588",clinical-review-required;dose-unit-fraction-layout-review-required
+leucovorin-ascalcium,Leucovorin (ascalcium),"588,589,590",clinical-review-required;dose-unit-fraction-layout-review-required
+leuprolide-acetate,Leuprolide Acetate,"590,591",clinical-review-required;dose-unit-fraction-layout-review-required
+levamisole-as-hcl,Levamisole (as HCL),"591,592",clinical-review-required;dose-unit-fraction-layout-review-required
+levarterenol-norepinephrin-bitartrate,Levarterenol (Norepinephrin) Bitartrate,592,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+levodopa,Levodopa,"592,593,594",clinical-review-required;dose-unit-fraction-layout-review-required
+b-levodopa,Levodopa - B,"594,595",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+c-levodopa,Levodopa - C,"595,596,597",clinical-review-required;dose-unit-fraction-layout-review-required
+levonorgestrel,Levonorgestrel,"597,598",clinical-review-required;dose-unit-fraction-layout-review-required
+r-implant-levonorgestrel,Levonorgestrel (Implant),"598,599",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sodium-levothyroxine,Levothyroxine Sodium,"599,600,601",clinical-review-required;dose-unit-fraction-layout-review-required
+lidocaine,Lidocaine,601,clinical-review-required;dose-unit-fraction-layout-review-required
+epinephrine-lidocaine,Lidocaine - Epinephrine,601,clinical-review-required;dose-unit-fraction-layout-review-required
+lidocaine-h-topical-h,Lidocaine - H (Topical),602,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+p-ledocaine,Ledocaine -P,602,clinical-review-required;dose-unit-fraction-layout-review-required
+lidocaine-hcl,Lidocaine HCL,"602,603,604",clinical-review-required;dose-unit-fraction-layout-review-required
+dextrose-hcl-lidocaine,Lidocaine HCL  Dextrose,604,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+lindane-gama-benzene-hexachloride,Lindane (Gama Benzene Hexachloride),"604,605",clinical-review-required;dose-unit-fraction-layout-review-required
+liothyronine-sodium-t,Liothyronine Sodium T,"605,606,607",clinical-review-required;dose-unit-fraction-layout-review-required
+lipid-infusion,Lipid infusion,"607,608",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+lisinopril,Lisinopril,"608,609,610",clinical-review-required;dose-unit-fraction-layout-review-required
+carbonate-lithium,Lithium Carbonate,"610,611",clinical-review-required;dose-unit-fraction-layout-review-required
+lomustine,Lomustine,"611,612",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-loperamide,Loperamide HCl,"612,613,614",clinical-review-required;dose-unit-fraction-layout-review-required
+loratadine,Loratadine,"614,615",clinical-review-required;dose-unit-fraction-layout-review-required
+lorazepam,Lorazepam,"615,616",clinical-review-required;dose-unit-fraction-layout-review-required
+potassium-losartan,Losartan potassium,"616,617,618",clinical-review-required;dose-unit-fraction-layout-review-required
+lovastatine,Lovastatine,"618,619",clinical-review-required;dose-unit-fraction-layout-review-required
+lynestrenol,Lynestrenol,"619,621",clinical-review-required;dose-unit-fraction-layout-review-required
+acetate-mafenide,Mafenide Acetate,"621,622",clinical-review-required;dose-unit-fraction-layout-review-required
+hydroxide-magnesium,Magnesium Hydroxide,"622,623",clinical-review-required;dose-unit-fraction-layout-review-required
+oxide-magnesium,Magnesium Oxide,623,clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-magnesium,Magnesium Sulfate,"623,624,625",clinical-review-required;dose-unit-fraction-layout-review-required
+manitol,Manitol,"625,626,627",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-maprotilin,Maprotilin Hydrochloride,"627,628",clinical-review-required;dose-unit-fraction-layout-review-required
+measles-immune-globulin,Measles Immune Globulin,"628,629",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+measles-vaccine-live-attenuated,"Measles Vaccine , Live , Attenuated","629,630,631",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+measles-and-rubella-virus-vaccine,Measles and Rubella virus Vaccine,"631,632",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+mebendazol,Mebendazol,"632,633",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-mebeverine,Mebeverine Hydrochloride,"633,634",clinical-review-required;dose-unit-fraction-layout-review-required
+acetate-medroxyprogesterone,Medroxyprogesterone Acetate,"634,635",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-mefnamic,Mefnamic Acid,"635,636",clinical-review-required;dose-unit-fraction-layout-review-required
+mefloquine-hydrochloride,Mefloquine Hydrochloride,"636,637",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+acetate-megestrol,Megestrol Acetate,"637,638",clinical-review-required;dose-unit-fraction-layout-review-required
+antimonate-meglumine,Meglumine Antimonate,"638,639",clinical-review-required;dose-unit-fraction-layout-review-required
+compound-meglumin,Meglumin Compound,"639,640",clinical-review-required;dose-unit-fraction-layout-review-required
+melphalan,Melphalan,"640,641,642",clinical-review-required;dose-unit-fraction-layout-review-required
+meningococal-vaccine-killed,"Meningococal Vaccine , Killed",642,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hmg-menotropins,Menotropins (HMG),"642,643,644",clinical-review-required;dose-unit-fraction-layout-review-required
+r-salicylat-menthol,Menthol Salicylat,644,clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-mephentermine,Mephentermine Sulfate,"644,645",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-mepivacaine,Mepivacaine Hydrochloride,"645,646",clinical-review-required;dose-unit-fraction-layout-review-required
+mequinol,mequinol,"646,647",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+mercaptopurine-6-mp,Mercaptopurine (6 - MP),"647,648",clinical-review-required;dose-unit-fraction-layout-review-required
+meropenem,Meropenem,"648,649",clinical-review-required;dose-unit-fraction-layout-review-required
+mesalazine-mesalamine,Mesalamine (Mesalazine),"649,650,651",clinical-review-required;dose-unit-fraction-layout-review-required
+mesna,Mesna,"651,652",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-metaproterenol,Metaproterenol Sulfate,"652,653,654",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrocholoride-metformine,Metformine Hydrocholoride,"654,655",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-methadone,Methadone Hydrochloride,"655,656,657",clinical-review-required;dose-unit-fraction-layout-review-required
+methenamine-mandelate,Methenamine Mandelate,"657,658",clinical-review-required;dose-unit-fraction-layout-review-required
+methimazole,Methimazole,"658,659",clinical-review-required;dose-unit-fraction-layout-review-required
+methocarbamol,Methocarbamol,"659,660,661",clinical-review-required;dose-unit-fraction-layout-review-required
+methotrexate,Methotrexate,"661,662,663",clinical-review-required;dose-unit-fraction-layout-review-required
+methoxalen-systemic,Methoxalen (Systemic),"664,665",clinical-review-required;dose-unit-fraction-layout-review-required
+methoxalen-topical,Methoxalen (Topical),665,clinical-review-required;dose-unit-fraction-layout-review-required
+cellulose-methyl,Methyl Cellulose,"665,666",clinical-review-required;dose-unit-fraction-layout-review-required
+methyldopa,Methyldopa,"666,667",clinical-review-required;dose-unit-fraction-layout-review-required
+blue-methylen,Methylen Blue,"667,668",clinical-review-required;dose-unit-fraction-layout-review-required
+methyl-ergonovine-maleate,Methyl ergonovine Maleate,"668,669",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-methylphenidate,Methylphenidate hydrochloride,"670,671",clinical-review-required;dose-unit-fraction-layout-review-required
+methylprenisolone,Methylprenisolone,"671,672,673",clinical-review-required;dose-unit-fraction-layout-review-required
+r-salicylate-methyl,Methyl Salicylate,"673,674",clinical-review-required;dose-unit-fraction-layout-review-required
+methyltestostrone,Methyltestostrone,674,clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-metoclopramide,Metoclopramide Hydrochloride,"674,675,676",clinical-review-required;dose-unit-fraction-layout-review-required
+tartrate-metoprolol,Metoprolol Tartrate,"676,677",clinical-review-required;dose-unit-fraction-layout-review-required
+metronidazole,Metronidazole,"677,678,679",clinical-review-required;dose-unit-fraction-layout-review-required
+metyrapone,Metyrapone,680,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+hydrochoride-mexiletine,Mexiletine Hydrochoride,"680,681,682",clinical-review-required;dose-unit-fraction-layout-review-required
+nitrate-miconazole,Miconazole Nitrate,682,clinical-review-required;dose-unit-fraction-layout-review-required
+midazolam,Midazolam,"682,683,684",clinical-review-required;dose-unit-fraction-layout-review-required
+milrinine,Milrinine,"684,685",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+oil-mineral,Mineral Oil,"685,686",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+systemic-minoxidil,Minoxidil (Systemic),"686,687",clinical-review-required;dose-unit-fraction-layout-review-required
+topical-minoxidil,Minoxidil (Topical),"687,688",clinical-review-required;dose-unit-fraction-layout-review-required
+mitomycin,Mitomycin,"688,689,690",clinical-review-required;dose-unit-fraction-layout-review-required
+mitotan,Mitotan,"690,691",clinical-review-required;dose-unit-fraction-layout-review-required
+mitoxantrone-hydrochloride,Mitoxantrone Hydrochloride,"691,692",clinical-review-required;dose-unit-fraction-layout-review-required
+chloride-mivacurim,Mivacurim chloride,"692,693",clinical-review-required;dose-unit-fraction-layout-review-required
+moclobemide,Moclobemide,"693,694",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+molgramostin-gmcsf,Molgramostin (GMCSF),"694,695",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+monobenzon,Monobenzon,695,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sodium-montelukast,Montelukast Sodium,"695,696",clinical-review-required;dose-unit-fraction-layout-review-required
+morphine-sulfate,Morphine Sulfate,"696,697,698",clinical-review-required;dose-unit-fraction-layout-review-required
+multivitamin,Multivitamin,"698,699",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+r-iron-plus-multivitamin,multivitamin Plus Iron,699,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+r-mineral-plus-multivitamin,multivitamin Plus Mineral,"699,700",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+therapeutic-multivitamin,multivitamin Therapeutic,700,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;short-or-unstructured-entry
+mumps-virus-vaccine-live,"Mumps Virus Vaccine , Live","700,701",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+mupirocin,Mupirocin,"701,702",clinical-review-required;dose-unit-fraction-layout-review-required
+mofetil-myocophenolate,Myocophenolate Mofetil,"702,703,704,705",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-nafcillin,Nafcillin Sodium,"705,706",clinical-review-required;dose-unit-fraction-layout-review-required
+acid-nalidixic,Nalidixic Acid,"706,707,708",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-naloxane,Naloxane Hydrochloride,"708,709",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-naltrexone,Naltrexone Hydrochloride,"709,710,711",clinical-review-required;dose-unit-fraction-layout-review-required
+nandrolone-decanoate,Nandrolone Decanoate,"711,712",clinical-review-required;dose-unit-fraction-layout-review-required
+phenpropionate-nandrolone,Nandrolone Phenpropionate,712,clinical-review-required;dose-unit-fraction-layout-review-required
+antazoline-naphazolin,Naphazolin/ Antazoline,"712,713",clinical-review-required;dose-unit-fraction-layout-review-required
+naphazoline,Naphazoline,"713,714",clinical-review-required;dose-unit-fraction-layout-review-required
+naproxen,Naproxen,"714,715",clinical-review-required;dose-unit-fraction-layout-review-required
+natamycin,Natamycin,"715,716",clinical-review-required;dose-unit-fraction-layout-review-required
+nelfinavir-mesylate,Nelfinavir Mesylate,"716,717",clinical-review-required;dose-unit-fraction-layout-review-required
+neostigmine,Neostigmine,"717,718,719",clinical-review-required;dose-unit-fraction-layout-review-required
+nevirapine,Nevirapine,"719,720,721",clinical-review-required;dose-unit-fraction-layout-review-required
+niacinamide-vitamin-b3,Niacinamide(Vitamin B3),721,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;short-or-unstructured-entry
+niclosomide,Niclosomide,"721,722",clinical-review-required;dose-unit-fraction-layout-review-required
+nicotine,Nicotine,"722,723",clinical-review-required;dose-unit-fraction-layout-review-required
+nicotinic-acid-niacin-vitamin-b3,"Nicotinic Acid(Niacin, Vitamin B3)",723,clinical-review-required;dose-unit-fraction-layout-review-required;short-or-unstructured-entry
+nifedipine,Nifedipine,"723,724",clinical-review-required;dose-unit-fraction-layout-review-required
+nimodipine,Nimodipine,"724,725",clinical-review-required;dose-unit-fraction-layout-review-required
+nitrazepam,Nitrazepam,"725,726",clinical-review-required;dose-unit-fraction-layout-review-required
+nitrofurantoin,Nitrofurantoin,"726,727",clinical-review-required;dose-unit-fraction-layout-review-required
+nitrofurazone,Nitrofurazone,"727,728",clinical-review-required;dose-unit-fraction-layout-review-required
+nitroglycerin,Nitroglycerin,"728,729,730",clinical-review-required;dose-unit-fraction-layout-review-required
+nitroprusside-sodium,Nitroprusside sodium,"730,731,732",clinical-review-required;dose-unit-fraction-layout-review-required
+oxide-nitrous,Nitrous Oxide,732,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+nonoxynol-9,Nonoxynol-9,"732,733",clinical-review-required;dose-unit-fraction-layout-review-required
+bitartrate-norepinephrine,Norepinephrine Bitartrate,"733,734",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-nortriptyline,Nortriptyline HCl,"734,735",clinical-review-required;dose-unit-fraction-layout-review-required
+nystatin-oral-local,Nystatin (oral-Local),"735,736",clinical-review-required;dose-unit-fraction-layout-review-required
+vaginal-topical-nystatin,Nystatin (Topical-Vaginal),"737,739",clinical-review-required;dose-unit-fraction-layout-review-required
+obidonice-chloride,Obidonice Chloride,"739,740",clinical-review-required;dose-unit-fraction-layout-review-required
+octreotide-acetate,Octreotide Acetate,"740,741",clinical-review-required;dose-unit-fraction-layout-review-required
+ofloxacin-systemic,Ofloxacin (systemic),"741,742",clinical-review-required;dose-unit-fraction-layout-review-required
+olanzapine,Olanzapine,"742,743,744",clinical-review-required;dose-unit-fraction-layout-review-required
+omega-3-fatty-acids,Omega-3 Fatty Acids,744,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+omega-3-marine-triglycerides,Omega-3 marine Triglycerides,"744,745",clinical-review-required;dose-unit-fraction-layout-review-required
+omeperazole,Omeperazole,"745,746",clinical-review-required;dose-unit-fraction-layout-review-required
+ondansetron-hcl,Ondansetron HCl,"746,747",clinical-review-required;dose-unit-fraction-layout-review-required
+solution-bath-ophthalmic,Ophthalmic Bath Solution,748,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+s-r-o-salt-rehydration-oral,Oral Rehydration Salt (O.R.S),"748,749",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+orlistat,Orlistat,"749,750",clinical-review-required;dose-unit-fraction-layout-review-required
+phoshate-oseltamivir,Oseltamivir Phoshate,"750,751",clinical-review-required;dose-unit-fraction-layout-review-required
+r-oxaliplatin,Oxaliplatin,"751,752,753",clinical-review-required;dose-unit-fraction-layout-review-required
+oxandrolone,Oxandrolone,"753,754",clinical-review-required;dose-unit-fraction-layout-review-required
+oxazepam,Oxazepam,"754,755",clinical-review-required;dose-unit-fraction-layout-review-required
+oxacar-bazepin,Oxacar bazepin,"755,756",clinical-review-required;dose-unit-fraction-layout-review-required
+oxybutynin-chloride,OxyButynin Chloride,"756,757,758",clinical-review-required;dose-unit-fraction-layout-review-required
+oxymetholone,Oxymetholone,"758,759",clinical-review-required;dose-unit-fraction-layout-review-required
+oxytetracycline,Oxytetracycline,"759,760",clinical-review-required;dose-unit-fraction-layout-review-required
+oxytocin,Oxytocin,"760,761,762,763",clinical-review-required;dose-unit-fraction-layout-review-required
+paclitaxel,Paclitaxel,"763,764",clinical-review-required;dose-unit-fraction-layout-review-required
+disodium-pamidronate,Pamidronate Disodium,"764,765",clinical-review-required;dose-unit-fraction-layout-review-required
+pancreatin,Pancreatin,"765,766",clinical-review-required;dose-unit-fraction-layout-review-required
+bromide-pancuronium,Pancuronium Bromide,"767,768",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+pantoprazole,Pantoprazole,"768,769",clinical-review-required;dose-unit-fraction-layout-review-required
+hcl-papaverine,Papaverine Hcl,"769,770",clinical-review-required;dose-unit-fraction-layout-review-required
+para-aminobenzoic-paba,Para-Aminobenzoic (PABA),"770,771",clinical-review-required;dose-unit-fraction-layout-review-required
+paraamino-benzoicacid-k-paba-k,Paraamino Benzoicacid-K(PABA-K),"771,772",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+para-amino-benzoicacid-p-paba-p,Para Amino Benzoicacid-P(PABA-P),772,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+paraformaldehyde,Paraformaldehyde,772,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+parathormon,Parathormon,"772,773",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+paromomycin-as-sulfate,Paromomycin(as sulfate),"773,774",clinical-review-required;dose-unit-fraction-layout-review-required
+u-paromomycin,Paromomycin-U,774,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sodium-amino-salicylate-pas,sodium amino salicylate(PAS),"774,775,776",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+v-blue-patent,Patent blue V,776,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+pediatric-gripe,Pediatric gripe,776,clinical-review-required;dose-unit-fraction-layout-review-required;persian-heading-absent
+pegaspargase-peg-l-asparaginase,Pegaspargase(PEG-L-Asparaginase),"776,777,778",clinical-review-required;dose-unit-fraction-layout-review-required
+pegintrferonalfa-2a,Pegintrferonalfa-2a,"778,779",clinical-review-required;dose-unit-fraction-layout-review-required
+peginterferonalfa-2b,Peginterferonalfa-2b,"779,780,781",clinical-review-required;dose-unit-fraction-layout-review-required
+r-penicillamine,Penicillamine,"781,782,783",clinical-review-required;dose-unit-fraction-layout-review-required
+penicillin-6-3-3,Penicillin 6.3.3,"783,784",clinical-review-required;dose-unit-fraction-layout-review-required
+penicilin-g-g,Penicilin G,"784,785",clinical-review-required;dose-unit-fraction-layout-review-required
+v-penicillin,Penicillin V,"785,786,787",clinical-review-required;dose-unit-fraction-layout-review-required
+pentagastrin,Pentagastrin,"787,788",clinical-review-required;dose-unit-fraction-layout-review-required
+isoethionate-pentamidine,Pentamidine Isoethionate,"788,789",clinical-review-required;dose-unit-fraction-layout-review-required
+pentazocine,Pentazocine,"790,791",clinical-review-required;dose-unit-fraction-layout-review-required
+pentoxifylline,Pentoxifylline,"791,792",clinical-review-required;dose-unit-fraction-layout-review-required
+peritoneal-dialysis-solution,Peritoneal Dialysis Solution,"792,793",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+perphenazine,Perphenazine,"793,794",clinical-review-required;dose-unit-fraction-layout-review-required
+pethioinehcl,Pethioinehcl,"794,795,796",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-phenobarbital,Phenobarbital Sodium,"796,797,798",clinical-review-required;dose-unit-fraction-layout-review-required
+r-mesylate-phentolamine,Phentolamine Mesylate,"798,799",clinical-review-required;dose-unit-fraction-layout-review-required
+systemic-phenytoin,Phenytoin(systemic),"800,801,802",clinical-review-required;dose-unit-fraction-layout-review-required
+phenytoin,Phenytoin,802,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+phytonadion,Phytonadion,802,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+pilocarpine-hclornitrate,Pilocarpine (Hclornitrate),"802,803",clinical-review-required;dose-unit-fraction-layout-review-required
+bramide-pipecuronium,Pipecuronium bramide,"803,804",clinical-review-required;dose-unit-fraction-layout-review-required
+piroxicam-systemic,Piroxicam ( systemic),"804,805,806",clinical-review-required;dose-unit-fraction-layout-review-required
+polymyxin-b-sulfate-systemic,Polymyxin B sulfate (systemic),"806,807",clinical-review-required;dose-unit-fraction-layout-review-required
+chloride-potasium,Potasium Chloride,"808,809",clinical-review-required;dose-unit-fraction-layout-review-required
+prazosin-as-hcl,Prazosin (as Hcl),"809,810",clinical-review-required;dose-unit-fraction-layout-review-required
+prednisone,Prednisone,"811,812",clinical-review-required;dose-unit-fraction-layout-review-required
+microfine-acetate-prednisolone,Prednisolone Acetate Microfine,812,clinical-review-required;dose-unit-fraction-layout-review-required
+forte-prednisolone,Prednisolone forte,"812,813",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+f-prilocaine,Prilocaine-f,813,clinical-review-required;dose-unit-fraction-layout-review-required
+primaquine-as-phosphate,Primaquine (as phosphate),"813,814",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+primidone,Primidone,"814,815",clinical-review-required;dose-unit-fraction-layout-review-required
+progestrone,Progestrone,"816,817",clinical-review-required;dose-unit-fraction-layout-review-required
+propranolol-hcl,Propranolol Hcl,"817,818,819",clinical-review-required;dose-unit-fraction-layout-review-required
+pyrazinamide,Pyrazinamide,"819,820",clinical-review-required;dose-unit-fraction-layout-review-required
+pyrimethamine,Pyrimethamine,"820,821",clinical-review-required;dose-unit-fraction-layout-review-required
+zinc-pyrithione,Pyrithione zinc,"821,822",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+pyrvinium-as-pamoate,Pyrvinium (as Pamoate),"822,823",clinical-review-required;dose-unit-fraction-layout-review-required
+quinacrine-hcl,Quinacrine Hcl,"823,824,825",clinical-review-required;dose-unit-fraction-layout-review-required
+quinidine-bisulfate,Quinidine Bisulfate,"825,826,827",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;persian-heading-absent
+quinine,Quinine,"827,828,829,831",clinical-review-required;dose-unit-fraction-layout-review-required
+rabies-immune-globulin-rig,Rabies Immune Globulin (RIG),"831,832",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+rabies-vaccine-adsor-bed,"Rabies Vaccine, Adsor bed","832,833",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+ranitidine-hcl,Ranitidine HCl,"833,834",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrochloride-remifentanil,Remifentanil Hydrochloride,"834,835",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+repaglinide,Repaglinide,"835,836",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+reserpine,Reserpine,"836,837,838",clinical-review-required;dose-unit-fraction-layout-review-required
+resorcinol-s,Resorcinol-S,"838,839",clinical-review-required;dose-unit-fraction-layout-review-required
+ribavirin,Ribavirin,"839,840",clinical-review-required;dose-unit-fraction-layout-review-required
+riboflavin-vitamin-b,Riboflavin (Vitamin  B,840,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent;class-unresolved-or-absent;short-or-unstructured-entry
+rifabutin,Rifabutin,"840,841",clinical-review-required;dose-unit-fraction-layout-review-required
+rifampin-rifampicin,Rifampin (Rifampicin),"841,842,843",clinical-review-required;dose-unit-fraction-layout-review-required
+ringer-s,Ringer’s,"843,844",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+lactated-ringer,Ringer Lactated,"844,845",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+risperidone,Risperidone,"845,846",clinical-review-required;dose-unit-fraction-layout-review-required
+ritodrine-hcl,Ritodrine HCl,"846,847",clinical-review-required;dose-unit-fraction-layout-review-required
+tartrate-rivastigmin,Rivastigmin Tartrate,"847,848",clinical-review-required;dose-unit-fraction-layout-review-required
+ropinirole-hydrochloride,Ropinirole Hydrochloride,"848,849,850,851",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-sacharin,Sacharin Sodium,851,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+salbutamol,Salbutamol,"851,852,853",clinical-review-required;dose-unit-fraction-layout-review-required
+compound-acid-salicylic,Salicylic Acid compound,853,clinical-review-required;dose-unit-fraction-layout-review-required
+salmeterol-xinafoate,Salmeterol Xinafoate,"853,854",clinical-review-required;dose-unit-fraction-layout-review-required
+hydrobromide-scopolamine,Scopolamine Hydrobromide,"854,855",clinical-review-required;dose-unit-fraction-layout-review-required
+secretin,Secretin,855,clinical-review-required;dose-unit-fraction-layout-review-required
+selegiline-hydrochloride,Selegiline Hydrochloride,"855,856",clinical-review-required;dose-unit-fraction-layout-review-required
+sufide-selenium,Selenium Sufide,856,clinical-review-required;dose-unit-fraction-layout-review-required
+sertraline-hydrochloride,Sertraline Hydrochloride,"856,857,858",clinical-review-required;dose-unit-fraction-layout-review-required
+sevoflurane,Sevoflurane,858,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+citrate-sildenafil,Sildenafil Citrate,"858,859",clinical-review-required;dose-unit-fraction-layout-review-required
+silver-sulfadiazine,Silver sulfadiazine,"859,860",clinical-review-required;dose-unit-fraction-layout-review-required
+ointment-eye-simple,Simple eye ointment,860,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+simvastatin,Simvastatin,"860,861",clinical-review-required;dose-unit-fraction-layout-review-required
+sirolimus,Sirolimus,"861,862",clinical-review-required;dose-unit-fraction-layout-review-required
+r-pas-aminosalicylate-sodium,Sodium Aminosalicylate (PAS),"862,863",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+bicarbonate-sodium,Sodium Bicarbonate,"863,864,865",clinical-review-required;dose-unit-fraction-layout-review-required
+phosphate-cellulose-sodium,Sodium Cellulose phosphate,"865,866",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sodium-chloride-for-irrigation,Sodium Chloride (For Irrigation),866,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sodium-chloride-nacl,Sodium Chloride (NaCl),866,clinical-review-required;dose-unit-fraction-layout-review-required
+ophthalmic-chloride-sodium,Sodium Chloride (Ophthalmic),"866,867",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-chloride-intravenous-drip,Sodium Chloride(Intravenous drip),867,clinical-review-required;dose-unit-fraction-layout-review-required
+fluoride-sodium,Sodium Fluoride,"867,868",clinical-review-required;dose-unit-fraction-layout-review-required
+hyaloronate-sodium,Sodium Hyaloronate,"868,869",clinical-review-required;dose-unit-fraction-layout-review-required
+lactate-sodium,Sodium Lactate,869,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+nitrite-sodium,Sodium Nitrite,"869,870",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sulfonate-polystyrene-sodium,Sodium Polystyrene sulfonate,"870,871",clinical-review-required;dose-unit-fraction-layout-review-required
+r-salicylate-sodium,Sodium Salicylate,871,clinical-review-required;dose-unit-fraction-layout-review-required
+salfate-tetradecyl-sodium,Sodium Tetradecyl Salfate,872,clinical-review-required;dose-unit-fraction-layout-review-required
+thiosulfate-sodium,Sodium Thiosulfate,"872,873",clinical-review-required;dose-unit-fraction-layout-review-required
+somatostatin,Somatostatin,873,clinical-review-required;dose-unit-fraction-layout-review-required
+somatropin,Somatropin,"873,874,875",clinical-review-required;dose-unit-fraction-layout-review-required
+sorbitol,Sorbitol,875,clinical-review-required;dose-unit-fraction-layout-review-required
+sotalol,Sotalol,"875,876",clinical-review-required;dose-unit-fraction-layout-review-required
+spectinomycin,Spectinomycin,"876,877",clinical-review-required;dose-unit-fraction-layout-review-required
+spiramycin,Spiramycin,"877,878",clinical-review-required;dose-unit-fraction-layout-review-required
+spironolaction,Spironolaction,"878,879",clinical-review-required;dose-unit-fraction-layout-review-required
+stavudine-d4t,Stavudine(d4T),"879,880,881",clinical-review-required;dose-unit-fraction-layout-review-required
+sodium-stibogluconate,Stibogluconate sodium,"881,882",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+strptokinase,Strptokinase,"882,883",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfate-streptomycin,Streptomycin Sulfate,"883,884",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+streptozocin,Streptozocin,"884,885",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+succimer,Succimer,"885,886",clinical-review-required;dose-unit-fraction-layout-review-required
+chloride-succinylcholine,Succinylcholine chloride,"886,887",clinical-review-required;dose-unit-fraction-layout-review-required
+sucralfate,Sucralfate,"887,888",clinical-review-required;dose-unit-fraction-layout-review-required
+citrate-sufentanil,Sufentanil Citrate,"888,889,890",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfacetamide-sodium-oph,Sulfacetamide sodium (oph),890,clinical-review-required;dose-unit-fraction-layout-review-required
+sulfadiazine,Sulfadiazine,"890,891",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfadoxine-p,Sulfadoxine-P,"891,892",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfasalazin,Sulfasalazin,"892,893",clinical-review-required;dose-unit-fraction-layout-review-required
+sulfur,Sulfur,"893,894",clinical-review-required;dose-unit-fraction-layout-review-required
+sultamicillin-tosilate,Sultamicillin Tosilate,894,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+sumatriptan-succinate,Sumatriptan Succinate,"894,895,897",clinical-review-required;dose-unit-fraction-layout-review-required
+tamaxifen-citrate,Tamaxifen citrate,"897,898,899",clinical-review-required;dose-unit-fraction-layout-review-required
+terbutalinesufate,Terbutalinesufate,"899,900,901",clinical-review-required;dose-unit-fraction-layout-review-required;class-unresolved-or-absent
+terfenadine,Terfenadine,"901,902",clinical-review-required;dose-unit-fraction-layout-review-required
+testosterone-enanthate,Testosterone enanthate,"902,903,904",clinical-review-required;dose-unit-fraction-layout-review-required
+tetracaine-hcl-ophthalrnic-pdf-904,Tetracaine Hcl (ophthalrnic),"904,905",clinical-review-required;dose-unit-fraction-layout-review-required;duplicate-English-heading-review-required
+tetracaine-hcl-ophthalrnic,Tetracaine Hcl (ophthalrnic),"905,906",clinical-review-required;dose-unit-fraction-layout-review-required;duplicate-English-heading-review-required
+tetracycline-opthalmic,Tetracycline ( opthalmic),"906,907",clinical-review-required;dose-unit-fraction-layout-review-required
+tetracycline-topical,Tetracycline ( Topical ),908,clinical-review-required;dose-unit-fraction-layout-review-required
+tetracycline-hcl-systemic,Tetracycline Hcl (systemic),"908,909,910,911",clinical-review-required;dose-unit-fraction-layout-review-required
+theophylline-anhydrous,Theophylline (Anhydrous),"911,912,913,914",clinical-review-required;dose-unit-fraction-layout-review-required
+theophylline-g,Theophylline-G,914,clinical-review-required;dose-unit-fraction-layout-review-required
+thermorub,Thermorub,"914,915",clinical-review-required;dose-unit-fraction-layout-review-required
+thiabendazole,Thiabendazole,"915,916",clinical-review-required;dose-unit-fraction-layout-review-required
+thiaminemcl-vitaminb,Thiaminemcl(vitaminB,"916,917",clinical-review-required;dose-unit-fraction-layout-review-required
+thiethylperazine-diamaleate,Thiethylperazine Diamaleate,"917,918",clinical-review-required;dose-unit-fraction-layout-review-required
+thioguanine-tg-6-thio,"Thioguanine (TG,6-Thio","918,919",clinical-review-required;dose-unit-fraction-layout-review-required
+thiopental-sodium,Thiopental Sodium,"919,920,921",clinical-review-required;dose-unit-fraction-layout-review-required
+thioridazine-hcl,Thioridazine Hcl,"921,922,923",clinical-review-required;dose-unit-fraction-layout-review-required
+thiotepa,Thiotepa,"923,924,925",clinical-review-required;dose-unit-fraction-layout-review-required
+thiothixene,Thiothixene,"925,926,927",clinical-review-required;dose-unit-fraction-layout-review-required
+thyroid,Thyroid,"927,928,929",clinical-review-required;dose-unit-fraction-layout-review-required
+thyrotropin,Thyrotropin,"929,930",clinical-review-required;dose-unit-fraction-layout-review-required
+timololmaleate,Timololmaleate,"930,931",clinical-review-required;dose-unit-fraction-layout-review-required
+tobramycinsulfate,Tobramycinsulfate,"931,932,933",clinical-review-required;dose-unit-fraction-layout-review-required
+tolazamide,Tolazamide,"933,934,935",clinical-review-required;dose-unit-fraction-layout-review-required
+tolazoline-mcl,Tolazoline Mcl,"935,936",clinical-review-required;dose-unit-fraction-layout-review-required
+tolmetin-sodium,Tolmetin sodium,"936,937,938",clinical-review-required;dose-unit-fraction-layout-review-required
+tolnaftate,Tolnaftate,"938,939",clinical-review-required;dose-unit-fraction-layout-review-required
+tranexamic-acid,Tranexamic Acid,"939,940",clinical-review-required;dose-unit-fraction-layout-review-required
+tranylcyprominesulfate,Tranylcyprominesulfate,"940,941,942",clinical-review-required;dose-unit-fraction-layout-review-required
+tretinoin,Tretinoin,"942,943",clinical-review-required;dose-unit-fraction-layout-review-required
+triamcinolone-acetonide-systemic,Triamcinolone acetonide ( systemic),"943,944,945",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+triiamcinolonea-cetonide-topical,Triiamcinolonea cetonide ( Topical ),945,clinical-review-required;dose-unit-fraction-layout-review-required
+triamcinolone-nonog,Triamcinolone nonog,946,clinical-review-required;dose-unit-fraction-layout-review-required
+triamterene-h,Triamterene-H,"946,947,948",clinical-review-required;dose-unit-fraction-layout-review-required
+triclocarban,Triclocarban,948,clinical-review-required;dose-unit-fraction-layout-review-required
+trifluoperazine-dihydrochloride,Trifluoperazine dihydrochloride,"948,949,950",clinical-review-required;dose-unit-fraction-layout-review-required
+trifluridine,Trifluridine,"950,951",clinical-review-required;dose-unit-fraction-layout-review-required
+trihexyphenidyl-hcl,Trihexyphenidyl Hcl,"951,952,953",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+trimethaphan-camsylate,Trimethaphan Camsylate,"953,954,955",clinical-review-required;dose-unit-fraction-layout-review-required
+trimipramine-mesilate,Trimipramine Mesilate,"955,956,957",clinical-review-required;dose-unit-fraction-layout-review-required
+triple-sulfat-vaginal,Triple Sulfat ( Vaginal ),"957,958",clinical-review-required;dose-unit-fraction-layout-review-required
+tropicamide,Tropicamide,"958,959,961",clinical-review-required;dose-unit-fraction-layout-review-required
+urokinase,Urokinase,"961,962",clinical-review-required;dose-unit-fraction-layout-review-required
+ursodeoxycholic-acid,Ursodeoxycholic Acid,"962,963,965",clinical-review-required;dose-unit-fraction-layout-review-required
+valproate-sodium,Valproate sodium,"965,966",clinical-review-required;dose-unit-fraction-layout-review-required
+valsartan,Valsartan,"966,967",clinical-review-required;dose-unit-fraction-layout-review-required
+vancomycin-hydrochlorid,Vancomycin Hydrochlorid,"968,969",clinical-review-required;dose-unit-fraction-layout-review-required
+varicella-virus-vaccine-live,"Varicella virus vaccine, Live","969,970",clinical-review-required;dose-unit-fraction-layout-review-required
+vasopressin,Vasopressin,"970,971",clinical-review-required;dose-unit-fraction-layout-review-required
+verapamil-hydrochloride,Verapamil Hydrochloride,"971,972,973",clinical-review-required;dose-unit-fraction-layout-review-required
+venlafaxin-hcl-r,Venlafaxin HCl,"973,974",clinical-review-required;dose-unit-fraction-layout-review-required
+vidarabin-monohydrate,Vidarabin Monohydrate,"974,975",clinical-review-required;dose-unit-fraction-layout-review-required
+vinblastine-sulfate-r,Vinblastine sulfate,"975,976,977",clinical-review-required;dose-unit-fraction-layout-review-required
+vincristine-sulfat,Vincristine sulfat,"977,978,979",clinical-review-required;dose-unit-fraction-layout-review-required
+vindesine-sulfate,Vindesine sulfate,"979,980",clinical-review-required;dose-unit-fraction-layout-review-required
+vitamin-a-ophtalmic,Vitamin A(Ophtalmic),"980,981",clinical-review-required;dose-unit-fraction-layout-review-required
+vitamin-a-retinol,Vitamin A(Retinol),"981,982",clinical-review-required;dose-unit-fraction-layout-review-required;persian-heading-absent
+vitamin-d-a,Vitamin A+D,"982,983",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+vitamin-d-a-topical,Vitamin A+D (Topical),983,clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+vitamin-e-e,Vitamin E,"983,984",clinical-review-required;dose-unit-fraction-layout-review-required
+vitamin-k-phytonadione,"Vitamin K, (Phytonadione)","985,986,987",clinical-review-required;dose-unit-fraction-layout-review-required
+warfarin-sodium,Warfarin Sodium,"987,988,989,991",clinical-review-required;dose-unit-fraction-layout-review-required
+yellow-fever-vaccine-live,"Yellow Fever Vaccine,live","991,992",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+yohimbine-hcl,Yohimbine HCL,"992,993",clinical-review-required;dose-unit-fraction-layout-review-required
+zafirlukast,Zafirlukast,"993,994",clinical-review-required;dose-unit-fraction-layout-review-required
+zidovudine-azidothymidine-azt,"Zidovudine (Azidothymidine , AZT)","994,995",clinical-review-required;dose-unit-fraction-layout-review-required
+zinc-oxide,Zinc oxide,"995,996",clinical-review-required;dose-unit-fraction-layout-review-required
+zinc-salfate,Zinc salfate,"996,997",clinical-review-required;dose-unit-fraction-layout-review-required;brand-unresolved-or-absent
+zinc-undecylenate,Zinc undecylenate,997,clinical-review-required;dose-unit-fraction-layout-review-required

@@ -1,0 +1,13 @@
+{
+  "acetaminophen-paracetamol": {
+    "excludeAliases": ["Aspirin", "Anacin"],
+    "reason": "The old PDF lists unqualified Aspirin and Anacin under acetaminophen. Current product labels distinguish aspirin and aspirin/caffeine products. Exclude these ambiguous discovery aliases; preserve the original book text and record for review.",
+    "status": "targeted label cross-check; not full monograph validation",
+    "checkedOn": "2026-10-19",
+    "sources": [
+      "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=103d109d-f520-409c-8da2-eb6b0fbec891",
+      "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=356e4ff4-a7f1-4a50-9b86-2555e232b300&type=display",
+      "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=51ab0ee3-3c94-424d-a30a-2d6c14e3d8ff"
+    ]
+  }
+}

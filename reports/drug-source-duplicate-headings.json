@@ -1,0 +1,56 @@
+{
+  "ammonium": [
+    {
+      "id": "ammonium-2",
+      "fa": "آمونیوم کلراید",
+      "pdf_pages": [
+        70,
+        71
+      ]
+    },
+    {
+      "id": "ammonium",
+      "fa": "آمونیوم هیدروکساید",
+      "pdf_pages": [
+        71,
+        72
+      ]
+    }
+  ],
+  "calcipotriol": [
+    {
+      "id": "calcipotriol-2",
+      "fa": "کلسی پوتریول",
+      "pdf_pages": [
+        151,
+        152
+      ]
+    },
+    {
+      "id": "calcipotriol",
+      "fa": "کلسی پوتریول",
+      "pdf_pages": [
+        153,
+        154
+      ]
+    }
+  ],
+  "tetracaine hcl (ophthalrnic)": [
+    {
+      "id": "tetracaine-hcl-ophthalrnic-pdf-904",
+      "fa": "تتراکائین",
+      "pdf_pages": [
+        904,
+        905
+      ]
+    },
+    {
+      "id": "tetracaine-hcl-ophthalrnic",
+      "fa": "تتراکائین",
+      "pdf_pages": [
+        905,
+        906
+      ]
+    }
+  ]
+}

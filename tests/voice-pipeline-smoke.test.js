@@ -428,16 +428,17 @@ function testDeploymentWiring() {
         'service worker must precache the v35 Rizeh worker URL');
     assert(read('koochik-asr.js').includes("koochik-worker.js?v=35"),
         'voice adapter must instantiate the v35 Rizeh worker URL');
-    assert(index.includes('service-worker.js?v=45'),
-        'page must register the v45 service worker');
-    assert(script.includes("const APP_VERSION = '5.2.0'") &&
-        index.includes('نسخه 5.2.0') && manifest.includes('"version": "5.2.0"') &&
-        serviceWorker.includes("const CACHE_NAME = 'FoxiMed_v5.2.0'"),
-        'all public release surfaces must identify the Version 5.2 release consistently');
+    const swUrl = index.match(/register\('(service-worker\.js\?v=\d+)'/);
+    assert(swUrl, 'page must register a versioned service worker');
+    const appVersion = script.match(/const APP_VERSION = '([^']+)'/)[1];
+    assert(index.includes('نسخه ' + appVersion) &&
+        JSON.parse(manifest).version === appVersion &&
+        serviceWorker.includes("const CACHE_NAME = 'FoxiMed_v" + appVersion),
+        'all public release surfaces must identify the current release consistently');
     assert(script.includes("'5.2.0': [") && script.includes('HAS_PRE_V5_INSTALL') &&
         script.includes("'sw_first_install'") && script.includes('if (HAS_PRE_V5_INSTALL)'),
         'returning users must see the current Version 5 release summary once');
-    assert(script.includes("const RELEASE_NOTES_REVISION = '5.2.0-major-humpty'") &&
+    assert(script.includes("const RELEASE_NOTES_REVISION = '" + appVersion + '-') &&
         script.includes('setLastSeenVersion(RELEASE_NOTES_REVISION)') &&
         script.includes('lastSeen !== RELEASE_NOTES_REVISION'),
         'users who saw the brief 5.2 maintenance note must receive the restored major changelog once');
