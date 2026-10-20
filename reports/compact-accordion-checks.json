@@ -31,5 +31,7 @@
   ],
   "sourceEntries": 827,
   "renderedSectionsChecked": 7004,
-  "scope": "Local Chromium and source checks; not deployed; no clinical validation"
+  "scope": "Local Chromium and source checks; not deployed; no clinical validation",
+  "historical": true,
+  "currentResults": "FINAL-CHECKS.json"
 }

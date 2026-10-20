@@ -404,6 +404,7 @@ function testDeploymentWiring() {
     const index = read('index.html');
     const manifest = read('manifest.json');
     const script = read('script.js');
+    const onboarding = read('onboarding.js');
     const voiceEngine = read('voice-recognition.js');
     const voiceUi = read('voice-ui.js');
     const voiceCommands = read('voice-commands.js');
@@ -500,7 +501,7 @@ function testDeploymentWiring() {
         read('style.css').includes('.dark-mode .header-fox-mark') &&
         read('style.css').includes("fox-mark-clean-mask.png") && serviceWorker.includes('fox-mark-clean-mask.png'),
         'top bar must use a compact high-contrast fox mark instead of the generic syringe icon');
-    assert(index.includes('tutorial-fox-icon') && !index.includes('style="background:var(--gradient-primary)"><i class="fas fa-syringe"') &&
+    assert(onboarding.includes('icons/fox-mark.png') && !index.includes('style="background:var(--gradient-primary)"><i class="fas fa-syringe"') &&
         index.includes('id="voiceCapabilitiesBtn"') && index.includes('چه کارهایی بلدی؟') &&
         voiceUi.includes("'capabilities'"),
         'welcome, tutorial and assistant UI must introduce the fox and expose assistant capabilities');
@@ -512,12 +513,12 @@ function testDeploymentWiring() {
         read('style.css').includes('.dark-mode .logo {\n    background: transparent;') &&
         read('style.css').includes('.tutorial-fox-mark {') && read('style.css').includes('width: 112px;'),
         'startup and tutorial foxes must be dominant while the header fox remains unboxed');
-    assert(index.includes('id="tutorialSpotlight"') && index.includes('id="tutorialCoachArrow"') &&
-        index.includes('data-tour-target=') && script.includes('function positionCoachMark()') &&
-        script.includes('function showTourTab(tabName)') && read('style.css').includes('0 0 0 9999px'),
-        'onboarding must spotlight and point to real controls instead of showing a static diagram');
-    assert(script.includes('without calling switchTab()') && script.includes('showTourTab(slides[current].dataset.tourTab'),
-        'previewing the assistant during onboarding must not preload its large offline model');
+    assert(index.includes('onboarding.js?v=1') && serviceWorker.includes('onboarding.js?v=1') &&
+        onboarding.includes('function previewTab(tab)') && onboarding.includes('window.initDrugReference?.()'),
+        'the new tutorial must be available offline and guide real drug discovery');
+    const preview = onboarding.slice(onboarding.indexOf('function previewTab(tab)'), onboarding.indexOf('function lockBackground()'));
+    assert(!/\bswitchTab\(|VoiceEngine\.|KoochikASR\./.test(preview),
+        'previewing tutorial tabs must not initialize or preload voice models');
     assert(voiceAssistantCss.includes('.voice-container.stage-locked .voice-orb-zone') &&
         voiceAssistantCss.includes('max-height: min(24vh, 176px)') &&
         voiceUi.includes('function stabilizeLayout()') && voiceUi.includes("'--voice-stable-stage-height'"),
@@ -586,6 +587,7 @@ function testDeploymentWiring() {
 
 function testNamePersonalization() {
     const script = read('script.js');
+    const onboarding = read('onboarding.js');
     const start = script.indexOf('function normalizePersonalName(name)');
     const end = script.indexOf('function saveUserNameValue(name)');
     assert(start >= 0 && end > start, 'name matching helpers must be present');

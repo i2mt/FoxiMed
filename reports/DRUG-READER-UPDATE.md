@@ -1,3 +1,5 @@
+> Historical revision. The current single-stage, initially closed topics and tutorial changes are documented in `LATEST-UPDATE.md`.
+
 # Drug reader, title and mixed-direction update
 
 Updated 2026-10-20. This is a cumulative replacement package based on the supplied source ZIP, including the earlier performance and compact-card fixes.

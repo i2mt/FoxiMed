@@ -86,3 +86,20 @@
 #drugsTab .drug-reference-measure{white-space:nowrap;overflow-wrap:normal}
 #drugsTab .drug-reference-prose bdi{margin-inline:.1em}
 #drugsTab .drug-reference-unit-gap{display:inline-block;width:.22em}
+/* One complete reading view; every topic is closed until explicitly chosen. */
+#drugsTab .drug-reference-metadata{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px;padding:0}
+#drugsTab .drug-reference-meta-item{display:flex;gap:10px;align-items:flex-start;padding:14px;border:1px solid var(--border);border-radius:13px;background:var(--surface-elevated);min-width:0}
+#drugsTab .drug-reference-meta-item>div{min-width:0}
+#drugsTab .drug-reference-meta-icon{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:9px;background:var(--primary-light);color:var(--primary);font-size:12px}
+#drugsTab .drug-reference-metadata dt{margin:0 0 7px;font-size:11px;font-weight:700;color:var(--text-secondary)}
+#drugsTab .drug-reference-metadata dd{margin:0;font-size:13px;line-height:1.95;color:var(--text-primary);overflow-wrap:anywhere}
+#drugsTab .drug-reference-brand-list{display:flex;flex-wrap:wrap;gap:6px;align-items:start}
+#drugsTab .drug-reference-brand{padding:3px 8px;border:1px solid var(--border);border-radius:7px;background:var(--surface);font-size:12px;unicode-bidi:isolate}
+#drugsTab .drug-reference-reader>.drug-reference-reader-heading{padding:2px 15px 0}
+#drugsTab .drug-reference-reader-heading h3{margin:4px 0;color:var(--text-primary);font-size:13px}
+#drugsTab .drug-reference-form-rows .drug-reference-prose{gap:8px}
+#drugsTab .drug-reference-form-rows p{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--surface-elevated);line-height:1.9!important}
+#drugsTab .drug-reference-parenthesis{unicode-bidi:isolate;white-space:normal}
+#drugsTab .drug-reference-orphan-bracket{unicode-bidi:isolate}
+#drugsTab .drug-reference-instruction-index{display:inline-grid;place-items:center;min-width:24px;height:24px;margin-inline-end:6px;border-radius:7px;color:var(--primary);background:var(--primary-light);font-size:11px;font-weight:700}
+@media(max-width:600px){#drugsTab .drug-reference-metadata{grid-template-columns:minmax(0,1fr);gap:8px;margin:12px}#drugsTab .drug-reference-meta-item{padding:12px}}

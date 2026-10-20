@@ -1,12 +1,10 @@
 # FoxiMed Drug Reference implementation report
 
-## Result
+## Current result
 
-The Drug Reference now uses one compact, full-width card per row. Its collapsed headers match the Tools accordion dimensions, colors, typography, icons, chevron, and tap behavior. First tap opens an overview; “اطلاعات بیشتر” appears only at the bottom of that overview and opens the comprehensive monograph. Dedicated pregnancy/breastfeeding sections appear only at the comprehensive level. The latest title, mixed-direction and topic-reading revision is documented in `DRUG-READER-UPDATE.md`; `COMPACT-ACCORDION-UPDATE.md` retains the earlier 66 px card measurements. Source attribution remains a single muted sentence at the bottom of either information level, with a link to the corresponding original PDF page. Repeated warning and source banners were removed as requested. The Drugs tab reuses the Tools floating-close helper. It appears after the open header scrolls away and stays below the actual app header; Settings remains unobstructed.
+The latest revision is documented in `LATEST-UPDATE.md`. Drug cards now reveal every available topic in one view, all initially closed, with no More info button. Category/brand metadata and forms rows have clearer spacing. The new reader isolates complete parenthesized groups and includes a second targeted spelling pass. A seven-step interactive tutorial and launch-style Iran drug reference note replace the previous tour/copy. The supplied console warnings are addressed through on-demand voice-script caching and generated-build validation; publishing the compiled voice bundle remains a deployment requirement.
 
-## Current reading revision
-
-All 827 imported titles were audited. Names come only from title glyphs, and neighboring clinical sentences are assigned to their correct body. The current reader uses labeled exclusive topics, preserved instruction/form rows, explicit RTL paragraphs, isolated LTR numeric/unit expressions, and 134 English heading copy edits. Compared with the previous delivery, 126 Persian titles and 134 English titles differ. Source text, original headings and original-name aliases remain traceable. See `drug-reader-audit.json`, `drug-reader-title-corrections.csv`, `drug-spelling-verification.json` and `DRUG-READER-UPDATE.md` for precise scope and limits. No dose or clinical recommendation was editorially rewritten.
+The earlier implementation details below are retained for traceability. Current behavior and test results take precedence in `LATEST-UPDATE.md`, `FINAL-CHECKS.json` and `drug-reference-ui-results.json`.
 
 ## Root causes
 
@@ -58,7 +56,7 @@ Primary label references used for the targeted brand check:
 
 Passed locally:
 
-- Syntax checks for all 33 root/test JavaScript files and compilation of the importer Python source.
+- Syntax checks for all 34 root/test JavaScript files and compilation of the importer Python source.
 - Complete data schema, duplicate-ID, required-name, numeric PDF-page/year, stable-ID, chunk relationship, and metadata/index consistency checks.
 - Checks against combined monographs, non-monograph extraction debris, corruption in headings, and quarantined aliases.
 - Reader tests across all 827 titles and 7,004 sections: no detected sentence-contaminated headings; reflow/direction preserve text and numeric values; corrected fibrillation spelling and complete dose/unit examples.
@@ -82,50 +80,57 @@ The exact current inventory, SHA-256 hashes, and reasons are in `replacement-fil
 
 | File | Reason |
 | --- | --- |
-| `.github/workflows/pages-sherpa-koochik.yml` | Run data, cache, reader preservation and syntax regressions before the existing voice build. |
-| `UPLOAD-INSTRUCTIONS.md` | Cumulative root-upload instructions and current asset revisions, checks and reader behavior. |
-| `drug-reference-book-01.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-02.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-03.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-04.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-05.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-06.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-07.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-08.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-09.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-book-10.js` | Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status. |
-| `drug-reference-index.js` | Small generated metadata index; startup no longer loads complete monographs. |
+| `.github/workflows/pages-sherpa-koochik.yml` | Run reader/voice-asset regressions and reject missing or invalid generated voice bundles before publication. |
+| `UPLOAD-INSTRUCTIONS.md` | Current cumulative upload steps, asset revisions and required generated voice deployment. |
+| `drug-reference-book-01.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-02.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-03.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-04.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-05.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-06.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-07.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-08.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-09.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-book-10.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
+| `drug-reference-index.js` | Current compact name index, corrected headings and retained original-name discovery aliases. |
 | `drug-reference-source.pdf` | Unchanged original PDF copied under the path used by footer page links. |
-| `drug-reference.css` | Readable topic hierarchy, instruction blocks, short dose/unit grouping, theme support and unchanged 66 px collapsed density. |
-| `drug-reference.js` | Topic-based progressive reading, isolated RTL/LTR and numeric/unit runs, preserved forms rows and compact Tools interactions. |
-| `index.html` | Current reader, index, CSS, app script and service worker URL revisions. |
-| `reports/COMPACT-ACCORDION-UPDATE.md` | Latest revision requirements, changes, actual density measurements, checks and upload guidance. |
-| `reports/DRUG-READER-UPDATE.md` | Current title, mixed-direction, spelling, progressive reading, checks and limitations report. |
-| `reports/IMPLEMENTATION-REPORT.md` | Updated cumulative report including shared scrolling-close behavior and current verification limits. |
-| `reports/compact-accordion-checks.json` | Current full data/cache/voice/UI and JavaScript syntax check results. |
-| `reports/drug-data-audit.json` | Machine-readable extraction/validation counts and unresolved-review totals. |
-| `reports/drug-data-corrections.csv` | Before/after metadata journal with original IDs, PDF pages and verification limits. |
+| `drug-reference.css` | Category/brand surfaces, spaced forms rows, isolated parentheses and numbered instructions; compact 66px card headers retained. |
+| `drug-reference.js` | Single view with every available topic initially closed; no More info stage; complete-group bidi handling, refined metadata and forms. |
+| `index.html` | Load the new onboarding script and current reader/style/index/service-worker revisions; replace the old slide markup. |
+| `onboarding.js` | Seven-step live quick tour, isolated calculation practice, explicit topic selection, preserved UI state and no voice-model preload. |
+| `reports/COMPACT-ACCORDION-UPDATE.md` | Historical compact-card revision, explicitly pointing to the current update. |
+| `reports/DRUG-READER-UPDATE.md` | Historical two-stage reader revision, explicitly pointing to the current update. |
+| `reports/FINAL-CHECKS.json` | Current passing data/cache/reader/voice/generated-asset/UI and syntax validation results. |
+| `reports/IMPLEMENTATION-REPORT.md` | Updated cumulative entry point with current outcomes and complete file inventory. |
+| `reports/LATEST-UPDATE.md` | Current behavior, second spelling/parenthesis pass, interactive tutorial, console diagnosis and remaining deployment/source limits. |
+| `reports/SECOND-SPELLING-PASS.json` | Additional NLM terminology evidence, source-verified vitamin-name suffixes, wording counts and scope. |
+| `reports/SECOND-TITLE-CORRECTIONS.csv` | Every English/Persian title difference from the previous edited-files delivery. |
+| `reports/compact-accordion-checks.json` | Historical check record retained with a pointer to current results. |
+| `reports/drug-data-audit.json` | Current generated dataset/journal counts; source and stable-ID review status retained. |
+| `reports/drug-data-corrections.csv` | Updated cumulative metadata journal against original IDs, with explicit editorial and validation limits. |
 | `reports/drug-data-review.csv` | Complete source-entry review queue; no clinical validation implied. |
 | `reports/drug-reader-audit.json` | All-title audit counts, precise source boundary/numeric duplicate removal and clinical validation limits. |
-| `reports/drug-reader-checks.json` | Current passing data/cache/reader/voice/UI checks and validation scope. |
+| `reports/drug-reader-checks.json` | Historical check record retained with a pointer to current results. |
 | `reports/drug-reader-title-corrections.csv` | Every Persian/English title difference from the prior delivered package with stable ID and PDF page. |
 | `reports/drug-reference-density.json` | 390 px before/after card-height measurement using the actual Font Awesome 6.4.0 icons in the QA browser. |
 | `reports/drug-reference-performance.json` | Historical first performance-repair sample, labelled separately from this layout revision. |
 | `reports/drug-reference-readability-visual.json` | Current local-browser density and zero-eager-detail-request measurements for the reader revision. |
-| `reports/drug-reference-ui-results.json` | Current passing rendered UI suite with 66 px Drugs/Tools measurements at three viewport widths. |
+| `reports/drug-reference-ui-results.json` | Rendered tests for closed topics, metadata, bracket glyph placement, live tour, state restoration, keyboard and existing features. |
 | `reports/drug-source-duplicate-headings.json` | Retained duplicate/incomplete English source headings for review. |
 | `reports/drug-spelling-verification.json` | NLM RxNorm term lookup evidence and primary fibrillation references for targeted spelling checks. |
-| `reports/replacement-files.json` | Exact cumulative replacement inventory and integrity hashes; excludes its own hash. |
-| `script.js` | Share Tools floating-close behavior with Drugs; observe actual pane/header boundaries, clean up listeners and restore bars safely on tab changes. |
-| `scripts/drug-reference-editorial.json` | Explicit heading and body spelling corrections; original source and aliases retained. |
+| `reports/replacement-files.json` | Exact cumulative replacement inventory and integrity hashes; excludes its own hash and size. |
+| `script.js` | Launch-style Iran drug-reference release note, new tour integration, queued install/name prompts and locked swipe navigation during the tour. |
+| `scripts/check-voice-assets.py` | Verify three generated scripts, valid WASM and nonempty model data; detect HTML fallbacks. |
+| `scripts/drug-reference-editorial.json` | Traceable heading/word spelling corrections and paired heading typography; no dose/unit autocorrections. |
 | `scripts/drug-reference-original-ids.json` | Original 764-entry identity map for reproducible ID preservation. |
 | `scripts/drug-reference-overrides.json` | Documented, sourced exclusion of ambiguous acetaminophen brand aliases. |
 | `scripts/drug_reference_sections.py` | Shared source section parser; recognize the reversed pure Multivitamin indication label without rewriting clinical values. |
-| `scripts/rebuild-drug-reference.py` | Extract names only from actual title glyphs; correct body boundaries and apply traceable editorial spelling without changing doses. |
-| `service-worker.js` | Current app cache/asset references and revision-3 lazy chunk caching with offline reuse. |
-| `style.css` | Constrain long titles inside the shared floating close bar; all other styles retained. |
-| `tests/drug-reference-cache.test.js` | Exercise lazy caching, offline reuse and revision isolation. |
+| `scripts/rebuild-drug-reference.py` | Repeatable source extraction and editorial spelling with partial-name/digit boundary protection. |
+| `service-worker.js` | Current shell and book revisions; generated voice scripts cached on demand in the pinned runtime cache instead of precached at install. |
+| `style.css` | Responsive welcome and live tutorial layout, practice controls, progress, keyboard focus, light/dark and short-screen support. |
+| `tests/drug-reference-cache.test.js` | Current lazy-book revision isolation and on-demand/offline voice-script cache reuse. |
 | `tests/drug-reference-data.test.js` | Validate the complete dataset, relationships, source status and preserved IDs. |
-| `tests/drug-reference-reader.test.js` | Full-dataset text/numeric preservation, title contamination, editorial spellings and mixed-direction expression regressions. |
-| `tests/drug-reference-ui.test.js` | Rendered title, spelling, numeric-unit, topic keyboard, density, two-stage reading, shared close bar and existing UI regressions. |
-| `tests/voice-pipeline-smoke.test.js` | Replace obsolete release-specific assertions with current-version consistency checks. |
+| `tests/drug-reference-reader.test.js` | Whole-dataset content/numeric preservation, complete-group parentheses and all-topics-closed checks. |
+| `tests/drug-reference-ui.test.js` | Mobile/desktop closed topics, keyboard, floating close, parentheses geometry, interactive tour and user-state restoration. |
+| `tests/voice-assets.test.py` | Generated bundle fixture checks for missing files, HTML fallback and invalid WebAssembly. |
+| `tests/voice-pipeline-smoke.test.js` | Retain voice regressions while checking the new offline-capable, non-preloading tutorial wiring. |

@@ -2,7 +2,7 @@
 // App shell is network-first. Rizeh VAD + offline-ASR .data/.wasm use a
 // stable cache-first model cache independent of ordinary app revisions.
 
-const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_4';
+const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_5';
 // Include the pinned model revision. The previous deployment accidentally
 // stored Koochik bytes under a Rizeh-named cache, so reusing that namespace
 // would keep serving the wrong 127 MB .data file after this release.
@@ -11,25 +11,23 @@ const MODEL_CACHE_NAME = 'FoxiMed_Model_Rizeh_v1_nonstreaming_int8_f2b9251_vad_s
 const urlsToCache = [
     './',
     './index.html',
-    './style.css?v=44',
+    './style.css?v=45',
     './voice-assistant.css?v=43',
     './calculation-core.js?v=35',
-    './script.js?v=51',
+    './script.js?v=52',
     './voice-recognition.js?v=42',
     './koochik-asr.js?v=36',
     './koochik-worker.js?v=35',
-    './sherpa-koochik/sherpa-onnx-asr.js',
-    './sherpa-koochik/sherpa-onnx-vad.js',
-    './sherpa-koochik/sherpa-onnx-wasm-main-vad-asr.js',
     './voice-commands.js?v=43',
     './voice-ui.js?v=42',
     './converters.js',
     './drugDatabase.js',
-    './drug-reference.css?v=5',
+    './drug-reference.css?v=6',
     './drug-reference-data.js?v=2',
-    './drug-reference.js?v=6',
+    './drug-reference.js?v=7',
+    './onboarding.js?v=1',
     './drug-reference-catalog.js?v=1',
-    './drug-reference-index.js?v=2',
+    './drug-reference-index.js?v=3',
     './manifest.json',
     './icons/icon-192.png',
     './icons/icon-512.png',
@@ -84,7 +82,7 @@ self.addEventListener('activate', event => {
 
 // Fetch strategy:
 // - Small app assets: network-first, app-version cache fallback.
-// - The large sherpa VAD+offline-ASR .data/.wasm payload: cache-first in a STABLE model cache
+// - Generated sherpa scripts and VAD+offline-ASR .data/.wasm payload: cache-first in a STABLE model cache
 //   whose name is independent of FoxiMed app versions. A JavaScript-only
 //   update therefore does not invalidate or redownload Rizeh.
 //
@@ -92,7 +90,9 @@ self.addEventListener('activate', event => {
 // users coming from v17 may need one final full download. Later app-shell
 // updates can reuse the same model cache until the model/runtime itself is
 // intentionally version-bumped.
-const MODEL_ASSET_RE = /\/sherpa-koochik\/[^?#]+\.(?:data|wasm)(?:[?#]|$)/i;
+// Generated voice files are cached only when used; installing the shell must
+// work for a manual upload that does not yet contain the compiled voice build.
+const MODEL_ASSET_RE = /\/sherpa-koochik\/[^?#]+\.(?:data|wasm|js)(?:[?#]|$)/i;
 const SW_SKIP_PATTERNS = [/\.tar\.gz(\?|$)/i, /\.gguf(\?|$)/i, /\.bin(\?|$)/i, /\.onnx(\?|$)/i];
 
 self.addEventListener('fetch', event => {
@@ -101,7 +101,7 @@ self.addEventListener('fetch', event => {
     // Versioned book chunks are immutable for this extraction revision. Cache
     // only on demand; installing the shell must not download every monograph.
     const drugUrl = new URL(event.request.url);
-    if (drugUrl.origin === self.location.origin && /\/drug-reference-book-\d{2}\.js$/.test(drugUrl.pathname) && drugUrl.searchParams.get('v') === '3') {
+    if (drugUrl.origin === self.location.origin && /\/drug-reference-book-\d{2}\.js$/.test(drugUrl.pathname) && drugUrl.searchParams.get('v') === '4') {
         event.respondWith((async () => {
             const cache = await caches.open(CACHE_NAME);
             const cached = await cache.match(event.request);
@@ -129,6 +129,9 @@ self.addEventListener('fetch', event => {
             if (cached) return cached;
 
             const response = await fetch(event.request);
+            if (!response.ok && /\.js(?:[?#]|$)/i.test(event.request.url)) {
+                console.warn('[FoxiMed] Voice runtime asset unavailable:', response.status, event.request.url, 'Publish the generated sherpa-koochik build assets.');
+            }
             if (response && response.status === 200) {
                 // CacheStorage is best-effort. Recognition must still work if
                 // a browser refuses the large entry because of quota.

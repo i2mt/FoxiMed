@@ -1,3 +1,5 @@
+> Historical revision. The current single-stage, initially closed topics and tutorial changes are documented in `LATEST-UPDATE.md`.
+
 # Compact Drug Reference accordion update
 
 This cumulative package replaces the previous delivery and keeps its data repairs and loading optimization.

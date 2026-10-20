@@ -1,288 +1,330 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "readable-topics-title-spelling-rtl-ltr",
+  "revision": "closed-topics-bidi-spelling-live-tour-and-voice-cache",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "bytes": 7355,
-      "reason": "Run data, cache, reader preservation and syntax regressions before the existing voice build.",
-      "sha256": "e5c7a21d15a1c04623c84e6589af8713e3a70de68fa25bd63f875dc357b5e5e8"
+      "reason": "Run reader/voice-asset regressions and reject missing or invalid generated voice bundles before publication.",
+      "bytes": 7520,
+      "sha256": "245c3b58dc757f659ed5dae2d9553a7c90b44faf0715517c85cbfb4b296d1746"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "bytes": 3290,
-      "reason": "Cumulative root-upload instructions and current asset revisions, checks and reader behavior.",
-      "sha256": "34e3389e8f97e436392cd5a40427d46ee790b7c07f2c98ea823e2e5fadcef5e6"
+      "reason": "Current cumulative upload steps, asset revisions and required generated voice deployment.",
+      "bytes": 2925,
+      "sha256": "c8369039f747aac2781848c9aeb0a7d831a416de0a388f5813f7e4f458d7bbd5"
     },
     {
       "path": "drug-reference-book-01.js",
-      "bytes": 669737,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "09cd15a162df4bfaccd20c0ca80cec4b940556ef8e406c1dd04718de194f6225"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 670312,
+      "sha256": "3f927194e20df2161e978a50f325db539ef59e5afe7c24a7312985c6891a309a"
     },
     {
       "path": "drug-reference-book-02.js",
-      "bytes": 711324,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "c8d8583008bc012fb86f311ef2c138bba7306d04eb56e12910c191b1b234d5ec"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 711811,
+      "sha256": "e472fe2c1154c3c1a643e314067c28f45ea04463209d24c17981c72d39876dd2"
     },
     {
       "path": "drug-reference-book-03.js",
-      "bytes": 788225,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "565c3898ab7726269fd516be09f9170fc8185562a82581a5f6f1dab6a9998a88"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 788805,
+      "sha256": "787c9d6395625952b20891ec1b698e51b63eee66011b91157f891497a7ae1d5b"
     },
     {
       "path": "drug-reference-book-04.js",
-      "bytes": 918685,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "481ac4d5e2756b68c29f0b428388deb355c56c9fa8b3b41bb262e236c86c182d"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 919112,
+      "sha256": "ebdff0b6ccb58eb5285e8532a698355e21d2bd7fdb8006e2179f46051cfc139e"
     },
     {
       "path": "drug-reference-book-05.js",
-      "bytes": 723969,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "3e6638ed6e94bec0a340a893a89125865b393560045e74a85f9ac9dbdde33724"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 724347,
+      "sha256": "92bff0ec01ee0585506a680d14c16b294f859cd73294e7677f137efed69a667e"
     },
     {
       "path": "drug-reference-book-06.js",
-      "bytes": 930088,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "4d7f21cbb9da061ac57def4a1e64e5a34b565c8cd6ad0caf4787460ba84aa856"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 930679,
+      "sha256": "a11f5dd604cdf8451d583c3130fdbe97eb6fd6e250c129106e29db87d681cceb"
     },
     {
       "path": "drug-reference-book-07.js",
-      "bytes": 755872,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "4442150c65bf6f60bcb9022a2bf05252d832ba9b34f3ef151d9199b49e2a023e"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 756312,
+      "sha256": "f2b642cc1bf01ef2ea85860a12f8b4a5adb87e5cb24a42899fa9648413ba95b1"
     },
     {
       "path": "drug-reference-book-08.js",
-      "bytes": 735018,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "25735cb49b384462fa3afcd4dcfa31c108c94e83e0c313b1e86dc55d94fcf6b8"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 735542,
+      "sha256": "181c5538c2dad22978465c54802ea9b659cada3df8426b7dd090d41f48fffec9"
     },
     {
       "path": "drug-reference-book-09.js",
-      "bytes": 666847,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "1247eda762b2b71a9b98d22d0d5a3e870950b6fbc870e0cf4c2d5506109624d0"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 667346,
+      "sha256": "9af59c768adbf86d1b25484908feb9005556a22755d546e3c978cce248c84e2f"
     },
     {
       "path": "drug-reference-book-10.js",
-      "bytes": 911943,
-      "reason": "Regenerated heading-bounded PDF monographs with repaired ligature decoding, preserved IDs, provenance and review status.",
-      "sha256": "0b887a3b7d10d86b542fcaa3660a023b00bb2d4a202e64bc714006a144100eb6"
+      "reason": "Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained.",
+      "bytes": 912668,
+      "sha256": "f0d42c295a2be5c735c690ee9ac4f466aa226d434a51c035d5cee61cd782d177"
     },
     {
       "path": "drug-reference-index.js",
-      "bytes": 309499,
-      "reason": "Small generated metadata index; startup no longer loads complete monographs.",
-      "sha256": "e929ea335dc5d7c3b4a97ee9b55ac236cc81aea2160b433b82348089e5fa2504"
+      "reason": "Current compact name index, corrected headings and retained original-name discovery aliases.",
+      "bytes": 314728,
+      "sha256": "80f3056a8f2e2b95800d6ac26917997296d327e71925e9c10fdd5afc15ef1bfd"
     },
     {
       "path": "drug-reference-source.pdf",
-      "bytes": 12760136,
       "reason": "Unchanged original PDF copied under the path used by footer page links.",
+      "bytes": 12760136,
       "sha256": "a765a31b8d8bd86f9477da3ca1b50fad3a13a2da8158612ec7653cce3140a896"
     },
     {
       "path": "drug-reference.css",
-      "bytes": 9720,
-      "reason": "Readable topic hierarchy, instruction blocks, short dose/unit grouping, theme support and unchanged 66 px collapsed density.",
-      "sha256": "f715cf4cb1c6d39f24fe7b56d47d5986a721a976e39b4c5348469e3cc2596b50"
+      "reason": "Category/brand surfaces, spaced forms rows, isolated parentheses and numbered instructions; compact 66px card headers retained.",
+      "bytes": 11817,
+      "sha256": "7daf638c8e38aff48c951b52523f99c506b27cf837e60121cd1ab20b1e7598c5"
     },
     {
       "path": "drug-reference.js",
-      "bytes": 25020,
-      "reason": "Topic-based progressive reading, isolated RTL/LTR and numeric/unit runs, preserved forms rows and compact Tools interactions.",
-      "sha256": "5197e155647ccfeb6bf1feb9c5bea27d241b29747920b08ba43c85fbf95028d4"
+      "reason": "Single view with every available topic initially closed; no More info stage; complete-group bidi handling, refined metadata and forms.",
+      "bytes": 25855,
+      "sha256": "55ff34de11fdfe73453494e446c99c41b2fda0ee0062641c075d294ef828af39"
     },
     {
       "path": "index.html",
-      "bytes": 184022,
-      "reason": "Current reader, index, CSS, app script and service worker URL revisions.",
-      "sha256": "e1f19c0289e2b3853b25a31b022560202b1d441585d454fcb0a19d9fe08e784a"
+      "reason": "Load the new onboarding script and current reader/style/index/service-worker revisions; replace the old slide markup.",
+      "bytes": 175145,
+      "sha256": "2173d486b86867af749cb90e54939b17bb20d63cc3a9ce20f4799090414d9e9e"
+    },
+    {
+      "path": "onboarding.js",
+      "reason": "Seven-step live quick tour, isolated calculation practice, explicit topic selection, preserved UI state and no voice-model preload.",
+      "bytes": 12623,
+      "sha256": "3a4893406f6e7670fb49f4806b2fb4f5c8af49a53c1856fe05289542375e52fe"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
-      "bytes": 4111,
-      "reason": "Latest revision requirements, changes, actual density measurements, checks and upload guidance.",
-      "sha256": "2a8b8c36e0de2fdaf57c12823bcbe994d1561b94cea71d327b79eaa89c5c4792"
+      "reason": "Historical compact-card revision, explicitly pointing to the current update.",
+      "bytes": 4244,
+      "sha256": "5cca22e83bc976665ca8ba45a303b8a7178189bd3b9c79d11965d1f4098f504b"
     },
     {
       "path": "reports/DRUG-READER-UPDATE.md",
-      "bytes": 5586,
-      "reason": "Current title, mixed-direction, spelling, progressive reading, checks and limitations report.",
-      "sha256": "d926bf0b90a2c5e70b169a6af9379661bb89c5e0f71af9c10466331d99fc5962"
+      "reason": "Historical two-stage reader revision, explicitly pointing to the current update.",
+      "bytes": 5719,
+      "sha256": "cba7fa9adc97622b27604bd394947a53ddb519f2a21988b26230e4611f7b72b1"
+    },
+    {
+      "path": "reports/FINAL-CHECKS.json",
+      "reason": "Current passing data/cache/reader/voice/generated-asset/UI and syntax validation results.",
+      "bytes": 909,
+      "sha256": "84a6bf1f601063f6daa804122a70ce93ae8235a17ac1391b992f32899634bd54"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "bytes": 19238,
-      "reason": "Updated cumulative report including shared scrolling-close behavior and current verification limits.",
-      "sha256": "f676841cd3e22d5d38f54ce0b4ce26a7f1e0047d43df11f3a7a960258db0e087"
+      "reason": "Updated cumulative entry point with current outcomes and complete file inventory.",
+      "bytes": 19585,
+      "sha256": "42693d13e606bc973b8ade00324085e7c56151e3b34fca9dcb591fa9d236c1d9"
+    },
+    {
+      "path": "reports/LATEST-UPDATE.md",
+      "reason": "Current behavior, second spelling/parenthesis pass, interactive tutorial, console diagnosis and remaining deployment/source limits.",
+      "bytes": 7356,
+      "sha256": "bfa96394691584e40282c18a44b64578e550bd233c5a4776b7b6697df0adade5"
+    },
+    {
+      "path": "reports/SECOND-SPELLING-PASS.json",
+      "reason": "Additional NLM terminology evidence, source-verified vitamin-name suffixes, wording counts and scope.",
+      "bytes": 4692,
+      "sha256": "b630106bab839c51b7a1c958a798660f1343bd56ed0cfece80d90d94b90b841f"
+    },
+    {
+      "path": "reports/SECOND-TITLE-CORRECTIONS.csv",
+      "reason": "Every English/Persian title difference from the previous edited-files delivery.",
+      "bytes": 5913,
+      "sha256": "3bdfdebb2d8ffb30a53c8fce941f3921817b80d8ace4fb14190450cc63a742e4"
     },
     {
       "path": "reports/compact-accordion-checks.json",
-      "bytes": 770,
-      "reason": "Current full data/cache/voice/UI and JavaScript syntax check results.",
-      "sha256": "9e0ec4b88b029fc90fd0ce2c137a32ec91183aedb380f92d80952a0e237483a8"
+      "reason": "Historical check record retained with a pointer to current results.",
+      "bytes": 833,
+      "sha256": "40cc1fd3dbbcb26eeb1017b50304b23176a015d2f9d1376303e111a44655ee66"
     },
     {
       "path": "reports/drug-data-audit.json",
+      "reason": "Current generated dataset/journal counts; source and stable-ID review status retained.",
       "bytes": 782,
-      "reason": "Machine-readable extraction/validation counts and unresolved-review totals.",
-      "sha256": "869a227a867c43b6f292f7649189de091e5d7bc5115a716521a3b8bceed573e7"
+      "sha256": "dcc351d96f7f8ea8812515a7d12b7834ca4f85f7065e8960c88324a03ad576aa"
     },
     {
       "path": "reports/drug-data-corrections.csv",
-      "bytes": 161029,
-      "reason": "Before/after metadata journal with original IDs, PDF pages and verification limits.",
-      "sha256": "15b9a375e494adaec4cd46be1e01d3a7e80f3a11cf0797692f56e7491ddc663f"
+      "reason": "Updated cumulative metadata journal against original IDs, with explicit editorial and validation limits.",
+      "bytes": 189270,
+      "sha256": "2525994770424fbe67a27c7f289d640cd88b10844ad94159e606ee6506e3e713"
     },
     {
       "path": "reports/drug-data-review.csv",
-      "bytes": 100147,
       "reason": "Complete source-entry review queue; no clinical validation implied.",
+      "bytes": 100147,
       "sha256": "b4858bff55af0968c3111c1ae75d5adb8c478347d00960378bce5532f3a2f1cf"
     },
     {
       "path": "reports/drug-reader-audit.json",
-      "bytes": 892,
       "reason": "All-title audit counts, precise source boundary/numeric duplicate removal and clinical validation limits.",
+      "bytes": 892,
       "sha256": "711d5149f8c9980c3a10961433e721975b002eda2d199bee6ef8770321caf6bb"
     },
     {
       "path": "reports/drug-reader-checks.json",
-      "bytes": 770,
-      "reason": "Current passing data/cache/reader/voice/UI checks and validation scope.",
-      "sha256": "9e0ec4b88b029fc90fd0ce2c137a32ec91183aedb380f92d80952a0e237483a8"
+      "reason": "Historical check record retained with a pointer to current results.",
+      "bytes": 833,
+      "sha256": "40cc1fd3dbbcb26eeb1017b50304b23176a015d2f9d1376303e111a44655ee66"
     },
     {
       "path": "reports/drug-reader-title-corrections.csv",
-      "bytes": 24862,
       "reason": "Every Persian/English title difference from the prior delivered package with stable ID and PDF page.",
+      "bytes": 24862,
       "sha256": "0695888ccc3e4228b1f973526ab910ba44bd5ed96a687f33acf32f0e1eddf34e"
     },
     {
       "path": "reports/drug-reference-density.json",
-      "bytes": 353,
       "reason": "390 px before/after card-height measurement using the actual Font Awesome 6.4.0 icons in the QA browser.",
+      "bytes": 353,
       "sha256": "807107f7ae647b383fbf4e08c2d469f54edf40e2042767cac0b3f95e9b6c3695"
     },
     {
       "path": "reports/drug-reference-performance.json",
-      "bytes": 1185,
       "reason": "Historical first performance-repair sample, labelled separately from this layout revision.",
+      "bytes": 1185,
       "sha256": "4ebcb0efbc6ccef4b712cccf8474267bbee5c6b2e7e8bc8cbeb4e6b132e30d95"
     },
     {
       "path": "reports/drug-reference-readability-visual.json",
-      "bytes": 253,
       "reason": "Current local-browser density and zero-eager-detail-request measurements for the reader revision.",
+      "bytes": 253,
       "sha256": "9858ee1a1c77ce9d5e95c4bc2fcdbb761f82d913dc198863eccf54de06c866b2"
     },
     {
       "path": "reports/drug-reference-ui-results.json",
-      "bytes": 1114,
-      "reason": "Current passing rendered UI suite with 66 px Drugs/Tools measurements at three viewport widths.",
-      "sha256": "6d602cf37d6ab509132bcce446bc99abc85d36ad622c52c8d4c75466d9776a9a"
+      "reason": "Rendered tests for closed topics, metadata, bracket glyph placement, live tour, state restoration, keyboard and existing features.",
+      "bytes": 1111,
+      "sha256": "ee8da9223475cb85e3519133834b851e6fc90c72717429934a150af4c878b376"
     },
     {
       "path": "reports/drug-source-duplicate-headings.json",
-      "bytes": 924,
       "reason": "Retained duplicate/incomplete English source headings for review.",
+      "bytes": 924,
       "sha256": "71cd16740e4a9c115aada962223f7db874a35b0415a831c6559a9a96b4b64aaa"
     },
     {
       "path": "reports/drug-spelling-verification.json",
-      "bytes": 31774,
       "reason": "NLM RxNorm term lookup evidence and primary fibrillation references for targeted spelling checks.",
+      "bytes": 31774,
       "sha256": "b4d48e7155e636ddf12750eb6d935594f750214ee18b1fab977c61b9d4706ec7"
     },
     {
       "path": "reports/replacement-files.json",
-      "reason": "Exact cumulative replacement inventory and integrity hashes; excludes its own hash.",
-      "note": "Own hash and byte count excluded to avoid self-reference."
+      "reason": "Exact cumulative replacement inventory and integrity hashes; excludes its own hash and size.",
+      "note": "Own byte count and hash excluded to avoid self-reference."
     },
     {
       "path": "script.js",
-      "bytes": 306118,
-      "reason": "Share Tools floating-close behavior with Drugs; observe actual pane/header boundaries, clean up listeners and restore bars safely on tab changes.",
-      "sha256": "3693e282c099682504e1208c071c44f947f1d892cd205f06b44005cb7212db94"
+      "reason": "Launch-style Iran drug-reference release note, new tour integration, queued install/name prompts and locked swipe navigation during the tour.",
+      "bytes": 299276,
+      "sha256": "39d15455563dffe5fba9bb705c7395fc4ba4fb9da9bb06c209b3931da55f569c"
+    },
+    {
+      "path": "scripts/check-voice-assets.py",
+      "reason": "Verify three generated scripts, valid WASM and nonempty model data; detect HTML fallbacks.",
+      "bytes": 962,
+      "sha256": "8d232aae033da36d75a03d9fd28a81d6f58bc5196e390e3203ccfc1c44ab288b"
     },
     {
       "path": "scripts/drug-reference-editorial.json",
-      "bytes": 9969,
-      "reason": "Explicit heading and body spelling corrections; original source and aliases retained.",
-      "sha256": "db75e2075833ee44f5267d36f12ad6e715f15bbd4392c57eae1876f85f30e576"
+      "reason": "Traceable heading/word spelling corrections and paired heading typography; no dose/unit autocorrections.",
+      "bytes": 15698,
+      "sha256": "ef0e249f2a768c961ffbc0c8b96d24d0acd6a04a54fddb4c00685c4a237efa84"
     },
     {
       "path": "scripts/drug-reference-original-ids.json",
-      "bytes": 188633,
       "reason": "Original 764-entry identity map for reproducible ID preservation.",
+      "bytes": 188633,
       "sha256": "a86837f1aefc36f95d687c1faa6834148b63a135779d3b59612f281dc321607d"
     },
     {
       "path": "scripts/drug-reference-overrides.json",
-      "bytes": 805,
       "reason": "Documented, sourced exclusion of ambiguous acetaminophen brand aliases.",
+      "bytes": 805,
       "sha256": "27fd9a40a8661d9af31803f874bbd2032ad5e84fe17b87ea486d9272252027fe"
     },
     {
       "path": "scripts/drug_reference_sections.py",
-      "bytes": 1831,
       "reason": "Shared source section parser; recognize the reversed pure Multivitamin indication label without rewriting clinical values.",
+      "bytes": 1831,
       "sha256": "1caa1d3c49099d3d030d38cb141f54c8b158fa14ba87aafff4fa9617dcfe8eae"
     },
     {
       "path": "scripts/rebuild-drug-reference.py",
-      "bytes": 11970,
-      "reason": "Extract names only from actual title glyphs; correct body boundaries and apply traceable editorial spelling without changing doses.",
-      "sha256": "b86ba70d020446f08b6dca0a1c73b1411458081947af5b38e9d1f7a404700129"
+      "reason": "Repeatable source extraction and editorial spelling with partial-name/digit boundary protection.",
+      "bytes": 12008,
+      "sha256": "3bdd10df4619e3957f3a52b73ce6201e0d55424c0b207eebe50c10e7d3e4e97b"
     },
     {
       "path": "service-worker.js",
-      "bytes": 7170,
-      "reason": "Current app cache/asset references and revision-3 lazy chunk caching with offline reuse.",
-      "sha256": "9ecfa5b572e4a538c411596a72eb29411202fdff19ae159934f69eada6c3dfd2"
+      "reason": "Current shell and book revisions; generated voice scripts cached on demand in the pinned runtime cache instead of precached at install.",
+      "bytes": 7484,
+      "sha256": "490d276f3d1f5d250de3dc01bad845c6294a6363fbd2178d3e0f025acd8d0c5c"
     },
     {
       "path": "style.css",
-      "bytes": 233512,
-      "reason": "Constrain long titles inside the shared floating close bar; all other styles retained.",
-      "sha256": "8141744378270362cb4e509f3ac87bbe24baec87779ae23b6d2e5bd13a68b6c5"
+      "reason": "Responsive welcome and live tutorial layout, practice controls, progress, keyboard focus, light/dark and short-screen support.",
+      "bytes": 240097,
+      "sha256": "5219724f3a2fcb82c9e02f73727e1fb2d425fb032332e50e0eddb27f3dac60b8"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
-      "bytes": 2170,
-      "reason": "Exercise lazy caching, offline reuse and revision isolation.",
-      "sha256": "135714828921c89ab976e8940cc45a77a58c09f05e41e211a986ef190137d99c"
+      "reason": "Current lazy-book revision isolation and on-demand/offline voice-script cache reuse.",
+      "bytes": 2529,
+      "sha256": "69620613d2a4333dfb2620d1d10f50da0f3f99895a45d4d55fff566638f5582a"
     },
     {
       "path": "tests/drug-reference-data.test.js",
-      "bytes": 3640,
       "reason": "Validate the complete dataset, relationships, source status and preserved IDs.",
+      "bytes": 3640,
       "sha256": "54966d3b383833a7c7e067561f1d66321e3bf3618c8b4c9f91ea3afd6d91a6a2"
     },
     {
       "path": "tests/drug-reference-reader.test.js",
-      "bytes": 3479,
-      "reason": "Full-dataset text/numeric preservation, title contamination, editorial spellings and mixed-direction expression regressions.",
-      "sha256": "93b75ce74236608e17e82e0f481566ca0941ee747a6e8728584da0b1b92cbd67"
+      "reason": "Whole-dataset content/numeric preservation, complete-group parentheses and all-topics-closed checks.",
+      "bytes": 3679,
+      "sha256": "b9de2911639e0ccda2dc4d7959f412589c10ef3592ef2c7e51e0ed8e5fb21181"
     },
     {
       "path": "tests/drug-reference-ui.test.js",
-      "bytes": 17066,
-      "reason": "Rendered title, spelling, numeric-unit, topic keyboard, density, two-stage reading, shared close bar and existing UI regressions.",
-      "sha256": "d33d086e72c7b80bbcf15b50c68d1d231d647365de12b8b51f46abf150ad7d17"
+      "reason": "Mobile/desktop closed topics, keyboard, floating close, parentheses geometry, interactive tour and user-state restoration.",
+      "bytes": 15854,
+      "sha256": "b0f73e2947d64e7fb3380a0051a8fb548dda39ff89ff6d19e09505397f61ad4f"
+    },
+    {
+      "path": "tests/voice-assets.test.py",
+      "reason": "Generated bundle fixture checks for missing files, HTML fallback and invalid WebAssembly.",
+      "bytes": 1057,
+      "sha256": "0b1ff4273b58cd4800fadc4827d372677896c5396c1315687dc15079478b0f0e"
     },
     {
       "path": "tests/voice-pipeline-smoke.test.js",
-      "bytes": 48748,
-      "reason": "Replace obsolete release-specific assertions with current-version consistency checks.",
-      "sha256": "9b30796f786a83fafb79924a609069074c7ba1bff02227eff44de3b94e42f02c"
+      "reason": "Retain voice regressions while checking the new offline-capable, non-preloading tutorial wiring.",
+      "bytes": 48802,
+      "sha256": "1adbde632830d7b6533a4fee5505e329bcdd237d9ba8f36e7e9b94caa3aeaa88"
     }
   ]
 }

@@ -304,13 +304,14 @@
       "en": "Vincristine Sulfate"
     },
     "zinc-salfate": {
-      "en": "Zinc Sulfate"
+      "en": "Zinc Sulfate",
+      "fa": "زینک سولفات"
     },
     "topical-ophtalmic-acyclovir": {
-      "en": "Acyclovir ( Ophthalmic , Topical )"
+      "en": "Acyclovir (Ophthalmic, Topical)"
     },
     "ciprofloxacin-hydrochloride-ophtalmic": {
-      "en": "Ciprofloxacin Hydrochloride(Ophthalmic"
+      "en": "Ciprofloxacin Hydrochloride (Ophthalmic)"
     },
     "ophtalmic-erythromycin": {
       "en": "Erythromycin (Ophthalmic)"
@@ -322,10 +323,10 @@
       "en": "Tetracaine Hcl (Ophthalmic)"
     },
     "tetracycline-opthalmic": {
-      "en": "Tetracycline ( Ophthalmic)"
+      "en": "Tetracycline (Ophthalmic)"
     },
     "vitamin-a-ophtalmic": {
-      "en": "Vitamin A(Ophthalmic)"
+      "en": "Vitamin A (Ophthalmic)"
     },
     "decongestant-antihistamin": {
       "en": "Antihistamine Decongestant"
@@ -401,12 +402,208 @@
     },
     "pethioinehcl": {
       "en": "Pethidine HCl"
+    },
+    "alprostadin-prostaglandin-e1": {
+      "en": "Alprostadil (Prostaglandin E1)"
+    },
+    "hydroxynaphtaate-bephenium": {
+      "en": "Bephenium Hydroxynaphthoate"
+    },
+    "hydrochloride-ciproheptadine": {
+      "en": "Cyproheptadine Hydrochloride"
+    },
+    "dacrbazine-dtic": {
+      "en": "Dacarbazine (DTIC)"
+    },
+    "factor-viii-antihemophylic-factor-viii": {
+      "en": "Factor VIII (Antihemophilic Factor)"
+    },
+    "feiba-activated-prothrombin-compleaconcentrated": {
+      "en": "FEIBA (Activated Prothrombin Complex Concentrate)"
+    },
+    "clioquinol-iodochlorhydroxyquin": {
+      "en": "Iodochlorhydroxyquinoline (Clioquinol)"
+    },
+    "iodoquinol-diiodohydroxyquindine": {
+      "en": "Iodoquinol (Diiodohydroxyquinoline)"
+    },
+    "immunoglobulin-intravenous-iglv": {
+      "en": "Immunoglobulin Intravenous (IVIG)"
+    },
+    "liothyronine-sodium-t": {
+      "en": "Liothyronine Sodium (T3)"
+    },
+    "compound-meglumin": {
+      "en": "Meglumine Compound"
+    },
+    "parathormon": {
+      "en": "Parathormone"
+    },
+    "pilocarpine-hclornitrate": {
+      "en": "Pilocarpine (HCl or Nitrate)"
+    },
+    "triple-sulfat-vaginal": {
+      "en": "Triple Sulfa (Vaginal)"
+    },
+    "vitaminc-acid-ascorbic": {
+      "en": "Ascorbic Acid (Vitamin C)"
+    },
+    "acetaminophen-paracetamol": {
+      "en": "Acetaminophen (paracetamol)"
+    },
+    "acyclovir-systemic": {
+      "en": "Acyclovir (systemic)"
+    },
+    "albumin-human": {
+      "en": "Albumin (Human)"
+    },
+    "sulfate-as-amikacin": {
+      "en": "Amikacin (as sulfate)"
+    },
+    "a-s-a-acetylsalicylic-acid": {
+      "en": "A.S.A (Acetylsalicylic Acid)"
+    },
+    "betaxolol-ashcl": {
+      "en": "Betaxolol (as HCl)"
+    },
+    "bleomycin-assulfate": {
+      "en": "Bleomycin (as Sulfate)"
+    },
+    "burn-ointment-for-minorburns": {
+      "en": "Burn Ointment (For Minor Burns)"
+    },
+    "calcium-carbonate-chlorid-gluconate": {
+      "en": "Calcium (Carbonate, Chloride, Gluconate)"
+    },
+    "mustard-nitrogen-hcl-chlormethine": {
+      "en": "Chlormethine Hcl (Nitrogen Mustard)"
+    },
+    "sulfat-phosphate-as-chloroquine": {
+      "en": "Chloroquine (as phosphate & Sulfate)"
+    },
+    "cholecalciferol-vitamin-d": {
+      "en": "Cholecalciferol (Vitamin D3)"
+    },
+    "chorionic-gonadotropin-human-h-c-g": {
+      "en": "Chorionic Gonadotropin, Human (H.C.G)"
+    },
+    "systemic-ciprofloxacin": {
+      "en": "Ciprofloxacin (Systemic)"
+    },
+    "acth-corticotropin": {
+      "en": "Corticotropin (ACTH)"
+    },
+    "co-trimoxazole-trimethoprim-sulfamethoxazole": {
+      "en": "CO - Trimoxazole (Trimethoprim - sulfamethoxazole)"
+    },
+    "cysteamin-bitartrate-phosphocysteamine": {
+      "en": "Cysteamin Bitartrate (Phosphocysteamine)"
+    },
+    "dextrose-alcohol": {
+      "en": "Dextrose Alcohol"
+    },
+    "dihydrotachysterol-vitamin-d": {
+      "en": "Dihydrotachysterol (Vitamin D2)"
+    },
+    "topical-acetate-hydrocortisone": {
+      "en": "Hydrocortisone Acetate (Topical)"
+    },
+    "ichthyol-ichthammol": {
+      "en": "Ichthyol (Ichthammol)"
+    },
+    "hetastarch-hes-hydroxyethyl-starch": {
+      "en": "Hetastarch (Hes, Hydroxyethyl Starch)"
+    },
+    "interferon-alfa-2b-recombinant": {
+      "en": "Interferon Alfa-2b, Recombinant"
+    },
+    "dextrose-hcl-lidocaine": {
+      "en": "Lidocaine HCL Dextrose"
+    },
+    "measles-vaccine-live-attenuated": {
+      "en": "Measles Vaccine, Live, Attenuated"
+    },
+    "mumps-virus-vaccine-live": {
+      "en": "Mumps Virus Vaccine, Live"
+    },
+    "niacinamide-vitamin-b3": {
+      "en": "Niacinamide (Vitamin B3)"
+    },
+    "nicotinic-acid-niacin-vitamin-b3": {
+      "en": "Nicotinic Acid (Niacin, Vitamin B3)"
+    },
+    "paraamino-benzoicacid-k-paba-k": {
+      "en": "Paraamino Benzoicacid-K (PABA-K)"
+    },
+    "para-amino-benzoicacid-p-paba-p": {
+      "en": "Para Amino Benzoicacid-P (PABA-P)"
+    },
+    "paromomycin-as-sulfate": {
+      "en": "Paromomycin (as sulfate)"
+    },
+    "sodium-amino-salicylate-pas": {
+      "en": "sodium amino salicylate (PAS)"
+    },
+    "pegaspargase-peg-l-asparaginase": {
+      "en": "Pegaspargase (PEG-L-Asparaginase)"
+    },
+    "systemic-phenytoin": {
+      "en": "Phenytoin (systemic)"
+    },
+    "piroxicam-systemic": {
+      "en": "Piroxicam (systemic)"
+    },
+    "riboflavin-vitamin-b": {
+      "en": "Riboflavin (Vitamin B2)"
+    },
+    "sodium-chloride-intravenous-drip": {
+      "en": "Sodium Chloride (Intravenous drip)"
+    },
+    "stavudine-d4t": {
+      "en": "Stavudine (d4T)"
+    },
+    "tetracycline-topical": {
+      "en": "Tetracycline (Topical)"
+    },
+    "thioguanine-tg-6-thio": {
+      "en": "Thioguanine (TG, 6-Thio)"
+    },
+    "triamcinolone-acetonide-systemic": {
+      "en": "Triamcinolone acetonide (systemic)"
+    },
+    "vitamin-a-retinol": {
+      "en": "Vitamin A (Retinol)"
+    },
+    "yellow-fever-vaccine-live": {
+      "en": "Yellow Fever Vaccine, live"
+    },
+    "zidovudine-azidothymidine-azt": {
+      "en": "Zidovudine (Azidothymidine, AZT)"
+    },
+    "zinc-pyrithione": {
+      "fa": "پرنییون زینک"
+    },
+    "ropinirole-hydrochloride": {
+      "fa": "روپینیرول هیدروکلراید"
+    },
+    "zinc-undecylenate": {
+      "fa": "زینک آندسیلنات"
     }
   },
   "bodyReplacements": {
     "فیبر یلاسیون یبطنی": "فیبریلاسیون بطنی",
     "فیبرپلاسیون": "فیبریلاسیون",
-    "فیبرنیولیز": "فیبرینولیز"
+    "فیبرنیولیز": "فیبرینولیز",
+    "انفوریون": "انفوزیون",
+    "ورریدی": "وریدی",
+    "مرافب": "مراقب",
+    "آنافیلاسکی": "آنافیلاکسی",
+    "هیدروکلر ید": "هیدروکلرید",
+    "Acetawinoph": "Acetaminophen",
+    "Codein phosphate": "Codeine phosphate",
+    "Louzangers": "Lozenges",
+    "effer rescent": "effervescent",
+    "روبینیرول": "روپینیرول"
   },
   "note": "Editorial spelling only. IDs, raw source text, numeric doses, units and recommendations are preserved. No full clinical validation."
 }

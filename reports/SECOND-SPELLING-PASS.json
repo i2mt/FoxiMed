@@ -1,0 +1,168 @@
+{
+  "checkedOn": "2026-10-20",
+  "newTerminologyChecks": [
+    {
+      "id": "alprostadin-prostaglandin-e1",
+      "term": "alprostadil",
+      "rxnormIds": [
+        "598"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=alprostadil&search=2"
+    },
+    {
+      "id": "hydroxynaphtaate-bephenium",
+      "term": "bephenium hydroxynaphthoate",
+      "rxnormIds": [],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=bephenium+hydroxynaphthoate&search=2"
+    },
+    {
+      "id": "hydrochloride-ciproheptadine",
+      "term": "cyproheptadine hydrochloride",
+      "rxnormIds": [
+        "104592"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cyproheptadine+hydrochloride&search=2"
+    },
+    {
+      "id": "dacrbazine-dtic",
+      "term": "dacarbazine",
+      "rxnormIds": [
+        "3098"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dacarbazine&search=2"
+    },
+    {
+      "id": "factor-viii-antihemophylic-factor-viii",
+      "term": "antihemophilic factor",
+      "rxnormIds": [
+        "4257"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=antihemophilic+factor&search=2"
+    },
+    {
+      "id": "feiba-activated-prothrombin-compleaconcentrated",
+      "term": "anti-inhibitor coagulant complex",
+      "rxnormIds": [
+        "314504"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=anti-inhibitor+coagulant+complex&search=2"
+    },
+    {
+      "id": "clioquinol-iodochlorhydroxyquin",
+      "term": "clioquinol",
+      "rxnormIds": [
+        "5942"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=clioquinol&search=2"
+    },
+    {
+      "id": "iodoquinol-diiodohydroxyquindine",
+      "term": "iodoquinol",
+      "rxnormIds": [
+        "3435"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=iodoquinol&search=2"
+    },
+    {
+      "id": "immunoglobulin-intravenous-iglv",
+      "term": "immune globulin intravenous",
+      "rxnormIds": [
+        "42386"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=immune+globulin+intravenous&search=2"
+    },
+    {
+      "id": "liothyronine-sodium-t",
+      "term": "liothyronine sodium",
+      "rxnormIds": [
+        "142448"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=liothyronine+sodium&search=2"
+    },
+    {
+      "id": "compound-meglumin",
+      "term": "meglumine",
+      "rxnormIds": [
+        "6704"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=meglumine&search=2"
+    },
+    {
+      "id": "parathormon",
+      "term": "parathyroid hormone",
+      "rxnormIds": [
+        "1427222"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=parathyroid+hormone&search=2"
+    },
+    {
+      "id": "pilocarpine-hclornitrate",
+      "term": "pilocarpine",
+      "rxnormIds": [
+        "8328"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=pilocarpine&search=2"
+    },
+    {
+      "id": "r-salicylat-menthol",
+      "term": "menthol",
+      "rxnormIds": [
+        "6750"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=menthol&search=2"
+    },
+    {
+      "id": "triple-sulfat-vaginal",
+      "term": "triple sulfa",
+      "rxnormIds": [
+        "38802"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=triple+sulfa&search=2"
+    },
+    {
+      "id": "vitaminc-acid-ascorbic",
+      "term": "ascorbic acid",
+      "rxnormIds": [
+        "1151"
+      ],
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ascorbic+acid&search=2"
+    }
+  ],
+  "additionalWordReplacements": {
+    "انفوریون": 3,
+    "ورریدی": 1,
+    "مرافب": 1,
+    "آنافیلاسکی": 1,
+    "هیدروکلر ید": 0
+  },
+  "headingEditorialEntries": 196,
+  "numericOrUnitAutocorrections": 0,
+  "scope": "All imported headings scanned; targeted terminology and typographic corrections. Not full clinical validation.",
+  "displayHeadingChangesThisPass": 67,
+  "bodyReplacementOccurrences": {
+    "فیبر یلاسیون یبطنی": 1,
+    "فیبرپلاسیون": 1,
+    "فیبرنیولیز": 1,
+    "انفوریون": 3,
+    "ورریدی": 1,
+    "مرافب": 1,
+    "آنافیلاسکی": 1,
+    "هیدروکلر ید": 0,
+    "Acetawinoph": 1,
+    "Codein phosphate": 1,
+    "Louzangers": 1,
+    "effer rescent": 1,
+    "روبینیرول": 1
+  },
+  "sections": 7004,
+  "sourceTextRewritten": false,
+  "titleFieldCounts": {
+    "en": 63,
+    "fa": 4
+  },
+  "sourceVerifiedNameSuffixes": {
+    "cholecalciferol-vitamin-d": "D3",
+    "dihydrotachysterol-vitamin-d": "D2",
+    "riboflavin-vitamin-b": "B2"
+  }
+}

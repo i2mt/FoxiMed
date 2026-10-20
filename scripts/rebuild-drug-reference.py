@@ -119,7 +119,7 @@ for j,h in enumerate(heads):
         d[field]=value
     for section in d['sections']:
         if d['en'] != d['sourceHeading']['en']:
-            section['text']=section['text'].replace(d['sourceHeading']['en'],d['en'])
+            section['text']=re.sub(re.escape(d['sourceHeading']['en'])+r'(?![A-Za-z0-9])',lambda _:d['en'],section['text'])
         for before,after in editorial.get('bodyReplacements',{}).items():
             section['text']=section['text'].replace(before,after)
     if id in overrides:

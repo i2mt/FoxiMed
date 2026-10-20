@@ -10301,3 +10301,54 @@ input[style*="display:none"] {
 #homeTab, #searchTab, #favoritesTab {
     padding-bottom: 76px;
 }
+/* FoxiMed guided introduction: a short welcome, then live discovery. */
+#onboardingOverlay{pointer-events:none;align-items:center;justify-content:center;transition:none}
+#onboardingOverlay .onboarding-backdrop{background:rgba(15,23,42,.2);backdrop-filter:none;pointer-events:none}
+#onboardingOverlay .tutorial-box{position:fixed;inset:auto 14px calc(72px + env(safe-area-inset-bottom)) auto;max-width:420px;width:calc(100% - 28px);max-height:min(56dvh,620px);overflow-y:auto;padding:20px;text-align:start;border:1px solid var(--border);border-radius:22px;background:var(--surface);box-shadow:0 14px 55px rgba(15,23,42,.25);pointer-events:auto;animation:tourEnter .22s ease-out;transform:none}
+#onboardingOverlay.tour-welcome .onboarding-backdrop{background:rgba(15,23,42,.68);backdrop-filter:blur(6px)}
+#onboardingOverlay.tour-welcome .tutorial-box{inset:auto;position:relative;max-width:440px;max-height:calc(100dvh - 32px);padding:26px;text-align:center}
+#onboardingOverlay .tour-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;color:var(--text-secondary);font-size:11px;font-weight:600}
+#onboardingOverlay button{font:inherit;cursor:pointer}
+#onboardingOverlay .tour-skip{border:0;padding:6px;background:transparent;color:var(--text-secondary);font-size:12px}
+#onboardingOverlay .tour-brand-art{display:grid;place-items:center;width:116px;height:116px;margin:4px auto 8px;border-radius:34px;background:var(--primary-light)}
+#onboardingOverlay .tour-brand-art img{object-fit:contain}
+#onboardingOverlay .tour-wordmark{display:block;color:var(--primary);font-family:var(--font-latin);font-size:21px;font-weight:800;margin-bottom:8px}
+#onboardingOverlay .tour-section-icon{width:36px;height:36px;display:grid;place-items:center;color:var(--primary);background:var(--primary-light);border-radius:11px;margin-bottom:10px}
+#onboardingOverlay #tourTitle{font-size:18px;line-height:1.7;color:var(--text-primary);margin:0 0 8px}
+#onboardingOverlay .tour-description{font-size:13px;line-height:1.95;color:var(--text-secondary);margin:0 0 14px}
+#onboardingOverlay .tour-feature-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}
+#onboardingOverlay .tour-feature-row>span{display:flex;align-items:center;gap:5px;border:1px solid var(--border);border-radius:9px;padding:7px 9px;font-size:11px;color:var(--text-primary)}
+#onboardingOverlay .tour-feature-row i{color:var(--primary)}
+#onboardingOverlay .tour-credit{display:grid;gap:4px;margin:14px 0 20px;font-size:10px;color:var(--text-secondary)}
+#onboardingOverlay .tour-progress{display:flex;gap:5px;margin:18px 0 12px;direction:rtl}
+#onboardingOverlay .tour-progress span{flex:1;height:4px;border-radius:9px;background:var(--border)}
+#onboardingOverlay .tour-progress .done{background:var(--primary)}
+#onboardingOverlay .tour-bottomline{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#onboardingOverlay .tour-step-count{font-size:11px;color:var(--text-secondary);white-space:nowrap}
+#onboardingOverlay .tour-navigation{display:flex;gap:8px;align-items:center}
+#onboardingOverlay .tour-next,#onboardingOverlay .tour-back,#onboardingOverlay .tour-action{border-radius:11px;border:1px solid var(--border);min-height:42px;padding:9px 14px;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+#onboardingOverlay .tour-next{background:var(--gradient-primary);color:#fff;border-color:transparent;font-weight:700}
+#onboardingOverlay .tour-back{background:var(--surface);color:var(--text-secondary)}
+#onboardingOverlay .tour-action{background:var(--primary-light);color:var(--primary);width:100%;margin:0}
+#onboardingOverlay .tour-practice{padding:12px;background:var(--surface-elevated);border:1px solid var(--border);border-radius:12px;font-size:12px}
+#onboardingOverlay .tour-sample-label{display:block;font-size:10px;color:var(--primary);margin-bottom:8px;font-weight:700}
+#onboardingOverlay .tour-practice label{display:flex;align-items:center;gap:7px;color:var(--text-primary)}
+#onboardingOverlay .tour-practice input{width:80px;margin-inline-start:auto;padding:7px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text-primary);font:inherit;text-align:center}
+#onboardingOverlay .tour-practice-result{display:flex;justify-content:space-between;gap:10px;margin-top:10px;color:var(--text-primary)}
+#onboardingOverlay .tour-practice output{font-weight:700;color:var(--primary);unicode-bidi:isolate}
+#onboardingOverlay .tour-practice small{display:block;margin-top:8px;font-size:10px;line-height:1.8;color:var(--text-secondary)}
+#onboardingOverlay .tour-topic-hint{display:flex;align-items:center;justify-content:center;gap:12px;padding:11px 7px;border-radius:10px;background:var(--surface-elevated);color:var(--primary);font-size:11px}
+#onboardingOverlay .tour-topic-hint>span{display:flex;gap:7px;align-items:center}
+#onboardingOverlay .tour-voice-examples button{display:block;width:100%;padding:8px 10px;margin:6px 0;background:var(--surface-elevated);border:1px solid var(--border);border-radius:9px;color:var(--text-primary);font-size:12px}
+#onboardingOverlay .tour-voice-examples p{margin:6px 0 0;font-size:11px;color:var(--text-secondary);line-height:1.8}
+#onboardingOverlay .tour-voice-examples p:empty{display:none}
+#onboardingOverlay .tour-finish-list{display:grid;gap:9px;color:var(--text-primary);font-size:12px;line-height:1.7}
+#onboardingOverlay .tour-finish-list i{color:var(--primary);width:20px}
+#onboardingOverlay button:focus-visible,#onboardingOverlay input:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+body.foximed-tour:not(.foximed-tour-welcome) .tab-pane{padding-bottom:calc(var(--tour-height,280px) + 100px)!important}
+@keyframes tourEnter{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+@media(min-width:800px){#onboardingOverlay .tutorial-box{inset:auto 24px 24px auto}body.foximed-tour:not(.foximed-tour-welcome) .tab-pane.active{padding-inline-start:min(460px,40vw)}}
+@media(max-height:600px){#onboardingOverlay .tutorial-box{bottom:12px;max-height:53dvh;padding:14px}#onboardingOverlay #tourTitle{font-size:16px}#onboardingOverlay .tour-description{font-size:12px}#onboardingOverlay .tour-section-icon{display:none}#onboardingOverlay.tour-welcome .tour-brand-art{width:80px;height:80px}#onboardingOverlay.tour-welcome .tour-brand-art img{width:70px;height:70px}}
+@media(prefers-reduced-motion:reduce){#onboardingOverlay .tutorial-box{animation:none}}
+
+body.foximed-tour #greetingBanner{display:none!important}

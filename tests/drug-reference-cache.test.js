@@ -19,12 +19,15 @@ vm.runInContext(source,context);
 async function fetchEvent(url){let response;const tasks=[];handlers.fetch({request:new Request(url),respondWith(p){response=p},waitUntil(p){tasks.push(p)}});const result=await response;await Promise.all(tasks);return result;}
 (async()=>{
   const cached=vm.runInContext('urlsToCache',context);
-  assert(cached.includes('./drug-reference-index.js?v=2'));
+  assert(cached.includes('./drug-reference-index.js?v=3'));
   assert(!cached.some(url=>/drug-reference-book-\d/.test(url)));
-  const url='https://example.test/FoxiMed/drug-reference-book-01.js?v=3';
+  assert(!cached.some(url=>url.includes('sherpa-koochik/')), 'generated voice assets must be cached on demand');
+  const url='https://example.test/FoxiMed/drug-reference-book-01.js?v=4';
   assert.equal(await (await fetchEvent(url)).text(),'book payload');assert.equal(network,1);
   offline=true;assert.equal(await (await fetchEvent(url)).text(),'book payload');assert.equal(network,1);
   // Revision-specific keys must never serve bytes from an old extraction.
-  offline=false;await fetchEvent(url.replace('v=3','v=4'));assert.equal(network,2);
+  offline=false;await fetchEvent(url.replace('v=4','v=5'));assert.equal(network,2);
+  const voice='https://example.test/FoxiMed/sherpa-koochik/sherpa-onnx-asr.js';
+  await fetchEvent(voice);const afterVoice=network;offline=true;assert.equal(await (await fetchEvent(voice)).text(),'book payload');assert.equal(network,afterVoice);
   console.log('drug reference cache checks: PASS (lazy install; cached detail works offline; revision isolation)');
 })().catch(error=>{console.error(error);process.exit(1)});

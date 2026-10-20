@@ -26,9 +26,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=44">
+    <link rel="stylesheet" href="style.css?v=45">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
-    <link rel="stylesheet" href="drug-reference.css?v=5">
+    <link rel="stylesheet" href="drug-reference.css?v=6">
 </head>
 <body>
 
@@ -2165,102 +2165,10 @@
         </div>
     </div>
 
-    <!-- Tutorial Overlay (slide-based) -->
+    <!-- Accessible quick tour: content is rendered by onboarding.js. -->
     <div id="onboardingOverlay" class="onboarding-overlay" style="display:none;">
-        <div class="onboarding-backdrop"></div>
-        <div class="tutorial-spotlight" id="tutorialSpotlight" aria-hidden="true"></div>
-        <div class="tutorial-coach-arrow" id="tutorialCoachArrow" aria-hidden="true"></div>
-        <div class="onboarding-box tutorial-box">
-            <!-- Slide indicators -->
-            <div class="tutorial-dots" id="tutorialDots"></div>
-
-            <!-- Slides container -->
-            <div class="tutorial-slides" id="tutorialSlides">
-
-                <!-- Slide 1: Welcome -->
-                <div class="tutorial-slide active" data-tour-tab="calculator">
-                    <div class="tutorial-icon tutorial-fox-icon" aria-hidden="true"><span class="tutorial-fox-mark"></span></div>
-                    <h2 class="tutorial-title">به FoxiMed خوش آمدید</h2>
-                    <p class="tutorial-body">دستیار هوشمند محاسبات بالینی برای پرستاران همه بخش‌ها — آفلاین، سریع و دقیق.</p>
-                </div>
-
-                <!-- Slide 2: Drug calculator -->
-                <div class="tutorial-slide" data-tour-target=".selected-drug-compact" data-tour-tab="calculator">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#f97316,#dc2626)"><i class="fas fa-calculator"></i></div>
-                    <h2 class="tutorial-title">محاسبه‌گر دارویی</h2>
-                    <p class="tutorial-body">از تب اول دارو را انتخاب کنید، روش تزریق و حجم محلول را تنظیم کنید، دوز پزشک را وارد کنید و دکمه محاسبه را بزنید — سرعت پمپ فوری نمایش داده می‌شود.</p>
-                    <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> برای داروهای وزن‌محور، گزینه «محاسبه بر اساس وزن» را فعال کنید.</div>
-                </div>
-
-                <!-- Slide 3: Drug reference -->
-                <div class="tutorial-slide" data-tour-target=".tab-item[data-tab='drugs']" data-tour-tab="calculator">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"><i class="fas fa-book-medical"></i></div>
-                    <h2 class="tutorial-title">مرجع سریع داروها</h2>
-                    <p class="tutorial-body">تب دوم مرجع کامل هر دارو است — سازگاری، دوز معمول، نکات تهیه و اخطارها. روی هر دارو ضربه بزنید تا اطلاعات کامل را ببینید.</p>
-                    <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> جستجوی سریع بالای صفحه برای یافتن دارو با نام فارسی یا انگلیسی.</div>
-                </div>
-
-                <!-- Slide 4: Tools -->
-                <div class="tutorial-slide" data-tour-target=".tab-item[data-tab='tools']" data-tour-tab="calculator">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#10b981,#0d9488)"><i class="fas fa-toolbox"></i></div>
-                    <h2 class="tutorial-title">ابزارهای بالینی</h2>
-                    <p class="tutorial-body">تب سوم شامل ابزارهای کلینیکی است: GCS، RASS، Braden، Morse، Humpty Dumpty، محاسبه BMI و BSA، کپسول اکسیژن، مبدل‌های واحد و محاسبه‌گر دستی.</p>
-                    <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> روی هر آکاردئون ضربه بزنید تا باز شود — برای بستن دوباره ضربه بزنید یا از دکمه بستن استفاده کنید.</div>
-                </div>
-
-                <!-- Slide 5: History -->
-                <div class="tutorial-slide" data-tour-target="#historyBtn" data-tour-tab="calculator">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#8b5cf6,#d946ef)"><i class="fas fa-history"></i></div>
-                    <h2 class="tutorial-title">تاریخچه محاسبات</h2>
-                    <p class="tutorial-body">دکمه ساعت در نوار بالا تاریخچه تمام محاسبات شما را نشان می‌دهد. می‌توانید هر محاسبه قبلی را دوباره بارگذاری کنید.</p>
-                    <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> ذخیره تاریخچه را می‌توانید از تنظیمات مدیریت کنید.</div>
-                </div>
-
-                <!-- Slide 6: Settings & themes -->
-                <div class="tutorial-slide" data-tour-target="#settingsBtn" data-tour-tab="calculator">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><i class="fas fa-cog"></i></div>
-                    <h2 class="tutorial-title">تنظیمات و تم</h2>
-                    <p class="tutorial-body">دکمه چرخ‌دنده در بالا تنظیمات را باز می‌کند. می‌توانید نام خود را وارد کنید، حالت تاریک/روشن/خودکار را انتخاب کنید و از 5 تم رنگی مختلف استفاده کنید.</p>
-                    <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> دکمه نیمه‌ماه در نوار بالا هم تم را فوری تغییر می‌دهد.</div>
-                </div>
-
-                <!-- Slide 7: Voice assistant -->
-                <div class="tutorial-slide" data-tour-target=".tab-item[data-tab='voice']" data-tour-tab="calculator">
-                    <div class="tutorial-icon tutorial-assistant-icon" aria-hidden="true"><span class="tutorial-fox-mark"></span><i class="fas fa-microphone"></i></div>
-                    <h2 class="tutorial-title">دستیار صوتی</h2>
-                    <p class="tutorial-body">از تب «دستیار»، روباه بزرگ را لمس کنید و درخواستتان را طبیعی بگویید. می‌تواند محاسبه‌گر و داروی مرتبط را باز کند، مقدارهای گفته‌شده را وارد کند، تم را تغییر دهد و به گفت‌وگوهای کوتاه پاسخ دهد.</p>
-                    <div class="tutorial-ask-demo"><i class="fas fa-arrow-down" aria-hidden="true"></i><span>برای دیدن نمونه‌ها بپرسید: «چه کارهایی بلدی؟»</span></div>
-                    <div class="tutorial-tip"><i class="fas fa-shield-heart"></i> دستورهای بالینی پیش از اجرا برای تأیید شما نمایش داده می‌شوند. بار اول ممکن است مدل آفلاین دانلود شود.</div>
-                </div>
-
-                <!-- Slide 8: Assistant capabilities -->
-                <div class="tutorial-slide" data-tour-target="#voiceCapabilitiesBtn" data-tour-tab="voice">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#f97316,#f59e0b)"><i class="fas fa-circle-question"></i></div>
-                    <h2 class="tutorial-title">از فاکسی بپرسید چه بلد است</h2>
-                    <p class="tutorial-body">دکمه علامت سؤال، فهرست توانایی‌ها و نمونه جمله‌های قابل‌فهم را نشان می‌دهد. می‌توانید همان سؤال را با صدا یا متن هم بپرسید: «چه کارهایی بلدی؟»</p>
-                    <div class="tutorial-tip"><i class="fas fa-microphone"></i> برای شروع شنیدن، روباه بزرگ وسط صفحه را لمس کنید.</div>
-                </div>
-
-                <!-- Slide 9: Ready -->
-                <div class="tutorial-slide" data-tour-tab="calculator">
-                    <div class="tutorial-icon" style="background:linear-gradient(135deg,#22c55e,#0ea5e9)"><i class="fas fa-check-double"></i></div>
-                    <h2 class="tutorial-title">آماده‌اید!</h2>
-                    <p class="tutorial-body">FoxiMed کاملاً آفلاین کار می‌کند. می‌توانید آن را به صفحه اصلی گوشی خود اضافه کنید تا مثل یک اپلیکیشن باز شود.</p>
-                    <div class="tutorial-tip"><i class="fas fa-lightbulb"></i> این راهنما را می‌توانید از تنظیمات دوباره مشاهده کنید.</div>
-                </div>
-
-            </div>
-
-            <!-- Navigation -->
-            <div class="tutorial-nav">
-                <button class="tutorial-btn-skip" id="tutorialSkipBtn">رد شدن</button>
-                <button class="tutorial-btn-next" id="tutorialNextBtn"><span>بعدی</span> <i class="fas fa-arrow-left"></i></button>
-            </div>
-            <label class="tutorial-dont-show">
-                <input type="checkbox" id="onboardingDontShow">
-                <span>دیگر نشان نده</span>
-            </label>
-        </div>
+        <div class="onboarding-backdrop" aria-hidden="true"></div>
+        <section class="onboarding-box tutorial-box" dir="rtl"></section>
     </div>
 
     <!-- Reverse mode first-use tooltip -->
@@ -2278,11 +2186,12 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=51"></script>
+    <script src="script.js?v=52"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
-    <script src="drug-reference-index.js?v=2"></script>
-    <script src="drug-reference.js?v=6"></script>
+    <script src="drug-reference-index.js?v=3"></script>
+    <script src="drug-reference.js?v=7"></script>
+    <script src="onboarding.js?v=1"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=43"></script>
@@ -2290,7 +2199,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=50', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=51', { updateViaCache: 'none' });
             });
         }
     </script>

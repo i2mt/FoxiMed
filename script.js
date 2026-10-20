@@ -21,14 +21,14 @@
 // points people would actually notice, not an engineering changelog.
 const APP_VERSION = '5.3.2';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.3.2-drug-reference-readable-topics';
+const RELEASE_NOTES_REVISION = '5.3.2-iran-drug-reference-launch';
 
 const CHANGELOG = {
     '5.3.2': [
-        'مرجع دارویی با کارت‌های فشرده مانند ابزارها، خلاصهٔ بازشونده و جزئیات کامل در مرحلهٔ بعد بازطراحی شده است.',
-        'جست‌وجوی مرجع دارویی با نام ژنریک انگلیسی، نام فارسی و نام‌های تجاری آسان‌تر شده است.',
-        'ساختار جزئیات دارو بخش‌های جداگانه‌ای برای کاربرد، مکانیسم اثر، دوز، هشدارها، مراقبت‌های پرستاری، بارداری، نارسایی کلیوی و تداخلات دارد.',
-        'اطلاعات کامل داروها هنگام باز کردن جزئیات بارگذاری می‌شوند؛ جستجو و فهرست اولیه سبک‌تر شده‌اند.'
+        'مرجع دارویی ایران اضافه شد: این تب با طراحی کاملاً تازه، بیش از ۱۱۰۰ مدخل دارویی را در دسترس شما قرار می‌دهد.',
+        'داروها را با نام فارسی، انگلیسی یا تجاری پیدا کنید؛ همهٔ موضوع‌های اطلاعاتی هر دارو یک‌جا در دسترس‌اند و انتخاب بخش با شماست.',
+        'ردهٔ دارویی، شکل‌ها و قدرت‌ها، کاربرد و دوز، مراقبت‌های پرستاری، عوارض و تداخلات در بخش‌های منظم نمایش داده می‌شوند.',
+        'راهنمای تعاملی تازه برای آشنایی با برنامه، همراه با بهبود خوانایی متن‌های فارسی و انگلیسی و جست‌وجوی سریع‌تر.'
     ],
     '5.2.0': [
         'دستیار هوشمند فارسی با فرمان صوتی آفلاین برای محاسبات و ابزارهای بالینی',
@@ -550,6 +550,7 @@ const AppState = {
     }
     function showModal() {
         if (!shouldShow()) return;
+        if (window.FoxiMedOnboarding?.pending || window.FoxiMedOnboarding?.active || document.querySelector('#namePrompt:not([hidden]), .modal.active')) { setTimeout(showModal,1200); return; }
         const modal = document.getElementById('pwaModal');
         if (!modal) return;
         const androidNative = document.getElementById('pwaAndroidNative');
@@ -579,6 +580,7 @@ const AppState = {
         e.preventDefault();
         deferredPrompt = e;
         AppState.pwaInstallPrompt = e;
+        if (document.getElementById('pwaModal')?.style.display === 'flex') showModal();
     });
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -590,6 +592,7 @@ const AppState = {
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
             deferredPrompt = null;
+            AppState.pwaInstallPrompt = null;
             hideModal();
             if (outcome === 'accepted') localStorage.setItem('pwaNeverShow', 'true');
         });
@@ -3653,7 +3656,7 @@ function initSwipe() {
     }, { passive: true });
 
     container.addEventListener('touchend', (e) => {
-        if (swipeLocked) return;
+        if (swipeLocked || window.FoxiMedOnboarding?.active) return;
         touchEndX = e.changedTouches[0].screenX;
         touchEndY = e.changedTouches[0].screenY;
         const diffX = Math.abs(touchEndX - touchStartX);
@@ -3696,178 +3699,7 @@ function showReverseTooltip() {
 // ============================================
 // ONBOARDING
 // ============================================
-function setupOnboarding() {
-    const overlay = document.getElementById('onboardingOverlay');
-    if (!overlay) return;
-
-    const tutorialBox = overlay.querySelector('.tutorial-box');
-    const spotlight = document.getElementById('tutorialSpotlight');
-    const coachArrow = document.getElementById('tutorialCoachArrow');
-    const slidesContainer = document.getElementById('tutorialSlides');
-    const dotsContainer = document.getElementById('tutorialDots');
-    const nextBtn = document.getElementById('tutorialNextBtn');
-    const skipBtn = document.getElementById('tutorialSkipBtn');
-    const dontShowChk = document.getElementById('onboardingDontShow');
-
-    const slides = slidesContainer ? Array.from(slidesContainer.querySelectorAll('.tutorial-slide')) : [];
-    let current = 0;
-    let returnTab = 'calculator';
-
-    if (dotsContainer && slides.length) {
-        slides.forEach((_, i) => {
-            const dot = document.createElement('span');
-            dot.className = 'tutorial-dot' + (i === 0 ? ' active' : '');
-            dot.addEventListener('click', () => goTo(i));
-            dotsContainer.appendChild(dot);
-        });
-    }
-
-    function updateDots() {
-        if (!dotsContainer) return;
-        dotsContainer.querySelectorAll('.tutorial-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === current);
-        });
-    }
-
-    // Preview a tour tab without calling switchTab(). Entering the voice tab
-    // normally starts the offline model preload; a visual tutorial must not
-    // download ~55 MB merely because the user advanced to a coach mark.
-    function showTourTab(tabName) {
-        if (!tabName) return;
-        document.querySelectorAll('.tab-item').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.tab === tabName);
-        });
-        document.querySelectorAll('.tab-pane').forEach(pane => {
-            const active = pane.id === tabName + 'Tab';
-            pane.classList.toggle('active', active);
-            pane.style.display = active ? 'block' : 'none';
-        });
-    }
-
-    function resetCoachPosition() {
-        overlay.classList.remove('is-coachmark', 'arrow-up', 'arrow-down');
-        if (spotlight) spotlight.removeAttribute('style');
-        if (coachArrow) {
-            coachArrow.removeAttribute('style');
-            coachArrow.classList.remove('arrow-up', 'arrow-down');
-        }
-        if (tutorialBox) {
-            tutorialBox.style.removeProperty('top');
-            tutorialBox.style.removeProperty('left');
-            tutorialBox.style.removeProperty('transform');
-        }
-    }
-
-    function positionCoachMark() {
-        if (!tutorialBox || !slides[current]) return;
-        const selector = slides[current].dataset.tourTarget;
-        const target = selector ? document.querySelector(selector) : null;
-        if (!target) {
-            resetCoachPosition();
-            return;
-        }
-
-        const rect = target.getBoundingClientRect();
-        if (!rect.width || !rect.height) {
-            resetCoachPosition();
-            return;
-        }
-
-        overlay.classList.add('is-coachmark');
-        const pad = 8;
-        const spotLeft = Math.max(5, rect.left - pad);
-        const spotTop = Math.max(5, rect.top - pad);
-        const spotRight = Math.min(window.innerWidth - 5, rect.right + pad);
-        const spotBottom = Math.min(window.innerHeight - 5, rect.bottom + pad);
-        if (spotlight) {
-            spotlight.style.left = spotLeft + 'px';
-            spotlight.style.top = spotTop + 'px';
-            spotlight.style.width = Math.max(24, spotRight - spotLeft) + 'px';
-            spotlight.style.height = Math.max(24, spotBottom - spotTop) + 'px';
-            spotlight.style.borderRadius = Math.min(20, Math.max(10, rect.height * 0.22)) + 'px';
-        }
-
-        tutorialBox.style.transform = 'none';
-        requestAnimationFrame(() => {
-            const cardWidth = tutorialBox.offsetWidth;
-            const cardHeight = tutorialBox.offsetHeight;
-            const gap = 22;
-            const margin = 12;
-            const roomAbove = rect.top - gap - margin;
-            const roomBelow = window.innerHeight - rect.bottom - gap - margin;
-            const placeBelow = roomBelow >= cardHeight || roomBelow > roomAbove;
-            let top = placeBelow ? rect.bottom + gap : rect.top - cardHeight - gap;
-            top = Math.max(margin, Math.min(window.innerHeight - cardHeight - margin, top));
-            let left = rect.left + rect.width / 2 - cardWidth / 2;
-            left = Math.max(margin, Math.min(window.innerWidth - cardWidth - margin, left));
-            tutorialBox.style.top = top + 'px';
-            tutorialBox.style.left = left + 'px';
-
-            if (coachArrow) {
-                const arrowX = Math.max(left + 24, Math.min(left + cardWidth - 24, rect.left + rect.width / 2));
-                coachArrow.classList.toggle('arrow-up', placeBelow);
-                coachArrow.classList.toggle('arrow-down', !placeBelow);
-                coachArrow.style.left = arrowX + 'px';
-                coachArrow.style.top = (placeBelow ? top - 13 : top + cardHeight + 13) + 'px';
-            }
-        });
-    }
-
-    function goTo(idx, withHaptic = true) {
-        if (!slides.length) return;
-        slides[current].classList.remove('active');
-        current = Math.max(0, Math.min(idx, slides.length - 1));
-        slides[current].classList.add('active');
-        showTourTab(slides[current].dataset.tourTab || returnTab);
-        updateDots();
-        const isLast = current === slides.length - 1;
-        if (nextBtn) {
-            nextBtn.innerHTML = isLast
-                ? '<i class="fas fa-check"></i> <span>شروع</span>'
-                : '<span>بعدی</span> <i class="fas fa-arrow-left"></i>';
-        }
-        requestAnimationFrame(() => requestAnimationFrame(positionCoachMark));
-        if (withHaptic) haptic(15);
-    }
-
-    function closeTutorial() {
-        resetCoachPosition();
-        showTourTab(returnTab);
-        overlay.classList.remove('visible');
-        setTimeout(() => { overlay.style.display = 'none'; }, 400);
-        if (dontShowChk && dontShowChk.checked) localStorage.setItem('onboardingSeen', 'true');
-    }
-
-    function openTutorial() {
-        returnTab = (typeof AppState !== 'undefined' && AppState.currentTab) || 'calculator';
-        overlay.style.display = 'flex';
-        goTo(0, false);
-        requestAnimationFrame(() => overlay.classList.add('visible'));
-    }
-    overlay._openTutorial = openTutorial;
-
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-        if (current < slides.length - 1) goTo(current + 1);
-        else { haptic(30); closeTutorial(); }
-    });
-    if (skipBtn) skipBtn.addEventListener('click', () => { closeTutorial(); });
-    overlay.querySelector('.onboarding-backdrop')?.addEventListener('click', closeTutorial);
-    window.addEventListener('resize', positionCoachMark, { passive: true });
-
-    let touchStartX = 0;
-    if (slidesContainer) {
-        slidesContainer.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-        slidesContainer.addEventListener('touchend', e => {
-            const diff = e.changedTouches[0].screenX - touchStartX;
-            if (Math.abs(diff) > 50) goTo(current + (diff < 0 ? 1 : -1));
-        }, { passive: true });
-    }
-
-    const seen = localStorage.getItem('onboardingSeen');
-    if (!seen) {
-        setTimeout(openTutorial, 3500);
-    }
-}
+function setupOnboarding() { window.FoxiMedOnboarding?.setup(); }
 
 window.showTutorial = function() {
     const settingsModal = document.getElementById('settingsModal');
@@ -4761,6 +4593,7 @@ function setupNamePrompt() {
     if (!prompt || !input || !save) return;
 
     function anotherOverlayIsOpen() {
+        if (window.FoxiMedOnboarding?.pending || window.FoxiMedOnboarding?.active || document.getElementById('pwaModal')?.style.display === 'flex') return true;
         const onboarding = document.getElementById('onboardingOverlay');
         if (onboarding && (onboarding.classList.contains('visible') || onboarding.style.display === 'flex')) return true;
         return !!document.querySelector('.modal.active, .reverse-tooltip-overlay.visible');
