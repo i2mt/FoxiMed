@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "layouts": [
+    {
+      "width": 320,
+      "height": 480,
+      "themeMode": "light",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "themeMode": "light",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "themeMode": "light",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 667,
+      "height": 320,
+      "themeMode": "light",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "themeMode": "light",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "themeMode": "light",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "themeMode": "dark",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "themeMode": "dark",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "themeMode": "dark",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 667,
+      "height": 320,
+      "themeMode": "dark",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "themeMode": "dark",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "themeMode": "dark",
+      "fullScreen": true,
+      "closedMenuNeedsScroll": false,
+      "submenusChecked": 9
+    }
+  ],
+  "themes": [
+    {
+      "name": "default",
+      "darkHeadingMinimumContrast": 5.72
+    },
+    {
+      "name": "fox",
+      "darkHeadingMinimumContrast": 6.11
+    },
+    {
+      "name": "ocean",
+      "darkHeadingMinimumContrast": 6.18
+    },
+    {
+      "name": "rose",
+      "darkHeadingMinimumContrast": 5.45
+    },
+    {
+      "name": "forest",
+      "darkHeadingMinimumContrast": 7.34
+    },
+    {
+      "name": "dreamfire",
+      "darkHeadingMinimumContrast": 5.68
+    }
+  ],
+  "controls": true,
+  "keyboard": true
+}

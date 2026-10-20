@@ -1,19 +1,19 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "stable-topic-scroll-source-order-settings-and-docked-tour",
+  "revision": "aligned-tutorial-ready-fox-fullscreen-settings-readable-themes",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "reason": "Run reader/voice-asset regressions and reject missing or invalid generated voice bundles before publication.",
-      "bytes": 7520,
-      "sha256": "245c3b58dc757f659ed5dae2d9553a7c90b44faf0715517c85cbfb4b296d1746"
+      "reason": "Retain generated voice build validation; validate the current onboarding module syntax before publication.",
+      "bytes": 7557,
+      "sha256": "cb7a494cbf00180cbe83c712732890f705a7df76e006101717a63a513bd93253"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Manual cumulative upload instructions, current asset revisions and verification steps.",
-      "bytes": 3150,
-      "sha256": "9ccd8e6bbad76fec03a9cbb4f6e23007c50f42b4a6fc017e9fe910fe0db77f26"
+      "reason": "Current manual upload paths, both new stylesheets, revisions and verification steps.",
+      "bytes": 3464,
+      "sha256": "6a85f7ee147248ab50b9b1a4a5e644d7dd7b837d3c37b283bb5c5e35e1e7b4b0"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -89,9 +89,9 @@
     },
     {
       "path": "drug-reference.css",
-      "reason": "Disable native Drugs pane scroll anchoring; retain compact cards and prior reader/bidi styling.",
-      "bytes": 11924,
-      "sha256": "32a922116815794e6bb18ad0268b07150c86a6856c87ccdbc3a87a0715b87b96"
+      "reason": "Retain reader styling and stable scroll behavior; use readable dark-mode reference headings.",
+      "bytes": 12070,
+      "sha256": "52b302cc92536da8213cae31aea3a8f4439bac2d4d1d4fa031e31526684b4f3c"
     },
     {
       "path": "drug-reference.js",
@@ -101,15 +101,21 @@
     },
     {
       "path": "index.html",
-      "reason": "Group Settings into initially closed native cards; version the updated reader, tutorial, styles, support command and service worker.",
-      "bytes": 176547,
-      "sha256": "179b14f4e5ad22b242cf55dea1eb2bbe911a64f3d516bbf06f0998d50337cc94"
+      "reason": "Full-screen Settings with preserved controls, bottom fox/name/credit, isolated tutorial markup and current asset revisions.",
+      "bytes": 177783,
+      "sha256": "f6445bffd9ed74f66166b57bd1a0725a01fcf39a80469d1abcf4130d01dd8236"
+    },
+    {
+      "path": "onboarding.css",
+      "reason": "Private stretch-aligned tutorial grid, FoxiOra v12.27 responsive dock/sidebar rules, scrollable copy and visible fox fill.",
+      "bytes": 9290,
+      "sha256": "eaa0bdb457a6e597459a59e4524fc7f22057cb340cdb9a878b7ea053d29afd9b"
     },
     {
       "path": "onboarding.js",
-      "reason": "Measure a separate coaching viewport, preserve visible navigation and restore app state without model preloading.",
-      "bytes": 13463,
-      "sha256": "80f65486fdd4d7ee4cda97904c59979947ec152605242f218e3ece505c03396c"
+      "reason": "Isolated responsive coaching panel, measured app viewport and fox fill after assets/fonts/startup visibility and painted frames.",
+      "bytes": 15847,
+      "sha256": "f88579c4b600ea3bd075f197d9a2ed6e6bb4533675de2a2ea831a44da7079921"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -125,21 +131,21 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current seven passing suites, syntax checks, unchanged data/PDF and measured layout/scroll results.",
-      "bytes": 1298,
-      "sha256": "cb489117c4ad2bcbb8c975b4c00da55c34124bee99eb26e7e6aec0b8866e72cb"
+      "reason": "Nine passing suites, syntax/data preservation and focused tutorial/Settings/contrast results.",
+      "bytes": 1837,
+      "sha256": "3f8949d96ebb378821f62aa7b12f990fe16a4f6f0c07075555c936fd1eef7eaa"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "reason": "Current outcome and cumulative file inventory, with earlier work retained for traceability.",
-      "bytes": 19560,
-      "sha256": "199117b803be0fddcfb58f9ec2f93ec421253a05e39a77c9ab5cb967830c9ae6"
+      "reason": "Current outcome with complete cumulative replacement inventory and prior implementation history.",
+      "bytes": 20403,
+      "sha256": "08a61ef53007562fed0e31effc6a85cf5f7191f4ecc492b0e072fca525f036fd"
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Latest scroll/source-order/Settings/tutorial behavior, current test evidence and retained prior fixes/limits.",
-      "bytes": 9409,
-      "sha256": "179a59a80e2feb8a20ab8555c5c89ac7864b98ee7b798906c8c37b770b46acae"
+      "reason": "Current tutorial alignment/fox readiness, full-screen Settings, theme contrast evidence and retained prior fixes.",
+      "bytes": 11525,
+      "sha256": "ee318e41f336e805ee02cbc34e01ca5131e8d814fb4b412fdf9b28d8d7881e0e"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -215,7 +221,7 @@
     },
     {
       "path": "reports/drug-reference-ui-results.json",
-      "reason": "Final rendered search/card/bidi/tutorial/state-restoration regression results.",
+      "reason": "Current rendered drug/search/card/keyboard/bidi/tutorial and user-state restoration results.",
       "bytes": 1111,
       "sha256": "ee8da9223475cb85e3519133834b851e6fc90c72717429934a150af4c878b376"
     },
@@ -233,7 +239,7 @@
     },
     {
       "path": "reports/navigation-layout-results.json",
-      "reason": "Rendered heading stability, Settings keyboard/control checks and seven-step non-overlap results on four viewport sizes.",
+      "reason": "Current long-topic position stability and retained controls/tutorial separation results.",
       "bytes": 1536,
       "sha256": "6ea7cd9c810fd5476143063c96bac6ac77c5e47fb10bbb141881d132410e4154"
     },
@@ -242,10 +248,22 @@
       "reason": "Exact cumulative replacement inventory and hashes; self hash/size omitted."
     },
     {
+      "path": "reports/settings-theme-results.json",
+      "reason": "Twelve full-screen/closed-menu layouts, 108 submenu checks, controls/focus and six-theme headline contrast.",
+      "bytes": 2640,
+      "sha256": "a60ac09be926a09c3bd64979686ec47688f9ca8acd5755949ce5edb70096686d"
+    },
+    {
+      "path": "reports/tutorial-layout-results.json",
+      "reason": "147 step geometry checks, rotation, delayed-ready visible fill, completion, replay and reduced motion.",
+      "bytes": 2614,
+      "sha256": "01b72c0abeca0b0a111daba3967ee295dad7762e953c6be5b7a53a7e95b5a3b9"
+    },
+    {
       "path": "script.js",
-      "reason": "Launch-style Iran drug-reference release note, new tour integration, queued install/name prompts and locked swipe navigation during the tour.",
-      "bytes": 299276,
-      "sha256": "39d15455563dffe5fba9bb705c7395fc4ba4fb9da9bb06c209b3931da55f569c"
+      "reason": "Apply the default dark palette and readable heading tokens; Settings focus/keyboard/scroll behavior and clean tutorial launch.",
+      "bytes": 300912,
+      "sha256": "c8363a338a0b6e870ffec15698e887b55692ef93a933ff4236c29d90b41b7769"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -285,15 +303,21 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Version the current reader, Settings/tutorial styles, onboarding and support command together while retaining prior cache fixes.",
-      "bytes": 7484,
-      "sha256": "14c0d439306508b14a2fbcd6e64c1e550422ed6076264cf2c62ab93c5ef02378"
+      "reason": "Cache matching current tutorial/Settings styles and scripts, headline styling and prior lazy drug/voice assets.",
+      "bytes": 7538,
+      "sha256": "29454dc83d8a97b2175ad901a22a9058fb64e82a4eb02badd93a6b7c171868f1"
+    },
+    {
+      "path": "settings.css",
+      "reason": "Full-screen Settings, compact closed menu, full-width submenus, accessible controls and fixed bottom brand/credit.",
+      "bytes": 10148,
+      "sha256": "714c1a39251d7e1c4272368972bac080f3ef2c9d544ea9ef0878290758d63246"
     },
     {
       "path": "style.css",
-      "reason": "Compact Settings cards and a distinct navy tutorial dock/sidebar with separate scrollable app and guidance areas.",
-      "bytes": 243759,
-      "sha256": "3c6780ba2b58dc44bba400fc59b4d6323306ca7b5043fe0463a7f4d178ff7452"
+      "reason": "Retain shared app styles; remove superseded tour overrides and use readable solid dark-mode headline accents.",
+      "bytes": 235473,
+      "sha256": "cc535251501729f25f3cab653b8c3296f6a61de756cca21f3f6db1132eda665f"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -321,9 +345,21 @@
     },
     {
       "path": "tests/navigation-layout.test.js",
-      "reason": "Browser regressions for long topic switching, all Settings groups/controls and separated tutorial/app layouts.",
-      "bytes": 7739,
-      "sha256": "48a4c0bc191a2c5bafe679cfa7304145c29242642257b0b0de5e026e3e2f400a"
+      "reason": "Retain drug scroll and Settings controls checks; target the isolated tutorial card.",
+      "bytes": 7723,
+      "sha256": "6f68cd6c5a4a914407e174548dcff4eed81a27f22bf20743bb03d17366f0d5a1"
+    },
+    {
+      "path": "tests/settings-theme-ui.test.js",
+      "reason": "Browser checks for full-screen Settings, no closed-menu scrolling, all submenus, working controls, focus and dark headline contrast.",
+      "bytes": 8315,
+      "sha256": "7ecc9a6cefca19eb88c1a591eee114072ae97e31965f22d93bc25414e048f86f"
+    },
+    {
+      "path": "tests/tutorial-layout.test.js",
+      "reason": "Browser checks for aligned internal rows/borders/control bounds, screen separation and readiness-gated fox animation.",
+      "bytes": 10798,
+      "sha256": "2176b8cdf886fa84bc1f292e576d5ffa8720219a23c2f42458ee7be960d53058"
     },
     {
       "path": "tests/voice-assets.test.py",
@@ -333,9 +369,9 @@
     },
     {
       "path": "tests/voice-pipeline-smoke.test.js",
-      "reason": "Retain voice smoke tests and check matching current tutorial URLs without hard-coding a stale revision.",
-      "bytes": 48857,
-      "sha256": "031fe941b7088da3324422214d355a402e7001c4cc7a8f614fc9681c09630c9d"
+      "reason": "Retain voice smoke checks while validating current offline styles, isolated status markup and updated settings copy.",
+      "bytes": 49286,
+      "sha256": "afdde969eb25b1b880d91a6b2f8b15f96737652934a20168b5eda917f63ad730"
     },
     {
       "path": "voice-commands.js",

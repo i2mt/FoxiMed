@@ -2,7 +2,7 @@
 
 ## Current result
 
-The latest revision is documented in `LATEST-UPDATE.md`. Switching drug topics preserves the tapped heading, source topic order is restored, Settings uses compact section cards, and the tutorial occupies a separate navy coaching viewport adapted from Foxiora v12.27. All available topics remain initially closed. Prior performance, spelling, parentheses, release-note and voice-cache changes remain included. No book data was altered in this revision.
+The latest revision is documented in `LATEST-UPDATE.md`. The tutorial now has isolated styles and FoxiOra v12.27's panel structure and responsive rules. The welcome fox fills after assets and the visible screen are ready. Settings is full screen with compact section cards, clearer controls and a fixed brand/credit footer. Hedo and other dark themes use readable heading accents. Prior drug-scroll/source-order/performance/spelling/cache work remains included; book data, reader JavaScript, index and PDF are unchanged from the preceding delivery.
 
 The earlier implementation details below are retained for traceability. Current behavior and test results take precedence in `LATEST-UPDATE.md`, `FINAL-CHECKS.json` and `drug-reference-ui-results.json`.
 
@@ -75,12 +75,12 @@ Your remaining actions are to reconcile against any newer repository changes, up
 
 ## Every changed or added file
 
-The exact current inventory, SHA-256 hashes, and reasons are in `replacement-files.json`. This cumulative package includes the current scroll/source-order/Settings/tutorial changes and all prior reader/data/performance/cache repairs. All ten book chunks, the index and PDF are unchanged from the previous delivery. The support voice command only changes contact-card visibility; the recognition engine is unchanged.
+The exact cumulative inventory, SHA-256 hashes and reasons are in `replacement-files.json`. Tutorial, Settings and heading fixes are included with the earlier drug/data/cache repairs. Book data, reader JavaScript, index and source PDF are unchanged from the preceding delivery. Recognition-engine code is unchanged.
 
 | File | Reason |
 | --- | --- |
-| `.github/workflows/pages-sherpa-koochik.yml` | Run reader/voice-asset regressions and reject missing or invalid generated voice bundles before publication. |
-| `UPLOAD-INSTRUCTIONS.md` | Manual cumulative upload instructions, current asset revisions and verification steps. |
+| `.github/workflows/pages-sherpa-koochik.yml` | Retain generated voice build validation; validate the current onboarding module syntax before publication. |
+| `UPLOAD-INSTRUCTIONS.md` | Current manual upload paths, both new stylesheets, revisions and verification steps. |
 | `drug-reference-book-01.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
 | `drug-reference-book-02.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
 | `drug-reference-book-03.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
@@ -93,15 +93,16 @@ The exact current inventory, SHA-256 hashes, and reasons are in `replacement-fil
 | `drug-reference-book-10.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
 | `drug-reference-index.js` | Current compact name index, corrected headings and retained original-name discovery aliases. |
 | `drug-reference-source.pdf` | Unchanged original PDF copied under the path used by footer page links. |
-| `drug-reference.css` | Disable native Drugs pane scroll anchoring; retain compact cards and prior reader/bidi styling. |
+| `drug-reference.css` | Retain reader styling and stable scroll behavior; use readable dark-mode reference headings. |
 | `drug-reference.js` | Preserve the activated topic heading while switching; follow PDF topic order, show brands first and keep every topic initially closed. |
-| `index.html` | Group Settings into initially closed native cards; version the updated reader, tutorial, styles, support command and service worker. |
-| `onboarding.js` | Measure a separate coaching viewport, preserve visible navigation and restore app state without model preloading. |
+| `index.html` | Full-screen Settings with preserved controls, bottom fox/name/credit, isolated tutorial markup and current asset revisions. |
+| `onboarding.css` | Private stretch-aligned tutorial grid, FoxiOra v12.27 responsive dock/sidebar rules, scrollable copy and visible fox fill. |
+| `onboarding.js` | Isolated responsive coaching panel, measured app viewport and fox fill after assets/fonts/startup visibility and painted frames. |
 | `reports/COMPACT-ACCORDION-UPDATE.md` | Historical compact-card revision, explicitly pointing to the current update. |
 | `reports/DRUG-READER-UPDATE.md` | Historical two-stage reader revision, explicitly pointing to the current update. |
-| `reports/FINAL-CHECKS.json` | Current seven passing suites, syntax checks, unchanged data/PDF and measured layout/scroll results. |
-| `reports/IMPLEMENTATION-REPORT.md` | Current outcome and cumulative file inventory, with earlier work retained for traceability. |
-| `reports/LATEST-UPDATE.md` | Latest scroll/source-order/Settings/tutorial behavior, current test evidence and retained prior fixes/limits. |
+| `reports/FINAL-CHECKS.json` | Nine passing suites, syntax/data preservation and focused tutorial/Settings/contrast results. |
+| `reports/IMPLEMENTATION-REPORT.md` | Current outcome with complete cumulative replacement inventory and prior implementation history. |
+| `reports/LATEST-UPDATE.md` | Current tutorial alignment/fox readiness, full-screen Settings, theme contrast evidence and retained prior fixes. |
 | `reports/SECOND-SPELLING-PASS.json` | Additional NLM terminology evidence, source-verified vitamin-name suffixes, wording counts and scope. |
 | `reports/SECOND-TITLE-CORRECTIONS.csv` | Every English/Persian title difference from the previous edited-files delivery. |
 | `reports/compact-accordion-checks.json` | Historical check record retained with a pointer to current results. |
@@ -114,25 +115,30 @@ The exact current inventory, SHA-256 hashes, and reasons are in `replacement-fil
 | `reports/drug-reference-density.json` | 390 px before/after card-height measurement using the actual Font Awesome 6.4.0 icons in the QA browser. |
 | `reports/drug-reference-performance.json` | Historical first performance-repair sample, labelled separately from this layout revision. |
 | `reports/drug-reference-readability-visual.json` | Current local-browser density and zero-eager-detail-request measurements for the reader revision. |
-| `reports/drug-reference-ui-results.json` | Final rendered search/card/bidi/tutorial/state-restoration regression results. |
+| `reports/drug-reference-ui-results.json` | Current rendered drug/search/card/keyboard/bidi/tutorial and user-state restoration results. |
 | `reports/drug-source-duplicate-headings.json` | Retained duplicate/incomplete English source headings for review. |
 | `reports/drug-spelling-verification.json` | NLM RxNorm term lookup evidence and primary fibrillation references for targeted spelling checks. |
-| `reports/navigation-layout-results.json` | Rendered heading stability, Settings keyboard/control checks and seven-step non-overlap results on four viewport sizes. |
+| `reports/navigation-layout-results.json` | Current long-topic position stability and retained controls/tutorial separation results. |
 | `reports/replacement-files.json` | Exact cumulative replacement inventory and hashes; self hash/size omitted. |
-| `script.js` | Launch-style Iran drug-reference release note, new tour integration, queued install/name prompts and locked swipe navigation during the tour. |
+| `reports/settings-theme-results.json` | Twelve full-screen/closed-menu layouts, 108 submenu checks, controls/focus and six-theme headline contrast. |
+| `reports/tutorial-layout-results.json` | 147 step geometry checks, rotation, delayed-ready visible fill, completion, replay and reduced motion. |
+| `script.js` | Apply the default dark palette and readable heading tokens; Settings focus/keyboard/scroll behavior and clean tutorial launch. |
 | `scripts/check-voice-assets.py` | Verify three generated scripts, valid WASM and nonempty model data; detect HTML fallbacks. |
 | `scripts/drug-reference-editorial.json` | Traceable heading/word spelling corrections and paired heading typography; no dose/unit autocorrections. |
 | `scripts/drug-reference-original-ids.json` | Original 764-entry identity map for reproducible ID preservation. |
 | `scripts/drug-reference-overrides.json` | Documented, sourced exclusion of ambiguous acetaminophen brand aliases. |
 | `scripts/drug_reference_sections.py` | Shared source section parser; recognize the reversed pure Multivitamin indication label without rewriting clinical values. |
 | `scripts/rebuild-drug-reference.py` | Repeatable source extraction and editorial spelling with partial-name/digit boundary protection. |
-| `service-worker.js` | Version the current reader, Settings/tutorial styles, onboarding and support command together while retaining prior cache fixes. |
-| `style.css` | Compact Settings cards and a distinct navy tutorial dock/sidebar with separate scrollable app and guidance areas. |
+| `service-worker.js` | Cache matching current tutorial/Settings styles and scripts, headline styling and prior lazy drug/voice assets. |
+| `settings.css` | Full-screen Settings, compact closed menu, full-width submenus, accessible controls and fixed bottom brand/credit. |
+| `style.css` | Retain shared app styles; remove superseded tour overrides and use readable solid dark-mode headline accents. |
 | `tests/drug-reference-cache.test.js` | Current lazy-book revision isolation and on-demand/offline voice-script cache reuse. |
 | `tests/drug-reference-data.test.js` | Validate the complete dataset, relationships, source status and preserved IDs. |
 | `tests/drug-reference-reader.test.js` | Whole-source content/numeric preservation plus all-monograph source ordering, seed mechanism order and brands-first checks. |
 | `tests/drug-reference-ui.test.js` | Mobile/desktop closed topics, keyboard, floating close, parentheses geometry, interactive tour and user-state restoration. |
-| `tests/navigation-layout.test.js` | Browser regressions for long topic switching, all Settings groups/controls and separated tutorial/app layouts. |
+| `tests/navigation-layout.test.js` | Retain drug scroll and Settings controls checks; target the isolated tutorial card. |
+| `tests/settings-theme-ui.test.js` | Browser checks for full-screen Settings, no closed-menu scrolling, all submenus, working controls, focus and dark headline contrast. |
+| `tests/tutorial-layout.test.js` | Browser checks for aligned internal rows/borders/control bounds, screen separation and readiness-gated fox animation. |
 | `tests/voice-assets.test.py` | Generated bundle fixture checks for missing files, HTML fallback and invalid WebAssembly. |
-| `tests/voice-pipeline-smoke.test.js` | Retain voice smoke tests and check matching current tutorial URLs without hard-coding a stale revision. |
+| `tests/voice-pipeline-smoke.test.js` | Retain voice smoke checks while validating current offline styles, isolated status markup and updated settings copy. |
 | `voice-commands.js` | Open the collapsed Settings contact card before the existing voice support shortcut highlights it. |

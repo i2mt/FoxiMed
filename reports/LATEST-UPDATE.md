@@ -1,14 +1,28 @@
-# Stable drug topics, grouped Settings and docked tutorial
+# Tutorial alignment, full-screen Settings and readable themes
 
 Updated 2026-10-20. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.
 
-## Latest navigation changes
+## Tutorial alignment and welcome fox
 
-- Drug topic activation now closes/opens sections synchronously and compensates the Drugs pane scroll offset to keep the activated heading in place. Native smooth anchoring is disabled for this pane. Pointer and keyboard activation still use accessible native summaries; all topics start closed.
-- Imported topics follow the PDF monograph sequence. The opening identity/classification block is followed by its forms/strengths, then the source's pharmacology, indications/dose and subsequent sections in their original order. The separate forms block stays at its original position rather than being promoted to the top. Name/brand information leads the opening metadata; seed entries likewise place mechanism before dosing. No medical text or dose has been changed in this revision.
-- Settings uses nine compact, initially closed section cards. Existing control IDs, settings, themes, defaults, history/export actions and support links are preserved. The voice support shortcut explicitly opens the contact section before highlighting it. Settings groups are independent of the Tools/drug accordion history logic.
-- The tutorial adapts Foxiora v12.27's separate coaching viewport. Navy guidance uses a fixed palette distinct from the app. On phones the app scrolls above a dedicated bottom dock; desktop/landscape uses a separate side panel. Header/panel/visual-viewport measurements update the layout for resizing and keyboard changes. Welcome content scrolls inside its card while navigation remains visible. Completion/skip restores the app layout and previous discovery state.
-- New rendered regression checks use the long insulin monograph at 320/390/1280 px. Heading movement after switching is below 0.4 px; keyboard closing is stable. Settings keyboard access and theme/font/calculator-default changes pass. All seven tutorial steps reserve non-overlapping app/guidance areas at 320×568, 390×844, 1280×900 and 740×400. Geometry and results are in `navigation-layout-results.json`.
+The previous tutorial inherited `align-items:center` from the retired slide card. The app's navigation-height measurement could also overwrite the reserved app viewport after resize. Both conflicts are fixed: the new card uses private `fm-tour-*` classes and `onboarding.css`, and its reserved viewport takes priority over the normal navigation offset.
+
+The panel now follows FoxiOra v12.27's four rows: location/skip, scrolling copy, progress, and full-width actions. Grid items stretch to the same inner edges. The default bottom dock has a 520 px maximum width and a 260 px/42% height cap; a 260 px side dock is used at FoxiOra's compact-landscape breakpoint. Enlarged text gets more copy space where needed. Borders, controls and words wrap within the copy area; navigation stays outside that scroll area. No old `.tutorial-box` or `.onboarding-box` class is applied to the new panel.
+
+The welcome screen reuses the startup fox silhouette and bottom-to-top orange fill. It waits for the mask, fonts and page load, waits until the startup overlay is fully hidden and the fox is visible, then allows two painted frames before starting the 2.8-second animation. Back/replay starts a new animation; leaving cancels pending work. Reduced-motion users get the completed mark, and a failed mask load falls back to the existing fox image. Navigation is never blocked by the animation.
+
+`tutorial-layout-results.json` records 147 step checks: nine viewport sizes in light/dark plus three layouts at 200% text. They check internal alignment, child borders/control bounds, horizontal overflow, copy/progress/action separation, visible navigation and separate app/guide viewports. Rotation, delayed-mask/startup readiness, visible fill progression, completion, replay and reduced motion pass. Browser viewport simulations do not establish physical iPhone/Safari keyboard behavior.
+
+## Full-screen Settings
+
+Settings fills the viewport with a fixed header, a scrollable section area and a bottom brand/credit footer. The footer includes the fox, FoxiMed, “Designed & developed by” and Mohammad Mahdi Taghavi. Nine closed section cards use two columns on phones, three on wider screens and four in short landscape. Open sections use the full content width. Closed cards fit without scrolling in all twelve tested light/dark layouts, including 320×480 and 667×320. Enlarged system text can still require scrolling rather than being clipped.
+
+Submenus now use labelled 44 px controls, 16 px text inputs/selects, clear theme-mode labels, spaced color choices, distinct history/log deletion actions, isolated mixed-script names/values and a cleaner support link. Native dark select menus use the correct color scheme. Profile, theme/font, calculator defaults, keyboard focus containment, Escape/close and focus restoration were checked. Existing control IDs, preferences, data/export/support actions and voice shortcut are preserved. The calculator drug count is labelled explicitly to distinguish it from the reference catalog.
+
+`settings-theme-results.json` records twelve full-screen layouts, 108 expanded submenu checks and control/keyboard checks. It also records measured headline contrast across all six dark themes. The default Hedo palette is now applied in dark mode instead of clearing its variables. Headings use a separate light accent rather than dark gradient text; the tested visible calculator, Drugs and Tools headings, including the top-bar brand, have minimum ratios of 5.45:1 or higher. This is a focused headline check, not a claim of a complete accessibility audit.
+
+## Retained drug behavior
+
+Switching topics keeps the activated heading in place; the measured long-insulin heading shift remains below 0.4 px at 320/390/1280 px. PDF topic order, initially closed topics, lazy chunks, compact cards and bottom source attribution remain. All ten book files, the compact index, the reader JavaScript and the original PDF are byte-for-byte unchanged from the preceding delivery. Only the drug stylesheet receives the dark heading color rule.
 
 ## Drug cards
 
@@ -49,6 +63,6 @@ Current data, reader, cache, voice-source/worker and generated-asset fixture che
 
 The drug startup payload is 395,498 bytes, versus 8,035,317 bytes in the supplied original snapshot. Initial results remain capped at 40 with no book requests. Detail chunks load on first opening a drug and are cached by revision. Offline details still require a previous online opening of the corresponding chunk.
 
-Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=46`, `script.js?v=52`, `drug-reference.css?v=7`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=2`, `service-worker.js?v=52`, and lazy book chunks `?v=4`.
+Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=47`, `script.js?v=53`, `drug-reference.css?v=8`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=3`, `service-worker.js?v=53`, `settings.css?v=1`, `onboarding.css?v=1`, and lazy book chunks `?v=4`.
 
 Clinical scope remains limited: the 2008 source has not been fully clinically validated. Incomplete or incorrectly scoped punctuation/fractions/tables in the source cannot safely be reconstructed from display text alone. Unpaired source brackets remain isolated and visible instead of guessed. Existing duplicate headings, unresolved metadata and Abciximab source issues remain in the review queue. No new warning/source banners were added to cards.

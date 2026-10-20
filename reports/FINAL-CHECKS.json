@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "checkedOn": "2026-10-20",
-  "revision": "stable-topic-scroll-source-order-settings-and-docked-tour",
+  "revision": "isolated-responsive-tutorial-visible-fox-fullscreen-settings-theme-contrast",
   "tests": {
     "drug-reference-data.test.js": "PASS",
     "drug-reference-cache.test.js": "PASS",
@@ -9,9 +9,11 @@
     "voice-pipeline-smoke.test.js": "PASS",
     "voice-assets.test.py": "PASS",
     "drug-reference-ui.test.js": "PASS",
-    "navigation-layout.test.js": "PASS"
+    "navigation-layout.test.js": "PASS",
+    "tutorial-layout.test.js": "PASS",
+    "settings-theme-ui.test.js": "PASS"
   },
-  "javascriptSyntaxFiles": 35,
+  "javascriptSyntaxFiles": 37,
   "pythonSyntaxFiles": 4,
   "bookEntries": 827,
   "readerSections": 7004,
@@ -57,5 +59,15 @@
     ]
   ],
   "maximumTestedTopicHeadingShiftPx": 0.33,
-  "settingsCollapsedGroups": 9
+  "settingsCollapsedGroups": 9,
+  "unchangedDrugReaderDataIndexPdfFiles": 13,
+  "assetVersionConsistency": "PASS",
+  "tutorialStepGeometryChecks": 147,
+  "tutorialLayouts": 21,
+  "tutorialRotationAndEnlargedText": "PASS",
+  "welcomeFoxAssetStartupPaintReplayAndReducedMotion": "PASS",
+  "settingsFullScreenLayouts": 12,
+  "settingsSubmenuGeometryChecks": 108,
+  "settingsClosedMenuRequiresScrollInTestedLayouts": false,
+  "darkHeadingMinimumContrastAcrossSixThemes": 5.45
 }

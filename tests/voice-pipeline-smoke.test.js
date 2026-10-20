@@ -463,7 +463,7 @@ function testDeploymentWiring() {
     assert(styleCss.includes('.header-fox-mark {\n    width: 58px;\n    height: 58px;') &&
         styleCss.includes('.header-fox-mark {\n        width: 50px;\n        height: 50px;'),
         'the header fox must remain prominent within the existing desktop and mobile header heights');
-    assert(index.includes('Rizeh — آفلاین') && !index.includes('voiceRecognitionModeSelect') && !index.includes('whisper-base'),
+    assert((/<strong class="voice-engine-current">[\s\S]*?Rizeh[\s\S]*?آفلاین<\/span><\/strong>/.test(index)) && !index.includes('voiceRecognitionModeSelect') && !index.includes('whisper-base'),
         'Settings must present one clear Rizeh status instead of experimental model choices');
     assert(index.includes('id="defaultInfusionMethodSelect"') &&
         index.includes('id="defaultSyringeVolumeSelect"') &&
@@ -517,6 +517,10 @@ function testDeploymentWiring() {
     assert(onboardingAsset && serviceWorker.includes(onboardingAsset) &&
         onboarding.includes('function previewTab(tab)') && onboarding.includes('window.initDrugReference?.()'),
         'the new tutorial must be available offline and guide real drug discovery');
+    for (const name of ['onboarding','settings']) {
+        const cssAsset = index.match(new RegExp('href="('+name+'\\.css\\?v=\\d+)"'))?.[1];
+        assert(cssAsset && serviceWorker.includes('./'+cssAsset), name+' styles must be available offline at the matching revision');
+    }
     const preview = onboarding.slice(onboarding.indexOf('function previewTab(tab)'), onboarding.indexOf('function lockBackground()'));
     assert(!/\bswitchTab\(|VoiceEngine\.|KoochikASR\./.test(preview),
         'previewing tutorial tabs must not initialize or preload voice models');
@@ -539,8 +543,8 @@ function testDeploymentWiring() {
     assert(!voiceUi.includes('addToHistory(text)') && voiceUi.includes('recordHistory: recordHistory') &&
         voiceCommands.includes('recordCompletedAction(cmd, params)'),
         'assistant history must store canonical completed actions instead of raw ASR text');
-    assert(index.includes('آماده‌سازی مدل صدا فقط هنگام استفاده'),
-        'low-power description must match its real on-demand model behavior');
+    assert(index.includes('کاهش حرکت‌ها و جلوه‌ها برای مصرف کمتر باتری') && script.includes("document.body.classList.add('low-power-mode')"),
+        'low-power settings must explain the visible reduced-motion behavior');
     assert(voiceEngine.includes('onlineFallbackAvailable: true') && voiceEngine.includes('startOnline: startOnline'),
         'offline failures must expose an explicit online retry');
     assert(voiceUi.includes('صدا برای تشخیص به سرویس مرورگر فرستاده می‌شه'),

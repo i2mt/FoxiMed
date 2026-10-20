@@ -26,9 +26,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=46">
+    <link rel="stylesheet" href="style.css?v=47">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
-    <link rel="stylesheet" href="drug-reference.css?v=7">
+    <link rel="stylesheet" href="drug-reference.css?v=8">
+    <link rel="stylesheet" href="settings.css?v=1">
+    <link rel="stylesheet" href="onboarding.css?v=1">
 </head>
 <body>
 
@@ -1932,37 +1934,37 @@
     </div>
 
     <!-- Settings Modal -->
-    <div class="modal" id="settingsModal">
+    <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-cog"></i> تنظیمات</h3>
-                <button class="modal-close" id="closeSettings">&times;</button>
+                <h3 id="settingsTitle"><i class="fas fa-cog" aria-hidden="true"></i> تنظیمات</h3>
+                <button class="modal-close" id="closeSettings" aria-label="بستن تنظیمات">&times;</button>
             </div>
             <div class="modal-body settings-menu"><p class="settings-menu-hint">بخش مورد نظرتان را باز کنید</p>
 
                 <!-- User Profile -->
-                <details class="settings-group settings-card">
-    <summary><i class="fas fa-user-circle"></i> پروفایل کاربر<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
-    <div class="username-field compact">
+                <details class="settings-group settings-card" data-settings-section="profile">
+    <summary><i class="fas fa-user-circle"></i><span class="settings-card-title"> پروفایل کاربر</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+    <div class="username-field compact"><label for="userNameInput" class="username-label">نام شما</label>
         <div class="username-input-row">
             <input type="text" id="userNameInput" class="username-input" placeholder="نام خود را وارد کنید" maxlength="30" autocomplete="off">
-            <button class="username-save-btn" id="userNameSaveBtn"><i class="fas fa-check"></i></button>
+            <button class="username-save-btn" id="userNameSaveBtn" aria-label="ذخیره نام"><i class="fas fa-check"></i></button>
         </div>
-        <!-- hint removed to save space -->
+        <p class="settings-hint">این نام فقط روی همین دستگاه ذخیره می‌شود.</p>
     </div>
 </div></details>
 
                 <!-- Appearance -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-palette"></i> ظاهر<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="appearance">
+                    <summary><i class="fas fa-palette"></i><span class="settings-card-title"> ظاهر</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
 
                     <!-- Theme mode: compact icon-only 3-way switch, same row as its label -->
                     <div class="setting-item">
                         <span>حالت نمایش</span>
                         <div class="theme-mode-btns" id="themeModeButtons">
-                            <button class="theme-mode-btn" data-mode="light" title="روشن" aria-label="روشن"><i class="fas fa-sun"></i></button>
-                            <button class="theme-mode-btn" data-mode="dark" title="تاریک" aria-label="تاریک"><i class="fas fa-moon"></i></button>
-                            <button class="theme-mode-btn" data-mode="auto" title="خودکار" aria-label="خودکار"><i class="fas fa-circle-half-stroke"></i></button>
+                            <button class="theme-mode-btn" data-mode="light" title="روشن" aria-label="روشن"><i class="fas fa-sun"></i><span>روشن</span></button>
+                            <button class="theme-mode-btn" data-mode="dark" title="تاریک" aria-label="تاریک"><i class="fas fa-moon"></i><span>تیره</span></button>
+                            <button class="theme-mode-btn" data-mode="auto" title="خودکار" aria-label="خودکار"><i class="fas fa-circle-half-stroke"></i><span>خودکار</span></button>
                         </div>
                     </div>
 
@@ -1973,7 +1975,7 @@
                     <div class="setting-item">
                         <div class="setting-label-stack">
                             <span>حالت کم‌مصرف <span id="lowPowerModeAutoNote" class="setting-badge" style="display:none;">خودکار</span></span>
-                            <span class="setting-sublabel">کاهش حرکت‌ها و جلوه‌های سنگین؛ آماده‌سازی مدل صدا فقط هنگام استفاده</span>
+                            <span class="setting-sublabel">کاهش حرکت‌ها و جلوه‌ها برای مصرف کمتر باتری</span>
                         </div>
                         <label class="switch"><input type="checkbox" id="lowPowerModeToggle"><span class="slider"></span></label>
                     </div>
@@ -1990,35 +1992,35 @@
                         <div class="theme-swatches" id="themeSwatches">
                             <button class="theme-swatch active" data-theme="default" title="پیش‌فرض">
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#667eea,#764ba2)"></span>
-                                <span class="swatch-name">Hedo</span>
+                                <bdi dir="ltr" class="swatch-name">Hedo</bdi>
                             </button>
                             <button class="theme-swatch" data-theme="fox" title="روباه">
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#f97316,#dc2626)"></span>
-                                <span class="swatch-name">Fox</span>
+                                <bdi dir="ltr" class="swatch-name">Fox</bdi>
                             </button>
                             <button class="theme-swatch" data-theme="ocean" title="اقیانوس">
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#0ea5e9,#0d9488)"></span>
-                                <span class="swatch-name">Siren</span>
+                                <bdi dir="ltr" class="swatch-name">Siren</bdi>
                             </button>
                             <button class="theme-swatch" data-theme="rose" title="گل‌سرخ">
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#f43f5e,#ec4899)"></span>
-                                <span class="swatch-name">Vixen</span>
+                                <bdi dir="ltr" class="swatch-name">Vixen</bdi>
                             </button>
                             <button class="theme-swatch" data-theme="forest" title="جنگل">
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#22c55e,#14b8a6)"></span>
-                                <span class="swatch-name">Lynx</span>
+                                <bdi dir="ltr" class="swatch-name">Lynx</bdi>
                             </button>
                             <button class="theme-swatch" data-theme="dreamfire" title="DreamFire">
                                 <span class="swatch-dot" style="background:linear-gradient(135deg,#be123c,#4c0519)"></span>
-                                <span class="swatch-name">Dreamfire</span>
+                                <bdi dir="ltr" class="swatch-name">Dreamfire</bdi>
                             </button>
                         </div>
                     </div>
                 </div></details>
 
                 <!-- Calculator defaults -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-pump-medical"></i> پیش‌فرض ماشین‌حساب<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="calculator">
+                    <summary><i class="fas fa-pump-medical"></i><span class="settings-card-title"> ماشین‌حساب</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <p class="settings-hint">برای هماهنگی با تجهیزات رایج بخش؛ هنگام هر محاسبه همچنان قابل تغییر است.</p>
                     <label class="setting-item setting-select-row" for="defaultInfusionMethodSelect">
                         <span>دستگاه پیش‌فرض</span>
@@ -2049,8 +2051,8 @@
                 </div></details>
 
                 <!-- Notifications -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-bell"></i> اعلان‌ها<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="alerts">
+                    <summary><i class="fas fa-bell"></i><span class="settings-card-title"> اعلان‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="setting-item">
                         <span>هشدار دوز</span>
                         <label class="switch"><input type="checkbox" id="doseAlertToggle" checked><span class="slider"></span></label>
@@ -2062,8 +2064,8 @@
                 </div></details>
 
                 <!-- Data -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-database"></i> داده‌ها<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="data">
+                    <summary><i class="fas fa-database"></i><span class="settings-card-title"> داده‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="setting-item">
                         <span>ذخیره تاریخچه</span>
                         <label class="switch"><input type="checkbox" id="saveHistoryToggle" checked><span class="slider"></span></label>
@@ -2075,29 +2077,29 @@
                 </div></details>
 
                 <!-- Contact -->
-                <details class="settings-group settings-card" id="creatorContact">
-                    <summary><i class="fas fa-headset"></i> ارتباط با ما<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" id="creatorContact" data-settings-section="contact">
+                    <summary><i class="fas fa-headset"></i><span class="settings-card-title"> ارتباط با ما</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <a class="setting-contact-btn" href="https://t.me/i_2mt" target="_blank" rel="noopener">
                         <i class="fab fa-telegram"></i>
-                        <span>پشتیبانی و ارتباط از طریق تلگرام</span>
-                        <span class="contact-handle">@i_2mt</span>
+                        <span>پشتیبانی در تلگرام</span>
+                        <bdi dir="ltr" class="contact-handle">@i_2mt</bdi>
                     </a>
                 </div></details>
 
                 <!-- Voice recognition engine -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-wave-square"></i> تشخیص گفتار<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="voice">
+                    <summary><i class="fas fa-wave-square"></i><span class="settings-card-title"> تشخیص گفتار</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="voice-engine-setting">
                         <span>موتور فعال</span>
-                        <strong class="voice-engine-current"><i class="fas fa-circle-check"></i> Rizeh — آفلاین</strong>
+                        <strong class="voice-engine-current"><i class="fas fa-circle-check" aria-hidden="true"></i><bdi dir="ltr">Rizeh</bdi><span>آفلاین</span></strong>
                         <span class="setting-sublabel">گزینه پایدار فعلی برای فرمان‌های فارسی فاکسی‌مد</span>
                     </div>
                     <p class="settings-hint voice-privacy-hint"><i class="fas fa-shield-halved"></i> تشخیص صدا روی همین دستگاه انجام می‌شود و فایل صوتی از گوشی خارج نمی‌شود.</p>
                 </div></details>
 
                 <!-- Voice Assistant Learning Log -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-microphone-lines"></i> بهبود دستیار صوتی<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="voice-log">
+                    <summary><i class="fas fa-microphone-lines"></i><span class="settings-card-title"> بهبود دستیار</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <p class="settings-hint">عبارت‌هایی که دستیار صوتی متوجه نشده روی گوشی ذخیره می‌شود تا برای بررسی ارسال شود.</p>
                     <div class="setting-item">
                         <div class="setting-label-stack">
@@ -2114,11 +2116,11 @@
                 </div></details>
 
                 <!-- About -->
-                <details class="settings-group settings-card">
-                    <summary><i class="fas fa-info-circle"></i> درباره<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <details class="settings-group settings-card" data-settings-section="about">
+                    <summary><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="about-info">
                         <div class="about-row"><span>نسخه</span><span>5.3.2</span></div>
-                        <div class="about-row"><span>تعداد داروها</span><span id="drugCount">12</span></div>
+                        <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
                     <div class="settings-btn-row">
@@ -2126,14 +2128,13 @@
                         <button class="setting-btn gradient" onclick="showTutorial()"><i class="fas fa-graduation-cap"></i> راهنمای برنامه</button>
                         <button class="setting-btn gradient" onclick="showWhatsNewModal(true)"><i class="fa-solid fa-wand-magic-sparkles"></i> چه خبر؟</button>
                     </div>
-                    <div class="settings-credits">
-                        <i class="fas fa-code"></i>
-                        <span>Designed &amp; developed by</span>
-                        <strong>Mohammad Mahdi Taghavi</strong>
-                    </div>
                 </div></details>
 
             </div><!-- /.modal-body -->
+            <footer class="settings-footer">
+                <div class="settings-brand"><img src="icons/fox-mark.png" alt="" width="32" height="32"><bdi dir="ltr">FoxiMed</bdi></div>
+                <div class="settings-credit" dir="ltr"><span>Designed &amp; developed by</span><bdi>Mohammad Mahdi Taghavi</bdi></div>
+            </footer>
         </div><!-- /.modal-content -->
     </div><!-- /#settingsModal -->
 
@@ -2166,9 +2167,9 @@
     </div>
 
     <!-- Accessible quick tour: content is rendered by onboarding.js. -->
-    <div id="onboardingOverlay" class="onboarding-overlay" style="display:none;">
-        <div class="onboarding-backdrop" aria-hidden="true"></div>
-        <section class="onboarding-box tutorial-box" dir="rtl"></section>
+    <div id="onboardingOverlay" class="fm-tour-overlay" style="display:none;">
+        <div class="fm-tour-backdrop" aria-hidden="true"></div>
+        <aside id="foximedTourCard" class="fm-tour-card" dir="rtl"></aside>
     </div>
 
     <!-- Reverse mode first-use tooltip -->
@@ -2186,12 +2187,12 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=52"></script>
+    <script src="script.js?v=53"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
     <script src="drug-reference.js?v=8"></script>
-    <script src="onboarding.js?v=2"></script>
+    <script src="onboarding.js?v=3"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=44"></script>
@@ -2199,7 +2200,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=52', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=53', { updateViaCache: 'none' });
             });
         }
     </script>

@@ -105,3 +105,5 @@
 @media(max-width:600px){#drugsTab .drug-reference-metadata{grid-template-columns:minmax(0,1fr);gap:8px;margin:12px}#drugsTab .drug-reference-meta-item{padding:12px}}
 /* Topic switches explicitly preserve the activated summary's position. */
 #drugsTab{overflow-anchor:none}
+.dark-mode #drugsTab .drug-reference-heading h2,
+.dark-mode #drugsTab .drug-reference-section h3 {color:var(--heading-color,var(--text-primary))}

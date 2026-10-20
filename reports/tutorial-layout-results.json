@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "layouts": [
+    {
+      "width": 280,
+      "height": 653,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 667,
+      "height": 320,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 280,
+      "height": 653,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 667,
+      "height": 320,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "textScale": 1,
+      "steps": 7
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "textScale": 2,
+      "steps": 7
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "textScale": 2,
+      "steps": 7
+    },
+    {
+      "width": 667,
+      "height": 320,
+      "textScale": 2,
+      "steps": 7
+    }
+  ],
+  "rotation": true,
+  "welcomeAnimation": {
+    "waitsForMask": true,
+    "waitsForStartup": true,
+    "visibleProgress": true,
+    "complete": true,
+    "replayAndReducedMotion": true
+  }
+}

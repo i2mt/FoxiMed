@@ -1,0 +1,81 @@
+/* Full-screen Settings. Compact section menu; full-width expanded controls. */
+#settingsModal {padding:0;align-items:stretch;justify-content:stretch;background:var(--bg-primary)}
+#settingsModal .modal-content {width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0;box-shadow:none}
+#settingsModal .modal-header {flex:0 0 auto;min-height:56px;padding:calc(4px + env(safe-area-inset-top)) 14px 4px;background:var(--surface);border:0;border-bottom:1px solid var(--border)}
+#settingsModal .modal-header h3 {font-size:17px;line-height:1.5;color:var(--text-primary)}
+#settingsModal .modal-close {width:44px;height:44px;font-size:28px;border-radius:12px;color:var(--text-secondary)}
+#settingsModal .settings-menu {width:100%;max-width:900px;min-height:0;max-height:none;margin-inline:auto;padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;overflow-anchor:none;scroll-behavior:auto;scroll-padding-block:12px}
+#settingsModal .settings-menu-hint {grid-column:1/-1;margin:0 2px 2px;font-size:12px;line-height:1.6;color:var(--text-secondary)}
+#settingsModal .settings-card {min-width:0;margin:0;padding:0;border:1px solid var(--border);border-radius:13px;background:var(--surface);overflow:clip}
+#settingsModal .settings-card > summary {display:grid;grid-template-columns:28px minmax(0,1fr) 10px;align-items:center;gap:8px;min-height:56px;margin:0;padding:10px;list-style:none;cursor:pointer;color:var(--text-primary);font-size:13px;font-weight:650;line-height:1.5}
+#settingsModal .settings-card > summary::-webkit-details-marker {display:none}
+#settingsModal .settings-card > summary > i:first-child {display:grid;place-items:center;width:28px;height:28px;background:var(--primary-light);color:var(--primary);border-radius:9px;font-size:14px}
+#settingsModal .settings-card-title {min-width:0;overflow-wrap:anywhere}
+#settingsModal .settings-chevron {margin:0;color:var(--text-secondary);font-size:10px;transition:transform .2s}
+#settingsModal .settings-card[open] {grid-column:1/-1}
+#settingsModal .settings-card[open] > summary {border-bottom:1px solid var(--border);background:var(--primary-light);color:var(--heading-color,var(--primary))}
+#settingsModal .settings-card[open] .settings-chevron {transform:rotate(180deg)}
+#settingsModal .settings-group-content {padding:14px;min-width:0}
+#settingsModal .settings-group-content > :last-child {margin-bottom:0}
+#settingsModal .settings-group-content .settings-hint {font-size:12px;line-height:1.8;color:var(--text-secondary);margin:0 0 12px}
+#settingsModal .setting-item {min-width:0;min-height:54px;padding:8px 0;gap:12px;align-items:center}
+#settingsModal .setting-item > span, #settingsModal .setting-label-stack {min-width:0;flex:1;line-height:1.7;overflow-wrap:anywhere}
+#settingsModal .setting-label-stack {gap:4px}
+#settingsModal .setting-label-stack .setting-sublabel {font-size:12px;line-height:1.8;color:var(--text-secondary)}
+#settingsModal .setting-item:has(#themeModeButtons) {display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding-bottom:14px}
+#settingsModal .theme-mode-btns {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:6px}
+#settingsModal .theme-mode-btn {width:auto;height:auto;min-height:44px;display:flex;flex-wrap:wrap;gap:6px;padding:6px;border:1px solid var(--border);background:var(--surface-elevated);color:var(--text-secondary);box-shadow:none}
+#settingsModal .theme-mode-btn span {font-size:12px;line-height:1.5;color:inherit}
+#settingsModal .theme-mode-btn.active {border-color:var(--primary);background:var(--primary-light);color:var(--heading-color,var(--primary))}
+#settingsModal .theme-picker-section {margin-top:12px;padding-top:12px;border-top:1px solid var(--border-light)}
+#settingsModal .theme-picker-label {display:flex;gap:8px;margin-bottom:10px;font-size:13px;color:var(--text-primary)}
+#settingsModal .theme-swatches {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#settingsModal .theme-swatch {min-width:0;min-height:60px;width:auto;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border-radius:11px;border:1px solid var(--border);background:var(--surface-elevated);color:var(--text-secondary)}
+#settingsModal .theme-swatch.active {border-color:var(--primary);background:var(--primary-light);color:var(--heading-color,var(--primary))}
+#settingsModal .swatch-dot {width:24px;height:24px;flex:0 0 24px}
+#settingsModal .swatch-name {font:500 12px/1.5 var(--font-latin);overflow-wrap:anywhere;color:inherit}
+#settingsModal .switch {flex:0 0 48px;width:48px;height:44px}
+#settingsModal .switch .slider {top:9px;bottom:9px}
+#settingsModal .switch .slider::before {width:20px;height:20px;bottom:3px;right:3px}
+#settingsModal .switch input:checked + .slider::before {transform:translateX(-22px)}
+#settingsModal .settings-select {flex:0 1 230px;width:52%;max-width:60%;min-width:0;min-height:44px;padding:8px 10px;font-size:16px;font-weight:500;line-height:1.5;background:var(--surface-elevated);color:var(--text-primary)}
+#settingsModal .username-field {padding:0;gap:10px}
+#settingsModal .username-label {font-size:13px;line-height:1.6;color:var(--text-primary)}
+#settingsModal .username-input-row {width:100%;min-width:0;gap:8px}
+#settingsModal .username-input {min-width:0;min-height:44px;padding:8px 10px;font-size:16px;line-height:1.5;background:var(--surface-elevated)}
+#settingsModal .username-save-btn {flex:0 0 44px;width:44px;height:44px;background:var(--primary-light);color:var(--heading-color,var(--primary));border:1px solid var(--primary)}
+#settingsModal .settings-btn-row {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+#settingsModal .setting-btn {min-width:0;min-height:44px;padding:9px 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface-elevated);color:var(--text-primary);font-size:12px;line-height:1.7;white-space:normal;overflow-wrap:anywhere;box-shadow:none}
+#settingsModal .setting-btn.gradient {background:var(--primary-light);color:var(--heading-color,var(--primary));border-color:var(--border)}
+#settingsModal :is(#clearHistoryBtn,#clearVoiceLogBtn) {background:transparent;color:var(--danger);border-color:var(--border)}
+#settingsModal .settings-btn-row > :last-child:nth-child(odd) {grid-column:1/-1}
+#settingsModal .voice-engine-setting {gap:10px;padding:0;margin-bottom:12px}
+#settingsModal .voice-engine-current {font-size:13px;line-height:1.6;min-height:44px;max-width:100%;flex-wrap:wrap;padding:8px 10px}
+#settingsModal .voice-engine-current span {color:var(--text-secondary);font-weight:500}
+#settingsModal .setting-contact-btn {display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;gap:8px 10px;min-height:64px;padding:12px;border:1px solid var(--border);background:var(--surface-elevated);color:var(--text-primary);box-shadow:none}
+#settingsModal .setting-contact-btn .fab {grid-row:1/3;color:#38bdf8;font-size:24px}
+#settingsModal .setting-contact-btn > span {font-size:13px;line-height:1.6;min-width:0}
+#settingsModal .contact-handle {grid-column:2;justify-self:start;padding:0;background:transparent;color:var(--text-secondary);font-size:12px;line-height:1.5;opacity:1}
+#settingsModal .about-info {border:1px solid var(--border);border-radius:12px}
+#settingsModal .about-row {min-height:44px;padding:10px 12px;gap:12px;font-size:13px;line-height:1.6}
+#settingsModal .about-row > :last-child {direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+#settingsModal .settings-footer {flex:0 0 auto;display:grid;justify-items:center;gap:3px;padding:8px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--border);background:var(--surface);text-align:center}
+#settingsModal .settings-brand {display:flex;align-items:center;justify-content:center;gap:8px;direction:rtl;min-height:32px}
+#settingsModal .settings-brand img {width:32px;height:32px;object-fit:contain}
+#settingsModal .settings-brand bdi {font:750 21px/1.3 var(--font-latin);color:var(--heading-color,var(--text-primary))}
+#settingsModal .settings-credit {display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:0 6px;max-width:100%;font:400 10px/1.6 var(--font-latin);color:var(--text-secondary)}
+#settingsModal .settings-credit bdi {font-weight:600;color:var(--text-primary);overflow-wrap:anywhere}
+#settingsModal :is(button,a,summary,input,select):focus-visible {outline:2px solid var(--heading-color,var(--primary));outline-offset:-3px}
+#settingsModal .switch:has(input:focus-visible) {outline:2px solid var(--heading-color,var(--primary));outline-offset:0;border-radius:10px}
+@media(min-width:600px) {#settingsModal .settings-menu {grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:16px}#settingsModal .theme-swatches {grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu {grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px 12px}#settingsModal .settings-card > summary {min-height:48px;padding:8px}#settingsModal .settings-footer {padding-block:4px}#settingsModal .settings-brand img {width:24px;height:24px}#settingsModal .settings-brand {min-height:24px}#settingsModal .settings-brand bdi {font-size:18px}#settingsModal .modal-header {min-height:48px;padding-block:2px}}
+@media(max-width:360px) {#settingsModal .settings-card > summary {min-height:52px;padding:9px;gap:6px;font-size:12px}#settingsModal .settings-group-content {padding:12px}}
+@media(max-width:360px) {
+  #settingsModal .settings-menu {gap:6px;padding:10px}
+  #settingsModal .settings-card > summary {grid-template-columns:24px minmax(0,1fr) 10px;min-height:48px;padding:8px;gap:6px}
+  #settingsModal .settings-card > summary > i:first-child {width:24px;height:24px;font-size:13px}
+}
+@media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu-hint {display:none}}
+#settingsModal {color-scheme:light}
+.dark-mode #settingsModal {color-scheme:dark}
+.dark-mode #settingsModal :is(.settings-select,.username-input) {border-color:#8494aa;box-shadow:none!important}

@@ -1920,7 +1920,12 @@ function setupEventListeners() {
         if (DOM.historyModal) { DOM.historyModal.classList.add('active'); document.body.classList.add('no-scroll'); }
     });
     if (DOM.settingsBtn) DOM.settingsBtn.addEventListener('click', () => {
-        if (DOM.settingsModal) { DOM.settingsModal.classList.add('active'); document.body.classList.add('no-scroll'); }
+        if (DOM.settingsModal) {
+            DOM.settingsModal.querySelectorAll('details.settings-card').forEach(group=>group.open=false);
+            DOM.settingsModal.querySelector('.modal-body').scrollTop=0;
+            DOM.settingsModal.classList.add('active'); document.body.classList.add('no-scroll');
+            DOM.closeSettings?.focus({preventScroll:true});
+        }
     });
     if (DOM.tabItems) DOM.tabItems.forEach(btn => btn.addEventListener('click', function() { switchTab(this.dataset.tab); }));
     if (DOM.methodBtns) DOM.methodBtns.forEach(btn => btn.addEventListener('click', function() {
@@ -2035,7 +2040,22 @@ function setupEventListeners() {
         DOM.doctorOrder.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); calculateInfusion(); } });
     }
     if (DOM.closeSettings) DOM.closeSettings.addEventListener('click', () => {
-        if (DOM.settingsModal) { DOM.settingsModal.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+        if (DOM.settingsModal) { DOM.settingsModal.classList.remove('active'); document.body.classList.remove('no-scroll'); DOM.settingsBtn?.focus({preventScroll:true}); }
+    });
+    DOM.settingsModal?.addEventListener('keydown',event=>{
+        if(event.key==='Escape'){event.preventDefault();DOM.closeSettings?.click();return;}
+        if(event.key!=='Tab')return;
+        const nodes=[...DOM.settingsModal.querySelectorAll('button,input,select,a,summary')].filter(n=>!n.disabled&&n.getClientRects().length&&(!n.closest('details:not([open])')||n.matches('summary')));
+        const index=nodes.indexOf(document.activeElement);
+        if(event.shiftKey&&index<=0){event.preventDefault();nodes.at(-1)?.focus();}
+        else if(!event.shiftKey&&(index<0||index===nodes.length-1)){event.preventDefault();nodes[0]?.focus();}
+    });
+    DOM.settingsModal?.addEventListener('click',event=>{
+        const summary=event.target.closest('details.settings-card > summary');if(!summary)return;
+        event.preventDefault();
+        const pane=DOM.settingsModal.querySelector('.modal-body'),top=summary.getBoundingClientRect().top;
+        summary.parentElement.open=!summary.parentElement.open;
+        pane.scrollTop+=summary.getBoundingClientRect().top-top;
     });
     if (DOM.closeHistory) DOM.closeHistory.addEventListener('click', () => {
         if (DOM.historyModal) { DOM.historyModal.classList.remove('active'); document.body.classList.remove('no-scroll'); }
@@ -3706,6 +3726,7 @@ window.showTutorial = function() {
     if (settingsModal && settingsModal.classList.contains('active')) {
         settingsModal.classList.remove('active');
         document.body.style.overflow = '';
+        document.body.classList.remove('no-scroll');
     }
     const overlay = document.getElementById('onboardingOverlay');
     if (!overlay) return;
@@ -3890,12 +3911,10 @@ function applyTheme(themeName) {
     const palette = THEMES[themeName] || THEMES.default;
     const vars = isDark ? palette.dark : palette.light;
     const root = document.documentElement;
-    const allVars = ['--primary','--primary-dark','--primary-light','--gradient-primary','--secondary'];
-    if (themeName === 'default') {
-        allVars.forEach(k => root.style.removeProperty(k));
-    } else {
-        Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
-    }
+    Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
+    const headingColors = {default:'#93c5fd',fox:'#fdba74',ocean:'#7dd3fc',rose:'#fda4af',forest:'#86efac',dreamfire:'#f9a8d4'};
+    const lightHeadings={default:'#4338ca',fox:'#9a3412',ocean:'#075985',rose:'#9f1239',forest:'#166534',dreamfire:'#881337'};
+    root.style.setProperty('--heading-color',isDark ? (headingColors[themeName] || headingColors.default) : (lightHeadings[themeName] || lightHeadings.default));
     const meta = document.getElementById('themeColorMeta');
     if (meta) meta.content = isDark ? '#1f2937' : '#ffffff';
     document.querySelectorAll('.theme-swatch').forEach(s => {

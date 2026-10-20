@@ -2,7 +2,8 @@
 (function () {
   'use strict';
   const $=id=>document.getElementById(id);
-  let active=false,pending=false,step=0,saved=null,resizeObserver=null;
+  let active=false,pending=false,step=0,saved=null,resizeObserver=null,layoutFrame=0;
+  let cancelWelcome=()=>{};
   const inerted=new Set();
   const steps=[
     {tab:'calculator',location:'آشنایی با برنامه',title:'به FoxiMed خوش آمدید',text:'از محاسبه تا پیدا کردن اطلاعات دارو؛ یک همراه جمع‌وجور برای شیفت شما.',icon:'fa-paw',welcome:true},
@@ -35,40 +36,86 @@
     for(const id of ['greetingBanner','namePrompt'])markInert($(id));
   }
   function practiceHTML(s){
-    if(s.welcome)return '<div class="tour-feature-row"><span><i class="fas fa-calculator"></i> محاسبه</span><span><i class="fas fa-book-medical"></i> مرجع دارویی</span><span><i class="fas fa-toolbox"></i> ابزارها</span></div><div class="tour-credit">طراحی و توسعه <bdi dir="ltr">Mohammad Mahdi Taghavi</bdi></div>';
-    if(s.sample)return '<div class="tour-practice"><span class="tour-sample-label">تمرین مستقل</span><label>حجم نمونه <bdi dir="ltr">mL</bdi><input id="tourPracticeVolume" type="number" min="1" value="100" inputmode="decimal" dir="ltr"></label><div class="tour-practice-result">در مدت ۲ ساعت: <output id="tourPracticeOutput" dir="ltr">50 mL/h</output></div><small>این نمونه وارد محاسبات یا تاریخچهٔ شما نمی‌شود.</small></div>';
-    if(s.search)return '<button type="button" class="tour-action" data-tour-action="search"><i class="fas fa-search"></i> جست‌وجوی نمونه: آمیودارون</button>';
-    if(s.topics)return '<div class="tour-topic-hint"><span><i class="fas fa-chevron-down"></i> انتخاب کارت</span><i class="fas fa-arrow-left" aria-hidden="true"></i><span><i class="fas fa-list-ul"></i> انتخاب موضوع</span></div>';
-    if(s.tools)return '<button type="button" class="tour-action" data-tour-action="tools"><i class="fas fa-search"></i> جست‌وجوی نمونه: GCS</button>';
-    if(s.voice)return '<div class="tour-voice-examples"><span class="tour-sample-label">نمونهٔ متنی</span><button type="button" data-tour-example="مرجع دارویی را باز کن">«مرجع دارویی را باز کن»</button><button type="button" data-tour-example="چه کارهایی بلدی؟">«چه کارهایی بلدی؟»</button><p id="tourVoiceExample" role="status"></p></div>';
-    return '<div class="tour-finish-list"><span><i class="fas fa-history"></i> تاریخچهٔ محاسبات</span><span><i class="fas fa-cog"></i> نام، ظاهر و تنظیمات</span><span><i class="fas fa-mobile-alt"></i> افزودن برنامه به صفحهٔ اصلی</span></div>';
+    if(s.welcome)return '<div class="fm-tour-credit"><span>طراحی و توسعه</span><bdi dir="ltr">Mohammad Mahdi Taghavi</bdi></div>';
+    if(s.sample)return '<div class="fm-tour-practice"><span class="fm-tour-sample-label">تمرین مستقل</span><label>حجم نمونه <bdi dir="ltr">mL</bdi><input id="tourPracticeVolume" type="number" min="1" value="100" inputmode="decimal" dir="ltr"></label><div class="fm-tour-practice-result">در مدت ۲ ساعت: <output id="tourPracticeOutput" dir="ltr">50 mL/h</output></div><small>این نمونه وارد محاسبات یا تاریخچهٔ شما نمی‌شود.</small></div>';
+    if(s.search)return '<button type="button" class="fm-tour-action" data-tour-action="search"><i class="fas fa-search"></i> جست‌وجوی نمونه: آمیودارون</button>';
+    if(s.topics)return '';
+    if(s.tools)return '<button type="button" class="fm-tour-action" data-tour-action="tools"><i class="fas fa-search"></i> جست‌وجوی نمونه: GCS</button>';
+    if(s.voice)return '<div class="fm-tour-voice-examples"><span class="fm-tour-sample-label">نمونهٔ متنی</span><button type="button" data-tour-example="مرجع دارویی را باز کن">«مرجع دارویی را باز کن»</button><button type="button" data-tour-example="چه کارهایی بلدی؟">«چه کارهایی بلدی؟»</button><p id="tourVoiceExample" role="status"></p></div>';
+    return '';
   }
   function render(){
     if(!active)return;
+    cancelWelcome();
     const overlay=$('onboardingOverlay'),s=steps[step];previewTab(s.tab);lockBackground();
     document.body.classList.toggle('foximed-tour-welcome',!!s.welcome);
-    overlay.classList.toggle('tour-welcome',!!s.welcome);
-    const panel=overlay.querySelector('.tutorial-box');
+    overlay.classList.toggle('fm-tour-welcome',!!s.welcome);
+    const panel=$('foximedTourCard');
     panel.setAttribute('role',s.welcome?'dialog':'region');panel.setAttribute('aria-labelledby','tourTitle');
     if(s.welcome)panel.setAttribute('aria-modal','true');else panel.removeAttribute('aria-modal');
-    panel.innerHTML='<div class="tour-topline"><span>'+esc(s.location)+'</span><button type="button" class="tour-skip" id="tutorialSkipBtn">بعداً</button></div>'+
-      '<div class="tour-copy">'+(s.welcome?'<div class="tour-brand-art"><img src="icons/fox-mark.png" alt="" width="96" height="96"></div><bdi class="tour-wordmark" dir="ltr">FoxiMed</bdi>':'<div class="tour-section-icon" aria-hidden="true"><i class="fas '+s.icon+'"></i></div>')+
-      '<h2 id="tourTitle">'+esc(s.title)+'</h2><p class="tour-description">'+esc(s.text)+'</p>'+practiceHTML(s)+'</div>'+
-      '<div class="tour-progress" role="progressbar" aria-label="پیشرفت راهنما" aria-valuemin="1" aria-valuemax="'+steps.length+'" aria-valuenow="'+(step+1)+'">'+steps.map((_,i)=>'<span class="'+(i<=step?'done':'')+'"></span>').join('')+'</div>'+
-      '<div class="tour-bottomline"><span class="tour-step-count">'+(step+1)+' از '+steps.length+'</span><div class="tour-navigation">'+(step?'<button type="button" id="tutorialBackBtn" class="tour-back">قبلی</button>':'')+'<button type="button" id="tutorialNextBtn" class="tour-next">'+(s.welcome?'بریم آشنا شویم':s.finish?'شروع کار':'بعدی')+' <i class="fas '+(s.finish?'fa-check':'fa-arrow-left')+'" aria-hidden="true"></i></button></div></div>';
+    panel.innerHTML='<div class="fm-tour-topline"><span class="fm-tour-location">'+esc(s.location)+'</span><button type="button" class="fm-tour-skip" id="tutorialSkipBtn">بعداً</button></div>'+
+      '<div class="fm-tour-copy">'+(s.welcome?'<div class="fm-tour-brand-art"><span id="tourWelcomeFox" class="fm-tour-fox" aria-hidden="true"><img src="icons/fox-mark.png" alt="" width="112" height="112"><span class="fm-tour-fox-base"></span><span class="fm-tour-fox-fill"></span></span></div><bdi class="fm-tour-wordmark" dir="ltr">FoxiMed</bdi>':'<div class="fm-tour-section-icon" aria-hidden="true"><i class="fas '+s.icon+'"></i></div>')+
+      '<h2 id="tourTitle">'+esc(s.title)+'</h2><p class="fm-tour-description">'+esc(s.text)+'</p>'+practiceHTML(s)+'</div>'+
+      '<div class="fm-tour-progress" role="progressbar" aria-label="پیشرفت راهنما" aria-valuemin="1" aria-valuemax="'+steps.length+'" aria-valuenow="'+(step+1)+'">'+steps.map((_,i)=>'<span class="'+(i<=step?'done':'')+'"></span>').join('')+'</div>'+
+      '<div class="fm-tour-navigation">'+(step?'<button type="button" id="tutorialBackBtn" class="fm-tour-back">قبلی</button>':'')+'<button type="button" id="tutorialNextBtn" class="fm-tour-next">'+(s.welcome?'بریم آشنا شویم':s.finish?'شروع کار':'بعدی')+'</button></div>';
     panel.tabIndex=-1;panel.focus({preventScroll:true});
     const pane=$(s.tab+'Tab');if(pane)pane.scrollTop=0;
     updateHeight();
+    if(s.welcome)void animateWelcome();
   }
+  async function animateWelcome(){
+    let cancelled=false,observer=null,intersection=null,frame=0,visible=false,scheduled=false;
+    const fox=$('tourWelcomeFox'),screen=$('loadingScreen');
+    const cleanup=()=>{observer?.disconnect();intersection?.disconnect();document.removeEventListener('visibilitychange',tryStart);};
+    cancelWelcome=()=>{cancelled=true;cleanup();if(frame)cancelAnimationFrame(frame);};
+    const current=()=>!cancelled&&active&&step===0&&fox?.isConnected;
+    const screenClear=()=>!screen||getComputedStyle(screen).display==='none';
+    function tryStart(){
+      if(!current()||scheduled||!visible||document.hidden||!screenClear())return;
+      scheduled=true;
+      // Two painted frames after readiness keep the empty silhouette visible
+      // before the fill begins, including on first launch and cached replays.
+      frame=requestAnimationFrame(()=>{frame=requestAnimationFrame(()=>{
+        scheduled=false;if(!current()||document.hidden||!screenClear())return;
+        cleanup();fox.classList.add('fm-tour-fox-ready');
+      });});
+    }
+    const asset=new Image();asset.src='icons/fox-mark-clean-mask.png';
+    let maskReady=true;
+    await Promise.all([
+      (asset.decode?asset.decode():new Promise((resolve,reject)=>{asset.onload=resolve;asset.onerror=reject;})).catch(()=>{maskReady=false;}),
+      document.fonts?.ready||Promise.resolve(),
+      document.readyState==='complete'?Promise.resolve():new Promise(resolve=>window.addEventListener('load',resolve,{once:true}))
+    ]);
+    if(!current())return;
+    if(maskReady)fox.classList.add('fm-tour-mask-ready');
+    else {fox.classList.add('fm-tour-fox-fallback');return;}
+    if(screen){observer=new MutationObserver(tryStart);observer.observe(screen,{attributes:true,attributeFilter:['class','style']});}
+    document.addEventListener('visibilitychange',tryStart);
+    if(typeof IntersectionObserver==='function'){
+      intersection=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.5;tryStart();},{threshold:.5});intersection.observe(fox);
+    }else {visible=true;tryStart();}
+  }
+  function queueLayout(){if(active&&!layoutFrame)layoutFrame=requestAnimationFrame(updateHeight);}
   function updateHeight(){
+    layoutFrame=0;
     if(!active)return;
-    const panel=$('onboardingOverlay')?.querySelector('.tutorial-box');if(!panel)return;
+    const panel=$('foximedTourCard');if(!panel)return;
     const viewport=window.visualViewport, height=viewport?.height||innerHeight;
     const inset=Math.max(0,innerHeight-height-(viewport?.offsetTop||0));
     const style=document.documentElement.style;
+    const headerBottom=document.querySelector('.app-header').getBoundingClientRect().bottom;
+    let dockMax=Math.max(164,Math.min(260,height*.42));
+    if(step){
+      const css=getComputedStyle(panel),line=parseFloat(getComputedStyle(panel.querySelector('.fm-tour-description')).lineHeight);
+      const chrome=['.fm-tour-topline','.fm-tour-navigation','.fm-tour-progress'].reduce((sum,selector)=>sum+panel.querySelector(selector).getBoundingClientRect().height,0)+
+        parseFloat(css.paddingTop)+parseFloat(css.paddingBottom)+parseFloat(css.rowGap)*3+6;
+      // Enlarged text needs a readable copy viewport as well as visible actions.
+      dockMax=Math.min(Math.max(dockMax,Math.ceil(chrome+Math.max(64,line*2))),Math.max(164,height-headerBottom-inset-120));
+    }
     style.setProperty('--tour-dock-bottom',(inset+8)+'px');
-    style.setProperty('--tour-dock-max',Math.max(164,Math.min(300,height*.42))+'px');
-    style.setProperty('--tour-view-top',Math.ceil(document.querySelector('.app-header').getBoundingClientRect().bottom+6)+'px');
+    style.setProperty('--tour-dock-max',dockMax+'px');
+    style.setProperty('--tour-view-top',Math.ceil(headerBottom+6)+'px');
     style.setProperty('--tour-view-bottom',(Math.ceil(panel.getBoundingClientRect().height)+inset+20)+'px');
   }
   function open(){
@@ -76,12 +123,13 @@
     saved={tab:AppState.currentTab||'calculator',focus:document.activeElement,scrolls:[...document.querySelectorAll('.tab-pane')].map(n=>[n,n.scrollTop]),drug:window.FoxiMedDrugReferenceView?.capture(),tools:$('toolsSearch')?.value||''};
     pending=false;active=true;step=0;const overlay=$('onboardingOverlay');overlay.style.display='flex';overlay.classList.add('visible');document.body.classList.add('foximed-tour');
     const pwa=$('pwaModal');if(pwa)pwa.style.display='none';
-    render();if(typeof ResizeObserver==='function'){resizeObserver=new ResizeObserver(updateHeight);resizeObserver.observe(overlay.querySelector('.tutorial-box'));resizeObserver.observe(document.querySelector('.app-header'));}
+    render();if(typeof ResizeObserver==='function'){resizeObserver=new ResizeObserver(queueLayout);resizeObserver.observe($('foximedTourCard'));resizeObserver.observe(document.querySelector('.app-header'));}
   }
   async function close(){
     if(!active)return;
-    const snapshot=saved;active=false;pending=false;resizeObserver?.disconnect();resizeObserver=null;clearLocks();
-    const overlay=$('onboardingOverlay');overlay.classList.remove('visible','tour-welcome');overlay.style.display='none';
+    const snapshot=saved;active=false;pending=false;resizeObserver?.disconnect();resizeObserver=null;if(layoutFrame)cancelAnimationFrame(layoutFrame);layoutFrame=0;clearLocks();
+    cancelWelcome();
+    const overlay=$('onboardingOverlay');overlay.classList.remove('visible','fm-tour-welcome');overlay.style.display='none';
     document.body.classList.remove('foximed-tour','foximed-tour-welcome');for(const key of ['--tour-dock-bottom','--tour-dock-max','--tour-view-top','--tour-view-bottom'])document.documentElement.style.removeProperty(key);
     previewTab(snapshot.tab);
     if(window.FoxiMedDrugReferenceView&&snapshot.drug)await window.FoxiMedDrugReferenceView.restore(snapshot.drug);
@@ -112,9 +160,9 @@
       if(event.shiftKey&&index<=0){event.preventDefault();nodes.at(-1)?.focus();}
       else if(!event.shiftKey&&(index<0||index===nodes.length-1)){event.preventDefault();nodes[0]?.focus();}
     });
-    window.addEventListener('resize',updateHeight,{passive:true});
-    window.visualViewport?.addEventListener('resize',updateHeight,{passive:true});
-    window.visualViewport?.addEventListener('scroll',updateHeight,{passive:true});
+    window.addEventListener('resize',queueLayout,{passive:true});
+    window.visualViewport?.addEventListener('resize',queueLayout,{passive:true});
+    window.visualViewport?.addEventListener('scroll',queueLayout,{passive:true});
     if(!localStorage.getItem('onboardingSeen')){pending=true;setTimeout(()=>{if(pending)open();},700);}
   }
   window.FoxiMedOnboarding={setup,get active(){return active},get pending(){return pending}};
