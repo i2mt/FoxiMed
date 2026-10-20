@@ -52,27 +52,37 @@
     panel.setAttribute('role',s.welcome?'dialog':'region');panel.setAttribute('aria-labelledby','tourTitle');
     if(s.welcome)panel.setAttribute('aria-modal','true');else panel.removeAttribute('aria-modal');
     panel.innerHTML='<div class="tour-topline"><span>'+esc(s.location)+'</span><button type="button" class="tour-skip" id="tutorialSkipBtn">بعداً</button></div>'+
-      (s.welcome?'<div class="tour-brand-art"><img src="icons/fox-mark.png" alt="" width="96" height="96"></div><bdi class="tour-wordmark" dir="ltr">FoxiMed</bdi>':'<div class="tour-section-icon" aria-hidden="true"><i class="fas '+s.icon+'"></i></div>')+
-      '<h2 id="tourTitle">'+esc(s.title)+'</h2><p class="tour-description">'+esc(s.text)+'</p>'+practiceHTML(s)+
+      '<div class="tour-copy">'+(s.welcome?'<div class="tour-brand-art"><img src="icons/fox-mark.png" alt="" width="96" height="96"></div><bdi class="tour-wordmark" dir="ltr">FoxiMed</bdi>':'<div class="tour-section-icon" aria-hidden="true"><i class="fas '+s.icon+'"></i></div>')+
+      '<h2 id="tourTitle">'+esc(s.title)+'</h2><p class="tour-description">'+esc(s.text)+'</p>'+practiceHTML(s)+'</div>'+
       '<div class="tour-progress" role="progressbar" aria-label="پیشرفت راهنما" aria-valuemin="1" aria-valuemax="'+steps.length+'" aria-valuenow="'+(step+1)+'">'+steps.map((_,i)=>'<span class="'+(i<=step?'done':'')+'"></span>').join('')+'</div>'+
       '<div class="tour-bottomline"><span class="tour-step-count">'+(step+1)+' از '+steps.length+'</span><div class="tour-navigation">'+(step?'<button type="button" id="tutorialBackBtn" class="tour-back">قبلی</button>':'')+'<button type="button" id="tutorialNextBtn" class="tour-next">'+(s.welcome?'بریم آشنا شویم':s.finish?'شروع کار':'بعدی')+' <i class="fas '+(s.finish?'fa-check':'fa-arrow-left')+'" aria-hidden="true"></i></button></div></div>';
     panel.tabIndex=-1;panel.focus({preventScroll:true});
     const pane=$(s.tab+'Tab');if(pane)pane.scrollTop=0;
     updateHeight();
   }
-  function updateHeight(){const panel=$('onboardingOverlay')?.querySelector('.tutorial-box');if(panel)document.documentElement.style.setProperty('--tour-height',Math.ceil(panel.getBoundingClientRect().height)+'px');}
+  function updateHeight(){
+    if(!active)return;
+    const panel=$('onboardingOverlay')?.querySelector('.tutorial-box');if(!panel)return;
+    const viewport=window.visualViewport, height=viewport?.height||innerHeight;
+    const inset=Math.max(0,innerHeight-height-(viewport?.offsetTop||0));
+    const style=document.documentElement.style;
+    style.setProperty('--tour-dock-bottom',(inset+8)+'px');
+    style.setProperty('--tour-dock-max',Math.max(164,Math.min(300,height*.42))+'px');
+    style.setProperty('--tour-view-top',Math.ceil(document.querySelector('.app-header').getBoundingClientRect().bottom+6)+'px');
+    style.setProperty('--tour-view-bottom',(Math.ceil(panel.getBoundingClientRect().height)+inset+20)+'px');
+  }
   function open(){
     if(active)return;
     saved={tab:AppState.currentTab||'calculator',focus:document.activeElement,scrolls:[...document.querySelectorAll('.tab-pane')].map(n=>[n,n.scrollTop]),drug:window.FoxiMedDrugReferenceView?.capture(),tools:$('toolsSearch')?.value||''};
     pending=false;active=true;step=0;const overlay=$('onboardingOverlay');overlay.style.display='flex';overlay.classList.add('visible');document.body.classList.add('foximed-tour');
     const pwa=$('pwaModal');if(pwa)pwa.style.display='none';
-    render();if(typeof ResizeObserver==='function'){resizeObserver=new ResizeObserver(updateHeight);resizeObserver.observe(overlay.querySelector('.tutorial-box'));}
+    render();if(typeof ResizeObserver==='function'){resizeObserver=new ResizeObserver(updateHeight);resizeObserver.observe(overlay.querySelector('.tutorial-box'));resizeObserver.observe(document.querySelector('.app-header'));}
   }
   async function close(){
     if(!active)return;
     const snapshot=saved;active=false;pending=false;resizeObserver?.disconnect();resizeObserver=null;clearLocks();
     const overlay=$('onboardingOverlay');overlay.classList.remove('visible','tour-welcome');overlay.style.display='none';
-    document.body.classList.remove('foximed-tour','foximed-tour-welcome');document.documentElement.style.removeProperty('--tour-height');
+    document.body.classList.remove('foximed-tour','foximed-tour-welcome');for(const key of ['--tour-dock-bottom','--tour-dock-max','--tour-view-top','--tour-view-bottom'])document.documentElement.style.removeProperty(key);
     previewTab(snapshot.tab);
     if(window.FoxiMedDrugReferenceView&&snapshot.drug)await window.FoxiMedDrugReferenceView.restore(snapshot.drug);
     const search=$('toolsSearch');if(search){search.value=snapshot.tools;search.dispatchEvent(new Event('input',{bubbles:true}));}
@@ -102,7 +112,9 @@
       if(event.shiftKey&&index<=0){event.preventDefault();nodes.at(-1)?.focus();}
       else if(!event.shiftKey&&(index<0||index===nodes.length-1)){event.preventDefault();nodes[0]?.focus();}
     });
-    window.addEventListener('resize',()=>{if(active)updateHeight();},{passive:true});
+    window.addEventListener('resize',updateHeight,{passive:true});
+    window.visualViewport?.addEventListener('resize',updateHeight,{passive:true});
+    window.visualViewport?.addEventListener('scroll',updateHeight,{passive:true});
     if(!localStorage.getItem('onboardingSeen')){pending=true;setTimeout(()=>{if(pending)open();},700);}
   }
   window.FoxiMedOnboarding={setup,get active(){return active},get pending(){return pending}};

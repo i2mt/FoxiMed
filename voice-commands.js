@@ -981,6 +981,7 @@
             setTimeout(function () {
                 const contact = document.getElementById('creatorContact');
                 if (!contact) return;
+                if (contact.tagName === 'DETAILS') contact.open = true;
                 if (contact.classList) contact.classList.add('voice-contact-highlight');
                 if (typeof contact.scrollIntoView === 'function') contact.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 setTimeout(function () {

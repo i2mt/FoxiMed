@@ -2,7 +2,7 @@
 // Whole-dataset typography/content checks; no clinical validation is implied.
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),read=n=>fs.readFileSync(path.join(root,n),'utf8'),c=vm.createContext({window:{}});
-const code=read('drug-reference.js').replace(/\}\)\(\);\s*$/, 'window.readerTest={inlineText,paragraphs,sectionText,detailHTML,repairParentheses};})();');vm.runInContext(code,c);const r=c.window.readerTest;
+const code=read('drug-reference.js').replace(/\}\)\(\);\s*$/, 'window.readerTest={inlineText,paragraphs,sectionText,detailHTML,repairParentheses,readableTitles};})();');vm.runInContext(code,c);const r=c.window.readerTest;
 for(let i=1;i<=10;i++)vm.runInContext(read(`drug-reference-book-${String(i).padStart(2,'0')}.js`),c);
 const book=c.window.FoxiMedDrugBookData,byId=new Map(book.map(d=>[d.id,d]));
 const decode=s=>s.replace(/<\/p>/g,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
@@ -23,7 +23,20 @@ for(const d of book){
  assert(!/<details[^>]*\sopen(?:[\s>])/.test(full),d.id+': topic opened automatically');
  assert(!/data-drug-comprehensive|data-drug-overview/.test(full),d.id+': obsolete second stage');
  assert.equal((full.match(/drug-reference-source-footer/g)||[]).length,1);
+ // Every retained PDF topic follows the original monograph sequence.
+ let previous=-1;
+ for(const source of d.sections){
+  const title=r.readableTitles[source.title]||source.title;
+  const marker='<summary><span>'+title.replace(/&/g,'&amp;')+'</span>';
+  const pos=full.indexOf(marker,previous+1);
+  if(pos<0){assert(!r.sectionText(source).trim()||/شناسه|اشکال دارویی/.test(source.title),d.id+': missing source topic '+source.title);continue;}
+  assert(pos>previous,d.id+': source topic reordered '+source.title);previous=pos;
+ }
+
 }
+const seed=r.detailHTML({summary:'معرفی دارو',brands:['Brand'],classFa:'رده',mechanism:['اثر'],uses:['کاربرد'],dose:['دوز'],nursing:['مراقبت'],warnings:['هشدار']});
+assert(seed.indexOf('نام‌های تجاری')<seed.indexOf('ردهٔ دارویی'),'brand names must precede classification');
+assert(seed.indexOf('<summary><span>مکانیسم اثر')<seed.indexOf('<summary><span>دوز و تجویز'),'seed pharmacology must precede dosing');
 const ed=JSON.parse(read('scripts/drug-reference-editorial.json'));
 for(const [id,fields]of Object.entries(ed.headings))for(const [field,value]of Object.entries(fields))assert.equal(byId.get(id)[field],value,id+': missing editorial correction');
 assert.equal(byId.get('hydrochloride-ciproheptadine').en,'Cyproheptadine Hydrochloride');

@@ -138,18 +138,20 @@
   function metadataHTML(d) {
     const classification = d.classFa && d.classFa !== 'رده نیازمند بازبینی' ? d.classFa : d.classEn && d.classEn !== 'Drug reference' ? d.classEn : '';
     const bits = [];
-    if (classification) bits.push('<div class="drug-reference-meta-item"><span class="drug-reference-meta-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></span><div><dt>ردهٔ دارویی</dt><dd>' + inlineText(classification) + '</dd></div></div>');
     if (d.brands?.length) bits.push('<div class="drug-reference-meta-item"><span class="drug-reference-meta-icon" aria-hidden="true"><i class="fas fa-tag"></i></span><div><dt>نام‌های تجاری</dt><dd class="drug-reference-brand-list">' + d.brands.map(name => '<bdi dir="auto" class="drug-reference-brand">' + inlineText(name) + '</bdi>').join('') + '</dd></div></div>');
+    if (classification) bits.push('<div class="drug-reference-meta-item"><span class="drug-reference-meta-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></span><div><dt>ردهٔ دارویی</dt><dd>' + inlineText(classification) + '</dd></div></div>');
     return bits.length ? '<dl class="drug-reference-metadata">' + bits.join('') + '</dl>' : '';
   }
   function detailHTML(d) {
     const topics = [];
     if (d.sourceText) {
       const forms = formsText(d);
-      if (forms) topics.push({title:'شکل‌ها و قدرت‌های دارویی',text:forms,forms:true});
       const sections = Array.isArray(d.sections) && d.sections.length ? d.sections : [{title:'متن منبع',text:d.sourceText}];
       for (const s of sections) {
-        if (/اشکال دارویی/.test(s.title) && forms) continue;
+        if (/اشکال دارویی/.test(s.title) && forms) {
+          topics.push({title:'شکل‌ها و قدرت‌های دارویی',text:forms,forms:true});
+          continue;
+        }
         let text=sectionText(s);
         if (/شناسه/.test(s.title)) {
           const lines=text.split('\n'), firstEnglish=d.sourceHeading?.en?.match(/[A-Za-z]+/)?.[0];
@@ -164,12 +166,13 @@
           }
         }
         if (text) topics.push({...s,text});
+        // Forms belong immediately after the opening identity/classification
+        // block, where they appear in the PDF. All other topics retain source order.
+        if (forms && /شناسه/.test(s.title) && !sections.some(item=>/اشکال دارویی/.test(item.title))) topics.push({title:'شکل‌ها و قدرت‌های دارویی',text:forms,forms:true});
       }
-      const order = title => /اندیکاسیون/.test(title) && !/کنترا/.test(title) ? 0 : /مراقبت/.test(title) ? 1 : /کنترا/.test(title) ? 2 : /احتیاط/.test(title) ? 3 : /شکل‌ها/.test(title) ? 4 : /عوارض/.test(title) ? 5 : /تداخل/.test(title) ? 6 : /آموزش/.test(title) ? 7 : /شناسه/.test(title) ? 10 : 8;
-      topics.sort((a,b)=>order(a.title)-order(b.title));
     } else {
       if (d.summary) topics.push({title:'معرفی',text:d.summary});
-      for (const [key,title] of [['uses','کاربردها'],['dose','دوز و تجویز'],['nursing','ملاحظات پرستاری'],['warnings','هشدارها و احتیاطات'],['mechanism','مکانیسم اثر'],['pregnancy','بارداری و شیردهی'],['renal','کلیه و کبد'],['interactions','تداخلات']]) {
+      for (const [key,title] of [['mechanism','مکانیسم اثر'],['uses','کاربردها'],['dose','دوز و تجویز'],['warnings','هشدارها و احتیاطات'],['interactions','تداخلات'],['renal','کلیه و کبد'],['nursing','ملاحظات پرستاری'],['pregnancy','بارداری و شیردهی']]) {
         const value = d[key];
         if (Array.isArray(value) && value.length) topics.push({title,text:value.map(s=>'• '+s).join('\n')});
         else if (typeof value === 'string' && value.trim()) topics.push({title,text:value});
@@ -334,6 +337,22 @@
       search();
     });
     $('drugReferenceGrid').addEventListener('click', event => {
+      const summary = event.target.closest('.drug-reference-section > summary');
+      if (summary) {
+        event.preventDefault(); event.stopPropagation();
+        const topic = summary.parentElement, pane = $('drugsTab');
+        const top = summary.getBoundingClientRect().top, opening = !topic.open;
+        const behavior = pane.style.scrollBehavior;
+        // Native exclusive details can collapse a tall preceding section and
+        // trigger smooth scroll anchoring. Apply the change once, then preserve
+        // the activated heading's viewport position for pointer and keyboard use.
+        pane.style.scrollBehavior = 'auto';
+        topic.closest('[data-drug-topics]').querySelectorAll('.drug-reference-section[open]').forEach(other => { other.open = false; });
+        topic.open = opening;
+        pane.scrollTop += summary.getBoundingClientRect().top - top;
+        pane.style.scrollBehavior = behavior;
+        return;
+      }
       const button = event.target.closest('button');
       if (!button) return;
       event.stopPropagation();
@@ -341,12 +360,6 @@
       else if (button.dataset.drugRetry) { const id=button.dataset.drugRetry; closeDrug(); void showDrug(id); }
       else if (button.dataset.drugToggle) void showDrug(button.dataset.drugToggle);
     });
-    $('drugReferenceGrid').addEventListener('toggle', event => {
-      const topic = event.target;
-      if (!topic.matches?.('.drug-reference-section') || !topic.open) return;
-      const group = topic.closest('[data-drug-topics]');
-      group?.querySelectorAll('.drug-reference-section[open]').forEach(other => { if (other !== topic) other.open = false; });
-    }, true);
     $('drugReferenceGrid').addEventListener('keydown', event => {
       if (event.key==='Escape' && state.openId) { event.stopPropagation(); closeDrug(true); }
     });

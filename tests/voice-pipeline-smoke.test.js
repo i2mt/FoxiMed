@@ -513,7 +513,8 @@ function testDeploymentWiring() {
         read('style.css').includes('.dark-mode .logo {\n    background: transparent;') &&
         read('style.css').includes('.tutorial-fox-mark {') && read('style.css').includes('width: 112px;'),
         'startup and tutorial foxes must be dominant while the header fox remains unboxed');
-    assert(index.includes('onboarding.js?v=1') && serviceWorker.includes('onboarding.js?v=1') &&
+    const onboardingAsset = index.match(/src="(onboarding\.js\?v=\d+)"/)?.[1];
+    assert(onboardingAsset && serviceWorker.includes(onboardingAsset) &&
         onboarding.includes('function previewTab(tab)') && onboarding.includes('window.initDrugReference?.()'),
         'the new tutorial must be available offline and guide real drug discovery');
     const preview = onboarding.slice(onboarding.indexOf('function previewTab(tab)'), onboarding.indexOf('function lockBackground()'));

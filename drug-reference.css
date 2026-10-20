@@ -103,3 +103,5 @@
 #drugsTab .drug-reference-orphan-bracket{unicode-bidi:isolate}
 #drugsTab .drug-reference-instruction-index{display:inline-grid;place-items:center;min-width:24px;height:24px;margin-inline-end:6px;border-radius:7px;color:var(--primary);background:var(--primary-light);font-size:11px;font-weight:700}
 @media(max-width:600px){#drugsTab .drug-reference-metadata{grid-template-columns:minmax(0,1fr);gap:8px;margin:12px}#drugsTab .drug-reference-meta-item{padding:12px}}
+/* Topic switches explicitly preserve the activated summary's position. */
+#drugsTab{overflow-anchor:none}

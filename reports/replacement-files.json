@@ -1,6 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "closed-topics-bidi-spelling-live-tour-and-voice-cache",
+  "revision": "stable-topic-scroll-source-order-settings-and-docked-tour",
   "self_hash_excluded": true,
   "files": [
     {
@@ -11,9 +11,9 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Current cumulative upload steps, asset revisions and required generated voice deployment.",
-      "bytes": 2925,
-      "sha256": "c8369039f747aac2781848c9aeb0a7d831a416de0a388f5813f7e4f458d7bbd5"
+      "reason": "Manual cumulative upload instructions, current asset revisions and verification steps.",
+      "bytes": 3150,
+      "sha256": "9ccd8e6bbad76fec03a9cbb4f6e23007c50f42b4a6fc017e9fe910fe0db77f26"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -89,27 +89,27 @@
     },
     {
       "path": "drug-reference.css",
-      "reason": "Category/brand surfaces, spaced forms rows, isolated parentheses and numbered instructions; compact 66px card headers retained.",
-      "bytes": 11817,
-      "sha256": "7daf638c8e38aff48c951b52523f99c506b27cf837e60121cd1ab20b1e7598c5"
+      "reason": "Disable native Drugs pane scroll anchoring; retain compact cards and prior reader/bidi styling.",
+      "bytes": 11924,
+      "sha256": "32a922116815794e6bb18ad0268b07150c86a6856c87ccdbc3a87a0715b87b96"
     },
     {
       "path": "drug-reference.js",
-      "reason": "Single view with every available topic initially closed; no More info stage; complete-group bidi handling, refined metadata and forms.",
-      "bytes": 25855,
-      "sha256": "55ff34de11fdfe73453494e446c99c41b2fda0ee0062641c075d294ef828af39"
+      "reason": "Preserve the activated topic heading while switching; follow PDF topic order, show brands first and keep every topic initially closed.",
+      "bytes": 26405,
+      "sha256": "07c86f94c4a88c1118bb0c9d0370b660c552c9e3b7bb46808253078050b5d7c9"
     },
     {
       "path": "index.html",
-      "reason": "Load the new onboarding script and current reader/style/index/service-worker revisions; replace the old slide markup.",
-      "bytes": 175145,
-      "sha256": "2173d486b86867af749cb90e54939b17bb20d63cc3a9ce20f4799090414d9e9e"
+      "reason": "Group Settings into initially closed native cards; version the updated reader, tutorial, styles, support command and service worker.",
+      "bytes": 176547,
+      "sha256": "179b14f4e5ad22b242cf55dea1eb2bbe911a64f3d516bbf06f0998d50337cc94"
     },
     {
       "path": "onboarding.js",
-      "reason": "Seven-step live quick tour, isolated calculation practice, explicit topic selection, preserved UI state and no voice-model preload.",
-      "bytes": 12623,
-      "sha256": "3a4893406f6e7670fb49f4806b2fb4f5c8af49a53c1856fe05289542375e52fe"
+      "reason": "Measure a separate coaching viewport, preserve visible navigation and restore app state without model preloading.",
+      "bytes": 13463,
+      "sha256": "80f65486fdd4d7ee4cda97904c59979947ec152605242f218e3ece505c03396c"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -125,21 +125,21 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current passing data/cache/reader/voice/generated-asset/UI and syntax validation results.",
-      "bytes": 909,
-      "sha256": "84a6bf1f601063f6daa804122a70ce93ae8235a17ac1391b992f32899634bd54"
+      "reason": "Current seven passing suites, syntax checks, unchanged data/PDF and measured layout/scroll results.",
+      "bytes": 1298,
+      "sha256": "cb489117c4ad2bcbb8c975b4c00da55c34124bee99eb26e7e6aec0b8866e72cb"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "reason": "Updated cumulative entry point with current outcomes and complete file inventory.",
-      "bytes": 19585,
-      "sha256": "42693d13e606bc973b8ade00324085e7c56151e3b34fca9dcb591fa9d236c1d9"
+      "reason": "Current outcome and cumulative file inventory, with earlier work retained for traceability.",
+      "bytes": 19560,
+      "sha256": "199117b803be0fddcfb58f9ec2f93ec421253a05e39a77c9ab5cb967830c9ae6"
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Current behavior, second spelling/parenthesis pass, interactive tutorial, console diagnosis and remaining deployment/source limits.",
-      "bytes": 7356,
-      "sha256": "bfa96394691584e40282c18a44b64578e550bd233c5a4776b7b6697df0adade5"
+      "reason": "Latest scroll/source-order/Settings/tutorial behavior, current test evidence and retained prior fixes/limits.",
+      "bytes": 9409,
+      "sha256": "179a59a80e2feb8a20ab8555c5c89ac7864b98ee7b798906c8c37b770b46acae"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -215,7 +215,7 @@
     },
     {
       "path": "reports/drug-reference-ui-results.json",
-      "reason": "Rendered tests for closed topics, metadata, bracket glyph placement, live tour, state restoration, keyboard and existing features.",
+      "reason": "Final rendered search/card/bidi/tutorial/state-restoration regression results.",
       "bytes": 1111,
       "sha256": "ee8da9223475cb85e3519133834b851e6fc90c72717429934a150af4c878b376"
     },
@@ -232,9 +232,14 @@
       "sha256": "b4d48e7155e636ddf12750eb6d935594f750214ee18b1fab977c61b9d4706ec7"
     },
     {
+      "path": "reports/navigation-layout-results.json",
+      "reason": "Rendered heading stability, Settings keyboard/control checks and seven-step non-overlap results on four viewport sizes.",
+      "bytes": 1536,
+      "sha256": "6ea7cd9c810fd5476143063c96bac6ac77c5e47fb10bbb141881d132410e4154"
+    },
+    {
       "path": "reports/replacement-files.json",
-      "reason": "Exact cumulative replacement inventory and integrity hashes; excludes its own hash and size.",
-      "note": "Own byte count and hash excluded to avoid self-reference."
+      "reason": "Exact cumulative replacement inventory and hashes; self hash/size omitted."
     },
     {
       "path": "script.js",
@@ -280,15 +285,15 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Current shell and book revisions; generated voice scripts cached on demand in the pinned runtime cache instead of precached at install.",
+      "reason": "Version the current reader, Settings/tutorial styles, onboarding and support command together while retaining prior cache fixes.",
       "bytes": 7484,
-      "sha256": "490d276f3d1f5d250de3dc01bad845c6294a6363fbd2178d3e0f025acd8d0c5c"
+      "sha256": "14c0d439306508b14a2fbcd6e64c1e550422ed6076264cf2c62ab93c5ef02378"
     },
     {
       "path": "style.css",
-      "reason": "Responsive welcome and live tutorial layout, practice controls, progress, keyboard focus, light/dark and short-screen support.",
-      "bytes": 240097,
-      "sha256": "5219724f3a2fcb82c9e02f73727e1fb2d425fb032332e50e0eddb27f3dac60b8"
+      "reason": "Compact Settings cards and a distinct navy tutorial dock/sidebar with separate scrollable app and guidance areas.",
+      "bytes": 243759,
+      "sha256": "3c6780ba2b58dc44bba400fc59b4d6323306ca7b5043fe0463a7f4d178ff7452"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -304,15 +309,21 @@
     },
     {
       "path": "tests/drug-reference-reader.test.js",
-      "reason": "Whole-dataset content/numeric preservation, complete-group parentheses and all-topics-closed checks.",
-      "bytes": 3679,
-      "sha256": "b9de2911639e0ccda2dc4d7959f412589c10ef3592ef2c7e51e0ed8e5fb21181"
+      "reason": "Whole-source content/numeric preservation plus all-monograph source ordering, seed mechanism order and brands-first checks.",
+      "bytes": 4728,
+      "sha256": "c6589861fbd3972eb3b5de5529a150418b1909cd970ef2f2e00ab3431f5c1a5f"
     },
     {
       "path": "tests/drug-reference-ui.test.js",
       "reason": "Mobile/desktop closed topics, keyboard, floating close, parentheses geometry, interactive tour and user-state restoration.",
       "bytes": 15854,
       "sha256": "b0f73e2947d64e7fb3380a0051a8fb548dda39ff89ff6d19e09505397f61ad4f"
+    },
+    {
+      "path": "tests/navigation-layout.test.js",
+      "reason": "Browser regressions for long topic switching, all Settings groups/controls and separated tutorial/app layouts.",
+      "bytes": 7739,
+      "sha256": "48a4c0bc191a2c5bafe679cfa7304145c29242642257b0b0de5e026e3e2f400a"
     },
     {
       "path": "tests/voice-assets.test.py",
@@ -322,9 +333,15 @@
     },
     {
       "path": "tests/voice-pipeline-smoke.test.js",
-      "reason": "Retain voice regressions while checking the new offline-capable, non-preloading tutorial wiring.",
-      "bytes": 48802,
-      "sha256": "1adbde632830d7b6533a4fee5505e329bcdd237d9ba8f36e7e9b94caa3aeaa88"
+      "reason": "Retain voice smoke tests and check matching current tutorial URLs without hard-coding a stale revision.",
+      "bytes": 48857,
+      "sha256": "031fe941b7088da3324422214d355a402e7001c4cc7a8f614fc9681c09630c9d"
+    },
+    {
+      "path": "voice-commands.js",
+      "reason": "Open the collapsed Settings contact card before the existing voice support shortcut highlights it.",
+      "bytes": 127634,
+      "sha256": "66d30bbda34b9e4d6abca5e2846e0f37cc515032022a6a5deeee23530e3f3da1"
     }
   ]
 }

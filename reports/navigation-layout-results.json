@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "scroll": [
+    {
+      "width": 320,
+      "activation": "pointer-switch",
+      "movementPx": -0.3
+    },
+    {
+      "width": 320,
+      "activation": "keyboard-close",
+      "movementPx": 0
+    },
+    {
+      "width": 390,
+      "activation": "pointer-switch",
+      "movementPx": -0.23
+    },
+    {
+      "width": 390,
+      "activation": "keyboard-close",
+      "movementPx": 0
+    },
+    {
+      "width": 1280,
+      "activation": "pointer-switch",
+      "movementPx": 0.33
+    },
+    {
+      "width": 1280,
+      "activation": "keyboard-close",
+      "movementPx": 0
+    }
+  ],
+  "settings": [
+    {
+      "width": 320,
+      "closedGroups": 9,
+      "keyboard": true,
+      "themeFontAndDefaults": true
+    },
+    {
+      "width": 390,
+      "closedGroups": 9,
+      "keyboard": true,
+      "themeFontAndDefaults": true
+    },
+    {
+      "width": 1280,
+      "closedGroups": 9,
+      "keyboard": true,
+      "themeFontAndDefaults": true
+    }
+  ],
+  "tutorial": [
+    {
+      "width": 320,
+      "height": 568,
+      "steps": 7,
+      "noContentOverlap": true,
+      "actionsVisible": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "steps": 7,
+      "noContentOverlap": true,
+      "actionsVisible": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "steps": 7,
+      "noContentOverlap": true,
+      "actionsVisible": true
+    },
+    {
+      "width": 740,
+      "height": 400,
+      "steps": 7,
+      "noContentOverlap": true,
+      "actionsVisible": true
+    }
+  ]
+}

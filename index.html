@@ -26,9 +26,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=45">
+    <link rel="stylesheet" href="style.css?v=46">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
-    <link rel="stylesheet" href="drug-reference.css?v=6">
+    <link rel="stylesheet" href="drug-reference.css?v=7">
 </head>
 <body>
 
@@ -1938,11 +1938,11 @@
                 <h3><i class="fas fa-cog"></i> تنظیمات</h3>
                 <button class="modal-close" id="closeSettings">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body settings-menu"><p class="settings-menu-hint">بخش مورد نظرتان را باز کنید</p>
 
                 <!-- User Profile -->
-                <div class="settings-group">
-    <h4><i class="fas fa-user-circle"></i> پروفایل کاربر</h4>
+                <details class="settings-group settings-card">
+    <summary><i class="fas fa-user-circle"></i> پروفایل کاربر<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
     <div class="username-field compact">
         <div class="username-input-row">
             <input type="text" id="userNameInput" class="username-input" placeholder="نام خود را وارد کنید" maxlength="30" autocomplete="off">
@@ -1950,11 +1950,11 @@
         </div>
         <!-- hint removed to save space -->
     </div>
-</div>
+</div></details>
 
                 <!-- Appearance -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-palette"></i> ظاهر</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-palette"></i> ظاهر<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
 
                     <!-- Theme mode: compact icon-only 3-way switch, same row as its label -->
                     <div class="setting-item">
@@ -2014,11 +2014,11 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div></details>
 
                 <!-- Calculator defaults -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-pump-medical"></i> پیش‌فرض ماشین‌حساب</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-pump-medical"></i> پیش‌فرض ماشین‌حساب<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <p class="settings-hint">برای هماهنگی با تجهیزات رایج بخش؛ هنگام هر محاسبه همچنان قابل تغییر است.</p>
                     <label class="setting-item setting-select-row" for="defaultInfusionMethodSelect">
                         <span>دستگاه پیش‌فرض</span>
@@ -2046,11 +2046,11 @@
                             <option value="1000">۱۰۰۰ cc</option>
                         </select>
                     </label>
-                </div>
+                </div></details>
 
                 <!-- Notifications -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-bell"></i> اعلان‌ها</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-bell"></i> اعلان‌ها<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="setting-item">
                         <span>هشدار دوز</span>
                         <label class="switch"><input type="checkbox" id="doseAlertToggle" checked><span class="slider"></span></label>
@@ -2059,11 +2059,11 @@
                         <span>هشدار سازگاری</span>
                         <label class="switch"><input type="checkbox" id="compatAlertToggle" checked><span class="slider"></span></label>
                     </div>
-                </div>
+                </div></details>
 
                 <!-- Data -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-database"></i> داده‌ها</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-database"></i> داده‌ها<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="setting-item">
                         <span>ذخیره تاریخچه</span>
                         <label class="switch"><input type="checkbox" id="saveHistoryToggle" checked><span class="slider"></span></label>
@@ -2072,32 +2072,32 @@
                         <button class="setting-btn gradient" id="clearHistoryBtn"><i class="fas fa-trash"></i> پاک کردن تاریخچه</button>
                         <button class="setting-btn gradient" id="exportDataBtn"><i class="fas fa-download"></i> خروجی گرفتن</button>
                     </div>
-                </div>
+                </div></details>
 
                 <!-- Contact -->
-                <div class="settings-group" id="creatorContact">
-                    <h4><i class="fas fa-headset"></i> ارتباط با ما</h4>
+                <details class="settings-group settings-card" id="creatorContact">
+                    <summary><i class="fas fa-headset"></i> ارتباط با ما<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <a class="setting-contact-btn" href="https://t.me/i_2mt" target="_blank" rel="noopener">
                         <i class="fab fa-telegram"></i>
                         <span>پشتیبانی و ارتباط از طریق تلگرام</span>
                         <span class="contact-handle">@i_2mt</span>
                     </a>
-                </div>
+                </div></details>
 
                 <!-- Voice recognition engine -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-wave-square"></i> تشخیص گفتار</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-wave-square"></i> تشخیص گفتار<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="voice-engine-setting">
                         <span>موتور فعال</span>
                         <strong class="voice-engine-current"><i class="fas fa-circle-check"></i> Rizeh — آفلاین</strong>
                         <span class="setting-sublabel">گزینه پایدار فعلی برای فرمان‌های فارسی فاکسی‌مد</span>
                     </div>
                     <p class="settings-hint voice-privacy-hint"><i class="fas fa-shield-halved"></i> تشخیص صدا روی همین دستگاه انجام می‌شود و فایل صوتی از گوشی خارج نمی‌شود.</p>
-                </div>
+                </div></details>
 
                 <!-- Voice Assistant Learning Log -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-microphone-lines"></i> بهبود دستیار صوتی</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-microphone-lines"></i> بهبود دستیار صوتی<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <p class="settings-hint">عبارت‌هایی که دستیار صوتی متوجه نشده روی گوشی ذخیره می‌شود تا برای بررسی ارسال شود.</p>
                     <div class="setting-item">
                         <div class="setting-label-stack">
@@ -2111,11 +2111,11 @@
                         <button class="setting-btn" id="exportVoiceLogBtn"><i class="fas fa-file-export"></i> خروجی گرفتن</button>
                         <button class="setting-btn" id="clearVoiceLogBtn"><i class="fas fa-trash"></i> پاک کردن فهرست</button>
                     </div>
-                </div>
+                </div></details>
 
                 <!-- About -->
-                <div class="settings-group">
-                    <h4><i class="fas fa-info-circle"></i> درباره</h4>
+                <details class="settings-group settings-card">
+                    <summary><i class="fas fa-info-circle"></i> درباره<i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
                     <div class="about-info">
                         <div class="about-row"><span>نسخه</span><span>5.3.2</span></div>
                         <div class="about-row"><span>تعداد داروها</span><span id="drugCount">12</span></div>
@@ -2131,7 +2131,7 @@
                         <span>Designed &amp; developed by</span>
                         <strong>Mohammad Mahdi Taghavi</strong>
                     </div>
-                </div>
+                </div></details>
 
             </div><!-- /.modal-body -->
         </div><!-- /.modal-content -->
@@ -2190,16 +2190,16 @@
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
-    <script src="drug-reference.js?v=7"></script>
-    <script src="onboarding.js?v=1"></script>
+    <script src="drug-reference.js?v=8"></script>
+    <script src="onboarding.js?v=2"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
-    <script src="voice-commands.js?v=43"></script>
+    <script src="voice-commands.js?v=44"></script>
     <script src="voice-ui.js?v=42"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=51', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=52', { updateViaCache: 'none' });
             });
         }
     </script>

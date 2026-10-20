@@ -1,22 +1,23 @@
 {
   "status": "PASS",
   "checkedOn": "2026-10-20",
-  "revision": "single-stage-closed-topics-and-live-tour",
+  "revision": "stable-topic-scroll-source-order-settings-and-docked-tour",
   "tests": {
     "drug-reference-data.test.js": "PASS",
     "drug-reference-cache.test.js": "PASS",
     "drug-reference-reader.test.js": "PASS",
     "voice-pipeline-smoke.test.js": "PASS",
     "voice-assets.test.py": "PASS",
-    "drug-reference-ui.test.js": "PASS"
+    "drug-reference-ui.test.js": "PASS",
+    "navigation-layout.test.js": "PASS"
   },
-  "javascriptSyntaxFiles": 34,
+  "javascriptSyntaxFiles": 35,
   "pythonSyntaxFiles": 4,
   "bookEntries": 827,
   "readerSections": 7004,
   "sourceBracketNormalizationSections": 1105,
   "rawSourceStringsAndIdsUnchangedFromPreviousDelivery": 827,
-  "initialDrugJavaScriptBytes": 394948,
+  "initialDrugJavaScriptBytes": 395498,
   "closedCardHeightPx": 66,
   "browserViewports": [
     1280,
@@ -34,5 +35,27 @@
     ]
   ],
   "voiceRuntimeBuildOrLiveDeploymentPerformed": false,
-  "clinicallyValidatedMonographs": 0
+  "clinicallyValidatedMonographs": 0,
+  "unchangedBookIndexPdfFiles": 12,
+  "sourceTopicOrderCheckedMonographs": 827,
+  "tutorialNoOverlapViewports": [
+    [
+      320,
+      568
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      1280,
+      900
+    ],
+    [
+      740,
+      400
+    ]
+  ],
+  "maximumTestedTopicHeadingShiftPx": 0.33,
+  "settingsCollapsedGroups": 9
 }

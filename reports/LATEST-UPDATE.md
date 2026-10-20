@@ -1,6 +1,14 @@
-# Topic reader, spelling, parentheses and onboarding update
+# Stable drug topics, grouped Settings and docked tutorial
 
 Updated 2026-10-20. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.
+
+## Latest navigation changes
+
+- Drug topic activation now closes/opens sections synchronously and compensates the Drugs pane scroll offset to keep the activated heading in place. Native smooth anchoring is disabled for this pane. Pointer and keyboard activation still use accessible native summaries; all topics start closed.
+- Imported topics follow the PDF monograph sequence. The opening identity/classification block is followed by its forms/strengths, then the source's pharmacology, indications/dose and subsequent sections in their original order. The separate forms block stays at its original position rather than being promoted to the top. Name/brand information leads the opening metadata; seed entries likewise place mechanism before dosing. No medical text or dose has been changed in this revision.
+- Settings uses nine compact, initially closed section cards. Existing control IDs, settings, themes, defaults, history/export actions and support links are preserved. The voice support shortcut explicitly opens the contact section before highlighting it. Settings groups are independent of the Tools/drug accordion history logic.
+- The tutorial adapts Foxiora v12.27's separate coaching viewport. Navy guidance uses a fixed palette distinct from the app. On phones the app scrolls above a dedicated bottom dock; desktop/landscape uses a separate side panel. Header/panel/visual-viewport measurements update the layout for resizing and keyboard changes. Welcome content scrolls inside its card while navigation remains visible. Completion/skip restores the app layout and previous discovery state.
+- New rendered regression checks use the long insulin monograph at 320/390/1280 px. Heading movement after switching is below 0.4 px; keyboard closing is stable. Settings keyboard access and theme/font/calculator-default changes pass. All seven tutorial steps reserve non-overlapping app/guidance areas at 320×568, 390×844, 1280×900 and 740×400. Geometry and results are in `navigation-layout-results.json`.
 
 ## Drug cards
 
@@ -16,7 +24,7 @@ Updated 2026-10-20. This cumulative package replaces the previously delivered ed
 - Additional display-word fixes include infusion/IV/nursing misspellings, anaphylaxis, acetaminophen/codeine, lozenges, effervescent and ropinirole. The importer uses explicit editorial rules and a boundary check to avoid replacing a partial name before a source digit.
 - Parentheses are no longer consumed by a Latin run. Balanced Persian, English, numeric and nested groups are isolated as complete groups in their own direction. Reversed paired source punctuation and the displaced acronym pattern are normalized in the display; numeric instruction markers have separate badges.
 - Whole-section checks cover 7,004 sections. Every non-parenthesis word/character and numeric sequence survives typography/reflow (apart from recognized printed label markers). 1,105 sections contain paired source bracket patterns handled by the normalizer. Browser checks verify actual opening/closing glyph positions for Persian, English, nested and unit expressions at three widths.
-- All 827 raw source strings and stable record IDs are byte-for-byte unchanged from the previous delivery. The original source PDF is unchanged.
+- All ten book chunks, the name index and the original source PDF are byte-for-byte unchanged from the previous delivery. Prior spelling changes remain included cumulatively.
 
 ## Tutorial and release note
 
@@ -39,8 +47,8 @@ The provided v49/v50 warnings mean Cache.add could not fetch three generated voi
 
 Current data, reader, cache, voice-source/worker and generated-asset fixture checks are recorded in `FINAL-CHECKS.json`. Rendered Chromium checks cover 1280/390/320 widths; additional visual QA covers dark 320 px and all tutorial actions at 320×568 and 1280×900. Font Awesome 6.4.0 is supplied locally to the QA browser; Persian/Latin text uses installed fallbacks because the external font CDN is blocked. No browser screenshots are included in the ZIP.
 
-The drug startup payload is 394,948 bytes, versus 8,035,317 bytes in the supplied original snapshot. Initial results remain capped at 40 with no book requests. Detail chunks load on first opening a drug and are cached by revision. Offline details still require a previous online opening of the corresponding chunk.
+The drug startup payload is 395,498 bytes, versus 8,035,317 bytes in the supplied original snapshot. Initial results remain capped at 40 with no book requests. Detail chunks load on first opening a drug and are cached by revision. Offline details still require a previous online opening of the corresponding chunk.
 
-Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=45`, `script.js?v=52`, `drug-reference.css?v=6`, `drug-reference.js?v=7`, `drug-reference-index.js?v=3`, `onboarding.js?v=1`, `service-worker.js?v=51`, and lazy book chunks `?v=4`.
+Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=46`, `script.js?v=52`, `drug-reference.css?v=7`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=2`, `service-worker.js?v=52`, and lazy book chunks `?v=4`.
 
 Clinical scope remains limited: the 2008 source has not been fully clinically validated. Incomplete or incorrectly scoped punctuation/fractions/tables in the source cannot safely be reconstructed from display text alone. Unpaired source brackets remain isolated and visible instead of guessed. Existing duplicate headings, unresolved metadata and Abciximab source issues remain in the review queue. No new warning/source banners were added to cards.
