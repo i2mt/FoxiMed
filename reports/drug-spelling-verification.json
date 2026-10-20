@@ -1,0 +1,1109 @@
+{
+  "checkedOn": "2026-10-19",
+  "evidence": [
+    {
+      "id": "chacoal-activated",
+      "term": "charcoal",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=charcoal&search=2",
+      "rxnormIds": [
+        "2296"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "complex-prithrombin-activated",
+      "term": "prothrombin complex",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=prothrombin+complex&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "hydrochloride-amamtadine",
+      "term": "amantadine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amantadine+hydrochloride&search=2",
+      "rxnormIds": [
+        "282415"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydroxide-alumium",
+      "term": "aluminum hydroxide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aluminum+hydroxide&search=2",
+      "rxnormIds": [
+        "612"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "r-besylate-amilodipine",
+      "term": "amlodipine besylate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amlodipine+besylate&search=2",
+      "rxnormIds": [
+        "104416"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "saliva-artifical",
+      "term": "artificial saliva",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=artificial+saliva&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "tears-artifical",
+      "term": "artificial tears",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=artificial+tears&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "asparginase",
+      "term": "asparaginase",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=asparaginase&search=2",
+      "rxnormIds": [
+        "1156"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sulfate-atropin",
+      "term": "atropine sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=atropine+sulfate&search=2",
+      "rxnormIds": [
+        "153971"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sulfat-barium",
+      "term": "barium sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=barium+sulfate&search=2",
+      "rxnormIds": [
+        "1331"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "biperioen",
+      "term": "biperiden",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=biperiden&search=2",
+      "rxnormIds": [
+        "1589"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "salmon-cacitonin",
+      "term": "calcitonin salmon",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=calcitonin+salmon&search=2",
+      "rxnormIds": [
+        "36118"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "r-caroplatin",
+      "term": "carboplatin",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=carboplatin&search=2",
+      "rxnormIds": [
+        "40048"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sodium-cefaazolin",
+      "term": "cefazolin sodium",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cefazolin+sodium&search=2",
+      "rxnormIds": [
+        "203171"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "cafuroxime",
+      "term": "cefuroxime",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cefuroxime&search=2",
+      "rxnormIds": [
+        "2194"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrochloride-citirizine",
+      "term": "cetirizine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cetirizine+hydrochloride&search=2",
+      "rxnormIds": [
+        "203150"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "chlroamphenicol-systemic",
+      "term": "chloramphenicol",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chloramphenicol&search=2",
+      "rxnormIds": [
+        "2348"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "chlropropamide",
+      "term": "chlorpropamide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chlorpropamide&search=2",
+      "rxnormIds": [
+        "2404"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "clozapin",
+      "term": "clozapine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=clozapine&search=2",
+      "rxnormIds": [
+        "2626"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "deferoxamin-mesylate",
+      "term": "deferoxamine mesylate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=deferoxamine+mesylate&search=2",
+      "rxnormIds": [
+        "3132"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "maleate-dexehlorpheniramine",
+      "term": "dexchlorpheniramine maleate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dexchlorpheniramine+maleate&search=2",
+      "rxnormIds": [
+        "54828"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "dextrose-d-gluose",
+      "term": "dextrose",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dextrose&search=2",
+      "rxnormIds": [
+        "4850"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "diazpam",
+      "term": "diazepam",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diazepam&search=2",
+      "rxnormIds": [
+        "3322"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrinate-dimen",
+      "term": "dimenhydrinate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dimenhydrinate&search=2",
+      "rxnormIds": [
+        "3444"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "dimercapol",
+      "term": "dimercaprol",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dimercaprol&search=2",
+      "rxnormIds": [
+        "3445"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "compound-diphenhydramin",
+      "term": "diphenhydramine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diphenhydramine&search=2",
+      "rxnormIds": [
+        "3498"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrochlorid-diphenhydramine",
+      "term": "diphenhydramine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diphenhydramine+hydrochloride&search=2",
+      "rxnormIds": [
+        "1362"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "equine-antitoxin-diphteria",
+      "term": "diphtheria antitoxin",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diphtheria+antitoxin&search=2",
+      "rxnormIds": [
+        "3510"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "diophteria-and-tetanus-toxoids-adsorbed",
+      "term": "diphtheria tetanus",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diphtheria+tetanus&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "dipyridamol",
+      "term": "dipyridamole",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dipyridamole&search=2",
+      "rxnormIds": [
+        "3521"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "docetexel",
+      "term": "docetaxel",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=docetaxel&search=2",
+      "rxnormIds": [
+        "72962"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "droperidel",
+      "term": "droperidol",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=droperidol&search=2",
+      "rxnormIds": [
+        "3648"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "drotrecoyin-alfa-activated",
+      "term": "drotrecogin alfa",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=drotrecogin+alfa&search=2",
+      "rxnormIds": [
+        "352374"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "dydrogestrone",
+      "term": "dydrogesterone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dydrogesterone&search=2",
+      "rxnormIds": [
+        "3706"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "erythropietin-epoetin-alfa",
+      "term": "epoetin alfa",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=epoetin+alfa&search=2",
+      "rxnormIds": [
+        "105694"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "phosphate-sodium-estramutine",
+      "term": "estramustine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=estramustine&search=2",
+      "rxnormIds": [
+        "4089"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "fentanyle-as-citrate",
+      "term": "fentanyl citrate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fentanyl+citrate&search=2",
+      "rxnormIds": [
+        "142436"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "acetat-fludrocortisone",
+      "term": "fludrocortisone acetate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fludrocortisone+acetate&search=2",
+      "rxnormIds": [
+        "165516"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sodium-fluorecein",
+      "term": "fluorescein sodium",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fluorescein+sodium&search=2",
+      "rxnormIds": [
+        "57789"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "fluride-as-sodium-salt",
+      "term": "sodium fluoride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sodium+fluoride&search=2",
+      "rxnormIds": [
+        "9873"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "alfa-follitropine",
+      "term": "follitropin alfa",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=follitropin+alfa&search=2",
+      "rxnormIds": [
+        "386938"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "beta-follitropn",
+      "term": "follitropin beta",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=follitropin+beta&search=2",
+      "rxnormIds": [
+        "25357"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "gancyclovir",
+      "term": "ganciclovir",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ganciclovir&search=2",
+      "rxnormIds": [
+        "4678"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "halotane",
+      "term": "halothane",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=halothane&search=2",
+      "rxnormIds": [
+        "5095"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "heporin-sodium",
+      "term": "heparin sodium",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=heparin+sodium&search=2",
+      "rxnormIds": [
+        "314659",
+        "9877"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrocortisone-systemin",
+      "term": "hydrocortisone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydrocortisone&search=2",
+      "rxnormIds": [
+        "5492"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "ophthalmic-acetate-hydrocoartisone",
+      "term": "hydrocortisone acetate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydrocortisone+acetate&search=2",
+      "rxnormIds": [
+        "27197"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrogen-peroaide-saline-solution",
+      "term": "hydrogen peroxide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydrogen+peroxide&search=2",
+      "rxnormIds": [
+        "5499"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sulfate-hydroxyehloroauine",
+      "term": "hydroxychloroquine sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydroxychloroquine+sulfate&search=2",
+      "rxnormIds": [
+        "153972"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "ophthalmic-idoxurine",
+      "term": "idoxuridine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=idoxuridine&search=2",
+      "rxnormIds": [
+        "5653"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "insulin-injection-human-reyular-insulin",
+      "term": "regular human insulin",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=regular+human+insulin&search=2",
+      "rxnormIds": [
+        "253182"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "nph-isephane-insulin",
+      "term": "insulin isophane",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=insulin+isophane&search=2",
+      "rxnormIds": [
+        "1605101",
+        "253181"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "ketocanazole-systemic",
+      "term": "ketoconazole",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ketoconazole&search=2",
+      "rxnormIds": [
+        "6135"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "p-ledocaine",
+      "term": "lidocaine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lidocaine&search=2",
+      "rxnormIds": [
+        "6387"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "lovastatine",
+      "term": "lovastatin",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lovastatin&search=2",
+      "rxnormIds": [
+        "6472"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "manitol",
+      "term": "mannitol",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mannitol&search=2",
+      "rxnormIds": [
+        "6628"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrochloride-maprotilin",
+      "term": "maprotiline hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=maprotiline+hydrochloride&search=2",
+      "rxnormIds": [
+        "203126"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "mebendazol",
+      "term": "mebendazole",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mebendazole&search=2",
+      "rxnormIds": [
+        "6672"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "acid-mefnamic",
+      "term": "mefenamic acid",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mefenamic+acid&search=2",
+      "rxnormIds": [
+        "6693"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrocholoride-metformine",
+      "term": "metformin hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metformin+hydrochloride&search=2",
+      "rxnormIds": [
+        "235743"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "blue-methylen",
+      "term": "methylene blue",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=methylene+blue&search=2",
+      "rxnormIds": [
+        "6878"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "methylprenisolone",
+      "term": "methylprednisolone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=methylprednisolone&search=2",
+      "rxnormIds": [
+        "6902"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "methyltestostrone",
+      "term": "methyltestosterone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=methyltestosterone&search=2",
+      "rxnormIds": [
+        "6904"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrochoride-mexiletine",
+      "term": "mexiletine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mexiletine+hydrochloride&search=2",
+      "rxnormIds": [
+        "142138"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "milrinine",
+      "term": "milrinone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=milrinone&search=2",
+      "rxnormIds": [
+        "52769"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "mitotan",
+      "term": "mitotane",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mitotane&search=2",
+      "rxnormIds": [
+        "7004"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "chloride-mivacurim",
+      "term": "mivacurium",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mivacurium&search=2",
+      "rxnormIds": [
+        "30077"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "monobenzon",
+      "term": "monobenzone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=monobenzone&search=2",
+      "rxnormIds": [
+        "17145"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "mofetil-myocophenolate",
+      "term": "mycophenolate mofetil",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=mycophenolate+mofetil&search=2",
+      "rxnormIds": [
+        "68149"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hydrochloride-naloxane",
+      "term": "naloxone hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=naloxone+hydrochloride&search=2",
+      "rxnormIds": [
+        "203192"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "antazoline-naphazolin",
+      "term": "naphazoline",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=naphazoline&search=2",
+      "rxnormIds": [
+        "7247"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "niclosomide",
+      "term": "niclosamide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=niclosamide&search=2",
+      "rxnormIds": [
+        "7402"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "omeperazole",
+      "term": "omeprazole",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=omeprazole&search=2",
+      "rxnormIds": [
+        "7646"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "phoshate-oseltamivir",
+      "term": "oseltamivir phosphate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=oseltamivir+phosphate&search=2",
+      "rxnormIds": [
+        "259275"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "oxacar-bazepin",
+      "term": "oxcarbazepine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=oxcarbazepine&search=2",
+      "rxnormIds": [
+        "32624"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "pegintrferonalfa-2a",
+      "term": "peginterferon alfa-2a",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=peginterferon+alfa-2a&search=2",
+      "rxnormIds": [
+        "120608"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "peginterferonalfa-2b",
+      "term": "peginterferon alfa-2b",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=peginterferon+alfa-2b&search=2",
+      "rxnormIds": [
+        "253453"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "penicilin-g-g",
+      "term": "penicillin G",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=penicillin+G&search=2",
+      "rxnormIds": [
+        "7980"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "phytonadion",
+      "term": "phytonadione",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=phytonadione&search=2",
+      "rxnormIds": [
+        "8308"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "bramide-pipecuronium",
+      "term": "pipecuronium",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=pipecuronium&search=2",
+      "rxnormIds": [
+        "33742"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "chloride-potasium",
+      "term": "potassium chloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=potassium+chloride&search=2",
+      "rxnormIds": [
+        "8591"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "progestrone",
+      "term": "progesterone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=progesterone&search=2",
+      "rxnormIds": [
+        "8727"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "tartrate-rivastigmin",
+      "term": "rivastigmine tartrate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=rivastigmine+tartrate&search=2",
+      "rxnormIds": [
+        "994808"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sodium-sacharin",
+      "term": "saccharin sodium",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=saccharin+sodium&search=2",
+      "rxnormIds": [
+        "281678"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sufide-selenium",
+      "term": "selenium sulfide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=selenium+sulfide&search=2",
+      "rxnormIds": [
+        "36345"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "hyaloronate-sodium",
+      "term": "sodium hyaluronate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sodium+hyaluronate&search=2",
+      "rxnormIds": [
+        "42892"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "salfate-tetradecyl-sodium",
+      "term": "sodium tetradecyl sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sodium+tetradecyl+sulfate&search=2",
+      "rxnormIds": [
+        "9913"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "spironolaction",
+      "term": "spironolactone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=spironolactone&search=2",
+      "rxnormIds": [
+        "9997"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "strptokinase",
+      "term": "streptokinase",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=streptokinase&search=2",
+      "rxnormIds": [
+        "10106"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "sulfasalazin",
+      "term": "sulfasalazine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sulfasalazine&search=2",
+      "rxnormIds": [
+        "9524"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "tamaxifen-citrate",
+      "term": "tamoxifen citrate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=tamoxifen+citrate&search=2",
+      "rxnormIds": [
+        "40137"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "terbutalinesufate",
+      "term": "terbutaline sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=terbutaline+sulfate&search=2",
+      "rxnormIds": [
+        "10369"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "timololmaleate",
+      "term": "timolol maleate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=timolol+maleate&search=2",
+      "rxnormIds": [
+        "42933"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "tobramycinsulfate",
+      "term": "tobramycin sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=tobramycin+sulfate&search=2",
+      "rxnormIds": [
+        "7276"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "tranylcyprominesulfate",
+      "term": "tranylcypromine sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=tranylcypromine+sulfate&search=2",
+      "rxnormIds": [
+        "91119"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "triiamcinolonea-cetonide-topical",
+      "term": "triamcinolone acetonide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=triamcinolone+acetonide&search=2",
+      "rxnormIds": [
+        "10761"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "vancomycin-hydrochlorid",
+      "term": "vancomycin hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=vancomycin+hydrochloride&search=2",
+      "rxnormIds": [
+        "66955"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "venlafaxin-hcl-r",
+      "term": "venlafaxine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=venlafaxine+hydrochloride&search=2",
+      "rxnormIds": [
+        "235988"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "vidarabin-monohydrate",
+      "term": "vidarabine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=vidarabine&search=2",
+      "rxnormIds": [
+        "11194"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "vincristine-sulfat",
+      "term": "vincristine sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=vincristine+sulfate&search=2",
+      "rxnormIds": [
+        "11203"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "zinc-salfate",
+      "term": "zinc sulfate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=zinc+sulfate&search=2",
+      "rxnormIds": [
+        "39954"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "decongestant-antihistamin",
+      "term": "antihistamine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=antihistamine&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "sr-decongestant-antihistauin",
+      "term": "antihistamine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=antihistamine&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "betametazone-disodium-phosphate-ophthalmic-otic",
+      "term": "betamethasone sodium phosphate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=betamethasone+sodium+phosphate&search=2",
+      "rxnormIds": [
+        "203220"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "systemic-betametasone",
+      "term": "betamethasone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=betamethasone&search=2",
+      "rxnormIds": [
+        "1514"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "blosynthesis-somatropine-somatropine",
+      "term": "somatropin",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=somatropin&search=2",
+      "rxnormIds": [
+        "61148"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "tartarate-brimonidine",
+      "term": "brimonidine tartrate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=brimonidine+tartrate&search=2",
+      "rxnormIds": [
+        "39171"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "buprenorphin-hcl-naloxone-hcl",
+      "term": "buprenorphine naloxone",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=buprenorphine+naloxone&search=2",
+      "rxnormIds": [
+        "352364"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "acetate-busereline",
+      "term": "buserelin",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=buserelin&search=2",
+      "rxnormIds": [
+        "1825"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "cabergolin",
+      "term": "cabergoline",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cabergoline&search=2",
+      "rxnormIds": [
+        "47579"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "carbamid-peroxide",
+      "term": "carbamide peroxide",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=carbamide+peroxide&search=2",
+      "rxnormIds": [
+        "47686"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "co-amoxiclav-amoxicillin-and-potassium-clavulante",
+      "term": "amoxicillin clavulanate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amoxicillin+clavulanate&search=2",
+      "rxnormIds": [
+        "19711"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "dexpanthenol-pantothenic-acid",
+      "term": "dexpanthenol",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=dexpanthenol&search=2",
+      "rxnormIds": [
+        "22701"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "flurazepam-as-hcl",
+      "term": "flurazepam hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=flurazepam+hydrochloride&search=2",
+      "rxnormIds": [
+        "71484"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "fluoxetine-az-hcl",
+      "term": "fluoxetine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fluoxetine+hydrochloride&search=2",
+      "rxnormIds": [
+        "227224"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "levarterenol-norepinephrin-bitartrate",
+      "term": "norepinephrine bitartrate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=norepinephrine+bitartrate&search=2",
+      "rxnormIds": [
+        "7508"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "molgramostin-gmcsf",
+      "term": "molgramostim",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=molgramostim&search=2",
+      "rxnormIds": [
+        "70161"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "r-salicylat-menthol",
+      "term": "menthol salicylate",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=menthol+salicylate&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "meningococal-vaccine-killed",
+      "term": "meningococcal vaccine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=meningococcal+vaccine&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "rabies-vaccine-adsor-bed",
+      "term": "rabies vaccine",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=rabies+vaccine&search=2",
+      "rxnormIds": [],
+      "status": "paired-source spelling review; no RxNorm match"
+    },
+    {
+      "id": "thiaminemcl-vitaminb",
+      "term": "thiamine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=thiamine+hydrochloride&search=2",
+      "rxnormIds": [
+        "235355"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "tolazoline-mcl",
+      "term": "tolazoline hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=tolazoline+hydrochloride&search=2",
+      "rxnormIds": [
+        "235450"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "obidonice-chloride",
+      "term": "obidoxime",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=obidoxime&search=2",
+      "rxnormIds": [
+        "42826"
+      ],
+      "status": "RxNorm term match"
+    },
+    {
+      "id": "pethioinehcl",
+      "term": "meperidine hydrochloride",
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=meperidine+hydrochloride&search=2",
+      "rxnormIds": [
+        "103755"
+      ],
+      "status": "RxNorm term match"
+    }
+  ],
+  "bodySpellingReferences": [
+    "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0caedb97-56fd-4ec0-bfb2-c7683b8f5f1b",
+    "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/atrial-fibrillation/"
+  ]
+}

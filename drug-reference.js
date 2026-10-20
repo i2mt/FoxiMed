@@ -39,24 +39,84 @@
       d._categories = Object.keys(categoryNames).filter(key => d.category === key || categoryNames[key].some(name => genericName.includes(name)));
     }
   }
-  function section(title, content) {
-    return '<section class="drug-reference-section"><h3>' + esc(title) + '</h3>' + content + '</section>';
+  // Isolate complete Latin / numeric runs within an explicitly RTL paragraph.
+  // This changes visual direction only: never reverse, round or rewrite doses.
+  function inlineText(value) {
+    const run = /[A-Za-z0-9۰-۹٠-٩µμ][A-Za-z0-9۰-۹٠-٩µμ%٪°²³+.,٫٬/:() \t\n\-−–]*/g;
+    let out = '', cursor = 0;
+    for (const match of String(value).matchAll(run)) {
+      const text = match[0];
+      const measured = /[0-9۰-۹٠-٩]/.test(text) && text.trim().length <= 32;
+      // Keep short dose/unit expressions together. Longer English phrases can
+      // wrap naturally, so narrow screens never gain horizontal scrolling.
+      const inner = esc(text).replace(/([0-9۰-۹٠-٩])(?=[A-Za-zµμ])/g, '$1<span class="drug-reference-unit-gap" aria-hidden="true"></span>');
+      out += esc(String(value).slice(cursor, match.index)) + '<bdi dir="ltr" class="drug-reference-ltr' + (measured ? ' drug-reference-measure' : '') + '">' + inner + '</bdi>';
+      cursor = match.index + match[0].length;
+    }
+    return out + esc(String(value).slice(cursor));
   }
-  function paragraphs(value) { return '<p class="drug-reference-source-text" dir="auto">' + esc(value) + '</p>'; }
+  function paragraphs(value, preserveLines = false) {
+    const blocks = []; let lines = [], type = 'paragraph';
+    const flush = () => {
+      if (!lines.length) return;
+      const text = lines.join(' ').trim();
+      const direction = /[\u0600-\u06ff]/.test(text) ? 'rtl' : 'ltr';
+      blocks.push('<p class="drug-reference-source-text drug-reference-' + type + '" dir="' + direction + '">' + inlineText(text) + '</p>');
+      lines = [];
+    };
+    for (let line of String(value || '').split('\n')) {
+      line = line.trim();
+      if (!line) { flush(); continue; }
+      if (preserveLines) flush();
+      const bullet = /^[•♦◊□]/.test(line);
+      const numbered = /^[(（]?[۰-۹٠-٩0-9]{1,2}[)）]/.test(line) || /^[(（][۰-۹٠-٩0-9]{1,2}/.test(line);
+      const metadata = /^[X?4]*\s*(?:رده بندی|نام تجاری|اشکال دارویی)/.test(line);
+      if (metadata) line = line.replace(/^[X?4]\s*/, '');
+      const form = /^\?\s*[A-Za-z]/.test(line);
+      if (form) line = line.replace(/^\?\s*/, '• ');
+      const system = /^:?(?:CNS|CV|GI|GU|EENT|Hem|Resp|Derm|Other|other)\b/.test(line) || /:(?:CNS|CV|GI|GU|EENT|Hem|Resp|Derm)$/.test(line);
+      if (bullet || numbered || system || metadata || form) flush();
+      if (!lines.length) type = bullet || numbered || form ? 'item' : system || metadata ? 'system' : 'paragraph';
+      // A PDF line break is a typesetting boundary, not a new sentence.
+      lines.push(line);
+    }
+    flush();
+    return '<div class="drug-reference-prose">' + blocks.join('') + '</div>';
+  }
+  const readableTitles = {
+    'اندیکاسیون، راه مصرف و دوز':'کاربرد، راه مصرف و دوز',
+    'کنترا اندیکاسیون':'موارد منع مصرف',
+    'فارماکودینامیک و فارماکوکینتیک':'مکانیسم اثر و سرنوشت دارو در بدن',
+    'شناسه و رده‌بندی':'شناسه، رده‌بندی و بارداری',
+    'شیردهی و کودکان':'شیردهی و کودکان'
+  };
+  function section(title, content, options = {}) {
+    const display = readableTitles[title] || title;
+    const tone = /منع|کنترا|احتیاط|هشدار|مسمومیت/.test(title) ? ' safety' : '';
+    return '<details name="drug-reference-topic" class="drug-reference-section' + tone + '"' + (options.open ? ' open' : '') + '><summary><span>' + esc(display) + '</span><i class="fas fa-chevron-down" aria-hidden="true"></i></summary><div class="drug-reference-section-content">' + content + '</div></details>';
+  }
+  function sectionText(s) {
+    // Remove only a repeated printed label, never the text following its colon.
+    const lines = s.text.split('\n');
+    const label = /^[ ?4Xs}♦◊□⊡△⋆•]*(?:اندیکاسیون[^:：]*|کنترا اندیکاسیون|موارد احتیاط|عوارض جانبی|عارضه جانبی|تداخلات دارویی|مسمومیت و درمان|مراقبت های پرستاری و توجهات ویژه|آموزش به بیمار و خانواده|فارماکودینامیک و فارماکوکینتیک|اشکال دارویی موجود|مصرف در شیر دهی و کودکان|شرایط نگهداری)\s*[:：]\s*/;
+    lines[0] = lines[0].replace(label, '');
+    if (/^:\s*/.test(lines[0]) && lines[0].length < 110 && /اندیکاسیون/.test(lines[0]) && /دوز/.test(lines[0])) lines[0] = '';
+    return lines.join('\n').trim().replace(/\)\(\s*([A-Za-z][A-Za-z0-9/.-]*)/g, '($1)');
+  }
   function detailHTML(d) {
     if (d.sourceText) {
-      return '<div class="drug-reference-detail-body">' + (Array.isArray(d.sections) && d.sections.length ? d.sections : [{title:'متن منبع',text:d.sourceText}]).map(s => section(s.title, paragraphs(s.text))).join('') + '</div>';
+      const sections = Array.isArray(d.sections) && d.sections.length ? d.sections : [{title:'متن منبع',text:d.sourceText}];
+      const preferred = sections.findIndex(s => /اندیکاسیون/.test(s.title));
+      return '<div class="drug-reference-reader-heading"><span class="drug-reference-eyebrow">اطلاعات جامع</span><p>بخش مورد نظر را باز کنید</p></div><div class="drug-reference-detail-body" data-drug-topics>' + sections.map((s,i) => section(s.title, paragraphs(sectionText(s), /اشکال|شناسه/.test(s.title)), {open:i===(preferred<0?0:preferred)})).join('') + '</div>';
     }
-
     const content = [];
-    if (d.brands?.length) content.push(section('نام‌های تجاری', paragraphs(d.brands.join('، '))));
-    if (d.summary) content.push(section('معرفی', paragraphs(d.summary)));
+    if (d.summary) content.push(section('معرفی', paragraphs(d.summary), {open:true}));
     for (const [key,title] of [['uses','کاربردها'],['mechanism','مکانیسم اثر'],['dose','دوز و تجویز'],['warnings','هشدارها و احتیاطات'],['nursing','ملاحظات پرستاری'],['pregnancy','بارداری و شیردهی'],['renal','کلیه و کبد'],['interactions','تداخلات']]) {
       const value = d[key];
-      if (Array.isArray(value) && value.length) content.push(section(title, '<ul>' + value.map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>'));
+      if (Array.isArray(value) && value.length) content.push(section(title, paragraphs(value.map(s=>'• '+s).join('\n'))));
       else if (typeof value === 'string' && value.trim()) content.push(section(title, paragraphs(value)));
     }
-    return '<div class="drug-reference-detail-body">' + content.join('') + '</div>';
+    return '<div class="drug-reference-detail-body" data-drug-topics>' + content.join('') + '</div>';
   }
   function loadDetail(d) {
     if (state.details.has(d.id)) return Promise.resolve(state.details.get(d.id));
@@ -72,7 +132,7 @@
           resolve();
         };
         const timeout = setTimeout(() => { script.onload = script.onerror = null; finish(new Error('Timeout')); }, 15000);
-        script.src = d.chunk + '?v=2'; script.async = true;
+        script.src = d.chunk + '?v=3'; script.async = true;
         script.onload = () => finish();
         script.onerror = () => finish(new Error('Network or offline error'));
         document.head.appendChild(script);
@@ -98,7 +158,7 @@
     return '<article class="drug-reference-card" data-drug-card="' + esc(d.id) + '">' +
       '<button type="button" class="accordion-header drug-reference-card-main" data-drug-toggle="' + esc(d.id) + '" aria-expanded="false" aria-controls="drug-detail-' + esc(d.id) + '">' +
       '<span class="accordion-icon-wrap" style="background:' + background + '"><i class="fas ' + esc(d.icon || 'fa-pills') + '" aria-hidden="true"></i></span>' +
-      '<span class="accordion-title-wrap"><span class="accordion-title" dir="auto" title="' + esc(heading) + '">' + esc(heading) + '</span>' +
+      '<span class="accordion-title-wrap"><span class="accordion-title" dir="' + (/[\u0600-\u06ff]/.test(heading) ? 'rtl' : 'ltr') + '" title="' + esc(heading) + '">' + inlineText(heading) + '</span>' +
       (d.en && d.en !== heading ? '<span class="accordion-sub" lang="en" dir="ltr" title="' + esc(d.en) + '">' + esc(d.en) + '</span>' : '') + '</span>' +
       '<i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i></button>' +
       '<div class="drug-reference-expanded" id="drug-detail-' + esc(d.id) + '" hidden></div></article>';
@@ -106,13 +166,21 @@
   function sourceFooter(d) {
     if (!d.sourceText) return '<p class="drug-reference-source-footer">منبع اختصاصی برای این مدخل ثبت نشده است.</p>';
     const pages = Array.isArray(d.sourcePdfPages) ? d.sourcePdfPages : [];
-    return '<p class="drug-reference-source-footer">منبع: داروهای ژنریک ایران' + esc(pages.length ? ' · صفحات PDF: ' + pages.join('، ') : '') +
+    return '<p class="drug-reference-source-footer" dir="rtl">منبع: داروهای ژنریک ایران' + (pages.length ? ' · صفحات PDF: ' + pages.map(n => '<bdi dir="ltr">' + esc(n) + '</bdi>').join('، ') : '') +
       (pages.length ? ' · <a href="drug-reference-source.pdf#page=' + pages[0] + '" target="_blank" rel="noopener">نسخهٔ اصلی</a>' : '') + '.</p>';
+  }
+  function tidyForms(value) {
+    return value.split('\n').map(line => {
+      if (!/[\u0600-\u06ef]/.test(line) && /^\)\s*\?\s*[A-Za-z]/.test(line) && line.includes('(')) {
+        return '• ' + line.replace(/^\)\s*\?\s*/, '').trim() + ')';
+      }
+      return line.replace(/^\?\s*(?=[A-Za-z])/, '• ');
+    }).join('\n');
   }
   function formsText(d) {
     const sections = Array.isArray(d.sections) ? d.sections : [];
     const explicit = sections.find(s => normalize(s.title).includes('اشکالدارویی'));
-    if (explicit) return explicit.text;
+    if (explicit) return tidyForms(sectionText(explicit));
     const identity = sections.find(s => normalize(s.title).includes('شناسه'));
     if (!identity) return '';
     const lines = identity.text.split('\n');
@@ -123,18 +191,23 @@
       if (/فارماکو|اندیکاسیون|کنترا|موارد احتیاط|مراقبت|عارضه|عوارض|تداخل|شیر\s*دهی|بارداری|حاملگی|آموزش|مسمومیت/.test(line)) break;
       formLines.push(line);
     }
-    return formLines.join('\n').replace(/[4△]?\s*اشکال\s*دارویی\s*موجود\s*[:：]?/g, '').trim();
+    return tidyForms(formLines.join('\n').replace(/[4△]?\s*اشکال\s*دارویی\s*موجود\s*[:：]?/g, '').trim());
   }
   function overviewHTML(d) {
     const content = [];
     const classification = d.classFa && d.classFa !== 'رده نیازمند بازبینی' ? d.classFa : d.classEn && d.classEn !== 'Drug reference' ? d.classEn : '';
     const metadata = [];
-    if (classification) metadata.push('<div><dt>ردهٔ دارویی</dt><dd dir="auto">' + esc(classification) + '</dd></div>');
-    if (d.brands?.length) metadata.push('<div><dt>نام‌های تجاری</dt><dd dir="auto">' + esc(d.brands.join(' · ')) + '</dd></div>');
+    if (classification) metadata.push('<div><dt>ردهٔ دارویی</dt><dd dir="rtl">' + inlineText(classification) + '</dd></div>');
+    if (d.brands?.length) metadata.push('<div><dt>نام‌های تجاری</dt><dd dir="ltr">' + inlineText(d.brands.join(' · ')) + '</dd></div>');
     if (metadata.length) content.push('<dl class="drug-reference-overview-meta">' + metadata.join('') + '</dl>');
     if (d.sourceText) {
       const forms = formsText(d);
-      if (forms) content.push(section('شکل‌ها و قدرت‌های دارویی', paragraphs(forms)));
+      if (forms) {
+        const formBody = paragraphs(forms.replace(/^\?\s*/gm, '• '), true);
+        content.push(forms.split('\n').filter(Boolean).length > 6
+          ? section('شکل‌ها و قدرت‌های دارویی', formBody)
+          : '<div class="drug-reference-forms"><h3>شکل‌ها و قدرت‌های دارویی</h3>' + formBody + '</div>');
+      }
       // First level contains complete source sections for identification,
       // indications and key precautions. Pregnancy/lactation, kinetics and
       // the remaining monograph stay in the second level.
@@ -142,16 +215,16 @@
       content.push(...important.map(s => {
         const lines = s.text.split('\n');
         const pregnancy = lines.findIndex(line => /^[\s♦◊□⊡?s]*(?:مصرف\s*در\s*(?:شیر|بارداری|حاملگی)|رده\s*بندی\s*مصرف\s*در\s*حاملگی|بارداری\s*و\s*شیر)/.test(line));
-        return section(s.title, paragraphs((pregnancy < 0 ? lines : lines.slice(0,pregnancy)).join('\n')));
+        return section(s.title, paragraphs(sectionText({text:(pregnancy < 0 ? lines : lines.slice(0,pregnancy)).join('\n')})), {open:/اندیکاسیون/.test(s.title) && !/کنترا/.test(s.title)});
       }));
     } else {
-      if (d.summary) content.push(section('معرفی', paragraphs(d.summary)));
+      if (d.summary) content.push(section('معرفی', paragraphs(d.summary), {open:true}));
       for (const [key,title] of [['uses','کاربردها'],['warnings','هشدارها و احتیاطات'],['nursing','ملاحظات پرستاری']]) {
-        if (Array.isArray(d[key]) && d[key].length) content.push(section(title, '<ul>' + d[key].map(s => '<li>' + esc(s) + '</li>').join('') + '</ul>'));
+        if (Array.isArray(d[key]) && d[key].length) content.push(section(title, paragraphs(d[key].map(s => '• ' + s).join('\n'))));
       }
     }
     if (!content.length) content.push('<p class="drug-reference-status">اطلاعات مختصر بیشتری برای این مدخل ثبت نشده است.</p>');
-    return '<div class="drug-reference-overview">' + content.join('') + '</div>' +
+    return '<div class="drug-reference-overview"><div class="drug-reference-reader-heading"><span class="drug-reference-eyebrow">در یک نگاه</span></div><div data-drug-topics>' + content.join('') + '</div>' + '</div>' +
       '<div class="drug-reference-detail-toolbar"><button type="button" class="drug-reference-more" data-drug-comprehensive="' + esc(d.id) + '">اطلاعات بیشتر <i class="fas fa-chevron-down" aria-hidden="true"></i></button></div>' + sourceFooter(d);
   }
   function cardFor(id) { return [...$('drugReferenceGrid').children].find(el => el.dataset.drugCard === id); }
@@ -178,7 +251,7 @@
     const grid = $('drugReferenceGrid');
     const start = state.page * PAGE_SIZE;
     grid.innerHTML = state.results.slice(start,start+PAGE_SIZE).map(cardHTML).join('') || '<div class="drug-reference-empty">دارویی پیدا نشد. نام فارسی، انگلیسی یا تجاری را امتحان کنید.</div>';
-    $('drugReferenceCount').textContent = state.results.length + ' نتیجه از ' + state.records.length + ' رکورد' + (state.results.length ? ' · نمایش ' + (start+1) + ' تا ' + Math.min(start+PAGE_SIZE,state.results.length) : '');
+    $('drugReferenceCount').innerHTML = inlineText(state.results.length + ' نتیجه از ' + state.records.length + ' رکورد' + (state.results.length ? ' · نمایش ' + (start+1) + ' تا ' + Math.min(start+PAGE_SIZE,state.results.length) : ''));
     $('drugReferencePagination').hidden = state.results.length <= PAGE_SIZE;
     $('drugReferencePrevious').disabled = state.page === 0;
     $('drugReferenceNext').disabled = start + PAGE_SIZE >= state.results.length;
@@ -256,6 +329,12 @@
       else if (button.dataset.drugOverview) showComprehensive(button.dataset.drugOverview, true);
       else if (button.dataset.drugToggle) void showDrug(button.dataset.drugToggle);
     });
+    $('drugReferenceGrid').addEventListener('toggle', event => {
+      const topic = event.target;
+      if (!topic.matches?.('.drug-reference-section') || !topic.open) return;
+      const group = topic.closest('[data-drug-topics]');
+      group?.querySelectorAll('.drug-reference-section[open]').forEach(other => { if (other !== topic) other.open = false; });
+    }, true);
     $('drugReferenceGrid').addEventListener('keydown', event => {
       if (event.key==='Escape' && state.openId) { event.stopPropagation(); closeDrug(true); }
     });

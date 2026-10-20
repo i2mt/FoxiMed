@@ -68,7 +68,7 @@ const server = http.createServer((req,res) => {
       assert.equal(await p.locator('.drug-reference-card.open').count(),1);
       assert.equal(await card.locator('.drug-reference-comprehensive').count(),0);
       const summary=await card.locator('.drug-reference-overview').innerText();
-      assert(summary.includes('اندیکاسیون'));assert(summary.includes('Injection'));
+      assert(summary.includes('کاربرد'));assert(summary.includes('Injection'));
       assert(!summary.includes('مصرف در حاملگی'));assert(!summary.includes('مصرف در شیر'));
       assert.equal(await card.locator('[data-drug-comprehensive]').count(),1);
       assert.equal(await p.locator('.drug-reference-clinical-warning').count(),0);
@@ -78,7 +78,10 @@ const server = http.createServer((req,res) => {
       await card.locator('[data-drug-toggle]').press('Enter');await card.locator('[data-drug-comprehensive]').waitFor();
       await card.locator('[data-drug-comprehensive]').click();
       await card.locator('.drug-reference-comprehensive').waitFor();
-      assert((await card.locator('.drug-reference-comprehensive').innerText()).includes('مصرف در حاملگی'));
+      const identity=card.locator('.drug-reference-comprehensive .drug-reference-section').filter({hasText:'شناسه، رده‌بندی و بارداری'});
+      await identity.locator('summary').click();
+      assert((await identity.innerText()).includes('مصرف در حاملگی'));
+      await p.waitForFunction(()=>document.querySelectorAll('.drug-reference-card.open .drug-reference-section[open]').length===1);
       assert.equal(await card.locator('.drug-reference-source-footer').count(),1);
       assert.equal(await p.locator('.drug-reference-card.open').count(),1);
       await card.locator('[data-drug-overview]').click();await card.locator('.drug-reference-overview').waitFor();
@@ -117,6 +120,32 @@ const server = http.createServer((req,res) => {
     passed.push('compact headers match Tools heights/radius/surfaces at 1280/390/320; whole-header click and keyboard toggling');
     passed.push('overview then explicit comprehensive view; no pregnancy/lactation in collapsed headers or overview metadata; one source footer');
     passed.push('shared scroll close bar stays below actual/resized header; Settings hit target clear; no stale bars on tab changes');
+    // Regression for clinical prose previously imported into Persian titles.
+    for (const id of ['aminoglutethimide','nitrazepam','r-iron-plus-multivitamin','b-cetylpyridium']) {
+      await p.evaluate(id=>openDrugReferenceDrug(id),id);
+      const card=p.locator('.drug-reference-card.open');
+      await card.locator('[data-drug-comprehensive]').waitFor();
+      assert(!/ثابت نشده|بی خطر بودن|دارو طی|روزانه|محلول رقیق/.test(await card.locator('.accordion-title').innerText()));
+      await card.locator('[data-drug-toggle]').click();
+    }
+    await p.evaluate(()=>openDrugReferenceDrug('hydrochloride-amiodarone'));
+    const amio=p.locator('.drug-reference-card.open');
+    await amio.locator('[data-drug-comprehensive]').waitFor();
+    assert((await amio.locator('.drug-reference-overview').textContent()).includes('فیبریلاسیون بطنی'));
+    for (const width of [1280,390,320]) {
+      await p.setViewportSize({width,height:900});
+      assert.equal(await amio.locator('.drug-reference-overview .drug-reference-section[open]').count(),1);
+      const measures=await amio.locator('.drug-reference-measure').evaluateAll(es=>es.map(e=>({direction:getComputedStyle(e).direction,whiteSpace:getComputedStyle(e).whiteSpace})));
+      assert(measures.length);assert(measures.every(m=>m.direction==='ltr'&&m.whiteSpace==='nowrap'));
+      assert(await amio.evaluate(e=>e.scrollWidth<=e.clientWidth+1));
+      const precautions=amio.locator('.drug-reference-section').filter({hasText:'موارد احتیاط'});
+      await precautions.locator('summary').press('Enter');
+      await p.waitForFunction(()=>document.querySelectorAll('.drug-reference-overview .drug-reference-section[open]').length===1);
+      assert(await precautions.getAttribute('open')!==null);
+      await amio.locator('.drug-reference-section').filter({hasText:'کاربرد، راه مصرف و دوز'}).locator('summary').click();
+    }
+    await amio.locator('[data-drug-toggle]').click();
+    passed.push('contaminated title regressions, fibrillation copy edit, isolated unbroken numeric/unit runs, exclusive topics and keyboard controls at all three widths');
     const longId=await p.evaluate(()=>[...window.FoxiMedDrugBookIndex].sort((a,b)=>b.en.length-a.en.length)[0].id);
     await p.evaluate(id=>openDrugReferenceDrug(id),longId);
     await p.locator('.drug-reference-card.open [data-drug-comprehensive]').waitFor();

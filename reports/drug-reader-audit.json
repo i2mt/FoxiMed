@@ -1,0 +1,21 @@
+{
+  "titlesAudited": 827,
+  "changedEnglishNames": 134,
+  "changedPersianNames": 126,
+  "sourceIdsPreserved": 827,
+  "numericGlyphCountsPreservedAcrossReboundedSource": false,
+  "numericDifferencesRemoved": {
+    "۰": 1,
+    "۶": 1,
+    "۵": 1
+  },
+  "numericDifferencesAdded": {},
+  "checkedOn": "2026-10-20",
+  "sectionsChecked": 7004,
+  "editorialHeadingCorrections": 134,
+  "rxnormConfirmedTerms": 115,
+  "clinicalDosesRewritten": 0,
+  "clinicallyValidatedMonographs": 0,
+  "numericCountDifferenceExplanation": "The old extraction duplicated the preceding Multivitamin pediatric line (۵ ml / ۰/ ۶ ml) into the Multivitamin Plus Iron heading/body. That duplicate is removed from Plus Iron; the complete original line and all three numeric tokens remain under Multivitamin. Other boundary changes relocate complete lines to the preceding source entry.",
+  "rawNumericValueEdits": 0
+}

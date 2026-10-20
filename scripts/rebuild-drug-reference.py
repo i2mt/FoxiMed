@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PDF = Path(sys.argv[1]).resolve()
 original = json.loads((ROOT/'scripts/drug-reference-original-ids.json').read_text())
 overrides = json.loads((ROOT/'scripts/drug-reference-overrides.json').read_text())
+editorial = json.loads((ROOT/'scripts/drug-reference-editorial.json').read_text())
 ligature_repairs = 0
 doc = fitz.open(PDF)
 # Decode compound lam-alef glyphs as one presentation character before bidi
@@ -60,8 +61,9 @@ for i,page in enumerate(doc):
         english=[s for s in group if re.search('[A-Za-z]',s['text']) and not re.search('[\u0600-\u06ff]',s['text']) and s['bbox'][0]<page.rect.width*.55]
         if not english: continue
         english.sort(key=lambda s:(round(s['bbox'][1]/5),s['bbox'][0]))
-        fa_spans=[s for s in group if re.search('[\u0600-\u06ff]',s['text'])]
-        heads.append(dict(page=i+1,y=min(s['bbox'][1] for s in group)-4,
+        fa_spans=[s for s in group if re.search('[\u0600-\u06ff]',s['text']) or s['bbox'][0]>=page.rect.width*.55]
+        heads.append(dict(page=i+1,y=min(s['bbox'][1] for s in group),
+                          fa=norm(' '.join(s['text'] for s in sorted(fa_spans,key=lambda s:(round(s['bbox'][1]/5),-s['bbox'][0])))),
                           en=norm(' '.join(s['text'] for s in english)),
                           hasFa=bool(fa_spans),
                           headingLines=max(1,math.ceil((max(s['bbox'][1] for s in group)-min(s['bbox'][1] for s in group))/10)+1)))
@@ -74,7 +76,7 @@ for d in original:
     if best<.90: raise ValueError(f'Uncertain ID mapping: {d["id"]} -> {heads[j]} ({best})')
     used.add(j);mapping[j]=d
 seen={d['id'] for d in original}; book=[]; corrections=[]; issues=[]
-headings=[('فارماکودینامیک','فارماکودینامیک و فارماکوکینتیک'),('اشکال دارویی','اشکال دارویی موجود'),('اندیکاسیون','اندیکاسیون، راه مصرف و دوز'),('کنترا اندیکاسیون','کنترا اندیکاسیون'),('موارد احتیاط','موارد احتیاط'),('عارضه جانبی','عوارض جانبی'),('عوارض جانبی','عوارض جانبی'),('تداخلات دارویی','تداخلات دارویی'),('مسمومیت','مسمومیت و درمان'),('مراقبت های پرستاری','مراقبت‌های پرستاری'),('مصرف در شیر','شیردهی و کودکان'),('آموزش به بیمار','آموزش بیمار و خانواده'),('شرایط نگهداری','شرایط نگهداری')]
+from drug_reference_sections import split_sections
 for j,h in enumerate(heads):
     nxt=heads[j+1] if j+1<len(heads) else dict(page=end_page-1,y=doc[end_page-2].rect.height)
     chunks=[]; pages=[]
@@ -89,13 +91,9 @@ for j,h in enumerate(heads):
         text='\n'.join(lines).strip()
         if text: chunks.append(text);pages.append(pno)
     text='\n\n'.join(chunks)
-    # Use only the heading band, never the following brand/classification line.
-    heading_lines=[]
-    for line in text.splitlines()[:h['headingLines']]:
-        if 'نام تجاری' in line or 'رده بندی' in line: break
-        if re.search('[\u0600-\u06ff]',line): heading_lines.append(line)
-    fa=norm(re.sub('[A-Za-z0-9()]+','', ' '.join(heading_lines))).strip(' .,-:') if h['hasFa'] else ''
-    fa=re.sub(' +',' ',fa)
+    # Only actual white title spans define the name. Clipped body lines can
+    # overlap the title band and must never be promoted into metadata.
+    fa=h['fa'].strip(' .,:')
     old=mapping.get(j)
     if old:
         id=old['id']
@@ -110,20 +108,22 @@ for j,h in enumerate(heads):
         if 'نام تجاری' in line:
             brand=re.sub(r'نام تجاری\s*[:：]?','',line).strip()
             if brand and len(brand)<200: brands=[brand]
-    sections=[]; title='شناسه و رده‌بندی'; buf=[]
-    for line in text.splitlines():
-        trimmed=line.lstrip(' ?4Xs}⊖⊡Ⓢ△⋆•')
-        label=next((label for key,label in headings if trimmed.startswith(key)),None)
-        if label:
-            if any(buf): sections.append(dict(title=title,text='\n'.join(buf).strip()))
-            title=label;buf=[]
-        buf.append(line)
-    if any(buf):sections.append(dict(title=title,text='\n'.join(buf).strip()))
+    sections=split_sections(text)
     classFa=''
     for line in text.splitlines()[:12]:
         if 'رده بندی درمانی' in line and ':' in line: classFa=line.split(':',1)[1].strip()
     d=dict(id=id,en=h['en'],fa=fa or h['en'],brands=brands,synonyms=list(dict.fromkeys([h['en']]+brands+([old['en'],old['fa']]+old.get('synonyms',[]) if old else []))),source='داروهای ژنریک ایران',sourceYear=2008,sourceText=text,sections=sections,sourcePdfPages=pages,sourceQuality='extraction-unreviewed',classFa=classFa)
+    d['sourceHeading']={'en':d['en'],'fa':d['fa']}
+    for field,value in editorial.get('headings',{}).get(id,{}).items():
+        d['synonyms']=list(dict.fromkeys(d['synonyms']+[d[field]]))
+        d[field]=value
+    for section in d['sections']:
+        if d['en'] != d['sourceHeading']['en']:
+            section['text']=section['text'].replace(d['sourceHeading']['en'],d['en'])
+        for before,after in editorial.get('bodyReplacements',{}).items():
+            section['text']=section['text'].replace(before,after)
     if id in overrides:
+
         rule=overrides[id]; excluded={x.lower() for x in rule['excludeAliases']}
         d['sourceBrands']=d['brands'][:]
         d['brands']=[x.strip() for x in '/'.join(d['brands']).split('/') if x.strip().lower() not in excluded]

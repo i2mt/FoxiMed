@@ -52,3 +52,37 @@
 @media(max-width:520px){#drugsTab .drug-reference-container{padding:10px 10px 22px}#drugsTab .drug-reference-overview-meta{grid-template-columns:minmax(0,1fr)}}
 #drugsTab .drug-reference-source-footer{margin:10px 16px 18px;color:var(--text-secondary);font-size:11px;line-height:1.9}
 #drugsTab .drug-reference-source-footer a{color:inherit;text-underline-offset:3px}
+/* Topic-based reading: one complete section at a time, without clipped doses. */
+#drugsTab .drug-reference-reader-heading{padding:14px 0 4px}
+#drugsTab .drug-reference-detail-body~.drug-reference-reader-heading{padding-inline:14px}
+#drugsTab .drug-reference-comprehensive>.drug-reference-reader-heading{padding-inline:14px}
+#drugsTab .drug-reference-eyebrow{font-size:11px;font-weight:800;color:var(--primary)}
+#drugsTab .drug-reference-reader-heading p{margin:4px 0 8px;font-size:12px;color:var(--text-secondary)}
+#drugsTab .drug-reference-section{padding:0;margin:8px 0;border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden}
+#drugsTab .drug-reference-section:last-child{border:1px solid var(--border)}
+#drugsTab .drug-reference-section summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 12px;cursor:pointer;list-style:none;font-size:13px;font-weight:700;color:var(--text-primary);line-height:1.7}
+#drugsTab .drug-reference-section summary::-webkit-details-marker{display:none}
+#drugsTab .drug-reference-section summary i{font-size:10px;color:var(--text-secondary);flex-shrink:0;transition:transform .15s}
+#drugsTab .drug-reference-section[open]{border-color:var(--primary)}
+#drugsTab .drug-reference-section[open]>summary{background:var(--primary-light);color:var(--primary)}
+#drugsTab .drug-reference-section[open]>summary i{transform:rotate(180deg);color:var(--primary)}
+#drugsTab .drug-reference-section.safety>summary{border-inline-start:3px solid var(--primary)}
+#drugsTab .drug-reference-section-content{padding:12px;max-width:78ch;margin-inline:auto}
+#drugsTab .drug-reference-prose{display:grid;gap:10px;min-width:0}
+#drugsTab .drug-reference-source-text{white-space:normal;unicode-bidi:isolate;text-align:start;line-height:2.05!important;margin:0;overflow-wrap:anywhere}
+#drugsTab .drug-reference-source-text[dir=ltr]{text-align:left}
+#drugsTab .drug-reference-ltr{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;font-family:inherit}
+#drugsTab .drug-reference-item{padding:9px 11px;background:var(--surface-elevated);border-inline-start:2px solid var(--border);border-radius:8px}
+#drugsTab .drug-reference-system{padding-block:7px;border-bottom:1px dashed var(--border)}
+#drugsTab .drug-reference-forms{padding:10px 12px;background:var(--surface-elevated);border:1px solid var(--border);border-radius:12px;margin:10px 0 14px}
+#drugsTab .drug-reference-forms h3{margin:0 0 7px;font-size:11px;font-weight:700;color:var(--text-secondary)}
+#drugsTab .drug-reference-forms p{font-size:12px;color:var(--text-primary)}
+#drugsTab .drug-reference-overview-meta{margin:10px 0;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+#drugsTab .drug-reference-overview-meta dd{unicode-bidi:isolate;text-align:start}
+#drugsTab summary:focus-visible{outline:3px solid var(--primary);outline-offset:-3px}
+#drugsTab .drug-reference-source-footer{opacity:.75}
+#drugsTab #drugReferencePage{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){#drugsTab .drug-reference-section summary i{transition:none}}
+#drugsTab .drug-reference-measure{white-space:nowrap;overflow-wrap:normal}
+#drugsTab .drug-reference-prose bdi{margin-inline:.1em}
+#drugsTab .drug-reference-unit-gap{display:inline-block;width:.22em}

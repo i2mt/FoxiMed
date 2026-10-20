@@ -2,7 +2,7 @@
 // App shell is network-first. Rizeh VAD + offline-ASR .data/.wasm use a
 // stable cache-first model cache independent of ordinary app revisions.
 
-const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_3';
+const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_4';
 // Include the pinned model revision. The previous deployment accidentally
 // stored Koochik bytes under a Rizeh-named cache, so reusing that namespace
 // would keep serving the wrong 127 MB .data file after this release.
@@ -14,7 +14,7 @@ const urlsToCache = [
     './style.css?v=44',
     './voice-assistant.css?v=43',
     './calculation-core.js?v=35',
-    './script.js?v=50',
+    './script.js?v=51',
     './voice-recognition.js?v=42',
     './koochik-asr.js?v=36',
     './koochik-worker.js?v=35',
@@ -25,11 +25,11 @@ const urlsToCache = [
     './voice-ui.js?v=42',
     './converters.js',
     './drugDatabase.js',
-    './drug-reference.css?v=4',
+    './drug-reference.css?v=5',
     './drug-reference-data.js?v=2',
-    './drug-reference.js?v=5',
+    './drug-reference.js?v=6',
     './drug-reference-catalog.js?v=1',
-    './drug-reference-index.js?v=1',
+    './drug-reference-index.js?v=2',
     './manifest.json',
     './icons/icon-192.png',
     './icons/icon-512.png',
@@ -101,7 +101,7 @@ self.addEventListener('fetch', event => {
     // Versioned book chunks are immutable for this extraction revision. Cache
     // only on demand; installing the shell must not download every monograph.
     const drugUrl = new URL(event.request.url);
-    if (drugUrl.origin === self.location.origin && /\/drug-reference-book-\d{2}\.js$/.test(drugUrl.pathname) && drugUrl.searchParams.get('v') === '2') {
+    if (drugUrl.origin === self.location.origin && /\/drug-reference-book-\d{2}\.js$/.test(drugUrl.pathname) && drugUrl.searchParams.get('v') === '3') {
         event.respondWith((async () => {
             const cache = await caches.open(CACHE_NAME);
             const cached = await cache.match(event.request);

@@ -1,5 +1,6 @@
 {
   "status": "PASS",
+  "checkedOn": "2026-10-20",
   "tests": [
     {
       "test": "drug-reference-data.test.js",
@@ -7,6 +8,10 @@
     },
     {
       "test": "drug-reference-cache.test.js",
+      "status": "PASS"
+    },
+    {
+      "test": "drug-reference-reader.test.js",
       "status": "PASS"
     },
     {
@@ -18,6 +23,13 @@
       "status": "PASS"
     }
   ],
-  "syntax": "All 32 root/test JavaScript files pass node --check",
-  "scope": "Local Chromium and source checks; not deployed"
+  "syntax": "All 33 root/test JavaScript files pass node --check; importer Python compiles",
+  "renderedViewports": [
+    1280,
+    390,
+    320
+  ],
+  "sourceEntries": 827,
+  "renderedSectionsChecked": 7004,
+  "scope": "Local Chromium and source checks; not deployed; no clinical validation"
 }

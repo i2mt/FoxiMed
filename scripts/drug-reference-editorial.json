@@ -1,0 +1,412 @@
+{
+  "headings": {
+    "chacoal-activated": {
+      "en": "Activated Charcoal"
+    },
+    "complex-prithrombin-activated": {
+      "en": "Activated Prothrombin Complex"
+    },
+    "hydrochloride-amamtadine": {
+      "en": "Amantadine Hydrochloride"
+    },
+    "hydroxide-alumium": {
+      "en": "Aluminium Hydroxide"
+    },
+    "cold-adalt": {
+      "en": "Adult Cold"
+    },
+    "r-besylate-amilodipine": {
+      "en": "Amlodipine Besylate"
+    },
+    "saliva-artifical": {
+      "en": "Artificial Saliva"
+    },
+    "tears-artifical": {
+      "en": "Artificial Tears"
+    },
+    "asparginase": {
+      "en": "Asparaginase"
+    },
+    "sulfate-atropin": {
+      "en": "Atropine Sulfate"
+    },
+    "sulfat-barium": {
+      "en": "Barium Sulfate"
+    },
+    "biperioen": {
+      "en": "Biperiden"
+    },
+    "salmon-cacitonin": {
+      "en": "Calcitonin (Salmon)"
+    },
+    "r-caroplatin": {
+      "en": "Carboplatin"
+    },
+    "sodium-cefaazolin": {
+      "en": "Cefazolin Sodium"
+    },
+    "cafuroxime": {
+      "en": "Cefuroxime"
+    },
+    "hydrochloride-citirizine": {
+      "en": "Cetirizine Hydrochloride"
+    },
+    "chlroamphenicol-systemic": {
+      "en": "Chloramphenicol (Systemic)"
+    },
+    "chlropropamide": {
+      "en": "Chlorpropamide"
+    },
+    "clozapin": {
+      "en": "Clozapine"
+    },
+    "deferoxamin-mesylate": {
+      "en": "Deferoxamine Mesylate"
+    },
+    "maleate-dexehlorpheniramine": {
+      "en": "Dexchlorpheniramine Maleate"
+    },
+    "dextrose-d-gluose": {
+      "en": "Dextrose (D-Glucose)"
+    },
+    "diazpam": {
+      "en": "Diazepam"
+    },
+    "hydrinate-dimen": {
+      "en": "Dimenhydrinate"
+    },
+    "dimercapol": {
+      "en": "Dimercaprol"
+    },
+    "compound-diphenhydramin": {
+      "en": "Diphenhydramine Compound"
+    },
+    "hydrochlorid-diphenhydramine": {
+      "en": "Diphenhydramine Hydrochloride"
+    },
+    "equine-antitoxin-diphteria": {
+      "en": "Diphtheria Antitoxin (Equine)"
+    },
+    "diophteria-and-tetanus-toxoids-adsorbed": {
+      "en": "Diphtheria and Tetanus Toxoids, Adsorbed"
+    },
+    "dipyridamol": {
+      "en": "Dipyridamole"
+    },
+    "docetexel": {
+      "en": "Docetaxel"
+    },
+    "droperidel": {
+      "en": "Droperidol"
+    },
+    "drotrecoyin-alfa-activated": {
+      "en": "Drotrecogin Alfa (Activated)"
+    },
+    "dydrogestrone": {
+      "en": "Dydrogesterone"
+    },
+    "erythropietin-epoetin-alfa": {
+      "en": "Erythropoietin (Epoetin Alfa)"
+    },
+    "phosphate-sodium-estramutine": {
+      "en": "Estramustine Sodium Phosphate"
+    },
+    "fentanyle-as-citrate": {
+      "en": "Fentanyl (as Citrate)"
+    },
+    "acetat-fludrocortisone": {
+      "en": "Fludrocortisone Acetate"
+    },
+    "sodium-fluorecein": {
+      "en": "Fluorescein Sodium"
+    },
+    "fluride-as-sodium-salt": {
+      "en": "Fluoride (as Sodium Salt)"
+    },
+    "alfa-follitropine": {
+      "en": "Follitropin Alfa"
+    },
+    "beta-follitropn": {
+      "en": "Follitropin Beta"
+    },
+    "gancyclovir": {
+      "en": "Ganciclovir"
+    },
+    "halotane": {
+      "en": "Halothane"
+    },
+    "heporin-sodium": {
+      "en": "Heparin Sodium"
+    },
+    "hydrocortisone-systemin": {
+      "en": "Hydrocortisone (Systemic)"
+    },
+    "ophthalmic-acetate-hydrocoartisone": {
+      "en": "Hydrocortisone Acetate (Ophthalmic)"
+    },
+    "hydrogen-peroaide-saline-solution": {
+      "en": "Hydrogen Peroxide Saline Solution"
+    },
+    "sulfate-hydroxyehloroauine": {
+      "en": "Hydroxychloroquine Sulfate"
+    },
+    "ophthalmic-idoxurine": {
+      "en": "Idoxuridine (Ophthalmic)"
+    },
+    "insulin-injection-human-reyular-insulin": {
+      "en": "Insulin Injection (Human Regular Insulin)"
+    },
+    "nph-isephane-insulin": {
+      "en": "Insulin Isophane (NPH)"
+    },
+    "ketocanazole-systemic": {
+      "en": "Ketoconazole (Systemic)"
+    },
+    "p-ledocaine": {
+      "en": "Lidocaine-P"
+    },
+    "lovastatine": {
+      "en": "Lovastatin"
+    },
+    "manitol": {
+      "en": "Mannitol"
+    },
+    "hydrochloride-maprotilin": {
+      "en": "Maprotiline Hydrochloride"
+    },
+    "mebendazol": {
+      "en": "Mebendazole"
+    },
+    "acid-mefnamic": {
+      "en": "Mefenamic Acid"
+    },
+    "hydrocholoride-metformine": {
+      "en": "Metformin Hydrochloride"
+    },
+    "blue-methylen": {
+      "en": "Methylene Blue"
+    },
+    "methylprenisolone": {
+      "en": "Methylprednisolone"
+    },
+    "methyltestostrone": {
+      "en": "Methyltestosterone"
+    },
+    "hydrochoride-mexiletine": {
+      "en": "Mexiletine Hydrochloride"
+    },
+    "milrinine": {
+      "en": "Milrinone"
+    },
+    "mitotan": {
+      "en": "Mitotane"
+    },
+    "chloride-mivacurim": {
+      "en": "Mivacurium Chloride"
+    },
+    "monobenzon": {
+      "en": "Monobenzone"
+    },
+    "mofetil-myocophenolate": {
+      "en": "Mycophenolate Mofetil"
+    },
+    "hydrochloride-naloxane": {
+      "en": "Naloxone Hydrochloride"
+    },
+    "antazoline-naphazolin": {
+      "en": "Naphazoline / Antazoline"
+    },
+    "niclosomide": {
+      "en": "Niclosamide"
+    },
+    "omeperazole": {
+      "en": "Omeprazole"
+    },
+    "phoshate-oseltamivir": {
+      "en": "Oseltamivir Phosphate"
+    },
+    "oxacar-bazepin": {
+      "en": "Oxcarbazepine"
+    },
+    "pegintrferonalfa-2a": {
+      "en": "Peginterferon Alfa-2a"
+    },
+    "peginterferonalfa-2b": {
+      "en": "Peginterferon Alfa-2b"
+    },
+    "penicilin-g-g": {
+      "en": "Penicillin G"
+    },
+    "phytonadion": {
+      "en": "Phytonadione"
+    },
+    "bramide-pipecuronium": {
+      "en": "Pipecuronium Bromide"
+    },
+    "chloride-potasium": {
+      "en": "Potassium Chloride"
+    },
+    "progestrone": {
+      "en": "Progesterone"
+    },
+    "tartrate-rivastigmin": {
+      "en": "Rivastigmine Tartrate"
+    },
+    "sodium-sacharin": {
+      "en": "Saccharin Sodium"
+    },
+    "sufide-selenium": {
+      "en": "Selenium Sulfide"
+    },
+    "hyaloronate-sodium": {
+      "en": "Sodium Hyaluronate"
+    },
+    "salfate-tetradecyl-sodium": {
+      "en": "Sodium Tetradecyl Sulfate"
+    },
+    "spironolaction": {
+      "en": "Spironolactone"
+    },
+    "strptokinase": {
+      "en": "Streptokinase"
+    },
+    "sulfasalazin": {
+      "en": "Sulfasalazine"
+    },
+    "tamaxifen-citrate": {
+      "en": "Tamoxifen Citrate"
+    },
+    "terbutalinesufate": {
+      "en": "Terbutaline Sulfate"
+    },
+    "timololmaleate": {
+      "en": "Timolol Maleate"
+    },
+    "tobramycinsulfate": {
+      "en": "Tobramycin Sulfate"
+    },
+    "tranylcyprominesulfate": {
+      "en": "Tranylcypromine Sulfate"
+    },
+    "triiamcinolonea-cetonide-topical": {
+      "en": "Triamcinolone Acetonide (Topical)"
+    },
+    "vancomycin-hydrochlorid": {
+      "en": "Vancomycin Hydrochloride"
+    },
+    "venlafaxin-hcl-r": {
+      "en": "Venlafaxine HCl"
+    },
+    "vidarabin-monohydrate": {
+      "en": "Vidarabine Monohydrate"
+    },
+    "vincristine-sulfat": {
+      "en": "Vincristine Sulfate"
+    },
+    "zinc-salfate": {
+      "en": "Zinc Sulfate"
+    },
+    "topical-ophtalmic-acyclovir": {
+      "en": "Acyclovir ( Ophthalmic , Topical )"
+    },
+    "ciprofloxacin-hydrochloride-ophtalmic": {
+      "en": "Ciprofloxacin Hydrochloride(Ophthalmic"
+    },
+    "ophtalmic-erythromycin": {
+      "en": "Erythromycin (Ophthalmic)"
+    },
+    "tetracaine-hcl-ophthalrnic-pdf-904": {
+      "en": "Tetracaine Hcl (Ophthalmic)"
+    },
+    "tetracaine-hcl-ophthalrnic": {
+      "en": "Tetracaine Hcl (Ophthalmic)"
+    },
+    "tetracycline-opthalmic": {
+      "en": "Tetracycline ( Ophthalmic)"
+    },
+    "vitamin-a-ophtalmic": {
+      "en": "Vitamin A(Ophthalmic)"
+    },
+    "decongestant-antihistamin": {
+      "en": "Antihistamine Decongestant"
+    },
+    "sr-decongestant-antihistauin": {
+      "en": "Antihistamine Decongestant SR"
+    },
+    "serm-venum-antiscorpion": {
+      "en": "Antiscorpion Venom Serum"
+    },
+    "serum-venum-antisnak": {
+      "en": "Antisnake Venom Serum"
+    },
+    "betametazone-disodium-phosphate-ophthalmic-otic": {
+      "en": "Betamethasone Disodium Phosphate (Ophthalmic-Otic)"
+    },
+    "systemic-betametasone": {
+      "en": "Betamethasone (Systemic)"
+    },
+    "blosynthesis-somatropine-somatropine": {
+      "en": "Biosynthetic Somatropin (Somatropin)"
+    },
+    "tartarate-brimonidine": {
+      "en": "Brimonidine Tartrate"
+    },
+    "buprenorphin-hcl-naloxone-hcl": {
+      "en": "Buprenorphine HCl / Naloxone HCl"
+    },
+    "acetate-busereline": {
+      "en": "Buserelin Acetate"
+    },
+    "cabergolin": {
+      "en": "Cabergoline"
+    },
+    "carbamid-peroxide": {
+      "en": "Carbamide Peroxide"
+    },
+    "co-amoxiclav-amoxicillin-and-potassium-clavulante": {
+      "en": "Co-Amoxiclav (Amoxicillin and Potassium Clavulanate)"
+    },
+    "dexpanthenol-pantothenic-acid": {
+      "en": "Dexpanthenol (Pantothenic Acid)"
+    },
+    "flurazepam-as-hcl": {
+      "en": "Flurazepam (as HCl)"
+    },
+    "fluoxetine-az-hcl": {
+      "en": "Fluoxetine (as HCl)"
+    },
+    "levarterenol-norepinephrin-bitartrate": {
+      "en": "Levarterenol (Norepinephrine) Bitartrate"
+    },
+    "molgramostin-gmcsf": {
+      "en": "Molgramostim (GM-CSF)"
+    },
+    "r-salicylat-menthol": {
+      "en": "Menthol Salicylate"
+    },
+    "meningococal-vaccine-killed": {
+      "en": "Meningococcal Vaccine, Killed"
+    },
+    "rabies-vaccine-adsor-bed": {
+      "en": "Rabies Vaccine, Adsorbed"
+    },
+    "thiaminemcl-vitaminb": {
+      "en": "Thiamine HCl (Vitamin B1)"
+    },
+    "tolazoline-mcl": {
+      "en": "Tolazoline HCl"
+    },
+    "obidonice-chloride": {
+      "en": "Obidoxime Chloride"
+    },
+    "pethioinehcl": {
+      "en": "Pethidine HCl"
+    }
+  },
+  "bodyReplacements": {
+    "فیبر یلاسیون یبطنی": "فیبریلاسیون بطنی",
+    "فیبرپلاسیون": "فیبریلاسیون",
+    "فیبرنیولیز": "فیبرینولیز"
+  },
+  "note": "Editorial spelling only. IDs, raw source text, numeric doses, units and recommendations are preserved. No full clinical validation."
+}
