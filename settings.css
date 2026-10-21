@@ -1,10 +1,10 @@
-/* Full-screen Settings. Compact section menu; full-width expanded controls. */
+/* Full-screen Settings. Compact section list; full-width expanded controls. */
 #settingsModal {padding:0;align-items:stretch;justify-content:stretch;background:var(--bg-primary)}
 #settingsModal .modal-content {width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0;box-shadow:none}
 #settingsModal .modal-header {flex:0 0 auto;min-height:56px;padding:calc(4px + env(safe-area-inset-top)) 14px 4px;background:var(--surface);border:0;border-bottom:1px solid var(--border)}
 #settingsModal .modal-header h3 {font-size:17px;line-height:1.5;color:var(--text-primary)}
 #settingsModal .modal-close {width:44px;height:44px;font-size:28px;border-radius:12px;color:var(--text-secondary)}
-#settingsModal .settings-menu {width:100%;max-width:900px;min-height:0;max-height:none;margin-inline:auto;padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;overflow-anchor:none;scroll-behavior:auto;scroll-padding-block:12px}
+#settingsModal .settings-menu {width:100%;max-width:900px;min-height:0;max-height:none;margin-inline:auto;padding:12px;display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:8px;overflow-anchor:none;scroll-behavior:auto;scroll-padding-block:12px}
 #settingsModal .settings-menu-hint {grid-column:1/-1;margin:0 2px 2px;font-size:12px;line-height:1.6;color:var(--text-secondary)}
 #settingsModal .settings-card {min-width:0;margin:0;padding:0;border:1px solid var(--border);border-radius:13px;background:var(--surface);overflow:clip}
 #settingsModal .settings-card > summary {display:grid;grid-template-columns:28px minmax(0,1fr) 10px;align-items:center;gap:8px;min-height:56px;margin:0;padding:10px;list-style:none;cursor:pointer;color:var(--text-primary);font-size:13px;font-weight:650;line-height:1.5}
@@ -67,8 +67,8 @@
 #settingsModal .settings-credit bdi {font-weight:600;color:var(--text-primary);overflow-wrap:anywhere}
 #settingsModal :is(button,a,summary,input,select):focus-visible {outline:2px solid var(--heading-color,var(--primary));outline-offset:-3px}
 #settingsModal .switch:has(input:focus-visible) {outline:2px solid var(--heading-color,var(--primary));outline-offset:0;border-radius:10px}
-@media(min-width:600px) {#settingsModal .settings-menu {grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:16px}#settingsModal .theme-swatches {grid-template-columns:repeat(6,minmax(0,1fr))}}
-@media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu {grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px 12px}#settingsModal .settings-card > summary {min-height:48px;padding:8px}#settingsModal .settings-footer {padding-block:4px}#settingsModal .settings-brand img {width:24px;height:24px}#settingsModal .settings-brand {min-height:24px}#settingsModal .settings-brand bdi {font-size:18px}#settingsModal .modal-header {min-height:48px;padding-block:2px}}
+@media(min-width:600px) {#settingsModal .settings-menu {grid-template-columns:minmax(0,1fr);gap:10px;padding:16px}#settingsModal .theme-swatches {grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu {grid-template-columns:minmax(0,1fr);gap:6px;padding:8px 12px}#settingsModal .settings-card > summary {min-height:48px;padding:8px}#settingsModal .settings-footer {padding-block:4px}#settingsModal .settings-brand img {width:24px;height:24px}#settingsModal .settings-brand {min-height:24px}#settingsModal .settings-brand bdi {font-size:18px}#settingsModal .modal-header {min-height:48px;padding-block:2px}}
 @media(max-width:360px) {#settingsModal .settings-card > summary {min-height:52px;padding:9px;gap:6px;font-size:12px}#settingsModal .settings-group-content {padding:12px}}
 @media(max-width:360px) {
   #settingsModal .settings-menu {gap:6px;padding:10px}

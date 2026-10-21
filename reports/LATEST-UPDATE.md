@@ -2,6 +2,10 @@
 
 Updated 2026-10-21. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.
 
+## Latest Settings row layout
+
+Settings section cards now appear one per row on every screen size, including desktop and landscape. The full-screen layout and bottom brand/credit footer remain. Shorter screens scroll the section list so labels and tap targets keep their usable size. Color choices and controls inside an expanded section retain their existing layout. The browser regression checks that all nine card edges align, each card follows the previous row, and the last card is reachable above the footer.
+
 ## Latest Hedo adjustment
 
 Hedo's previous dark purple palette is restored by using its original CSS colors again. The purple gradients, accents and section titles retain their prior appearance. Only the top-bar FoxiMed wordmark receives a lighter violet (`#c4b5fd`) for readability; its measured contrast against the header is 5.58:1. Other themes and the tutorial, full-screen Settings and drug-reader changes remain included.
@@ -20,7 +24,7 @@ The welcome screen reuses the startup fox silhouette and bottom-to-top orange fi
 
 ## Full-screen Settings
 
-Settings fills the viewport with a fixed header, a scrollable section area and a bottom brand/credit footer. The footer includes the fox, FoxiMed, “Designed & developed by” and Mohammad Mahdi Taghavi. Nine closed section cards use two columns on phones, three on wider screens and four in short landscape. Open sections use the full content width. Closed cards fit without scrolling in all twelve tested light/dark layouts, including 320×480 and 667×320. Enlarged system text can still require scrolling rather than being clipped.
+Settings fills the viewport with a fixed header, a scrollable section area and a bottom brand/credit footer. The footer includes the fox, FoxiMed, “Designed & developed by” and Mohammad Mahdi Taghavi. Nine section cards use a single column at every viewport size. Open sections use the full content width. Short screens scroll the list while the header and brand/credit footer stay visible. Enlarged system text can also scroll rather than being clipped.
 
 Submenus now use labelled 44 px controls, 16 px text inputs/selects, clear theme-mode labels, spaced color choices, distinct history/log deletion actions, isolated mixed-script names/values and a cleaner support link. Native dark select menus use the correct color scheme. Profile, theme/font, calculator defaults, keyboard focus containment, Escape/close and focus restoration were checked. Existing control IDs, preferences, data/export/support actions and voice shortcut are preserved. The calculator drug count is labelled explicitly to distinguish it from the reference catalog.
 
@@ -69,6 +73,6 @@ Current data, reader, cache, voice-source/worker and generated-asset fixture che
 
 The drug startup payload is 395,498 bytes, versus 8,035,317 bytes in the supplied original snapshot. Initial results remain capped at 40 with no book requests. Detail chunks load on first opening a drug and are cached by revision. Offline details still require a previous online opening of the corresponding chunk.
 
-Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=48`, `script.js?v=54`, `drug-reference.css?v=8`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=3`, `service-worker.js?v=54`, `settings.css?v=1`, `onboarding.css?v=1`, and lazy book chunks `?v=4`.
+Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=48`, `script.js?v=54`, `drug-reference.css?v=8`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=3`, `service-worker.js?v=55`, `settings.css?v=2`, `onboarding.css?v=1`, and lazy book chunks `?v=4`.
 
 Clinical scope remains limited: the 2008 source has not been fully clinically validated. Incomplete or incorrectly scoped punctuation/fractions/tables in the source cannot safely be reconstructed from display text alone. Unpaired source brackets remain isolated and visible instead of guessed. Existing duplicate headings, unresolved metadata and Abciximab source issues remain in the review queue. No new warning/source banners were added to cards.

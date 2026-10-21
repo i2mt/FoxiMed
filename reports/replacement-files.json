@@ -1,6 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "hedo-original-dark-palette-top-bar-title-only",
+  "revision": "settings-one-section-per-row",
   "self_hash_excluded": true,
   "files": [
     {
@@ -11,9 +11,9 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Current manual upload paths, revisions and restored Hedo verification.",
-      "bytes": 3512,
-      "sha256": "22474d83d0b353dfc0a5be6434a7ca7a1f5f47eb813f4473cd826c55d2389ea8"
+      "reason": "Current stylesheet/worker revisions and single-column Settings verification.",
+      "bytes": 3523,
+      "sha256": "0ccb9d027484fbd0ab43574f410907b006cd44a0e52ffb333e30daab2fc1b41c"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -101,9 +101,9 @@
     },
     {
       "path": "index.html",
-      "reason": "Current matching script/style/service-worker revisions with previous app improvements preserved.",
+      "reason": "Current matching single-column Settings stylesheet and service-worker revisions.",
       "bytes": 177783,
-      "sha256": "0b7db34fb70323e7f93b13b736b0c014f1ab97dce7faa02c2561faeda4b9cfc8"
+      "sha256": "a642c616fe2a8435408d851dce0718338e83325572ed48dbd3a8f884b99c1d77"
     },
     {
       "path": "onboarding.css",
@@ -131,21 +131,21 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current Hedo/theme/voice/cache/syntax checks, with unaffected earlier validation retained.",
-      "bytes": 2214,
-      "sha256": "15cd6466231f1f104e64ac62776ca127f9e1c3557820243d730f0409cfa2c08a"
+      "reason": "Current single-column Settings/cache/asset checks with earlier unaffected validation retained.",
+      "bytes": 2196,
+      "sha256": "d630253cbccce9484e6ebab79ee2c1e69352eaed98fb119ca51169c258d059e6"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "reason": "Current outcome and complete cumulative replacement inventory.",
-      "bytes": 20272,
-      "sha256": "036e7328a9f48036fd83c65a76cc21fa7926fa8014d5739aa77b28aef2595eea"
+      "reason": "Current outcome and cumulative replacement inventory.",
+      "bytes": 20218,
+      "sha256": "1202757576b69ecf55e21479e6acb1d9e969329c68c0d3977de91cb1777f890d"
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Current Hedo restoration and title-only adjustment, plus retained previous updates.",
-      "bytes": 12279,
-      "sha256": "5a2c016ff9c5a52fe5643938bf389b8626258a9afceefb25de1a86954efce6e5"
+      "reason": "Current one-card-per-row Settings behavior and retained prior improvements.",
+      "bytes": 12717,
+      "sha256": "f1ca605aaeaf358537a765c11a46d03e7d510c71b90ba1cf0d9fb27bd6ed8b14"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -249,9 +249,9 @@
     },
     {
       "path": "reports/settings-theme-results.json",
-      "reason": "Passing Hedo palette/title checks, Settings layouts/controls and remaining theme contrast checks.",
-      "bytes": 2960,
-      "sha256": "761c3e8162c6b389d01592f67b71202abcbb94a25b61a77d9357be71b0ba0454"
+      "reason": "Passing single-column layout, submenu, controls/focus and retained theme checks.",
+      "bytes": 3194,
+      "sha256": "85cd1cde3c7c88419bc1d2e27531ee5d136c90b08dd15f6a362dbfcd97cabc22"
     },
     {
       "path": "reports/tutorial-layout-results.json",
@@ -303,15 +303,15 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Refresh the app shell for the restored Hedo palette and targeted title styling.",
+      "reason": "Refresh the app shell for the single-column Settings stylesheet.",
       "bytes": 7538,
-      "sha256": "5d9a786e5754a54d5e5e6f5cd0e228b9bea5643b81458f728083c3d0d21e94c1"
+      "sha256": "abcec09eae54e7328dfea71c1fa54c8d420fe0aab2d5b68fc1ef0477079e5b5f"
     },
     {
       "path": "settings.css",
-      "reason": "Full-screen Settings, compact closed menu, full-width submenus, accessible controls and fixed bottom brand/credit.",
-      "bytes": 10148,
-      "sha256": "714c1a39251d7e1c4272368972bac080f3ef2c9d544ea9ef0878290758d63246"
+      "reason": "Display Settings section cards in one column on phones, desktop and landscape, retaining expanded controls and fixed branding footer.",
+      "bytes": 10118,
+      "sha256": "791378463cf203e94d42b20c2775c7ffd90b85c66a05572fe318441c963cafad"
     },
     {
       "path": "style.css",
@@ -351,9 +351,9 @@
     },
     {
       "path": "tests/settings-theme-ui.test.js",
-      "reason": "Verify original Hedo palette and purple headings, brighter top-bar title, other themes and retained Settings behavior.",
-      "bytes": 9254,
-      "sha256": "d5f56b04789decc2fd163a87c7505e5de385178e31ffddd175394b115ce2c364"
+      "reason": "Verify one card per row, aligned edges, reachable last card and retained Settings/theme behavior.",
+      "bytes": 10098,
+      "sha256": "e8eca67749ef06a7b1e104b2187fef4c43c158c9549c3c7bee7620adfce68a8e"
     },
     {
       "path": "tests/tutorial-layout.test.js",
