@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "checkedOn": "2026-10-21",
-  "revision": "settings-one-section-per-row",
+  "revision": "mobile-settings-compatibility",
   "tests": {
     "drug-reference-data.test.js": "PASS",
     "drug-reference-cache.test.js": "PASS",
@@ -11,9 +11,10 @@
     "drug-reference-ui.test.js": "PASS",
     "navigation-layout.test.js": "PASS",
     "tutorial-layout.test.js": "PASS",
-    "settings-theme-ui.test.js": "PASS"
+    "settings-theme-ui.test.js": "PASS",
+    "settings-mobile.test.js": "PASS"
   },
-  "javascriptSyntaxFiles": 37,
+  "javascriptSyntaxFiles": 38,
   "pythonSyntaxFiles": 4,
   "bookEntries": 827,
   "readerSections": 7004,
@@ -73,11 +74,29 @@
   "hedoTopBarContrast": 5.58,
   "otherFiveDarkThemeHeadingsMinimumContrast": 5.45,
   "currentRevisionChecks": [
+    "settings-mobile.test.js",
     "settings-theme-ui.test.js",
+    "navigation-layout.test.js",
+    "drug-reference-ui.test.js",
     "drug-reference-cache.test.js",
-    "JavaScript syntax and asset-version consistency"
+    "voice-pipeline-smoke.test.js",
+    "JavaScript syntax, asset-version consistency and preservation comparison"
   ],
-  "unaffectedSuites": "previous delivery results retained",
+  "unaffectedSuites": "Previous delivery results retained for data/reader/generated-voice-assets and the dedicated 147-step tutorial suite; navigation and drug UI tutorial checks rerun.",
   "settingsSectionColumns": 1,
-  "settingsShortScreenListScroll": "last section reachable above fixed footer"
+  "settingsShortScreenListScroll": "last section reachable above fixed footer",
+  "settingsAccordionImplementation": "ordinary button-controlled hidden regions in natural block flow",
+  "settingsSubmenuVerticalContainmentChecks": 108,
+  "settingsTouchEmulationProfiles": [
+    "iPhone 13 (390x664)",
+    "Pixel 7 (412x839)",
+    "Galaxy S9+ (320x658)"
+  ],
+  "settingsTouchTargetTransitions": 162,
+  "settingsPhysicalDevicesTested": false,
+  "settingsSafariTested": false,
+  "settingsVisualViewportKeyboardTests": "simulated resize and offset; focused input revealed; innerHeight fallback checked",
+  "settingsRotationAndEnlargedText": "PASS",
+  "settingsVoiceContactShortcut": "PASS",
+  "unchangedDrugReaderDataTutorialAndThemeFiles": 17
 }

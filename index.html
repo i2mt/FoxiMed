@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="style.css?v=48">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
     <link rel="stylesheet" href="drug-reference.css?v=8">
-    <link rel="stylesheet" href="settings.css?v=2">
+    <link rel="stylesheet" href="settings.css?v=3">
     <link rel="stylesheet" href="onboarding.css?v=1">
 </head>
 <body>
@@ -1943,8 +1943,8 @@
             <div class="modal-body settings-menu"><p class="settings-menu-hint">بخش مورد نظرتان را باز کنید</p>
 
                 <!-- User Profile -->
-                <details class="settings-group settings-card" data-settings-section="profile">
-    <summary><i class="fas fa-user-circle"></i><span class="settings-card-title"> پروفایل کاربر</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="profile">
+    <button type="button" id="settings-trigger-profile" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-profile"><i class="fas fa-user-circle"></i><span class="settings-card-title"> پروفایل کاربر</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-profile" role="region" aria-labelledby="settings-trigger-profile" hidden>
     <div class="username-field compact"><label for="userNameInput" class="username-label">نام شما</label>
         <div class="username-input-row">
             <input type="text" id="userNameInput" class="username-input" placeholder="نام خود را وارد کنید" maxlength="30" autocomplete="off">
@@ -1952,14 +1952,14 @@
         </div>
         <p class="settings-hint">این نام فقط روی همین دستگاه ذخیره می‌شود.</p>
     </div>
-</div></details>
+</div></section>
 
                 <!-- Appearance -->
-                <details class="settings-group settings-card" data-settings-section="appearance">
-                    <summary><i class="fas fa-palette"></i><span class="settings-card-title"> ظاهر</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="appearance">
+                    <button type="button" id="settings-trigger-appearance" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-appearance"><i class="fas fa-palette"></i><span class="settings-card-title"> ظاهر</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-appearance" role="region" aria-labelledby="settings-trigger-appearance" hidden>
 
                     <!-- Theme mode: compact icon-only 3-way switch, same row as its label -->
-                    <div class="setting-item">
+                    <div class="setting-item setting-theme-mode">
                         <span>حالت نمایش</span>
                         <div class="theme-mode-btns" id="themeModeButtons">
                             <button class="theme-mode-btn" data-mode="light" title="روشن" aria-label="روشن"><i class="fas fa-sun"></i><span>روشن</span></button>
@@ -2016,11 +2016,11 @@
                             </button>
                         </div>
                     </div>
-                </div></details>
+                </div></section>
 
                 <!-- Calculator defaults -->
-                <details class="settings-group settings-card" data-settings-section="calculator">
-                    <summary><i class="fas fa-pump-medical"></i><span class="settings-card-title"> ماشین‌حساب</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="calculator">
+                    <button type="button" id="settings-trigger-calculator" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-calculator"><i class="fas fa-pump-medical"></i><span class="settings-card-title"> ماشین‌حساب</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-calculator" role="region" aria-labelledby="settings-trigger-calculator" hidden>
                     <p class="settings-hint">برای هماهنگی با تجهیزات رایج بخش؛ هنگام هر محاسبه همچنان قابل تغییر است.</p>
                     <label class="setting-item setting-select-row" for="defaultInfusionMethodSelect">
                         <span>دستگاه پیش‌فرض</span>
@@ -2048,11 +2048,11 @@
                             <option value="1000">۱۰۰۰ cc</option>
                         </select>
                     </label>
-                </div></details>
+                </div></section>
 
                 <!-- Notifications -->
-                <details class="settings-group settings-card" data-settings-section="alerts">
-                    <summary><i class="fas fa-bell"></i><span class="settings-card-title"> اعلان‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="alerts">
+                    <button type="button" id="settings-trigger-alerts" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-alerts"><i class="fas fa-bell"></i><span class="settings-card-title"> اعلان‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-alerts" role="region" aria-labelledby="settings-trigger-alerts" hidden>
                     <div class="setting-item">
                         <span>هشدار دوز</span>
                         <label class="switch"><input type="checkbox" id="doseAlertToggle" checked><span class="slider"></span></label>
@@ -2061,11 +2061,11 @@
                         <span>هشدار سازگاری</span>
                         <label class="switch"><input type="checkbox" id="compatAlertToggle" checked><span class="slider"></span></label>
                     </div>
-                </div></details>
+                </div></section>
 
                 <!-- Data -->
-                <details class="settings-group settings-card" data-settings-section="data">
-                    <summary><i class="fas fa-database"></i><span class="settings-card-title"> داده‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="data">
+                    <button type="button" id="settings-trigger-data" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-data"><i class="fas fa-database"></i><span class="settings-card-title"> داده‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-data" role="region" aria-labelledby="settings-trigger-data" hidden>
                     <div class="setting-item">
                         <span>ذخیره تاریخچه</span>
                         <label class="switch"><input type="checkbox" id="saveHistoryToggle" checked><span class="slider"></span></label>
@@ -2074,32 +2074,32 @@
                         <button class="setting-btn gradient" id="clearHistoryBtn"><i class="fas fa-trash"></i> پاک کردن تاریخچه</button>
                         <button class="setting-btn gradient" id="exportDataBtn"><i class="fas fa-download"></i> خروجی گرفتن</button>
                     </div>
-                </div></details>
+                </div></section>
 
                 <!-- Contact -->
-                <details class="settings-group settings-card" id="creatorContact" data-settings-section="contact">
-                    <summary><i class="fas fa-headset"></i><span class="settings-card-title"> ارتباط با ما</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" id="creatorContact" data-settings-section="contact">
+                    <button type="button" id="settings-trigger-contact" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-contact"><i class="fas fa-headset"></i><span class="settings-card-title"> ارتباط با ما</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-contact" role="region" aria-labelledby="settings-trigger-contact" hidden>
                     <a class="setting-contact-btn" href="https://t.me/i_2mt" target="_blank" rel="noopener">
                         <i class="fab fa-telegram"></i>
                         <span>پشتیبانی در تلگرام</span>
                         <bdi dir="ltr" class="contact-handle">@i_2mt</bdi>
                     </a>
-                </div></details>
+                </div></section>
 
                 <!-- Voice recognition engine -->
-                <details class="settings-group settings-card" data-settings-section="voice">
-                    <summary><i class="fas fa-wave-square"></i><span class="settings-card-title"> تشخیص گفتار</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="voice">
+                    <button type="button" id="settings-trigger-voice" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-voice"><i class="fas fa-wave-square"></i><span class="settings-card-title"> تشخیص گفتار</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-voice" role="region" aria-labelledby="settings-trigger-voice" hidden>
                     <div class="voice-engine-setting">
                         <span>موتور فعال</span>
                         <strong class="voice-engine-current"><i class="fas fa-circle-check" aria-hidden="true"></i><bdi dir="ltr">Rizeh</bdi><span>آفلاین</span></strong>
                         <span class="setting-sublabel">گزینه پایدار فعلی برای فرمان‌های فارسی فاکسی‌مد</span>
                     </div>
                     <p class="settings-hint voice-privacy-hint"><i class="fas fa-shield-halved"></i> تشخیص صدا روی همین دستگاه انجام می‌شود و فایل صوتی از گوشی خارج نمی‌شود.</p>
-                </div></details>
+                </div></section>
 
                 <!-- Voice Assistant Learning Log -->
-                <details class="settings-group settings-card" data-settings-section="voice-log">
-                    <summary><i class="fas fa-microphone-lines"></i><span class="settings-card-title"> بهبود دستیار</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="voice-log">
+                    <button type="button" id="settings-trigger-voice-log" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-voice-log"><i class="fas fa-microphone-lines"></i><span class="settings-card-title"> بهبود دستیار</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-voice-log" role="region" aria-labelledby="settings-trigger-voice-log" hidden>
                     <p class="settings-hint">عبارت‌هایی که دستیار صوتی متوجه نشده روی گوشی ذخیره می‌شود تا برای بررسی ارسال شود.</p>
                     <div class="setting-item">
                         <div class="setting-label-stack">
@@ -2113,11 +2113,11 @@
                         <button class="setting-btn" id="exportVoiceLogBtn"><i class="fas fa-file-export"></i> خروجی گرفتن</button>
                         <button class="setting-btn" id="clearVoiceLogBtn"><i class="fas fa-trash"></i> پاک کردن فهرست</button>
                     </div>
-                </div></details>
+                </div></section>
 
                 <!-- About -->
-                <details class="settings-group settings-card" data-settings-section="about">
-                    <summary><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></summary><div class="settings-group-content">
+                <section class="settings-group settings-card" data-settings-section="about">
+                    <button type="button" id="settings-trigger-about" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-about"><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-about" role="region" aria-labelledby="settings-trigger-about" hidden>
                     <div class="about-info">
                         <div class="about-row"><span>نسخه</span><span>5.3.2</span></div>
                         <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
@@ -2128,7 +2128,7 @@
                         <button class="setting-btn gradient" onclick="showTutorial()"><i class="fas fa-graduation-cap"></i> راهنمای برنامه</button>
                         <button class="setting-btn gradient" onclick="showWhatsNewModal(true)"><i class="fa-solid fa-wand-magic-sparkles"></i> چه خبر؟</button>
                     </div>
-                </div></details>
+                </div></section>
 
             </div><!-- /.modal-body -->
             <footer class="settings-footer">
@@ -2187,7 +2187,7 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=54"></script>
+    <script src="script.js?v=55"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
@@ -2195,12 +2195,12 @@
     <script src="onboarding.js?v=3"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
-    <script src="voice-commands.js?v=44"></script>
+    <script src="voice-commands.js?v=45"></script>
     <script src="voice-ui.js?v=42"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=55', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=56', { updateViaCache: 'none' });
             });
         }
     </script>

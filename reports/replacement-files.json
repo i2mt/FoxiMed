@@ -1,6 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "settings-one-section-per-row",
+  "revision": "mobile-settings-compatibility",
   "self_hash_excluded": true,
   "files": [
     {
@@ -11,9 +11,9 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Current stylesheet/worker revisions and single-column Settings verification.",
-      "bytes": 3523,
-      "sha256": "0ccb9d027484fbd0ab43574f410907b006cd44a0e52ffb333e30daab2fc1b41c"
+      "reason": "Current matching assets and mobile Settings upload/verification instructions.",
+      "bytes": 3802,
+      "sha256": "fc8384ac680f6360cb0804178ef79877aa9a22990d5ab6d3f287136e0cc09d93"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -101,9 +101,9 @@
     },
     {
       "path": "index.html",
-      "reason": "Current matching single-column Settings stylesheet and service-worker revisions.",
-      "bytes": 177783,
-      "sha256": "a642c616fe2a8435408d851dce0718338e83325572ed48dbd3a8f884b99c1d77"
+      "reason": "Accessible button-controlled Settings regions; matching stylesheet, script, voice-command and service-worker URLs.",
+      "bytes": 180016,
+      "sha256": "ec8d928e8633afe8ad55bd23a8bc909f849ec51b1c03840ece9c261f32667269"
     },
     {
       "path": "onboarding.css",
@@ -131,21 +131,21 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current single-column Settings/cache/asset checks with earlier unaffected validation retained.",
-      "bytes": 2196,
-      "sha256": "d630253cbccce9484e6ebab79ee2c1e69352eaed98fb119ca51169c258d059e6"
+      "reason": "Current mobile touch, vertical containment, navigation, drug UI, cache, voice, syntax and preservation checks; distinguish emulation from hardware.",
+      "bytes": 3182,
+      "sha256": "cface65cf5bd8f6a1a6c64af84eb1ccca1a5588466fd6718e7c189f91d3d0fc1"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
       "reason": "Current outcome and cumulative replacement inventory.",
-      "bytes": 20218,
-      "sha256": "1202757576b69ecf55e21479e6acb1d9e969329c68c0d3977de91cb1777f890d"
+      "bytes": 21096,
+      "sha256": "a5a577bc7a8435fcb7b37fcc4673616f479e49349f6ec2a430901aaea79a5d17"
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Current one-card-per-row Settings behavior and retained prior improvements.",
-      "bytes": 12717,
-      "sha256": "f1ca605aaeaf358537a765c11a46d03e7d510c71b90ba1cf0d9fb27bd6ed8b14"
+      "reason": "Current mobile Settings changes, iPhone 13 and Android touch coverage, and Safari/device validation limits.",
+      "bytes": 15132,
+      "sha256": "a15d5d4d51fdd8a94bb00da61629b90a0ef3eb1b21f2571b460072e21ae522b5"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -248,10 +248,16 @@
       "reason": "Exact cumulative replacement inventory and hashes; self hash/size omitted."
     },
     {
+      "path": "reports/settings-mobile-results.json",
+      "reason": "Chromium iPhone 13/Pixel/Galaxy touch profiles, panel containment, real hit tests, rotation and simulated keyboard viewport checks.",
+      "bytes": 2448,
+      "sha256": "3ad1b57c77cfb486f7900258b974d028ae238804a571195143037a579c634f64"
+    },
+    {
       "path": "reports/settings-theme-results.json",
-      "reason": "Passing single-column layout, submenu, controls/focus and retained theme checks.",
-      "bytes": 3194,
-      "sha256": "85cd1cde3c7c88419bc1d2e27531ee5d136c90b08dd15f6a362dbfcd97cabc22"
+      "reason": "Twelve layouts and 108 expanded submenu state/vertical containment checks, with retained controls/focus/theme validation.",
+      "bytes": 3240,
+      "sha256": "1224a89aeea4817235630847dd88bbabade6f04d46c389289d8ac69b0cfad07a"
     },
     {
       "path": "reports/tutorial-layout-results.json",
@@ -261,9 +267,9 @@
     },
     {
       "path": "script.js",
-      "reason": "Restore Hedo original CSS palette, identify the selected theme and retain other theme/Settings improvements.",
-      "bytes": 301250,
-      "sha256": "de961fd1b88d9abdb288a053eb4094847a6ce254a2cfe6e2a775417571ce772f"
+      "reason": "Single Settings toggle controller, accessible state, natural scrolling, visible-viewport sizing and focused-control reveal; retain prior theme behavior.",
+      "bytes": 302792,
+      "sha256": "a6d38bd855928ffd0bff5129eea76d765639adb1068ce08302f6d95f834ee3d2"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -303,15 +309,15 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Refresh the app shell for the single-column Settings stylesheet.",
-      "bytes": 7538,
-      "sha256": "abcec09eae54e7328dfea71c1fa54c8d420fe0aab2d5b68fc1ef0477079e5b5f"
+      "reason": "Refresh the app shell for the mobile Settings compatibility revision.",
+      "bytes": 7539,
+      "sha256": "6f7a6a6b985ec4e99dad72994628af061950214a760282af79dd575b292bb170"
     },
     {
       "path": "settings.css",
-      "reason": "Display Settings section cards in one column on phones, desktop and landscape, retaining expanded controls and fixed branding footer.",
-      "bytes": 10118,
-      "sha256": "791378463cf203e94d42b20c2775c7ffd90b85c66a05572fe318441c963cafad"
+      "reason": "Natural-height single-column button accordions without grid sizing or clipping; visible-viewport full-screen layout and fixed header/footer.",
+      "bytes": 10629,
+      "sha256": "8ca96a476851e101496629a91a4e914ce1c0377c1410a1abb95c1f9fe8ec613d"
     },
     {
       "path": "style.css",
@@ -345,15 +351,21 @@
     },
     {
       "path": "tests/navigation-layout.test.js",
-      "reason": "Retain drug scroll and Settings controls checks; target the isolated tutorial card.",
-      "bytes": 7723,
-      "sha256": "6f68cd6c5a4a914407e174548dcff4eed81a27f22bf20743bb03d17366f0d5a1"
+      "reason": "Use button-controlled Settings regions while retaining drug scroll, controls and tutorial separation regression checks.",
+      "bytes": 7896,
+      "sha256": "2359e1bf0f333584793db599dbb8b57b20b430dcbb0ce8d6923485a5706a0b00"
+    },
+    {
+      "path": "tests/settings-mobile.test.js",
+      "reason": "Touch regression covering icon/title/arrow taps, natural height, controls, rotation, viewport events/fallback, text, keyboard and voice contact shortcut.",
+      "bytes": 12289,
+      "sha256": "8f31392bf676410f4bd06bbd20011d2857ba143794133a826175502a843e42e8"
     },
     {
       "path": "tests/settings-theme-ui.test.js",
-      "reason": "Verify one card per row, aligned edges, reachable last card and retained Settings/theme behavior.",
-      "bytes": 10098,
-      "sha256": "e8eca67749ef06a7b1e104b2187fef4c43c158c9549c3c7bee7620adfce68a8e"
+      "reason": "Verify one row per card, expanded state, full vertical content containment and existing controls/themes.",
+      "bytes": 10867,
+      "sha256": "08c9386eec2539eb598043ed6e8905885c518fba01b559c0b8151e988c906139"
     },
     {
       "path": "tests/tutorial-layout.test.js",
@@ -375,9 +387,9 @@
     },
     {
       "path": "voice-commands.js",
-      "reason": "Open the collapsed Settings contact card before the existing voice support shortcut highlights it.",
-      "bytes": 127634,
-      "sha256": "66d30bbda34b9e4d6abca5e2846e0f37cc515032022a6a5deeee23530e3f3da1"
+      "reason": "Open the Settings contact region with the shared controller and size the dialog to the visible viewport.",
+      "bytes": 127847,
+      "sha256": "1d491785615e5adf03aacb843adf0e6703b97987c56a327bfee12277511dc59c"
     }
   ]
 }

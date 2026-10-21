@@ -1,20 +1,18 @@
 /* Full-screen Settings. Compact section list; full-width expanded controls. */
-#settingsModal {padding:0;align-items:stretch;justify-content:stretch;background:var(--bg-primary)}
-#settingsModal .modal-content {width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;border:0;border-radius:0;box-shadow:none}
+#settingsModal {top:var(--settings-viewport-top,0px);bottom:auto;height:100vh;height:var(--settings-viewport-height,100vh);padding:0;align-items:stretch;justify-content:stretch;background:var(--bg-primary)}
+#settingsModal .modal-content {width:100%;max-width:none;height:100%;min-height:0;max-height:none;border:0;border-radius:0;box-shadow:none}
 #settingsModal .modal-header {flex:0 0 auto;min-height:56px;padding:calc(4px + env(safe-area-inset-top)) 14px 4px;background:var(--surface);border:0;border-bottom:1px solid var(--border)}
 #settingsModal .modal-header h3 {font-size:17px;line-height:1.5;color:var(--text-primary)}
 #settingsModal .modal-close {width:44px;height:44px;font-size:28px;border-radius:12px;color:var(--text-secondary)}
-#settingsModal .settings-menu {width:100%;max-width:900px;min-height:0;max-height:none;margin-inline:auto;padding:12px;display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:8px;overflow-anchor:none;scroll-behavior:auto;scroll-padding-block:12px}
-#settingsModal .settings-menu-hint {grid-column:1/-1;margin:0 2px 2px;font-size:12px;line-height:1.6;color:var(--text-secondary)}
-#settingsModal .settings-card {min-width:0;margin:0;padding:0;border:1px solid var(--border);border-radius:13px;background:var(--surface);overflow:clip}
-#settingsModal .settings-card > summary {display:grid;grid-template-columns:28px minmax(0,1fr) 10px;align-items:center;gap:8px;min-height:56px;margin:0;padding:10px;list-style:none;cursor:pointer;color:var(--text-primary);font-size:13px;font-weight:650;line-height:1.5}
-#settingsModal .settings-card > summary::-webkit-details-marker {display:none}
-#settingsModal .settings-card > summary > i:first-child {display:grid;place-items:center;width:28px;height:28px;background:var(--primary-light);color:var(--primary);border-radius:9px;font-size:14px}
-#settingsModal .settings-card-title {min-width:0;overflow-wrap:anywhere}
-#settingsModal .settings-chevron {margin:0;color:var(--text-secondary);font-size:10px;transition:transform .2s}
-#settingsModal .settings-card[open] {grid-column:1/-1}
-#settingsModal .settings-card[open] > summary {border-bottom:1px solid var(--border);background:var(--primary-light);color:var(--heading-color,var(--primary))}
-#settingsModal .settings-card[open] .settings-chevron {transform:rotate(180deg)}
+#settingsModal .settings-menu {width:100%;max-width:900px;min-height:0;max-height:none;margin-inline:auto;padding:12px;display:block;flex:1 1 0!important;--settings-card-gap:8px;overflow-anchor:auto;scroll-behavior:auto;scroll-padding-block:12px}
+#settingsModal .settings-menu-hint {margin:0 2px 10px;font-size:12px;line-height:1.6;color:var(--text-secondary)}
+#settingsModal .settings-card {min-width:0;margin:0;padding:0;border:1px solid var(--border);border-radius:13px;background:var(--surface);overflow:visible;height:auto}
+#settingsModal .settings-card > .settings-card-trigger {display:flex;align-items:center;gap:8px;min-height:56px;width:100%;margin:0;padding:10px;border:0;border-radius:12px;background:transparent;-webkit-appearance:none;appearance:none;text-align:start;font-family:var(--font-persian);list-style:none;cursor:pointer;color:var(--text-primary);font-size:13px;font-weight:650;line-height:1.5}
+#settingsModal .settings-card > .settings-card-trigger > i:first-child {display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;background:var(--primary-light);color:var(--primary);border-radius:9px;font-size:14px}
+#settingsModal .settings-card-title {flex:1;min-width:0;overflow-wrap:anywhere}
+#settingsModal .settings-chevron {flex:0 0 10px;margin:0;color:var(--text-secondary);font-size:10px;transition:transform .2s}
+#settingsModal .settings-card.open > .settings-card-trigger {border-radius:12px 12px 0 0;border-bottom:1px solid var(--border);background:var(--primary-light);color:var(--heading-color,var(--primary))}
+#settingsModal .settings-card.open .settings-chevron {transform:rotate(180deg)}
 #settingsModal .settings-group-content {padding:14px;min-width:0}
 #settingsModal .settings-group-content > :last-child {margin-bottom:0}
 #settingsModal .settings-group-content .settings-hint {font-size:12px;line-height:1.8;color:var(--text-secondary);margin:0 0 12px}
@@ -22,7 +20,7 @@
 #settingsModal .setting-item > span, #settingsModal .setting-label-stack {min-width:0;flex:1;line-height:1.7;overflow-wrap:anywhere}
 #settingsModal .setting-label-stack {gap:4px}
 #settingsModal .setting-label-stack .setting-sublabel {font-size:12px;line-height:1.8;color:var(--text-secondary)}
-#settingsModal .setting-item:has(#themeModeButtons) {display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding-bottom:14px}
+#settingsModal .setting-theme-mode {display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding-bottom:14px}
 #settingsModal .theme-mode-btns {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:6px}
 #settingsModal .theme-mode-btn {width:auto;height:auto;min-height:44px;display:flex;flex-wrap:wrap;gap:6px;padding:6px;border:1px solid var(--border);background:var(--surface-elevated);color:var(--text-secondary);box-shadow:none}
 #settingsModal .theme-mode-btn span {font-size:12px;line-height:1.5;color:inherit}
@@ -66,16 +64,21 @@
 #settingsModal .settings-credit {display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:0 6px;max-width:100%;font:400 10px/1.6 var(--font-latin);color:var(--text-secondary)}
 #settingsModal .settings-credit bdi {font-weight:600;color:var(--text-primary);overflow-wrap:anywhere}
 #settingsModal :is(button,a,summary,input,select):focus-visible {outline:2px solid var(--heading-color,var(--primary));outline-offset:-3px}
-#settingsModal .switch:has(input:focus-visible) {outline:2px solid var(--heading-color,var(--primary));outline-offset:0;border-radius:10px}
-@media(min-width:600px) {#settingsModal .settings-menu {grid-template-columns:minmax(0,1fr);gap:10px;padding:16px}#settingsModal .theme-swatches {grid-template-columns:repeat(6,minmax(0,1fr))}}
-@media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu {grid-template-columns:minmax(0,1fr);gap:6px;padding:8px 12px}#settingsModal .settings-card > summary {min-height:48px;padding:8px}#settingsModal .settings-footer {padding-block:4px}#settingsModal .settings-brand img {width:24px;height:24px}#settingsModal .settings-brand {min-height:24px}#settingsModal .settings-brand bdi {font-size:18px}#settingsModal .modal-header {min-height:48px;padding-block:2px}}
-@media(max-width:360px) {#settingsModal .settings-card > summary {min-height:52px;padding:9px;gap:6px;font-size:12px}#settingsModal .settings-group-content {padding:12px}}
+#settingsModal .switch input:focus-visible + .slider {outline:2px solid var(--heading-color,var(--primary));outline-offset:0;border-radius:10px}
+@media(min-width:600px) {#settingsModal .settings-menu {--settings-card-gap:10px;padding:16px}#settingsModal .theme-swatches {grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu {--settings-card-gap:6px;padding:8px 12px}#settingsModal .settings-card > .settings-card-trigger {min-height:48px;padding:8px}#settingsModal .settings-footer {padding-block:4px}#settingsModal .settings-brand img {width:24px;height:24px}#settingsModal .settings-brand {min-height:24px}#settingsModal .settings-brand bdi {font-size:18px}#settingsModal .modal-header {min-height:48px;padding-block:2px}}
+@media(max-width:360px) {#settingsModal .settings-card > .settings-card-trigger {min-height:52px;padding:9px;gap:6px;font-size:12px}#settingsModal .settings-group-content {padding:12px}}
 @media(max-width:360px) {
-  #settingsModal .settings-menu {gap:6px;padding:10px}
-  #settingsModal .settings-card > summary {grid-template-columns:24px minmax(0,1fr) 10px;min-height:48px;padding:8px;gap:6px}
-  #settingsModal .settings-card > summary > i:first-child {width:24px;height:24px;font-size:13px}
+  #settingsModal .settings-menu {--settings-card-gap:6px;padding:10px}
+  #settingsModal .settings-card > .settings-card-trigger {min-height:48px;padding:8px;gap:6px}
+  #settingsModal .settings-card > .settings-card-trigger > i:first-child {flex-basis:24px;width:24px;height:24px;font-size:13px}
 }
 @media(min-width:600px) and (max-height:440px) {#settingsModal .settings-menu-hint {display:none}}
 #settingsModal {color-scheme:light}
 .dark-mode #settingsModal {color-scheme:dark}
 .dark-mode #settingsModal :is(.settings-select,.username-input) {border-color:#8494aa;box-shadow:none!important}
+
+/* Natural block flow has no grid track height or clipping around disclosures. */
+#settingsModal .settings-card + .settings-card {margin-top:var(--settings-card-gap)}
+#settingsModal .settings-group-content[hidden] {display:none!important}
+#settingsModal .settings-group-content:not([hidden]) {display:block;height:auto;max-height:none;overflow:visible}

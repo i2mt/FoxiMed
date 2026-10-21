@@ -977,11 +977,14 @@
             if (DOM.settingsModal) {
                 DOM.settingsModal.classList.add('active');
                 document.body.classList.add('no-scroll');
+                window.syncSettingsViewport?.();
             }
             setTimeout(function () {
                 const contact = document.getElementById('creatorContact');
                 if (!contact) return;
-                if (contact.tagName === 'DETAILS') contact.open = true;
+                if (typeof window.setSettingsSection === 'function') window.setSettingsSection(contact,true);
+                else if (contact.tagName === 'DETAILS') contact.open = true;
+                window.syncSettingsViewport?.();
                 if (contact.classList) contact.classList.add('voice-contact-highlight');
                 if (typeof contact.scrollIntoView === 'function') contact.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 setTimeout(function () {

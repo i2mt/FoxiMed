@@ -2,7 +2,7 @@
 
 ## Current result
 
-The latest revision is documented in `LATEST-UPDATE.md`. The tutorial now has isolated styles and FoxiOra v12.27's panel structure and responsive rules. The welcome fox fills after assets and the visible screen are ready. Settings is full screen with one section card per row, clearer controls and a fixed brand/credit footer. Hedo retains its previous dark purple palette with a brighter top-bar name; the other themes retain their heading enhancements. Prior drug-scroll/source-order/performance/spelling/cache work remains included; book data, reader JavaScript, index and PDF are unchanged from the preceding delivery.
+The latest revision is documented in `LATEST-UPDATE.md`. The tutorial now has isolated styles and FoxiOra v12.27's panel structure and responsive rules. The welcome fox fills after assets and the visible screen are ready. Settings is full screen with one section card per row, clearer controls and a fixed brand/credit footer. Its mobile accordions now use button-controlled hidden regions and natural block heights, while the dialog follows the visible viewport. iPhone 13-sized and Android touch profiles passed; physical Safari/device behavior has not been verified. Hedo retains its previous dark purple palette with a brighter top-bar name; the other themes retain their heading enhancements. Prior drug-scroll/source-order/performance/spelling/cache work remains included; book data, reader JavaScript, index and PDF are unchanged from the preceding delivery.
 
 The earlier implementation details below are retained for traceability. Current behavior and test results take precedence in `LATEST-UPDATE.md`, `FINAL-CHECKS.json` and `drug-reference-ui-results.json`.
 
@@ -80,7 +80,7 @@ The exact cumulative inventory, SHA-256 hashes and reasons are in `replacement-f
 | File | Reason |
 | --- | --- |
 | `.github/workflows/pages-sherpa-koochik.yml` | Retain generated voice build validation; validate the current onboarding module syntax before publication. |
-| `UPLOAD-INSTRUCTIONS.md` | Current stylesheet/worker revisions and single-column Settings verification. |
+| `UPLOAD-INSTRUCTIONS.md` | Current matching assets and mobile Settings upload/verification instructions. |
 | `drug-reference-book-01.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
 | `drug-reference-book-02.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
 | `drug-reference-book-03.js` | Regenerated display headings/sections with explicit spelling corrections; raw source, IDs and numeric clinical content retained. |
@@ -95,14 +95,14 @@ The exact cumulative inventory, SHA-256 hashes and reasons are in `replacement-f
 | `drug-reference-source.pdf` | Unchanged original PDF copied under the path used by footer page links. |
 | `drug-reference.css` | Retain reader styling and stable scroll behavior; use readable dark-mode reference headings. |
 | `drug-reference.js` | Preserve the activated topic heading while switching; follow PDF topic order, show brands first and keep every topic initially closed. |
-| `index.html` | Current matching single-column Settings stylesheet and service-worker revisions. |
+| `index.html` | Accessible button-controlled Settings regions; matching stylesheet, script, voice-command and service-worker URLs. |
 | `onboarding.css` | Private stretch-aligned tutorial grid, FoxiOra v12.27 responsive dock/sidebar rules, scrollable copy and visible fox fill. |
 | `onboarding.js` | Isolated responsive coaching panel, measured app viewport and fox fill after assets/fonts/startup visibility and painted frames. |
 | `reports/COMPACT-ACCORDION-UPDATE.md` | Historical compact-card revision, explicitly pointing to the current update. |
 | `reports/DRUG-READER-UPDATE.md` | Historical two-stage reader revision, explicitly pointing to the current update. |
-| `reports/FINAL-CHECKS.json` | Current single-column Settings/cache/asset checks with earlier unaffected validation retained. |
+| `reports/FINAL-CHECKS.json` | Current mobile touch, vertical containment, navigation, drug UI, cache, voice, syntax and preservation checks; distinguish emulation from hardware. |
 | `reports/IMPLEMENTATION-REPORT.md` | Current outcome and cumulative replacement inventory. |
-| `reports/LATEST-UPDATE.md` | Current one-card-per-row Settings behavior and retained prior improvements. |
+| `reports/LATEST-UPDATE.md` | Current mobile Settings changes, iPhone 13 and Android touch coverage, and Safari/device validation limits. |
 | `reports/SECOND-SPELLING-PASS.json` | Additional NLM terminology evidence, source-verified vitamin-name suffixes, wording counts and scope. |
 | `reports/SECOND-TITLE-CORRECTIONS.csv` | Every English/Persian title difference from the previous edited-files delivery. |
 | `reports/compact-accordion-checks.json` | Historical check record retained with a pointer to current results. |
@@ -120,25 +120,27 @@ The exact cumulative inventory, SHA-256 hashes and reasons are in `replacement-f
 | `reports/drug-spelling-verification.json` | NLM RxNorm term lookup evidence and primary fibrillation references for targeted spelling checks. |
 | `reports/navigation-layout-results.json` | Current long-topic position stability and retained controls/tutorial separation results. |
 | `reports/replacement-files.json` | Exact cumulative replacement inventory and hashes; self hash/size omitted. |
-| `reports/settings-theme-results.json` | Passing single-column layout, submenu, controls/focus and retained theme checks. |
+| `reports/settings-mobile-results.json` | Chromium iPhone 13/Pixel/Galaxy touch profiles, panel containment, real hit tests, rotation and simulated keyboard viewport checks. |
+| `reports/settings-theme-results.json` | Twelve layouts and 108 expanded submenu state/vertical containment checks, with retained controls/focus/theme validation. |
 | `reports/tutorial-layout-results.json` | 147 step geometry checks, rotation, delayed-ready visible fill, completion, replay and reduced motion. |
-| `script.js` | Restore Hedo original CSS palette, identify the selected theme and retain other theme/Settings improvements. |
+| `script.js` | Single Settings toggle controller, accessible state, natural scrolling, visible-viewport sizing and focused-control reveal; retain prior theme behavior. |
 | `scripts/check-voice-assets.py` | Verify three generated scripts, valid WASM and nonempty model data; detect HTML fallbacks. |
 | `scripts/drug-reference-editorial.json` | Traceable heading/word spelling corrections and paired heading typography; no dose/unit autocorrections. |
 | `scripts/drug-reference-original-ids.json` | Original 764-entry identity map for reproducible ID preservation. |
 | `scripts/drug-reference-overrides.json` | Documented, sourced exclusion of ambiguous acetaminophen brand aliases. |
 | `scripts/drug_reference_sections.py` | Shared source section parser; recognize the reversed pure Multivitamin indication label without rewriting clinical values. |
 | `scripts/rebuild-drug-reference.py` | Repeatable source extraction and editorial spelling with partial-name/digit boundary protection. |
-| `service-worker.js` | Refresh the app shell for the single-column Settings stylesheet. |
-| `settings.css` | Display Settings section cards in one column on phones, desktop and landscape, retaining expanded controls and fixed branding footer. |
+| `service-worker.js` | Refresh the app shell for the mobile Settings compatibility revision. |
+| `settings.css` | Natural-height single-column button accordions without grid sizing or clipping; visible-viewport full-screen layout and fixed header/footer. |
 | `style.css` | Keep Hedo original dark colors and gradients; brighten only its top-bar FoxiMed wordmark. |
 | `tests/drug-reference-cache.test.js` | Current lazy-book revision isolation and on-demand/offline voice-script cache reuse. |
 | `tests/drug-reference-data.test.js` | Validate the complete dataset, relationships, source status and preserved IDs. |
 | `tests/drug-reference-reader.test.js` | Whole-source content/numeric preservation plus all-monograph source ordering, seed mechanism order and brands-first checks. |
 | `tests/drug-reference-ui.test.js` | Mobile/desktop closed topics, keyboard, floating close, parentheses geometry, interactive tour and user-state restoration. |
-| `tests/navigation-layout.test.js` | Retain drug scroll and Settings controls checks; target the isolated tutorial card. |
-| `tests/settings-theme-ui.test.js` | Verify one card per row, aligned edges, reachable last card and retained Settings/theme behavior. |
+| `tests/navigation-layout.test.js` | Use button-controlled Settings regions while retaining drug scroll, controls and tutorial separation regression checks. |
+| `tests/settings-mobile.test.js` | Touch regression covering icon/title/arrow taps, natural height, controls, rotation, viewport events/fallback, text, keyboard and voice contact shortcut. |
+| `tests/settings-theme-ui.test.js` | Verify one row per card, expanded state, full vertical content containment and existing controls/themes. |
 | `tests/tutorial-layout.test.js` | Browser checks for aligned internal rows/borders/control bounds, screen separation and readiness-gated fox animation. |
 | `tests/voice-assets.test.py` | Generated bundle fixture checks for missing files, HTML fallback and invalid WebAssembly. |
 | `tests/voice-pipeline-smoke.test.js` | Retain voice smoke checks while validating current offline styles, isolated status markup and updated settings copy. |
-| `voice-commands.js` | Open the collapsed Settings contact card before the existing voice support shortcut highlights it. |
+| `voice-commands.js` | Open the Settings contact region with the shared controller and size the dialog to the visible viewport. |

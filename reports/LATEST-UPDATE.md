@@ -1,6 +1,18 @@
-# Tutorial alignment, full-screen Settings and readable themes
+# Mobile Settings compatibility, tutorial and drug reference
 
 Updated 2026-10-21. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.
+
+## Latest mobile Settings compatibility
+
+The submenu issue was reported on an iPhone 13; Android compatibility was also requested. The exact physical-iPhone failure was not reproduced here. The earlier checks covered outer bounds but did not establish full expanded-content containment or actual touch targeting.
+
+Settings now uses ordinary labelled buttons and hidden content regions instead of native details/summary elements with a separate prevented-default toggle handler. One click, tap, Enter or Space updates the expanded state, panel visibility and arrow together. The cards use normal block flow with natural heights, removing grid-track sizing and overflow clipping from expanded panels. Each section stays in its own row, and multiple sections can remain open. Controls, preferences and the voice contact shortcut are preserved.
+
+The full-screen dialog now tracks visualViewport height and top offset, with an innerHeight fallback. The header and credit footer remain outside the scrolling content. Browser-bar changes, rotation and keyboard viewport shrinkage update the available space; a focused control is revealed when that space shrinks. The old forced scroll-offset compensation on every toggle has been removed. Theme layout no longer depends on CSS :has().
+
+`settings-mobile-results.json` records Chromium **touch emulation**, using iPhone 13 (390 × 664 visible viewport), Pixel 7 (412 × 839), and Galaxy S9+ (320 × 658) profiles. Checks cover all nine submenus, 162 tap transitions across icons/titles/arrows, expanded panel/child containment, actual control hit testing, long and simultaneous panels, theme/font/default controls, rotation, a 350 px reduced viewport, simulated visualViewport keyboard resize/offset events, the fallback, enlarged text, repeated taps, Enter/Space, reopening, and the voice contact shortcut. The twelve-layout Settings/theme suite now also checks vertical containment and disclosure-state consistency in all 108 expanded submenus. Drug UI, navigation/tutorial separation, cache and voice smoke regressions pass.
+
+These results are not physical-device or Safari/WebKit validation. The available Chromium engine ran the mobile profiles; a WebKit binary could not be obtained in this environment. OS keyboard behavior is simulated rather than verified on hardware. The cumulative files are ready for manual upload, with fresh script, stylesheet and worker URLs.
 
 ## Latest Settings row layout
 

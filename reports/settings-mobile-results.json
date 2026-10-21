@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "engine": "Chromium touch emulation",
+  "physicalDevicesTested": false,
+  "safariTested": false,
+  "profiles": [
+    {
+      "name": "iPhone 13",
+      "viewport": {
+        "width": 390,
+        "height": 664
+      },
+      "touchTargetTransitions": 54,
+      "submenus": 9,
+      "naturalHeightAndVerticalContainment": true,
+      "controlsReachableAndHitTested": true,
+      "multipleOpen": true,
+      "rotationAndReducedViewport": [
+        {
+          "width": 390,
+          "height": 664
+        },
+        {
+          "width": 664,
+          "height": 390
+        },
+        {
+          "width": 390,
+          "height": 350
+        }
+      ],
+      "visualViewportResizeAndOffsetSimulated": true,
+      "visualViewportFallback": true,
+      "enlargedText": true,
+      "keyboardAndRepeatedTaps": true,
+      "voiceContactShortcut": true,
+      "reopenResets": true
+    },
+    {
+      "name": "Pixel 7",
+      "viewport": {
+        "width": 412,
+        "height": 839
+      },
+      "touchTargetTransitions": 54,
+      "submenus": 9,
+      "naturalHeightAndVerticalContainment": true,
+      "controlsReachableAndHitTested": true,
+      "multipleOpen": true,
+      "rotationAndReducedViewport": [
+        {
+          "width": 412,
+          "height": 839
+        },
+        {
+          "width": 839,
+          "height": 412
+        },
+        {
+          "width": 412,
+          "height": 350
+        }
+      ],
+      "visualViewportResizeAndOffsetSimulated": true,
+      "visualViewportFallback": true,
+      "enlargedText": true,
+      "keyboardAndRepeatedTaps": true,
+      "voiceContactShortcut": true,
+      "reopenResets": true
+    },
+    {
+      "name": "Galaxy S9+",
+      "viewport": {
+        "width": 320,
+        "height": 658
+      },
+      "touchTargetTransitions": 54,
+      "submenus": 9,
+      "naturalHeightAndVerticalContainment": true,
+      "controlsReachableAndHitTested": true,
+      "multipleOpen": true,
+      "rotationAndReducedViewport": [
+        {
+          "width": 320,
+          "height": 658
+        },
+        {
+          "width": 658,
+          "height": 320
+        },
+        {
+          "width": 320,
+          "height": 350
+        }
+      ],
+      "visualViewportResizeAndOffsetSimulated": true,
+      "visualViewportFallback": true,
+      "enlargedText": true,
+      "keyboardAndRepeatedTaps": true,
+      "voiceContactShortcut": true,
+      "reopenResets": true
+    }
+  ]
+}

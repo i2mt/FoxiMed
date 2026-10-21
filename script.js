@@ -1260,6 +1260,36 @@ function setupMobileOptimizations() {
 // ============================================
 // SETTINGS
 // ============================================
+// Settings uses ordinary buttons and hidden regions, avoiding browser-specific
+// disclosure/grid sizing and native summary default-action differences.
+function setSettingsSection(card,expanded) {
+    if(!card)return;
+    const trigger=card.querySelector('[data-settings-toggle]');
+    const panel=card.querySelector('.settings-group-content');
+    if(!trigger||!panel)return;
+    card.classList.toggle('open',!!expanded);
+    trigger.setAttribute('aria-expanded',String(!!expanded));
+    panel.hidden=!expanded;
+}
+function syncSettingsViewport() {
+    const modal=DOM.settingsModal;
+    if(!modal?.classList.contains('active'))return;
+    const viewport=window.visualViewport,height=Math.round(viewport?.height||window.innerHeight);
+    const previous=Number(modal.dataset.viewportHeight)||height;
+    modal.dataset.viewportHeight=String(height);
+    modal.style.setProperty('--settings-viewport-height',height+'px');
+    modal.style.setProperty('--settings-viewport-top',Math.max(0,viewport?.offsetTop||0)+'px');
+    if(height<previous){
+        requestAnimationFrame(()=>{
+            const pane=modal.querySelector('.modal-body'),focus=document.activeElement;
+            if(!pane?.contains(focus))return;
+            const a=focus.getBoundingClientRect(),b=pane.getBoundingClientRect();
+            if(a.bottom>b.bottom-8)pane.scrollTop+=a.bottom-b.bottom+8;
+            else if(a.top<b.top+8)pane.scrollTop-=b.top-a.top+8;
+        });
+    }
+}
+
 function loadSettings() {
     const savedSettings = localStorage.getItem('appSettings');
     if (savedSettings) {
@@ -1921,9 +1951,10 @@ function setupEventListeners() {
     });
     if (DOM.settingsBtn) DOM.settingsBtn.addEventListener('click', () => {
         if (DOM.settingsModal) {
-            DOM.settingsModal.querySelectorAll('details.settings-card').forEach(group=>group.open=false);
+            DOM.settingsModal.querySelectorAll('.settings-card').forEach(group=>setSettingsSection(group,false));
             DOM.settingsModal.querySelector('.modal-body').scrollTop=0;
             DOM.settingsModal.classList.add('active'); document.body.classList.add('no-scroll');
+            syncSettingsViewport();
             DOM.closeSettings?.focus({preventScroll:true});
         }
     });
@@ -2045,18 +2076,18 @@ function setupEventListeners() {
     DOM.settingsModal?.addEventListener('keydown',event=>{
         if(event.key==='Escape'){event.preventDefault();DOM.closeSettings?.click();return;}
         if(event.key!=='Tab')return;
-        const nodes=[...DOM.settingsModal.querySelectorAll('button,input,select,a,summary')].filter(n=>!n.disabled&&n.getClientRects().length&&(!n.closest('details:not([open])')||n.matches('summary')));
+        const nodes=[...DOM.settingsModal.querySelectorAll('button,input,select,a')].filter(n=>!n.disabled&&!n.closest('[hidden]')&&n.getClientRects().length);
         const index=nodes.indexOf(document.activeElement);
         if(event.shiftKey&&index<=0){event.preventDefault();nodes.at(-1)?.focus();}
         else if(!event.shiftKey&&(index<0||index===nodes.length-1)){event.preventDefault();nodes[0]?.focus();}
     });
     DOM.settingsModal?.addEventListener('click',event=>{
-        const summary=event.target.closest('details.settings-card > summary');if(!summary)return;
-        event.preventDefault();
-        const pane=DOM.settingsModal.querySelector('.modal-body'),top=summary.getBoundingClientRect().top;
-        summary.parentElement.open=!summary.parentElement.open;
-        pane.scrollTop+=summary.getBoundingClientRect().top-top;
+        const trigger=event.target.closest('[data-settings-toggle]');if(!trigger)return;
+        setSettingsSection(trigger.closest('.settings-card'),trigger.getAttribute('aria-expanded')!=='true');
     });
+    window.addEventListener('resize',syncSettingsViewport,{passive:true});
+    window.visualViewport?.addEventListener('resize',syncSettingsViewport,{passive:true});
+    window.visualViewport?.addEventListener('scroll',syncSettingsViewport,{passive:true});
     if (DOM.closeHistory) DOM.closeHistory.addEventListener('click', () => {
         if (DOM.historyModal) { DOM.historyModal.classList.remove('active'); document.body.classList.remove('no-scroll'); }
     });

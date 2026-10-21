@@ -144,6 +144,7 @@
   ],
   "controls": true,
   "keyboard": true,
+  "submenuVerticalContainmentAndState": true,
   "hedoOriginalPaletteRestored": true,
   "hedoTitleOnlyBrightened": true
 }
