@@ -3911,10 +3911,17 @@ function applyTheme(themeName) {
     const palette = THEMES[themeName] || THEMES.default;
     const vars = isDark ? palette.dark : palette.light;
     const root = document.documentElement;
-    Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
+    const isHedo = palette === THEMES.default;
+    document.body.dataset.colorTheme = isHedo ? 'default' : themeName;
+    if (isHedo) {
+        // Hedo uses its original CSS palette, including in dark mode.
+        Object.keys(vars).forEach(k => root.style.removeProperty(k));
+    } else {
+        Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
+    }
     const headingColors = {default:'#93c5fd',fox:'#fdba74',ocean:'#7dd3fc',rose:'#fda4af',forest:'#86efac',dreamfire:'#f9a8d4'};
     const lightHeadings={default:'#4338ca',fox:'#9a3412',ocean:'#075985',rose:'#9f1239',forest:'#166534',dreamfire:'#881337'};
-    root.style.setProperty('--heading-color',isDark ? (headingColors[themeName] || headingColors.default) : (lightHeadings[themeName] || lightHeadings.default));
+    root.style.setProperty('--heading-color',isDark && isHedo ? 'var(--primary)' : isDark ? (headingColors[themeName] || headingColors.default) : (lightHeadings[themeName] || lightHeadings.default));
     const meta = document.getElementById('themeColorMeta');
     if (meta) meta.content = isDark ? '#1f2937' : '#ffffff';
     document.querySelectorAll('.theme-swatch').forEach(s => {

@@ -101,29 +101,37 @@
   "themes": [
     {
       "name": "default",
-      "darkHeadingMinimumContrast": 5.72
+      "darkHeadingMinimumContrast": 5.58,
+      "scope": "top-bar brand only; original purple palette retained"
     },
     {
       "name": "fox",
-      "darkHeadingMinimumContrast": 6.11
+      "darkHeadingMinimumContrast": 6.11,
+      "scope": "visible headings"
     },
     {
       "name": "ocean",
-      "darkHeadingMinimumContrast": 6.18
+      "darkHeadingMinimumContrast": 6.18,
+      "scope": "visible headings"
     },
     {
       "name": "rose",
-      "darkHeadingMinimumContrast": 5.45
+      "darkHeadingMinimumContrast": 5.45,
+      "scope": "visible headings"
     },
     {
       "name": "forest",
-      "darkHeadingMinimumContrast": 7.34
+      "darkHeadingMinimumContrast": 7.34,
+      "scope": "visible headings"
     },
     {
       "name": "dreamfire",
-      "darkHeadingMinimumContrast": 5.68
+      "darkHeadingMinimumContrast": 5.68,
+      "scope": "visible headings"
     }
   ],
   "controls": true,
-  "keyboard": true
+  "keyboard": true,
+  "hedoOriginalPaletteRestored": true,
+  "hedoTitleOnlyBrightened": true
 }

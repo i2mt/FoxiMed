@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "checkedOn": "2026-10-20",
-  "revision": "isolated-responsive-tutorial-visible-fox-fullscreen-settings-theme-contrast",
+  "checkedOn": "2026-10-21",
+  "revision": "hedo-original-dark-palette-with-top-bar-title-only-adjustment",
   "tests": {
     "drug-reference-data.test.js": "PASS",
     "drug-reference-cache.test.js": "PASS",
@@ -69,5 +69,15 @@
   "settingsFullScreenLayouts": 12,
   "settingsSubmenuGeometryChecks": 108,
   "settingsClosedMenuRequiresScrollInTestedLayouts": false,
-  "darkHeadingMinimumContrastAcrossSixThemes": 5.45
+  "hedoOriginalDarkPaletteRestored": true,
+  "hedoReadabilityAdjustmentScope": "top-bar FoxiMed name only",
+  "hedoTopBarContrast": 5.58,
+  "otherFiveDarkThemeHeadingsMinimumContrast": 5.45,
+  "currentRevisionChecks": [
+    "settings-theme-ui.test.js",
+    "voice-pipeline-smoke.test.js",
+    "drug-reference-cache.test.js",
+    "JavaScript syntax and asset-version consistency"
+  ],
+  "unaffectedSuites": "previous delivery results retained"
 }

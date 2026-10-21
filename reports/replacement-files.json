@@ -1,6 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "aligned-tutorial-ready-fox-fullscreen-settings-readable-themes",
+  "revision": "hedo-original-dark-palette-top-bar-title-only",
   "self_hash_excluded": true,
   "files": [
     {
@@ -11,9 +11,9 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Current manual upload paths, both new stylesheets, revisions and verification steps.",
-      "bytes": 3464,
-      "sha256": "6a85f7ee147248ab50b9b1a4a5e644d7dd7b837d3c37b283bb5c5e35e1e7b4b0"
+      "reason": "Current manual upload paths, revisions and restored Hedo verification.",
+      "bytes": 3512,
+      "sha256": "22474d83d0b353dfc0a5be6434a7ca7a1f5f47eb813f4473cd826c55d2389ea8"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -101,9 +101,9 @@
     },
     {
       "path": "index.html",
-      "reason": "Full-screen Settings with preserved controls, bottom fox/name/credit, isolated tutorial markup and current asset revisions.",
+      "reason": "Current matching script/style/service-worker revisions with previous app improvements preserved.",
       "bytes": 177783,
-      "sha256": "f6445bffd9ed74f66166b57bd1a0725a01fcf39a80469d1abcf4130d01dd8236"
+      "sha256": "0b7db34fb70323e7f93b13b736b0c014f1ab97dce7faa02c2561faeda4b9cfc8"
     },
     {
       "path": "onboarding.css",
@@ -131,21 +131,21 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Nine passing suites, syntax/data preservation and focused tutorial/Settings/contrast results.",
-      "bytes": 1837,
-      "sha256": "3f8949d96ebb378821f62aa7b12f990fe16a4f6f0c07075555c936fd1eef7eaa"
+      "reason": "Current Hedo/theme/voice/cache/syntax checks, with unaffected earlier validation retained.",
+      "bytes": 2214,
+      "sha256": "15cd6466231f1f104e64ac62776ca127f9e1c3557820243d730f0409cfa2c08a"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "reason": "Current outcome with complete cumulative replacement inventory and prior implementation history.",
-      "bytes": 20403,
-      "sha256": "08a61ef53007562fed0e31effc6a85cf5f7191f4ecc492b0e072fca525f036fd"
+      "reason": "Current outcome and complete cumulative replacement inventory.",
+      "bytes": 20272,
+      "sha256": "036e7328a9f48036fd83c65a76cc21fa7926fa8014d5739aa77b28aef2595eea"
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Current tutorial alignment/fox readiness, full-screen Settings, theme contrast evidence and retained prior fixes.",
-      "bytes": 11525,
-      "sha256": "ee318e41f336e805ee02cbc34e01ca5131e8d814fb4b412fdf9b28d8d7881e0e"
+      "reason": "Current Hedo restoration and title-only adjustment, plus retained previous updates.",
+      "bytes": 12279,
+      "sha256": "5a2c016ff9c5a52fe5643938bf389b8626258a9afceefb25de1a86954efce6e5"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -249,9 +249,9 @@
     },
     {
       "path": "reports/settings-theme-results.json",
-      "reason": "Twelve full-screen/closed-menu layouts, 108 submenu checks, controls/focus and six-theme headline contrast.",
-      "bytes": 2640,
-      "sha256": "a60ac09be926a09c3bd64979686ec47688f9ca8acd5755949ce5edb70096686d"
+      "reason": "Passing Hedo palette/title checks, Settings layouts/controls and remaining theme contrast checks.",
+      "bytes": 2960,
+      "sha256": "761c3e8162c6b389d01592f67b71202abcbb94a25b61a77d9357be71b0ba0454"
     },
     {
       "path": "reports/tutorial-layout-results.json",
@@ -261,9 +261,9 @@
     },
     {
       "path": "script.js",
-      "reason": "Apply the default dark palette and readable heading tokens; Settings focus/keyboard/scroll behavior and clean tutorial launch.",
-      "bytes": 300912,
-      "sha256": "c8363a338a0b6e870ffec15698e887b55692ef93a933ff4236c29d90b41b7769"
+      "reason": "Restore Hedo original CSS palette, identify the selected theme and retain other theme/Settings improvements.",
+      "bytes": 301250,
+      "sha256": "de961fd1b88d9abdb288a053eb4094847a6ce254a2cfe6e2a775417571ce772f"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -303,9 +303,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Cache matching current tutorial/Settings styles and scripts, headline styling and prior lazy drug/voice assets.",
+      "reason": "Refresh the app shell for the restored Hedo palette and targeted title styling.",
       "bytes": 7538,
-      "sha256": "29454dc83d8a97b2175ad901a22a9058fb64e82a4eb02badd93a6b7c171868f1"
+      "sha256": "5d9a786e5754a54d5e5e6f5cd0e228b9bea5643b81458f728083c3d0d21e94c1"
     },
     {
       "path": "settings.css",
@@ -315,9 +315,9 @@
     },
     {
       "path": "style.css",
-      "reason": "Retain shared app styles; remove superseded tour overrides and use readable solid dark-mode headline accents.",
-      "bytes": 235473,
-      "sha256": "cc535251501729f25f3cab653b8c3296f6a61de756cca21f3f6db1132eda665f"
+      "reason": "Keep Hedo original dark colors and gradients; brighten only its top-bar FoxiMed wordmark.",
+      "bytes": 236002,
+      "sha256": "69b0cacfa01aa31f59f4ad46fec5d117fac2245fc55812c9548a7d43ee5c4df7"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -351,9 +351,9 @@
     },
     {
       "path": "tests/settings-theme-ui.test.js",
-      "reason": "Browser checks for full-screen Settings, no closed-menu scrolling, all submenus, working controls, focus and dark headline contrast.",
-      "bytes": 8315,
-      "sha256": "7ecc9a6cefca19eb88c1a591eee114072ae97e31965f22d93bc25414e048f86f"
+      "reason": "Verify original Hedo palette and purple headings, brighter top-bar title, other themes and retained Settings behavior.",
+      "bytes": 9254,
+      "sha256": "d5f56b04789decc2fd163a87c7505e5de385178e31ffddd175394b115ce2c364"
     },
     {
       "path": "tests/tutorial-layout.test.js",

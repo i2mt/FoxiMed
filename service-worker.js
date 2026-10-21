@@ -2,7 +2,7 @@
 // App shell is network-first. Rizeh VAD + offline-ASR .data/.wasm use a
 // stable cache-first model cache independent of ordinary app revisions.
 
-const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_7';
+const CACHE_NAME = 'FoxiMed_v5.3.2_drug_reference_8';
 // Include the pinned model revision. The previous deployment accidentally
 // stored Koochik bytes under a Rizeh-named cache, so reusing that namespace
 // would keep serving the wrong 127 MB .data file after this release.
@@ -11,10 +11,10 @@ const MODEL_CACHE_NAME = 'FoxiMed_Model_Rizeh_v1_nonstreaming_int8_f2b9251_vad_s
 const urlsToCache = [
     './',
     './index.html',
-    './style.css?v=47',
+    './style.css?v=48',
     './voice-assistant.css?v=43',
     './calculation-core.js?v=35',
-    './script.js?v=53',
+    './script.js?v=54',
     './voice-recognition.js?v=42',
     './koochik-asr.js?v=36',
     './koochik-worker.js?v=35',

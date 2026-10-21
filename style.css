@@ -10317,15 +10317,22 @@ input[style*="display:none"] {
 
 
 /* Solid, light theme accents keep dark-mode text independent of dark gradients. */
-.dark-mode .gradient-text,
-.dark-mode .selected-drug-name-compact,
-.dark-mode .converters-container h2,
-.dark-mode .drugs-container h2,
-.dark-mode .tools-container h2,
-.dark-mode .modal-header h3,
-.dark-mode .logo-text h1,
-.dark-mode .history-drug {
+.dark-mode:not([data-color-theme="default"]) .gradient-text,
+.dark-mode:not([data-color-theme="default"]) .selected-drug-name-compact,
+.dark-mode:not([data-color-theme="default"]) .converters-container h2,
+.dark-mode:not([data-color-theme="default"]) .drugs-container h2,
+.dark-mode:not([data-color-theme="default"]) .tools-container h2,
+.dark-mode:not([data-color-theme="default"]) .modal-header h3,
+.dark-mode:not([data-color-theme="default"]) .logo-text h1,
+.dark-mode:not([data-color-theme="default"]) .history-drug {
     background: none !important;
     color: var(--heading-color, #e2e8f0) !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+/* Preserve Hedo's original purple theme; brighten only the top-bar wordmark. */
+.dark-mode[data-color-theme="default"] .logo-text h1 {
+    background: none !important;
+    color: #c4b5fd !important;
     -webkit-text-fill-color: currentColor !important;
 }

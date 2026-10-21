@@ -1,6 +1,12 @@
 # Tutorial alignment, full-screen Settings and readable themes
 
-Updated 2026-10-20. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.
+Updated 2026-10-21. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.
+
+## Latest Hedo adjustment
+
+Hedo's previous dark purple palette is restored by using its original CSS colors again. The purple gradients, accents and section titles retain their prior appearance. Only the top-bar FoxiMed wordmark receives a lighter violet (`#c4b5fd`) for readability; its measured contrast against the header is 5.58:1. Other themes and the tutorial, full-screen Settings and drug-reader changes remain included.
+
+The updated browser regression verifies the original Hedo primary/gradient values, clearing another theme's inline palette, the unchanged purple reference heading and the brighter top-bar name. Twelve Settings layouts, all 108 submenu checks, controls/focus, all six theme switches, voice smoke checks and service-worker cache checks pass. Earlier unaffected suites retain their previous validation results.
 
 ## Tutorial alignment and welcome fox
 
@@ -18,7 +24,7 @@ Settings fills the viewport with a fixed header, a scrollable section area and a
 
 Submenus now use labelled 44 px controls, 16 px text inputs/selects, clear theme-mode labels, spaced color choices, distinct history/log deletion actions, isolated mixed-script names/values and a cleaner support link. Native dark select menus use the correct color scheme. Profile, theme/font, calculator defaults, keyboard focus containment, Escape/close and focus restoration were checked. Existing control IDs, preferences, data/export/support actions and voice shortcut are preserved. The calculator drug count is labelled explicitly to distinguish it from the reference catalog.
 
-`settings-theme-results.json` records twelve full-screen layouts, 108 expanded submenu checks and control/keyboard checks. It also records measured headline contrast across all six dark themes. The default Hedo palette is now applied in dark mode instead of clearing its variables. Headings use a separate light accent rather than dark gradient text; the tested visible calculator, Drugs and Tools headings, including the top-bar brand, have minimum ratios of 5.45:1 or higher. This is a focused headline check, not a claim of a complete accessibility audit.
+`settings-theme-results.json` records twelve full-screen layouts, 108 expanded submenu checks and control/keyboard checks. It also records measured headline contrast across all six dark themes. Hedo retains its original purple palette and only its top-bar brand is brightened. The other five themes retain their lighter heading accents, with tested visible heading ratios of 5.45:1 or higher. This is a focused headline check, not a claim of a complete accessibility audit.
 
 ## Retained drug behavior
 
@@ -63,6 +69,6 @@ Current data, reader, cache, voice-source/worker and generated-asset fixture che
 
 The drug startup payload is 395,498 bytes, versus 8,035,317 bytes in the supplied original snapshot. Initial results remain capped at 40 with no book requests. Detail chunks load on first opening a drug and are cached by revision. Offline details still require a previous online opening of the corresponding chunk.
 
-Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=47`, `script.js?v=53`, `drug-reference.css?v=8`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=3`, `service-worker.js?v=53`, `settings.css?v=1`, `onboarding.css?v=1`, and lazy book chunks `?v=4`.
+Upload all replacements together, preserving repository paths; do not delete unrelated files. Current assets: `style.css?v=48`, `script.js?v=54`, `drug-reference.css?v=8`, `drug-reference.js?v=8`, `drug-reference-index.js?v=3`, `onboarding.js?v=3`, `service-worker.js?v=54`, `settings.css?v=1`, `onboarding.css?v=1`, and lazy book chunks `?v=4`.
 
 Clinical scope remains limited: the 2008 source has not been fully clinically validated. Incomplete or incorrectly scoped punctuation/fractions/tables in the source cannot safely be reconstructed from display text alone. Unpaired source brackets remain isolated and visible instead of guessed. Existing duplicate headings, unresolved metadata and Abciximab source issues remain in the review queue. No new warning/source banners were added to cards.
