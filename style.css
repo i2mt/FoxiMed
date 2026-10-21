@@ -699,8 +699,9 @@ select {
 .loading-fox {
     --loading-progress: 0%;
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: min(300px, 78vw, 48vh);
+    height: min(300px, 78vw, 48vh);
+    flex-shrink: 0;
     margin-bottom: 12px;
     filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.22));
 }
@@ -2150,7 +2151,8 @@ body.low-power-mode .tab-item.active { animation: none; }
     box-sizing: border-box;
 }
 
-.input-group input[type="number"] {
+.input-group input[type="number"],
+.input-group input[data-numeric="true"] {
     direction: ltr;
     text-align: center;
     font-family: var(--font-mono);
@@ -9082,7 +9084,7 @@ body.low-power-mode .name-prompt { backdrop-filter: none; -webkit-backdrop-filte
 @keyframes tutorialNudgeDown { 50% { transform: translateY(4px); } }
 
 @media (max-height: 720px) {
-    .loading-fox { width: 172px; height: 172px; margin-bottom: 6px; }
+    .loading-fox { margin-bottom: 6px; }
     .tutorial-box { padding-top: 18px; }
     .tutorial-dots { margin-bottom: 12px; }
     .tutorial-slide { gap: 8px; }
@@ -9091,6 +9093,13 @@ body.low-power-mode .name-prompt { backdrop-filter: none; -webkit-backdrop-filte
     .tutorial-fox-mark { width: 84px; height: 84px; }
     .tutorial-body { line-height: 1.65; }
     .tutorial-nav { margin-top: 12px; }
+}
+
+@media (max-height: 450px) and (min-width: 480px) {
+    .loading-content { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: 22px; row-gap: 7px; max-width: 560px; }
+    .loading-fox { grid-column: 1; grid-row: 1 / 8; justify-self: center; align-self: center; width: min(220px, 35vw, 72vh); height: min(220px, 35vw, 72vh); margin: 0; }
+    .loading-content > :not(.loading-fox) { grid-column: 2; }
+    .loading-credit { margin-top: 4px; }
 }
 
 .tutorial-title {
@@ -10336,3 +10345,6 @@ input[style*="display:none"] {
     color: #c4b5fd !important;
     -webkit-text-fill-color: currentColor !important;
 }
+
+/* Numeric text fields accept all digit scripts while retaining LTR caret/layout. */
+input[data-numeric="true"] { direction:ltr; text-align:center; unicode-bidi:isolate; font-family:var(--font-latin); }

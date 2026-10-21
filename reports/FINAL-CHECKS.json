@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "checkedOn": "2026-10-21",
-  "revision": "install-first-optional-setup-and-discovery",
+  "revision": "persian-input-and-welcome-upgrade",
   "tests": {
     "drug-reference-data.test.js": "PASS",
     "drug-reference-cache.test.js": "PASS",
@@ -14,7 +14,9 @@
     "settings-theme-ui.test.js": "PASS",
     "settings-mobile.test.js": "PASS",
     "welcome-discovery.test.js": "PASS",
-    "welcome-responsive.test.js": "PASS"
+    "welcome-responsive.test.js": "PASS",
+    "persian-numbers.test.js": "PASS",
+    "welcome-upgrade.test.js": "PASS"
   },
   "javascriptSyntaxFiles": 41,
   "pythonSyntaxFiles": 4,
@@ -76,16 +78,13 @@
   "hedoTopBarContrast": 5.58,
   "otherFiveDarkThemeHeadingsMinimumContrast": 5.45,
   "currentRevisionChecks": [
-    "welcome-discovery.test.js",
+    "persian-numbers.test.js",
+    "welcome-upgrade.test.js",
     "welcome-responsive.test.js",
-    "settings-mobile.test.js",
-    "settings-theme-ui.test.js",
-    "navigation-layout.test.js",
-    "drug-reference-ui.test.js",
+    "welcome-discovery.test.js",
     "tutorial-layout.test.js",
-    "drug-reference-cache.test.js",
     "voice-pipeline-smoke.test.js",
-    "JavaScript syntax, asset URL consistency and clinical/theme preservation comparison"
+    "drug-reference-cache.test.js"
   ],
   "unaffectedSuites": "Earlier drug data/reader and generated voice asset results retained; clinical source files are unchanged.",
   "settingsSectionColumns": 1,
@@ -121,7 +120,7 @@
   "featureTipPermissionsRequested": false,
   "newPlatformEventsScope": "Chromium simulations for installation, standalone mode, keyboard visual viewport and device layouts; not physical installation or Safari",
   "unchangedClinicalReferenceFiles": 14,
-  "unchangedCoreThemeSettingsAndTutorialStyles": 3,
+  "unchangedCoreThemeSettingsAndTutorialStyles": "Core theme palettes and settings styles unchanged; tutorial practice input accepts Persian digits.",
   "setupResponsiveLayouts": 14,
   "setupResponsiveScreenChecks": 70,
   "featureTipResponsiveLayouts": 7,
@@ -132,5 +131,13 @@
   "setupEnlargedTextLayouts": 3,
   "setupMinimumTestedReadingPanelHeightPx": 96,
   "setupLargeTextGridAndButtons": "adaptive columns and full-width stacked actions",
-  "setupLongNamesAndTextInsideBounds": true
+  "setupLongNamesAndTextInsideBounds": true,
+  "currentRevisionCheckScope": "Current suites above rerun; other existing test results are retained from previous deliveries.",
+  "persianNumericFields": 50,
+  "numericCalculationEquivalencePaths": 16,
+  "returningSetupInvitation": "Once per browser/installed storage, optional, prefilled, draft-safe, separate from earlier setup completion",
+  "portraitThemeChoicesWithoutScrolling": true,
+  "startupFoxMaximumPx": 300,
+  "startupShortLandscapeLayout": "Two columns",
+  "newUserSharedStorageInstallHandoff": "PASS"
 }

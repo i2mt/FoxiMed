@@ -489,7 +489,7 @@ function testDeploymentWiring() {
         'model download must fill the existing main fox from the real overall progress without duplicating the mascot');
     assert(index.includes('id="loadingFox"') && !index.includes('class="loading-logo-img"') &&
         !index.includes('class="loading-tip') && script.includes("setProperty('--loading-progress'") &&
-        read('style.css').includes('.loading-fox-fill') && read('style.css').includes('width: 220px'),
+        read('style.css').includes('.loading-fox-fill') && read('style.css').includes('width: min(300px, 78vw, 48vh)'),
         'startup must use the lightweight premium fox treatment without rotating emoji tips');
     const loadingMarkup = index.slice(index.indexOf('<!-- Loading Screen -->'), index.indexOf('<!-- Header -->'));
     assert(loadingMarkup.includes('دستیار بالینی هوشمند پرستاران') && !/ICU/i.test(loadingMarkup),
@@ -509,7 +509,7 @@ function testDeploymentWiring() {
         voiceAssistantCss.includes('flex: 1 1 270px;') &&
         voiceAssistantCss.includes('.voice-orb-zone { flex: 0 0 auto; min-height: 0; }'),
         'assistant layout must use tall-screen space while preserving compact short-phone behavior');
-    assert(read('style.css').includes('width: 220px;') &&
+    assert(read('style.css').includes('width: min(300px, 78vw, 48vh);') &&
         read('style.css').includes('.dark-mode .logo {\n    background: transparent;') &&
         read('style.css').includes('.tutorial-fox-mark {') && read('style.css').includes('width: 112px;'),
         'startup and tutorial foxes must be dominant while the header fox remains unboxed');

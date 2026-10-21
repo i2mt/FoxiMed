@@ -26,12 +26,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=48">
+    <link rel="stylesheet" href="style.css?v=50">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
     <link rel="stylesheet" href="drug-reference.css?v=8">
     <link rel="stylesheet" href="settings.css?v=3">
     <link rel="stylesheet" href="onboarding.css?v=1">
-    <link rel="stylesheet" href="welcome.css?v=1">
+    <link rel="stylesheet" href="welcome.css?v=2">
 </head>
 <body>
 
@@ -49,7 +49,7 @@
             </div>
             <div class="loading-status" id="loadingStatus">در حال بارگذاری پایگاه داده دارویی...</div>
             <div class="loading-meta">
-                <span>نسخه 5.3.2</span>
+                <span>نسخه 5.3.3</span>
                 <span class="loading-meta-dot" aria-hidden="true"></span>
                 <span>کاملا آفلاین</span>
             </div>
@@ -155,7 +155,7 @@
                                 <div class="volume-selector-enhanced">
                                     <div class="volume-presets" id="volumeOptions"></div>
                                     <div class="volume-custom-input" id="customVolumeContainer" style="display: none;">
-                                        <input type="number" id="customVolume" placeholder="حجم دلخواه" min="1" max="5000">
+                                        <input type="text" data-numeric="true" id="customVolume" placeholder="حجم دلخواه" min="1" max="5000" inputmode="decimal">
                                         <span>سی‌سی</span>
                                     </div>
                                 </div>
@@ -198,7 +198,7 @@
                                     <div class="calc-toggle-item" id="customAmountInputRow" style="display:none;">
                                         <div class="custom-amount-presets" id="customAmountPresets"></div>
                                         <div class="custom-amount-field">
-                                            <input type="text" inputmode="decimal" id="customAmountInput" class="custom-amount-input" placeholder="مقدار دارو...">
+                                            <input type="text" inputmode="decimal" data-numeric="true" id="customAmountInput" class="custom-amount-input" placeholder="مقدار دارو...">
                                             <span class="custom-amount-unit" id="customAmountUnit">mg</span>
                                         </div>
                                     </div>
@@ -214,7 +214,7 @@
                                     <div class="calc-toggle-item dose-input-card">
                                         <div class="dose-input-enhanced">
                                             <div class="dose-input-wrapper">
-                                                <input type="number" id="doctorOrder" placeholder="0" min="0" step="0.1">
+                                                <input type="text" data-numeric="true" id="doctorOrder" placeholder="0" min="0" step="0.1" inputmode="decimal">
                                                 <span class="dose-unit-enhanced" id="orderUnit">units/hour</span>
                                             </div>
                                         </div>
@@ -238,7 +238,7 @@
                                         </div>
                                         <div class="weight-input-row" id="weightInputRow" style="display:none;">
                                             <i class="fas fa-user"></i>
-                                            <input type="number" id="patientWeight" placeholder="وزن بیمار" min="0" step="0.1" inputmode="decimal">
+                                            <input type="text" data-numeric="true" id="patientWeight" placeholder="وزن بیمار" min="0" step="0.1" inputmode="decimal">
                                             <span class="weight-unit latin-inline">kg</span>
                                         </div>
                                     </div>
@@ -1075,7 +1075,7 @@
                                     <div class="burns-parkland-weight">
                                         <label style="font-family:var(--font-persian);font-size:12px;color:var(--text-secondary);display:block;margin-bottom:4px;">وزن بیمار برای محاسبه Parkland</label>
                                         <div class="input-with-unit">
-                                            <input type="number" id="burnsWeight" placeholder="وزن" inputmode="decimal" step="0.1" oninput="updateParkland()">
+                                            <input type="text" data-numeric="true" id="burnsWeight" placeholder="وزن" inputmode="decimal" step="0.1" oninput="updateParkland()">
                                             <span class="input-unit">kg</span>
                                         </div>
                                     </div>
@@ -1116,14 +1116,14 @@
                                         <div class="input-group">
                                             <label>وزن</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="bmiWeight" placeholder="70" step="0.1" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="bmiWeight" placeholder="70" step="0.1" inputmode="decimal">
                                                 <span class="input-unit">kg</span>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <label>قد</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="bmiHeight" placeholder="170" step="0.1" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="bmiHeight" placeholder="170" step="0.1" inputmode="decimal">
                                                 <span class="input-unit">cm</span>
                                             </div>
                                         </div>
@@ -1172,14 +1172,14 @@
                                         <div class="input-group">
                                             <label>وزن</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="bsaWeight" placeholder="70" step="0.1" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="bsaWeight" placeholder="70" step="0.1" inputmode="decimal">
                                                 <span class="input-unit">kg</span>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <label>قد</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="bsaHeight" placeholder="170" step="0.1" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="bsaHeight" placeholder="170" step="0.1" inputmode="decimal">
                                                 <span class="input-unit">cm</span>
                                             </div>
                                         </div>
@@ -1212,7 +1212,7 @@
                                         <div class="input-group">
                                             <label>قد</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="ibwHeight" placeholder="170" step="0.1" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="ibwHeight" placeholder="170" step="0.1" inputmode="decimal">
                                                 <span class="input-unit">cm</span>
                                             </div>
                                         </div>
@@ -1275,7 +1275,7 @@
                                                 <div class="oxy-input-row">
                                                     <span class="oxy-label">قد بیمار</span>
                                                     <div class="oxy-field">
-                                                        <input type="number" id="ventHeight" inputmode="decimal" placeholder="170" class="oxy-input" step="0.1">
+                                                        <input type="text" data-numeric="true" id="ventHeight" inputmode="decimal" placeholder="170" class="oxy-input" step="0.1">
                                                         <span class="oxy-unit">cm</span>
                                                     </div>
                                                 </div>
@@ -1291,7 +1291,7 @@
                                                 <div class="oxy-input-row">
                                                     <span class="oxy-label">طول اولنا</span>
                                                     <div class="oxy-field">
-                                                        <input type="number" id="ventUlna" inputmode="decimal" placeholder="26" class="oxy-input" step="0.1">
+                                                        <input type="text" data-numeric="true" id="ventUlna" inputmode="decimal" placeholder="26" class="oxy-input" step="0.1">
                                                         <span class="oxy-unit">cm</span>
                                                     </div>
                                                 </div>
@@ -1323,7 +1323,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">وزن بیمار</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="nutWeight" inputmode="decimal" placeholder="70" class="oxy-input" step="0.1">
+                                                    <input type="text" data-numeric="true" id="nutWeight" inputmode="decimal" placeholder="70" class="oxy-input" step="0.1">
                                                     <span class="oxy-unit">kg</span>
                                                 </div>
                                             </div>
@@ -1332,7 +1332,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">قد بیمار</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="nutHeight" inputmode="decimal" placeholder="170" class="oxy-input" step="0.1">
+                                                    <input type="text" data-numeric="true" id="nutHeight" inputmode="decimal" placeholder="170" class="oxy-input" step="0.1">
                                                     <span class="oxy-unit">cm</span>
                                                 </div>
                                             </div>
@@ -1341,7 +1341,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">سن</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="nutAge" inputmode="numeric" placeholder="50" class="oxy-input" step="1">
+                                                    <input type="text" data-numeric="true" id="nutAge" inputmode="numeric" placeholder="50" class="oxy-input" step="1">
                                                     <span class="oxy-unit">سال</span>
                                                 </div>
                                             </div>
@@ -1405,7 +1405,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">pH</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgPH" inputmode="decimal" placeholder="7.40" step="0.01" min="6.5" max="8.0" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgPH" inputmode="decimal" placeholder="7.40" step="0.01" min="6.5" max="8.0" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit" style="opacity:0">—</span>
                                                 </div>
                                             </div>
@@ -1414,7 +1414,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">pCO₂</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgPCO2" inputmode="decimal" placeholder="45" step="0.1" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgPCO2" inputmode="decimal" placeholder="45" step="0.1" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">mmHg</span>
                                                 </div>
                                             </div>
@@ -1423,7 +1423,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">HCO₃⁻</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgHCO3" inputmode="decimal" placeholder="24" step="0.1" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgHCO3" inputmode="decimal" placeholder="24" step="0.1" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">mEq/L</span>
                                                 </div>
                                             </div>
@@ -1432,7 +1432,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">BE</span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgBE" inputmode="decimal" placeholder="0" step="0.1" min="-30" max="30" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgBE" inputmode="decimal" placeholder="0" step="0.1" min="-30" max="30" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">mEq/L</span>
                                                 </div>
                                             </div>
@@ -1441,7 +1441,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">Na⁺ <span style="font-size:10px;opacity:0.7">(اختیاری)</span></span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgNa" inputmode="decimal" placeholder="140" step="1" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgNa" inputmode="decimal" placeholder="140" step="1" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">mEq/L</span>
                                                 </div>
                                             </div>
@@ -1450,7 +1450,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">Cl⁻ <span style="font-size:10px;opacity:0.7">(اختیاری)</span></span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgCl" inputmode="decimal" placeholder="104" step="1" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgCl" inputmode="decimal" placeholder="104" step="1" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">mEq/L</span>
                                                 </div>
                                             </div>
@@ -1459,7 +1459,7 @@
                                             <div class="oxy-input-row">
                                                 <span class="oxy-label">Albumin <span style="font-size:10px;opacity:0.7">(اختیاری)</span></span>
                                                 <div class="oxy-field">
-                                                    <input type="number" id="vbgAlbumin" inputmode="decimal" placeholder="4.0" step="0.1" class="oxy-input" style="width:90px;">
+                                                    <input type="text" data-numeric="true" id="vbgAlbumin" inputmode="decimal" placeholder="4.0" step="0.1" class="oxy-input" style="width:90px;">
                                                     <span class="oxy-unit">g/dL</span>
                                                 </div>
                                             </div>
@@ -1493,14 +1493,14 @@
                                         <div class="input-group">
                                             <label>سن</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="crclAge" placeholder="40" step="1" inputmode="numeric">
+                                                <input type="text" data-numeric="true" id="crclAge" placeholder="40" step="1" inputmode="numeric">
                                                 <span class="input-unit">yr</span>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <label>وزن</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="crclWeight" placeholder="70" step="0.1" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="crclWeight" placeholder="70" step="0.1" inputmode="decimal">
                                                 <span class="input-unit">kg</span>
                                             </div>
                                         </div>
@@ -1509,7 +1509,7 @@
                                         <div class="input-group">
                                             <label>کراتینین</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="crclValue" placeholder="1.0" step="0.01" inputmode="decimal">
+                                                <input type="text" data-numeric="true" id="crclValue" placeholder="1.0" step="0.01" inputmode="decimal">
                                                 <span class="input-unit">mg/dL</span>
                                             </div>
                                         </div>
@@ -1554,14 +1554,14 @@
                                         <div class="input-group">
                                             <label>حجم</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="dripVolume" placeholder="500" step="1" inputmode="numeric" oninput="calculateDripRateLive()">
+                                                <input type="text" data-numeric="true" id="dripVolume" placeholder="500" step="1" inputmode="numeric" oninput="calculateDripRateLive()">
                                                 <span class="input-unit">mL</span>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <label>زمان</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="dripTime" placeholder="8" step="0.1" inputmode="decimal" oninput="calculateDripRateLive()">
+                                                <input type="text" data-numeric="true" id="dripTime" placeholder="8" step="0.1" inputmode="decimal" oninput="calculateDripRateLive()">
                                                 <span class="input-unit">hr</span>
                                             </div>
                                         </div>
@@ -1597,7 +1597,7 @@
                                                 <option value="mg" selected>mg</option>
                                                 <option value="g">g</option>
                                             </select>
-                                            <input type="number" id="unitFromVal" placeholder="0" inputmode="decimal" oninput="convertUnitsLive('from')">
+                                            <input type="text" data-numeric="true" id="unitFromVal" placeholder="0" inputmode="decimal" oninput="convertUnitsLive('from')">
                                         </div>
                                         <div class="bidir-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
                                         <div class="bidir-field">
@@ -1606,7 +1606,7 @@
                                                 <option value="mg">mg</option>
                                                 <option value="g">g</option>
                                             </select>
-                                            <input type="number" id="unitToVal" placeholder="0" inputmode="decimal" oninput="convertUnitsLive('to')">
+                                            <input type="text" data-numeric="true" id="unitToVal" placeholder="0" inputmode="decimal" oninput="convertUnitsLive('to')">
                                         </div>
                                     </div>
                                     <div class="converter-result" id="unitResult"></div>
@@ -1637,12 +1637,12 @@
                                     <div class="bidir-converter">
                                         <div class="bidir-field">
                                             <label class="bidir-label">mEq</label>
-                                            <input type="number" id="electrolyteMeq" placeholder="0" inputmode="decimal" oninput="convertElectrolyteLive('meq')">
+                                            <input type="text" data-numeric="true" id="electrolyteMeq" placeholder="0" inputmode="decimal" oninput="convertElectrolyteLive('meq')">
                                         </div>
                                         <div class="bidir-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
                                         <div class="bidir-field">
                                             <label class="bidir-label">mg</label>
-                                            <input type="number" id="electrolyteMg" placeholder="0" inputmode="decimal" oninput="convertElectrolyteLive('mg')">
+                                            <input type="text" data-numeric="true" id="electrolyteMg" placeholder="0" inputmode="decimal" oninput="convertElectrolyteLive('mg')">
                                         </div>
                                     </div>
                                     <div class="converter-result" id="electrolyteResult"></div>
@@ -1664,14 +1664,14 @@
                                         <div class="input-group">
                                             <label>درصد محلول</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="percentageValue" placeholder="5" step="0.1" inputmode="decimal" oninput="convertPercentageLive()">
+                                                <input type="text" data-numeric="true" id="percentageValue" placeholder="5" step="0.1" inputmode="decimal" oninput="convertPercentageLive()">
                                                 <span class="input-unit">%</span>
                                             </div>
                                         </div>
                                         <div class="input-group">
                                             <label>حجم</label>
                                             <div class="input-with-unit">
-                                                <input type="number" id="percentageVolume" value="100" step="1" inputmode="numeric" oninput="convertPercentageLive()">
+                                                <input type="text" data-numeric="true" id="percentageVolume" value="100" step="1" inputmode="numeric" oninput="convertPercentageLive()">
                                                 <span class="input-unit">mL</span>
                                             </div>
                                         </div>
@@ -1694,12 +1694,12 @@
                                     <div class="bidir-converter">
                                         <div class="bidir-field">
                                             <label class="bidir-label">سلسیوس °C</label>
-                                            <input type="number" id="tempC" placeholder="37" inputmode="decimal" step="0.1" oninput="convertTempLive('c')">
+                                            <input type="text" data-numeric="true" id="tempC" placeholder="37" inputmode="decimal" step="0.1" oninput="convertTempLive('c')">
                                         </div>
                                         <div class="bidir-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
                                         <div class="bidir-field">
                                             <label class="bidir-label">فارنهایت °F</label>
-                                            <input type="number" id="tempF" placeholder="98.6" inputmode="decimal" step="0.1" oninput="convertTempLive('f')">
+                                            <input type="text" data-numeric="true" id="tempF" placeholder="98.6" inputmode="decimal" step="0.1" oninput="convertTempLive('f')">
                                         </div>
                                     </div>
                                     <div class="converter-result" id="tempResult"></div>
@@ -1720,17 +1720,17 @@
                                     <div class="bidir-converter" style="flex-wrap:wrap;gap:8px;">
                                         <div class="bidir-field">
                                             <label class="bidir-label">کیلوگرم (kg)</label>
-                                            <input type="number" id="weightKg" placeholder="70" inputmode="decimal" step="0.1" oninput="convertWeightLive('kg')">
+                                            <input type="text" data-numeric="true" id="weightKg" placeholder="70" inputmode="decimal" step="0.1" oninput="convertWeightLive('kg')">
                                         </div>
                                         <div class="bidir-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
                                         <div class="bidir-field">
                                             <label class="bidir-label">پوند (lb)</label>
-                                            <input type="number" id="weightLb" placeholder="154" inputmode="decimal" step="0.1" oninput="convertWeightLive('lb')">
+                                            <input type="text" data-numeric="true" id="weightLb" placeholder="154" inputmode="decimal" step="0.1" oninput="convertWeightLive('lb')">
                                         </div>
                                         <div class="bidir-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
                                         <div class="bidir-field">
                                             <label class="bidir-label">گرم (g)</label>
-                                            <input type="number" id="weightG" placeholder="70000" inputmode="decimal" step="1" oninput="convertWeightLive('g')">
+                                            <input type="text" data-numeric="true" id="weightG" placeholder="70000" inputmode="decimal" step="1" oninput="convertWeightLive('g')">
                                         </div>
                                     </div>
                                     <div class="converter-result" id="weightResult"></div>
@@ -1752,23 +1752,23 @@
                                 <div class="pressure-stacked">
                                     <div class="pressure-row-input">
                                         <label class="pressure-input-label">PSI</label>
-                                        <input type="number" id="pressurePSI" placeholder="14.7" inputmode="decimal" step="any" oninput="convertPressureLive('psi')" class="pressure-input">
+                                        <input type="text" data-numeric="true" id="pressurePSI" placeholder="14.7" inputmode="decimal" step="any" oninput="convertPressureLive('psi')" class="pressure-input">
                                     </div>
                                     <div class="pressure-row-input">
                                         <label class="pressure-input-label">mmHg</label>
-                                        <input type="number" id="pressureMMHG" placeholder="760" inputmode="decimal" step="any" oninput="convertPressureLive('mmhg')" class="pressure-input">
+                                        <input type="text" data-numeric="true" id="pressureMMHG" placeholder="760" inputmode="decimal" step="any" oninput="convertPressureLive('mmhg')" class="pressure-input">
                                     </div>
                                     <div class="pressure-row-input">
                                         <label class="pressure-input-label">cmH₂O</label>
-                                        <input type="number" id="pressureCMH2O" placeholder="1033.6" inputmode="decimal" step="any" oninput="convertPressureLive('cmh2o')" class="pressure-input">
+                                        <input type="text" data-numeric="true" id="pressureCMH2O" placeholder="1033.6" inputmode="decimal" step="any" oninput="convertPressureLive('cmh2o')" class="pressure-input">
                                     </div>
                                     <div class="pressure-row-input">
                                         <label class="pressure-input-label">bar</label>
-                                        <input type="number" id="pressureBAR" placeholder="1.013" inputmode="decimal" step="any" oninput="convertPressureLive('bar')" class="pressure-input">
+                                        <input type="text" data-numeric="true" id="pressureBAR" placeholder="1.013" inputmode="decimal" step="any" oninput="convertPressureLive('bar')" class="pressure-input">
                                     </div>
                                     <div class="pressure-row-input">
                                         <label class="pressure-input-label">kPa</label>
-                                        <input type="number" id="pressureKPA" placeholder="101.3" inputmode="decimal" step="any" oninput="convertPressureLive('kpa')" class="pressure-input">
+                                        <input type="text" data-numeric="true" id="pressureKPA" placeholder="101.3" inputmode="decimal" step="any" oninput="convertPressureLive('kpa')" class="pressure-input">
                                     </div>
                                 </div>
                                 <div class="converter-result" id="pressureResult"></div>
@@ -2074,7 +2074,7 @@
                 <section class="settings-group settings-card" data-settings-section="about">
                     <button type="button" id="settings-trigger-about" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-about"><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-about" role="region" aria-labelledby="settings-trigger-about" hidden>
                     <div class="about-info">
-                        <div class="about-row"><span>نسخه</span><span>5.3.2</span></div>
+                        <div class="about-row"><span>نسخه</span><span>5.3.3</span></div>
                         <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
@@ -2145,15 +2145,15 @@
     </div>
 
     <script src="drugDatabase.js"></script>
-    <script src="converters.js"></script>
+    <script src="converters.js?v=2"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=56"></script>
+    <script src="script.js?v=58"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
     <script src="drug-reference.js?v=8"></script>
-    <script src="onboarding.js?v=4"></script>
-    <script src="welcome.js?v=1"></script>
+    <script src="onboarding.js?v=5"></script>
+    <script src="welcome.js?v=2"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=45"></script>
@@ -2161,7 +2161,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=57', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=59', { updateViaCache: 'none' });
             });
         }
     </script>

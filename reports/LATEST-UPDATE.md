@@ -1,3 +1,28 @@
+# Persian-number input and clearer welcome setup
+
+Updated 2026-10-21. This cumulative replacement package includes the earlier welcome, Settings, tutorial and drug-reader work. It has not been deployed.
+
+Numeric fields in the calculator, manual calculator, clinical tools and tutorial practice accept Latin, Persian and Arabic digits. Text fields retain mobile numeric/decimal keyboards and normalize input before live calculations; Persian decimal separators and pasted direction marks are handled by the shared parser. Invalid or cleared text cannot fall back to a previous cached dose/weight. Editing manual inputs hides the old result. The weight converter preserves the field being edited so decimal entry is not overwritten.
+
+On the theme step, the six colors appear before the display-mode choices and live preview. All six colors fit without scrolling on the tested portrait phones from 280 to 430 px wide. A visible footer cue explains when more content is below the viewport, including short landscape and enlarged text. The reading area scrolls independently of the fixed actions.
+
+Returning users, including people who completed or skipped the earlier setup, see one optional update invitation per browser/installed storage. Configure now opens setup with existing preferences prefilled; Later, Close or Escape leaves those preferences unchanged. The invitation has its own durable marker and does not reset completed setup. It does not stack a second automatic changelog. New users retain install-first guidance and optional first-time setup, and do not later receive this invitation. Setup remains accessible in Settings → About. A pending-install marker lets a genuinely new user resume setup after reload or Home Screen launch even when the browser and installed app share storage.
+
+The startup fox grows to up to 300 px, sized to the current viewport. Short landscape screens use a two-column loading layout so the larger fox, status and credits fit together.
+
+## Verification for this update
+
+- Persian-number browser tests: 50 numeric fields; 16 calculation/conversion paths with equal Latin, Persian and Arabic results; real input filling/insertion; decimal/group/sign parsing; cleared dose/weight behavior.
+- Responsive welcome tests: 14 layouts and 70 screen states, including 200% text, long names, fixed controls, visible scroll cues and portrait color visibility; seven tip layouts.
+- Returning-user tests: prior setup completed and not completed, one-time invitation, preference prefill/rollback, no second changelog; seven launcher sizes from 280 × 480 to 1280 × 900, including 568 × 280 landscape.
+- Welcome/discovery behavior, tutorial geometry (21 layouts / 147 step checks), service-worker cache and voice pipeline smoke tests pass. Syntax checks pass for changed JavaScript. Existing unrelated suite results below are historical and were not all rerun for this update.
+
+All browser checks use Chromium, including simulated installation/keyboard/standalone behavior. Physical phones and Safari were not tested. No deployment or voice model build was performed.
+
+---
+
+## Previous cumulative update details
+
 # Install-first setup, optional tutorial and quiet feature tips
 
 Updated 2026-10-21. This cumulative package replaces the previously delivered edited-files ZIP. It is based on the supplied FoxiMed-main snapshot; it has not been deployed.

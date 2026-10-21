@@ -2,13 +2,13 @@
 (function () {
   'use strict';
   const $ = id => document.getElementById(id);
-  const SETUP_KEY = 'foximed_setup_v1', TIPS_KEY = 'foximed_feature_tips_v1', DAY = 86400000;
+  const SETUP_KEY = 'foximed_setup_v1', INVITE_KEY = 'foximed_setup_invite_v1', TIPS_KEY = 'foximed_feature_tips_v1', DAY = 86400000;
   const read = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; } };
   const write = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} };
   const esc = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const fa = value => Number(value).toLocaleString('fa-IR');
   let active = false, pending = false, step = 0, draft, snapshot, initialized = false, startupObserver,foxObserver;
-  let fromSettings = false, committed = false, openingToken = 0, installOutcome = '';
+  let fromSettings = false, committed = false, openingToken = 0, installOutcome = '', scrollObserver;
   const standalone=()=>window.FoxiMedInstall?.isStandalone()||false;
   const locks = new Set();
   const themes = () => [...document.querySelectorAll('#themeSwatches [data-theme]')];
@@ -26,7 +26,39 @@
       const a=focus.getBoundingClientRect(),b=area.getBoundingClientRect();
       if(a.bottom>b.bottom-8)area.scrollTop+=a.bottom-b.bottom+8;
       else if(a.top<b.top+8)area.scrollTop-=b.top-a.top+8;
+      updateScrollCue();
     });
+  }
+  function updateScrollCue() {
+    const root=$('firstLaunchSetup'),area=root.querySelector('.fm-setup-content'),cue=$('setupMore');
+    if(!area||!cue)return;
+    const more=area.scrollHeight-area.clientHeight-area.scrollTop>12;
+    cue.classList.toggle('fm-more-hidden',!more);
+    root.classList.toggle('fm-can-scroll',more);
+    cue.setAttribute('aria-hidden',String(!more));
+  }
+  function watchScroll() {
+    scrollObserver?.disconnect();
+    const area=$('firstLaunchSetup').querySelector('.fm-setup-content');
+    const cue=document.createElement('p');
+    cue.id='setupMore';cue.className='fm-setup-more fm-more-hidden';
+    cue.setAttribute('aria-hidden','true');cue.setAttribute('aria-controls','setupReadingArea');
+    cue.textContent='ادامهٔ این صفحه پایین‌تره ↓';
+    area.id='setupReadingArea';
+    const footer=$('firstLaunchSetup').querySelector('.fm-setup-footer'),note=footer.querySelector('p');
+    note.classList.add('fm-setup-footer-note');note.after(cue);
+    area.addEventListener('scroll',updateScrollCue,{passive:true});
+    if(typeof ResizeObserver==='function'){
+      scrollObserver=new ResizeObserver(updateScrollCue);
+      scrollObserver.observe(area);
+      [...area.children].forEach(n=>scrollObserver.observe(n));
+    }
+    requestAnimationFrame(updateScrollCue);
+  }
+  function renderInvitation() {
+    const root=$('firstLaunchSetup');
+    root.innerHTML='<div class="fm-setup-shell fm-update-screen"><header class="fm-setup-header"><div class="fm-setup-brand"><img src="icons/fox-mark.png" width="28" height="28" alt=""><bdi dir="ltr">FoxiMed</bdi></div><button type="button" id="setupDismiss">بستن</button></header><div class="fm-setup-content"><div class="fm-setup-welcome-art"><span class="fm-setup-fox" id="setupWelcomeFox" aria-hidden="true"><img src="icons/fox-mark.png" alt=""><span class="fm-setup-fox-base"></span><span class="fm-setup-fox-fill"></span></span></div><h2 id="setupTitle" tabindex="-1">فاکسی‌مد تازه‌تر شده!</h2><p class="fm-setup-description">چند قابلیت تازه داریم؛ حالا می‌تونی با چند انتخاب کوتاه، برنامه رو متناسب با سلیقه و کار روزمره‌ت تنظیم کنی.</p><ul class="fm-update-features"><li>ورود اعداد فارسی و عربی در محاسبه‌گر و ابزارها</li><li>انتخاب رنگ و حالت روشن یا تیره با پیش‌نمایش زنده</li><li>شخصی‌سازی نام، پمپ، حجم معمول و نمایش ساعت</li></ul><p class="fm-setup-note">انتخاب‌های فعلیت از قبل پر شده‌اند؛ تغییرات فقط با زدن «ذخیره و ادامه» ذخیره می‌شن. هر وقت خواستی از تنظیمات ← دربارهٔ برنامه هم می‌تونی برگردی.</p></div><footer class="fm-setup-footer"><p>این دعوت فقط یک بار روی این مرورگر یا برنامه نمایش داده می‌شه.</p><div class="fm-setup-actions"><button type="button" class="fm-setup-primary" id="setupConfigure">تنظیم برنامه</button><button type="button" class="fm-setup-secondary" id="setupLater">فعلاً نه</button></div></footer></div>';
+    watchScroll();viewport();$('setupTitle').focus({preventScroll:true});void animateFox(++openingToken);
   }
   function previewTheme() {
     AppState.settings.colorTheme=draft.colorTheme;
@@ -65,10 +97,11 @@
     const root=$('firstLaunchSetup'),available=window.FoxiMedInstall?.available;
     const message=installOutcome==='accepted'?'نصب تأیید شد. حالا فاکسی‌مد رو از آیکون صفحهٔ اصلی باز کن؛ شخصی‌سازی اونجا شروع می‌شه.':installOutcome==='dismissed'?'اشکالی نداره؛ هر وقت خواستی می‌تونی نصب کنی یا در مرورگر ادامه بدی.':installOutcome==='failed'?'پنجرهٔ نصب باز نشد. از مراحل زیر یا منوی مرورگر استفاده کن.':'';
     root.innerHTML='<div class="fm-setup-shell fm-install-screen"><header class="fm-setup-header"><div class="fm-setup-brand"><img src="icons/fox-mark.png" width="28" height="28" alt=""><bdi dir="ltr">FoxiMed</bdi></div><button type="button" id="setupDismiss" aria-label="رد کردن و ورود به برنامه">بستن</button></header><div class="fm-setup-content"><div class="fm-setup-eyebrow">قبل از شروع</div><h2 id="setupTitle" tabindex="-1">اول نصبش کنیم؟</h2><p class="fm-setup-description">برای تجربهٔ بهتر، فاکسی‌مد رو نصب کن و از آیکونش باز کن؛ تنظیماتت رو همون‌جا انجام می‌دیم.</p><div class="fm-install-brand"><span class="fm-setup-fox fm-install-fox" id="setupInstallFox" aria-hidden="true"><img src="icons/fox-mark.png" alt=""><span class="fm-setup-fox-base"></span><span class="fm-setup-fox-fill"></span></span><span><bdi dir="ltr">FoxiMed</bdi><small>دسترسی سریع، در یک پنجرهٔ مستقل</small></span></div><p id="setupInstallStatus" class="fm-install-callout" role="status"'+(!message?' hidden':'')+'>'+esc(message)+'</p>'+installGuide()+'</div><footer class="fm-setup-footer"><p>نصب اختیاریه؛ در مرورگر هم می‌تونی ادامه بدی.</p><div class="fm-setup-actions">'+(available?'<button type="button" class="fm-setup-primary" id="setupInstall"><i class="fas fa-download" aria-hidden="true"></i> نصب فاکسی‌مد</button>':'')+'<button type="button" class="'+(available?'fm-setup-secondary':'fm-setup-primary')+'" id="setupBrowser">ادامه در مرورگر</button></div></footer></div>';
-    viewport();$('setupTitle').focus({preventScroll:true});void animateFox(++openingToken,'setupInstallFox');
+    watchScroll();viewport();$('setupTitle').focus({preventScroll:true});void animateFox(++openingToken,'setupInstallFox');
   }
   function render() {
     if(!active)return;
+    if(step===-2){renderInvitation();return}
     if(step===-1){renderInstall();return}
     foxObserver?.disconnect();
     const root=$('firstLaunchSetup');
@@ -82,7 +115,12 @@
     if(step===2)content='<div class="fm-setup-fields">'+selectHTML('setupPump','defaultInfusionMethod','بیشتر از کدوم پمپ استفاده می‌کنی؟','defaultInfusionMethodSelect')+selectHTML('setupSyringe','defaultSyringeVolume','حجم معمول پمپ سرنگ','defaultSyringeVolumeSelect')+selectHTML('setupInfusion','defaultInfusionVolume','حجم معمول پمپ انفوزیون','defaultInfusionVolumeSelect')+selectHTML('setupTime','timeFormat','نمایش ساعت در تاریخچه','timeFormatSelect')+'</div><p class="fm-setup-note">این‌ها فقط انتخاب‌های اولیه‌اند؛ برای هر محاسبه می‌تونی تغییرشون بدی. گزینهٔ «پیش‌فرض دارو» هم در دسترسه.</p>';
     if(step===3)content='<div class="fm-setup-ready"><img src="icons/fox-mark.png" alt="" width="64" height="64"><p>'+(draft.name?'<bdi dir="auto">'+esc(draft.name)+'</bdi> عزیز، ':'')+'همه‌چیز برای شروع آماده‌ست.</p><div class="fm-setup-destinations"><span><i class="fas fa-calculator" aria-hidden="true"></i> محاسبهٔ دارو</span><span><i class="fas fa-book-medical" aria-hidden="true"></i> مرجع دارویی</span><span><i class="fas fa-toolbox" aria-hidden="true"></i> ابزارها</span></div><p class="fm-setup-note">دوست داری یک نگاه کوتاه به بخش‌های برنامه بندازیم؟ انتخاب با توست؛ راهنما همیشه در تنظیمات هست.</p></div>';
     root.innerHTML='<div class="fm-setup-shell"><header class="fm-setup-header"><div class="fm-setup-brand"><img src="icons/fox-mark.png" width="28" height="28" alt=""><bdi dir="ltr">FoxiMed</bdi></div><button type="button" id="setupDismiss" aria-label="رد کردن و ورود به برنامه">بستن</button></header><div class="fm-setup-content"><div class="fm-setup-eyebrow">'+(step<3?'شخصی‌سازی · '+fa(step+1)+' از ۳':'به همین سادگی')+'</div><h2 id="setupTitle" tabindex="-1">'+titles[step]+'</h2><p class="fm-setup-description">'+descriptions[step]+'</p>'+content+'</div><footer class="fm-setup-footer"><p>همهٔ این انتخاب‌ها بعداً از تنظیمات قابل تغییرند.</p><div class="fm-setup-progress" aria-label="'+(step<3?'قدم '+fa(step+1)+' از ۳':'تنظیمات ذخیره شد')+'">'+[0,1,2].map(i=>'<span class="'+(i<=step?'done':'')+'"></span>').join('')+'</div><div class="fm-setup-actions">'+(step>0&&step<3?'<button type="button" class="fm-setup-secondary" id="setupBack">قبلی</button>':'')+'<button type="button" class="fm-setup-primary" id="setupNext">'+(step===2?'ذخیره و ادامه':step===3?'شروع کار':'بعدی')+'</button>'+(step===3?'<button type="button" class="fm-setup-secondary" id="setupTour">دیدن راهنما</button>':'')+'</div></footer></div>';
-    syncPreview();viewport();$('setupTitle').focus({preventScroll:true});
+    if(step===1){
+      const area=root.querySelector('.fm-setup-content'),choices=[...area.querySelectorAll('.fm-setup-choices')],preview=area.querySelector('.fm-setup-preview');
+      area.insertBefore(choices[1],preview);area.insertBefore(choices[0],preview);
+      root.querySelector('.fm-setup-shell').classList.add('fm-theme-screen');
+    }
+    watchScroll();syncPreview();viewport();$('setupTitle').focus({preventScroll:true});
     if(step===0)void animateFox(++openingToken);else openingToken++;
   }
   async function animateFox(token,id='setupWelcomeFox') {
@@ -99,7 +137,7 @@
       },{threshold:.5});foxObserver=observer;observer.observe(fox);
     }else start();
   }
-  function open(installationFirst=false) {
+  function open(installationFirst=false,invitation=false) {
     if(active||window.FoxiMedOnboarding?.active)return;
     pending=false;startupObserver?.disconnect();
     const settings=$('settingsModal');fromSettings=settings.classList.contains('active');
@@ -107,8 +145,10 @@
     delete snapshot.settings.__loadWatchdog;
     draft={name:localStorage.getItem('userName')||'',colorTheme:AppState.settings.colorTheme||'fox',themeMode:AppState.settings.themeMode||'light',defaultInfusionMethod:AppState.settings.defaultInfusionMethod||'syringe',defaultSyringeVolume:AppState.settings.defaultSyringeVolume||'auto',defaultInfusionVolume:AppState.settings.defaultInfusionVolume||'auto',timeFormat:AppState.settings.timeFormat||'24'};
     settings.classList.remove('active');$('greetingBanner').style.display='none';
-    hideTip();step=installationFirst&&!standalone()?-1:0;committed=false;active=true;installOutcome='';
-    const root=$('firstLaunchSetup');root.hidden=false;document.body.classList.add('fm-setting-up','no-scroll');
+    hideTip();step=invitation?-2:installationFirst&&!standalone()?-1:0;committed=false;active=true;installOutcome='';
+    write(INVITE_KEY,{at:Date.now()});
+    setLastSeenVersion(RELEASE_NOTES_REVISION);
+    const root=$('firstLaunchSetup');root.classList.toggle('fm-inviting',invitation);root.hidden=false;document.body.classList.add('fm-setting-up','no-scroll');
     for(const n of document.body.children)if(n!==root&&!['SCRIPT','STYLE','LINK'].includes(n.tagName)&&!n.inert){n.inert=true;locks.add(n)}
     render();
   }
@@ -125,12 +165,12 @@
   }
   function close(tour=false) {
     if(!active)return;
-    if(!committed){
+    if(!committed&&step!==-2){
       AppState.settings={...snapshot.settings};applyThemeMode();
       restoreStorage('appSettings',snapshot.storedSettings);restoreStorage('theme',snapshot.storedTheme);
       write(SETUP_KEY,{status:'skipped',at:Date.now()});localStorage.setItem('onboardingSeen','true');
     }
-    active=false;pending=false;openingToken++;foxObserver?.disconnect();
+    active=false;pending=false;openingToken++;foxObserver?.disconnect();scrollObserver?.disconnect();
     $('firstLaunchSetup').hidden=true;document.body.classList.remove('fm-setting-up','no-scroll');
     for(const n of locks)n.inert=false;locks.clear();
     if(fromSettings&&!tour){$('settingsModal').classList.add('active');document.body.classList.add('no-scroll');syncSettingsViewport();}
@@ -219,7 +259,8 @@
     root.addEventListener('change',event=>{const key=event.target.dataset.setupField;if(key)draft[key]=event.target.value});
     root.addEventListener('click',event=>{
       const b=event.target.closest('button');if(!b)return;
-      if(b.id==='setupDismiss')close();
+      if(b.id==='setupDismiss'||b.id==='setupLater')close();
+      else if(b.id==='setupConfigure'){root.classList.remove('fm-inviting');step=0;render()}
       else if(b.id==='setupBrowser'){localStorage.setItem('pwaRemindAfter',String(Date.now()+7*DAY));step=0;render()}
       else if(b.id==='setupInstall'){b.disabled=true;b.setAttribute('aria-busy','true');b.innerHTML='<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> در حال باز کردن نصب…';window.FoxiMedInstall.request().then(outcome=>{installOutcome=outcome;if(active&&step===-1)renderInstall()})}
       else if(b.id==='setupBack'){step--;render()}
@@ -248,9 +289,13 @@
     window.addEventListener('appinstalled',()=>{installOutcome='accepted';if(active&&step===-1)renderInstall()});
     window.matchMedia('(display-mode: standalone)').addEventListener('change',()=>{if(active&&step===-1&&standalone()){step=0;render()}});
     setupTips();
-    if(!read(SETUP_KEY,null)&&!HAS_PRE_V5_INSTALL){
+    const previousSetup=read(SETUP_KEY,null);
+    const fresh=previousSetup?.status==='install-pending'||(!previousSetup&&!HAS_PRE_V5_INSTALL);
+    if(fresh||!read(INVITE_KEY,null)){
+      // Keep the handoff to the installed app resumable when it shares browser storage.
+      if(fresh&&!previousSetup)write(SETUP_KEY,{status:'install-pending',at:Date.now()});
       pending=true;
-      const ready=()=>{if(!pending)return;if(getComputedStyle($('loadingScreen')).display!=='none'||document.querySelector('.modal.active'))return;open(true)};
+      const ready=()=>{if(!pending)return;if(getComputedStyle($('loadingScreen')).display!=='none'||document.querySelector('.modal.active')||window.FoxiMedOnboarding?.active)return;open(fresh,!fresh)};
       startupObserver=new MutationObserver(ready);startupObserver.observe(document.body,{attributes:true,subtree:true,attributeFilter:['style','class']});ready();
     }
   }

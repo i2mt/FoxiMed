@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "fields": 50,
+  "calculationCases": 16,
+  "digitSets": [
+    "Latin",
+    "Persian",
+    "Arabic"
+  ],
+  "failures": []
+}

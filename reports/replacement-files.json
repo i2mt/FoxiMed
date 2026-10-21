@@ -1,6 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "install-first-optional-setup-and-discovery",
+  "revision": "persian-input-and-welcome-upgrade",
   "self_hash_excluded": true,
   "files": [
     {
@@ -12,8 +12,14 @@
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
       "reason": "Current cumulative upload paths, new welcome assets, install/setup/tip checks and real-device validation scope.",
-      "bytes": 4603,
-      "sha256": "a4d0f5c4730b5afb55faa558991de185c0c74fd78061cd13452b50fb60571ec9"
+      "bytes": 5026,
+      "sha256": "13a5a6fc542f56bcc1ef630314349ed0ffc1e1924e3a4209fff82a7934663499"
+    },
+    {
+      "path": "converters.js",
+      "reason": "Shared Persian/Arabic-aware numeric parsing in all converter paths.",
+      "bytes": 18594,
+      "sha256": "e31ae66dccc7fb57839d50ebe3967fa2a5ec6cabef6fdaad93b547f0a2676a84"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -102,8 +108,14 @@
     {
       "path": "index.html",
       "reason": "Replace old install/name popups with optional setup root; add Settings time/tip preferences and install/setup replay; refresh matching assets.",
-      "bytes": 177758,
-      "sha256": "be176bb5b949d108e96fe9bc504277cf96a96b3de922b3756b1fc85c969b2c9d"
+      "bytes": 178578,
+      "sha256": "b83a4f38e66c153448cc65f23adf5336118e915097cd48e5d7a99b7a1378a1ed"
+    },
+    {
+      "path": "manifest.json",
+      "reason": "Display version 5.3.3.",
+      "bytes": 1810,
+      "sha256": "f3b34bc4837d960e6b6b695357a9e9f4eb407a59ea6b101c2657fa3553cefa33"
     },
     {
       "path": "onboarding.css",
@@ -113,9 +125,9 @@
     },
     {
       "path": "onboarding.js",
-      "reason": "Retain the responsive interactive tutorial and fox readiness behavior; start only by explicit user choice.",
-      "bytes": 15728,
-      "sha256": "372b12159890fdbca05ade17aa9cbe302b0e9f0a28083724cb046fc22598c559"
+      "reason": "Tutorial numeric practice accepts Persian and Arabic digits.",
+      "bytes": 15766,
+      "sha256": "0f238dba6a43df54125a902fc79cdedc50ad2f1a70fcb5bc46d91af324daee45"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -132,8 +144,8 @@
     {
       "path": "reports/FINAL-CHECKS.json",
       "reason": "Current first-launch/tip/responsive regression results with retained earlier checks and explicit platform simulation limits.",
-      "bytes": 4518,
-      "sha256": "cb50c804400101a25e92413eed38989c1a72635049256503ceb163fb34eb9884"
+      "bytes": 5045,
+      "sha256": "921947c3619b95faafea233bbdc75f5c93b6dd48f21f7bcb48cc7789c0495a07"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -144,8 +156,8 @@
     {
       "path": "reports/LATEST-UPDATE.md",
       "reason": "Install-first flow, optional setup/tutorial, quiet tips, responsive/animation behavior and cross-container storage limits.",
-      "bytes": 20850,
-      "sha256": "9cebfcc18df266d7f06635ad395ef46e321445c4ed30345df0a4908d307cec4c"
+      "bytes": 23992,
+      "sha256": "cf9f05867fc0ef684fe244af7b7162ef07d051dcda7b035138a8dae82406774e"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -244,8 +256,10 @@
       "sha256": "6ea7cd9c810fd5476143063c96bac6ac77c5e47fb10bbb141881d132410e4154"
     },
     {
-      "path": "reports/replacement-files.json",
-      "reason": "Exact cumulative replacement inventory and hashes; self hash/size omitted."
+      "path": "reports/persian-numbers-results.json",
+      "reason": "Updated verification or cumulative replacement.",
+      "bytes": 170,
+      "sha256": "d0db6708cfe21af7a89847777e562c820cdede25b7bea9ddd255a1f166251801"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -268,8 +282,8 @@
     {
       "path": "reports/welcome-discovery-results.json",
       "reason": "Passing setup, install-event recovery, live/draft themes, persistence, opt-in tour, quiet frequency rules and real tip destinations.",
-      "bytes": 2817,
-      "sha256": "ed215ee13f077bb0ff59df89eaa3a7a6b0cb5ceeb1e95f84c3e44b7be036b19e"
+      "bytes": 2924,
+      "sha256": "b9f3089482adb062b698c8367ef86e6f6a921eb11e9a01a2be2d000d890f25d7"
     },
     {
       "path": "reports/welcome-responsive-results.json",
@@ -278,10 +292,16 @@
       "sha256": "ee91965a3e43accf964c62562f6b086136b621edfd974f99fa7d35e83ab3b7ef"
     },
     {
+      "path": "reports/welcome-upgrade-results.json",
+      "reason": "Updated verification or cumulative replacement.",
+      "bytes": 1242,
+      "sha256": "5cad494fb41d1bb85beb51d284e77442b22392a7d647083c7cac47ae565c7c82"
+    },
+    {
       "path": "script.js",
-      "reason": "Preserve optional existing names, coordinate welcome setup, expose one-shot install capability, support history time format and draft-safe live system themes.",
-      "bytes": 298322,
-      "sha256": "aabb2a3e872466acc0659bbf4271673b2bcd6630c0a43c1054f84f19fabc4ecb"
+      "reason": "Persian/Arabic numeric fields and shared parsing; preserve weight edits; clear stale manual results; coordinate one-time welcome invitation.",
+      "bytes": 298663,
+      "sha256": "a4ae93ba5f7d1ac915a9f128728b2a29cff300116df30947f70049655b10c977"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -322,8 +342,8 @@
     {
       "path": "service-worker.js",
       "reason": "Cache the new welcome module/styles and refresh app-shell script/tutorial revisions.",
-      "bytes": 7588,
-      "sha256": "f20ec8ec25eae8aff4eb848bcee7aa7c6bb5155b9ee798ca8578be0c8e66af22"
+      "bytes": 7592,
+      "sha256": "9318a6d4b876264eb8c944b410654fac38eeeb377f2fa995cfc9ccbabd6543a6"
     },
     {
       "path": "settings.css",
@@ -333,9 +353,9 @@
     },
     {
       "path": "style.css",
-      "reason": "Keep Hedo original dark colors and gradients; brighten only its top-bar FoxiMed wordmark.",
-      "bytes": 236002,
-      "sha256": "69b0cacfa01aa31f59f4ad46fec5d117fac2245fc55812c9548a7d43ee5c4df7"
+      "reason": "Responsive startup fox up to 300 px and short-landscape loading grid.",
+      "bytes": 236747,
+      "sha256": "62037b938f937f8a598e133fe72cb87b5966baba25a13b79864cc8ef13c9f2b0"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -358,32 +378,38 @@
     {
       "path": "tests/drug-reference-ui.test.js",
       "reason": "Retain drug/reader/UI checks and explicitly open the optional interactive tutorial.",
-      "bytes": 15892,
-      "sha256": "50850637213a05b9502271c3ff51be99460a2c968933e38c1d79bc6d611764af"
+      "bytes": 15951,
+      "sha256": "a6e3504af88625408501fa690384abe1daf6af12386251a4fd6c56ecfc997aa4"
     },
     {
       "path": "tests/navigation-layout.test.js",
       "reason": "Use button-controlled Settings regions while retaining drug scroll, controls and tutorial separation regression checks.",
-      "bytes": 7896,
-      "sha256": "2359e1bf0f333584793db599dbb8b57b20b430dcbb0ce8d6923485a5706a0b00"
+      "bytes": 7955,
+      "sha256": "632047e17c1d0ef626596fd1ee2635afbab18d915f00ae8fbbc6f7e72970943b"
+    },
+    {
+      "path": "tests/persian-numbers.test.js",
+      "reason": "Browser numeric normalization, input events and 16 equivalent calculation paths across three digit sets.",
+      "bytes": 7209,
+      "sha256": "3b95e97fafbca2b8f8467e9b6adce69b11c2c04928c17132fef41cca4370405a"
     },
     {
       "path": "tests/settings-mobile.test.js",
       "reason": "Touch regression covering icon/title/arrow taps, natural height, controls, rotation, viewport events/fallback, text, keyboard and voice contact shortcut.",
-      "bytes": 12289,
-      "sha256": "8f31392bf676410f4bd06bbd20011d2857ba143794133a826175502a843e42e8"
+      "bytes": 12348,
+      "sha256": "094fe536210d37620b4dcf5519c43aa1578dbe666eb890311034eb99bcc1ae96"
     },
     {
       "path": "tests/settings-theme-ui.test.js",
       "reason": "Verify one row per card, expanded state, full vertical content containment and existing controls/themes.",
-      "bytes": 10867,
-      "sha256": "08c9386eec2539eb598043ed6e8905885c518fba01b559c0b8151e988c906139"
+      "bytes": 10926,
+      "sha256": "520f9bd182e49154ff45df25466d821f577d3493886aef1a891abe9df69f781e"
     },
     {
       "path": "tests/tutorial-layout.test.js",
       "reason": "Browser checks for aligned internal rows/borders/control bounds, screen separation and readiness-gated fox animation.",
-      "bytes": 10798,
-      "sha256": "2176b8cdf886fa84bc1f292e576d5ffa8720219a23c2f42458ee7be960d53058"
+      "bytes": 10857,
+      "sha256": "70cd682cf82eca60d37a64119caec8d842e8167b518542713c720ab1c43acbf9"
     },
     {
       "path": "tests/voice-assets.test.py",
@@ -394,20 +420,26 @@
     {
       "path": "tests/voice-pipeline-smoke.test.js",
       "reason": "Retain voice smoke checks; validate replacement of the legacy name/install popups and optional device-local personalization.",
-      "bytes": 49372,
-      "sha256": "0210e95ef906227af23b0dc4fe3180bf2a9c2e4aae90bb56061a356c9cf8f244"
+      "bytes": 49406,
+      "sha256": "abb19adc23e76aacee470741d726b1e4e2247e40a1f9dd76e0d789510ff8f0d7"
     },
     {
       "path": "tests/welcome-discovery.test.js",
       "reason": "Rendered setup/install/tip behavior with simulated native events, storage persistence, real navigation and non-interruption checks.",
-      "bytes": 21066,
-      "sha256": "3d843989074c958c18c1c1da04b69404a16cd05040bdc12fa1c1fc492ed98974"
+      "bytes": 21571,
+      "sha256": "691ddf3945f49d6e0cd428658dfe742ead25e4173a8626f927512f7529328a93"
     },
     {
       "path": "tests/welcome-responsive.test.js",
       "reason": "Check actual text/control bounds, adaptive large-text layout, scrolling/last-control hit targets, stable header/footer and narrow tip layouts.",
-      "bytes": 8760,
-      "sha256": "4faa74156e6fd80b3a2001d8fc9b2ed243e0dbc3dc6e58711b5aa5d4f0683182"
+      "bytes": 9520,
+      "sha256": "25b7d7a95941b6dcea60140901437c0b137f10825bdb0e3d1a9c60d34d63fe89"
+    },
+    {
+      "path": "tests/welcome-upgrade.test.js",
+      "reason": "One-time upgrade invitation, prefill/rollback and seven startup layouts.",
+      "bytes": 6190,
+      "sha256": "4b07cf0e18ddae4a1f569dc9ce0efb5e016498952866275d6ccaa9501e41a2b5"
     },
     {
       "path": "voice-commands.js",
@@ -417,15 +449,15 @@
     },
     {
       "path": "welcome.css",
-      "reason": "Responsive setup/install screens, live theme preview, readable text/controls, adaptive enlarged-text grids/actions and non-overlapping inline tips.",
-      "bytes": 12147,
-      "sha256": "8bdb38ee027b46da0dd21768fb9de461a772cd89ede81488eba3bf53e0289453"
+      "reason": "Compact colors-first theme step, visible scroll hints, small/large-text layouts and optional update invitation.",
+      "bytes": 14146,
+      "sha256": "e9475b16d6f22190f54864f9c402ac729dc3baf6652272b1968b52995b715f4f"
     },
     {
       "path": "welcome.js",
-      "reason": "Install-first optional three-step setup with local draft previews/rollback, explicit tutorial choice, visible fox fill, viewport handling and quiet contextual tips.",
-      "bytes": 29990,
-      "sha256": "0c9b3f3af1e01ef62c35be32bcb32ab9fcbd38df2ef9e5875f5d467a19744e48"
+      "reason": "One-time optional returning-user setup invitation, prefilled draft-safe settings, first-launch installation and visible overflow cues.",
+      "bytes": 34537,
+      "sha256": "0a59a6e7a8ac2834c4cc6311c6b3124f869b70eeffdea2c05a9c3f4350794b9a"
     }
   ]
 }

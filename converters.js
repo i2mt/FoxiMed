@@ -17,7 +17,7 @@
 // Electrolyte Converter with Sodium Bicarbonate support
 function convertElectrolyte() {
     const element = document.getElementById('electrolyteElement').value;
-    const value = parseFloat(document.getElementById('electrolyteValue').value);
+    const value = PersianNumbers.parseNumber(document.getElementById('electrolyteValue').value);
     const fromUnit = document.getElementById('electrolyteFrom').value;
     const resultDiv = document.getElementById('electrolyteResult');
     
@@ -59,8 +59,8 @@ function convertElectrolyte() {
 
 // Percentage Converter
 function convertPercentage() {
-    const percentage = parseFloat(document.getElementById('percentageValue').value);
-    const volume = parseFloat(document.getElementById('percentageVolume').value);
+    const percentage = PersianNumbers.parseNumber(document.getElementById('percentageValue').value);
+    const volume = PersianNumbers.parseNumber(document.getElementById('percentageVolume').value);
     const resultDiv = document.getElementById('percentageResult');
     
     if (!percentage || !volume || isNaN(percentage) || isNaN(volume)) {
@@ -85,7 +85,7 @@ function convertPercentage() {
 function convertUnits() {
     const fromUnit = document.getElementById('unitFrom').value;
     const toUnit = document.getElementById('unitTo').value;
-    const value = parseFloat(document.getElementById('unitValue').value);
+    const value = PersianNumbers.parseNumber(document.getElementById('unitValue').value);
     const resultDiv = document.getElementById('unitResult');
     
     if (!value || isNaN(value)) {
@@ -123,9 +123,9 @@ function convertUnits() {
 
 // Drip Rate Calculator
 function calculateDripRate() {
-    const volume = parseFloat(document.getElementById('dripVolume').value);
-    const time = parseFloat(document.getElementById('dripTime').value);
-    const dropFactor = parseFloat(document.getElementById('dripFactor').value);
+    const volume = PersianNumbers.parseNumber(document.getElementById('dripVolume').value);
+    const time = PersianNumbers.parseNumber(document.getElementById('dripTime').value);
+    const dropFactor = PersianNumbers.parseNumber(document.getElementById('dripFactor').value);
     const resultDiv = document.getElementById('dripResult');
     
     if (!volume || !time || isNaN(volume) || isNaN(time)) {
@@ -154,8 +154,8 @@ function calculateDripRate() {
 
 // BMI Calculator
 function calculateBMI() {
-    const weight = parseFloat(document.getElementById('bmiWeight').value);
-    const height = parseFloat(document.getElementById('bmiHeight').value);
+    const weight = PersianNumbers.parseNumber(document.getElementById('bmiWeight').value);
+    const height = PersianNumbers.parseNumber(document.getElementById('bmiHeight').value);
     const resultDiv = document.getElementById('bmiResult');
     
     if (!weight || !height || isNaN(weight) || isNaN(height)) {
@@ -215,8 +215,8 @@ function calculateBMI() {
 
 // Body Surface Area Calculator
 function calculateBSA() {
-    const weight = parseFloat(document.getElementById('bsaWeight').value);
-    const height = parseFloat(document.getElementById('bsaHeight').value);
+    const weight = PersianNumbers.parseNumber(document.getElementById('bsaWeight').value);
+    const height = PersianNumbers.parseNumber(document.getElementById('bsaHeight').value);
     const formula = document.getElementById('bsaFormula').value;
     const resultDiv = document.getElementById('bsaResult');
     
@@ -257,7 +257,7 @@ function calculateBSA() {
 
 // Ideal Body Weight Calculator
 function calculateIBW() {
-    const height = parseFloat(document.getElementById('ibwHeight').value);
+    const height = PersianNumbers.parseNumber(document.getElementById('ibwHeight').value);
     const gender = document.getElementById('ibwGender').value;
     const formula = document.getElementById('ibwFormula').value;
     const resultDiv = document.getElementById('ibwResult');
@@ -299,9 +299,9 @@ function calculateIBW() {
 
 // Creatinine Clearance Calculator
 function calculateCrCl() {
-    const age = parseFloat(document.getElementById('crclAge').value);
-    const weight = parseFloat(document.getElementById('crclWeight').value);
-    const creatinine = parseFloat(document.getElementById('crclValue').value);
+    const age = PersianNumbers.parseNumber(document.getElementById('crclAge').value);
+    const weight = PersianNumbers.parseNumber(document.getElementById('crclWeight').value);
+    const creatinine = PersianNumbers.parseNumber(document.getElementById('crclValue').value);
     const gender = document.getElementById('crclGender').value;
     const resultDiv = document.getElementById('crclResult');
     
@@ -393,9 +393,9 @@ function checkCompatibility() {
 
 // Dose Calculator
 function calculateDose() {
-    const needed = parseFloat(document.getElementById('doseNeeded').value);
-    const concentration = parseFloat(document.getElementById('doseConcentration').value);
-    const vialVolume = parseFloat(document.getElementById('doseVialVolume').value);
+    const needed = PersianNumbers.parseNumber(document.getElementById('doseNeeded').value);
+    const concentration = PersianNumbers.parseNumber(document.getElementById('doseConcentration').value);
+    const vialVolume = PersianNumbers.parseNumber(document.getElementById('doseVialVolume').value);
     const resultDiv = document.getElementById('doseResult');
     
     if (!needed || !concentration || !vialVolume || 

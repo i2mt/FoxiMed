@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "returningProfiles": [
+    {
+      "completedPriorSetup": false,
+      "oneInvitation": true,
+      "secondChangelog": false,
+      "prefilled": false,
+      "rollback": false
+    },
+    {
+      "completedPriorSetup": true,
+      "oneInvitation": true,
+      "secondChangelog": false,
+      "prefilled": true,
+      "rollback": true
+    }
+  ],
+  "launcherLayouts": [
+    {
+      "width": 280,
+      "height": 480,
+      "size": 218.390625,
+      "inside": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "size": 230.390625,
+      "inside": true
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "size": 300,
+      "inside": true
+    },
+    {
+      "width": 412,
+      "height": 839,
+      "size": 300,
+      "inside": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "size": 220,
+      "inside": true
+    },
+    {
+      "width": 568,
+      "height": 280,
+      "size": 198.796875,
+      "inside": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "size": 300,
+      "inside": true
+    }
+  ],
+  "sharedStorageInstallHandoff": "PASS: installation reload resumes; installed mode proceeds to setup; no upgrade invitation for a new user"
+}

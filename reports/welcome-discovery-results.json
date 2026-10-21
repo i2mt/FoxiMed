@@ -44,7 +44,7 @@
     },
     "Skipping does not save previewed preferences or name and is remembered",
     "Reduced motion completes the fox immediately; Escape dismisses setup",
-    "Returning installations keep their name/preferences without mandatory setup"
+    "Returning users see one dismissible update invitation without a second changelog; Later preserves preferences and does not mark setup skipped; invitation stays dismissed after reload"
   ],
   "install": [
     "First visit installation precedes setup; native prompt is user-triggered and consumed once; accepted install waits for installed-app launch",

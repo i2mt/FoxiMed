@@ -19,11 +19,16 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.3.2';
+const APP_VERSION = '5.3.3';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.3.2-iran-drug-reference-launch';
+const RELEASE_NOTES_REVISION = '5.3.3-welcome-and-persian-input';
 
 const CHANGELOG = {
+    '5.3.3': [
+        'پشتیبانی از ارقام فارسی و عربی در محاسبه‌گر و همه ابزارها',
+        'پشتیبانی از ممیز فارسی هنگام تایپ و چسباندن عدد',
+        'انتخاب آسان‌تر تم در شروع، دعوت اختیاری شخصی‌سازی برای کاربران قبلی و روباه بزرگ‌تر در بارگذاری'
+    ],
     '5.3.2': [
         'مرجع دارویی ایران اضافه شد: این تب با طراحی کاملاً تازه، بیش از ۱۱۰۰ مدخل دارویی را در دسترس شما قرار می‌دهد.',
         'داروها را با نام فارسی، انگلیسی یا تجاری پیدا کنید؛ همهٔ موضوع‌های اطلاعاتی هر دارو یک‌جا در دسترس‌اند و انتخاب بخش با شماست.',
@@ -134,6 +139,7 @@ const CHANGELOG = {
 // normal onboarding-only experience.
 const HAS_PRE_V5_INSTALL = [
     'sw_first_install',
+    'appSettings',
     'theme',
     'onboardingSeen',
     'calculationHistory',
@@ -180,6 +186,11 @@ function showWhatsNewModal(force) {
 }
 
 function checkForWhatsNewOnLoad() {
+    // The welcome invitation covers this release without a second startup modal.
+    if (window.FoxiMedWelcome?.pending || window.FoxiMedWelcome?.active) {
+        setLastSeenVersion(RELEASE_NOTES_REVISION);
+        return;
+    }
     const lastSeen = getLastSeenVersion();
     // No record at all = fresh install; just mark current version as seen
     // without showing anything, so the FIRST time this feature ships it
@@ -553,19 +564,19 @@ const AppState = {
 // ============================================
 const TextDirection = {
     wrapLatin: function(text) {
-        if (!text) return '';
+        if (text == null) return '';
         const hasLatin = /[A-Za-z0-9]/.test(text);
         if (hasLatin) return `\u202B${text}\u202C`;
         return text;
     },
     wrapPersian: function(text) {
-        if (!text) return '';
+        if (text == null) return '';
         const hasRTL = /[\u0600-\u06FF]/.test(text);
         if (hasRTL) return `\u202B${text}\u202C`;
         return text;
     },
     fixMixedText: function(text) {
-        if (!text) return '';
+        if (text == null) return '';
         const segments = this.splitByLanguage(text);
         return segments.map(segment => {
             if (segment.isLatin) return this.wrapLatin(segment.text);
@@ -626,29 +637,31 @@ const PersianNumbers = {
         '.':'٫',',':'٬'
     },
     toLatin: function(text) {
-        if (!text) return '';
+        if (text == null) return '';
         return text.toString().split('').map(char => this.persianToLatin[char] || char).join('');
     },
     toPersian: function(text) {
-        if (!text) return '';
+        if (text == null) return '';
         return text.toString().split('').map(char => this.latinToPersian[char] || char).join('');
     },
+    normalizeInput: function(text) {
+        // Keep decimal/sign editing intact; ignore direction marks from pasted RTL text.
+        return this.toLatin(String(text ?? '').replace(/٬/g, ''))
+            .replace(/[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/g, '');
+    },
     parseNumber: function(text) {
-        if (!text || text.toString().trim() === '') return NaN;
-        let s = this.toLatin(text.toString()).trim();
-        s = s.replace(/\s+/g, '');
-        if (s.includes('.')) {
-            s = s.replace(/,/g, '');
-        } else if (s.includes(',')) {
-            const thousandsPattern = /^-?\d{1,3}(,\d{3})+$/;
-            if (thousandsPattern.test(s)) {
-                s = s.replace(/,/g, '');
-            } else {
-                s = s.replace(',', '.');
-                s = s.replace(/,/g, '');
-            }
+        let s = this.normalizeInput(text).trim();
+        if (!s) return NaN;
+        if (s.includes(',')) {
+            const grouped = /^[+-]?\d{1,3}(,\d{3})+(\.\d+)?$/;
+            if (grouped.test(s)) s = s.replace(/,/g, '');
+            else if (!s.includes('.') && /^[+-]?\d+,\d+$/.test(s)) s = s.replace(',', '.');
+            else return NaN;
         }
-        return parseFloat(s);
+        // Reject partial numbers such as "70kg" or "7..4" instead of truncating them.
+        if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/.test(s)) return NaN;
+        const value = Number(s);
+        return Number.isFinite(value) ? value : NaN;
     },
     formatNumber: function(number, decimals = 2) {
         if (!Number.isFinite(number)) return '0';
@@ -657,7 +670,7 @@ const PersianNumbers = {
         return number.toFixed(usedDecimals);
     },
     formatMixedText: function(text) {
-        if (!text) return '';
+        if (text == null) return '';
         let formatted = this.toLatin(text.toString());
         formatted = TextDirection.fixMixedText(formatted);
         formatted = formatted.replace(/([A-Za-z][A-Za-z0-9\s.,\/;:!?@#$%^&*()_+\-=\[\]{}'"\\|<>]+)/g,
@@ -709,72 +722,56 @@ function setupSimpleInputHandling() {
         if (!input) return;
         input.addEventListener('focus', function() { this.select(); });
         input.addEventListener('click', function() { this.select(); });
-        input.addEventListener('input', function() {
-            const before = this.value || '';
-            const normalized = PersianNumbers.toLatin(before);
-            if (normalized !== before) {
-                const start = this.selectionStart;
-                const end = this.selectionEnd;
-                this.value = normalized;
-                if (start != null && end != null) this.setSelectionRange(start, end);
-            }
-            const numValue = PersianNumbers.parseNumber(this.value);
-            if (!isNaN(numValue)) this.dataset.numericValue = numValue;
-            clearResults();
-        });
-        input.addEventListener('blur', function() {
-            if (this.value && this.value.trim() !== '') {
-                try {
-                    const numValue = PersianNumbers.parseNumber(this.value);
-                    if (!isNaN(numValue)) {
-                        this.dataset.numericValue = numValue;
-                        const decimalsAttr = this.getAttribute('data-decimals');
-                        const decimals = decimalsAttr == null ? 2 : parseInt(decimalsAttr, 10);
-                        const latinValue = PersianNumbers.formatNumber(numValue, Number.isFinite(decimals) ? decimals : 2);
-                        if (this.value !== latinValue) this.value = latinValue;
-                    }
-                } catch (e) { /* keep original */ }
-            }
-        });
+        input.addEventListener('input', function() { clearResults(); });
     });
 }
 
 // ============================================
 // MOBILE NUMERIC KEYBOARD
 // ============================================
+let numericInputHandlingReady = false;
 function setupMobileNumericKeyboard() {
-    document.querySelectorAll('input').forEach(input => {
-        const type = input.type;
-        const name = input.name || input.id || '';
-        const isNumericField = type === 'number' || name.includes('dose') || name.includes('weight') ||
-            name.includes('volume') || name.includes('count') || name.includes('value') ||
-            name.includes('amount') || input.classList.contains('numeric-input') ||
-            input.getAttribute('data-numeric') === 'true';
-
-        if (isNumericField) {
-            if (input.getAttribute('step') === '1' || name.includes('count') || name.includes('age') || name.includes('ampoule')) {
-                input.setAttribute('inputmode', 'numeric');
-                input.setAttribute('pattern', '[0-9]*');
-            } else {
-                input.setAttribute('inputmode', 'decimal');
-                input.setAttribute('pattern', '[0-9]*[.,]?[0-9]*');
-            }
-            input.classList.add('numeric-keyboard');
-            input.style.textAlign = 'center';
-            input.addEventListener('input', function() {
-                const before = this.value || '';
-                const normalized = PersianNumbers.toLatin(before);
-                if (normalized !== before) {
-                    const start = this.selectionStart;
-                    const end = this.selectionEnd;
-                    this.value = normalized;
-                    if (start != null && end != null) this.setSelectionRange(start, end);
-                }
-                const numValue = PersianNumbers.parseNumber(this.value);
-                if (!isNaN(numValue)) this.dataset.numericValue = numValue;
-            });
-        }
+    const selector = 'input[data-numeric="true"], input.numeric-input, input[type="number"], input[inputmode="decimal"], input[inputmode="numeric"]';
+    document.querySelectorAll(selector).forEach(input => {
+        // Native number fields sanitize Persian digits before input handlers can read them.
+        if (input.type === 'number') input.type = 'text';
+        input.dataset.numeric = 'true';
+        input.classList.add('numeric-keyboard', 'numeric-input');
+        if (!input.hasAttribute('inputmode')) input.inputMode = input.getAttribute('step') === '1' ? 'numeric' : 'decimal';
+        input.removeAttribute('pattern');
+        input.style.textAlign = 'center';
     });
+    if (numericInputHandlingReady) return;
+    numericInputHandlingReady = true;
+    // Capture runs before inline/live calculations, including fields inserted later.
+    const normalize = event => {
+        const input = event.target;
+        if (!(input instanceof HTMLInputElement) || !input.matches(selector) || event.isComposing) return;
+        const before = input.value;
+        const normalized = PersianNumbers.normalizeInput(before);
+        if (normalized !== before) {
+            const start = input.selectionStart, end = input.selectionEnd;
+            input.value = normalized;
+            if (start != null && end != null) input.setSelectionRange(
+                PersianNumbers.normalizeInput(before.slice(0, start)).length,
+                PersianNumbers.normalizeInput(before.slice(0, end)).length);
+        }
+        const value = PersianNumbers.parseNumber(input.value);
+        if (Number.isFinite(value)) input.dataset.numericValue = value;
+        else delete input.dataset.numericValue;
+        if (input.closest('#manualSection')) {
+            const results = document.getElementById('manualResults');
+            if (results) results.style.display = 'none';
+        }
+    };
+    document.addEventListener('input', normalize, true);
+    document.addEventListener('change', normalize, true);
+    document.addEventListener('compositionend', event => {
+        normalize(event);
+        if (event.target instanceof HTMLInputElement && event.target.matches(selector)) {
+            event.target.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+    }, true);
 }
 
 // ============================================
@@ -1619,9 +1616,7 @@ function calculateInfusion() {
 
     let doseValue;
     if (DOM.doctorOrder.value && DOM.doctorOrder.value.trim() !== '') {
-        doseValue = DOM.doctorOrder.dataset.numericValue
-            ? parseFloat(DOM.doctorOrder.dataset.numericValue)
-            : PersianNumbers.parseNumber(DOM.doctorOrder.value);
+        doseValue = PersianNumbers.parseNumber(DOM.doctorOrder.value);
     }
 
     if (!doseValue || isNaN(doseValue) || doseValue <= 0) {
@@ -1643,9 +1638,7 @@ function calculateInfusion() {
     if (drug.weightBased && drug.weightBased.active && AppState.useWeight) {
         let weightValue;
         if (DOM.patientWeight.value && DOM.patientWeight.value.trim() !== '') {
-            weightValue = DOM.patientWeight.dataset.numericValue
-                ? parseFloat(DOM.patientWeight.dataset.numericValue)
-                : PersianNumbers.parseNumber(DOM.patientWeight.value);
+            weightValue = PersianNumbers.parseNumber(DOM.patientWeight.value);
         }
         if (!weightValue || isNaN(weightValue) || weightValue <= 0) {
             showToast('خطا', 'لطفاً وزن بیمار را وارد کنید', 'error');
@@ -1684,9 +1677,7 @@ function calculateInfusion() {
     if (AppState.customVolume) {
         let customVol;
         if (DOM.customVolume.value && DOM.customVolume.value.trim() !== '') {
-            customVol = DOM.customVolume.dataset.numericValue
-                ? parseFloat(DOM.customVolume.dataset.numericValue)
-                : PersianNumbers.parseNumber(DOM.customVolume.value);
+            customVol = PersianNumbers.parseNumber(DOM.customVolume.value);
         }
         if (!customVol || isNaN(customVol) || customVol <= 0) {
             showToast('خطا', 'حجم محلول وارد شده معتبر نیست', 'error');
@@ -2385,7 +2376,7 @@ function createManualCalculationContent() {
                     <button class="volume-preset-btn" data-vol="custom"><span class="custom-text">سایر</span></button>
                 </div>
                 <div class="volume-custom-input" id="manualCustomVolumeRow" style="display:none;">
-                    <input type="number" id="manualCustomVolume" placeholder="حجم دلخواه" min="1" inputmode="numeric">
+                    <input type="text" data-numeric="true" id="manualCustomVolume" placeholder="حجم دلخواه" min="1" inputmode="numeric">
                     <span>سی‌سی</span>
                 </div>
             </div>
@@ -2394,7 +2385,7 @@ function createManualCalculationContent() {
             <div class="control-group">
                 <label><i class="fas fa-vial"></i> مقدار دارو اضافه‌شده به محلول</label>
                 <div class="manual-drug-amount-row">
-                    <input type="number" id="manualDrugAmount" placeholder="مقدار" step="any" min="0" inputmode="decimal" class="manual-amount-input">
+                    <input type="text" data-numeric="true" id="manualDrugAmount" placeholder="مقدار" step="any" min="0" inputmode="decimal" class="manual-amount-input">
                     <select id="manualDrugUnit" class="manual-unit-select">
                         <option value="units">واحد (units)</option>
                         <option value="mg" selected>میلی‌گرم (mg)</option>
@@ -2408,7 +2399,7 @@ function createManualCalculationContent() {
             <div class="control-group">
                 <label><i class="fas fa-file-medical-alt"></i> دوز درخواستی</label>
                 <div class="manual-drug-amount-row">
-                    <input type="number" id="manualDesiredDose" placeholder="دوز" step="any" min="0" inputmode="decimal" class="manual-amount-input">
+                    <input type="text" data-numeric="true" id="manualDesiredDose" placeholder="دوز" step="any" min="0" inputmode="decimal" class="manual-amount-input">
                     <select id="manualDoseUnit" class="manual-unit-select">
                         <option value="units/hr">units/hr</option>
                         <option value="mg/hr">mg/hr</option>
@@ -2425,7 +2416,7 @@ function createManualCalculationContent() {
             <div class="calc-toggle-item" id="manualWeightRow" style="display:none;">
                 <div class="weight-input-row" style="display:flex;">
                     <i class="fas fa-user"></i>
-                    <input type="number" id="manualPatientWeight" placeholder="وزن بیمار" min="1" step="0.1" inputmode="decimal">
+                    <input type="text" data-numeric="true" id="manualPatientWeight" placeholder="وزن بیمار" min="1" step="0.1" inputmode="decimal">
                     <span class="weight-unit latin-inline">kg</span>
                 </div>
             </div>
@@ -2468,6 +2459,7 @@ function createManualCalculationContent() {
         </div>
     `;
     setupManualCalculationFunctionality();
+    setupMobileNumericKeyboard();
 }
 
 
@@ -2753,14 +2745,14 @@ function convertElectrolyteLive(source) {
     const resEl = document.getElementById('electrolyteResult');
     const eqWeight = data.mw / data.valence;
     if (source === 'meq') {
-        const meq = parseFloat(meqEl.value);
+        const meq = PersianNumbers.parseNumber(meqEl.value);
         if (!isNaN(meq) && meq >= 0) mgEl.value = parseFloat((meq * eqWeight).toFixed(3));
     } else if (source === 'mg') {
-        const mg = parseFloat(mgEl.value);
+        const mg = PersianNumbers.parseNumber(mgEl.value);
         if (!isNaN(mg) && mg >= 0) meqEl.value = parseFloat((mg / eqWeight).toFixed(3));
     }
-    const meq = parseFloat(meqEl.value) || 0;
-    const mg  = parseFloat(mgEl.value)  || 0;
+    const meq = PersianNumbers.parseNumber(meqEl.value) || 0;
+    const mg  = PersianNumbers.parseNumber(mgEl.value)  || 0;
     if (meq > 0 || mg > 0) {
         resEl.innerHTML = renderConverterResult([
             { label: 'mEq', value: meq.toFixed(2) },
@@ -2780,20 +2772,20 @@ function convertUnitsLive(source) {
     const toMcg = { mcg: 1, mg: 1000, g: 1000000 };
     const fromUnit = fromSel.value, toUnit = toSel.value;
     if (source === 'from') {
-        const val = parseFloat(fromEl.value);
+        const val = PersianNumbers.parseNumber(fromEl.value);
         if (!isNaN(val) && val >= 0) {
             const mcg = val * toMcg[fromUnit];
             toEl.value = parseFloat((mcg / toMcg[toUnit]).toFixed(6));
         }
     } else if (source === 'to') {
-        const val = parseFloat(toEl.value);
+        const val = PersianNumbers.parseNumber(toEl.value);
         if (!isNaN(val) && val >= 0) {
             const mcg = val * toMcg[toUnit];
             fromEl.value = parseFloat((mcg / toMcg[fromUnit]).toFixed(6));
         }
     }
-    const fromVal = parseFloat(fromEl.value) || 0;
-    const toVal   = parseFloat(toEl.value)   || 0;
+    const fromVal = PersianNumbers.parseNumber(fromEl.value) || 0;
+    const toVal   = PersianNumbers.parseNumber(toEl.value)   || 0;
     if (fromVal > 0 || toVal > 0) {
         resEl.innerHTML = renderConverterResult([
             { label: fromUnit, value: fromVal.toFixed(4) },
@@ -2804,8 +2796,8 @@ function convertUnitsLive(source) {
 }
 
 function convertPercentageLive() {
-    const pct = parseFloat(document.getElementById('percentageValue').value) || 0;
-    const vol = parseFloat(document.getElementById('percentageVolume').value) || 100;
+    const pct = PersianNumbers.parseNumber(document.getElementById('percentageValue').value) || 0;
+    const vol = PersianNumbers.parseNumber(document.getElementById('percentageVolume').value) || 100;
     const resEl = document.getElementById('percentageResult');
     if (pct <= 0) { resEl.style.display = 'none'; return; }
     const grams = (pct / 100) * vol;
@@ -2819,8 +2811,8 @@ function convertPercentageLive() {
 }
 
 function calculateDripRateLive() {
-    const vol    = parseFloat(document.getElementById('dripVolume').value) || 0;
-    const time   = parseFloat(document.getElementById('dripTime').value)   || 0;
+    const vol    = PersianNumbers.parseNumber(document.getElementById('dripVolume').value) || 0;
+    const time   = PersianNumbers.parseNumber(document.getElementById('dripTime').value)   || 0;
     const factor = parseInt(document.getElementById('dripFactorSelect').value) || 20;
     const resEl  = document.getElementById('dripResult');
     if (vol <= 0 || time <= 0) { resEl.style.display = 'none'; return; }
@@ -2841,13 +2833,13 @@ function convertTempLive(source) {
     const resEl = document.getElementById('tempResult');
     if (!cEl || !fEl) return;
     if (source === 'c') {
-        const c = parseFloat(cEl.value);
+        const c = PersianNumbers.parseNumber(cEl.value);
         if (!isNaN(c)) fEl.value = parseFloat(((c * 9/5) + 32).toFixed(1));
     } else {
-        const f = parseFloat(fEl.value);
+        const f = PersianNumbers.parseNumber(fEl.value);
         if (!isNaN(f)) cEl.value = parseFloat(((f - 32) * 5/9).toFixed(1));
     }
-    const c = parseFloat(cEl.value) || 0;
+    const c = PersianNumbers.parseNumber(cEl.value) || 0;
     let note = '';
     if (c < 35)       note = '🔵 هیپوترمی';
     else if (c < 36.5) note = '⚪ زیر نرمال';
@@ -2856,8 +2848,8 @@ function convertTempLive(source) {
     else if (c <= 40)  note = '🟠 تب';
     else               note = '🔴 تب شدید — اورژانسی';
     resEl.innerHTML = renderConverterResult([
-        { label: 'سلسیوس',  value: (parseFloat(cEl.value) || 0).toFixed(1) + ' °C' },
-        { label: 'فارنهایت', value: (parseFloat(fEl.value) || 0).toFixed(1) + ' °F' },
+        { label: 'سلسیوس',  value: (PersianNumbers.parseNumber(cEl.value) || 0).toFixed(1) + ' °C' },
+        { label: 'فارنهایت', value: (PersianNumbers.parseNumber(fEl.value) || 0).toFixed(1) + ' °F' },
         { label: 'وضعیت',   value: note }
     ]);
     resEl.style.display = 'block';
@@ -2870,12 +2862,12 @@ function convertWeightLive(source) {
     const resEl = document.getElementById('weightResult');
     if (!kgEl || !lbEl || !gEl) return;
     let kg = 0;
-    if (source === 'kg') kg = parseFloat(kgEl.value) || 0;
-    else if (source === 'lb') { kg = (parseFloat(lbEl.value) || 0) / 2.20462; kgEl.value = kg.toFixed(2); }
-    else if (source === 'g')  { kg = (parseFloat(gEl.value) || 0) / 1000; kgEl.value = kg.toFixed(3); }
+    if (source === 'kg') kg = PersianNumbers.parseNumber(kgEl.value) || 0;
+    else if (source === 'lb') { kg = (PersianNumbers.parseNumber(lbEl.value) || 0) / 2.20462; kgEl.value = kg.toFixed(2); }
+    else if (source === 'g')  { kg = (PersianNumbers.parseNumber(gEl.value) || 0) / 1000; kgEl.value = kg.toFixed(3); }
     if (kg > 0) {
-        lbEl.value = (kg * 2.20462).toFixed(1);
-        gEl.value  = (kg * 1000).toFixed(0);
+        if (source !== 'lb') lbEl.value = (kg * 2.20462).toFixed(1);
+        if (source !== 'g') gEl.value = (kg * 1000).toFixed(0);
         resEl.innerHTML = renderConverterResult([
             { label: 'کیلوگرم', value: kg.toFixed(2) + ' kg' },
             { label: 'پوند',    value: (kg * 2.20462).toFixed(1) + ' lb' },
@@ -3400,9 +3392,7 @@ function calculateReverse() {
     const unit = AppState.useWeight && drug.weightBased?.active ? drug.weightBased.unit : (drug.weightBased?.nonWeightUnit || drug.standardUnit);
     let weight = null;
     if (unit && unit.toLowerCase().includes('/kg')) {
-        weight = DOM.patientWeight?.dataset.numericValue
-            ? parseFloat(DOM.patientWeight.dataset.numericValue)
-            : PersianNumbers.parseNumber(DOM.patientWeight?.value);
+        weight = PersianNumbers.parseNumber(DOM.patientWeight?.value);
         if (!weight || isNaN(weight) || weight <= 0) {
             showToast('خطا', 'برای محاسبه دوز وزنی، وزن بیمار را وارد کنید', 'error');
             DOM.patientWeight?.focus();
@@ -4313,7 +4303,7 @@ function updateParkland() {
     const parklandRow = document.getElementById('parklandRow');
     if (!weightEl || !parklandEl || !parklandRow) return;
 
-    const weight = parseFloat(weightEl.value);
+    const weight = PersianNumbers.parseNumber(weightEl.value);
     const table = BURNS_STATE.ageMode === 'adult' ? BURNS_ADULT : BURNS_PEDIATRIC;
     let total = 0;
     BURNS_STATE.selected.forEach(key => { total += (table[key] || 0); });

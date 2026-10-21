@@ -75,7 +75,7 @@ async function reachable(locator) {
       });
       await context.addInitScript(rev => {
         localStorage.setItem('onboardingSeen','true'); localStorage.setItem('pwaNeverShow','true');
-        localStorage.setItem('foximed_last_seen_version',rev); localStorage.setItem('foximed_user_name_version','5.1'); localStorage.setItem('userName','Test');
+        localStorage.setItem('foximed_last_seen_version',rev);localStorage.setItem('foximed_setup_invite_v1','{"at":1}'); localStorage.setItem('foximed_user_name_version','5.1'); localStorage.setItem('userName','Test');
       }, revision);
       const page = await context.newPage(), errors=[];
       page.on('pageerror', e => errors.push(e.message));

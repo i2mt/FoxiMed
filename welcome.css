@@ -63,7 +63,7 @@
 .fm-setup-destinations i{margin-inline-end:7px;color:var(--text-secondary)}
 .fm-setup :is(button,input,select):focus-visible{outline:2px solid var(--text-primary);outline-offset:2px}
 @media(max-width:600px){.fm-setup{padding:0}.fm-setup-shell{height:100%;width:100%;border:0;border-radius:0;box-shadow:none}.fm-setup-header{padding:calc(8px + env(safe-area-inset-top)) 18px 8px}.fm-setup-content{padding:20px}.fm-setup-footer{padding:12px 20px calc(14px + env(safe-area-inset-bottom))}.fm-setup h2{font-size:22px}}
-@media(max-height:450px){.fm-setup{padding:0}.fm-setup-shell{height:100%;border-radius:0}.fm-setup-header{padding:4px 16px}.fm-setup-content{padding:12px 20px}.fm-setup-footer{padding:6px 16px}.fm-setup-footer>p{display:none}.fm-setup-progress{margin-bottom:6px}.fm-setup-actions button{padding:6px 12px}.fm-setup-welcome-art{margin:8px 0 16px}.fm-setup-fox{width:58px;height:58px}}
+@media(max-height:450px){.fm-setup{padding:0}.fm-setup-shell{height:100%;border-radius:0}.fm-setup-header{padding:4px 16px}.fm-setup-content{padding:12px 20px}.fm-setup-footer{padding:6px 16px}.fm-setup-footer>.fm-setup-footer-note{display:none}.fm-setup-progress{margin-bottom:6px}.fm-setup-actions button{padding:6px 12px}.fm-setup-welcome-art{margin:8px 0 16px}.fm-setup-fox{width:58px;height:58px}}
 @media(prefers-reduced-motion:reduce){.fm-setup-fox-ready .fm-setup-fox-fill{animation:none;clip-path:inset(0)}}
 /* Inline tip occupies its own row; it never overlays the active page or navigation. */
 .fm-feature-tip{flex:0 0 auto;display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:0 8px;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface-elevated);color:var(--text-primary);font-family:var(--font-persian)}
@@ -96,6 +96,26 @@
 #setupTitle:focus{outline:none}
 
 .fm-setup-field input,.fm-setup-field select{box-shadow:none}
+.fm-setup-footer>.fm-setup-more{display:block;margin:0 0 6px;text-align:center;color:var(--text-primary);font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.fm-setup-footer>.fm-setup-more.fm-more-hidden,.fm-can-scroll .fm-setup-footer-note{display:none}
+.fm-theme-screen .fm-setup-description{margin-bottom:12px}
+.fm-theme-screen .fm-setup-choices{margin-bottom:12px}
+.fm-theme-screen .fm-setup-swatches button{min-height:56px;flex-direction:row;flex-wrap:wrap;gap:6px;padding:7px 5px}
+.fm-theme-screen .fm-setup-dot{width:20px;height:20px;flex-shrink:0}
+.fm-theme-screen .fm-setup-preview{margin:4px 0 0;padding:10px}
+.fm-theme-screen .fm-setup-preview>p{margin:6px 0}
+.fm-theme-screen .fm-setup-content{padding-block:14px}
+.fm-inviting{padding:16px;background:#0f172a99}
+.fm-inviting .fm-update-screen{height:auto;max-height:100%;border:1px solid var(--border);border-radius:22px}
+.fm-update-screen .fm-setup-content{flex:1 1 auto}
+.fm-update-screen .fm-setup-welcome-art{margin:0 0 8px}
+.fm-update-screen .fm-setup-fox{width:56px;height:56px}
+.fm-update-screen .fm-setup-content{padding:16px 20px}
+.fm-update-screen h2{font-size:22px;line-height:1.5}
+.fm-update-screen .fm-setup-description{font-size:13px;margin-bottom:12px}
+.fm-update-features{margin:0;padding-inline-start:22px;font-size:13px;line-height:1.9;overflow-wrap:anywhere}
+.fm-update-features li+li{margin-top:8px}
+@media(max-height:600px){.fm-theme-screen .fm-setup-footer>.fm-setup-footer-note{display:none}.fm-theme-screen .fm-setup-header{padding-block:6px}.fm-theme-screen .fm-setup-footer{padding-block:8px}.fm-theme-screen h2{font-size:20px;margin-bottom:5px}.fm-theme-screen .fm-setup-description{font-size:12px;margin-bottom:8px}.fm-theme-screen .fm-setup-eyebrow{margin-bottom:2px}}
 .fm-install-screen .fm-setup-content{padding:18px 20px}
 .fm-install-screen h2{font-size:22px;margin-bottom:8px}
 .fm-install-screen .fm-setup-description{font-size:13px;margin-bottom:12px}
@@ -108,10 +128,12 @@
 .fm-install-steps{list-style-type:persian}
 .fm-setup button{white-space:normal;overflow-wrap:anywhere}
 /* Enlarged text gets a larger reading viewport and full-width, short actions. */
-.fm-setup-large-text .fm-setup-footer>p{display:none}
+.fm-setup-large-text .fm-setup-footer>.fm-setup-footer-note{display:none}
 .fm-setup-large-text .fm-setup-actions{flex-direction:column}
 .fm-setup-large-text .fm-setup-actions button{flex:0 0 auto;width:100%;padding:6px 12px;overflow-wrap:normal;word-break:normal}
 .fm-setup-large-text .fm-setup-footer{padding-block:8px}
+.fm-setup-large-text .fm-setup-more{line-height:1.3}
 .fm-setup-large-text .fm-setup-progress{margin-bottom:7px}
 .fm-setup-large-text .fm-setup-swatches,.fm-setup-large-text .fm-setup-modes{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
 .fm-setup-large-text .fm-setup-swatches button,.fm-setup-large-text .fm-setup-modes button{overflow-wrap:normal;word-break:normal}
+@media(max-height:450px){.fm-setup-large-text .fm-setup-actions button{padding-block:2px}.fm-theme-screen .fm-setup-header{padding-block:4px}}

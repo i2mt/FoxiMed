@@ -10,7 +10,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
  await c.route('**/*',r=>new URL(r.request().url()).hostname==='127.0.0.1'?r.continue():r.abort());
  if(process.env.FOXIMED_FA_ASSETS)await c.route('**/ajax/libs/font-awesome/6.4.0/**',r=>{const m=new URL(r.request().url()).pathname.match(/\/(css|webfonts)\/([^/]+)$/);if(!m)return r.abort();return r.fulfill({body:fs.readFileSync(path.join(process.env.FOXIMED_FA_ASSETS,m[1],m[2])),contentType:m[1]==='css'?'text/css':'font/woff2',headers:{'Access-Control-Allow-Origin':'*'}})});
  const rev=fs.readFileSync(path.join(ROOT,'script.js'),'utf8').match(/const RELEASE_NOTES_REVISION = '([^']+)'/)[1];
- await c.addInitScript(rev=>{localStorage.setItem('onboardingSeen','true');localStorage.setItem('foximed_last_seen_version',rev);localStorage.setItem('userName','WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW');},rev);
+ await c.addInitScript(rev=>{localStorage.setItem('onboardingSeen','true');localStorage.setItem('foximed_last_seen_version',rev);localStorage.setItem('foximed_setup_invite_v1','{"at":1}');localStorage.setItem('userName','WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW');},rev);
  const p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto('http://127.0.0.1:'+server.address().port);await p.locator('#loadingScreen').waitFor({state:'hidden'});
  await p.emulateMedia({reducedMotion:'reduce'});
  await p.evaluate(()=>{const e=new Event('beforeinstallprompt',{cancelable:true});e.prompt=async()=>{};e.userChoice=Promise.resolve({outcome:'dismissed'});dispatchEvent(e)});
@@ -25,7 +25,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
     for(const r of range.getClientRects())if(r.width&&((r.left<left-2)||(r.right>right+2)))textProblems.push({text:n.textContent.slice(0,45),left:r.left,right:r.right,bounds:[left,right]});
     if(n.clientWidth&&n.scrollWidth>n.clientWidth+2)textProblems.push({text:n.textContent.slice(0,45),scroll:n.scrollWidth,client:n.clientWidth});
    }
-   return{root:a,largeText:root.classList.contains('fm-setup-large-text'),actionsDirection:getComputedStyle(root.querySelector('.fm-setup-actions')).flexDirection,footerHintDisplay:getComputedStyle(footer.querySelector('p')).display,content:b,header:box(header),footer:box(footer),textProblems,overflow:document.documentElement.scrollWidth>innerWidth,controls:[...root.querySelectorAll('button,input,select')].map(n=>({id:n.id||n.dataset.setupTheme||n.dataset.setupMode,...box(n)}))};
+   return{root:a,largeText:root.classList.contains('fm-setup-large-text'),actionsDirection:getComputedStyle(root.querySelector('.fm-setup-actions')).flexDirection,footerHintDisplay:getComputedStyle(footer.querySelector('p')).display,content:b,header:box(header),footer:box(footer),textProblems,overflow:document.documentElement.scrollWidth>innerWidth,controls:[...root.querySelectorAll('button,input,select')].filter(n=>n.getClientRects().length).map(n=>({id:n.id||n.dataset.setupTheme||n.dataset.setupMode,...box(n)}))};
   });
   assert(!g.overflow,JSON.stringify({label,g}));if(label.scale===2){assert(g.largeText&&g.actionsDirection==='column'&&g.footerHintDisplay==='none',JSON.stringify({label,g}))}assert.equal(g.textProblems.length,0,JSON.stringify({label,g}));assert(g.root.top>=-1&&g.root.bottom<=label.height+1,JSON.stringify({label,g}));assert(g.header.top>=g.root.top-1&&g.header.bottom<=g.content.top+1,JSON.stringify({label,g}));assert(g.content.height>=96,JSON.stringify({label,g}));assert(g.content.bottom<=g.footer.top+1&&g.footer.bottom<=g.root.bottom+1,JSON.stringify({label,g}));
   for(const n of g.controls)assert(n.left>=g.root.left-1&&n.right<=g.root.right+1&&n.height>=43,JSON.stringify({label,n,g}));
@@ -37,6 +37,10 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   await p.evaluate(()=>FoxiMedWelcome.open(true));await geometry({width,height,scale,step:'install'});
   await p.locator('#setupBrowser').tap();await geometry({width,height,scale,step:'name'});
   await p.locator('#setupNext').tap();await geometry({width,height,scale,step:'theme'});
+  const discovery=await p.locator('#firstLaunchSetup').evaluate(root=>{const area=root.querySelector('.fm-setup-content'),a=area.getBoundingClientRect(),swatches=[...root.querySelectorAll('[data-setup-theme]')].map(n=>n.getBoundingClientRect());return {allColorsVisible:swatches.every(r=>r.top>=a.top&&r.bottom<=a.bottom),more:area.scrollHeight-area.scrollTop-area.clientHeight>12,cueVisible:!!root.querySelector('#setupMore').getClientRects().length}});
+  if(scale===1&&width<=430&&height>=480)assert(discovery.allColorsVisible,JSON.stringify({width,height,discovery}));
+  if(discovery.more)assert(discovery.cueVisible,JSON.stringify({width,height,discovery}));
+
   await p.locator('#setupNext').tap();await geometry({width,height,scale,step:'defaults'});
   await p.locator('#setupTime').evaluate(n=>n.scrollIntoView({block:'center',behavior:'instant'}));
   const hit=await p.locator('#setupTime').evaluate(n=>{const a=n.getBoundingClientRect(),b=n.closest('.fm-setup-content').getBoundingClientRect();return{select:{top:a.top,bottom:a.bottom,height:a.height},pane:{top:b.top,bottom:b.bottom,height:b.height},visible:a.top>=b.top-1&&a.bottom<=b.bottom+1,hit:document.elementFromPoint(a.left+a.width/2,a.top+a.height/2)===n}});assert(hit.visible&&hit.hit,JSON.stringify({width,height,scale,hit}));

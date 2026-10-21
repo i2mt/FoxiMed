@@ -37,7 +37,7 @@
   }
   function practiceHTML(s){
     if(s.welcome)return '<div class="fm-tour-credit"><span>طراحی و توسعه</span><bdi dir="ltr">Mohammad Mahdi Taghavi</bdi></div>';
-    if(s.sample)return '<div class="fm-tour-practice"><span class="fm-tour-sample-label">تمرین مستقل</span><label>حجم نمونه <bdi dir="ltr">mL</bdi><input id="tourPracticeVolume" type="number" min="1" value="100" inputmode="decimal" dir="ltr"></label><div class="fm-tour-practice-result">در مدت ۲ ساعت: <output id="tourPracticeOutput" dir="ltr">50 mL/h</output></div><small>این نمونه وارد محاسبات یا تاریخچهٔ شما نمی‌شود.</small></div>';
+    if(s.sample)return '<div class="fm-tour-practice"><span class="fm-tour-sample-label">تمرین مستقل</span><label>حجم نمونه <bdi dir="ltr">mL</bdi><input id="tourPracticeVolume" type="text" data-numeric="true" min="1" value="100" inputmode="decimal" dir="ltr"></label><div class="fm-tour-practice-result">در مدت ۲ ساعت: <output id="tourPracticeOutput" dir="ltr">50 mL/h</output></div><small>این نمونه وارد محاسبات یا تاریخچهٔ شما نمی‌شود.</small></div>';
     if(s.search)return '<button type="button" class="fm-tour-action" data-tour-action="search"><i class="fas fa-search"></i> جست‌وجوی نمونه: آمیودارون</button>';
     if(s.topics)return '';
     if(s.tools)return '<button type="button" class="fm-tour-action" data-tour-action="tools"><i class="fas fa-search"></i> جست‌وجوی نمونه: GCS</button>';
@@ -149,7 +149,7 @@
       else if(button.dataset.tourAction==='tools'){$('toolsSearch').value='GCS';$('toolsSearch').dispatchEvent(new Event('input',{bubbles:true}));}
       else if(button.dataset.tourExample)$('tourVoiceExample').textContent=button.dataset.tourExample==='چه کارهایی بلدی؟'?'فهرست توانایی‌ها از نشان سؤال در بخش دستیار در دسترس است.':'برای پیدا کردن دارو، نام فارسی یا انگلیسی آن را هم می‌توانید بگویید.';
     });
-    overlay.addEventListener('input',event=>{if(event.target.id==='tourPracticeVolume'){const v=Number(event.target.value);$('tourPracticeOutput').textContent=Number.isFinite(v)&&v>0?String(v/2)+' mL/h':'—';}});
+    overlay.addEventListener('input',event=>{if(event.target.id==='tourPracticeVolume'){const v=PersianNumbers.parseNumber(event.target.value);$('tourPracticeOutput').textContent=Number.isFinite(v)&&v>0?String(v/2)+' mL/h':'—';}});
     document.addEventListener('keydown',event=>{
       if(!active)return;
       if(event.key==='Escape'){event.preventDefault();void close();return;}
