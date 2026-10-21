@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "checkedOn": "2026-10-21",
-  "revision": "mobile-settings-compatibility",
+  "revision": "install-first-optional-setup-and-discovery",
   "tests": {
     "drug-reference-data.test.js": "PASS",
     "drug-reference-cache.test.js": "PASS",
@@ -12,9 +12,11 @@
     "navigation-layout.test.js": "PASS",
     "tutorial-layout.test.js": "PASS",
     "settings-theme-ui.test.js": "PASS",
-    "settings-mobile.test.js": "PASS"
+    "settings-mobile.test.js": "PASS",
+    "welcome-discovery.test.js": "PASS",
+    "welcome-responsive.test.js": "PASS"
   },
-  "javascriptSyntaxFiles": 38,
+  "javascriptSyntaxFiles": 41,
   "pythonSyntaxFiles": 4,
   "bookEntries": 827,
   "readerSections": 7004,
@@ -74,15 +76,18 @@
   "hedoTopBarContrast": 5.58,
   "otherFiveDarkThemeHeadingsMinimumContrast": 5.45,
   "currentRevisionChecks": [
+    "welcome-discovery.test.js",
+    "welcome-responsive.test.js",
     "settings-mobile.test.js",
     "settings-theme-ui.test.js",
     "navigation-layout.test.js",
     "drug-reference-ui.test.js",
+    "tutorial-layout.test.js",
     "drug-reference-cache.test.js",
     "voice-pipeline-smoke.test.js",
-    "JavaScript syntax, asset-version consistency and preservation comparison"
+    "JavaScript syntax, asset URL consistency and clinical/theme preservation comparison"
   ],
-  "unaffectedSuites": "Previous delivery results retained for data/reader/generated-voice-assets and the dedicated 147-step tutorial suite; navigation and drug UI tutorial checks rerun.",
+  "unaffectedSuites": "Earlier drug data/reader and generated voice asset results retained; clinical source files are unchanged.",
   "settingsSectionColumns": 1,
   "settingsShortScreenListScroll": "last section reachable above fixed footer",
   "settingsAccordionImplementation": "ordinary button-controlled hidden regions in natural block flow",
@@ -98,5 +103,34 @@
   "settingsVisualViewportKeyboardTests": "simulated resize and offset; focused input revealed; innerHeight fallback checked",
   "settingsRotationAndEnlargedText": "PASS",
   "settingsVoiceContactShortcut": "PASS",
-  "unchangedDrugReaderDataTutorialAndThemeFiles": 17
+  "firstLaunchInstallationBeforeQuestions": true,
+  "oldNameAndInstallPopupsRemoved": true,
+  "setupPreferenceSteps": 3,
+  "setupNameOptional": true,
+  "setupLiveThemes": 6,
+  "setupThemePreviewDraftRollback": true,
+  "tutorialStartsOnlyByUserChoice": true,
+  "setupExistingUserNamesPreserved": true,
+  "featureTipTopics": 5,
+  "featureTipMinimumVisits": 3,
+  "featureTipMinimumInstallAgeDays": 2,
+  "featureTipMinimumIdleSeconds": 45,
+  "featureTipMinimumIntervalDays": 7,
+  "featureTipMinimumRemainingReadingHeightPx": 160,
+  "featureTipOsNotifications": false,
+  "featureTipPermissionsRequested": false,
+  "newPlatformEventsScope": "Chromium simulations for installation, standalone mode, keyboard visual viewport and device layouts; not physical installation or Safari",
+  "unchangedClinicalReferenceFiles": 14,
+  "unchangedCoreThemeSettingsAndTutorialStyles": 3,
+  "setupResponsiveLayouts": 14,
+  "setupResponsiveScreenChecks": 70,
+  "featureTipResponsiveLayouts": 7,
+  "setupResponsiveWidthRangePx": [
+    280,
+    1280
+  ],
+  "setupEnlargedTextLayouts": 3,
+  "setupMinimumTestedReadingPanelHeightPx": 96,
+  "setupLargeTextGridAndButtons": "adaptive columns and full-width stacked actions",
+  "setupLongNamesAndTextInsideBounds": true
 }

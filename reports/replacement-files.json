@@ -1,19 +1,19 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "mobile-settings-compatibility",
+  "revision": "install-first-optional-setup-and-discovery",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "reason": "Retain generated voice build validation; validate the current onboarding module syntax before publication.",
-      "bytes": 7557,
-      "sha256": "cb7a494cbf00180cbe83c712732890f705a7df76e006101717a63a513bd93253"
+      "reason": "Retain voice/data validation and validate syntax of the new welcome/setup module before publication.",
+      "bytes": 7591,
+      "sha256": "725058c8c6b838bd0fa54e97d48a7498befd23a4f5edb28551b138493e496c12"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Current matching assets and mobile Settings upload/verification instructions.",
-      "bytes": 3802,
-      "sha256": "fc8384ac680f6360cb0804178ef79877aa9a22990d5ab6d3f287136e0cc09d93"
+      "reason": "Current cumulative upload paths, new welcome assets, install/setup/tip checks and real-device validation scope.",
+      "bytes": 4603,
+      "sha256": "a4d0f5c4730b5afb55faa558991de185c0c74fd78061cd13452b50fb60571ec9"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -101,9 +101,9 @@
     },
     {
       "path": "index.html",
-      "reason": "Accessible button-controlled Settings regions; matching stylesheet, script, voice-command and service-worker URLs.",
-      "bytes": 180016,
-      "sha256": "ec8d928e8633afe8ad55bd23a8bc909f849ec51b1c03840ece9c261f32667269"
+      "reason": "Replace old install/name popups with optional setup root; add Settings time/tip preferences and install/setup replay; refresh matching assets.",
+      "bytes": 177758,
+      "sha256": "be176bb5b949d108e96fe9bc504277cf96a96b3de922b3756b1fc85c969b2c9d"
     },
     {
       "path": "onboarding.css",
@@ -113,9 +113,9 @@
     },
     {
       "path": "onboarding.js",
-      "reason": "Isolated responsive coaching panel, measured app viewport and fox fill after assets/fonts/startup visibility and painted frames.",
-      "bytes": 15847,
-      "sha256": "f88579c4b600ea3bd075f197d9a2ed6e6bb4533675de2a2ea831a44da7079921"
+      "reason": "Retain the responsive interactive tutorial and fox readiness behavior; start only by explicit user choice.",
+      "bytes": 15728,
+      "sha256": "372b12159890fdbca05ade17aa9cbe302b0e9f0a28083724cb046fc22598c559"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -131,21 +131,21 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current mobile touch, vertical containment, navigation, drug UI, cache, voice, syntax and preservation checks; distinguish emulation from hardware.",
-      "bytes": 3182,
-      "sha256": "cface65cf5bd8f6a1a6c64af84eb1ccca1a5588466fd6718e7c189f91d3d0fc1"
+      "reason": "Current first-launch/tip/responsive regression results with retained earlier checks and explicit platform simulation limits.",
+      "bytes": 4518,
+      "sha256": "cb50c804400101a25e92413eed38989c1a72635049256503ceb163fb34eb9884"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
-      "reason": "Current outcome and cumulative replacement inventory.",
-      "bytes": 21096,
-      "sha256": "a5a577bc7a8435fcb7b37fcc4673616f479e49349f6ec2a430901aaea79a5d17"
+      "reason": "Current outcome, validation scope and cumulative replacement inventory.",
+      "bytes": 22191,
+      "sha256": "1b18ab3f922776a031e4343f0d293efef1e16556ad06bbef84b8569a62c33eb7"
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Current mobile Settings changes, iPhone 13 and Android touch coverage, and Safari/device validation limits.",
-      "bytes": 15132,
-      "sha256": "a15d5d4d51fdd8a94bb00da61629b90a0ef3eb1b21f2571b460072e21ae522b5"
+      "reason": "Install-first flow, optional setup/tutorial, quiet tips, responsive/animation behavior and cross-container storage limits.",
+      "bytes": 20850,
+      "sha256": "9cebfcc18df266d7f06635ad395ef46e321445c4ed30345df0a4908d307cec4c"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -222,8 +222,8 @@
     {
       "path": "reports/drug-reference-ui-results.json",
       "reason": "Current rendered drug/search/card/keyboard/bidi/tutorial and user-state restoration results.",
-      "bytes": 1111,
-      "sha256": "ee8da9223475cb85e3519133834b851e6fc90c72717429934a150af4c878b376"
+      "bytes": 1112,
+      "sha256": "ece26d4ee7d40ad8f5c4f090da3525d68b0d7925a73d776c6edfdb2f956b6f40"
     },
     {
       "path": "reports/drug-source-duplicate-headings.json",
@@ -266,10 +266,22 @@
       "sha256": "01b72c0abeca0b0a111daba3967ee295dad7762e953c6be5b7a53a7e95b5a3b9"
     },
     {
+      "path": "reports/welcome-discovery-results.json",
+      "reason": "Passing setup, install-event recovery, live/draft themes, persistence, opt-in tour, quiet frequency rules and real tip destinations.",
+      "bytes": 2817,
+      "sha256": "ed215ee13f077bb0ff59df89eaa3a7a6b0cb5ceeb1e95f84c3e44b7be036b19e"
+    },
+    {
+      "path": "reports/welcome-responsive-results.json",
+      "reason": "Fourteen layouts and 70 screen states, enlarged text and long names; seven reserved-space tip layouts.",
+      "bytes": 4709,
+      "sha256": "ee91965a3e43accf964c62562f6b086136b621edfd974f99fa7d35e83ab3b7ef"
+    },
+    {
       "path": "script.js",
-      "reason": "Single Settings toggle controller, accessible state, natural scrolling, visible-viewport sizing and focused-control reveal; retain prior theme behavior.",
-      "bytes": 302792,
-      "sha256": "a6d38bd855928ffd0bff5129eea76d765639adb1068ce08302f6d95f834ee3d2"
+      "reason": "Preserve optional existing names, coordinate welcome setup, expose one-shot install capability, support history time format and draft-safe live system themes.",
+      "bytes": 298322,
+      "sha256": "aabb2a3e872466acc0659bbf4271673b2bcd6630c0a43c1054f84f19fabc4ecb"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -309,9 +321,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Refresh the app shell for the mobile Settings compatibility revision.",
-      "bytes": 7539,
-      "sha256": "6f7a6a6b985ec4e99dad72994628af061950214a760282af79dd575b292bb170"
+      "reason": "Cache the new welcome module/styles and refresh app-shell script/tutorial revisions.",
+      "bytes": 7588,
+      "sha256": "f20ec8ec25eae8aff4eb848bcee7aa7c6bb5155b9ee798ca8578be0c8e66af22"
     },
     {
       "path": "settings.css",
@@ -345,9 +357,9 @@
     },
     {
       "path": "tests/drug-reference-ui.test.js",
-      "reason": "Mobile/desktop closed topics, keyboard, floating close, parentheses geometry, interactive tour and user-state restoration.",
-      "bytes": 15854,
-      "sha256": "b0f73e2947d64e7fb3380a0051a8fb548dda39ff89ff6d19e09505397f61ad4f"
+      "reason": "Retain drug/reader/UI checks and explicitly open the optional interactive tutorial.",
+      "bytes": 15892,
+      "sha256": "50850637213a05b9502271c3ff51be99460a2c968933e38c1d79bc6d611764af"
     },
     {
       "path": "tests/navigation-layout.test.js",
@@ -381,15 +393,39 @@
     },
     {
       "path": "tests/voice-pipeline-smoke.test.js",
-      "reason": "Retain voice smoke checks while validating current offline styles, isolated status markup and updated settings copy.",
-      "bytes": 49286,
-      "sha256": "afdde969eb25b1b880d91a6b2f8b15f96737652934a20168b5eda917f63ad730"
+      "reason": "Retain voice smoke checks; validate replacement of the legacy name/install popups and optional device-local personalization.",
+      "bytes": 49372,
+      "sha256": "0210e95ef906227af23b0dc4fe3180bf2a9c2e4aae90bb56061a356c9cf8f244"
+    },
+    {
+      "path": "tests/welcome-discovery.test.js",
+      "reason": "Rendered setup/install/tip behavior with simulated native events, storage persistence, real navigation and non-interruption checks.",
+      "bytes": 21066,
+      "sha256": "3d843989074c958c18c1c1da04b69404a16cd05040bdc12fa1c1fc492ed98974"
+    },
+    {
+      "path": "tests/welcome-responsive.test.js",
+      "reason": "Check actual text/control bounds, adaptive large-text layout, scrolling/last-control hit targets, stable header/footer and narrow tip layouts.",
+      "bytes": 8760,
+      "sha256": "4faa74156e6fd80b3a2001d8fc9b2ed243e0dbc3dc6e58711b5aa5d4f0683182"
     },
     {
       "path": "voice-commands.js",
       "reason": "Open the Settings contact region with the shared controller and size the dialog to the visible viewport.",
       "bytes": 127847,
       "sha256": "1d491785615e5adf03aacb843adf0e6703b97987c56a327bfee12277511dc59c"
+    },
+    {
+      "path": "welcome.css",
+      "reason": "Responsive setup/install screens, live theme preview, readable text/controls, adaptive enlarged-text grids/actions and non-overlapping inline tips.",
+      "bytes": 12147,
+      "sha256": "8bdb38ee027b46da0dd21768fb9de461a772cd89ede81488eba3bf53e0289453"
+    },
+    {
+      "path": "welcome.js",
+      "reason": "Install-first optional three-step setup with local draft previews/rollback, explicit tutorial choice, visible fox fill, viewport handling and quiet contextual tips.",
+      "bytes": 29990,
+      "sha256": "0c9b3f3af1e01ef62c35be32bcb32ab9fcbd38df2ef9e5875f5d467a19744e48"
     }
   ]
 }

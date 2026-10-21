@@ -33,7 +33,7 @@
       if(pane.id!==s.tab+'Tab'||s.welcome||s.finish||!['drugs','tools'].includes(s.tab)){markInert(pane);return;}
       if(s.tab==='tools')pane.querySelectorAll('button,input,select,a,summary').forEach(n=>{if(!n.matches('#toolsSearch,#toolsSearchClear'))markInert(n);});
     });
-    for(const id of ['greetingBanner','namePrompt'])markInert($(id));
+    markInert($('greetingBanner'));
   }
   function practiceHTML(s){
     if(s.welcome)return '<div class="fm-tour-credit"><span>طراحی و توسعه</span><bdi dir="ltr">Mohammad Mahdi Taghavi</bdi></div>';
@@ -122,7 +122,6 @@
     if(active)return;
     saved={tab:AppState.currentTab||'calculator',focus:document.activeElement,scrolls:[...document.querySelectorAll('.tab-pane')].map(n=>[n,n.scrollTop]),drug:window.FoxiMedDrugReferenceView?.capture(),tools:$('toolsSearch')?.value||''};
     pending=false;active=true;step=0;const overlay=$('onboardingOverlay');overlay.style.display='flex';overlay.classList.add('visible');document.body.classList.add('foximed-tour');
-    const pwa=$('pwaModal');if(pwa)pwa.style.display='none';
     render();if(typeof ResizeObserver==='function'){resizeObserver=new ResizeObserver(queueLayout);resizeObserver.observe($('foximedTourCard'));resizeObserver.observe(document.querySelector('.app-header'));}
   }
   async function close(){
@@ -163,7 +162,7 @@
     window.addEventListener('resize',queueLayout,{passive:true});
     window.visualViewport?.addEventListener('resize',queueLayout,{passive:true});
     window.visualViewport?.addEventListener('scroll',queueLayout,{passive:true});
-    if(!localStorage.getItem('onboardingSeen')){pending=true;setTimeout(()=>{if(pending)open();},700);}
+    // The first-launch setup offers this tour explicitly; it never auto-opens.
   }
   window.FoxiMedOnboarding={setup,get active(){return active},get pending(){return pending}};
 })();

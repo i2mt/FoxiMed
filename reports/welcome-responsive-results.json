@@ -1,0 +1,205 @@
+{
+  "status": "PASS",
+  "engine": "Chromium touch emulation",
+  "physicalSafariTested": false,
+  "layouts": [
+    {
+      "width": 280,
+      "height": 653,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 412,
+      "height": 839,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 430,
+      "height": 740,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 568,
+      "height": 280,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "textScale": 1,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "textScale": 2,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "textScale": 2,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "textScale": 2,
+      "screens": 5,
+      "allControlsInsideAnd44px": true,
+      "textContained": true,
+      "footerAndHeaderStable": true,
+      "lastSelectReachable": true
+    }
+  ],
+  "tipLayouts": [
+    {
+      "width": 280,
+      "height": 653,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    },
+    {
+      "width": 375,
+      "height": 548,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    },
+    {
+      "width": 412,
+      "height": 839,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    },
+    {
+      "width": 430,
+      "height": 740,
+      "shown": true,
+      "spaceReserved": true,
+      "longNameWrap": true,
+      "skipsIfReadingAreaWouldBeTooSmall": false
+    }
+  ]
+}

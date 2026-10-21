@@ -143,19 +143,9 @@ const HAS_PRE_V5_INSTALL = [
     try { return localStorage.getItem(key) !== null; } catch (e) { return false; }
 });
 
-// Version 5 starts a fresh personalization cycle. The completion marker is
-// written only after the person actively enters a name, so a name inherited
-// from an earlier release cannot silently count as consent for this version.
+// Names remain optional and device-local. Existing names survive updates.
 const USER_NAME_CAPTURE_VERSION = '5.1';
 const USER_NAME_CAPTURE_VERSION_KEY = 'foximed_user_name_version';
-(function resetLegacyUserNameForVersion5() {
-    try {
-        if (localStorage.getItem(USER_NAME_CAPTURE_VERSION_KEY) !== USER_NAME_CAPTURE_VERSION) {
-            localStorage.removeItem('userName');
-            localStorage.removeItem('foximed_name_prompt');
-        }
-    } catch (e) { /* local storage may be unavailable in private contexts */ }
-})();
 
 function getLastSeenVersion() {
     try { return localStorage.getItem('foximed_last_seen_version'); } catch (e) { return null; }
@@ -327,6 +317,8 @@ const AppState = {
         defaultInfusionMethod: 'syringe',
         defaultSyringeVolume: 'auto',
         defaultInfusionVolume: 'auto',
+        timeFormat: '24',
+        featureTips: true,
         voiceLogAutoTelegram: false // off by default — see voice-commands.js: automatic sending is a different privacy posture than the manual-export design, so it only runs once explicitly turned on
     },
     reverseMode: false
@@ -529,96 +521,30 @@ const AppState = {
 })();
 
 // ============================================
-// PWA INSTALL MODAL
+// SHARED INSTALL CAPABILITY — the only install UI is in welcome.js.
 // ============================================
-(function setupPWAModal() {
-    let deferredPrompt = null;
-
-    function isIOS() {
-        return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
-    }
-    function isInStandaloneMode() {
-        return window.matchMedia('(display-mode: standalone)').matches
-            || window.navigator.standalone === true;
-    }
-    function shouldShow() {
-        if (isInStandaloneMode()) return false;
-        if (localStorage.getItem('pwaNeverShow') === 'true') return false;
-        const remind = localStorage.getItem('pwaRemindAfter');
-        if (remind && Date.now() < parseInt(remind)) return false;
-        return true;
-    }
-    function showModal() {
-        if (!shouldShow()) return;
-        if (window.FoxiMedOnboarding?.pending || window.FoxiMedOnboarding?.active || document.querySelector('#namePrompt:not([hidden]), .modal.active')) { setTimeout(showModal,1200); return; }
-        const modal = document.getElementById('pwaModal');
-        if (!modal) return;
-        const androidNative = document.getElementById('pwaAndroidNative');
-        const iosGuide      = document.getElementById('pwaIOSGuide');
-        const genericGuide  = document.getElementById('pwaGenericGuide');
-        if (deferredPrompt) {
-            androidNative.style.display = 'block';
-            iosGuide.style.display = 'none';
-            genericGuide.style.display = 'none';
-        } else if (isIOS()) {
-            androidNative.style.display = 'none';
-            iosGuide.style.display = 'block';
-            genericGuide.style.display = 'none';
-        } else {
-            androidNative.style.display = 'none';
-            iosGuide.style.display = 'none';
-            genericGuide.style.display = 'block';
+(function setupInstallCapability() {
+    let deferredPrompt=null;
+    window.FoxiMedInstall={
+        isStandalone:()=>window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true,
+        get available(){return !!deferredPrompt},
+        async request(){
+            const prompt=deferredPrompt;if(!prompt)return 'unavailable';
+            deferredPrompt=null;AppState.pwaInstallPrompt=null;
+            try {
+                await prompt.prompt();
+                const {outcome}=await prompt.userChoice;
+                if(outcome==='accepted')localStorage.setItem('pwaNeverShow','true');
+                return outcome;
+            } catch {return 'failed'}
         }
-        modal.style.display = 'flex';
-    }
-    function hideModal() {
-        const modal = document.getElementById('pwaModal');
-        if (modal) modal.style.display = 'none';
-    }
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        AppState.pwaInstallPrompt = e;
-        if (document.getElementById('pwaModal')?.style.display === 'flex') showModal();
+    };
+    window.addEventListener('beforeinstallprompt',event=>{
+        event.preventDefault();deferredPrompt=event;AppState.pwaInstallPrompt=event;
     });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => { if (shouldShow()) showModal(); }, 3500);
-
-        const installBtn = document.getElementById('pwaInstallBtn');
-        if (installBtn) installBtn.addEventListener('click', async () => {
-            if (!deferredPrompt) return;
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            deferredPrompt = null;
-            AppState.pwaInstallPrompt = null;
-            hideModal();
-            if (outcome === 'accepted') localStorage.setItem('pwaNeverShow', 'true');
-        });
-
-        const laterBtn = document.getElementById('pwaLaterBtn');
-        if (laterBtn) laterBtn.addEventListener('click', () => {
-            hideModal();
-            localStorage.setItem('pwaRemindAfter', Date.now() + 172800000);
-        });
-
-        const neverBtn = document.getElementById('pwaNeverBtn');
-        if (neverBtn) neverBtn.addEventListener('click', () => {
-            hideModal();
-            localStorage.setItem('pwaNeverShow', 'true');
-        });
-
-        const closeBtn = document.getElementById('pwaModalClose');
-        if (closeBtn) closeBtn.addEventListener('click', hideModal);
-
-        const overlay = document.getElementById('pwaModalOverlay');
-        if (overlay) overlay.addEventListener('click', hideModal);
-    });
-
-    window.addEventListener('appinstalled', () => {
-        hideModal();
-        localStorage.setItem('pwaNeverShow', 'true');
+    window.addEventListener('appinstalled',()=>{
+        deferredPrompt=null;AppState.pwaInstallPrompt=null;
+        localStorage.setItem('pwaNeverShow','true');
     });
 })();
 
@@ -1196,7 +1122,7 @@ function initializeApp() {
     setupUpdateDetection();
     setupThemeModeListener();
     setupUserName();
-    setupNamePrompt();
+    window.FoxiMedWelcome?.setup();
     setTimeout(showGreetingBanner, 3200);
     setupHelpPopovers();
 }
@@ -1320,6 +1246,10 @@ function loadSettings() {
     if (DOM.themeModeSelect) DOM.themeModeSelect.value = AppState.settings.themeMode || 'light';
     applySettings();
     syncThemeModeButtons();
+    const timeFormatSelect=document.getElementById('timeFormatSelect');
+    if(timeFormatSelect)timeFormatSelect.value=AppState.settings.timeFormat==='12'?'12':'24';
+    const featureTipsToggle=document.getElementById('featureTipsToggle');
+    if(featureTipsToggle)featureTipsToggle.checked=AppState.settings.featureTips!==false;
 }
 
 function saveSettings() {
@@ -2701,6 +2631,7 @@ function switchTab(tabName) {
         pane.style.display = isActive ? 'block' : 'none';
     });
     AppState.currentTab = tabName;
+    window.dispatchEvent(new CustomEvent('foximed:tab-changed',{detail:{tab:tabName}}));
     if (tabName === 'drugs' && typeof window.initDrugReference === 'function') window.initDrugReference();
     if (tabName === 'tools') {
         initializeTools();
@@ -2756,7 +2687,10 @@ function applyThemeMode() {
 
 function setupThemeModeListener() {
     systemPrefersDark.addEventListener('change', () => {
-        if (AppState.settings.themeMode === 'auto') applyThemeMode();
+        if (AppState.settings.themeMode === 'auto') {
+            if(window.FoxiMedWelcome?.previewing)window.FoxiMedWelcome.refreshThemePreview();
+            else applyThemeMode();
+        }
     });
 }
 
@@ -2778,6 +2712,7 @@ function toggleTheme() {
 }
 
 function loadTheme() {
+    if(AppState.settings.themeMode==='auto'){applyThemeMode();return;}
     const savedTheme = localStorage.getItem('theme') || 'light';
     AppState.theme = savedTheme;
     document.body.classList.toggle('dark-mode', AppState.theme === 'dark');
@@ -3330,6 +3265,12 @@ function saveCalculation(totalDrug, concentration, pumpRate, duration) {
     localStorage.setItem('calculationHistory', JSON.stringify(history));
 }
 
+function formatAppTime(value) {
+    return new Date(value).toLocaleTimeString('fa-IR', {
+        hour:'2-digit', minute:'2-digit', hour12:AppState.settings.timeFormat === '12'
+    });
+}
+
 function loadHistory() {
     const historyList = document.getElementById('historyList');
     if (!historyList) return;
@@ -3345,7 +3286,7 @@ function loadHistory() {
             <div class="history-details">
                 <div>دوز: ${PersianNumbers.formatNumber(item.dose, 2)}</div>
                 <div>سرعت پمپ: <span class="latin-inline">${PersianNumbers.formatNumber(item.pumpRate, 2)} cc/hr</span></div>
-                <div class="history-time">${PersianNumbers.toLatin(new Date(item.timestamp).toLocaleDateString('fa-IR'))} — ${new Date(item.timestamp).toLocaleTimeString('fa-IR', {hour:'2-digit', minute:'2-digit'})}</div>
+                <div class="history-time">${PersianNumbers.toLatin(new Date(item.timestamp).toLocaleDateString('fa-IR'))} — ${formatAppTime(item.timestamp)}</div>
             </div>
             <div class="history-restore-bar">بازیابی این محاسبه</div>
         `;
@@ -3573,7 +3514,7 @@ function exportHistory() {
     const lines = ['MedCalc Pro — تاریخچه محاسبات', '='.repeat(40), ''];
     history.forEach((item, i) => {
         const d = new Date(item.timestamp);
-        const dateStr = d.toLocaleDateString('fa-IR') + ' ' + d.toLocaleTimeString('fa-IR', {hour:'2-digit', minute:'2-digit'});
+        const dateStr = d.toLocaleDateString('fa-IR') + ' ' + formatAppTime(d);
         lines.push(`#${i + 1} — ${item.drugName}`);
         lines.push(`تاریخ: ${dateStr}`);
         lines.push(`دوز: ${item.dose}`);
@@ -4528,6 +4469,7 @@ function getGreeting() {
 
 function showGreetingBanner() {
     const banner = document.getElementById('greetingBanner');
+    if (window.FoxiMedWelcome?.pending || window.FoxiMedWelcome?.active || window.FoxiMedOnboarding?.active) return;
     const textEl = document.getElementById('greetingText');
     const closeBtn = document.getElementById('greetingClose');
     if (!banner || !textEl) return;
@@ -4632,59 +4574,6 @@ function setupUserName() {
         input.value = storedName;
         updateButtonState();
     });
-}
-
-// Version 5 requires one fresh, explicit name entry from everyone, including
-// people whose name was stored by an earlier version. The prompt stays out of
-// the way of onboarding and other modals, but it has no skip path and returns
-// on later launches until a name is saved.
-function setupNamePrompt() {
-    const captureComplete = () =>
-        localStorage.getItem(USER_NAME_CAPTURE_VERSION_KEY) === USER_NAME_CAPTURE_VERSION &&
-        !!(localStorage.getItem('userName') || '').trim();
-    if (captureComplete()) return;
-
-    const prompt = document.getElementById('namePrompt');
-    const input = document.getElementById('namePromptInput');
-    const save = document.getElementById('namePromptSave');
-    if (!prompt || !input || !save) return;
-
-    function anotherOverlayIsOpen() {
-        if (window.FoxiMedOnboarding?.pending || window.FoxiMedOnboarding?.active || document.getElementById('pwaModal')?.style.display === 'flex') return true;
-        const onboarding = document.getElementById('onboardingOverlay');
-        if (onboarding && (onboarding.classList.contains('visible') || onboarding.style.display === 'flex')) return true;
-        return !!document.querySelector('.modal.active, .reverse-tooltip-overlay.visible');
-    }
-    function revealWhenClear() {
-        if (captureComplete()) return;
-        if (anotherOverlayIsOpen()) {
-            setTimeout(revealWhenClear, 1200);
-            return;
-        }
-        prompt.hidden = false;
-        requestAnimationFrame(() => prompt.classList.add('is-visible'));
-    }
-    setTimeout(revealWhenClear, 1800);
-
-    function closePrompt() {
-        prompt.classList.remove('is-visible');
-        setTimeout(() => { prompt.hidden = true; }, 230);
-    }
-    function saveFromPrompt() {
-        const name = input.value.trim();
-        if (!name || !saveUserNameValue(name)) return;
-        closePrompt();
-        haptic(20);
-    }
-
-    input.addEventListener('input', () => { save.disabled = !input.value.trim(); });
-    input.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' && input.value.trim()) {
-            event.preventDefault();
-            saveFromPrompt();
-        }
-    });
-    save.addEventListener('click', saveFromPrompt);
 }
 
 // ============================================

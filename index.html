@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="drug-reference.css?v=8">
     <link rel="stylesheet" href="settings.css?v=3">
     <link rel="stylesheet" href="onboarding.css?v=1">
+    <link rel="stylesheet" href="welcome.css?v=1">
 </head>
 <body>
 
@@ -55,47 +56,6 @@
             <div class="loading-credit">
                 <span>Designed &amp; developed by</span>
                 <strong>Mohammad Mahdi Taghavi</strong>
-            </div>
-        </div>
-    </div>
-
-    <!-- PWA Install Guide Modal -->
-    <div id="pwaModal" class="pwa-modal" style="display:none;">
-        <div class="pwa-modal-overlay" id="pwaModalOverlay"></div>
-        <div class="pwa-modal-box">
-            <div class="pwa-modal-header">
-                <div class="pwa-modal-icon"><i class="fas fa-download"></i></div>
-                <div class="pwa-modal-title">نصب FoxiMed</div>
-                <button class="pwa-modal-close" id="pwaModalClose"><i class="fas fa-times"></i></button>
-            </div>
-
-            <div class="pwa-install-section" id="pwaAndroidNative">
-                <p class="pwa-modal-desc">برای دسترسی سریع‌تر و استفاده آفلاین، اپ را روی گوشی خود نصب کنید.</p>
-                <button class="pwa-install-btn" id="pwaInstallBtn">
-                    <i class="fas fa-download"></i> نصب اپلیکیشن
-                </button>
-            </div>
-
-            <div class="pwa-install-section" id="pwaIOSGuide" style="display:none;">
-                <p class="pwa-modal-desc">برای نصب در آیفون:</p>
-                <div class="pwa-steps">
-                    <div class="pwa-step"><div class="pwa-step-num">۱</div><div class="pwa-step-text">در Safari روی آیکون <strong>اشتراک‌گذاری</strong> <i class="fas fa-share-from-square"></i> در پایین صفحه بزنید</div></div>
-                    <div class="pwa-step"><div class="pwa-step-num">۲</div><div class="pwa-step-text">گزینه <strong>«Add to Home Screen»</strong> را انتخاب کنید</div></div>
-                    <div class="pwa-step"><div class="pwa-step-num">۳</div><div class="pwa-step-text">روی <strong>«Add»</strong> بزنید — اپ روی صفحه اصلی ظاهر می‌شود</div></div>
-                </div>
-            </div>
-
-            <div class="pwa-install-section" id="pwaGenericGuide" style="display:none;">
-                <p class="pwa-modal-desc">برای نصب در مرورگر:</p>
-                <div class="pwa-steps">
-                    <div class="pwa-step"><div class="pwa-step-num">۱</div><div class="pwa-step-text">در نوار آدرس روی آیکون <i class="fas fa-ellipsis-v"></i> یا <strong>منو</strong> بزنید</div></div>
-                    <div class="pwa-step"><div class="pwa-step-num">۲</div><div class="pwa-step-text">گزینه <strong>«Install App»</strong> یا <strong>«Add to Home Screen»</strong> را بزنید</div></div>
-                </div>
-            </div>
-
-            <div class="pwa-modal-actions">
-                <button class="pwa-btn-later-modal" id="pwaLaterBtn">بعداً یادم بنداز</button>
-                <button class="pwa-btn-never" id="pwaNeverBtn">دیگر نشان نده</button>
             </div>
         </div>
     </div>
@@ -133,19 +93,6 @@
         <span class="greeting-text" id="greetingText"></span>
         <button class="greeting-close" id="greetingClose" aria-label="بستن"><i class="fas fa-times"></i></button>
     </div>
-
-    <!-- A compact, non-modal profile invitation. It is fixed above the page,
-         so showing it never changes the calculator's height or alignment. -->
-    <aside class="name-prompt" id="namePrompt" hidden aria-labelledby="namePromptTitle">
-        <div class="name-prompt-copy">
-            <strong id="namePromptTitle"><i class="fas fa-user-nurse" aria-hidden="true"></i> لطفاً نام خود را وارد کنید</strong>
-            <span>برای شخصی‌سازی نسخهٔ ۵ لازم است. (نام شما فقط روی همین دستگاه ذخیره می‌شود).</span>
-        </div>
-        <div class="name-prompt-input-row">
-            <input type="text" id="namePromptInput" maxlength="30" autocomplete="name" placeholder="نام شما">
-            <button type="button" class="name-prompt-save" id="namePromptSave" disabled>ذخیره</button>
-        </div>
-    </aside>
 
     <!-- Main App Container -->
     <div class="app-container">
@@ -1986,6 +1933,10 @@
                         <label class="switch"><input type="checkbox" id="hapticToggle" checked><span class="slider"></span></label>
                     </div>
 
+                    <label class="setting-item setting-select-row" for="timeFormatSelect">
+                        <span>نمایش ساعت در تاریخچه</span>
+                        <select id="timeFormatSelect" class="settings-select"><option value="24">۲۴ ساعته</option><option value="12">۱۲ ساعته</option></select>
+                    </label>
                     <!-- Theme Color Picker -->
                     <div class="theme-picker-section">
                         <span class="theme-picker-label"><i class="fas fa-swatchbook"></i> رنگ تم</span>
@@ -2061,6 +2012,10 @@
                         <span>هشدار سازگاری</span>
                         <label class="switch"><input type="checkbox" id="compatAlertToggle" checked><span class="slider"></span></label>
                     </div>
+                    <div class="setting-item">
+                        <div class="setting-label-stack"><span>نکته‌های آشنایی با برنامه</span><span class="setting-sublabel">گاهی، برای امکاناتی که هنوز امتحان نکرده‌اید؛ فقط داخل برنامه</span></div>
+                        <label class="switch"><input type="checkbox" id="featureTipsToggle" checked aria-label="نکته‌های آشنایی با برنامه"><span class="slider"></span></label>
+                    </div>
                 </div></section>
 
                 <!-- Data -->
@@ -2125,6 +2080,8 @@
                     </div>
                     <div class="settings-btn-row">
                         <button class="setting-btn gradient" id="checkUpdateBtn"><i class="fas fa-sync-alt"></i> بررسی به‌روزرسانی</button>
+                        <button class="setting-btn" id="installAppSettingsBtn"><i class="fas fa-download"></i> نصب روی دستگاه</button>
+                        <button class="setting-btn" id="replaySetupBtn"><i class="fas fa-sliders"></i> شخصی‌سازی سریع</button>
                         <button class="setting-btn gradient" onclick="showTutorial()"><i class="fas fa-graduation-cap"></i> راهنمای برنامه</button>
                         <button class="setting-btn gradient" onclick="showWhatsNewModal(true)"><i class="fa-solid fa-wand-magic-sparkles"></i> چه خبر؟</button>
                     </div>
@@ -2172,6 +2129,9 @@
         <aside id="foximedTourCard" class="fm-tour-card" dir="rtl"></aside>
     </div>
 
+    <!-- Optional first-launch setup; rendered after startup by welcome.js. -->
+    <div id="firstLaunchSetup" class="fm-setup" hidden role="dialog" aria-modal="true" aria-labelledby="setupTitle" dir="rtl"></div>
+
     <!-- Reverse mode first-use tooltip -->
         <!-- Reverse mode first-use tooltip -->
     <div id="reverseTooltip" class="reverse-tooltip-overlay" style="display:none;">
@@ -2187,12 +2147,13 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js"></script>
     <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=55"></script>
+    <script src="script.js?v=56"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
     <script src="drug-reference.js?v=8"></script>
-    <script src="onboarding.js?v=3"></script>
+    <script src="onboarding.js?v=4"></script>
+    <script src="welcome.js?v=1"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=45"></script>
@@ -2200,7 +2161,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=56', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=57', { updateViaCache: 'none' });
             });
         }
     </script>

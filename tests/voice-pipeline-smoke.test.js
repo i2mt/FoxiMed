@@ -491,7 +491,7 @@ function testDeploymentWiring() {
         !index.includes('class="loading-tip') && script.includes("setProperty('--loading-progress'") &&
         read('style.css').includes('.loading-fox-fill') && read('style.css').includes('width: 220px'),
         'startup must use the lightweight premium fox treatment without rotating emoji tips');
-    const loadingMarkup = index.slice(index.indexOf('<!-- Loading Screen -->'), index.indexOf('<!-- PWA Install Guide Modal -->'));
+    const loadingMarkup = index.slice(index.indexOf('<!-- Loading Screen -->'), index.indexOf('<!-- Header -->'));
     assert(loadingMarkup.includes('دستیار بالینی هوشمند پرستاران') && !/ICU/i.test(loadingMarkup),
         'loading screen must preserve the current all-nursing tagline without ICU-specific wording');
     assert(voiceAssistantCss.includes('order: 20') && voiceAssistantCss.includes('bottom: calc(100% + 6px)') &&
@@ -572,11 +572,12 @@ function testDeploymentWiring() {
         script.includes('function setupHumptyDumpty()') && script.includes("result.level === 'high'") &&
         voiceCommands.includes('function handleHumptyVoice(params)') && voiceCommands.includes('params.humptyScores'),
         'Humpty Dumpty must expose the seven-domain pediatric calculator and voice workflow');
-    assert(index.includes('id="namePrompt"') && index.includes('لطفاً نام خود را وارد کنید') &&
-        !index.includes('id="namePromptLater"') && !index.includes('id="namePromptNever"') &&
-        script.includes("const USER_NAME_CAPTURE_VERSION = '5.1'") &&
-        script.includes("localStorage.removeItem('userName')") && script.includes('if (captureComplete()) return'),
-        'Version 5 must require one fresh name entry, including from users with an older stored name');
+    assert(!index.includes('id="namePrompt"') && index.includes('id="firstLaunchSetup"') &&
+        !script.includes("localStorage.removeItem('userName')") &&
+        read('welcome.js').includes('setupDismiss') && read('welcome.js').includes('اختیاری'),
+        'Optional first-launch setup must replace the old name popup and preserve existing names');
+    assert(!index.includes('id="pwaModal"') && read('welcome.js').includes('setupInstall') && script.includes('window.FoxiMedInstall='),
+        'The shared install capability must use the new install-first screen instead of a second popup');
     assert(script.includes("localStorage.setItem('userName', cleanName)") &&
         script.includes('USER_NAME_CAPTURE_VERSION_KEY, USER_NAME_CAPTURE_VERSION'),
         'profile name and its completed Version 5 consent marker must remain device-local');

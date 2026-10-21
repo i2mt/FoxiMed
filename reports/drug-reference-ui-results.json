@@ -21,7 +21,7 @@
     "40 initial results; zero initial book requests; Persian/English/brand searches, paging and category filters",
     "66px Tools-matched density at 1280/390/320; all topics closed on open/reopen; no More info stage; native keyboard/exclusive topics; shared floating close and tab cleanup",
     "contaminated-title regressions; every topic in six sample monographs; long content and Settings continue working",
-    "fresh seven-step interactive tutorial: isolated practice, live drug search and explicit topics, Tools search, text-only Voice examples, no extra model requests, Back/finish/Escape/replay and state restoration",
+    "opt-in seven-step interactive tutorial: isolated practice, live drug search and explicit topics, Tools search, text-only Voice examples, no extra model requests, Back/finish/Escape/replay and state restoration",
     "detail network failure/retry returns a closed topic list",
     "actual bracket glyph positions for Persian, Latin, nested and numeric/unit phrases at desktop and phone widths"
   ]

@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "physicalDeviceInstallOrSafariTested": false,
+  "setup": [
+    "Three optional steps preserve Back state, preview all app colors live without persisting drafts, commit name/pump/volumes/time, and do not repeat on reload",
+    "Settings replay cancellation rolls back previewed colors/mode and restores the previous screen",
+    "Fox fill begins after visible asset readiness and shows progression",
+    {
+      "profile": "iPhone 13",
+      "installedModeSimulated": true,
+      "allSixThemes": true,
+      "systemModeLive": true,
+      "rotationAnd350pxViewport": true,
+      "emptyNameAllowed": true,
+      "explicitTourChoice": true
+    },
+    {
+      "profile": "Pixel 7",
+      "installedModeSimulated": true,
+      "allSixThemes": true,
+      "systemModeLive": true,
+      "rotationAnd350pxViewport": true,
+      "emptyNameAllowed": true,
+      "explicitTourChoice": true
+    },
+    {
+      "profile": "Galaxy S9+",
+      "installedModeSimulated": true,
+      "allSixThemes": true,
+      "systemModeLive": true,
+      "rotationAnd350pxViewport": true,
+      "emptyNameAllowed": true,
+      "explicitTourChoice": true
+    },
+    {
+      "profile": "desktop",
+      "installedModeSimulated": true,
+      "allSixThemes": true,
+      "systemModeLive": true,
+      "rotationAnd350pxViewport": true,
+      "emptyNameAllowed": true,
+      "explicitTourChoice": true
+    },
+    "Skipping does not save previewed preferences or name and is remembered",
+    "Reduced motion completes the fox immediately; Escape dismisses setup",
+    "Returning installations keep their name/preferences without mandatory setup"
+  ],
+  "install": [
+    "First visit installation precedes setup; native prompt is user-triggered and consumed once; accepted install waits for installed-app launch",
+    "Dismissed and failed prompts remain optional, recover with guidance and do not start setup automatically",
+    "Samsung guidance without fake install API",
+    "Firefox guidance without fake install API",
+    "embedded iOS guidance without fake install API"
+  ],
+  "tips": [
+    "Aged third visit + idle threshold, personalized dynamic theme count, no content overlap, actionable Settings deep link and one tip per session",
+    "Foreground return after eight hours counts a new visit; weekly cooldown expires; BMI action opens the real tool",
+    "Drug count comes from unique current catalog IDs; action focuses real search without opening information topics",
+    "Calculator-defaults action opens the correct Settings section",
+    "Suppressed: first visit",
+    "Suppressed: weekly cooldown",
+    "Suppressed: disabled",
+    "Suppressed: active calculation",
+    "Suppressed: reading drugs",
+    "Previously used features skipped; do-not-show preference persists across reload"
+  ]
+}
