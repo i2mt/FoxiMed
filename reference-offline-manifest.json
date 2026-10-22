@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "version": "5.4.0",
+  "version": "5.4.1",
   "scope": "Full reference text, source PDF, and same-origin app shell; excludes voice model and external icon/font CDN assets.",
   "files": [
     {
       "url": "index.html",
-      "bytes": 182949,
-      "sha256": "7e5d67c4c7c16a4ef6406bbbbcf61864f61037f9d3621509a003907ebf46f31b"
+      "bytes": 181713,
+      "sha256": "c408cff9021ebb76dc649fb79cf5b62cf68b017bf5f00458109cd1963702ce23"
     },
     {
       "url": "style.css?v=51",
@@ -24,9 +24,9 @@
       "sha256": "09052ec376365a56c0b9bd795c5612ae8e20769189bc60da7ba14323e057e07c"
     },
     {
-      "url": "script.js?v=59",
-      "bytes": 308390,
-      "sha256": "e2c047f416d69179af0ff8766ee01d81b826f92e305db91bcd7a2b919f0a3281"
+      "url": "script.js?v=60",
+      "bytes": 307526,
+      "sha256": "1245e1a753c3e8363e313c1495e55cc4d2aa45bdc765a636b14eb30f7a3e6e79"
     },
     {
       "url": "voice-recognition.js?v=42",
@@ -109,14 +109,14 @@
       "sha256": "10608e5aced310552ae80af93610c190173e6490adc7f07fbb88a2ef0b8b932b"
     },
     {
-      "url": "reference-offline.js?v=1",
-      "bytes": 10777,
-      "sha256": "953d9cea36557f75433e48cebaecae3d12e0fba2dcfc4c81df3a913d8e0cbd71"
+      "url": "reference-offline.js?v=2",
+      "bytes": 15661,
+      "sha256": "0cc0c230b1ca80ba759d9ee2f61f185a4540207f4d71e800acf4ea923329d8b4"
     },
     {
-      "url": "reference-offline.css?v=1",
-      "bytes": 682,
-      "sha256": "95011fd53f26064770febf2f320cf20f37f02cddbcaa454a9645420fb69914ed"
+      "url": "reference-offline.css?v=2",
+      "bytes": 1370,
+      "sha256": "7d11dcd457d9aa11d903b1d8c27146fcbad6a03e070ca38102932ac9a335f7f1"
     },
     {
       "url": "settings.css?v=3",
@@ -136,7 +136,7 @@
     {
       "url": "manifest.json",
       "bytes": 1810,
-      "sha256": "49016e4e06dbbd616c0ad4e99f441a51236af5999342e85f37867efc7b351866"
+      "sha256": "abd6a52836845549aac83c59fbaa969013fa0210539a49f5effab3aadd46c297"
     },
     {
       "url": "icons/icon-192.png",

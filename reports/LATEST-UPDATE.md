@@ -1,3 +1,17 @@
+# FoxiMed 5.4.1 — compact offline management and pump-only main calculator
+
+Updated 22 October 2026. Prepared for upload; not deployed.
+
+The Reference download invitation is now a small strip that disappears after a successful download. Settings → Data & Offline Reference manages downloading, manual updates, removal and optional automatic app-version updates. Existing valid files are reused. First-time downloading stays opt-in, and failed updates preserve the older complete package.
+
+The main calculator has no drip selector or drop-rate output. All 4,608 tested forward/reverse cases across 14 drugs matched independent expected values without that control. Manual mL/hour answers also remain correct with no drip factor selected; factor selection affects only drops/minute in Tools/manual. Required-field guidance remains included.
+
+Read [COMPACT-OFFLINE-5.4.1.md](COMPACT-OFFLINE-5.4.1.md) and [FINAL-CHECKS.json](FINAL-CHECKS.json) for current results and limits. This update supersedes the earlier main-calculator drip-selection design described below.
+
+---
+
+## Earlier cumulative changes
+
 # FoxiMed 5.4.0 — calculator guidance and approved audit fixes
 
 Updated 22 October 2026. Prepared for upload; not deployed.

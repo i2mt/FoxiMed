@@ -1,7 +1,12 @@
-.reference-offline-card{margin:0 0 16px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface);font-size:12px;line-height:1.8;overflow-wrap:anywhere}
-.reference-offline-card p{margin:6px 0;color:var(--text-secondary)}
-.reference-offline-card progress{width:100%;accent-color:var(--primary)}
-.reference-offline-actions{display:flex;flex-wrap:wrap;gap:8px}
-.reference-offline-actions button{padding:8px 12px;border:1px solid var(--border);border-radius:8px;color:var(--text-primary);background:var(--surface);font:inherit;cursor:pointer}
-.reference-offline-actions button:disabled{opacity:.6}
-.reference-offline-card [hidden]{display:none!important}
+.reference-offline-prompt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 12px;padding:8px 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface);font-size:11px;line-height:1.6}
+.reference-offline-prompt-copy{display:flex;flex:1;align-items:center;gap:6px;flex-wrap:wrap;min-width:0}
+.reference-offline-prompt-copy span{color:var(--text-secondary);direction:ltr}
+.reference-offline-prompt button{padding:5px 8px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--text-primary);font:inherit;cursor:pointer}
+.reference-offline-prompt progress{flex-basis:100%;width:100%;height:4px;accent-color:var(--primary)}
+.reference-offline-manager{margin:0 0 12px;padding:0 0 12px;border-bottom:1px solid var(--border);font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.reference-offline-manager h4{margin:0 0 6px;font:600 13px/1.8 var(--font-persian)}
+.reference-offline-manager p{margin:5px 0;color:var(--text-secondary)}
+.reference-offline-manager progress{width:100%;accent-color:var(--primary)}
+.reference-offline-auto{display:flex;align-items:center;gap:8px;margin-top:10px;cursor:pointer}
+.reference-offline-auto input{accent-color:var(--primary);flex-shrink:0}
+.reference-offline-prompt [hidden],.reference-offline-manager [hidden],.reference-offline-prompt[hidden]{display:none!important}

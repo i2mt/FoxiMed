@@ -6,7 +6,7 @@
     "No whole-reference or assistant model download on launch",
     "HTML deploy fallback rejected by exact bytes and SHA-256; partial package not marked ready",
     "Cancel preserves complete files and does not claim readiness",
-    "Resume finishes and verifies the complete package",
+    "Resume verifies the complete package and hides the compact invitation",
     "An older/nonacknowledging controlling worker cannot falsely report offline readiness",
     "Root navigation and Tools shortcut reopen offline using only the downloaded package",
     "Previously unopened entries from all 10 monograph chunks open with network denied",
@@ -16,7 +16,7 @@
   ],
   "package": {
     "files": 43,
-    "bytes": 23911145,
+    "bytes": 23914617,
     "cacheEntries": 44
   },
   "pdfBytes": 12760136

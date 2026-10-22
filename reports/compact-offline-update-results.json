@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "version": "5.4.1",
+  "engine": "Chromium",
+  "checks": [
+    "Fresh users get a compact, dismissible prompt; management lives in Settings; no automatic first database download or main drip controls",
+    "A fully cached synthetic earlier release migrates and updates automatically; unchanged monographs/PDF cause zero new network downloads; old cache retired only after success",
+    "Automatic updates can be disabled; manual update in Settings reuses cached reference files and preserves that preference",
+    "A failed automatic update preserves the earlier complete package; removal stops automatic redownload and keeps the invitation dismissed"
+  ],
+  "promptLayouts": [
+    {
+      "width": 280,
+      "height": 480,
+      "promptHeight": 59
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "promptHeight": 48
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "promptHeight": 48
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "promptHeight": 48
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "promptHeight": 48
+    }
+  ]
+}

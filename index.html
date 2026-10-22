@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="onboarding.css?v=1">
     <link rel="stylesheet" href="welcome.css?v=2">
     <link rel="stylesheet" href="calculator-guidance.css?v=1">
-    <link rel="stylesheet" href="reference-offline.css?v=1">
+    <link rel="stylesheet" href="reference-offline.css?v=2">
 </head>
 <body>
 
@@ -51,7 +51,7 @@
             </div>
             <div class="loading-status" id="loadingStatus">در حال بارگذاری پایگاه داده دارویی...</div>
             <div class="loading-meta">
-                <span>نسخه 5.4.0</span>
+                <span>نسخه 5.4.1</span>
                 <span class="loading-meta-dot" aria-hidden="true"></span>
                 <span>محاسبه آفلاین · مرجع با دریافت اختیاری</span>
             </div>
@@ -259,7 +259,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <div class="control-group" style="grid-column:1/-1"><label>ضریب ست برای محاسبهٔ قطره <small>(اختیاری)</small></label><select id="calculatorDripFactor" class="manual-unit-select" style="width:100%"><option value="">فقط پمپ؛ ضریب ست انتخاب نشده</option><option value="10">10 drops/mL</option><option value="15">15 drops/mL</option><option value="20">20 drops/mL</option><option value="60">60 drops/mL</option></select><p class="tool-note">ضریب را از بستهٔ ست بخوانید؛ حجم محلول تعیین‌کننده نیست.</p></div>
+
                         </div>
 
 
@@ -302,13 +302,7 @@
                                     <div class="result-unit-enhanced" id="durationUnit">ساعت</div>
                                 </div>
                             </div>
-                            <div class="drip-rate-row" id="dripRateRow" style="display:none;">
-                                <div class="drip-rate-icon"><i class="fas fa-droplet"></i></div>
-                                <div class="drip-rate-body">
-                                    <span class="drip-rate-label" id="dripRateLabel">سرعت قطره (ماکروست — 20 قطره/mL)</span>
-                                    <span class="drip-rate-value"><span id="dripRateResult">0</span> <span class="drip-rate-unit">قطره/دقیقه</span></span>
-                                </div>
-                            </div>
+
                         </div>
 
                         <!-- Step-by-Step Guide -->
@@ -2031,7 +2025,7 @@
 
                 <!-- Data -->
                 <section class="settings-group settings-card" data-settings-section="data">
-                    <button type="button" id="settings-trigger-data" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-data"><i class="fas fa-database"></i><span class="settings-card-title"> داده‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-data" role="region" aria-labelledby="settings-trigger-data" hidden>
+                    <button type="button" id="settings-trigger-data" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-data"><i class="fas fa-database"></i><span class="settings-card-title"> داده‌ها و مرجع آفلاین</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-data" role="region" aria-labelledby="settings-trigger-data" hidden>
                     <div class="setting-item">
                         <span>ذخیره تاریخچه</span>
                         <label class="switch"><input type="checkbox" id="saveHistoryToggle" checked><span class="slider"></span></label>
@@ -2085,7 +2079,7 @@
                 <section class="settings-group settings-card" data-settings-section="about">
                     <button type="button" id="settings-trigger-about" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-about"><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-about" role="region" aria-labelledby="settings-trigger-about" hidden>
                     <div class="about-info">
-                        <div class="about-row"><span>نسخه</span><span>5.4.0</span></div>
+                        <div class="about-row"><span>نسخه</span><span>5.4.1</span></div>
                         <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
@@ -2158,7 +2152,7 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js?v=3"></script>
     <script src="calculation-core.js?v=36"></script>
-    <script src="script.js?v=59"></script>
+    <script src="script.js?v=60"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
@@ -2166,7 +2160,7 @@
     <script src="onboarding.js?v=5"></script>
     <script src="welcome.js?v=2"></script>
     <script src="calculator-guidance.js?v=1"></script>
-    <script src="reference-offline.js?v=1"></script>
+    <script src="reference-offline.js?v=2"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=46"></script>
@@ -2174,7 +2168,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=60', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=61', { updateViaCache: 'none' });
             });
         }
     </script>

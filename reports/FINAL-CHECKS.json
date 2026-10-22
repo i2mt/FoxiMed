@@ -1,27 +1,30 @@
 {
-  "version": "5.4.0",
+  "version": "5.4.1",
   "date": "2026-10-22",
   "status": "PASS_WITH_DOCUMENTED_LIMITS",
   "deployed": false,
   "checks": {
-    "calculator-safety": "PASS: final runtime, including complete custom history and confirmed TBSA",
+    "calculator-safety": "PASS: current pump-only main calculator and all retained safety regressions",
     "drug-reference-ui": "PASS",
     "persian-numbers": "PASS: rerun with required product assumptions, 55 numeric fields and 16 paths",
     "navigation-layout": "PASS",
     "tutorial-layout": "PASS",
-    "settings-theme-ui": "PASS",
+    "settings-theme-ui": "PASS: 12 layouts and 108 submenu checks",
     "settings-mobile": "BLOCKED: external Font Awesome denied",
     "welcome-discovery": "PASS",
     "welcome-responsive": "PASS",
     "welcome-upgrade": "PASS",
-    "reference-offline": "PASS: final runtime, real worker/network denied",
+    "reference-offline": "PASS: current runtime, real worker/network denied; compact prompt hides after completion",
     "drug-reference-data": "PASS",
     "drug-reference-cache": "PASS",
     "drug-reference-reader": "PASS",
     "voice-pipeline-smoke": "PASS",
     "voice-assets": "PASS: generated-asset fixtures, not actual model build",
     "javascript-syntax": "PASS: all 32 root JS files",
-    "offline-manifest": "PASS: all 43 packaged file sizes and hashes current"
+    "offline-manifest": "PASS: exact current sizes and SHA-256 for all 43 package files",
+    "pump-without-drip": "PASS: 4,608 main forward/reverse cases across 14 drugs; 15 manual cases with optional factors",
+    "compact-offline-update": "PASS: compact prompt, Settings management, opt-in migration, automatic/manual updates, reuse, failure preservation and removal",
+    "earlier_other_browser_results": "Historical 5.4.0 unless explicitly listed above as current"
   },
   "excluded": [
     "theme/color changes except requested Calculate readiness",
@@ -39,10 +42,14 @@
     "Full generated voice model build and production-host verification"
   ],
   "evidence": [
+    "COMPACT-OFFLINE-5.4.1.md",
+    "pump-without-drip-results.json",
+    "compact-offline-update-results.json",
     "calculator-safety-results.json",
     "reference-offline-results.json",
     "persian-numbers-results.json",
     "scope-preservation-5.4.0.json",
-    "AUDIT-FIXES-5.4.0.md"
+    "AUDIT-FIXES-5.4.0.md",
+    "scope-preservation-5.4.1.json"
   ]
 }

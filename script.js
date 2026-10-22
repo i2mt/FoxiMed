@@ -19,11 +19,16 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.4.0';
+const APP_VERSION = '5.4.1';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.4.0-calculator-and-offline';
+const RELEASE_NOTES_REVISION = '5.4.1-compact-offline-and-pump';
 
 const CHANGELOG = {
+    '5.4.1': [
+        'دعوت کوچک دریافت مرجع آفلاین؛ مدیریت و بررسی به‌روزرسانی در تنظیمات',
+        'به‌روزرسانی خودکار فایل‌های تغییرکرده پس از دریافت اولیه، قابل خاموش‌کردن',
+        'محاسبهٔ پمپ بدون مرحلهٔ انتخاب ضریب ست؛ محاسبهٔ قطره در ابزارها و حالت دستی'
+    ],
     '5.4.0': [
         'راهنمای آرام ورودی‌های لازم و آماده‌شدن دکمهٔ محاسبه',
         'اصلاح تبدیل واحد، محاسبهٔ دستی و صوتی، تاریخچه و خروجی ابزارها',
@@ -925,9 +930,6 @@ const DOM = {
     doseRangeIndicator: document.getElementById('doseRangeIndicator'),
     doseRangeDot: document.getElementById('doseRangeDot'),
     doseRangeText: document.getElementById('doseRangeText'),
-    dripRateRow: document.getElementById('dripRateRow'),
-    dripRateResult: document.getElementById('dripRateResult'),
-    dripRateLabel: document.getElementById('dripRateLabel'),
     themeModeSelect: null // removed from UI - theme-mode-btns handles this
 };
 
@@ -1673,7 +1675,7 @@ function readCalculation(mode) {
     if(!Number.isFinite(solutionVolume)||solutionVolume<=0)throw Error('حجم نهایی محلول را وارد کنید.');
     if(!Number.isFinite(totalDrug)||totalDrug<=0)throw Error('مقدار دارو را وارد کنید.');
     if(weight!==null&&(!Number.isFinite(weight)||weight<=0||weight>1000))throw Error('وزن واقعی بیمار را به کیلوگرم وارد کنید.');
-    const record={schema:2,drug:AppState.selectedDrug,drugName:drug.persianName,mode,ampouleIndex:AppState.currentAmpouleIndex,ampouleCount:AppState.ampouleCount,ampouleStrength:ampoule.strength,useCustomDrugAmount:!!AppState.useCustomDrugAmount,totalDrug,drugUnit:ampoule.unit,solutionVolume,infusionMethod:AppState.infusionMethod,doseUnit,weight,inputValue,dripFactor:Number(document.getElementById('calculatorDripFactor')?.value)||null};
+    const record={schema:2,drug:AppState.selectedDrug,drugName:drug.persianName,mode,ampouleIndex:AppState.currentAmpouleIndex,ampouleCount:AppState.ampouleCount,ampouleStrength:ampoule.strength,useCustomDrugAmount:!!AppState.useCustomDrugAmount,totalDrug,drugUnit:ampoule.unit,solutionVolume,infusionMethod:AppState.infusionMethod,doseUnit,weight,inputValue,dripFactor:null};
     try {
         record.pumpRate=mode==='reverse'?inputValue:FoxiCalcCore.infusionRate({...record,dose:inputValue});
         record.dose=mode==='reverse'?FoxiCalcCore.reverseInfusionDose(record):inputValue;
@@ -1692,7 +1694,6 @@ function runCalculation(mode,{save=true}={}) {
     const drug=drugDatabase[record.drug];
     if(mode==='reverse')displayResultsReverse(record.totalDrug,record.concentration,record.pumpRate,record.dose,record.duration,record.drugUnit,record.doseUnit);
     else displayResults(record.totalDrug,record.concentration,record.pumpRate,record.duration,record.drugUnit);
-    displayDripRate(record.pumpRate,record.solutionVolume);
     generateStepByStepGuide(drug,record.totalDrug,record.concentration,record.pumpRate,record.dose);
     displayWarnings(drug);displayCompatibility(drug);updateDoseRangeIndicator();
     if(save&&AppState.settings.saveHistory)saveCalculation(record.totalDrug,record.concentration,record.pumpRate,record.duration);
@@ -1736,7 +1737,6 @@ function clearResults() {
     if (DOM.guideSection) DOM.guideSection.style.display = 'none';
     if (DOM.warningsSection) DOM.warningsSection.style.display = 'none';
     if (DOM.compatibilitySection) DOM.compatibilitySection.style.display = 'none';
-    if (DOM.dripRateRow) DOM.dripRateRow.style.display = 'none';
     const pumpRateCard = document.getElementById('pumpRateResult')?.closest('.result-item-enhanced');
     if (pumpRateCard) {
         pumpRateCard.classList.remove('highlight');
@@ -1767,7 +1767,6 @@ function generateStepByStepGuide(drug,totalDrug,concentration,pumpRate,desiredDo
     if(!DOM.guideSection||!DOM.stepByStepGuide)return;
     const record=AppState.lastCalculation,f=PersianNumbers.formatNumber;
     if(!record)return;
-    const drip=getDripFactor();
     const steps=[
         `۱. مقدار کل دارو را بررسی کنید: ${f(totalDrug,3)} ${record.drugUnit} از ${drug.persianName}.`,
         `۲. دارو را آماده کنید و حلال سازگار اضافه کنید تا حجم نهایی، با احتساب حجم دارو، دقیقاً ${f(record.solutionVolume,2)} mL شود.`,
@@ -1775,7 +1774,7 @@ function generateStepByStepGuide(drug,totalDrug,concentration,pumpRate,desiredDo
         `۴. محلول را طبق دستور تهیه مخلوط و با نام دارو، مقدار، حجم نهایی و زمان برچسب‌گذاری کنید.`,
         `۵. سرعت پمپ: ${f(pumpRate,4)} mL/h؛ دوز متناظر: ${f(desiredDose,4)} ${record.doseUnit}.`,
         ...(record.weight?[`وزن استفاده‌شده: ${f(record.weight,2)} kg.`]:[]),
-        ...(drip.factor?[`در صورت مجاز بودن تزریق گراویتی در پروتکل محل: ${f(pumpRate*drip.factor/60,2)} قطره/دقیقه؛ ضریب ست ${drip.factor} drops/mL.`]:['برای محاسبهٔ قطره، ضریب نوشته‌شده روی بستهٔ ست را انتخاب کنید؛ حجم محلول تعیین‌کنندهٔ ضریب ست نیست.'])
+
     ];
     DOM.stepByStepGuide.replaceChildren(...steps.map(text=>{const n=document.createElement('div');n.className='guide-step';const t=document.createElement('div');t.className='step-content';t.textContent=text;n.append(t);return n;}));
     DOM.guideSection.style.display='block';
@@ -2042,7 +2041,6 @@ function setupEventListeners() {
         });
     }
 
-    document.getElementById('calculatorDripFactor')?.addEventListener('change',clearResults);
     setupSettingsEventListeners();
     window.addEventListener('resize', () => setupMobileLayout());
     document.querySelectorAll('.converter-body input, .tool-body input').forEach(input => {
@@ -3435,7 +3433,7 @@ function restoreFromHistory(item) {
     DOM.weightInputRow.style.display=AppState.useWeight?'flex':'none';DOM.weightIosToggle?.classList.toggle('on',AppState.useWeight);
     AppState.reverseMode=item.mode==='reverse';updateWeightBasedUnit(drug);updateReverseUI();
     try{if(FoxiCalcCore.doseParts(activeDoseUnit(drug)).unit!==FoxiCalcCore.doseParts(item.doseUnit).unit)throw Error();}catch{clearResults();showToast('نیاز به بررسی','واحد دوز این سابقه تغییر کرده یا معتبر نیست؛ دوباره بررسی کنید.','info');return;}
-    DOM.doctorOrder.value=String(item.inputValue);document.getElementById('calculatorDripFactor').value=item.dripFactor?String(item.dripFactor):'';
+    DOM.doctorOrder.value=String(item.inputValue);
     DOM.historyModal?.classList.remove('active');document.body.classList.remove('no-scroll');switchTab('calculator');
     runCalculation(AppState.reverseMode?'reverse':'forward',{save:false});
 }
@@ -3473,15 +3471,9 @@ function exportHistory() {
 // ============================================
 // DRIP RATE CALCULATION
 // ============================================
-function getDripFactor(_volume,id='calculatorDripFactor') {
+function getDripFactor(_volume,id='manualDripFactor') {
     const factor=Number(document.getElementById(id)?.value);
     return [10,15,20,60].includes(factor)?{factor,label:factor+' drops/mL'}:{factor:null,label:'ضریب ست انتخاب نشده'};
-}
-function displayDripRate(pumpRate) {
-    if(!DOM.dripRateRow)return;
-    const {factor,label}=getDripFactor();DOM.dripRateRow.style.display=factor?'flex':'none';
-    if(!factor)return;
-    DOM.dripRateResult.textContent=PersianNumbers.formatNumber(pumpRate*factor/60,2);DOM.dripRateLabel.textContent='سرعت قطره ('+label+')';
 }
 
 // ============================================

@@ -1,19 +1,19 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "5.4.0-approved-audit-calculator-guidance-offline",
+  "revision": "5.4.1-compact-offline-pump-without-drip",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
       "reason": "Retain existing voice build and validate new modules and exact offline manifest before publishing.",
-      "bytes": 7751,
-      "sha256": "f64afd11b727f201ffcbbf908244aa064e018821fc170f54b9a8a131bb5e4b5f"
+      "bytes": 7798,
+      "sha256": "25774a3b20af9c8843a97381dea0f6798cc2a439ee0b52313c2471a6c2ceed8d"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
       "reason": "Current cumulative upload paths, new welcome assets, install/setup/tip checks and real-device validation scope.",
-      "bytes": 6501,
-      "sha256": "fcb492d5b46ffa4b1f1a883643aaeb6e63669c9f27184b0967731d403788d79e"
+      "bytes": 7103,
+      "sha256": "b6a5e575b51a9917ce9af4ca7c389df52b74ec9f03a23b9966117549d380861e"
     },
     {
       "path": "calculation-core.js",
@@ -149,15 +149,15 @@
     },
     {
       "path": "index.html",
-      "reason": "Versioned runtime assets; calculator and offline controls; explicit final-volume, product assumptions, clinical scope and confirmed-TBSA inputs; stalled-initializer recovery.",
-      "bytes": 182949,
-      "sha256": "7e5d67c4c7c16a4ef6406bbbbcf61864f61037f9d3621509a003907ebf46f31b"
+      "reason": "Remove main drip selector/output; Settings reference management; current versioned runtime assets, retained clinical scope and startup recovery.",
+      "bytes": 181713,
+      "sha256": "c408cff9021ebb76dc649fb79cf5b62cf68b017bf5f00458109cd1963702ce23"
     },
     {
       "path": "manifest.json",
-      "reason": "Release version 5.4.0.",
+      "reason": "Release version 5.4.1.",
       "bytes": 1810,
-      "sha256": "49016e4e06dbbd616c0ad4e99f441a51236af5999342e85f37867efc7b351866"
+      "sha256": "abd6a52836845549aac83c59fbaa969013fa0210539a49f5effab3aadd46c297"
     },
     {
       "path": "onboarding.css",
@@ -174,20 +174,20 @@
     {
       "path": "reference-offline-manifest.json",
       "reason": "Exact size/SHA-256 inventory of the opt-in whole-reference and same-origin shell package.",
-      "bytes": 6973,
-      "sha256": "e0ece56c0103317ee1406bbf496e1797d4b2ac5ca9211384af7f8e35dc21843a"
+      "bytes": 6974,
+      "sha256": "86fd0d0356be2c2f3dff0b6dc1f0eb55a314f54900a55e6d0ea966fcf4acb085"
     },
     {
       "path": "reference-offline.css",
-      "reason": "Responsive reference download card using existing theme tokens.",
-      "bytes": 682,
-      "sha256": "95011fd53f26064770febf2f320cf20f37f02cddbcaa454a9645420fb69914ed"
+      "reason": "Compact reference strip and Settings-only management layout using existing theme tokens.",
+      "bytes": 1370,
+      "sha256": "7d11dcd457d9aa11d903b1d8c27146fcbad6a03e070ca38102932ac9a335f7f1"
     },
     {
       "path": "reference-offline.js",
-      "reason": "Explicit opt-in download with progress, cancel/resume, integrity validation, error/quota/eviction handling and removal.",
-      "bytes": 10777,
-      "sha256": "953d9cea36557f75433e48cebaecae3d12e0fba2dcfc4c81df3a913d8e0cbd71"
+      "reason": "Compact disappearing invitation; Settings management; opt-in migration, automatic/manual app-version updates reusing valid files, integrity checks and preservation of prior complete packages.",
+      "bytes": 15661,
+      "sha256": "0cc0c230b1ca80ba759d9ee2f61f185a4540207f4d71e800acf4ea923329d8b4"
     },
     {
       "path": "reports/AUDIT-FIXES-5.4.0.md",
@@ -202,6 +202,12 @@
       "sha256": "5cca22e83bc976665ca8ba45a303b8a7178189bd3b9c79d11965d1f4098f504b"
     },
     {
+      "path": "reports/COMPACT-OFFLINE-5.4.1.md",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 4952,
+      "sha256": "287295f63d381d4376d8ea17bb375187278dc8eb3c33ffb6fca44b5afa7ea739"
+    },
+    {
       "path": "reports/DRUG-READER-UPDATE.md",
       "reason": "Historical two-stage reader revision, explicitly pointing to the current update.",
       "bytes": 5719,
@@ -210,8 +216,8 @@
     {
       "path": "reports/FINAL-CHECKS.json",
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
-      "bytes": 2019,
-      "sha256": "25c9854cfd53c37f5c3b43809d7c667593f3acc87e20828937a2f68f72fc34ea"
+      "bytes": 2639,
+      "sha256": "0ff415ff054765d130db2a45fb465e777e6236ce196ea55dfb0616debc61cedb"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -222,8 +228,8 @@
     {
       "path": "reports/LATEST-UPDATE.md",
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
-      "bytes": 25183,
-      "sha256": "cc1f2081045efb7e7504e8f5599204f886882dcd81fa6e726e942aefec68c107"
+      "bytes": 26287,
+      "sha256": "183dabceb80877bd6c80c8abbb0c502da930c42ddb1bb55a30451b9d05abff57"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -248,6 +254,12 @@
       "reason": "Historical check record retained with a pointer to current results.",
       "bytes": 833,
       "sha256": "40cc1fd3dbbcb26eeb1017b50304b23176a015d2f9d1376303e111a44655ee66"
+    },
+    {
+      "path": "reports/compact-offline-update-results.json",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 1102,
+      "sha256": "86edd1550794b078ba17beee7cefaabdb4e7ba6f5dfb4ba5e08a8980772a3fa3"
     },
     {
       "path": "reports/drug-data-audit.json",
@@ -334,16 +346,28 @@
       "sha256": "bfb1fa9edaea72c83eafb9e35b714a8601ef741923fb0d853de44f8d7fe88570"
     },
     {
+      "path": "reports/pump-without-drip-results.json",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 1000,
+      "sha256": "f9368a209e537fb6868db39c260d3d75ddaa2d55a3ba3b56cb64b3c13f3115d1"
+    },
+    {
       "path": "reports/reference-offline-results.json",
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
-      "bytes": 1005,
-      "sha256": "1952d30696df9dde19a612d76caeff7554ee46bc664d061ee7cf3c21ec7df71b"
+      "bytes": 1025,
+      "sha256": "240afd88fec992abba19088c3ce81b23fc751cffdf5c4350ad75e0edf1b0af1c"
     },
     {
       "path": "reports/scope-preservation-5.4.0.json",
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
       "bytes": 690,
       "sha256": "0c59e98398b6d3beb71b3b046196cf3c885c47524d4c8e198d060e5bb4fb578a"
+    },
+    {
+      "path": "reports/scope-preservation-5.4.1.json",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 195,
+      "sha256": "8a5ce6e58e2a9d6b032b8c018bb76bc6022ae720a25eb2750b8c79c30c78a7c3"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -384,14 +408,14 @@
     {
       "path": "script.js",
       "reason": "Canonical infusion state/output/history; dimension checks, safe recovery, required-field events, corrected tool math/state, confirmed TBSA workflow, scoped warnings, shorter readiness-gated loading and shortcuts.",
-      "bytes": 308390,
-      "sha256": "e2c047f416d69179af0ff8766ee01d81b826f92e305db91bcd7a2b919f0a3281"
+      "bytes": 307526,
+      "sha256": "1245e1a753c3e8363e313c1495e55cc4d2aa45bdc765a636b14eb30f7a3e6e79"
     },
     {
       "path": "scripts/build-reference-offline-manifest.py",
       "reason": "Reproducible offline inventory generation and stale-manifest validation for CI.",
-      "bytes": 1262,
-      "sha256": "49549efc11d99c7d081afcc02b697ab4ee0d8268fcc5e88bf784ed839ef33ec6"
+      "bytes": 1489,
+      "sha256": "da15cc54f77782967252c02a666c66bf0b1e6a79fb16bf6470ea89c8ded32342"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -432,8 +456,8 @@
     {
       "path": "service-worker.js",
       "reason": "Fresh shell versions; retained stable model/reference caches; verified-download refresh route and offline navigation fallback.",
-      "bytes": 8823,
-      "sha256": "4eff209a6cc5f4a9bd2894308e86836ad8fad7e0237c1a865b0d7ae4cb7ef0d8"
+      "bytes": 8820,
+      "sha256": "044e42fd6682f0787c2a34f74af1953c42e4c3de4f9d3929d360f4b0c4b00cbf"
     },
     {
       "path": "settings.css",
@@ -452,6 +476,12 @@
       "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
       "bytes": 13727,
       "sha256": "c46662149a37710d645dab6e7cddee0848a99001a77b0d445b475ecf1acff073"
+    },
+    {
+      "path": "tests/compact-offline-update.test.js",
+      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "bytes": 10260,
+      "sha256": "4b25296faa502dc7c0a3434cab619bbc70a46cd6e0003730ea52edc98277aafe"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -490,10 +520,16 @@
       "sha256": "ce6b757b16f0fd7c49c1a1bc965909d740dc554b8f5b9e58b463fc1713ca0db7"
     },
     {
+      "path": "tests/pump-without-drip.test.js",
+      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "bytes": 5978,
+      "sha256": "a7c3ce81dbf18bb50e29c5e42e92b55cf26090f8739d2f6801a11a54be7184cc"
+    },
+    {
       "path": "tests/reference-offline.test.js",
       "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
-      "bytes": 8476,
-      "sha256": "9677df9fadb880c71fe7dd3878efd2f91d9ed1a85e96bfb50c16321b5644ce7f"
+      "bytes": 8834,
+      "sha256": "a626c932154b3963b96e16eeead157b30724854afd2bbc12fde1117a089a9bc8"
     },
     {
       "path": "tests/settings-mobile.test.js",

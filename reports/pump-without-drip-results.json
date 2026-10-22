@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "version": "5.4.1",
+  "mainCalculationCases": 4608,
+  "manualFactorIndependenceCases": 15,
+  "drugs": 14,
+  "scope": "Production readCalculation and manual calculator; independent expected values; no main drip DOM element",
+  "examples": [
+    {
+      "drug": "heparin",
+      "totalDrug": 10000,
+      "drugUnit": "units",
+      "finalVolume_mL": 50,
+      "dose": 1000,
+      "doseUnit": "units/h",
+      "weight_kg": null,
+      "expected_mL_h": 5
+    },
+    {
+      "drug": "norepinephrine",
+      "totalDrug": 4,
+      "drugUnit": "mg",
+      "finalVolume_mL": 50,
+      "dose": 0.1,
+      "doseUnit": "mcg/kg/min",
+      "weight_kg": 70,
+      "expected_mL_h": 5.25
+    },
+    {
+      "drug": "fentanyl",
+      "totalDrug": 1000,
+      "drugUnit": "mcg",
+      "finalVolume_mL": 50,
+      "dose": 10,
+      "doseUnit": "mcg/h",
+      "weight_kg": null,
+      "expected_mL_h": 0.5
+    }
+  ],
+  "clinicalScope": "Synthetic arithmetic checks, not dosing recommendations"
+}
