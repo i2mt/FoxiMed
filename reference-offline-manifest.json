@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "version": "5.4.0",
+  "scope": "Full reference text, source PDF, and same-origin app shell; excludes voice model and external icon/font CDN assets.",
+  "files": [
+    {
+      "url": "index.html",
+      "bytes": 182949,
+      "sha256": "7e5d67c4c7c16a4ef6406bbbbcf61864f61037f9d3621509a003907ebf46f31b"
+    },
+    {
+      "url": "style.css?v=51",
+      "bytes": 236747,
+      "sha256": "62037b938f937f8a598e133fe72cb87b5966baba25a13b79864cc8ef13c9f2b0"
+    },
+    {
+      "url": "voice-assistant.css?v=43",
+      "bytes": 28992,
+      "sha256": "0659dc0e4d1dc40ffeeff26f949d32be38bbfcf9f7668fa7da1e2d0905daa480"
+    },
+    {
+      "url": "calculation-core.js?v=36",
+      "bytes": 3674,
+      "sha256": "09052ec376365a56c0b9bd795c5612ae8e20769189bc60da7ba14323e057e07c"
+    },
+    {
+      "url": "script.js?v=59",
+      "bytes": 308390,
+      "sha256": "e2c047f416d69179af0ff8766ee01d81b826f92e305db91bcd7a2b919f0a3281"
+    },
+    {
+      "url": "voice-recognition.js?v=42",
+      "bytes": 52198,
+      "sha256": "ac1859a5562516e88b37113c6122cf56ab2cccab9c70437ed8e77a85b328d5d8"
+    },
+    {
+      "url": "koochik-asr.js?v=36",
+      "bytes": 11771,
+      "sha256": "470d638c09c927b5bd1e71cea604cfdb8c3760ab33ddd379dc274723145d0faa"
+    },
+    {
+      "url": "koochik-worker.js?v=35",
+      "bytes": 21411,
+      "sha256": "97f5e31b2941deb156f84ef2e36fdfd3ffebe4de098d8a718dbb8e22de06e733"
+    },
+    {
+      "url": "voice-commands.js?v=46",
+      "bytes": 130939,
+      "sha256": "323397a75baa93cdba4d1c035ded3981c41ae434d309d47d91b8d8435fcffab3"
+    },
+    {
+      "url": "voice-ui.js?v=43",
+      "bytes": 35479,
+      "sha256": "264c361c9e0f9a03cc3b9e4f122dba381fb4e1010f9466aa9524fa7c41ede267"
+    },
+    {
+      "url": "converters.js?v=3",
+      "bytes": 18632,
+      "sha256": "f9fed477152b30e6b8b0e04fdf34e3fff9b814089d4b27bd8cf16825aa9f0e62"
+    },
+    {
+      "url": "drugDatabase.js",
+      "bytes": 62030,
+      "sha256": "2bdc4ebd29449b8ab39feee9c2b0460567b9d24be33dba3bb45cc3b5dd092ca5"
+    },
+    {
+      "url": "drug-reference.css?v=8",
+      "bytes": 12070,
+      "sha256": "52b302cc92536da8213cae31aea3a8f4439bac2d4d1d4fa031e31526684b4f3c"
+    },
+    {
+      "url": "drug-reference-data.js?v=2",
+      "bytes": 36940,
+      "sha256": "2ab1305e95a5e054d0493f104606a999414f89548c80db817a6523ce0a4e9599"
+    },
+    {
+      "url": "drug-reference.js?v=9",
+      "bytes": 26937,
+      "sha256": "ff8d982232ad9c60f22e230625ac7611bd2bfde4a71e1a93168aa69aff03dd73"
+    },
+    {
+      "url": "onboarding.js?v=5",
+      "bytes": 15766,
+      "sha256": "0f238dba6a43df54125a902fc79cdedc50ad2f1a70fcb5bc46d91af324daee45"
+    },
+    {
+      "url": "onboarding.css?v=1",
+      "bytes": 9290,
+      "sha256": "eaa0bdb457a6e597459a59e4524fc7f22057cb340cdb9a878b7ea053d29afd9b"
+    },
+    {
+      "url": "welcome.js?v=2",
+      "bytes": 34537,
+      "sha256": "0a59a6e7a8ac2834c4cc6311c6b3124f869b70eeffdea2c05a9c3f4350794b9a"
+    },
+    {
+      "url": "welcome.css?v=2",
+      "bytes": 14146,
+      "sha256": "e9475b16d6f22190f54864f9c402ac729dc3baf6652272b1968b52995b715f4f"
+    },
+    {
+      "url": "calculator-guidance.js?v=1",
+      "bytes": 3257,
+      "sha256": "08e5d1f7d909127393c003b0cf206f1b91bdc8da30bc45f22d56cc290719ad35"
+    },
+    {
+      "url": "calculator-guidance.css?v=1",
+      "bytes": 738,
+      "sha256": "10608e5aced310552ae80af93610c190173e6490adc7f07fbb88a2ef0b8b932b"
+    },
+    {
+      "url": "reference-offline.js?v=1",
+      "bytes": 10777,
+      "sha256": "953d9cea36557f75433e48cebaecae3d12e0fba2dcfc4c81df3a913d8e0cbd71"
+    },
+    {
+      "url": "reference-offline.css?v=1",
+      "bytes": 682,
+      "sha256": "95011fd53f26064770febf2f320cf20f37f02cddbcaa454a9645420fb69914ed"
+    },
+    {
+      "url": "settings.css?v=3",
+      "bytes": 10629,
+      "sha256": "8ca96a476851e101496629a91a4e914ce1c0377c1410a1abb95c1f9fe8ec613d"
+    },
+    {
+      "url": "drug-reference-catalog.js?v=1",
+      "bytes": 17425,
+      "sha256": "a8eae813b751b08b63c4708e5b9d06c26a8134008c162c44729a35536ca71c12"
+    },
+    {
+      "url": "drug-reference-index.js?v=3",
+      "bytes": 314728,
+      "sha256": "80f3056a8f2e2b95800d6ac26917997296d327e71925e9c10fdd5afc15ef1bfd"
+    },
+    {
+      "url": "manifest.json",
+      "bytes": 1810,
+      "sha256": "49016e4e06dbbd616c0ad4e99f441a51236af5999342e85f37867efc7b351866"
+    },
+    {
+      "url": "icons/icon-192.png",
+      "bytes": 149940,
+      "sha256": "1f3d5966e33cbe5f28bac7d7dc4482833c159c07218c45583b5c492915bf89f0"
+    },
+    {
+      "url": "icons/icon-512.png",
+      "bytes": 149940,
+      "sha256": "1f3d5966e33cbe5f28bac7d7dc4482833c159c07218c45583b5c492915bf89f0"
+    },
+    {
+      "url": "icons/apple-touch-icon.png",
+      "bytes": 149940,
+      "sha256": "1f3d5966e33cbe5f28bac7d7dc4482833c159c07218c45583b5c492915bf89f0"
+    },
+    {
+      "url": "icons/fox-mark.png",
+      "bytes": 1265904,
+      "sha256": "101e237fb51afd15d6993e5d098e5a35d02c90327ed46b9e0af183f9378d613d"
+    },
+    {
+      "url": "icons/fox-mark-clean-mask.png",
+      "bytes": 15407,
+      "sha256": "df2f8b50e87bcc643202b336585e7eb960c9907c42a2299ea3a624231cebce49"
+    },
+    {
+      "url": "drug-reference-book-01.js?v=4",
+      "bytes": 670312,
+      "sha256": "3f927194e20df2161e978a50f325db539ef59e5afe7c24a7312985c6891a309a"
+    },
+    {
+      "url": "drug-reference-book-02.js?v=4",
+      "bytes": 711811,
+      "sha256": "e472fe2c1154c3c1a643e314067c28f45ea04463209d24c17981c72d39876dd2"
+    },
+    {
+      "url": "drug-reference-book-03.js?v=4",
+      "bytes": 788805,
+      "sha256": "787c9d6395625952b20891ec1b698e51b63eee66011b91157f891497a7ae1d5b"
+    },
+    {
+      "url": "drug-reference-book-04.js?v=4",
+      "bytes": 919112,
+      "sha256": "ebdff0b6ccb58eb5285e8532a698355e21d2bd7fdb8006e2179f46051cfc139e"
+    },
+    {
+      "url": "drug-reference-book-05.js?v=4",
+      "bytes": 724347,
+      "sha256": "92bff0ec01ee0585506a680d14c16b294f859cd73294e7677f137efed69a667e"
+    },
+    {
+      "url": "drug-reference-book-06.js?v=4",
+      "bytes": 930679,
+      "sha256": "a11f5dd604cdf8451d583c3130fdbe97eb6fd6e250c129106e29db87d681cceb"
+    },
+    {
+      "url": "drug-reference-book-07.js?v=4",
+      "bytes": 756312,
+      "sha256": "f2b642cc1bf01ef2ea85860a12f8b4a5adb87e5cb24a42899fa9648413ba95b1"
+    },
+    {
+      "url": "drug-reference-book-08.js?v=4",
+      "bytes": 735542,
+      "sha256": "181c5538c2dad22978465c54802ea9b659cada3df8426b7dd090d41f48fffec9"
+    },
+    {
+      "url": "drug-reference-book-09.js?v=4",
+      "bytes": 667346,
+      "sha256": "9af59c768adbf86d1b25484908feb9005556a22755d546e3c978cce248c84e2f"
+    },
+    {
+      "url": "drug-reference-book-10.js?v=4",
+      "bytes": 912668,
+      "sha256": "f0d42c295a2be5c735c690ee9ac4f466aa226d434a51c035d5cee61cd782d177"
+    },
+    {
+      "url": "drug-reference-source.pdf",
+      "bytes": 12760136,
+      "sha256": "a765a31b8d8bd86f9477da3ca1b50fad3a13a2da8158612ec7653cce3140a896"
+    }
+  ]
+}

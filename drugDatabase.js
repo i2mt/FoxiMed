@@ -73,7 +73,7 @@ const drugDatabase = {
         administrationNotes: [
             'برای تزریق مداوم حتماً از پمپ انفوزیون استفاده شود',
             'بررسی APTT 6 ساعت پس از شروع درمان و سپس هر 24 ساعت',
-            'تست زمان خونریزی (BT) قبل از شروع درمان الزامی است',
+            'پیش از هپارین، وضعیت خونریزی، آزمون انعقاد و شمارش پلاکت طبق برچسب محصول و پروتکل محل بررسی شود؛ BT الزام عمومی این ابزار نیست',
             'در بیماران با ترومبوسیتوپنی ناشی از هپارین (HIT) منع مصرف دارد',
             'دوز در نارسایی کلیه نیاز به تعدیل دارد',
             'در صورت اکستراوزاسیون، کمپرس گرم اعمال شود',
@@ -532,7 +532,7 @@ const drugDatabase = {
         typicalDoseRange: { min: 0.05, max: 0.3, unit: 'mcg/kg/min' },
         maxConcentration: '16 mcg/mL',
         solutionType: ['D5W'],
-        lineRequirement: 'لاین مرکزی الزامی',
+        lineRequirement: 'انتخاب دسترسی طبق وضعیت بیمار و پروتکل مرکز؛ شروع محیطی با پایش ممکن است از تأخیر جلوگیری کند',
         ySiteCompatibilities: {
             compatible: [
                 'دوپامین (Dopamine)',
@@ -559,9 +559,9 @@ const drugDatabase = {
                 'فوروزماید (Furosemide)'
             ]
         },
-        compatNotes: 'نوراپی نفرین با بیشتر کاتکول آمین‌ها سازگار است. از مخلوط کردن با داروهای قلیایی خودداری شود. تزریق باید از لاین مرکزی انجام شود.',
+        compatNotes: 'نوراپی نفرین با بیشتر کاتکول آمین‌ها سازگار است. از مخلوط کردن با داروهای قلیایی خودداری شود. انتخاب دسترسی و پایش محل تزریق طبق پروتکل مرکز انجام شود.',
         administrationNotes: [
-            'تزریق از لاین مرکزی الزامی است',
+            'در شوک سپتیک، راهنمای SSC 2026 شروع وازوپرسور محیطی را به‌جای تأخیر برای دسترسی مرکزی به‌صورت مشروط مطرح می‌کند؛ انتخاب محل و پایش طبق پروتکل مرکز',
             'پمپ انفوزیون جداگانه برای هر وازوپرسور',
             'مانیتورینگ فشار خون شریانی مداوم',
             'دسترسی وریدی اضطراری برای درمان اکستراوزاسیون',
@@ -579,7 +579,7 @@ const drugDatabase = {
             'ECG برای ایسکمی'
         ],
         preparationSteps: [
-            'تایید دستور پزشک و بررسی لاین مرکزی',
+            'تأیید دستور و دسترسی عروقی مناسب، همراه با پایش محل تزریق طبق پروتکل مرکز',
             'آماده کردن 1 آمپول نوراپی نفرین 4 میلی‌گرمی',
             'کشیدن 250 میلی‌لیتر D5W به کیسه انفوزیون',
             'اضافه کردن 4 میلی‌گرم نوراپی نفرین به محلول',
@@ -1176,3 +1176,6 @@ function searchDrugs(query) {
 
 window.drugDatabase = drugDatabase;
 window.searchDrugs = searchDrugs;
+
+// Targeted source corrections, 2026-10-21; not a validation of the remaining database.
+const FOXIMED_CLINICAL_SOURCE_NOTES={heparin:'https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=feec2820-502f-4a97-84c9-f173729c51d3',norepinephrine:'https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026'};

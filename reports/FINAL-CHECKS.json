@@ -1,143 +1,48 @@
 {
-  "status": "PASS",
-  "checkedOn": "2026-10-21",
-  "revision": "persian-input-and-welcome-upgrade",
-  "tests": {
-    "drug-reference-data.test.js": "PASS",
-    "drug-reference-cache.test.js": "PASS",
-    "drug-reference-reader.test.js": "PASS",
-    "voice-pipeline-smoke.test.js": "PASS",
-    "voice-assets.test.py": "PASS",
-    "drug-reference-ui.test.js": "PASS",
-    "navigation-layout.test.js": "PASS",
-    "tutorial-layout.test.js": "PASS",
-    "settings-theme-ui.test.js": "PASS",
-    "settings-mobile.test.js": "PASS",
-    "welcome-discovery.test.js": "PASS",
-    "welcome-responsive.test.js": "PASS",
-    "persian-numbers.test.js": "PASS",
-    "welcome-upgrade.test.js": "PASS"
+  "version": "5.4.0",
+  "date": "2026-10-22",
+  "status": "PASS_WITH_DOCUMENTED_LIMITS",
+  "deployed": false,
+  "checks": {
+    "calculator-safety": "PASS: final runtime, including complete custom history and confirmed TBSA",
+    "drug-reference-ui": "PASS",
+    "persian-numbers": "PASS: rerun with required product assumptions, 55 numeric fields and 16 paths",
+    "navigation-layout": "PASS",
+    "tutorial-layout": "PASS",
+    "settings-theme-ui": "PASS",
+    "settings-mobile": "BLOCKED: external Font Awesome denied",
+    "welcome-discovery": "PASS",
+    "welcome-responsive": "PASS",
+    "welcome-upgrade": "PASS",
+    "reference-offline": "PASS: final runtime, real worker/network denied",
+    "drug-reference-data": "PASS",
+    "drug-reference-cache": "PASS",
+    "drug-reference-reader": "PASS",
+    "voice-pipeline-smoke": "PASS",
+    "voice-assets": "PASS: generated-asset fixtures, not actual model build",
+    "javascript-syntax": "PASS: all 32 root JS files",
+    "offline-manifest": "PASS: all 43 packaged file sizes and hashes current"
   },
-  "javascriptSyntaxFiles": 41,
-  "pythonSyntaxFiles": 4,
-  "bookEntries": 827,
-  "readerSections": 7004,
-  "sourceBracketNormalizationSections": 1105,
-  "rawSourceStringsAndIdsUnchangedFromPreviousDelivery": 827,
-  "initialDrugJavaScriptBytes": 395498,
-  "closedCardHeightPx": 66,
-  "browserViewports": [
-    1280,
-    390,
-    320
+  "excluded": [
+    "theme/color changes except requested Calculate readiness",
+    "accessibility overhaul",
+    "existing touch-target geometry",
+    "assistant download flow",
+    "Telegram controls",
+    "lossy asset processing"
   ],
-  "extraTourViewports": [
-    [
-      320,
-      568
-    ],
-    [
-      1280,
-      900
-    ]
+  "remaining": [
+    "Qualified clinical review of all 827 monographs and pair-specific compatibility records",
+    "Validated automatic age-specific burn TBSA estimates; diagrams currently record regions and fluid estimates require confirmed TBSA",
+    "Physical iPhone/Android, Safari/WebKit, OS install/keyboard/shortcut and real microphone testing",
+    "External icon/font CDN dependence; icon-specific touch suite blocked when CDN denied",
+    "Full generated voice model build and production-host verification"
   ],
-  "voiceRuntimeBuildOrLiveDeploymentPerformed": false,
-  "clinicallyValidatedMonographs": 0,
-  "unchangedBookIndexPdfFiles": 12,
-  "sourceTopicOrderCheckedMonographs": 827,
-  "tutorialNoOverlapViewports": [
-    [
-      320,
-      568
-    ],
-    [
-      390,
-      844
-    ],
-    [
-      1280,
-      900
-    ],
-    [
-      740,
-      400
-    ]
-  ],
-  "maximumTestedTopicHeadingShiftPx": 0.33,
-  "settingsCollapsedGroups": 9,
-  "unchangedDrugReaderDataIndexPdfFiles": 13,
-  "assetVersionConsistency": "PASS",
-  "tutorialStepGeometryChecks": 147,
-  "tutorialLayouts": 21,
-  "tutorialRotationAndEnlargedText": "PASS",
-  "welcomeFoxAssetStartupPaintReplayAndReducedMotion": "PASS",
-  "settingsFullScreenLayouts": 12,
-  "settingsSubmenuGeometryChecks": 108,
-  "hedoOriginalDarkPaletteRestored": true,
-  "hedoReadabilityAdjustmentScope": "top-bar FoxiMed name only",
-  "hedoTopBarContrast": 5.58,
-  "otherFiveDarkThemeHeadingsMinimumContrast": 5.45,
-  "currentRevisionChecks": [
-    "persian-numbers.test.js",
-    "welcome-upgrade.test.js",
-    "welcome-responsive.test.js",
-    "welcome-discovery.test.js",
-    "tutorial-layout.test.js",
-    "voice-pipeline-smoke.test.js",
-    "drug-reference-cache.test.js"
-  ],
-  "unaffectedSuites": "Earlier drug data/reader and generated voice asset results retained; clinical source files are unchanged.",
-  "settingsSectionColumns": 1,
-  "settingsShortScreenListScroll": "last section reachable above fixed footer",
-  "settingsAccordionImplementation": "ordinary button-controlled hidden regions in natural block flow",
-  "settingsSubmenuVerticalContainmentChecks": 108,
-  "settingsTouchEmulationProfiles": [
-    "iPhone 13 (390x664)",
-    "Pixel 7 (412x839)",
-    "Galaxy S9+ (320x658)"
-  ],
-  "settingsTouchTargetTransitions": 162,
-  "settingsPhysicalDevicesTested": false,
-  "settingsSafariTested": false,
-  "settingsVisualViewportKeyboardTests": "simulated resize and offset; focused input revealed; innerHeight fallback checked",
-  "settingsRotationAndEnlargedText": "PASS",
-  "settingsVoiceContactShortcut": "PASS",
-  "firstLaunchInstallationBeforeQuestions": true,
-  "oldNameAndInstallPopupsRemoved": true,
-  "setupPreferenceSteps": 3,
-  "setupNameOptional": true,
-  "setupLiveThemes": 6,
-  "setupThemePreviewDraftRollback": true,
-  "tutorialStartsOnlyByUserChoice": true,
-  "setupExistingUserNamesPreserved": true,
-  "featureTipTopics": 5,
-  "featureTipMinimumVisits": 3,
-  "featureTipMinimumInstallAgeDays": 2,
-  "featureTipMinimumIdleSeconds": 45,
-  "featureTipMinimumIntervalDays": 7,
-  "featureTipMinimumRemainingReadingHeightPx": 160,
-  "featureTipOsNotifications": false,
-  "featureTipPermissionsRequested": false,
-  "newPlatformEventsScope": "Chromium simulations for installation, standalone mode, keyboard visual viewport and device layouts; not physical installation or Safari",
-  "unchangedClinicalReferenceFiles": 14,
-  "unchangedCoreThemeSettingsAndTutorialStyles": "Core theme palettes and settings styles unchanged; tutorial practice input accepts Persian digits.",
-  "setupResponsiveLayouts": 14,
-  "setupResponsiveScreenChecks": 70,
-  "featureTipResponsiveLayouts": 7,
-  "setupResponsiveWidthRangePx": [
-    280,
-    1280
-  ],
-  "setupEnlargedTextLayouts": 3,
-  "setupMinimumTestedReadingPanelHeightPx": 96,
-  "setupLargeTextGridAndButtons": "adaptive columns and full-width stacked actions",
-  "setupLongNamesAndTextInsideBounds": true,
-  "currentRevisionCheckScope": "Current suites above rerun; other existing test results are retained from previous deliveries.",
-  "persianNumericFields": 50,
-  "numericCalculationEquivalencePaths": 16,
-  "returningSetupInvitation": "Once per browser/installed storage, optional, prefilled, draft-safe, separate from earlier setup completion",
-  "portraitThemeChoicesWithoutScrolling": true,
-  "startupFoxMaximumPx": 300,
-  "startupShortLandscapeLayout": "Two columns",
-  "newUserSharedStorageInstallHandoff": "PASS"
+  "evidence": [
+    "calculator-safety-results.json",
+    "reference-offline-results.json",
+    "persian-numbers-results.json",
+    "scope-preservation-5.4.0.json",
+    "AUDIT-FIXES-5.4.0.md"
+  ]
 }

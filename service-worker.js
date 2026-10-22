@@ -2,7 +2,7 @@
 // App shell is network-first. Rizeh VAD + offline-ASR .data/.wasm use a
 // stable cache-first model cache independent of ordinary app revisions.
 
-const CACHE_NAME = 'FoxiMed_v5.3.3_welcome_numbers_2';
+const CACHE_NAME = 'FoxiMed_v5.4.0_calculator_reference_1';
 // Include the pinned model revision. The previous deployment accidentally
 // stored Koochik bytes under a Rizeh-named cache, so reusing that namespace
 // would keep serving the wrong 127 MB .data file after this release.
@@ -11,24 +11,29 @@ const MODEL_CACHE_NAME = 'FoxiMed_Model_Rizeh_v1_nonstreaming_int8_f2b9251_vad_s
 const urlsToCache = [
     './',
     './index.html',
-    './style.css?v=50',
+    './style.css?v=51',
     './voice-assistant.css?v=43',
-    './calculation-core.js?v=35',
-    './script.js?v=58',
+    './calculation-core.js?v=36',
+    './script.js?v=59',
     './voice-recognition.js?v=42',
     './koochik-asr.js?v=36',
     './koochik-worker.js?v=35',
-    './voice-commands.js?v=45',
-    './voice-ui.js?v=42',
-    './converters.js?v=2',
+    './voice-commands.js?v=46',
+    './voice-ui.js?v=43',
+    './converters.js?v=3',
     './drugDatabase.js',
     './drug-reference.css?v=8',
     './drug-reference-data.js?v=2',
-    './drug-reference.js?v=8',
+    './drug-reference.js?v=9',
     './onboarding.js?v=5',
     './onboarding.css?v=1',
     './welcome.js?v=2',
     './welcome.css?v=2',
+    './calculator-guidance.js?v=1',
+    './calculator-guidance.css?v=1',
+    './reference-offline.js?v=1',
+    './reference-offline.css?v=1',
+    './reference-offline-manifest.json?v=1',
     './settings.css?v=3',
     './drug-reference-catalog.js?v=1',
     './drug-reference-index.js?v=3',
@@ -105,8 +110,12 @@ self.addEventListener('fetch', event => {
     // Versioned book chunks are immutable for this extraction revision. Cache
     // only on demand; installing the shell must not download every monograph.
     const drugUrl = new URL(event.request.url);
+    // A verified explicit download must be able to replace a corrupt prior response.
+    if(drugUrl.origin===self.location.origin&&event.request.headers.get('X-FoxiMed-Reference-Refresh')==='1'){event.respondWith(fetch(event.request));return;}
     if (drugUrl.origin === self.location.origin && /\/drug-reference-book-\d{2}\.js$/.test(drugUrl.pathname) && drugUrl.searchParams.get('v') === '4') {
         event.respondWith((async () => {
+            const dedicatedNames=(await caches.keys()).filter(n=>n.startsWith('FoxiMed_Reference_')).reverse();
+            for(const name of dedicatedNames){const saved=await (await caches.open(name)).match(event.request);if(saved)return saved;}
             const cache = await caches.open(CACHE_NAME);
             const cached = await cache.match(event.request);
             if (cached) return cached;
@@ -165,12 +174,17 @@ self.addEventListener('fetch', event => {
                 }
                 return networkResponse;
             })
-            .catch(() => caches.match(event.request))
+            .catch(async () => {
+                let saved=await caches.match(event.request);
+                if(!saved&&event.request.mode==='navigate')saved=await caches.match(new URL('./index.html',self.location.href).href);
+                return saved||new Response('این بخش آفلاین ذخیره نشده است. با اتصال اینترنت دوباره تلاش کنید.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});
+            })
     );
 });
 
 // Allow page to activate waiting SW immediately
 self.addEventListener('message', event => {
+    if(event.data?.type==='REFERENCE_OFFLINE_CAPABILITY'){event.ports?.[0]?.postMessage({referenceOfflineProtocol:1});return;}
     if (event.data?.type === 'SKIP_WAITING') {
         self.skipWaiting();
     }

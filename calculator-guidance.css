@@ -1,0 +1,6 @@
+/* Existing theme colors and control geometry are preserved. */
+#calculatorTab input.fm-required-missing{outline:1px solid var(--primary);outline-color:color-mix(in srgb,var(--primary) 45%,var(--border));outline-offset:2px;box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 7%,transparent);transition:outline-color .18s ease,box-shadow .18s ease}
+#calculateBtn.fm-calculate-waiting{filter:saturate(.25);opacity:.66;box-shadow:none}
+#calculateBtn.fm-calculate-ready{filter:none;opacity:1}
+.fm-calculator-readiness{margin:6px 2px 0;text-align:center;font:400 11px/1.7 var(--font-persian);color:var(--text-secondary);overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){#calculatorTab input.fm-required-missing{transition:none}}

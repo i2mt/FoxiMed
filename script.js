@@ -19,11 +19,17 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.3.3';
+const APP_VERSION = '5.4.0';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.3.3-welcome-and-persian-input';
+const RELEASE_NOTES_REVISION = '5.4.0-calculator-and-offline';
 
 const CHANGELOG = {
+    '5.4.0': [
+        'راهنمای آرام ورودی‌های لازم و آماده‌شدن دکمهٔ محاسبه',
+        'اصلاح تبدیل واحد، محاسبهٔ دستی و صوتی، تاریخچه و خروجی ابزارها',
+        'دریافت اختیاری مرجع کامل و PDF برای استفادهٔ آفلاین با توقف و ادامه',
+        'بارگذاری سریع‌تر با حفظ کیفیت و جلوهٔ روباه و نمایش وضعیت بازبینی منابع'
+    ],
     '5.3.3': [
         'پشتیبانی از ارقام فارسی و عربی در محاسبه‌گر و همه ابزارها',
         'پشتیبانی از ممیز فارسی هنگام تایپ و چسباندن عدد',
@@ -152,6 +158,19 @@ const HAS_PRE_V5_INSTALL = [
 // Names remain optional and device-local. Existing names survive updates.
 const USER_NAME_CAPTURE_VERSION = '5.1';
 const USER_NAME_CAPTURE_VERSION_KEY = 'foximed_user_name_version';
+
+function readStoredJSON(key, fallback) {
+    try {
+        const raw=localStorage.getItem(key);if(raw===null)return fallback;
+        const value=JSON.parse(raw);
+        if(!value||typeof value!=='object'||Array.isArray(value)!==Array.isArray(fallback))throw Error();
+        return key==='calculationHistory'?value.filter(item=>item&&typeof item==='object'&&!Array.isArray(item)):value;
+    } catch {
+        if(key==='appSettings'){try{localStorage.setItem('foximed_settings_recovery',localStorage.getItem(key)||'');localStorage.removeItem(key);}catch{}}
+        return fallback;
+    }
+}
+function escapeAppText(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 
 function getLastSeenVersion() {
     try { return localStorage.getItem('foximed_last_seen_version'); } catch (e) { return null; }
@@ -339,11 +358,12 @@ const AppState = {
 // LOADING SCREEN
 // ============================================
 (function setupLoadingScreen() {
+    let foxPaintedAt=performance.now(),finishing=false;
     const steps = [
         { status: 'در حال بارگذاری پایگاه داده دارویی...', pct: 20 },
         { status: 'در حال راه‌اندازی ماشین حساب...', pct: 50 },
         { status: 'در حال اعمال تنظیمات...', pct: 75 },
-        { status: 'آماده است!', pct: 100 }
+        { status: 'در حال آماده‌سازی نما...', pct: 95 }
     ];
     function applyThemeToLoadingScreen() {
     const loadingScreen = document.getElementById('loadingScreen');
@@ -403,6 +423,13 @@ const AppState = {
     };
 
     window.hideLoadingScreen = function() {
+        if(!window.FoxiMedAppReady){const status=document.getElementById('loadingStatus');if(status)status.textContent='راه‌اندازی کامل نشد. صفحه را بازخوانی کنید؛ اگر مشکل ادامه داشت، داده‌ها را پیش از پاک‌سازی پشتیبان بگیرید.';return;}
+        if(finishing)return;finishing=true;
+        const wait=Math.max(450,1500-(performance.now()-foxPaintedAt));
+        loadingProgress(100,'آماده است');
+        setTimeout(finishHide,wait);
+    };
+    function finishHide(){
         const screen = document.getElementById('loadingScreen');
         // Loading has genuinely finished — clear the watchdog set at script
         // start, regardless of whether the screen element itself is still
@@ -426,8 +453,12 @@ const AppState = {
         }, 550);
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
         applyThemeToLoadingScreen();
+        const foxImage=new Image();foxImage.src='icons/fox-mark-clean-mask.png';
+        try{await foxImage.decode();}catch{}
+        await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+        foxPaintedAt=performance.now();
         let i = 0;
         function runStep() {
             if (i >= steps.length) {
@@ -436,9 +467,9 @@ const AppState = {
             }
             loadingProgress(steps[i].pct, steps[i].status);
             i++;
-            setTimeout(runStep, i === steps.length ? 400 : 600);
+            setTimeout(runStep, 200);
         }
-        setTimeout(runStep, 300);
+        setTimeout(runStep, 0);
     });
 
     // If the on-device voice model was already downloaded in a PREVIOUS session
@@ -664,10 +695,16 @@ const PersianNumbers = {
         return Number.isFinite(value) ? value : NaN;
     },
     formatNumber: function(number, decimals = 2) {
-        if (!Number.isFinite(number)) return '0';
+        if (!Number.isFinite(number)) return '—';
         const d = parseInt(decimals, 10);
         const usedDecimals = Number.isFinite(d) ? d : 2;
-        return number.toFixed(usedDecimals);
+        const rounded=number.toFixed(usedDecimals);
+        if(number!==0&&Number(rounded)===0){
+            const places=Math.min(12,Math.max(usedDecimals,2-Math.floor(Math.log10(Math.abs(number)))));
+            const exact=number.toFixed(places);
+            return Number(exact)!==0?exact.replace(/0+$/,'').replace(/\.$/,''):number.toExponential(3);
+        }
+        return rounded;
     },
     formatMixedText: function(text) {
         if (text == null) return '';
@@ -722,13 +759,24 @@ function setupSimpleInputHandling() {
         if (!input) return;
         input.addEventListener('focus', function() { this.select(); });
         input.addEventListener('click', function() { this.select(); });
-        input.addEventListener('input', function() { clearResults(); });
+        input.addEventListener('input', function() { clearResults();invalidateToolResult(this); });
     });
 }
 
 // ============================================
 // MOBILE NUMERIC KEYBOARD
 // ============================================
+function invalidateToolResult(input) {
+    if(input.closest('#manualSection')){const result=document.getElementById('manualResults');if(result)result.style.display='none';}
+    const card=input.closest('#toolsTab .accordion-item');if(!card)return;
+    card.querySelectorAll('.tool-result,.converter-result,#oxyResult,#nutResult,#vbgResult,#ventResult,#parklandRow').forEach(n=>{n.style.display='none';if(n.matches('.tool-result,.converter-result'))n.textContent='';});
+}
+function validToolValues(resultId,ids,test) {
+    const values=ids.map(id=>PersianNumbers.parseNumber(document.getElementById(id)?.value));
+    if(values.every(Number.isFinite)&&test(...values))return values;
+    const result=document.getElementById(resultId);if(result){result.textContent='';result.style.display='none';}
+    showToast('بررسی ورودی','مقادیر مثبت و واحدهای خواسته‌شده را وارد کنید؛ محدودهٔ کاربرد ابزار را بررسی کنید.','error');return null;
+}
 let numericInputHandlingReady = false;
 function setupMobileNumericKeyboard() {
     const selector = 'input[data-numeric="true"], input.numeric-input, input[type="number"], input[inputmode="decimal"], input[inputmode="numeric"]';
@@ -747,6 +795,7 @@ function setupMobileNumericKeyboard() {
     const normalize = event => {
         const input = event.target;
         if (!(input instanceof HTMLInputElement) || !input.matches(selector) || event.isComposing) return;
+        invalidateToolResult(input);
         const before = input.value;
         const normalized = PersianNumbers.normalizeInput(before);
         if (normalized !== before) {
@@ -766,6 +815,7 @@ function setupMobileNumericKeyboard() {
     };
     document.addEventListener('input', normalize, true);
     document.addEventListener('change', normalize, true);
+    document.addEventListener('change',event=>{if(event.target.matches('#toolsTab select'))invalidateToolResult(event.target);},true);
     document.addEventListener('compositionend', event => {
         normalize(event);
         if (event.target instanceof HTMLInputElement && event.target.matches(selector)) {
@@ -1052,6 +1102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     selectDrug('heparin');
     initVoiceTab();
     checkForWhatsNewOnLoad();
+    window.FoxiMedAppReady=true;window.dispatchEvent(new Event('foximed:ready'));
+    const action=new URLSearchParams(location.search).get('action');if(action==='converters')switchTab('tools');else if(action==='calculate')switchTab('calculator');
 });
 
 function initializeApp() {
@@ -1085,7 +1137,7 @@ function initializeApp() {
     if (DOM.drugCount) DOM.drugCount.textContent = Object.keys(drugDatabase).length;
     if (DOM.lastUpdate) {
         const now = new Date();
-        const persianDate = new Intl.DateTimeFormat('fa-IR', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+        const persianDate = new Intl.DateTimeFormat('fa-IR', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date('2026-10-22T12:00:00Z'));
         if (DOM.lastUpdate) DOM.lastUpdate.textContent = PersianNumbers.toLatin(persianDate);
     }
     setupManualCalculation();
@@ -1214,11 +1266,7 @@ function syncSettingsViewport() {
 }
 
 function loadSettings() {
-    const savedSettings = localStorage.getItem('appSettings');
-    if (savedSettings) {
-        const parsed = JSON.parse(savedSettings);
-        AppState.settings = Object.assign({}, AppState.settings, parsed);
-    }
+    AppState.settings=Object.assign({},AppState.settings,readStoredJSON('appSettings',{}));
     if (DOM.darkModeToggle) DOM.darkModeToggle.checked = AppState.settings.darkMode;
     if (DOM.largeFontToggle) DOM.largeFontToggle.checked = AppState.settings.largeFont;
     if (DOM.lowPowerModeToggle) DOM.lowPowerModeToggle.checked = AppState.settings.lowPowerMode;
@@ -1346,7 +1394,7 @@ function selectDrug(drugId) {
             AppState.useWeight = defaultUseWeight;
             DOM.weightCheckbox.checked = defaultUseWeight;
             DOM.patientWeight.disabled = !defaultUseWeight;
-            DOM.patientWeight.value = drug.weightBased.defaultWeight || '70';
+            DOM.patientWeight.value = '';
             DOM.patientWeight.setAttribute('inputmode', 'decimal');
             DOM.patientWeight.style.textAlign = 'center';
             updateWeightBasedUnit(drug);
@@ -1610,139 +1658,67 @@ function updateVolumeOptions() {
 // ============================================
 // CALCULATION
 // ============================================
-function calculateInfusion() {
-    const drug = drugDatabase[AppState.selectedDrug];
-    const ampoule = drug.ampouleOptions[AppState.currentAmpouleIndex];
-
-    let doseValue;
-    if (DOM.doctorOrder.value && DOM.doctorOrder.value.trim() !== '') {
-        doseValue = PersianNumbers.parseNumber(DOM.doctorOrder.value);
-    }
-
-    if (!doseValue || isNaN(doseValue) || doseValue <= 0) {
-        showToast('خطا', 'لطفاً مقدار دوز درخواستی را وارد کنید', 'error');
-        DOM.doctorOrder.focus();
-        DOM.doctorOrder.style.borderColor = 'var(--danger)';
-        return;
-    }
-    DOM.doctorOrder.style.borderColor = '';
-    updateDoseRangeIndicator();
-
-    let desiredDosePerHour;
-
-    // Parse units to drive all conversion logic
-    const stdUnit = drug.standardUnit || '';
-    const ampouleInMg = (drug.ampouleOptions[0]?.unit || '') === 'mg';
-    let doseAlreadyNormalized = false;
-
-    if (drug.weightBased && drug.weightBased.active && AppState.useWeight) {
-        let weightValue;
-        if (DOM.patientWeight.value && DOM.patientWeight.value.trim() !== '') {
-            weightValue = PersianNumbers.parseNumber(DOM.patientWeight.value);
-        }
-        if (!weightValue || isNaN(weightValue) || weightValue <= 0) {
-            showToast('خطا', 'لطفاً وزن بیمار را وارد کنید', 'error');
-            DOM.patientWeight.focus();
-            DOM.patientWeight.style.borderColor = 'var(--danger)';
-            return;
-        }
-        DOM.patientWeight.style.borderColor = '';
-        AppState.patientWeight = weightValue;
-
-        // Use weightBased.unit for the weight branch — it reflects what the user actually enters
-        const wbUnit = drug.weightBased.unit || stdUnit;
-        const wbPerMin = wbUnit.includes('/min');
-        const wbInMcg  = wbUnit.startsWith('mcg');
-
-        // Convert dose (wbUnit) → drug storage unit per hour
-        let dosePerHour = doseValue * weightValue * (wbPerMin ? 60 : 1);
-        // If wb dose is in mcg but ampoule is in mg → convert to mg/h now;
-        // flag so concentration step doesn't double-convert
-        if (wbInMcg && ampouleInMg) {
-            dosePerHour /= 1000;
-            doseAlreadyNormalized = true;
-        }
-        desiredDosePerHour = dosePerHour;
-
-    } else {
-        AppState.patientWeight = null;
-        const isPerMin = stdUnit.includes('/min');
-        // Non-weight: mg/min or mcg/min → ×60; mg/h or units/h → ×1
-        desiredDosePerHour = doseValue * (isPerMin ? 60 : 1);
-    }
-
-    // doseInMcg used for concentration unit conversion below
-    const doseInMcg = stdUnit.startsWith('mcg');
-
-    if (AppState.customVolume) {
-        let customVol;
-        if (DOM.customVolume.value && DOM.customVolume.value.trim() !== '') {
-            customVol = PersianNumbers.parseNumber(DOM.customVolume.value);
-        }
-        if (!customVol || isNaN(customVol) || customVol <= 0) {
-            showToast('خطا', 'حجم محلول وارد شده معتبر نیست', 'error');
-            DOM.customVolume.focus();
-            return;
-        }
-        AppState.solutionVolume = customVol;
-    }
-
-    AppState.desiredDose = doseValue;
-
-    // Custom drug amount takes priority over ampoule count × strength
-    const totalDrug = getEffectiveTotalDrug();
-    if (totalDrug === null) {
-        showToast('خطا', `لطفاً مقدار دارو را وارد کنید`, 'error');
-        if (DOM.customAmountInput) DOM.customAmountInput.focus();
-        return;
-    }
-
-    const concentration = totalDrug / AppState.solutionVolume;
-
-    let totalDrugForCalculation = totalDrug;
-    let concentrationForCalculation = concentration;
-    let desiredDoseForCalculation = desiredDosePerHour;
-
-    // If dose unit is mcg but ampoule/drug is stored in mg → convert drug to mcg for concentration
-    // Skip if weight branch already normalized dose to mg (prevents double-conversion)
-    if (doseInMcg && ampouleInMg && !doseAlreadyNormalized) {
-        totalDrugForCalculation = totalDrug * 1000;
-        concentrationForCalculation = totalDrugForCalculation / AppState.solutionVolume;
-    }
-
-    const pumpRate = desiredDoseForCalculation / concentrationForCalculation;
-    const duration = AppState.solutionVolume / pumpRate;
-
-    displayResults(totalDrug, concentration, pumpRate, duration, ampoule.unit);
-    displayDripRate(pumpRate, AppState.solutionVolume);
-    generateStepByStepGuide(drug, totalDrug, concentration, pumpRate, doseValue);
-    displayWarnings(drug);
-    displayCompatibility(drug);
-
-    if (AppState.settings.saveHistory) saveCalculation(totalDrug, concentration, pumpRate, duration);
-    updateCalculationStats();
-    showToast('موفق', 'محاسبه با موفقیت انجام شد', 'success');
+function activeDoseUnit(drug=drugDatabase[AppState.selectedDrug]) {
+    return AppState.useWeight && drug?.weightBased?.active ? drug.weightBased.unit : (drug?.weightBased?.nonWeightUnit || drug?.standardUnit);
 }
+
+function readCalculation(mode) {
+    const drug=drugDatabase[AppState.selectedDrug],ampoule=drug?.ampouleOptions[AppState.currentAmpouleIndex];
+    if(!drug||!ampoule)throw Error('ابتدا دارو و قدرت آن را انتخاب کنید.');
+    const inputValue=PersianNumbers.parseNumber(DOM.doctorOrder.value);
+    const solutionVolume=AppState.customVolume?PersianNumbers.parseNumber(DOM.customVolume.value):Number(AppState.solutionVolume);
+    const totalDrug=getEffectiveTotalDrug(),doseUnit=activeDoseUnit(drug);
+    const weight=doseUnit.includes('/kg')?PersianNumbers.parseNumber(DOM.patientWeight.value):null;
+    if(!Number.isFinite(inputValue)||inputValue<=0)throw Error(mode==='reverse'?'سرعت پمپ را به mL/h وارد کنید.':'دوز درخواستی را وارد کنید.');
+    if(!Number.isFinite(solutionVolume)||solutionVolume<=0)throw Error('حجم نهایی محلول را وارد کنید.');
+    if(!Number.isFinite(totalDrug)||totalDrug<=0)throw Error('مقدار دارو را وارد کنید.');
+    if(weight!==null&&(!Number.isFinite(weight)||weight<=0||weight>1000))throw Error('وزن واقعی بیمار را به کیلوگرم وارد کنید.');
+    const record={schema:2,drug:AppState.selectedDrug,drugName:drug.persianName,mode,ampouleIndex:AppState.currentAmpouleIndex,ampouleCount:AppState.ampouleCount,ampouleStrength:ampoule.strength,useCustomDrugAmount:!!AppState.useCustomDrugAmount,totalDrug,drugUnit:ampoule.unit,solutionVolume,infusionMethod:AppState.infusionMethod,doseUnit,weight,inputValue,dripFactor:Number(document.getElementById('calculatorDripFactor')?.value)||null};
+    try {
+        record.pumpRate=mode==='reverse'?inputValue:FoxiCalcCore.infusionRate({...record,dose:inputValue});
+        record.dose=mode==='reverse'?FoxiCalcCore.reverseInfusionDose(record):inputValue;
+        record.concentration=totalDrug/solutionVolume;record.duration=solutionVolume/record.pumpRate;
+        if(!Number.isFinite(record.duration)||record.duration<=0)throw Error();
+    } catch {throw Error('واحدها یا مقادیر برای محاسبه سازگار نیستند. واحد مقدار دارو و دوز را بررسی کنید.');}
+    return record;
+}
+
+function runCalculation(mode,{save=true}={}) {
+    clearResults();
+    let record;
+    try {record=readCalculation(mode);} catch(error){showToast('بررسی ورودی',error.message,'error');return false;}
+    AppState.solutionVolume=record.solutionVolume;AppState.patientWeight=record.weight;AppState.desiredDose=record.dose;
+    AppState.lastCalculation=Object.freeze({...record});
+    const drug=drugDatabase[record.drug];
+    if(mode==='reverse')displayResultsReverse(record.totalDrug,record.concentration,record.pumpRate,record.dose,record.duration,record.drugUnit,record.doseUnit);
+    else displayResults(record.totalDrug,record.concentration,record.pumpRate,record.duration,record.drugUnit);
+    displayDripRate(record.pumpRate,record.solutionVolume);
+    generateStepByStepGuide(drug,record.totalDrug,record.concentration,record.pumpRate,record.dose);
+    displayWarnings(drug);displayCompatibility(drug);updateDoseRangeIndicator();
+    if(save&&AppState.settings.saveHistory)saveCalculation(record.totalDrug,record.concentration,record.pumpRate,record.duration);
+    updateCalculationStats();showToast('محاسبه شد','نتیجه را با دستور و واحدها تطبیق دهید.','success');return true;
+}
+function calculateInfusion() {return runCalculation('forward');}
 
 function displayResults(totalDrug, concentration, pumpRate, duration, unit) {
     const drug = drugDatabase[AppState.selectedDrug];
-    DOM.totalDrugAmount.textContent = PersianNumbers.formatNumber(totalDrug, 0);
+    DOM.totalDrugAmount.textContent = PersianNumbers.formatNumber(totalDrug, 3);
     DOM.totalDrugUnit.innerHTML = `<span class="latin-inline">${unit}</span>`;
 
     let concentrationDisplay, concentrationUnitDisplay;
-    const _doseInMcg = (drug.standardUnit || '').startsWith('mcg');
-    const _ampouleInMg = (drug.ampouleOptions[0]?.unit || '') === 'mg';
+    const _doseInMcg = (activeDoseUnit(drug) || '').startsWith('mcg');
+    const _ampouleInMg = (drug.ampouleOptions[AppState.currentAmpouleIndex]?.unit || '') === 'mg';
     if (_doseInMcg && _ampouleInMg) {
         concentrationDisplay = PersianNumbers.formatNumber(concentration * 1000, 2);
-        concentrationUnitDisplay = 'mcg/cc';
+        concentrationUnitDisplay = 'mcg/mL';
     } else {
         concentrationDisplay = PersianNumbers.formatNumber(concentration, 2);
-        concentrationUnitDisplay = `${unit}/cc`;
+        concentrationUnitDisplay = `${unit}/mL`;
     }
     DOM.concentrationResult.textContent = concentrationDisplay;
     DOM.concentrationUnit.innerHTML = `<span class="latin-inline">${concentrationUnitDisplay}</span>`;
     DOM.pumpRateResult.textContent = PersianNumbers.formatNumber(pumpRate, 2);
-    DOM.pumpRateUnit.innerHTML = `<span class="latin-inline">cc/hour</span>`;
+    DOM.pumpRateUnit.innerHTML = `<span class="latin-inline">mL/h</span>`;
     DOM.durationResult.textContent = PersianNumbers.formatNumber(duration, 1);
     DOM.durationUnit.innerHTML = `<span class="persian-inline">ساعت</span>`;
 
@@ -1754,6 +1730,8 @@ function displayResults(totalDrug, concentration, pumpRate, duration, unit) {
 }
 
 function clearResults() {
+    AppState.lastCalculation=null;
+    window.dispatchEvent(new Event('foximed:calculator-changed'));
     if (DOM.resultsSection) { DOM.resultsSection.classList.remove('show'); DOM.resultsSection.style.display = 'none'; }
     if (DOM.guideSection) DOM.guideSection.style.display = 'none';
     if (DOM.warningsSection) DOM.warningsSection.style.display = 'none';
@@ -1773,53 +1751,59 @@ function clearResults() {
     if (origHighlight && !origHighlight.classList.contains('highlight')) origHighlight.classList.add('highlight');
 }
 
-function generateStepByStepGuide(drug, totalDrug, concentration, pumpRate, desiredDose) {
-    if (!DOM.guideSection || !DOM.stepByStepGuide) return;
-    DOM.stepByStepGuide.innerHTML = '';
-    const { factor: dripFactor, label: dripLabel } = getDripFactor(AppState.solutionVolume);
-    const dropsPerMin = (pumpRate * dripFactor) / 60;
-    const setType = AppState.solutionVolume <= 100 ? 'سرنگ پمپ / میکروست' : 'ست وریدی ماکروست';
-    const drugPrep = AppState.useCustomDrugAmount
-        ? `اضافه کردن ${PersianNumbers.formatNumber(totalDrug, 0)} ${drug.ampouleOptions[0].unit} از ${drug.persianName} به محلول`
-        : `آماده کردن ${AppState.ampouleCount} آمپول ${drug.persianName}`;
-    const steps = [
-        `۱. ${drugPrep}`,
-        `۲. کشیدن ${AppState.solutionVolume} cc محلول ${drug.solutionType[0]} به سرنگ/کیسه`,
-        `۳. اضافه کردن ${PersianNumbers.formatNumber(totalDrug, 0)} ${drug.ampouleOptions[0].unit} از دارو به محلول`,
-        `۴. مخلوط کردن کامل محلول`,
-        `۵. نصب بر روی پمپ ${AppState.infusionMethod === 'syringe' ? 'سرنگ' : 'انفوزیون'} با ${setType}`,
-        `۶. تنظیم سرعت پمپ روی ${PersianNumbers.formatNumber(pumpRate, 2)} cc/hour`,
-        `۷. در صورت تزریق گراویتی: ${PersianNumbers.formatNumber(dropsPerMin, 1)} قطره/دقیقه (${dripLabel})`,
-        `۸. شروع تزریق با دوز ${PersianNumbers.formatNumber(desiredDose, 2)} ${drug.standardUnit}`
+function calculationText(record) {
+    const f=PersianNumbers.formatNumber;
+    return ['FoxiMed',record.drugName,record.mode==='reverse'?'محاسبهٔ معکوس':'محاسبهٔ سرعت پمپ',
+        `مقدار کل دارو: ${f(record.totalDrug,3)} ${record.drugUnit}`,
+        `حجم نهایی (شامل حجم دارو): ${f(record.solutionVolume,2)} mL`,
+        `غلظت: ${f(record.concentration,4)} ${record.drugUnit}/mL`,
+        `دوز: ${f(record.dose,4)} ${record.doseUnit}`,
+        ...(record.weight?[`وزن بیمار: ${f(record.weight,2)} kg`]:[]),
+        `سرعت پمپ: ${f(record.pumpRate,4)} mL/h`,
+        `مدت تقریبی: ${f(record.duration,2)} h`,
+        ...(record.dripFactor?[`ضریب ست تأییدشده: ${record.dripFactor} drops/mL`]:[])].join('\n');
+}
+function generateStepByStepGuide(drug,totalDrug,concentration,pumpRate,desiredDose) {
+    if(!DOM.guideSection||!DOM.stepByStepGuide)return;
+    const record=AppState.lastCalculation,f=PersianNumbers.formatNumber;
+    if(!record)return;
+    const drip=getDripFactor();
+    const steps=[
+        `۱. مقدار کل دارو را بررسی کنید: ${f(totalDrug,3)} ${record.drugUnit} از ${drug.persianName}.`,
+        `۲. دارو را آماده کنید و حلال سازگار اضافه کنید تا حجم نهایی، با احتساب حجم دارو، دقیقاً ${f(record.solutionVolume,2)} mL شود.`,
+        `۳. غلظت نهایی: ${f(concentration,4)} ${record.drugUnit}/mL؛ با دستور و پروتکل محل تطبیق دهید.`,
+        `۴. محلول را طبق دستور تهیه مخلوط و با نام دارو، مقدار، حجم نهایی و زمان برچسب‌گذاری کنید.`,
+        `۵. سرعت پمپ: ${f(pumpRate,4)} mL/h؛ دوز متناظر: ${f(desiredDose,4)} ${record.doseUnit}.`,
+        ...(record.weight?[`وزن استفاده‌شده: ${f(record.weight,2)} kg.`]:[]),
+        ...(drip.factor?[`در صورت مجاز بودن تزریق گراویتی در پروتکل محل: ${f(pumpRate*drip.factor/60,2)} قطره/دقیقه؛ ضریب ست ${drip.factor} drops/mL.`]:['برای محاسبهٔ قطره، ضریب نوشته‌شده روی بستهٔ ست را انتخاب کنید؛ حجم محلول تعیین‌کنندهٔ ضریب ست نیست.'])
     ];
-    steps.forEach(step => {
-        const stepDiv = document.createElement('div');
-        stepDiv.className = 'guide-step';
-        stepDiv.innerHTML = `<div class="step-content">${step}</div>`;
-        DOM.stepByStepGuide.appendChild(stepDiv);
-    });
-    DOM.guideSection.style.display = 'block';
+    DOM.stepByStepGuide.replaceChildren(...steps.map(text=>{const n=document.createElement('div');n.className='guide-step';const t=document.createElement('div');t.className='step-content';t.textContent=text;n.append(t);return n;}));
+    DOM.guideSection.style.display='block';
 }
 
 function displayWarnings(drug) {
-    if (!DOM.warningsSection || !DOM.warningsList) return;
-    const cautions = drug?.cautions;
-    if (!cautions || !Array.isArray(cautions) || cautions.length === 0) {
-        DOM.warningsSection.style.display = 'none';
-        return;
-    }
-    DOM.warningsList.innerHTML = '';
-    cautions.forEach(caution => {
-        const warningDiv = document.createElement('div');
-        warningDiv.className = 'warning-item';
-        warningDiv.innerHTML = `<i class="fas fa-exclamation-circle warning-icon"></i><span class="warning-text">${caution}</span>`;
-        DOM.warningsList.appendChild(warningDiv);
-    });
-    DOM.warningsSection.style.display = 'block';
+    if(!DOM.warningsSection||!DOM.warningsList)return;
+    DOM.warningsList.replaceChildren();
+    if(!AppState.settings.doseAlerts){DOM.warningsSection.style.display='none';return;}
+    const r=AppState.lastCalculation,messages=[];
+    if(!r)return;
+    const range=r.doseUnit.includes('/kg')?drug.weightBased?.range:drug.typicalDoseRange;
+    const rangeUnit=r.doseUnit.includes('/kg')?drug.weightBased?.unit:range?.unit;
+    if(range&&rangeUnit===r.doseUnit&&(r.dose<range.min||r.dose>range.max))messages.push(`دوز ${r.dose} ${r.doseUnit} خارج از بازهٔ ثبت‌شدهٔ ${range.min}–${range.max} است؛ دستور و منبع به‌روز را بررسی کنید.`);
+    const concentrationLimit=drug.maxSafeConcentration||drug.maxConcentration;
+    const cm=String(concentrationLimit||'').match(/^([\d.]+)\s*(g|mg|mcg|units)\/mL$/i);
+    if(cm){try{if(FoxiCalcCore.convertAmount(r.concentration,r.drugUnit,cm[2])>Number(cm[1]))messages.push('غلظت از حد ثبت‌شدهٔ '+concentrationLimit+' بیشتر است؛ با داروساز و پروتکل محل بررسی کنید.');}catch{}}
+    if(concentrationLimit&&!cm)messages.push('واحد حد غلظت در دادهٔ این دارو معتبر نیست؛ این حد بررسی نشد و نیاز به بازبینی دارد.');
+    const rate=String(drug.maxRate||'').match(/^([\d.]+)\s*(mL|mg|mcg|units)\/min$/i);
+    if(rate){try{const actual=rate[2]==='mL'?r.pumpRate/60:FoxiCalcCore.convertAmount(r.pumpRate*r.concentration,r.drugUnit,rate[2])/60;if(actual>Number(rate[1]))messages.push('سرعت از حد ثبت‌شدهٔ '+drug.maxRate+' بیشتر است؛ بررسی بالینی لازم است.');}catch{}}
+    messages.push('این هشدارها فقط بازه‌ها و حدود موجود در دادهٔ برنامه را بررسی می‌کنند؛ نسخه، بیمار و همهٔ خطرها تأیید نشده‌اند. تاریخ بازبینی بالینی حدود ثبت نشده است.');
+    for(const text of messages){const n=document.createElement('div');n.className='warning-item';const t=document.createElement('span');t.className='warning-text';t.textContent=text;n.append(t);DOM.warningsList.append(n);}
+    DOM.warningsSection.style.display='block';
 }
 
 function displayCompatibility(drug) {
     if (!DOM.compatibilitySection || !DOM.compatibleDrugsList || !DOM.incompatibleDrugsList) return;
+    if(!AppState.settings.compatAlerts){DOM.compatibilitySection.style.display='none';return;}
     DOM.compatibleDrugsList.innerHTML = '';
     DOM.incompatibleDrugsList.innerHTML = '';
     if (drug.ySiteCompatibilities) {
@@ -1967,13 +1951,9 @@ function setupEventListeners() {
 
     const copyResultBtn = document.getElementById('copyResultBtn');
     if (copyResultBtn) copyResultBtn.addEventListener('click', () => {
-        const drug = drugDatabase[AppState.selectedDrug];
-        const pumpRate = document.getElementById('pumpRateResult')?.textContent;
-        const concentration = document.getElementById('concentrationResult')?.textContent;
-        const concentrationUnit = document.getElementById('concentrationUnit')?.textContent;
-        const dose = AppState.desiredDose;
-        const unit = drug?.standardUnit || '';
-        const text = `MedCalc Pro\n${drug?.persianName || ''} (${drug?.englishName || ''})\nدوز: ${dose} ${unit}\nغلظت: ${concentration} ${concentrationUnit}\nسرعت پمپ: ${pumpRate} cc/hr`;
+        const record=AppState.lastCalculation;
+        if(!record){showToast('اطلاع','ابتدا محاسبه را انجام دهید.','info');return;}
+        const text=calculationText(record);
         if (navigator.share) {
             navigator.share({ title: 'FoxiMed', text }).catch(() => {});
             haptic(30);
@@ -1989,7 +1969,6 @@ function setupEventListeners() {
 
     if (DOM.doctorOrder) {
         DOM.doctorOrder.addEventListener('input', () => clearResults());
-        DOM.doctorOrder.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); calculateInfusion(); } });
     }
     if (DOM.closeSettings) DOM.closeSettings.addEventListener('click', () => {
         if (DOM.settingsModal) { DOM.settingsModal.classList.remove('active'); document.body.classList.remove('no-scroll'); DOM.settingsBtn?.focus({preventScroll:true}); }
@@ -2063,6 +2042,7 @@ function setupEventListeners() {
         });
     }
 
+    document.getElementById('calculatorDripFactor')?.addEventListener('change',clearResults);
     setupSettingsEventListeners();
     window.addEventListener('resize', () => setupMobileLayout());
     document.querySelectorAll('.converter-body input, .tool-body input').forEach(input => {
@@ -2148,7 +2128,7 @@ function setupSettingsEventListeners() {
     if (doseAlertToggle) {
         doseAlertToggle.addEventListener('change', function() {
             AppState.settings.doseAlerts = this.checked;
-            saveSettings();
+            saveSettings();updateDoseRangeIndicator();if(AppState.lastCalculation)displayWarnings(drugDatabase[AppState.selectedDrug]);
         });
     }
 
@@ -2157,7 +2137,7 @@ function setupSettingsEventListeners() {
     if (compatAlertToggle) {
         compatAlertToggle.addEventListener('change', function() {
             AppState.settings.compatAlerts = this.checked;
-            saveSettings();
+            saveSettings();if(AppState.lastCalculation)displayCompatibility(drugDatabase[AppState.selectedDrug]);
         });
     }
 
@@ -2365,7 +2345,7 @@ function createManualCalculationContent() {
 
             <!-- Step 2: Solution volume -->
             <div class="control-group">
-                <label><i class="fas fa-flask"></i> حجم محلول (سی‌سی)</label>
+                <label><i class="fas fa-flask"></i> حجم نهایی محلول، شامل حجم دارو (mL)</label>
                 <div class="manual-volume-presets" id="manualVolumePresets">
                     <button class="volume-preset-btn" data-vol="10"><span class="number">10</span><span class="unit-text">cc</span></button>
                     <button class="volume-preset-btn" data-vol="20"><span class="number">20</span><span class="unit-text">cc</span></button>
@@ -2412,6 +2392,7 @@ function createManualCalculationContent() {
                 </div>
             </div>
 
+            <div class="control-group"><label>ضریب ست برای قطره (اختیاری)</label><select id="manualDripFactor"><option value="">فقط پمپ؛ ضریب ست انتخاب نشده</option><option value="10">10 drops/mL</option><option value="15">15 drops/mL</option><option value="20">20 drops/mL</option><option value="60">60 drops/mL</option></select></div>
             <!-- Weight (shown when dose unit contains /kg) -->
             <div class="calc-toggle-item" id="manualWeightRow" style="display:none;">
                 <div class="weight-input-row" style="display:flex;">
@@ -2440,7 +2421,7 @@ function createManualCalculationContent() {
                     <div class="result-item-enhanced highlight gradient" style="grid-column: span 2;">
                         <div class="result-label-enhanced">سرعت پمپ</div>
                         <div class="result-value-enhanced" id="manualPumpRate">0</div>
-                        <div class="result-unit-enhanced">cc/hour</div>
+                        <div class="result-unit-enhanced">mL/h</div>
                     </div>
                 </div>
                 <div class="drip-rate-row" id="manualDripRow" style="margin-top:10px;">
@@ -2459,6 +2440,7 @@ function createManualCalculationContent() {
         </div>
     `;
     setupManualCalculationFunctionality();
+    document.getElementById('manualDripFactor')?.addEventListener('change',()=>{document.getElementById('manualResults').style.display='none';});
     setupMobileNumericKeyboard();
 }
 
@@ -2507,6 +2489,8 @@ function setupManualCalculationFunctionality() {
         });
     });
 
+    document.getElementById('manualSection').addEventListener('click',event=>{if(event.target.closest('button:not(#manualCalculateBtn)'))document.getElementById('manualResults').style.display='none';});
+    document.getElementById('manualSection').addEventListener('change',()=>{document.getElementById('manualResults').style.display='none';});
     // Show weight input when dose unit contains /kg
     const doseUnitSelect = document.getElementById('manualDoseUnit');
     const manualWeightRow = document.getElementById('manualWeightRow');
@@ -2564,29 +2548,19 @@ function calculateManualInfusion() {
         document.getElementById('manualPatientWeight')?.focus(); return;
     }
 
-    // Normalize drug amount to the dose unit's base unit
-    let drugAmountNorm = drugAmount;
-    if (drugUnit === 'g' && (doseUnit.includes('mg') || doseUnit.includes('mcg'))) drugAmountNorm *= 1000;
-    if (drugUnit === 'mg' && doseUnit.includes('mcg')) drugAmountNorm *= 1000;
-    if (drugUnit === 'mcg' && doseUnit.includes('mg')) drugAmountNorm /= 1000;
-
-    const concentration = drugAmountNorm / solutionVolume; // per cc
-
-    // Convert desired dose to per-hour
-    let dosePerHour = desiredDose;
-    if (doseUnit.includes('/min')) dosePerHour = desiredDose * 60;
-    if (doseUnit.includes('/kg')) {
-        dosePerHour = dosePerHour * patientWeight;
-    }
-
-    const pumpRate = dosePerHour / concentration;
-    const duration = solutionVolume / pumpRate;
-    const { factor: dripFactor, label: dripLabel } = getDripFactor(solutionVolume);
-    const dropsPerMin = (pumpRate * dripFactor) / 60;
+    let drugAmountNorm,pumpRate;
+    try {
+        drugAmountNorm=FoxiCalcCore.convertAmount(drugAmount,drugUnit,FoxiCalcCore.doseParts(doseUnit).base);
+        pumpRate=FoxiCalcCore.infusionRate({dose:desiredDose,doseUnit,weight:patientWeight,totalDrug:drugAmount,drugUnit,solutionVolume});
+    } catch {showToast('واحد ناسازگار','واحدهای زیستی با mg، mcg یا g قابل تبدیل عمومی نیستند. واحدها را بررسی کنید.','error');return false;}
+    const concentration=drugAmountNorm/solutionVolume,duration=solutionVolume/pumpRate;
+    if(!Number.isFinite(duration)||duration<=0){showToast('بررسی ورودی','مقادیر برای محاسبه معتبر نیستند.','error');return false;}
+    const {factor:dripFactor,label:dripLabel}=getDripFactor(null,'manualDripFactor');
+    const dropsPerMin=dripFactor?pumpRate*dripFactor/60:null;
 
     // Display
     const doseBaseUnit = doseUnit.replace('/hr','').replace('/min','').replace('/kg','').trim();
-    document.getElementById('manualTotalDrug').textContent = PersianNumbers.formatNumber(drugAmount, 1);
+    document.getElementById('manualTotalDrug').textContent = PersianNumbers.formatNumber(drugAmount, 3);
     document.getElementById('manualTotalDrugUnit').innerHTML = `<span class="latin-inline">${drugUnit}</span>`;
     document.getElementById('manualConcentration').textContent = PersianNumbers.formatNumber(concentration, 3);
     document.getElementById('manualConcentrationUnit').innerHTML = `<span class="latin-inline">${doseBaseUnit}/cc</span>`;
@@ -2594,7 +2568,8 @@ function calculateManualInfusion() {
 
     const dripRateEl = document.getElementById('manualDripRate');
     const dripLabelEl = document.getElementById('manualDripLabel');
-    if (dripRateEl) dripRateEl.textContent = PersianNumbers.formatNumber(dropsPerMin, 1);
+    if (dripRateEl) dripRateEl.textContent = dropsPerMin===null?'—':PersianNumbers.formatNumber(dropsPerMin, 2);
+    document.getElementById('manualDripRow').style.display=dripFactor?'flex':'none';
     if (dripLabelEl) dripLabelEl.textContent = 'سرعت قطره (' + dripLabel + ')';
 
     const durationEl = document.getElementById('manualDuration');
@@ -2719,7 +2694,9 @@ function loadTheme() {
 // ============================================
 // CONVERTERS — bidirectional live
 // ============================================
+let convertersInitialized=false;
 function initializeConverters() {
+    if(convertersInitialized)return;convertersInitialized=true;
     const defaults = { percentageValue:'5', percentageVolume:'100', dripVolume:'500', dripTime:'8', tempC:'37', weightKg:'70' };
     Object.entries(defaults).forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.value = val; });
     convertPercentageLive();
@@ -2731,8 +2708,8 @@ function initializeConverters() {
 const ELECTROLYTE_DATA = {
     sodium:             { mw: 23,  valence: 1 },
     potassium:          { mw: 39,  valence: 1 },
-    calcium:            { mw: 20,  valence: 2 },
-    magnesium:          { mw: 12,  valence: 2 },
+    calcium:            { mw: 40.078, valence: 2 },
+    magnesium:          { mw: 24.305, valence: 2 },
     sodium_bicarbonate: { mw: 84,  valence: 1 }
 };
 
@@ -2743,6 +2720,12 @@ function convertElectrolyteLive(source) {
     const meqEl = document.getElementById('electrolyteMeq');
     const mgEl  = document.getElementById('electrolyteMg');
     const resEl = document.getElementById('electrolyteResult');
+    const sourceField=source==='meq'?meqEl:mgEl,sourceNumber=PersianNumbers.parseNumber(sourceField.value);
+    if(!Number.isFinite(sourceNumber)||sourceNumber<0){
+        if(meqEl!==sourceField)meqEl.value='';
+        if(mgEl!==sourceField)mgEl.value='';
+        resEl.textContent='';resEl.style.display='none';return;
+    }
     const eqWeight = data.mw / data.valence;
     if (source === 'meq') {
         const meq = PersianNumbers.parseNumber(meqEl.value);
@@ -2769,6 +2752,12 @@ function convertUnitsLive(source) {
     const fromEl  = document.getElementById('unitFromVal');
     const toEl    = document.getElementById('unitToVal');
     const resEl   = document.getElementById('unitResult');
+    const sourceField=source==='from'?fromEl:toEl,sourceNumber=PersianNumbers.parseNumber(sourceField.value);
+    if(!Number.isFinite(sourceNumber)||sourceNumber<0){
+        if(fromEl!==sourceField)fromEl.value='';
+        if(toEl!==sourceField)toEl.value='';
+        resEl.textContent='';resEl.style.display='none';return;
+    }
     const toMcg = { mcg: 1, mg: 1000, g: 1000000 };
     const fromUnit = fromSel.value, toUnit = toSel.value;
     if (source === 'from') {
@@ -2797,9 +2786,9 @@ function convertUnitsLive(source) {
 
 function convertPercentageLive() {
     const pct = PersianNumbers.parseNumber(document.getElementById('percentageValue').value) || 0;
-    const vol = PersianNumbers.parseNumber(document.getElementById('percentageVolume').value) || 100;
+    const vol = PersianNumbers.parseNumber(document.getElementById('percentageVolume').value);
     const resEl = document.getElementById('percentageResult');
-    if (pct <= 0) { resEl.style.display = 'none'; return; }
+    if (!Number.isFinite(pct)||!Number.isFinite(vol)||pct<=0||vol<=0||pct>100) {resEl.textContent='';resEl.style.display='none';return;}
     const grams = (pct / 100) * vol;
     const mgPerMl = (pct / 100) * 1000;
     resEl.innerHTML = renderConverterResult([
@@ -2832,6 +2821,12 @@ function convertTempLive(source) {
     const fEl   = document.getElementById('tempF');
     const resEl = document.getElementById('tempResult');
     if (!cEl || !fEl) return;
+    const sourceField=source==='c'?cEl:fEl,sourceNumber=PersianNumbers.parseNumber(sourceField.value);
+    if(!Number.isFinite(sourceNumber)){
+        if(cEl!==sourceField)cEl.value='';
+        if(fEl!==sourceField)fEl.value='';
+        resEl.textContent='';resEl.style.display='none';return;
+    }
     if (source === 'c') {
         const c = PersianNumbers.parseNumber(cEl.value);
         if (!isNaN(c)) fEl.value = parseFloat(((c * 9/5) + 32).toFixed(1));
@@ -2861,11 +2856,18 @@ function convertWeightLive(source) {
     const gEl   = document.getElementById('weightG');
     const resEl = document.getElementById('weightResult');
     if (!kgEl || !lbEl || !gEl) return;
+    const sourceField=source==='kg'?kgEl:source==='lb'?lbEl:gEl,sourceNumber=PersianNumbers.parseNumber(sourceField.value);
+    if(!Number.isFinite(sourceNumber)||sourceNumber<0){
+        if(kgEl!==sourceField)kgEl.value='';
+        if(lbEl!==sourceField)lbEl.value='';
+        if(gEl!==sourceField)gEl.value='';
+        resEl.textContent='';resEl.style.display='none';return;
+    }
     let kg = 0;
     if (source === 'kg') kg = PersianNumbers.parseNumber(kgEl.value) || 0;
     else if (source === 'lb') { kg = (PersianNumbers.parseNumber(lbEl.value) || 0) / 2.20462; kgEl.value = kg.toFixed(2); }
     else if (source === 'g')  { kg = (PersianNumbers.parseNumber(gEl.value) || 0) / 1000; kgEl.value = kg.toFixed(3); }
-    if (kg > 0) {
+    if (kg >= 0) {
         if (source !== 'lb') lbEl.value = (kg * 2.20462).toFixed(1);
         if (source !== 'g') gEl.value = (kg * 1000).toFixed(0);
         resEl.innerHTML = renderConverterResult([
@@ -2910,6 +2912,7 @@ function initializeTools() {
 }
 
 function calculateBMI() {
+    if(!validToolValues('bmiResult',['bmiWeight', 'bmiHeight'],(w,h)=>w>0&&w<=1000&&h>0&&h<=300))return;
     const weight = PersianNumbers.parseNumber(document.getElementById('bmiWeight').value);
     const height = PersianNumbers.parseNumber(document.getElementById('bmiHeight').value);
     const resultDiv = document.getElementById('bmiResult');
@@ -2941,12 +2944,13 @@ function calculateBMI() {
             html += `<p class="tool-note"><i class="fas fa-info-circle"></i> برای رسیدن به محدوده طبیعی BMI، حدود ${PersianNumbers.formatNumber(toLose, 1)} کیلوگرم کاهش وزن لازم است.</p>`;
         }
     }
-    resultDiv.innerHTML = html;
+    resultDiv.innerHTML = html+'<p class="tool-note">طبقه‌بندی BMI بزرگسالان؛ برای کودکان و بارداری مناسب نیست و تشخیص فردی محسوب نمی‌شود.</p>';
     resultDiv.style.display = 'block';
     refreshAccordion(resultDiv);
 }
 
 function calculateBSA() {
+    if(!validToolValues('bsaResult',['bsaWeight', 'bsaHeight'],(w,h)=>w>0&&w<=1000&&h>0&&h<=300))return;
     const weight = PersianNumbers.parseNumber(document.getElementById('bsaWeight').value);
     const height = PersianNumbers.parseNumber(document.getElementById('bsaHeight').value);
     const formula = document.getElementById('bsaFormula').value;
@@ -2965,6 +2969,7 @@ function calculateBSA() {
 }
 
 function calculateIBW() {
+    if(!validToolValues('ibwResult',['ibwHeight'],(h)=>h>=152.4&&h<=250))return;
     const height = PersianNumbers.parseNumber(document.getElementById('ibwHeight').value);
     const gender = document.getElementById('ibwGender').value;
     const formula = document.getElementById('ibwFormula').value;
@@ -2975,7 +2980,7 @@ function calculateIBW() {
     if (formula === 'devine') ibw = gender === 'male' ? 50 + 2.3 * (hIn - 60) : 45.5 + 2.3 * (hIn - 60);
     else if (formula === 'robinson') ibw = gender === 'male' ? 52 + 1.9 * (hIn - 60) : 49 + 1.7 * (hIn - 60);
     else ibw = gender === 'male' ? 56.2 + 1.41 * (hIn - 60) : 53.1 + 1.36 * (hIn - 60);
-    resultDiv.innerHTML = renderConverterResult([
+    resultDiv.innerHTML = '<p class="tool-note">برآورد بزرگسال با قد حداقل ۱۵۲٫۴ cm؛ وزن واقعی بیمار یا هدف تغذیه نیست.</p>'+renderConverterResult([
         { label: 'وزن ایده‌آل (IBW)', value: PersianNumbers.formatNumber(ibw, 1) + ' kg' },
         { label: 'فرمول', value: formula.charAt(0).toUpperCase() + formula.slice(1) }
     ]);
@@ -2984,6 +2989,7 @@ function calculateIBW() {
 }
 
 function calculateCrCl() {
+    if(!validToolValues('crclResult',['crclAge', 'crclWeight', 'crclValue'],(a,w,c)=>a>=18&&a<140&&w>0&&w<=1000&&c>0))return;
     const age = PersianNumbers.parseNumber(document.getElementById('crclAge').value);
     const weight = PersianNumbers.parseNumber(document.getElementById('crclWeight').value);
     const creatinine = PersianNumbers.parseNumber(document.getElementById('crclValue').value);
@@ -2998,9 +3004,9 @@ function calculateCrCl() {
     else if (crcl > 30)  { fn = 'کاهش متوسط';    fnColor = '#f97316'; }
     else if (crcl > 15)  { fn = 'کاهش شدید';     fnColor = '#f87171'; }
     else                 { fn = 'نارسایی کلیه';   fnColor = '#ef4444'; }
-    resultDiv.innerHTML = renderConverterResult([
+    resultDiv.innerHTML = '<p class="tool-note">Cockcroft–Gault برای بزرگسالان با کراتینین پایدار؛ در AKI، بارداری، ترکیب بدنی غیرمعمول یا وزن‌های حدی نیاز به ارزیابی جداگانه دارد. نوع وزن و روش مورد نیاز هر دارو را با پروتکل محل بررسی کنید.</p>'+renderConverterResult([
         { label: 'کلیرانس کراتینین', value: PersianNumbers.formatNumber(crcl, 0) + ' mL/min' },
-        { label: 'وضعیت کلیه', value: `<span style="color:${fnColor};font-weight:700;">${fn}</span>` },
+        { label: 'ردهٔ عدد تخمینی، نه تشخیص بیماری', value: `<span style="color:${fnColor};font-weight:700;">${fn}</span>` },
         { label: 'توجه', value: crcl < 30 ? 'تنظیم دوز داروهای کلیوی ضروری است' : 'دوز داروها را بر اساس CrCl بررسی کنید' }
     ]);
     resultDiv.style.display = 'block';
@@ -3058,7 +3064,7 @@ function checkCompatibility() {
             <i class="fas fa-check-circle"></i>
             <div>
                 <strong>${d1.persianName} و ${d2.persianName} سازگار هستند (Y-Site)</strong>
-                <span>تزریق همزمان در یک خط امکان‌پذیر است</span>
+                <span>در دادهٔ موجود سازگار گزارش شده؛ غلظت، حلال و شرایط باید با منبع به‌روز تأیید شوند</span>
             </div>
         </div>`;
     } else {
@@ -3070,7 +3076,7 @@ function checkCompatibility() {
             </div>
         </div>`;
     }
-    resultDiv.innerHTML = html + solNote;
+    resultDiv.innerHTML = html + solNote + '<p class="tool-note">منبع و تاریخ بازبینی بالینی این فهرست ثبت نشده است؛ نتیجه مجوز تزریق همزمان نیست.</p>';
     resultDiv.style.display = 'block';
 }
 
@@ -3080,7 +3086,7 @@ function calculateDose() {
     const vialVolume = PersianNumbers.parseNumber(document.getElementById('doseVialVolume').value);
     const unit = document.getElementById('doseUnit')?.value || 'mg';
     const resultDiv = document.getElementById('doseResult');
-    if (!needed || !concentration || !vialVolume) { showToast('خطا', 'لطفاً تمامی مقادیر را وارد کنید', 'error'); resultDiv.innerHTML = ''; resultDiv.style.display = 'none'; return; }
+    if (![needed,concentration,vialVolume].every(n=>Number.isFinite(n)&&n>0)) { showToast('خطا', 'لطفاً تمامی مقادیر را وارد کنید', 'error'); resultDiv.innerHTML = ''; resultDiv.style.display = 'none'; return; }
     if (concentration === 0) { resultDiv.innerHTML = 'غلظت نمی‌تواند صفر باشد'; resultDiv.style.display = 'block'; return; }
     const volumeNeeded = needed / concentration;
     const vialsNeeded = Math.ceil(volumeNeeded / vialVolume);
@@ -3242,19 +3248,12 @@ function showToast(title, message, type = 'info') {
 function updateStats() {}
 function updateCalculationStats() { AppState.calculationsToday++; }
 
-function saveCalculation(totalDrug, concentration, pumpRate, duration) {
-    const history = JSON.parse(localStorage.getItem('calculationHistory') || '[]');
-    history.unshift({
-        id: Date.now(),
-        drug: AppState.selectedDrug,
-        drugName: drugDatabase[AppState.selectedDrug].persianName,
-        dose: AppState.desiredDose,
-        weight: AppState.patientWeight,
-        totalDrug, concentration, pumpRate, duration,
-        timestamp: new Date().toISOString()
-    });
-    if (history.length > 50) history.pop();
-    localStorage.setItem('calculationHistory', JSON.stringify(history));
+function saveCalculation() {
+    const record=AppState.lastCalculation;if(!record)return;
+    const history=readStoredJSON('calculationHistory',[]);
+    history.unshift({...record,id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8),timestamp:new Date().toISOString(),appVersion:APP_VERSION});
+    try{localStorage.setItem('calculationHistory',JSON.stringify(history.slice(0,50)));}
+    catch{showToast('ذخیره نشد','فضای ذخیرهٔ مرورگر کافی نیست؛ نتیجهٔ فعلی همچنان قابل مشاهده است.','info');}
 }
 
 function formatAppTime(value) {
@@ -3266,21 +3265,21 @@ function formatAppTime(value) {
 function loadHistory() {
     const historyList = document.getElementById('historyList');
     if (!historyList) return;
-    const history = JSON.parse(localStorage.getItem('calculationHistory') || '[]');
+    const history = readStoredJSON('calculationHistory',[]);
     if (history.length === 0) { historyList.innerHTML = '<div class="empty-history">تاریخچه‌ای یافت نشد</div>'; return; }
     historyList.innerHTML = '';
     history.forEach(item => {
         const div = document.createElement('div');
         div.className = 'history-item';
-        div.title = 'برای بازیابی کلیک کنید';
+        div.title = item.schema===2?'برای بازیابی کلیک کنید':'سابقهٔ قدیمی؛ برای راهنمای محاسبهٔ تازه کلیک کنید';
         div.innerHTML = `
-            <div class="history-drug">${item.drugName} <span class="history-restore-hint"><i class="fas fa-rotate-left"></i></span></div>
+            <div class="history-drug">${escapeAppText(item.drugName)} <span class="history-restore-hint"><i class="fas fa-rotate-left"></i></span></div>
             <div class="history-details">
-                <div>دوز: ${PersianNumbers.formatNumber(item.dose, 2)}</div>
-                <div>سرعت پمپ: <span class="latin-inline">${PersianNumbers.formatNumber(item.pumpRate, 2)} cc/hr</span></div>
+                <div>دوز: ${PersianNumbers.formatNumber(Number(item.dose), 4)} ${escapeAppText(item.doseUnit||'واحد در سابقهٔ قدیمی ثبت نشده')}</div><div>${item.schema===2?(item.mode==='reverse'?'معکوس':'سرعت پمپ'):'بایگانی قدیمی؛ بازسازی خودکار ندارد'}</div>
+                <div>سرعت پمپ: <span class="latin-inline">${PersianNumbers.formatNumber(item.pumpRate, 2)} mL/h</span></div>
                 <div class="history-time">${PersianNumbers.toLatin(new Date(item.timestamp).toLocaleDateString('fa-IR'))} — ${formatAppTime(item.timestamp)}</div>
             </div>
-            <div class="history-restore-bar">بازیابی این محاسبه</div>
+            <div class="history-restore-bar">${item.schema===2?'بازیابی این محاسبه':'راهنمای محاسبهٔ تازه؛ بازسازی خودکار ندارد'}</div>
         `;
         div.addEventListener('click', () => {
             restoreFromHistory(item);
@@ -3293,7 +3292,7 @@ function loadHistory() {
 // REVERSE MODE
 // ============================================
 function updateReverseUI() {
-    const doseLabel = document.querySelector('#calculatorControls .control-group:last-of-type > label');
+    const doseLabel=DOM.doctorOrder?.closest('.control-group')?.querySelector('label');
     const unitEl = document.getElementById('orderUnit');
     const calcBtnLabel = document.querySelector('#calculateBtn span');
     const reverseRow = document.querySelector('.reverse-toggle-row');
@@ -3301,7 +3300,7 @@ function updateReverseUI() {
         if (DOM.reverseIosToggle) DOM.reverseIosToggle.classList.add('on');
         if (reverseRow) reverseRow.classList.add('active');
         if (doseLabel) doseLabel.innerHTML = '<i class="fas fa-pump-medical"></i> سرعت پمپ';
-        if (unitEl) unitEl.textContent = 'cc/hour';
+        if (unitEl) unitEl.textContent = 'mL/h';
         if (DOM.doctorOrder) DOM.doctorOrder.placeholder = '0';
         if (calcBtnLabel) calcBtnLabel.textContent = 'محاسبه دوز دریافتی';
     } else {
@@ -3323,6 +3322,7 @@ function updateReverseUI() {
 // DOSE RANGE INDICATOR
 // ============================================
 function updateDoseRangeIndicator() {
+    if(!AppState.settings.doseAlerts){if(DOM.doseRangeIndicator)DOM.doseRangeIndicator.style.display='none';return;}
     const drug = drugDatabase[AppState.selectedDrug];
     if (!drug || !drug.typicalDoseRange || AppState.reverseMode) {
         if (DOM.doseRangeIndicator) DOM.doseRangeIndicator.style.display = 'none';
@@ -3349,13 +3349,13 @@ function updateDoseRangeIndicator() {
         return;
     }
     let status, color, text;
-    if (val < min * 0.8) {
+    if (val < min) {
         status = 'low'; color = '#60a5fa';
         text = `پایین‌تر از محدوده معمول (${min}–${max} ${unit})`;
-    } else if (val >= min * 0.8 && val <= max * 1.1) {
+    } else if (val >= min && val <= max) {
         status = 'ok'; color = '#34d399';
         text = `در محدوده معمول (${min}–${max} ${unit})`;
-    } else if (val > max * 1.1 && val <= max * 1.5) {
+    } else if (val > max && val <= max * 1.5) {
         status = 'warn'; color = '#fbbf24';
         text = `بالاتر از محدوده معمول — بررسی شود`;
     } else {
@@ -3370,75 +3370,26 @@ function updateDoseRangeIndicator() {
 // ============================================
 // REVERSE CALCULATION
 // ============================================
-function calculateReverse() {
-    const drug = drugDatabase[AppState.selectedDrug];
-    if (!drug) { showToast('خطا', 'ابتدا یک دارو انتخاب کنید', 'error'); return; }
-    const ampoule = drug.ampouleOptions[AppState.currentAmpouleIndex];
-    const pumpRateVal = PersianNumbers.parseNumber(DOM.doctorOrder.value);
-    if (!pumpRateVal || isNaN(pumpRateVal) || pumpRateVal <= 0) {
-        DOM.doctorOrder.style.borderColor = 'var(--danger)';
-        showToast('خطا', 'لطفاً سرعت پمپ را وارد کنید (cc/hour)', 'error');
-        DOM.doctorOrder.focus();
-        return;
-    }
-    DOM.doctorOrder.style.borderColor = '';
-    const totalDrug = getEffectiveTotalDrug();
-    if (totalDrug === null) {
-        showToast('خطا', 'لطفاً مقدار دارو را وارد کنید', 'error');
-        if (DOM.customAmountInput) DOM.customAmountInput.focus();
-        return;
-    }
-    const concentration = totalDrug / AppState.solutionVolume;
-    const unit = AppState.useWeight && drug.weightBased?.active ? drug.weightBased.unit : (drug.weightBased?.nonWeightUnit || drug.standardUnit);
-    let weight = null;
-    if (unit && unit.toLowerCase().includes('/kg')) {
-        weight = PersianNumbers.parseNumber(DOM.patientWeight?.value);
-        if (!weight || isNaN(weight) || weight <= 0) {
-            showToast('خطا', 'برای محاسبه دوز وزنی، وزن بیمار را وارد کنید', 'error');
-            DOM.patientWeight?.focus();
-            return;
-        }
-    }
-    let derivedDose;
-    try {
-        derivedDose = window.FoxiCalcCore.reverseInfusionDose({
-            pumpRate: pumpRateVal,
-            totalDrug,
-            solutionVolume: AppState.solutionVolume,
-            drugUnit: ampoule.unit,
-            doseUnit: unit,
-            weight
-        });
-    } catch (error) {
-        showToast('خطا', 'واحدهای دارو برای محاسبه معکوس سازگار نیستند', 'error');
-        return;
-    }
-    const duration = AppState.solutionVolume / pumpRateVal;
-    displayResultsReverse(totalDrug, concentration, pumpRateVal, derivedDose, duration, ampoule.unit, unit);
-    generateStepByStepGuide(drug, totalDrug, concentration, pumpRateVal, derivedDose);
-    displayWarnings(drug);
-    displayCompatibility(drug);
-    if (AppState.settings.saveHistory) saveCalculation(totalDrug, concentration, pumpRateVal, duration);
-}
+function calculateReverse() {return runCalculation('reverse');}
 
 function displayResultsReverse(totalDrug, concentration, pumpRate, derivedDose, duration, ampUnit, doseUnit) {
     const drug = drugDatabase[AppState.selectedDrug];
-    DOM.totalDrugAmount.textContent = PersianNumbers.formatNumber(totalDrug, 0);
+    DOM.totalDrugAmount.textContent = PersianNumbers.formatNumber(totalDrug, 3);
     DOM.totalDrugUnit.innerHTML = `<span class="latin-inline">${ampUnit}</span>`;
     let concentrationDisplay, concentrationUnitDisplay;
-    const _doseInMcg = (drug.standardUnit || '').startsWith('mcg');
-    const _ampouleInMg = (drug.ampouleOptions[0]?.unit || '') === 'mg';
+    const _doseInMcg = (activeDoseUnit(drug) || '').startsWith('mcg');
+    const _ampouleInMg = (drug.ampouleOptions[AppState.currentAmpouleIndex]?.unit || '') === 'mg';
     if (_doseInMcg && _ampouleInMg) {
         concentrationDisplay = PersianNumbers.formatNumber(concentration * 1000, 2);
-        concentrationUnitDisplay = 'mcg/cc';
+        concentrationUnitDisplay = 'mcg/mL';
     } else {
         concentrationDisplay = PersianNumbers.formatNumber(concentration, 2);
-        concentrationUnitDisplay = `${ampUnit}/cc`;
+        concentrationUnitDisplay = `${ampUnit}/mL`;
     }
     DOM.concentrationResult.textContent = concentrationDisplay;
     DOM.concentrationUnit.innerHTML = `<span class="latin-inline">${concentrationUnitDisplay}</span>`;
     DOM.pumpRateResult.textContent = PersianNumbers.formatNumber(pumpRate, 2);
-    DOM.pumpRateUnit.innerHTML = `<span class="latin-inline">cc/hour</span>`;
+    DOM.pumpRateUnit.innerHTML = `<span class="latin-inline">mL/h</span>`;
     DOM.durationResult.textContent = PersianNumbers.formatNumber(duration, 1);
     DOM.durationUnit.innerHTML = `<span class="persian-inline">ساعت</span>`;
     const highlightEl = document.querySelector('.result-item-enhanced.highlight');
@@ -3466,52 +3417,46 @@ function displayResultsReverse(totalDrug, concentration, pumpRate, derivedDose, 
 // RESTORE FROM HISTORY
 // ============================================
 function restoreFromHistory(item) {
-    if (drugDatabase[item.drug]) {
-        selectDrug(item.drug);
-        if (DOM.historyModal) { DOM.historyModal.classList.remove('active'); document.body.classList.remove('no-scroll'); }
-        setTimeout(() => {
-            if (DOM.doctorOrder) {
-                DOM.doctorOrder.value = item.dose;
-                DOM.doctorOrder.dataset.numericValue = item.dose;
-                updateDoseRangeIndicator();
-            }
-            if (item.weight && DOM.patientWeight && DOM.weightCheckbox) {
-                DOM.weightCheckbox.checked = true;
-                AppState.useWeight = true;
-                DOM.patientWeight.disabled = false;
-                if (DOM.weightIosToggle) DOM.weightIosToggle.classList.add('on');
-                if (DOM.weightInputRow) DOM.weightInputRow.style.display = 'flex';
-                DOM.patientWeight.value = item.weight;
-                DOM.patientWeight.dataset.numericValue = item.weight;
-            }
-            showToast('بازیابی شد', `محاسبه ${item.drugName} بازیابی شد`, 'success');
-            haptic(40);
-        }, 300);
-    } else {
-        showToast('خطا', 'این دارو در پایگاه داده یافت نشد', 'error');
-    }
+    const drug=drugDatabase[item.drug];
+    if(item.schema!==2||!drug){showToast('سابقهٔ بایگانی‌شده','تنظیمات کامل این سابقه ثبت نشده؛ مقدار، واحد و آماده‌سازی را برای محاسبهٔ تازه وارد کنید.','info');return;}
+    const amp=drug.ampouleOptions[item.ampouleIndex];
+    if(!amp||amp.unit!==item.drugUnit||amp.strength!==item.ampouleStrength){showToast('نیاز به بررسی','قدرت یا واحد دارو با سابقه متفاوت است؛ آماده‌سازی را دوباره بررسی کنید.','info');return;}
+    if(!Number.isFinite(item.totalDrug)||item.totalDrug<=0||!Number.isFinite(item.solutionVolume)||item.solutionVolume<=0||!Number.isFinite(item.inputValue)||item.inputValue<=0){showToast('سابقهٔ نامعتبر','اطلاعات برای بازسازی این محاسبه کافی نیست.','error');return;}
+    selectDrug(item.drug);
+    AppState.infusionMethod=item.infusionMethod==='infusion'?'infusion':'syringe';syncCalculatorMethodButtons();updateVolumeOptions();
+    AppState.currentAmpouleIndex=item.ampouleIndex;AppState.ampouleCount=item.ampouleCount;updateAmpouleTypeSelector(drug);updateAmpouleInfo();
+    const custom=!!item.useCustomDrugAmount;
+    if(AppState.useCustomDrugAmount!==custom&&DOM.customAmountToggleClickRow)DOM.customAmountToggleClickRow.click();
+    AppState.useCustomDrugAmount=custom;
+    if(DOM.customAmountInput)DOM.customAmountInput.value=String(item.totalDrug);
+    AppState.customVolume=true;AppState.solutionVolume=item.solutionVolume;DOM.customVolume.value=String(item.solutionVolume);DOM.customVolumeContainer.style.display='flex';
+    DOM.volumeOptions?.querySelectorAll('.volume-preset-btn').forEach(n=>n.classList.remove('active'));
+    AppState.useWeight=!!item.weight;DOM.weightCheckbox.checked=AppState.useWeight;DOM.patientWeight.disabled=!AppState.useWeight;DOM.patientWeight.value=item.weight?String(item.weight):'';
+    DOM.weightInputRow.style.display=AppState.useWeight?'flex':'none';DOM.weightIosToggle?.classList.toggle('on',AppState.useWeight);
+    AppState.reverseMode=item.mode==='reverse';updateWeightBasedUnit(drug);updateReverseUI();
+    try{if(FoxiCalcCore.doseParts(activeDoseUnit(drug)).unit!==FoxiCalcCore.doseParts(item.doseUnit).unit)throw Error();}catch{clearResults();showToast('نیاز به بررسی','واحد دوز این سابقه تغییر کرده یا معتبر نیست؛ دوباره بررسی کنید.','info');return;}
+    DOM.doctorOrder.value=String(item.inputValue);document.getElementById('calculatorDripFactor').value=item.dripFactor?String(item.dripFactor):'';
+    DOM.historyModal?.classList.remove('active');document.body.classList.remove('no-scroll');switchTab('calculator');
+    runCalculation(AppState.reverseMode?'reverse':'forward',{save:false});
 }
 
 // ============================================
 // EXPORT HISTORY
 // ============================================
 function exportHistory() {
-    const history = JSON.parse(localStorage.getItem('calculationHistory') || '[]');
+    const history = readStoredJSON('calculationHistory',[]);
     if (history.length === 0) {
         showToast('اطلاع', 'تاریخچه‌ای برای خروجی وجود ندارد', 'info');
         return;
     }
-    const lines = ['MedCalc Pro — تاریخچه محاسبات', '='.repeat(40), ''];
+    const lines=['FoxiMed — تاریخچه محاسبات',''];
     history.forEach((item, i) => {
         const d = new Date(item.timestamp);
         const dateStr = d.toLocaleDateString('fa-IR') + ' ' + formatAppTime(d);
         lines.push(`#${i + 1} — ${item.drugName}`);
         lines.push(`تاریخ: ${dateStr}`);
-        lines.push(`دوز: ${item.dose}`);
-        lines.push(`سرعت پمپ: ${parseFloat(item.pumpRate).toFixed(2)} cc/hr`);
-        lines.push(`غلظت: ${parseFloat(item.concentration).toFixed(2)}`);
-        lines.push(`مدت: ${parseFloat(item.duration).toFixed(1)} ساعت`);
-        if (item.weight) lines.push(`وزن بیمار: ${item.weight} kg`);
+        if(item.schema===2)lines.push(calculationText(item));
+        else {lines.push('سابقهٔ قدیمی — واحد/آماده‌سازی کامل ثبت نشده است.');lines.push(`دوز ثبت‌شده: ${item.dose}`);lines.push(`سرعت ثبت‌شده: ${item.pumpRate} mL/h`);}
         lines.push('-'.repeat(30));
         lines.push('');
     });
@@ -3528,18 +3473,15 @@ function exportHistory() {
 // ============================================
 // DRIP RATE CALCULATION
 // ============================================
-function getDripFactor(volumeCC) {
-    if (volumeCC <= 100) return { factor: 60, label: 'میکروست — ۶۰ قطره/mL' };
-    return { factor: 20, label: 'ماکروست — ۲۰ قطره/mL' };
+function getDripFactor(_volume,id='calculatorDripFactor') {
+    const factor=Number(document.getElementById(id)?.value);
+    return [10,15,20,60].includes(factor)?{factor,label:factor+' drops/mL'}:{factor:null,label:'ضریب ست انتخاب نشده'};
 }
-
-function displayDripRate(pumpRate, volumeCC) {
-    if (!DOM.dripRateRow || !DOM.dripRateResult || !DOM.dripRateLabel) return;
-    const { factor, label } = getDripFactor(volumeCC);
-    const dropsPerMin = (pumpRate * factor) / 60;
-    DOM.dripRateResult.textContent = PersianNumbers.formatNumber(dropsPerMin, 1);
-    DOM.dripRateLabel.textContent = 'سرعت قطره (' + label + ')';
-    DOM.dripRateRow.style.display = 'flex';
+function displayDripRate(pumpRate) {
+    if(!DOM.dripRateRow)return;
+    const {factor,label}=getDripFactor();DOM.dripRateRow.style.display=factor?'flex':'none';
+    if(!factor)return;
+    DOM.dripRateResult.textContent=PersianNumbers.formatNumber(pumpRate*factor/60,2);DOM.dripRateLabel.textContent='سرعت قطره ('+label+')';
 }
 
 // ============================================
@@ -3584,7 +3526,7 @@ function setupOfflineIndicator() {
     const bar = document.createElement('div');
     bar.id = 'offlineBar';
     bar.className = 'offline-bar';
-    bar.innerHTML = '<i class="fas fa-wifi-slash"></i> <span>اتصال اینترنت قطع است — اپ به صورت آفلاین کار می‌کند</span>';
+    bar.innerHTML = '<i class="fas fa-wifi-slash"></i> <span>اتصال قطع است — محاسبه آفلاین؛ مرجع به فایل‌های ذخیره‌شده نیاز دارد</span>';
     bar.style.display = 'none';
     document.body.appendChild(bar);
 
@@ -3595,7 +3537,7 @@ function setupOfflineIndicator() {
         } else {
             bar.classList.add('online-flash');
             bar.innerHTML = '<i class="fas fa-wifi"></i> <span>اتصال برقرار شد</span>';
-            setTimeout(() => { bar.style.display = 'none'; bar.innerHTML = '<i class="fas fa-wifi-slash"></i> <span>اتصال اینترنت قطع است — اپ به صورت آفلاین کار می‌کند</span>'; }, 2500);
+            setTimeout(() => { bar.style.display = 'none'; bar.innerHTML = '<i class="fas fa-wifi-slash"></i> <span>اتصال قطع است — محاسبه آفلاین؛ مرجع به فایل‌های ذخیره‌شده نیاز دارد</span>'; }, 2500);
         }
     }
 
@@ -4173,44 +4115,7 @@ function resetGCS() {
 // BURNS / TBSA CALCULATOR
 // ============================================
 
-const BURNS_ADULT = {
-    head: 4.5, head_b: 4.5,
-    neck: 1,
-    chest: 9, abdomen: 9,
-    upper_back: 9, lower_back: 9,
-    perineum: 1,
-    buttocks: 2.5,
-    l_upper_arm: 2, r_upper_arm: 2,
-    l_upper_arm_b: 2, r_upper_arm_b: 2,
-    l_lower_arm: 1.5, r_lower_arm: 1.5,
-    l_lower_arm_b: 1.5, r_lower_arm_b: 1.5,
-    l_hand: 1.25, r_hand: 1.25,
-    l_thigh_f: 4.75, r_thigh_f: 4.75,
-    l_thigh_b: 4.75, r_thigh_b: 4.75,
-    l_leg_f: 3.5, r_leg_f: 3.5,
-    l_leg_b: 3.5, r_leg_b: 3.5,
-    l_foot: 1.75, r_foot: 1.75
-};
-
-const BURNS_PEDIATRIC = {
-    head: 9.5, head_b: 9.5,
-    neck: 1,
-    chest: 9, abdomen: 9,
-    upper_back: 9, lower_back: 9,
-    perineum: 1,
-    buttocks: 2.5,
-    l_upper_arm: 2, r_upper_arm: 2,
-    l_upper_arm_b: 2, r_upper_arm_b: 2,
-    l_lower_arm: 1.5, r_lower_arm: 1.5,
-    l_lower_arm_b: 1.5, r_lower_arm_b: 1.5,
-    l_hand: 1.25, r_hand: 1.25,
-    l_thigh_f: 3.25, r_thigh_f: 3.25,
-    l_thigh_b: 3.25, r_thigh_b: 3.25,
-    l_leg_f: 2.75, r_leg_f: 2.75,
-    l_leg_b: 2.75, r_leg_b: 2.75,
-    l_foot: 1.75, r_foot: 1.75
-};
-
+// Body diagrams record regions only; no unvalidated percentage table is used.
 const BURNS_STATE = { selected: new Set(), ageMode: 'adult' };
 
 function setupBurns() {
@@ -4237,16 +4142,13 @@ function setBurnsAge(mode) {
     const noteEl = document.getElementById('burnsRuleNote');
     if (adultBtn) adultBtn.classList.toggle('active', mode === 'adult');
     if (pedBtn) pedBtn.classList.toggle('active', mode === 'pediatric');
-    if (noteEl) noteEl.textContent = mode === 'adult' ? 'قانون نُه — بزرگسال' : 'Lund-Browder — کودک (تقریبی)';
+    if (noteEl) noteEl.textContent = mode === 'adult' ? 'نقشه برای ثبت نواحی است؛ درصد خودکار تولید نمی‌شود. TBSA تأییدشده را جداگانه وارد کنید.' : 'نقشهٔ کودک فقط نمای شماتیک است؛ درصد معتبر نیازمند جدول Lund–Browder متناسب با سن است. محاسبهٔ مایع کودک در این ابزار ارائه نمی‌شود.';
     updateBurns();
     haptic(25);
 }
 
 function updateBurns() {
-    const table = BURNS_STATE.ageMode === 'adult' ? BURNS_ADULT : BURNS_PEDIATRIC;
-    let total = 0;
-    BURNS_STATE.selected.forEach(key => { total += (table[key] || 0); });
-    total = Math.min(total, 100);
+    const entered=PersianNumbers.parseNumber(document.getElementById('burnsConfirmedTBSA').value),total=Number.isFinite(entered)&&entered>0&&entered<=100?entered:null;
 
     const tbsaEl = document.getElementById('burnsTBSA');
     const resultBox = document.getElementById('burnsResultBox');
@@ -4266,24 +4168,16 @@ function updateBurns() {
         }
     }
 
-    if (BURNS_STATE.selected.size === 0) {
+    if (BURNS_STATE.selected.size === 0&&total===null) {
         if (resultBox) resultBox.style.display = 'none';
         refreshAccordion(chipsEl || document.getElementById('burnsChips'));
         return;
     }
 
-    if (tbsaEl) tbsaEl.textContent = total.toFixed(1) + '%';
+    if (tbsaEl) tbsaEl.textContent = total===null?'TBSA تأییدشده وارد نشده':total.toFixed(1)+'% — مقدار واردشده، نه محاسبهٔ نقشه';
 
-    let notes = [];
-    if (total < 10) {
-        notes = ['سوختگی محدود — مراقبت سرپایی ممکن است کافی باشد', 'درصورت درگیری صورت، دست یا پرینه: ارجاع به مرکز سوختگی'];
-    } else if (total < 20) {
-        notes = ['سوختگی متوسط — بستری ضروری است', 'احیاء مایع را شروع کنید (فرمول Parkland)', 'پایش ادرار ساعتی توصیه می‌شود (۰.۵ cc/kg/hr)'];
-    } else if (total < 40) {
-        notes = ['⚠️ سوختگی وسیع — ICU ضروری است', 'فوری فرمول Parkland را شروع کنید', '۵۰٪ مایع اول ۸ ساعت، ۵۰٪ باقی ۱۶ ساعت', 'ارجاع فوری به مرکز تخصصی سوختگی'];
-    } else {
-        notes = ['🚨 سوختگی حیاتی — خطر جدی برای بیمار', 'انتقال فوری به مرکز تخصصی سوختگی', 'احیاء مایع تهاجمی فوری', 'پایش راه هوایی — احتمال سوختگی استنشاقی را بررسی کنید'];
-    }
+    const notes=['وسعت به‌تنهایی تعیین‌کنندهٔ بستری یا ICU نیست؛ عمق، محل، آسیب استنشاقی و وضعیت بیمار باید ارزیابی شوند.','فرمول مایع فقط تخمین اولیه است؛ تصمیم و تنظیم بر اساس پاسخ بیمار و پروتکل مرکز سوختگی انجام می‌شود.'];
+    if(total>=20)notes.push('سوختگی وسیع؛ ارزیابی فوری و هماهنگی با مرکز تخصصی سوختگی لازم است.');
 
     if (notesEl) {
         notesEl.innerHTML = notes.map(n => `<div class="burns-note-item"><i class="fas fa-circle-info"></i><span>${n}</span></div>`).join('');
@@ -4297,29 +4191,19 @@ function updateBurns() {
     updateParkland();
 }
 
-function updateParkland() {
-    const weightEl = document.getElementById('burnsWeight');
-    const parklandEl = document.getElementById('parklandResult');
-    const parklandRow = document.getElementById('parklandRow');
-    if (!weightEl || !parklandEl || !parklandRow) return;
-
-    const weight = PersianNumbers.parseNumber(weightEl.value);
-    const table = BURNS_STATE.ageMode === 'adult' ? BURNS_ADULT : BURNS_PEDIATRIC;
-    let total = 0;
-    BURNS_STATE.selected.forEach(key => { total += (table[key] || 0); });
-    total = Math.min(total, 100);
-
-    if (!weight || weight <= 0 || BURNS_STATE.selected.size === 0) {
-        parklandRow.style.display = 'none';
-        return;
-    }
-
-    const totalFluid = 4 * weight * total;
-    const first8h = totalFluid / 2;
-    const next16h = totalFluid / 2;
-    parklandEl.innerHTML = '<span dir="ltr" style="display:inline-block; unicode-bidi:isolate;">' + totalFluid.toFixed(0) + ' mL</span>';
-    parklandRow.querySelector('.burns-result-label').innerHTML = 'Parkland: <span dir="ltr" style="display:inline-block; unicode-bidi:isolate;">' + totalFluid.toFixed(0) + ' mL</span> (اول ۸ ساعت: <span dir="ltr">' + first8h.toFixed(0) + ' mL</span> | ۱۶ ساعت باقی: <span dir="ltr">' + next16h.toFixed(0) + ' mL</span>)';
-    parklandRow.style.display = 'flex';
+function updateParkland(){
+    const row=document.getElementById('parklandRow');if(!row)return;
+    row.style.display='none';
+    if(BURNS_STATE.ageMode!=='adult')return;
+    const weight=PersianNumbers.parseNumber(document.getElementById('burnsWeight').value),factor=Number(document.getElementById('burnsProtocol').value),elapsed=PersianNumbers.parseNumber(document.getElementById('burnsElapsed').value),given=PersianNumbers.parseNumber(document.getElementById('burnsGiven').value);
+    const tbsa=PersianNumbers.parseNumber(document.getElementById('burnsConfirmedTBSA').value);
+    if(!Number.isFinite(tbsa)||tbsa<=0||tbsa>100)return;
+    if(!Number.isFinite(weight)||weight<=0||weight>1000||![2,4].includes(factor)||!Number.isFinite(elapsed)||elapsed<0||elapsed>=24||!Number.isFinite(given)||given<0)return;
+    if(factor===2&&tbsa<20){row.querySelector('.burns-result-label').textContent='دامنهٔ راهنمای ABA برای این گزینه: بزرگسال با ≥۲۰٪ TBSA؛ پروتکل محل را بررسی کنید.';document.getElementById('parklandResult').textContent='—';row.style.display='flex';return;}
+    const target=factor*weight*tbsa,remaining=Math.max(0,target-given),periodTarget=elapsed<8?target/2:target,periodRemaining=Math.max(0,periodTarget-given),hours=(elapsed<8?8:24)-elapsed;
+    document.getElementById('parklandResult').textContent=Math.round(target)+' mL / 24 h';
+    row.querySelector('.burns-result-label').textContent=`تخمین اولیهٔ ${factor} mL/kg/%TBSA: ${Math.round(target)} mL در ۲۴ ساعت از زمان آسیب. مایع دریافت‌شده ${given} mL؛ باقیماندهٔ ریاضی تا ۲۴ ساعت ${Math.round(remaining)} mL. تا پایان بازهٔ ${elapsed<8?'۸':'۲۴'} ساعته، ${Math.round(periodRemaining)} mL در ${hours.toFixed(1)} ساعت باقی است. این مقدار دستور جبران یا سرعت پمپ نیست؛ تنظیم با ارزیابی بالینی انجام شود.`;
+    row.style.display='flex';refreshAccordion(row);
 }
 
 function resetBurns() {
@@ -4331,6 +4215,7 @@ function resetBurns() {
     if (resultBox) resultBox.style.display = 'none';
     const weightEl = document.getElementById('burnsWeight');
     if (weightEl) weightEl.value = '';
+    ['burnsConfirmedTBSA','burnsElapsed','burnsGiven','burnsProtocol'].forEach(id=>{document.getElementById(id).value='';});
     haptic(30);
 }
 
@@ -4500,8 +4385,7 @@ function isHediyehName(name) {
 
 function saveUserNameValue(name) {
     const cleanName = String(name || '').trim().slice(0, 30);
-    if (!cleanName) return false;
-    localStorage.setItem('userName', cleanName);
+    if(!cleanName)localStorage.removeItem('userName');else localStorage.setItem('userName', cleanName);
     localStorage.setItem(USER_NAME_CAPTURE_VERSION_KEY, USER_NAME_CAPTURE_VERSION);
     window.dispatchEvent(new CustomEvent('foximed:user-name-changed', { detail: { name: cleanName } }));
     if (isHediyehName(cleanName)) {
@@ -4520,7 +4404,7 @@ function setupUserName() {
 
     function updateButtonState() {
         const currentValue = input.value.trim();
-        const isValid = currentValue !== '' && currentValue !== storedName;
+        const isValid = currentValue !== storedName;
         if (isValid) {
             saveBtn.classList.add('active');
         } else {
@@ -4733,9 +4617,9 @@ function updateBraden() {
 
     let severity, badgeClass, notes;
     if (total >= 19) {
-        severity = 'ریسک ندارد';
+        severity = 'خطر پایین بر اساس امتیاز';
         badgeClass = 'gcs-badge-mild';
-        notes = ['پوست سالم است.', 'آموزش پیشگیری به بیمار و خانواده توصیه می‌شود.'];
+        notes = ['این امتیاز سلامت پوست را تأیید نمی‌کند؛ پوست و هر زیرمقیاس جداگانه بررسی شوند.', 'اقدامات پیشگیری و قضاوت بالینی طبق پروتکل محل ادامه یابد.'];
     } else if (total >= 15) {
         severity = 'ریسک خفیف';
         badgeClass = 'gcs-badge-mild';
@@ -4747,11 +4631,11 @@ function updateBraden() {
     } else if (total >= 10) {
         severity = 'ریسک بالا';
         badgeClass = 'gcs-badge-severe';
-        notes = ['⚠️ ریسک بالای زخم فشاری.', 'تغییر وضعیت هر ۱ ساعت.', 'تشک تخصصی پیشگیری از زخم ضروری است.', 'بررسی و مستندسازی وضعیت پوست در هر شیفت.'];
+        notes = ['⚠️ ریسک بالای زخم فشاری.', 'برنامهٔ تغییر وضعیت بر اساس وضعیت بیمار، پوست و سطح حمایتی تعیین شود.', 'تشک تخصصی پیشگیری از زخم ضروری است.', 'بررسی و مستندسازی وضعیت پوست در هر شیفت.'];
     } else {
         severity = 'ریسک بسیار بالا';
         badgeClass = 'gcs-badge-severe';
-        notes = ['🚨 ریسک بسیار بالا.', 'پروتکل پیشگیری فشرده فعال شود.', 'تشک تخصصی + تغییر وضعیت هر ۱ ساعت.', 'مشاوره تیم زخم و پوست.', 'بررسی تغذیه و هیدراسیون فوری.'];
+        notes = ['🚨 ریسک بسیار بالا.', 'پروتکل پیشگیری فشرده فعال شود.', 'سطح حمایتی و برنامهٔ تغییر وضعیت به‌صورت فردی تعیین شود.', 'مشاوره تیم زخم و پوست.', 'بررسی تغذیه و هیدراسیون فوری.'];
     }
 
     if (badgeEl) { badgeEl.textContent = `خطر: ${severity}`; badgeEl.className = `gcs-severity-badge ${badgeClass}`; }
@@ -5284,13 +5168,13 @@ const YSITE_EXTRA_DRUGS = [
 ];
 
 
-function ysiteKey(a, b) {
-    return [a, b].sort().join('|');
-}
-
-function ysiteStatus(a, b) {
-    if (a === b) return 'same';
-    return YSITE_MATRIX[ysiteKey(a, b)] || '?';
+function canonicalDrugId(id){return ({lasix:'furosemide',tng:'nitroglycerin'})[id]||id;}
+function ysiteKey(a,b){return [canonicalDrugId(a),canonicalDrugId(b)].sort().join('|');}
+let ysiteNormalized;
+function ysiteStatus(a,b){
+    if(canonicalDrugId(a)===canonicalDrugId(b))return 'same';
+    if(!ysiteNormalized){ysiteNormalized=Object.create(null);for(const [raw,value] of Object.entries(YSITE_MATRIX)){const key=ysiteKey(...raw.split('|')),old=ysiteNormalized[key];ysiteNormalized[key]=!old||old==='?'?value:value==='?'?old:old===value?old:'v';}}
+    return ysiteNormalized[ysiteKey(a,b)]||'?';
 }
 
 function setupYSiteChecker() {
@@ -5351,7 +5235,7 @@ function renderMatrix(selected) {
     // Resolve name — app drugs or extra reference drugs
     const _extraMap = {};
     if (typeof YSITE_EXTRA_DRUGS !== 'undefined') YSITE_EXTRA_DRUGS.forEach(d => { _extraMap[d.id] = d.name; });
-    const names = ids.map(id => drugDatabase[id]?.persianName || _extraMap[id] || id);
+    const names = ids.map(id => Object.values(drugDatabase).find(d=>canonicalDrugId(d.id)===canonicalDrugId(id))?.persianName || _extraMap[id] || id);
 
     // Build table
     let html = '<table class="ysite-table"><thead><tr><th></th>';
@@ -5380,7 +5264,7 @@ function renderMatrix(selected) {
         <span class="ysite-legend-item ysite-verify">🟡 محدود / متناقض</span>
         <span class="ysite-legend-item ysite-unk">⚪ بدون داده</span>
     </div>`;
-    html += '<div class="ysite-clinical-note"><i class="fas fa-triangle-exclamation"></i><span>سازگاری به غلظت، حلال، فرمولاسیون و زمان تماس وابسته است؛ پیش از تزریق با منبع دارویی به‌روز بیمارستان یا داروساز بررسی کنید.</span></div>';
+    html += '<div class="ysite-clinical-note"><i class="fas fa-triangle-exclamation"></i><span>منبع و تاریخ بازبینی مستقل هر جفت ثبت نشده است. این جدول تأیید تزریق نیست. سازگاری به غلظت، حلال، فرمولاسیون و زمان تماس وابسته است؛ پیش از تزریق با منبع دارویی به‌روز بیمارستان یا داروساز بررسی کنید.</span></div>';
 
     matrix.innerHTML = html;
     haptic(15);
@@ -5396,7 +5280,7 @@ function setupVentilatorCalc() {
     const genderBtns = document.querySelectorAll('#ventGenderBtns .method-btn-compact');
     genderBtns.forEach(btn => btn.addEventListener('click', function() {
         genderBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+        this.classList.add('active');invalidateToolResult(this);
     }));
 
     const tabs = document.querySelectorAll('#ventMethodTabs .vent-tab');
@@ -5404,6 +5288,7 @@ function setupVentilatorCalc() {
         tabs.forEach(t => t.classList.remove('active'));
         this.classList.add('active');
         document.querySelectorAll('.vent-input-panel').forEach(p => p.style.display = 'none');
+        invalidateToolResult(this);
         const panel = document.getElementById('ventPanel_' + this.dataset.tab);
         if (panel) panel.style.display = 'block';
     }));
@@ -5494,9 +5379,9 @@ window.calculateNutrition = function() {
     const stress  = parseFloat(document.getElementById('nutStress')?.value || '1.2');
     const resultDiv = document.getElementById('nutResult');
 
-    if (!weight || isNaN(weight) || weight < 20) { showToast('خطا', 'وزن را وارد کنید', 'error'); return; }
-    if (!height || isNaN(height) || height < 100) { showToast('خطا', 'قد را وارد کنید', 'error'); return; }
-    if (!age    || isNaN(age)    || age < 1)      { showToast('خطا', 'سن را وارد کنید', 'error'); return; }
+    if (!Number.isFinite(weight) || weight < 20 || weight > 1000) { showToast('خطا', 'وزن را وارد کنید', 'error'); return; }
+    if (!Number.isFinite(height) || height < 100 || height > 250) { showToast('خطا', 'قد را وارد کنید', 'error'); return; }
+    if (!Number.isFinite(age) || age < 18 || age > 120)      { showToast('خطا', 'این برآورد برای بزرگسالان ۱۸ تا ۱۲۰ سال است', 'error'); return; }
 
     let bmr_hb, bmr_ms;
     if (gender === 'male') {
@@ -5530,31 +5415,31 @@ window.calculateNutrition = function() {
     const protMinKcal = Math.round(protMinG * 4);
     const protMaxKcal = Math.round(protMaxG * 4);
 
-    const npcMin = tee_ms - protMaxKcal;
-    const enteralRateMin = Math.round(npcMin / 24);
-    const enteralRateMax = Math.round(tee_ms / 24);
-    const fluidFromFeed = Math.round(enteralRateMax * 0.85);
+    const density=PersianNumbers.parseNumber(document.getElementById('nutDensity').value);
+    const water=PersianNumbers.parseNumber(document.getElementById('nutWater').value);
+    if(!Number.isFinite(density)||density<=0||density>5||!Number.isFinite(water)||water<0||water>100){showToast('بررسی فرآورده','چگالی کالری و درصد آب روی برچسب محصول را وارد کنید.','error');return;}
+    const feedPerDay=tee_ms/density,enteralRate=feedPerDay/24,fluidFromFeed=feedPerDay*water/100;
 
     resultDiv.innerHTML = `
         <div class="nut-section">
             <div class="nut-section-title"><i class="fas fa-fire"></i> نیاز کالری</div>
             <div class="nut-row"><span>BMR — Harris-Benedict</span><strong>${bmr_hb.toFixed(0)} kcal/day</strong></div>
             <div class="nut-row"><span>BMR — Mifflin-St Jeor</span><strong>${bmr_ms.toFixed(0)} kcal/day</strong></div>
-            <div class="nut-row nut-row-highlight"><span>هدف کالری روزانه (×${stress})</span><strong>${tee_ms} kcal/day</strong></div>
+            <div class="nut-row nut-row-highlight"><span>برآورد انرژی (فعالیت ×1.05، استرس ×${stress})</span><strong>${tee_ms} kcal/day</strong></div>
             <div class="nut-row nut-row-sub"><span>معادل کالری ساعتی</span><strong>${Math.round(tee_ms/24)} kcal/hr</strong></div>
         </div>
         <div class="nut-section">
             <div class="nut-section-title"><i class="fas fa-dna"></i> نیاز پروتئین — ${proteinNote}</div>
             <div class="nut-row"><span>محدوده پروتئین</span><strong>${proteinMin}–${proteinMax} g/kg/day</strong></div>
-            <div class="nut-row nut-row-highlight"><span>هدف پروتئین روزانه</span><strong>${protMinG}–${protMaxG} g/day</strong></div>
+            <div class="nut-row nut-row-highlight"><span>بازهٔ تخمینی پروتئین، نیازمند ارزیابی</span><strong>${protMinG}–${protMaxG} g/day</strong></div>
             <div class="nut-row nut-row-sub"><span>معادل کالری پروتئین</span><strong>${protMinKcal}–${protMaxKcal} kcal/day</strong></div>
         </div>
         <div class="nut-section">
-            <div class="nut-section-title"><i class="fas fa-syringe"></i> تغذیه انترال (فرمول ۱ kcal/mL)</div>
-            <div class="nut-row nut-row-highlight"><span>سرعت پیشنهادی</span><strong>${enteralRateMin}–${enteralRateMax} mL/hr</strong></div>
-            <div class="nut-row nut-row-sub"><span>آب آزاد از تغذیه</span><strong>~${fluidFromFeed} mL/day</strong></div>
+            <div class="nut-section-title"><i class="fas fa-syringe"></i> حجم معادل فرمول کامل (${density} kcal/mL)</div>
+            <div class="nut-row nut-row-highlight"><span>معادل ساعتی با فرض ۲۴ ساعت تغذیه</span><strong>${enteralRate.toFixed(1)} mL/h</strong></div>
+            <div class="nut-row nut-row-sub"><span>آب دریافتی از فرمول (${water}٪ آب)</span><strong>~${Math.round(fluidFromFeed)} mL/day</strong></div><div class="nut-row"><span>حجم روزانهٔ فرمول</span><strong>${Math.round(feedPerDay)} mL/day</strong></div>
         </div>
-        <div class="nut-disclaimer"><i class="fas fa-triangle-exclamation"></i> این محاسبه راهنما است. تغذیه بیماران بحرانی باید با متخصص تغذیه هماهنگ شود.</div>
+        <div class="nut-disclaimer"><i class="fas fa-triangle-exclamation"></i> برآورد آموزشی بزرگسالان است، نه دستور شروع تغذیه یا مایع. پروتئین در کالری فرمول کامل محاسبه شده است. نیاز بیمار بحرانی، زمان تغذیه، محدودیت مایع و هدف انرژی/پروتئین را متخصص تغذیه تعیین می‌کند؛ آب شستشو جداست.</div>
     `;
     resultDiv.style.display = 'block';
     haptic(40);
@@ -5566,7 +5451,7 @@ window.calculateNutrition = function() {
         const genderBtns = document.querySelectorAll('#nutGenderBtns .method-btn-compact');
         genderBtns.forEach(btn => btn.addEventListener('click', function() {
             genderBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+            this.classList.add('active');invalidateToolResult(this);
         }));
     });
 })();
@@ -5684,35 +5569,16 @@ function vbgStep3(phStatus, pco2, hco3, v) {
         }
 
     } else {
-        // Normal pH — look for opposing disorders or true normal
-        // Opposing disorder: e.g. metabolic acidosis + respiratory alkalosis → pH normal
-        if (v.pco2High && v.hco3High) {
-            // Chronic resp acidosis with full metabolic compensation
-            const exp_chronic = 24 + 3.5 * (pco2 - 40) / 10;
-            if (_vbgRange(hco3, exp_chronic - 2, exp_chronic + 2)) {
-                disorders.push({ type:'resp_acidosis_comp', label:'آسیدوز تنفسی مزمن جبران‌شده',
-                    compNote:`جبران متابولیک کامل (HCO₃ انتظاری مزمن: ${exp_chronic.toFixed(1)})`, isMixed: false });
-            } else {
-                disorders.push({ type:'mixed_ra_ma', label:'آسیدوز تنفسی + آلکالوز متابولیک (pH طبیعی)',
-                    compNote:'اختلال مختلط — جبران بیش از حد متابولیک', isMixed: true });
-            }
-        } else if (v.pco2Low && v.hco3Low) {
-            disorders.push({ type:'meta_acidosis_comp', label:'آسیدوز متابولیک جبران‌شده',
-                compNote:'آلکالوز تنفسی جبرانی — pH به محدوده طبیعی رسیده', isMixed: false });
-        } else if (v.hco3Low && v.pco2Low) {
-            disorders.push({ type:'mixed', label:'آسیدوز متابولیک + آلکالوز تنفسی (pH طبیعی)',
-                compNote:'اختلال مختلط با pH طبیعی', isMixed: true });
-        } else if (v.hco3High && v.pco2High) {
-            disorders.push({ type:'mixed', label:'آلکالوز متابولیک + آسیدوز تنفسی (pH طبیعی)',
-                compNote:'اختلال مختلط با pH طبیعی', isMixed: true });
-        } else if (!v.pco2High && !v.pco2Low && !v.hco3High && !v.hco3Low) {
-            disorders.push({ type:'normal', label:'طبیعی', compNote:'هیچ اختلال اسید-باز شناخته‌شده‌ای وجود ندارد', isMixed: false });
+        if(v.hco3Low&&v.pco2Low){
+            const expected=1.5*hco3+8,mixed=!_vbgRange(pco2,expected-2,expected+2);
+            disorders.push({type:mixed?'mixed_meta_resp':'meta_acidosis_comp',label:mixed?'احتمال اختلال مختلط با pH طبیعی':'کاهش همزمان بی‌کربنات و CO₂؛ نیاز به تعیین اختلال اولیه',compNote:`Winter: CO₂ انتظاری ${expected.toFixed(1)} ± 2 mmHg؛ ${mixed?'جبران ساده کافی نیست؛ فرآیند تنفسی همزمان بررسی شود.':'شرح‌حال و مزمن بودن اختلال برای تفسیر لازم است.'}`,isMixed:mixed});
+        } else if(v.pco2High&&v.hco3High){
+            const expected=24+3.5*(pco2-40)/10,mixed=!_vbgRange(hco3,expected-2,expected+2);
+            disorders.push({type:mixed?'mixed_ra_ma':'resp_acidosis_comp',label:mixed?'احتمال اختلال مختلط با pH طبیعی':'الگوی سازگار با آسیدوز تنفسی مزمن؛ نیاز به تطبیق بالینی',compNote:`HCO₃ مزمن انتظاری ${expected.toFixed(1)}؛ شرح‌حال و روند قبلی بررسی شود.`,isMixed:mixed});
+        } else if(!v.pco2High&&!v.pco2Low&&!v.hco3High&&!v.hco3Low){
+            disorders.push({type:'normal',label:'مقادیر در محدودهٔ مرجع شریانی',compNote:'این نتیجه وجود همهٔ اختلال‌ها را رد نمی‌کند؛ زمینهٔ بالینی و آنیون گپ بررسی شود.',isMixed:false});
         } else {
-            // Single variable mildly abnormal
-            if (v.hco3Low) disorders.push({ type:'meta_acidosis_partial', label:'آسیدوز متابولیک خفیف', compNote:'HCO₃ در مرز پایین', isMixed: false });
-            if (v.hco3High) disorders.push({ type:'meta_alkalosis_partial', label:'آلکالوز متابولیک خفیف', compNote:'HCO₃ در مرز بالا', isMixed: false });
-            if (v.pco2High) disorders.push({ type:'resp_acidosis_partial', label:'آسیدوز تنفسی خفیف', compNote:'pCO₂ در مرز بالا', isMixed: false });
-            if (v.pco2Low)  disorders.push({ type:'resp_alkalosis_partial', label:'آلکالوز تنفسی خفیف', compNote:'pCO₂ در مرز پایین', isMixed: false });
+            disorders.push({type:'uncertain',label:'مقادیر ناسازگار یا مرزی؛ نیاز به بررسی',compNote:'نمونه، واحد، صحت اعداد و اختلال‌های مختلط بررسی شوند.',isMixed:false});
         }
     }
 
@@ -5941,7 +5807,7 @@ window.interpretVBG = function() {
     const severity  = vbgSeverity(pH, pco2, hco3);
     const hints     = vbgClinicalHints(disorders, agResult);
 
-    resultEl.innerHTML = vbgBuildHTML(pH, pco2, hco3, be, disorders, agResult, severity, hints, isVBG);
+    resultEl.innerHTML = (isVBG?'<p class="tool-note">این قواعد جبران برای خون شریانی‌اند. مقادیر وریدی به شریانی تبدیل نمی‌شوند؛ تفسیر جبران و اختلال مختلط در VBG مقدماتی است و در صورت نیاز باید با ABG و وضعیت بیمار تأیید شود.</p>':'') + vbgBuildHTML(pH, pco2, hco3, be, disorders, agResult, severity, hints, isVBG);
     resultEl.style.display = 'block';
     haptic(40);
     setTimeout(() => resultEl.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);

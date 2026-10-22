@@ -26,12 +26,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=50">
+    <link rel="stylesheet" href="style.css?v=51">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
     <link rel="stylesheet" href="drug-reference.css?v=8">
     <link rel="stylesheet" href="settings.css?v=3">
     <link rel="stylesheet" href="onboarding.css?v=1">
     <link rel="stylesheet" href="welcome.css?v=2">
+    <link rel="stylesheet" href="calculator-guidance.css?v=1">
+    <link rel="stylesheet" href="reference-offline.css?v=1">
 </head>
 <body>
 
@@ -49,9 +51,9 @@
             </div>
             <div class="loading-status" id="loadingStatus">در حال بارگذاری پایگاه داده دارویی...</div>
             <div class="loading-meta">
-                <span>نسخه 5.3.3</span>
+                <span>نسخه 5.4.0</span>
                 <span class="loading-meta-dot" aria-hidden="true"></span>
-                <span>کاملا آفلاین</span>
+                <span>محاسبه آفلاین · مرجع با دریافت اختیاری</span>
             </div>
             <div class="loading-credit">
                 <span>Designed &amp; developed by</span>
@@ -155,7 +157,7 @@
                                 <div class="volume-selector-enhanced">
                                     <div class="volume-presets" id="volumeOptions"></div>
                                     <div class="volume-custom-input" id="customVolumeContainer" style="display: none;">
-                                        <input type="text" data-numeric="true" id="customVolume" placeholder="حجم دلخواه" min="1" max="5000" inputmode="decimal">
+                                        <input type="text" data-numeric="true" id="customVolume" placeholder="حجم نهایی، شامل دارو — حجم دلخواه" min="1" max="5000" inputmode="decimal">
                                         <span>سی‌سی</span>
                                     </div>
                                 </div>
@@ -257,7 +259,9 @@
                                     </div>
                                 </div>
                             </div>
+                        <div class="control-group" style="grid-column:1/-1"><label>ضریب ست برای محاسبهٔ قطره <small>(اختیاری)</small></label><select id="calculatorDripFactor" class="manual-unit-select" style="width:100%"><option value="">فقط پمپ؛ ضریب ست انتخاب نشده</option><option value="10">10 drops/mL</option><option value="15">15 drops/mL</option><option value="20">20 drops/mL</option><option value="60">60 drops/mL</option></select><p class="tool-note">ضریب را از بستهٔ ست بخوانید؛ حجم محلول تعیین‌کننده نیست.</p></div>
                         </div>
+
 
                         <!-- Sticky Calculate Button -->
                         <div class="calculate-btn-sticky-wrap" id="calculateBtnWrap">
@@ -1009,7 +1013,7 @@
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f97316,#ef4444)"><i class="fas fa-fire"></i></div>
                                 <div class="accordion-title-wrap">
-                                    <span class="accordion-title">درصد سطح سوختگی</span>
+                                    <span class="accordion-title">ثبت نواحی و TBSA سوختگی</span>
                                     <span class="accordion-sub">Total Body Surface Area — TBSA</span>
                                 </div>
                                 <i class="fas fa-chevron-down accordion-chevron"></i>
@@ -1019,7 +1023,11 @@
                                     <button class="burns-age-btn active" id="burnsAdultBtn" onclick="setBurnsAge('adult')"><i class="fas fa-person"></i> بزرگسال</button>
                                     <button class="burns-age-btn" id="burnsPedBtn" onclick="setBurnsAge('pediatric')"><i class="fas fa-child"></i> کودک</button>
                                 </div>
-                                <p class="burns-rule-note" id="burnsRuleNote">قانون نُه — بزرگسال</p>
+                                <label class="calc-toggle-item">TBSA تأییدشده (%، فقط سوختگی نسبی/تمام‌ضخامت)<input id="burnsConfirmedTBSA" type="text" data-numeric="true" class="oxy-input" inputmode="decimal" oninput="updateBurns()"></label>
+                                <div class="control-group"><label>پروتکل تخمین مایع — بزرگسال</label><select id="burnsProtocol" class="manual-unit-select" onchange="updateParkland()"><option value="">طبق دستور/پروتکل مرکز انتخاب کنید</option><option value="2">ABA · 2 mL/kg/%TBSA · فقط بزرگسال ≥20% TBSA</option><option value="4">Parkland سنتی · 4 mL/kg/%TBSA</option></select></div>
+                                <div class="calc-toggles-stack"><label class="calc-toggle-item">ساعت سپری‌شده از آسیب (۰ تا کمتر از ۲۴)<input id="burnsElapsed" type="text" data-numeric="true" class="oxy-input" inputmode="decimal" oninput="updateParkland()"></label><label class="calc-toggle-item">مایع احیای دریافت‌شده از زمان آسیب (mL)<input id="burnsGiven" type="text" data-numeric="true" class="oxy-input" inputmode="decimal" oninput="updateParkland()"></label></div>
+                                <p class="tool-note">زمان از آسیب حساب می‌شود، نه پذیرش. فقط سوختگی نسبی/تمام‌ضخامت. برآورد اولیه نیازمند تنظیم بالینی است؛ کودک به جدول سن‌محور و پروتکل جداگانه نیاز دارد. <a href="https://doi.org/10.1093/jbcr/irad125" target="_blank" rel="noopener">منبع ABA</a> · مرور منبع: 2026-10-21</p>
+                                <p class="burns-rule-note" id="burnsRuleNote">نقشه فقط برای ثبت نواحی است و درصد خودکار تولید نمی‌کند؛ TBSA را با روش معتبر تأیید و جداگانه وارد کنید.</p>
 
                                 <div class="burns-body-wrap">
                                     <div class="burns-body-view">
@@ -1307,7 +1315,7 @@
                                 </div>
                             </div>
 
-                            <!-- Nutritional Calculator -->
+                            <!-- Nutritional Calculator: adult estimates; editable product assumptions -->
                             <div class="accordion-item" id="nutritionAccordionItem">
                                 <button class="accordion-header" onclick="toggleAccordion(this)">
                                     <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f59e0b,#10b981)"><i class="fas fa-utensils"></i></div>
@@ -1374,6 +1382,9 @@
                                         </div>
                                     </div>
 
+                                    <p class="tool-note">برآورد بزرگسالان (۱۸ سال به بالا)؛ در ICU جایگزین سنجش و تجویز متخصص تغذیه نیست.</p>
+                                    <div class="calc-toggles-stack"><label class="calc-toggle-item">چگالی کالری فرمول (kcal/mL)<input id="nutDensity" type="text" data-numeric="true" inputmode="decimal" class="oxy-input" value="1"></label><label class="calc-toggle-item">درصد آب فرمول، از برچسب محصول<input id="nutWater" type="text" data-numeric="true" inputmode="decimal" class="oxy-input" value="85"></label></div>
+                                    <p class="tool-note">۱ kcal/mL و ۸۵٪ آب فقط فرض قابل تغییرند؛ با محصول واقعی تطبیق دهید.</p>
                                     <button class="calculate-btn-enhanced gradient" onclick="calculateNutrition()">
                                         <i class="fas fa-calculator"></i><span>محاسبه</span>
                                     </button>
@@ -1632,7 +1643,7 @@
                                             <option value="calcium">کلسیم — Ca (وزن ۲۰)</option>
                                             <option value="magnesium">منیزیم — Mg (وزن ۱۲)</option>
                                             <option value="sodium_bicarbonate">بی‌کربنات سدیم — NaHCO₃ (وزن ۸۴)</option>
-                                        </select>
+                                        </select><p class="tool-note">کلسیم و منیزیم: جرم یون عنصری، نه جرم نمک یا فرآورده (گلوکونات/کلرید/سولفات). برای فرآوردهٔ تزریقی از برچسب همان محصول استفاده کنید. Ca: 20.039 و Mg: 12.1525 mg/mEq.</p>
                                     </div>
                                     <div class="bidir-converter">
                                         <div class="bidir-field">
@@ -1897,7 +1908,7 @@
             <input type="text" id="userNameInput" class="username-input" placeholder="نام خود را وارد کنید" maxlength="30" autocomplete="off">
             <button class="username-save-btn" id="userNameSaveBtn" aria-label="ذخیره نام"><i class="fas fa-check"></i></button>
         </div>
-        <p class="settings-hint">این نام فقط روی همین دستگاه ذخیره می‌شود.</p>
+        <p class="settings-hint">این نام فقط روی همین دستگاه ذخیره می‌شود. برای حذف، کادر را خالی و ذخیره کنید.</p>
     </div>
 </div></section>
 
@@ -2005,11 +2016,11 @@
                 <section class="settings-group settings-card" data-settings-section="alerts">
                     <button type="button" id="settings-trigger-alerts" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-alerts"><i class="fas fa-bell"></i><span class="settings-card-title"> اعلان‌ها</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-alerts" role="region" aria-labelledby="settings-trigger-alerts" hidden>
                     <div class="setting-item">
-                        <span>هشدار دوز</span>
+                        <span>هشدار بازه‌ها و حدود ثبت‌شده</span>
                         <label class="switch"><input type="checkbox" id="doseAlertToggle" checked><span class="slider"></span></label>
                     </div>
                     <div class="setting-item">
-                        <span>هشدار سازگاری</span>
+                        <span>نمایش فهرست سازگاری ثبت‌شده</span>
                         <label class="switch"><input type="checkbox" id="compatAlertToggle" checked><span class="slider"></span></label>
                     </div>
                     <div class="setting-item">
@@ -2074,7 +2085,7 @@
                 <section class="settings-group settings-card" data-settings-section="about">
                     <button type="button" id="settings-trigger-about" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-about"><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-about" role="region" aria-labelledby="settings-trigger-about" hidden>
                     <div class="about-info">
-                        <div class="about-row"><span>نسخه</span><span>5.3.3</span></div>
+                        <div class="about-row"><span>نسخه</span><span>5.4.0</span></div>
                         <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
@@ -2145,39 +2156,38 @@
     </div>
 
     <script src="drugDatabase.js"></script>
-    <script src="converters.js?v=2"></script>
-    <script src="calculation-core.js?v=35"></script>
-    <script src="script.js?v=58"></script>
+    <script src="converters.js?v=3"></script>
+    <script src="calculation-core.js?v=36"></script>
+    <script src="script.js?v=59"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
-    <script src="drug-reference.js?v=8"></script>
+    <script src="drug-reference.js?v=9"></script>
     <script src="onboarding.js?v=5"></script>
     <script src="welcome.js?v=2"></script>
+    <script src="calculator-guidance.js?v=1"></script>
+    <script src="reference-offline.js?v=1"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
-    <script src="voice-commands.js?v=45"></script>
-    <script src="voice-ui.js?v=42"></script>
+    <script src="voice-commands.js?v=46"></script>
+    <script src="voice-ui.js?v=43"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=59', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=60', { updateViaCache: 'none' });
             });
         }
     </script>
     <script>
-    // Safety timeout: force hide loading screen after 5 seconds
-    setTimeout(function() {
-        var loadingScreen = document.getElementById('loadingScreen');
-        if (loadingScreen && loadingScreen.style.display !== 'none') {
-            if (typeof window.hideLoadingScreen === 'function') {
-                window.hideLoadingScreen();
-            } else {
-                loadingScreen.classList.add('fade-out');
-                setTimeout(function() { loadingScreen.style.display = 'none'; }, 550);
-            }
-        }
-    }, 5000);
+    // A stalled initializer must not present a blank app as ready.
+    setTimeout(function(){
+        var screen=document.getElementById('loadingScreen');
+        if(!screen||screen.style.display==='none')return;
+        if(window.FoxiMedAppReady&&typeof window.hideLoadingScreen==='function'){window.hideLoadingScreen();return;}
+        var status=document.getElementById('loadingStatus');
+        if(status)status.textContent='راه‌اندازی کامل نشد. اتصال را بررسی و صفحه را بازخوانی کنید.';
+        var button=document.createElement('button');button.type='button';button.textContent='بازخوانی برنامه';button.onclick=function(){location.reload();};screen.querySelector('.loading-content').append(button);
+    },12000);
 </script>
     <!-- Help Popover -->
     <div class="help-popover" id="helpPopover" style="display:none;">

@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "independentUnitCases": 36,
+  "checks": [
+    "Independent units, required fields across 14 drugs, weight/custom/reverse transitions, complete history, voice conversion, missing weight, precision, electrolyte factors, daily water, timed burn estimates with confirmed TBSA, stale results, mixed gas, compatibility aliases, cancel deletion and alert preferences",
+    "Corrupt settings recover and initialize all drugs"
+  ],
+  "layouts": [
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "light",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "dark",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "light",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "dark",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "mode": "light",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 390,
+      "height": 664,
+      "mode": "dark",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "light",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "dark",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "light",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "dark",
+      "overflow": 0,
+      "required": 1,
+      "waiting": true
+    }
+  ]
+}

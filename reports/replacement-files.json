@@ -1,25 +1,43 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "persian-input-and-welcome-upgrade",
+  "revision": "5.4.0-approved-audit-calculator-guidance-offline",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "reason": "Retain voice/data validation and validate syntax of the new welcome/setup module before publication.",
-      "bytes": 7591,
-      "sha256": "725058c8c6b838bd0fa54e97d48a7498befd23a4f5edb28551b138493e496c12"
+      "reason": "Retain existing voice build and validate new modules and exact offline manifest before publishing.",
+      "bytes": 7751,
+      "sha256": "f64afd11b727f201ffcbbf908244aa064e018821fc170f54b9a8a131bb5e4b5f"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
       "reason": "Current cumulative upload paths, new welcome assets, install/setup/tip checks and real-device validation scope.",
-      "bytes": 5026,
-      "sha256": "13a5a6fc542f56bcc1ef630314349ed0ffc1e1924e3a4209fff82a7934663499"
+      "bytes": 6501,
+      "sha256": "fcb492d5b46ffa4b1f1a883643aaeb6e63669c9f27184b0967731d403788d79e"
+    },
+    {
+      "path": "calculation-core.js",
+      "reason": "Shared dimension-checked mass/time/weight conversion and forward/reverse infusion arithmetic.",
+      "bytes": 3674,
+      "sha256": "09052ec376365a56c0b9bd795c5612ae8e20769189bc60da7ba14323e057e07c"
+    },
+    {
+      "path": "calculator-guidance.css",
+      "reason": "Subtle existing-theme outlines, subdued incomplete button and full-color ready button; no palette or target-size changes.",
+      "bytes": 738,
+      "sha256": "10608e5aced310552ae80af93610c190173e6490adc7f07fbb88a2ef0b8b932b"
+    },
+    {
+      "path": "calculator-guidance.js",
+      "reason": "Mode-aware quiet required-field guidance and Calculate readiness, including weight and custom fields.",
+      "bytes": 3257,
+      "sha256": "08e5d1f7d909127393c003b0cf206f1b91bdc8da30bc45f22d56cc290719ad35"
     },
     {
       "path": "converters.js",
-      "reason": "Shared Persian/Arabic-aware numeric parsing in all converter paths.",
-      "bytes": 18594,
-      "sha256": "e31ae66dccc7fb57839d50ebe3967fa2a5ec6cabef6fdaad93b547f0a2676a84"
+      "reason": "Finite input handling and matching elemental Ca/Mg equivalent weights.",
+      "bytes": 18632,
+      "sha256": "f9fed477152b30e6b8b0e04fdf34e3fff9b814089d4b27bd8cf16825aa9f0e62"
     },
     {
       "path": "drug-reference-book-01.js",
@@ -101,21 +119,45 @@
     },
     {
       "path": "drug-reference.js",
-      "reason": "Preserve the activated topic heading while switching; follow PDF topic order, show brands first and keep every topic initially closed.",
-      "bytes": 26405,
-      "sha256": "07c86f94c4a88c1118bb0c9d0370b660c552c9e3b7bb46808253078050b5d7c9"
+      "reason": "Visible per-entry provenance and unfinished clinical review status.",
+      "bytes": 26937,
+      "sha256": "ff8d982232ad9c60f22e230625ac7611bd2bfde4a71e1a93168aa69aff03dd73"
+    },
+    {
+      "path": "drugDatabase.js",
+      "reason": "Targeted sourced corrections to heparin monitoring and norepinephrine access notes; no claim of full formulary validation.",
+      "bytes": 62030,
+      "sha256": "2bdc4ebd29449b8ab39feee9c2b0460567b9d24be33dba3bb45cc3b5dd092ca5"
+    },
+    {
+      "path": "icons/fox-mark-clean-mask.png",
+      "reason": "Lossless PNG recompression; decoded RGBA pixels and dimensions identical, preserving logo quality/effect.",
+      "bytes": 15407,
+      "sha256": "df2f8b50e87bcc643202b336585e7eb960c9907c42a2299ea3a624231cebce49"
+    },
+    {
+      "path": "icons/fox-mark-mask.png",
+      "reason": "Lossless PNG recompression; decoded RGBA pixels and dimensions identical, preserving logo quality/effect.",
+      "bytes": 1265904,
+      "sha256": "101e237fb51afd15d6993e5d098e5a35d02c90327ed46b9e0af183f9378d613d"
+    },
+    {
+      "path": "icons/fox-mark.png",
+      "reason": "Lossless PNG recompression; decoded RGBA pixels and dimensions identical, preserving logo quality/effect.",
+      "bytes": 1265904,
+      "sha256": "101e237fb51afd15d6993e5d098e5a35d02c90327ed46b9e0af183f9378d613d"
     },
     {
       "path": "index.html",
-      "reason": "Replace old install/name popups with optional setup root; add Settings time/tip preferences and install/setup replay; refresh matching assets.",
-      "bytes": 178578,
-      "sha256": "b83a4f38e66c153448cc65f23adf5336118e915097cd48e5d7a99b7a1378a1ed"
+      "reason": "Versioned runtime assets; calculator and offline controls; explicit final-volume, product assumptions, clinical scope and confirmed-TBSA inputs; stalled-initializer recovery.",
+      "bytes": 182949,
+      "sha256": "7e5d67c4c7c16a4ef6406bbbbcf61864f61037f9d3621509a003907ebf46f31b"
     },
     {
       "path": "manifest.json",
-      "reason": "Display version 5.3.3.",
+      "reason": "Release version 5.4.0.",
       "bytes": 1810,
-      "sha256": "f3b34bc4837d960e6b6b695357a9e9f4eb407a59ea6b101c2657fa3553cefa33"
+      "sha256": "49016e4e06dbbd616c0ad4e99f441a51236af5999342e85f37867efc7b351866"
     },
     {
       "path": "onboarding.css",
@@ -128,6 +170,30 @@
       "reason": "Tutorial numeric practice accepts Persian and Arabic digits.",
       "bytes": 15766,
       "sha256": "0f238dba6a43df54125a902fc79cdedc50ad2f1a70fcb5bc46d91af324daee45"
+    },
+    {
+      "path": "reference-offline-manifest.json",
+      "reason": "Exact size/SHA-256 inventory of the opt-in whole-reference and same-origin shell package.",
+      "bytes": 6973,
+      "sha256": "e0ece56c0103317ee1406bbf496e1797d4b2ac5ca9211384af7f8e35dc21843a"
+    },
+    {
+      "path": "reference-offline.css",
+      "reason": "Responsive reference download card using existing theme tokens.",
+      "bytes": 682,
+      "sha256": "95011fd53f26064770febf2f320cf20f37f02cddbcaa454a9645420fb69914ed"
+    },
+    {
+      "path": "reference-offline.js",
+      "reason": "Explicit opt-in download with progress, cancel/resume, integrity validation, error/quota/eviction handling and removal.",
+      "bytes": 10777,
+      "sha256": "953d9cea36557f75433e48cebaecae3d12e0fba2dcfc4c81df3a913d8e0cbd71"
+    },
+    {
+      "path": "reports/AUDIT-FIXES-5.4.0.md",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 12731,
+      "sha256": "3433bf10ab6ac5040c908dd586e8d8fe95de7f773c43c8735803f94d9a33520d"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -143,9 +209,9 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current first-launch/tip/responsive regression results with retained earlier checks and explicit platform simulation limits.",
-      "bytes": 5045,
-      "sha256": "921947c3619b95faafea233bbdc75f5c93b6dd48f21f7bcb48cc7789c0495a07"
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 2019,
+      "sha256": "25c9854cfd53c37f5c3b43809d7c667593f3acc87e20828937a2f68f72fc34ea"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -155,9 +221,9 @@
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Install-first flow, optional setup/tutorial, quiet tips, responsive/animation behavior and cross-container storage limits.",
-      "bytes": 23992,
-      "sha256": "cf9f05867fc0ef684fe244af7b7162ef07d051dcda7b035138a8dae82406774e"
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 25183,
+      "sha256": "cc1f2081045efb7e7504e8f5599204f886882dcd81fa6e726e942aefec68c107"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -170,6 +236,12 @@
       "reason": "Every English/Persian title difference from the previous edited-files delivery.",
       "bytes": 5913,
       "sha256": "3bdfdebb2d8ffb30a53c8fce941f3921817b80d8ace4fb14190450cc63a742e4"
+    },
+    {
+      "path": "reports/calculator-safety-results.json",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 1898,
+      "sha256": "95ac7cab7bf9b0a58866de2c4f1a9404c781afdb19ff1cad3dc5f8aa44d5275c"
     },
     {
       "path": "reports/compact-accordion-checks.json",
@@ -257,9 +329,21 @@
     },
     {
       "path": "reports/persian-numbers-results.json",
-      "reason": "Updated verification or cumulative replacement.",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
       "bytes": 170,
-      "sha256": "d0db6708cfe21af7a89847777e562c820cdede25b7bea9ddd255a1f166251801"
+      "sha256": "bfb1fa9edaea72c83eafb9e35b714a8601ef741923fb0d853de44f8d7fe88570"
+    },
+    {
+      "path": "reports/reference-offline-results.json",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 1005,
+      "sha256": "1952d30696df9dde19a612d76caeff7554ee46bc664d061ee7cf3c21ec7df71b"
+    },
+    {
+      "path": "reports/scope-preservation-5.4.0.json",
+      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "bytes": 690,
+      "sha256": "0c59e98398b6d3beb71b3b046196cf3c885c47524d4c8e198d060e5bb4fb578a"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -299,9 +383,15 @@
     },
     {
       "path": "script.js",
-      "reason": "Persian/Arabic numeric fields and shared parsing; preserve weight edits; clear stale manual results; coordinate one-time welcome invitation.",
-      "bytes": 298663,
-      "sha256": "a4ae93ba5f7d1ac915a9f128728b2a29cff300116df30947f70049655b10c977"
+      "reason": "Canonical infusion state/output/history; dimension checks, safe recovery, required-field events, corrected tool math/state, confirmed TBSA workflow, scoped warnings, shorter readiness-gated loading and shortcuts.",
+      "bytes": 308390,
+      "sha256": "e2c047f416d69179af0ff8766ee01d81b826f92e305db91bcd7a2b919f0a3281"
+    },
+    {
+      "path": "scripts/build-reference-offline-manifest.py",
+      "reason": "Reproducible offline inventory generation and stale-manifest validation for CI.",
+      "bytes": 1262,
+      "sha256": "49549efc11d99c7d081afcc02b697ab4ee0d8268fcc5e88bf784ed839ef33ec6"
     },
     {
       "path": "scripts/check-voice-assets.py",
@@ -341,9 +431,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Cache the new welcome module/styles and refresh app-shell script/tutorial revisions.",
-      "bytes": 7592,
-      "sha256": "9318a6d4b876264eb8c944b410654fac38eeeb377f2fa995cfc9ccbabd6543a6"
+      "reason": "Fresh shell versions; retained stable model/reference caches; verified-download refresh route and offline navigation fallback.",
+      "bytes": 8823,
+      "sha256": "4eff209a6cc5f4a9bd2894308e86836ad8fad7e0237c1a865b0d7ae4cb7ef0d8"
     },
     {
       "path": "settings.css",
@@ -356,6 +446,12 @@
       "reason": "Responsive startup fox up to 300 px and short-landscape loading grid.",
       "bytes": 236747,
       "sha256": "62037b938f937f8a598e133fe72cb87b5966baba25a13b79864cc8ef13c9f2b0"
+    },
+    {
+      "path": "tests/calculator-safety.test.js",
+      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "bytes": 13727,
+      "sha256": "c46662149a37710d645dab6e7cddee0848a99001a77b0d445b475ecf1acff073"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -389,9 +485,15 @@
     },
     {
       "path": "tests/persian-numbers.test.js",
-      "reason": "Browser numeric normalization, input events and 16 equivalent calculation paths across three digit sets.",
-      "bytes": 7209,
-      "sha256": "3b95e97fafbca2b8f8467e9b6adce69b11c2c04928c17132fef41cca4370405a"
+      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "bytes": 7234,
+      "sha256": "ce6b757b16f0fd7c49c1a1bc965909d740dc554b8f5b9e58b463fc1713ca0db7"
+    },
+    {
+      "path": "tests/reference-offline.test.js",
+      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "bytes": 8476,
+      "sha256": "9677df9fadb880c71fe7dd3878efd2f91d9ed1a85e96bfb50c16321b5644ce7f"
     },
     {
       "path": "tests/settings-mobile.test.js",
@@ -419,9 +521,9 @@
     },
     {
       "path": "tests/voice-pipeline-smoke.test.js",
-      "reason": "Retain voice smoke checks; validate replacement of the legacy name/install popups and optional device-local personalization.",
-      "bytes": 49406,
-      "sha256": "abb19adc23e76aacee470741d726b1e4e2247e40a1f9dd76e0d789510ff8f0d7"
+      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "bytes": 49381,
+      "sha256": "0cb69ef21971856807f65545cdd778db3ef1c9f7f010bcc9e5aee900b64dfdbe"
     },
     {
       "path": "tests/welcome-discovery.test.js",
@@ -443,9 +545,15 @@
     },
     {
       "path": "voice-commands.js",
-      "reason": "Open the Settings contact region with the shared controller and size the dialog to the visible viewport.",
-      "bytes": 127847,
-      "sha256": "1d491785615e5adf03aacb843adf0e6703b97987c56a327bfee12277511dc59c"
+      "reason": "Canonical units before confirmation/execution; incompatible units and absent actual weight rejected; drug-only navigation retained.",
+      "bytes": 130939,
+      "sha256": "323397a75baa93cdba4d1c035ded3981c41ae434d309d47d91b8d8435fcffab3"
+    },
+    {
+      "path": "voice-ui.js",
+      "reason": "Remove duplicate local log export/deletion registration; Settings is the sole owner, with confirmed deletion.",
+      "bytes": 35479,
+      "sha256": "264c361c9e0f9a03cc3b9e4f122dba381fb4e1010f9466aa9524fa7c41ede267"
     },
     {
       "path": "welcome.css",

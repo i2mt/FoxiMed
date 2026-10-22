@@ -31,7 +31,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
    ['Drip',{dripVolume:500,dripTime:8},'calculateDripRateLive','dripResult'],
    ['Oxygen',{oxyCylinderSize:5,oxyPressure:150,oxyFlow:2},'calculateOxygen','oxyResult'],
    ['Ventilator',{ventHeight:170},'calculateVentTV','ventResult'],
-   ['Nutrition',{nutWeight:70.5,nutHeight:170,nutAge:40},'calculateNutrition','nutResult']
+   ['Nutrition',{nutWeight:70.5,nutHeight:170,nutAge:40,nutDensity:1,nutWater:85},'calculateNutrition','nutResult']
   ];
   const read=id=>{const n=document.getElementById(id);return n instanceof HTMLInputElement?n.value:n.textContent};
   for(const [label,values,fn,result,arg] of cases){

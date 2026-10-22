@@ -82,6 +82,7 @@ function testCommandRouting() {
         PersianNumbers: { toLatin: toLatinDigits },
         drugDatabase,
         AppState: { settings: {} },
+        updateReverseUI() {},
         saveSettings() {},
         applyThemeMode() {},
         applySettings() {},
@@ -96,6 +97,7 @@ function testCommandRouting() {
     window.window = window;
     window.drugDatabase = drugDatabase;
     vm.createContext(context);
+    vm.runInContext(read('calculation-core.js'), context);
     vm.runInContext(read('voice-commands.js'), context, { filename: 'voice-commands.js' });
 
     function run(phrase) {
@@ -186,11 +188,11 @@ function testCommandRouting() {
         'TNG recovery must confirm the canonical drug and method without fuzzy decoder text');
 
     const observedRizehDrugCases = [
-        ['امپوزیان میادوللان دو می گرم در ساعت', 'میدازولام', '۲ میلی‌گرم در ساعت'],
-        ['امفزیون فانیل صد میکروگرم در ساعت', 'فنتانیل', '۱۰۰ میکروگرم در ساعت'],
-        ['امپزیون فزماید چهار میلیگرم در دقیقه', 'فوروزماید', '۴ میلی‌گرم در دقیقه'],
-        ['امزیون فزماید چهار می میرم در دقیقا با میکروس', 'فوروزماید', '۴ میلی‌گرم در دقیقه'],
-        ['امپزیون اکتوت تاید پنجاه میترلو در ساعت', 'اکترئوتاید', '۵۰ میکروگرم در ساعت'],
+        ['امپوزیان میادوللان دو می گرم در ساعت', 'میدازولام', '۲ mg/h'],
+        ['امفزیون فانیل صد میکروگرم در ساعت', 'فنتانیل', '۱۰۰ mcg/h'],
+        ['امپزیون فزماید چهار میلیگرم در دقیقه', 'فوروزماید', '۲۴۰ mg/h'],
+        ['امزیون فزماید چهار می میرم در دقیقا با میکروس', 'فوروزماید', '۲۴۰ mg/h'],
+        ['امپزیون اکتوت تاید پنجاه میترلو در ساعت', 'اکترئوتاید', '۵۰ mcg/h'],
         ['همپزیان دوپامامی', 'دوپامین', null],
         ['امپزیون آامیاد داران', 'آمیودارون', null],
         ['امپزیون عامیه دارون', 'آمیودارون', null],
@@ -573,7 +575,7 @@ function testDeploymentWiring() {
         voiceCommands.includes('function handleHumptyVoice(params)') && voiceCommands.includes('params.humptyScores'),
         'Humpty Dumpty must expose the seven-domain pediatric calculator and voice workflow');
     assert(!index.includes('id="namePrompt"') && index.includes('id="firstLaunchSetup"') &&
-        !script.includes("localStorage.removeItem('userName')") &&
+        script.includes("if(!cleanName)localStorage.removeItem('userName')") &&
         read('welcome.js').includes('setupDismiss') && read('welcome.js').includes('اختیاری'),
         'Optional first-launch setup must replace the old name popup and preserve existing names');
     assert(!index.includes('id="pwaModal"') && read('welcome.js').includes('setupInstall') && script.includes('window.FoxiMedInstall='),
@@ -587,7 +589,7 @@ function testDeploymentWiring() {
         'Persian and Latin Hediyeh variants must receive the requested personalized reply');
     assert(script.includes('سازگاری به غلظت، حلال، فرمولاسیون و زمان تماس وابسته است'),
         'Y-site matrix must disclose context dependence and require verification');
-    assert(index.includes('calculation-core.js?v=35') && serviceWorker.includes('calculation-core.js?v=35'),
+    assert(index.includes('calculation-core.js?v=36') && serviceWorker.includes('calculation-core.js?v=36'),
         'tested calculation core must be loaded and cached');
 }
 

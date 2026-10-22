@@ -1237,7 +1237,7 @@
     function formatConfirmationNumber(value) {
         const number = Number(value);
         if (!Number.isFinite(number)) return '';
-        try { return number.toLocaleString('fa-IR', { maximumFractionDigits: 2 }); }
+        try { return number.toLocaleString('fa-IR', { maximumFractionDigits: 12 }); }
         catch (e) { return String(number); }
     }
 
@@ -1253,6 +1253,7 @@
 
     function formatDosePhrase(params) {
         if (!params || !Number.isFinite(Number(params.dose))) return '';
+        if(params.doseUnitFull)return formatConfirmationNumber(params.dose)+' '+params.doseUnitFull;
         let phrase = formatConfirmationNumber(params.dose);
         if (params.doseUnit) phrase += ' ' + formatDoseUnit(params.doseUnit);
         if (params.ratePeriod === 'hour') phrase += ' در ساعت';
@@ -1321,6 +1322,7 @@
         }
         const dosePhrase = formatDosePhrase(params);
         if (dosePhrase) lines.push('دوز/دستور: ' + dosePhrase);
+        if(params.unitConversionText)lines.push(params.unitConversionText);
         if (params.flow) lines.push('جریان: ' + formatConfirmationNumber(params.flow) + ' لیتر در دقیقه');
         if (params.rassScore !== undefined) lines.push('امتیاز RASS: ' + formatConfirmationNumber(params.rassScore));
         if (params.bradenScores) lines.push('امتیازهای Braden: ' + params.bradenScores.map(formatConfirmationNumber).join('، '));
@@ -1330,7 +1332,30 @@
         return lines.join(' · ');
     }
 
+    function prepareDrugCommand(text,params) {
+        const drug=drugDatabase[params.drugId||findDrugName(text)];
+        if(!drug)throw Error('نام دارو را روشن بگویید.');
+        const core=window.FoxiCalcCore;
+        if(!core)throw Error('موتور تبدیل واحد آماده نیست.');
+        const full=String(text).match(/(?:units|mcg|mg|g)(?:\s*\/\s*kg)?\s*\/\s*(?:minute|min|hour|hr|h)(?![a-z])/i)?.[0]?.replace(/\s/g,'');
+        const perKg=!!full?.includes('/kg')||/\/kg|به ازای.*کیلو|بر کیلو/i.test(text);
+        const weighted=!!drug.weightBased?.active&&(perKg||params.weight!==undefined);
+        if(perKg&&!drug.weightBased?.active)throw Error('این دارو در این محاسبه‌گر واحد وزنی ندارد؛ دستور را با واحد نمایش‌داده‌شده وارد کنید.');
+        if(weighted&&(!Number.isFinite(params.weight)||params.weight<=0||params.weight>1000))throw Error('وزن واقعی بیمار مشخص نیست. دستور را همراه وزن بیمار دوباره بگویید؛ وزن پیش‌فرض استفاده نمی‌شود.');
+        const target=weighted?drug.weightBased.unit:(drug.weightBased?.nonWeightUnit||drug.standardUnit),parts=core.doseParts(target);
+        const period=params.ratePeriod==='minute'?'min':params.ratePeriod==='hour'?'h':parts.perMinute?'min':'h';
+        const source=full||((params.doseUnit||parts.base)+(perKg||(!params.doseUnit&&weighted)?'/kg':'')+'/'+period);
+        const dose=params.dose===undefined?undefined:core.convertDose(params.dose,source,target,params.weight);
+        if(params.volume!==undefined&&(!Number.isFinite(params.volume)||params.volume<=0))throw Error('حجم نهایی محلول معتبر نیست.');
+        if(params.ampoules!==undefined&&(!Number.isInteger(params.ampoules)||params.ampoules<1||params.ampoules>1000))throw Error('تعداد آمپول معتبر نیست.');
+        const next={...params,drugId:params.drugId||findDrugName(text),dose,doseUnit:parts.base,doseUnitFull:target,ratePeriod:parts.perMinute?'minute':'hour',weighted};
+        if(params.customAmount!==undefined){next.customAmount=core.convertAmount(params.customAmount,params.customUnit,drug.ampouleOptions[0].unit);next.customUnit=drug.ampouleOptions[0].unit;}
+        next.unitConversionText=source!==target?'واحد ورودی به '+target+' تبدیل شد.':'';
+        return Object.freeze(next);
+    }
+
     function dispatchCommand(cmd, text, params) {
+        if(cmd==='drug'){try{params=prepareDrugCommand(text,params);}catch(error){showVoiceResult(error.message||'واحد دوز یا مقدار دارو سازگار نیست؛ ورودی را بررسی کنید.','error');return;}}
         if (!CLINICAL_CONFIRM_COMMANDS.has(cmd)) {
             executeCommand(cmd, text, params);
             recordCompletedAction(cmd, params);
@@ -1607,10 +1632,11 @@
         }
 
         selectDrug(drugId);
+        AppState.reverseMode=false;updateReverseUI();
         const drug = drugDatabase[drugId];
 
         if (params.method) {
-            document.querySelectorAll('.method-selector-compact .method-btn-compact').forEach(function (btn) {
+            document.querySelectorAll('#calculatorControls .method-selector-compact .method-btn-compact').forEach(function (btn) {
                 if (btn.dataset.method === params.method) btn.click();
             });
         }
@@ -1641,21 +1667,21 @@
 
         if (params.customAmount !== undefined && params.customUnit) {
             const isInsulin = drug.id === 'insulin';
-            if (!isInsulin && DOM.customAmountToggleClickRow) DOM.customAmountToggleClickRow.click();
+            if (!isInsulin && !AppState.useCustomDrugAmount && DOM.customAmountToggleClickRow) DOM.customAmountToggleClickRow.click();
             if (DOM.customAmountInput) {
                 DOM.customAmountInput.value = params.customAmount;
                 DOM.customAmountInput.dataset.numericValue = params.customAmount;
             }
         }
 
-        const useWeight = (params.weight !== undefined) || text.includes('/kg');
+        const useWeight = !!params.weighted;
         if (useWeight && DOM.weightCheckbox && DOM.patientWeight) {
             DOM.weightCheckbox.checked = true;
             AppState.useWeight = true;
             DOM.patientWeight.disabled = false;
             if (DOM.weightIosToggle) DOM.weightIosToggle.classList.add('on');
             if (DOM.weightInputRow) DOM.weightInputRow.style.display = 'flex';
-            const w = params.weight || (drug.weightBased && drug.weightBased.defaultWeight) || 70;
+            const w = params.weight;
             DOM.patientWeight.value = w;
             DOM.patientWeight.dataset.numericValue = w;
             updateWeightBasedUnit(drug);
@@ -1664,17 +1690,17 @@
             AppState.useWeight = false;
             if (DOM.weightIosToggle) DOM.weightIosToggle.classList.remove('on');
             if (DOM.weightInputRow) DOM.weightInputRow.style.display = 'none';
-            if (DOM.patientWeight) DOM.patientWeight.disabled = true;
+            if (DOM.patientWeight) {DOM.patientWeight.disabled = true;DOM.patientWeight.value='';}
         }
 
-        let doseVal = params.dose || null;
-        if (!doseVal || doseVal <= 0) doseVal = extractDoseFromText(text);
+        const doseVal = params.dose;
         if (doseVal !== null && doseVal > 0) {
             if (DOM.doctorOrder) {
                 DOM.doctorOrder.value = doseVal;
                 DOM.doctorOrder.dataset.numericValue = doseVal;
             }
         } else {
+            if(AppState.currentTab!=='calculator')switchTab('calculator');window.FoxiCalculatorGuidance?.refresh();
             showVoiceResult('مقدار دوز رو نگرفتم؛ دوز رو هم بگو.', 'error');
             return;
         }
@@ -1682,7 +1708,8 @@
         try {
             if (AppState.currentTab !== 'calculator') switchTab('calculator');
             updateDoseRangeIndicator();
-            if (AppState.reverseMode) calculateReverse(); else calculateInfusion();
+            const completed=calculateInfusion();
+            if(completed===false){showVoiceResult('محاسبه اجرا نشد؛ ورودی‌ها و واحدها را بررسی کنید.','error');return;}
             setTimeout(function () {
                 const results = document.getElementById('resultsSection');
                 if (results && results.style.display === 'block') {

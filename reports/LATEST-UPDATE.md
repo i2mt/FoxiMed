@@ -1,3 +1,17 @@
+# FoxiMed 5.4.0 — calculator guidance and approved audit fixes
+
+Updated 22 October 2026. Prepared for upload; not deployed.
+
+The main calculator quietly highlights missing required fields and restores the Calculate button to its full existing theme color when inputs are complete. Unit conversion, history, tool state, preparation wording and optional whole-reference offline storage are updated. The larger fox retains identical decoded pixels, its glow and fill effect, with lossless file-size reduction.
+
+Read [AUDIT-FIXES-5.4.0.md](AUDIT-FIXES-5.4.0.md) for the disposition of all 35 findings, exclusions, tests and clinical/device limits. Read [FINAL-CHECKS.json](FINAL-CHECKS.json) for current test status. Earlier results below are historical.
+
+The offline opt-in includes all monograph chunks and the original PDF, approximately 23.9 MB before transfer compression. It supports progress, cancellation, resume and integrity checks. The burn diagram records regions only; a separately confirmed TBSA is required for adult fluid estimates. The extracted drug monographs and pair-specific compatibility claims still need qualified clinical review.
+
+---
+
+## Earlier cumulative changes
+
 # Persian-number input and clearer welcome setup
 
 Updated 2026-10-21. This cumulative replacement package includes the earlier welcome, Settings, tutorial and drug-reader work. It has not been deployed.

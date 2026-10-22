@@ -32,8 +32,8 @@ function convertElectrolyte() {
     const factors = {
         sodium: { mEqToMg: 23, mgTomEq: 0.0435 },
         potassium: { mEqToMg: 39, mgTomEq: 0.0256 },
-        calcium: { mEqToMg: 20, mgTomEq: 0.05 },
-        magnesium: { mEqToMg: 12, mgTomEq: 0.0833 },
+        calcium: { mEqToMg: 20.039, mgTomEq: 1/20.039 },
+        magnesium: { mEqToMg: 12.1525, mgTomEq: 1/12.1525 },
         sodium_bicarbonate: { mEqToMg: 84, mgTomEq: 0.0119 }  // NaHCO3 MW = 84
     };
     
@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!sourceEl) return;
         const raw = sourceEl.value;
         const value = PersianNumbers ? PersianNumbers.parseNumber(raw) : parseFloat(raw);
-        if (!raw || isNaN(value)) {
+        if (!raw || !Number.isFinite(value) || value<0) {
             Object.keys(IDS).forEach(u => { if (u !== sourceUnit) { const el = document.getElementById(IDS[u]); if (el) el.value = ''; } });
             return;
         }

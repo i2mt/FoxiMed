@@ -179,7 +179,7 @@
       }
     }
     const heading = '<div class="drug-reference-reader-heading"><h3>اطلاعات دارو</h3><p>موضوع مورد نظرتان را انتخاب کنید</p></div>';
-    return '<div class="drug-reference-reader">' + metadataHTML(d) + heading + '<div class="drug-reference-detail-body" data-drug-topics>' +
+    return '<div class="drug-reference-reader"><p class="drug-reference-status">'+(d.sourceText?'متن استخراج‌شده از کتاب؛ بازبینی مستقل بالینی تکمیل نشده و تاریخ بازبینی بالینی ثبت نشده است. برای دوز و تصمیم درمانی، نسخهٔ اصلی و منبع به‌روز را بررسی کنید.':'منبع اختصاصی و تاریخ بازبینی بالینی ثبت نشده است؛ اطلاعات این مدخل نیازمند تأیید با منبع به‌روز است.')+'</p>' + metadataHTML(d) + heading + '<div class="drug-reference-detail-body" data-drug-topics>' +
       topics.map(s=>section(s.title, s.forms ? '<div class="drug-reference-form-rows">' + paragraphs(s.text,true) + '</div>' : paragraphs(s.text,/شناسه/.test(s.title)))).join('') +
       (!topics.length ? '<p class="drug-reference-status">اطلاعات تفصیلی برای این مدخل ثبت نشده است.</p>' : '') + '</div>' + sourceFooter(d) + '</div>';
   }

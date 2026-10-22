@@ -1,0 +1,29 @@
+{
+  "style.css_unchanged": true,
+  "settings.css_unchanged": true,
+  "voice-assistant.css_unchanged": true,
+  "telegram_controls_unchanged": true,
+  "assistant_warmup_conditions_unchanged": true,
+  "model_cache_name_unchanged": true,
+  "viewport_meta_unchanged": true,
+  "lossless_assets": [
+    {
+      "file": "fox-mark.png",
+      "before": 1381741,
+      "after": 1265904,
+      "identicalDecodedRGBA": true
+    },
+    {
+      "file": "fox-mark-clean-mask.png",
+      "before": 16074,
+      "after": 15407,
+      "identicalDecodedRGBA": true
+    },
+    {
+      "file": "fox-mark-mask.png",
+      "before": 1381741,
+      "after": 1265904,
+      "identicalDecodedRGBA": true
+    }
+  ]
+}

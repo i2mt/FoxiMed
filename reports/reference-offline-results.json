@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "scope": "Real service worker at /app/; server and browser network denied for offline checks",
+  "checks": [
+    "No whole-reference or assistant model download on launch",
+    "HTML deploy fallback rejected by exact bytes and SHA-256; partial package not marked ready",
+    "Cancel preserves complete files and does not claim readiness",
+    "Resume finishes and verifies the complete package",
+    "An older/nonacknowledging controlling worker cannot falsely report offline readiness",
+    "Root navigation and Tools shortcut reopen offline using only the downloaded package",
+    "Previously unopened entries from all 10 monograph chunks open with network denied",
+    "Complete source PDF available offline",
+    "Evicting one file removes complete-offline readiness",
+    "Quota failure retains resumable files and never reports complete"
+  ],
+  "package": {
+    "files": 43,
+    "bytes": 23911145,
+    "cacheEntries": 44
+  },
+  "pdfBytes": 12760136
+}

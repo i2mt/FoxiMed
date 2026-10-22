@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "engine": "Chromium",
-  "fields": 50,
+  "fields": 55,
   "calculationCases": 16,
   "digitSets": [
     "Latin",
