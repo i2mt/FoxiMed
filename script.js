@@ -19,11 +19,15 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.4.1';
+const APP_VERSION = '5.4.2';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.4.1-compact-offline-and-pump';
+const RELEASE_NOTES_REVISION = '5.4.2-reference-layout';
 
 const CHANGELOG = {
+    '5.4.2': [
+        'نمایش جداگانهٔ راه مصرف، شروع اثر، اوج اثر و مدت اثر در مرجع دارویی',
+        'خوانایی بهتر بازه‌ها، نسبت‌ها و کسرهای دارویی؛ حذف یادداشت تکراری بالای کارت‌ها'
+    ],
     '5.4.1': [
         'دعوت کوچک دریافت مرجع آفلاین؛ مدیریت و بررسی به‌روزرسانی در تنظیمات',
         'به‌روزرسانی خودکار فایل‌های تغییرکرده پس از دریافت اولیه، قابل خاموش‌کردن',
@@ -1786,6 +1790,7 @@ function displayWarnings(drug) {
     if(!AppState.settings.doseAlerts){DOM.warningsSection.style.display='none';return;}
     const r=AppState.lastCalculation,messages=[];
     if(!r)return;
+    if(drug.concentrationNote)messages.push(drug.concentrationNote);
     const range=r.doseUnit.includes('/kg')?drug.weightBased?.range:drug.typicalDoseRange;
     const rangeUnit=r.doseUnit.includes('/kg')?drug.weightBased?.unit:range?.unit;
     if(range&&rangeUnit===r.doseUnit&&(r.dose<range.min||r.dose>range.max))messages.push(`دوز ${r.dose} ${r.doseUnit} خارج از بازهٔ ثبت‌شدهٔ ${range.min}–${range.max} است؛ دستور و منبع به‌روز را بررسی کنید.`);
