@@ -1,3 +1,13 @@
+# FoxiMed 5.4.3 — mixed-script labels and numeric phrases
+
+Prepared 24 October 2026; not deployed. Latin system labels have their own rows, Persian «تا» ranges stay together, and the acetaminophen acute-poisoning passage is updated against a current named clinical source. The original source files remain intact.
+
+Read [MIXED-SCRIPT-5.4.3.md](MIXED-SCRIPT-5.4.3.md) for exact scope, validation and limits. This package includes all earlier edits.
+
+---
+
+## Earlier cumulative changes
+
 # FoxiMed 5.4.2 — clearer drug timings, numeric typography and verified dopamine arithmetic
 
 Prepared 24 October 2026; not deployed. Generic top review notes are removed; bottom source/page links remain. All 398 timing tables use labelled route cards. Ninety-four genuine stacked fractions are restored, and ranges/ratios/mixed fractions are isolated for correct reading. Eight external dopamine examples/cells pass in both pump methods and directions.

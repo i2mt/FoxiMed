@@ -85,6 +85,14 @@
 @media(prefers-reduced-motion:reduce){#drugsTab .drug-reference-section summary i{transition:none}}
 #drugsTab .drug-reference-measure{white-space:nowrap;overflow-wrap:normal}
 #drugsTab .drug-reference-prose bdi{margin-inline:.1em}
+#drugsTab .drug-reference-prose .drug-reference-ltr{margin-inline:.18em}
+#drugsTab .drug-reference-system-group{min-width:0}
+#drugsTab .drug-reference-system-row{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:baseline;padding-block:10px;border-bottom:1px dashed var(--border);min-width:0}
+#drugsTab .drug-reference-system-long-label{grid-template-columns:minmax(0,1fr);gap:2px}
+#drugsTab .drug-reference-system-row:last-child{border-bottom:0}
+#drugsTab .drug-reference-system-label{font-size:12px;font-weight:700;white-space:nowrap}
+#drugsTab .drug-reference-system-row>p{margin:0;min-width:0}
+@media(max-width:360px){#drugsTab .drug-reference-system-row{grid-template-columns:minmax(0,1fr);gap:2px}}
 #drugsTab .drug-reference-unit-gap{display:inline-block;width:.22em}
 /* One complete reading view; every topic is closed until explicitly chosen. */
 #drugsTab .drug-reference-metadata{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px;padding:0}

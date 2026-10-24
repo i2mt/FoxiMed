@@ -1,19 +1,19 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "5.4.2-reference-layout-and-dopamine",
+  "revision": "5.4.3-mixed-script-reader",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 7909,
-      "sha256": "8b73068d21da4b91d2dd32bc9dbebc73a64e32772529fb91c7c84cc15481e60c"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 7958,
+      "sha256": "f47145437a21c6e83c0371b723ba83851aa3f760e437ce2867445cc9f527655d"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 7709,
-      "sha256": "14ecefbc43fdbd29f2091ddf32b9bce6af9fee083aa170bd1c0466edee783c43"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 8145,
+      "sha256": "98d7cfbd6c4703460ea887f923590355667b96183c837a3d56c717d227dc22b2"
     },
     {
       "path": "calculation-core.js",
@@ -107,9 +107,9 @@
     },
     {
       "path": "drug-reference-presentation.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 260475,
-      "sha256": "cdebcd6e4ae3154b2763848a0b539c63ac4defd4c2042e20572e82dc819cdcf7"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 262642,
+      "sha256": "4d64e2bdea6a0f14a7f21f563011de9525d97b56cd27f87dff40a97cbf312b62"
     },
     {
       "path": "drug-reference-source.pdf",
@@ -119,15 +119,15 @@
     },
     {
       "path": "drug-reference.css",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 13263,
-      "sha256": "56a8629231a56933812674adcfb532759e9c58a261343d70be887e04ce32d0f7"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 13992,
+      "sha256": "fb38a951a3d4fe2f7c8649c71ec319546ae29448959632d797ce2a7e3c3c8c23"
     },
     {
       "path": "drug-reference.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 31410,
-      "sha256": "e60e664fe44d3949f403544e2ce9e046264483db3b30df31cf5646a2a969b07c"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 33435,
+      "sha256": "22a0e948aba83e47655486c64b7622c2dddb3007549ec614c6bca8ea7a46c886"
     },
     {
       "path": "drugDatabase.js",
@@ -155,15 +155,15 @@
     },
     {
       "path": "index.html",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 181777,
-      "sha256": "6f0d134656bb92dd590d2ade663f2a2b10763f94f22e24f316618c5c6517c980"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 181778,
+      "sha256": "c46233eb32c69eaef01f16bc7f6d3ffc19d2d0219bf684b83de95806326f62ba"
     },
     {
       "path": "manifest.json",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
       "bytes": 1810,
-      "sha256": "45ca8f3d89336e99d538648a7aac1859f32eb89f0d86bb46f47524399403d4d8"
+      "sha256": "c5f5c36ba183c8f8c786726d9ba53442154bcbc1c75b0eb728af80f7c4951e6e"
     },
     {
       "path": "onboarding.css",
@@ -179,9 +179,9 @@
     },
     {
       "path": "reference-offline-manifest.json",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 7145,
-      "sha256": "223fa8dcf90fe00e5e722aed126e385673b4a7e55d3ddfac4a2109261994b2a9"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 7146,
+      "sha256": "57fb1b2cfc9ab5bc86f94e34d1760623c0718e6d2cde9f10281b4c83ca95279d"
     },
     {
       "path": "reference-offline.css",
@@ -191,9 +191,9 @@
     },
     {
       "path": "reference-offline.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
       "bytes": 15661,
-      "sha256": "c3f689d402f27ddd8a8199ede3f350b24d767b8c4312a2702e8554476c534d8f"
+      "sha256": "21835565b9b2ef16b651c4c0d3e82bc3544acc04b5320a63e24fc7587f635b03"
     },
     {
       "path": "reports/AUDIT-FIXES-5.4.0.md",
@@ -227,9 +227,9 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 3466,
-      "sha256": "9d83c8aab8729187c9b2c2aaf78612a89b5b1a9e37f823dcb77fe8a432e356a0"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 4129,
+      "sha256": "e03f76a035163f0f28cd6e2ce02b1674c8e3c0a307ed652797fce163b6b4fd3a"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -239,9 +239,15 @@
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 27091,
-      "sha256": "be10d00f85a3d82c6f9e2e0f9faea4aa7df51f49d6e62312c2a61e63821f4f82"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 27582,
+      "sha256": "a5e806b778acba3e0b739d6f64202140c8b8f3ebad8b1b6515ec23aac472d989"
+    },
+    {
+      "path": "reports/MIXED-SCRIPT-5.4.3.md",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 4179,
+      "sha256": "83c9bd4ea48a7477d69c2a3e8db325d4ca7789a6151a90ece071931aa8e1a247"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -269,9 +275,9 @@
     },
     {
       "path": "reports/compact-offline-update-results.json",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
       "bytes": 1102,
-      "sha256": "fb8f1845d9814264e7aaca4ec80f911f600a1c5f1c3666c66a110fb939d07312"
+      "sha256": "3f12d66a835cc52bc66c5e05f1f206e5eb4e78f782529db0d5bbb05e998315e8"
     },
     {
       "path": "reports/dopamine-and-reference-layout-results.json",
@@ -364,6 +370,12 @@
       "sha256": "b4d48e7155e636ddf12750eb6d935594f750214ee18b1fab977c61b9d4706ec7"
     },
     {
+      "path": "reports/mixed-script-reader-results.json",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 2199,
+      "sha256": "63164e96fb57ed296523000c1f6b15bcbeff3cdfecd71192e19bcee6b303678a"
+    },
+    {
       "path": "reports/navigation-layout-results.json",
       "reason": "Current long-topic position stability and retained controls/tutorial separation results.",
       "bytes": 1536,
@@ -377,15 +389,15 @@
     },
     {
       "path": "reports/pump-without-drip-results.json",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
       "bytes": 1000,
-      "sha256": "2a5223a68cd458afb67bf684bd5064ea49c6535d614033d94f59e797fdf3f3f9"
+      "sha256": "fee339190bc44084c97a9ebe10cbcb1fbd5f772ca4db20a86823fa518a07c823"
     },
     {
       "path": "reports/reference-offline-results.json",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 1092,
-      "sha256": "ce959145a5d7d890ab7e3a9c81fb65b6a7e221de0370215be0aa5bbe9502189c"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 1150,
+      "sha256": "a929860893932e90e935e36184f15d0d22989d04a50f9b23b3179a707fdb743e"
     },
     {
       "path": "reports/scope-preservation-5.4.0.json",
@@ -404,6 +416,12 @@
       "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 2623,
       "sha256": "1f90a705406bd45cd98d5f0b71708ac8a20171b3a30867039ee3f02874c9d3bb"
+    },
+    {
+      "path": "reports/scope-preservation-5.4.3.json",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 2597,
+      "sha256": "d4ebd6c0a042e8af8a0ad4b97ccc5a5e936968d7a8fbd1bc742fbc4a53aaa1de"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -443,9 +461,9 @@
     },
     {
       "path": "script.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 307903,
-      "sha256": "6ac0a71badf9aa425f39ec46283684d5681f0dc18539fb187c009431b6184b4b"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 308181,
+      "sha256": "92d1aeb968201bfb3e8c6aa3988c419c8e8347c45a4137a30de29b24551546c1"
     },
     {
       "path": "scripts/build-reference-offline-manifest.py",
@@ -491,9 +509,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 8864,
-      "sha256": "94c7626ce5f2ec5c46d7b6ebc8da11fd00195aef8d53505ed407b9322fbc2bad"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 8861,
+      "sha256": "562cfdda9d25e96e4128df45a09c15df8e5b02b0c9decd656349463c2c81240b"
     },
     {
       "path": "settings.css",
@@ -515,9 +533,9 @@
     },
     {
       "path": "tests/compact-offline-update.test.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
       "bytes": 10260,
-      "sha256": "02dcc68382039690d8a3ebda71bb8b03234f27533b91447da742b0da0811fd50"
+      "sha256": "ecf94f275d6225434e696b1b11530ee8ea897688bbe4e86c454ac018280bf333"
     },
     {
       "path": "tests/dopamine-and-reference-layout.test.js",
@@ -545,15 +563,21 @@
     },
     {
       "path": "tests/drug-reference-reader.test.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 5889,
-      "sha256": "5b00d515ece0cec841bca875f3525bc96c237bc4b728109efd05d120306552a8"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 6078,
+      "sha256": "ada8254123a17aa17e4f26399775627d689531144c84b8dda359882c2bbe557c"
     },
     {
       "path": "tests/drug-reference-ui.test.js",
       "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 16881,
       "sha256": "617d71e9d8001021bf3bea278f05d740c5ede10421b4ba91858acf4735893640"
+    },
+    {
+      "path": "tests/mixed-script-reader.test.js",
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 9064,
+      "sha256": "fad976ae607ffad6ac0ce24609a15a3a44e63c108e750dd4015874cfeb3c8ad4"
     },
     {
       "path": "tests/navigation-layout.test.js",
@@ -575,9 +599,9 @@
     },
     {
       "path": "tests/reference-offline.test.js",
-      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
-      "bytes": 9173,
-      "sha256": "aa2016019ce5533e323a7f6521b299d8bb32fa32838152ee35a2be34c57e6f97"
+      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "bytes": 9661,
+      "sha256": "c5cfcca5ae4af86cdb190a707cb878099fa95ec9984110d6f0b587ed386e9793"
     },
     {
       "path": "tests/settings-mobile.test.js",

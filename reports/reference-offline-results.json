@@ -9,14 +9,14 @@
     "Resume verifies the complete package and hides the compact invitation",
     "An older/nonacknowledging controlling worker cannot falsely report offline readiness",
     "Root navigation and Tools shortcut reopen offline using only the downloaded package",
-    "Previously unopened entries from all 10 monograph chunks and corrected timing/fraction presentation open with network denied; top notes stay removed",
+    "Previously unopened entries from all 10 monograph chunks and corrected timing/fraction and mixed-script presentation plus source-updated acetaminophen stages open with network denied; top notes stay removed",
     "Complete source PDF available offline",
     "Evicting one file removes complete-offline readiness",
     "Quota failure retains resumable files and never reports complete"
   ],
   "package": {
     "files": 44,
-    "bytes": 24181760,
+    "bytes": 24186960,
     "cacheEntries": 45
   },
   "pdfBytes": 12760136

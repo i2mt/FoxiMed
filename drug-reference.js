@@ -59,9 +59,9 @@
   const vulgarValues={'¼':.25,'½':.5,'¾':.75,'⅐':1/7,'⅑':1/9,'⅒':.1,'⅓':1/3,'⅔':2/3,'⅕':.2,'⅖':.4,'⅗':.6,'⅘':.8,'⅙':1/6,'⅚':5/6,'⅛':.125,'⅜':.375,'⅝':.625,'⅞':.875};
   const digitPattern='[0-9۰-۹٠-٩]',plainNumber=digitPattern+'+(?:[.٫٬,]'+digitPattern+'+)*',simpleFraction='(?:'+plainNumber+'[ \\t]*[¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|'+plainNumber+'(?:[ \\t]*[/⁄∕:∶][ \\t]*'+plainNumber+')?|[¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])',boundPattern='[+−-]?'+simpleFraction;
   const unitPattern='(?:mcg|[µμ]g|mg|kg|gr|g|mL|ml|mmHg|mmol|mEq|mOsm|units|IU|U|L|cm|mm|m|h|hr|hours?|min|minutes?|ms|sec|s|days?|weeks?|months?|years?|bpm)(?:[²³23])?';
-  const measurementPattern='(?:[<>≤≥≈~±%٪][ \\t]*)?(?:(?:h|hr|min)[ \\t]*)?'+boundPattern+'(?:[ \\t]*[-−–—‑‒][ \\t]*'+boundPattern+')?(?:[ \\t]*(?:%|٪|°[CF]|'+unitPattern+')(?:[ \\t]*/[ \\t]*(?:'+plainNumber+'[ \\t]*)?'+unitPattern+')*)?(?![A-Za-z])';
+  const measurementPattern='(?:[<>≤≥≈~±%٪][ \\t]*)?(?:(?:h|hr|min)[ \\t]*)?'+boundPattern+'(?:[ \\t]*(?:[-−–—‑‒]|تا)[ \\t]*'+boundPattern+')?(?:[ \\t]*(?:%|٪|°[CF]|'+unitPattern+')(?:[ \\t]*/[ \\t]*(?:'+plainNumber+'[ \\t]*)?'+unitPattern+')*)?(?![A-Za-z])';
   const readerRuns=new RegExp('('+measurementPattern+')|([A-Za-zµμ][A-Za-z0-9۰-۹٠-٩µμ/._-]*(?:[ \\t]+[A-Za-zµμ][A-Za-z0-9۰-۹٠-٩µμ/._-]*)*)','g');
-  const rangeParts=new RegExp('('+boundPattern+')[ \\t]*[-−–—‑‒][ \\t]*('+boundPattern+')');
+  const rangeParts=new RegExp('('+boundPattern+')[ \\t]*(?:[-−–—‑‒]|تا)[ \\t]*('+boundPattern+')');
   function boundCandidates(value){
     const s=digitText(value).replace(/\s/g,'').replace(/−/g,'-');if(s in vulgarValues)return[vulgarValues[s]];
     const mixed=s.match(/^([+-]?\d+)([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])$/);if(mixed)return[Number(mixed[1])+(mixed[1].startsWith('-')?-1:1)*vulgarValues[mixed[2]]];
@@ -114,10 +114,27 @@
     }
     return result + latinRuns(text.slice(start));
   }
+  const systemNames='Hypersensitivity|Hyersensitivity|Hyerensitirity|Hypersensitiwity|Hyporsensotivity|Reproductive|CNS|EENT|Hepatic|Renal|Reprodvsstiv|Resp|Derm|Hem|Hep|Met|Other|Local|Skin|Eye|ENT|MS|CV|GI|GU|Gu|other|skin';
+  const systemMarkers=new RegExp('(?::[ \\t]*('+systemNames+')(?![A-Za-z])|\\b('+systemNames+')[ \\t]*:)', 'g');
+  function systemRows(lines) {
+    const first=lines[0],markers=[...first.matchAll(systemMarkers)];
+    if(!markers.length)return '';
+    const prefix=!first.slice(0,markers[0].index).trim(),continuation=lines.slice(1).join(' ');
+    const rows=markers.map((m,i)=>({label:m[1]||m[2],text:prefix?first.slice(m.index+m[0].length,markers[i+1]?.index??first.length):first.slice(i?markers[i-1].index+markers[i-1][0].length:0,m.index)}));
+    // A suffix label belongs to the preceding source text. Wrapped following
+    // lines continue the same category until the next explicit category label.
+    if(!prefix){const last=markers.at(-1);rows.at(-1).text+=' '+first.slice(last.index+last[0].length);}
+    rows.at(-1).text+=' '+continuation;
+    return '<section class="drug-reference-system-group" data-source-system="'+esc(lines.join(' ').trim())+'">'+rows.map(row=>'<div class="drug-reference-system-row'+(row.label.length>7?' drug-reference-system-long-label':'')+'"><div class="drug-reference-system-label"><bdi dir="ltr">'+esc(row.label)+':</bdi></div><p class="drug-reference-source-text" dir="'+(hasPersianLetters(row.text)?'rtl':'ltr')+'">'+inlineText(repairParentheses(row.text.trim()))+'</p></div>').join('')+'</section>';
+  }
   function paragraphs(value, preserveLines = false) {
     const blocks = []; let lines = [], type = 'paragraph';
     const flush = () => {
       if (!lines.length) return;
+      if(type==='system'){
+        const rows=systemRows(lines);
+        if(rows){blocks.push(rows);lines=[];return;}
+      }
       const source = lines.join(' ').trim();
       const marker = source.match(/^\(([۰-۹٠-٩0-9]{1,2})(?=[^۰-۹٠-٩0-9]|$)/);
       const text = repairParentheses(marker ? source.slice(marker[0].length) : source);
@@ -135,7 +152,7 @@
       if (metadata) line = line.replace(/^[X?4]\s*/, '');
       const form = /^\?\s*[A-Za-z]/.test(line);
       if (form) line = line.replace(/^\?\s*/, '• ');
-      const system = /^:?(?:CNS|CV|GI|GU|EENT|Hem|Resp|Derm|Other|other)\b/.test(line) || /:(?:CNS|CV|GI|GU|EENT|Hem|Resp|Derm)$/.test(line);
+      const system = [...line.matchAll(systemMarkers)].length>0;
       if (bullet || numbered || system || metadata || form) flush();
       if (!lines.length) type = bullet || numbered || form ? 'item' : system || metadata ? 'system' : 'paragraph';
       // A PDF line break is a typesetting boundary, not a new sentence.
@@ -181,7 +198,7 @@
           topics.push({title:'شکل‌ها و قدرت‌های دارویی',text:forms,forms:true});
           continue;
         }
-        const correction=(window.FoxiMedReferencePresentation?.sections?.[d.id]||[]).find(item=>item.original===s.text);
+        const correction=(window.FoxiMedReferencePresentation?.clinicalSections?.[d.id]||[]).find(item=>item.original===s.text)||(window.FoxiMedReferencePresentation?.sections?.[d.id]||[]).find(item=>item.original===s.text);
         let text=sectionText(correction?{...s,text:correction.text}:s);
         if (/شناسه/.test(s.title)) {
           const lines=text.split('\n'), firstEnglish=d.sourceHeading?.en?.match(/[A-Za-z]+/)?.[0];
@@ -275,8 +292,10 @@
   function sourceFooter(d) {
     if (!d.sourceText) return '<p class="drug-reference-source-footer">منبع اختصاصی برای این مدخل ثبت نشده است.</p>';
     const pages = Array.isArray(d.sourcePdfPages) ? d.sourcePdfPages : [];
+    const updates=(window.FoxiMedReferencePresentation?.clinicalSections?.[d.id]||[]).filter(item=>d.sections?.some(s=>s.text===item.original));
     return '<p class="drug-reference-source-footer" dir="rtl">منبع: داروهای ژنریک ایران' + (pages.length ? ' · صفحات PDF: ' + pages.map(n => '<bdi dir="ltr">' + esc(n) + '</bdi>').join('، ') : '') +
-      (pages.length ? ' · <a href="drug-reference-source.pdf#page=' + pages[0] + '" target="_blank" rel="noopener">نسخهٔ اصلی</a>' : '') + '.</p>';
+      (pages.length ? ' · <a href="drug-reference-source.pdf#page=' + pages[0] + '" target="_blank" rel="noopener">نسخهٔ اصلی</a>' : '') +
+      updates.map(item=>' · <a href="'+esc(item.sourceUrl)+'" target="_blank" rel="noopener">'+esc(item.sourceLabel)+'</a>').join('') + '.</p>';
   }
   function tidyForms(value) {
     return value.split('\n').map(line => {

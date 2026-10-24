@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "systemSections": 626,
+  "checks": [
+    "Four separate acetaminophen adverse-effect labels",
+    "Prefix/suffix labels and wrapped continuations",
+    "Displayed character inventory across all system-labelled sections",
+    "Atomic Persian تا ranges, ratios and slash notation",
+    "Exact-anchor clinical update with footer attribution; no generic top warning"
+  ],
+  "browserLayouts": [
+    {
+      "width": 280,
+      "mode": "light",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "title": "عوارض جانبی"
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "title": "مسمومیت و درمان"
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "title": "captopril: long category label"
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "title": "captopril: long category label"
+    }
+  ]
+}

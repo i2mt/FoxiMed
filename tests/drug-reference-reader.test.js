@@ -7,7 +7,7 @@ for(let i=1;i<=10;i++)vm.runInContext(read(`drug-reference-book-${String(i).padS
 const book=c.window.FoxiMedDrugBookData,byId=new Map(book.map(d=>[d.id,d]));
 const decode=s=>s.replace(/<\/p>/g,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
 // Recover the exact source token from each formatted quantity before checking content.
-const sourceHTML=s=>s.replace(/<bdi[^>]*data-source-number="([^"]*)"[^>]*>[\s\S]*?<\/bdi>/g,(_,original)=>original);
+const sourceHTML=s=>s.replace(/<section[^>]*data-source-system="([^"]*)"[^>]*>[\s\S]*?<\/section>/g,(_,original)=>original).replace(/<bdi[^>]*data-source-number="([^"]*)"[^>]*>[\s\S]*?<\/bdi>/g,(_,original)=>original);
 const sourceText=s=>r.digitText(decode(sourceHTML(s)));
 const words=s=>s.replace(/[()\s]/g,''),numbers=s=>s.match(/[0-9۰-۹٠-٩]+/g)||[];
 let sections=0,reversedSections=0;
@@ -55,7 +55,7 @@ assert(!r.inlineText('(PTCA)').match(/drug-reference-ltr[^>]*>[^<]*\)/),'Latin r
 console.log(`drug reader checks: PASS (${book.length} titles; ${sections} complete sections; ${reversedSections} sections with source bracket normalization; all topics initially closed)`);
 
 for(const [input,expected,context]of [
- ['۴-۲','2–4','مدت اثر ساعت'],['۱۲−۶','6–12','سن کودک سال'],
+ ['۴-۲','2–4','مدت اثر ساعت'],['۲۴ تا ۷۲','24–72','ساعت'],['۱۲تا۶','6–12','سن کودک سال'],['۱۲−۶','6–12','سن کودک سال'],
  ['۰/ ۲۵ mg/kg/min','0/25 mg/kg/min','دوز'],['۱:۲','1:2','نسبت'],['۱:۱۰۰۰','1:1000','نسبت'],
  ['½–۲ h','½–2 h','اثر'],['۲−۰/۵ mg','0/5–2 mg','دوز'],['۱/۲−۱','1/2–1','دوز'],
  ['-5–-2 mg','-5–-2 mg',''],['۴-۲ mg','4–2 mg','x = 4 - 2'],['٪ ۲۵','25%',''],
