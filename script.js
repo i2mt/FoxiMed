@@ -19,11 +19,15 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.4.2';
+const APP_VERSION = '5.4.3';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.4.2-reference-layout';
+const RELEASE_NOTES_REVISION = '5.4.3-mixed-script-reader';
 
 const CHANGELOG = {
+    '5.4.3': [
+        'جداسازی روشن برچسب‌های لاتین و متن فارسی در مرجع دارویی',
+        'نمایش یکپارچهٔ بازه‌های زمانی و بازبینی مراحل مسمومیت حاد استامینوفن'
+    ],
     '5.4.2': [
         'نمایش جداگانهٔ راه مصرف، شروع اثر، اوج اثر و مدت اثر در مرجع دارویی',
         'خوانایی بهتر بازه‌ها، نسبت‌ها و کسرهای دارویی؛ حذف یادداشت تکراری بالای کارت‌ها'
