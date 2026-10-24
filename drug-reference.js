@@ -55,16 +55,45 @@
     }
     return chars.join('');
   }
-  function latinRuns(value) {
-    const run = /[A-Za-z0-9۰-۹٠-٩µμ][A-Za-z0-9۰-۹٠-٩µμ%٪°²³+.,٫٬/: \t\n\-−–]*/g;
-    let out = '', cursor = 0;
-    for (const match of String(value).matchAll(run)) {
-      const text = match[0], measured = /[0-9۰-۹٠-٩]/.test(text) && text.trim().length <= 32;
-      const inner = esc(text).replace(/([0-9۰-۹٠-٩])(?=[A-Za-zµμ])/g, '$1<span class="drug-reference-unit-gap" aria-hidden="true"></span>');
-      out += esc(String(value).slice(cursor, match.index)) + '<bdi dir="ltr" class="drug-reference-ltr' + (measured ? ' drug-reference-measure' : '') + '">' + inner + '</bdi>';
-      cursor = match.index + text.length;
+  const digitText=value=>String(value).replace(/[۰-۹]/g,c=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(c))).replace(/[٠-٩]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(c))).replace(/٫/g,'.').replace(/٬/g,',');
+  const vulgarValues={'¼':.25,'½':.5,'¾':.75,'⅐':1/7,'⅑':1/9,'⅒':.1,'⅓':1/3,'⅔':2/3,'⅕':.2,'⅖':.4,'⅗':.6,'⅘':.8,'⅙':1/6,'⅚':5/6,'⅛':.125,'⅜':.375,'⅝':.625,'⅞':.875};
+  const digitPattern='[0-9۰-۹٠-٩]',plainNumber=digitPattern+'+(?:[.٫٬,]'+digitPattern+'+)*',simpleFraction='(?:'+plainNumber+'[ \\t]*[¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]|'+plainNumber+'(?:[ \\t]*[/⁄∕:∶][ \\t]*'+plainNumber+')?|[¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])',boundPattern='[+−-]?'+simpleFraction;
+  const unitPattern='(?:mcg|[µμ]g|mg|kg|gr|g|mL|ml|mmHg|mmol|mEq|mOsm|units|IU|U|L|cm|mm|m|h|hr|hours?|min|minutes?|ms|sec|s|days?|weeks?|months?|years?|bpm)(?:[²³23])?';
+  const measurementPattern='(?:[<>≤≥≈~±%٪][ \\t]*)?(?:(?:h|hr|min)[ \\t]*)?'+boundPattern+'(?:[ \\t]*[-−–—‑‒][ \\t]*'+boundPattern+')?(?:[ \\t]*(?:%|٪|°[CF]|'+unitPattern+')(?:[ \\t]*/[ \\t]*(?:'+plainNumber+'[ \\t]*)?'+unitPattern+')*)?(?![A-Za-z])';
+  const readerRuns=new RegExp('('+measurementPattern+')|([A-Za-zµμ][A-Za-z0-9۰-۹٠-٩µμ/._-]*(?:[ \\t]+[A-Za-zµμ][A-Za-z0-9۰-۹٠-٩µμ/._-]*)*)','g');
+  const rangeParts=new RegExp('('+boundPattern+')[ \\t]*[-−–—‑‒][ \\t]*('+boundPattern+')');
+  function boundCandidates(value){
+    const s=digitText(value).replace(/\s/g,'').replace(/−/g,'-');if(s in vulgarValues)return[vulgarValues[s]];
+    const mixed=s.match(/^([+-]?\d+)([¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])$/);if(mixed)return[Number(mixed[1])+(mixed[1].startsWith('-')?-1:1)*vulgarValues[mixed[2]]];
+    if(s.includes(':')||s.includes('∶'))return null;
+    const split=s.match(/^([+-]?\d+)[/⁄∕](\d+)$/);
+    if(split){if(Number(split[2])===0)return null;const quotient=Number(split[1])/Number(split[2]);return s.includes('/')?[quotient,Number(split[1]+'.'+split[2])]:[quotient];}
+    const n=Number(s.replace(/,/g,''));return Number.isFinite(n)?[n]:null;
+  }
+  function numericText(value,context=''){
+    let text=digitText(value).replace(/[ \t]*([/:∶⁄∕])[ \t]*/g,'$1').replace(/∶/g,':').replace(/[ \t]+/g,' ');
+    if(/^[%٪]/.test(text))text=text.slice(1).trim()+'%';text=text.replace(/٪/g,'%');
+    const match=text.match(rangeParts);
+    if(match){
+      const left=boundCandidates(match[1]),right=boundCandidates(match[2]),quantity=/mg|mcg|µg|μg|kg|mL|\b(?:h|hr|min|s|g|ml|cm|mm)\b|سال|ماه|روز|ساعت|دقیقه|ثانیه|هفته|سنین|سن |دوز|کودک|بازه|مقدار|اثر|هر /i.test(text+' '+context);
+      // A range is a pair of bounds, not a subtraction or a titration sequence.
+      // Reorder only when all interpretations agree; never interpret an ambiguous slash.
+      const equation=/[=×÷]/.test(context),chain=/\d\s*[-−–—‑‒]\s*\d\s*[-−–—‑‒]\s*\d/.test(text);
+      const reverse=quantity&&!equation&&!chain&&left&&right&&Math.min(...left)>=0&&Math.min(...right)>=0&&Math.min(...left)>Math.max(...right);
+      text=text.replace(match[0],(reverse?match[2]:match[1])+'–'+(reverse?match[1]:match[2]));
     }
-    return out + esc(String(value).slice(cursor));
+    return text;
+  }
+  function latinRuns(value){
+    const source=String(value);let out='',cursor=0;
+    for(const match of source.matchAll(readerRuns)){
+      const numeric=!!match[1],original=match[0],text=numeric?numericText(original,source.slice(Math.max(0,match.index-20),Math.min(source.length,match.index+original.length+20))):digitText(original);
+      const inner=esc(text).replace(/([0-9])(?=[A-Za-zµμ])/g,'$1<span class="drug-reference-unit-gap" aria-hidden="true"></span>');
+      const ambiguous=numeric&&/[0-9]\/[0-9]/.test(text);
+      out+=esc(source.slice(cursor,match.index))+'<bdi dir="ltr" class="drug-reference-ltr'+(numeric&&text.length<=40?' drug-reference-measure':'')+'"'+(numeric?' data-source-number="'+esc(original)+'"':'')+(ambiguous?' title="نگارش منبع؛ ممیز و کسر را با متن اصلی تطبیق دهید"':'')+'>'+inner+'</bdi>';
+      cursor=match.index+original.length;
+    }
+    return out+esc(source.slice(cursor));
   }
   function inlineText(value) {
     const text = String(value); let result = '', start = 0;
@@ -152,7 +181,8 @@
           topics.push({title:'شکل‌ها و قدرت‌های دارویی',text:forms,forms:true});
           continue;
         }
-        let text=sectionText(s);
+        const correction=(window.FoxiMedReferencePresentation?.sections?.[d.id]||[]).find(item=>item.original===s.text);
+        let text=sectionText(correction?{...s,text:correction.text}:s);
         if (/شناسه/.test(s.title)) {
           const lines=text.split('\n'), firstEnglish=d.sourceHeading?.en?.match(/[A-Za-z]+/)?.[0];
           if(firstEnglish && lines[0]?.includes(firstEnglish) && !lines[0].includes(':')) lines.shift();
@@ -179,9 +209,23 @@
       }
     }
     const heading = '<div class="drug-reference-reader-heading"><h3>اطلاعات دارو</h3><p>موضوع مورد نظرتان را انتخاب کنید</p></div>';
-    return '<div class="drug-reference-reader"><p class="drug-reference-status">'+(d.sourceText?'متن استخراج‌شده از کتاب؛ بازبینی مستقل بالینی تکمیل نشده و تاریخ بازبینی بالینی ثبت نشده است. برای دوز و تصمیم درمانی، نسخهٔ اصلی و منبع به‌روز را بررسی کنید.':'منبع اختصاصی و تاریخ بازبینی بالینی ثبت نشده است؛ اطلاعات این مدخل نیازمند تأیید با منبع به‌روز است.')+'</p>' + metadataHTML(d) + heading + '<div class="drug-reference-detail-body" data-drug-topics>' +
-      topics.map(s=>section(s.title, s.forms ? '<div class="drug-reference-form-rows">' + paragraphs(s.text,true) + '</div>' : paragraphs(s.text,/شناسه/.test(s.title)))).join('') +
+    return '<div class="drug-reference-reader">' + metadataHTML(d) + heading + '<div class="drug-reference-detail-body" data-drug-topics>' +
+      topics.map(s=>section(s.title, s.forms ? '<div class="drug-reference-form-rows">' + paragraphs(s.text,true) + '</div>' : clinicalProse(s.text,d.id,/شناسه/.test(s.title)))).join('') +
       (!topics.length ? '<p class="drug-reference-status">اطلاعات تفصیلی برای این مدخل ثبت نشده است.</p>' : '') + '</div>' + sourceFooter(d) + '</div>';
+  }
+  function timingValue(text){
+    const value=String(text||'').trim(),prefix=value.match(/^(h|hr|min|sec)\s*(?=[0-9۰-۹٠-٩¼½¾⅓⅔])/i);
+    return prefix?value.slice(prefix[0].length)+' '+prefix[1]:value;
+  }
+  function timingHTML(table){
+    return '<div class="drug-reference-timings">'+table.rows.map(row=>'<section class="drug-reference-timing-card"><h4>راه مصرف: '+inlineText(row.route||'در منبع مشخص نشده')+'</h4><dl>'+[['onset','شروع اثر'],['peak','اوج اثر'],['duration','مدت اثر']].map(([key,label])=>'<div><dt>'+label+'</dt><dd>'+inlineText(timingValue(row[key])||'—')+'</dd></div>').join('')+'</dl></section>').join('')+'</div>';
+  }
+  function clinicalProse(text,id,preserveLines=false){
+    const tables=(window.FoxiMedReferencePresentation?.timings?.[id]||[]).filter(t=>text.includes(t.sourceBlock));
+    if(!tables.length)return paragraphs(text,preserveLines);
+    let out='',cursor=0;
+    for(const table of tables.sort((a,b)=>text.indexOf(a.sourceBlock)-text.indexOf(b.sourceBlock))){const start=text.indexOf(table.sourceBlock,cursor);if(start<0)continue;out+=paragraphs(text.slice(cursor,start),preserveLines)+timingHTML(table);cursor=start+table.sourceBlock.length;}
+    return out+paragraphs(text.slice(cursor),preserveLines);
   }
   function loadDetail(d) {
     if (state.details.has(d.id)) return Promise.resolve(state.details.get(d.id));

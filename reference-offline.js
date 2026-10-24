@@ -1,7 +1,7 @@
 /* Opt-in reference storage. Compact invitation; management lives in Settings. */
 (function(){
  'use strict';
- const VERSION='5.4.1',CACHE='FoxiMed_Reference_'+VERSION+'_full',PREFIX='FoxiMed_Reference_',MANIFEST='reference-offline-manifest.json?v=2',PREF_KEY='foximed_reference_offline_v1';
+ const VERSION='5.4.2',CACHE='FoxiMed_Reference_'+VERSION+'_full',PREFIX='FoxiMed_Reference_',MANIFEST='reference-offline-manifest.json?v=3',PREF_KEY='foximed_reference_offline_v1';
  const $=id=>document.getElementById(id),url=p=>new URL(p,document.baseURI).href,mb=n=>(n/1000000).toFixed(1)+' MB';
  let manifestPromise,running=false,checking=false,verified=false,controller,automatic=false,automaticAttempted=false,savedCount=0,totalBytes=0,progressValue=0,status='وضعیت دریافت بررسی نشده است.';
  let prefs={consented:false,autoUpdate:true,completedVersion:null,dismissed:false,pausedVersion:null};

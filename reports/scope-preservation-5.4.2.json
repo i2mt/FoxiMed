@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "unchanged_files": {
+    "style.css": "62037b938f937f8a598e133fe72cb87b5966baba25a13b79864cc8ef13c9f2b0",
+    "settings.css": "8ca96a476851e101496629a91a4e914ce1c0377c1410a1abb95c1f9fe8ec613d",
+    "welcome.css": "e9475b16d6f22190f54864f9c402ac729dc3baf6652272b1968b52995b715f4f",
+    "welcome.js": "0a59a6e7a8ac2834c4cc6311c6b3124f869b70eeffdea2c05a9c3f4350794b9a",
+    "onboarding.js": "0f238dba6a43df54125a902fc79cdedc50ad2f1a70fcb5bc46d91af324daee45",
+    "onboarding.css": "eaa0bdb457a6e597459a59e4524fc7f22057cb340cdb9a878b7ea053d29afd9b",
+    "calculation-core.js": "09052ec376365a56c0b9bd795c5612ae8e20769189bc60da7ba14323e057e07c",
+    "calculator-guidance.js": "08e5d1f7d909127393c003b0cf206f1b91bdc8da30bc45f22d56cc290719ad35",
+    "calculator-guidance.css": "10608e5aced310552ae80af93610c190173e6490adc7f07fbb88a2ef0b8b932b",
+    "voice-ui.js": "264c361c9e0f9a03cc3b9e4f122dba381fb4e1010f9466aa9524fa7c41ede267",
+    "voice-recognition.js": "ac1859a5562516e88b37113c6122cf56ab2cccab9c70437ed8e77a85b328d5d8",
+    "icons/fox-mark.png": "101e237fb51afd15d6993e5d098e5a35d02c90327ed46b9e0af183f9378d613d",
+    "icons/fox-mark-clean-mask.png": "df2f8b50e87bcc643202b336585e7eb960c9907c42a2299ea3a624231cebce49",
+    "drug-reference-source.pdf": "a765a31b8d8bd86f9477da3ca1b50fad3a13a2da8158612ec7653cce3140a896",
+    "drug-reference-book-01.js": "3f927194e20df2161e978a50f325db539ef59e5afe7c24a7312985c6891a309a",
+    "drug-reference-book-02.js": "e472fe2c1154c3c1a643e314067c28f45ea04463209d24c17981c72d39876dd2",
+    "drug-reference-book-03.js": "787c9d6395625952b20891ec1b698e51b63eee66011b91157f891497a7ae1d5b",
+    "drug-reference-book-04.js": "ebdff0b6ccb58eb5285e8532a698355e21d2bd7fdb8006e2179f46051cfc139e",
+    "drug-reference-book-05.js": "92bff0ec01ee0585506a680d14c16b294f859cd73294e7677f137efed69a667e",
+    "drug-reference-book-06.js": "a11f5dd604cdf8451d583c3130fdbe97eb6fd6e250c129106e29db87d681cceb",
+    "drug-reference-book-07.js": "f2b642cc1bf01ef2ea85860a12f8b4a5adb87e5cb24a42899fa9648413ba95b1",
+    "drug-reference-book-08.js": "181c5538c2dad22978465c54802ea9b659cada3df8426b7dd090d41f48fffec9",
+    "drug-reference-book-09.js": "9af59c768adbf86d1b25484908feb9005556a22755d546e3c978cce248c84e2f",
+    "drug-reference-book-10.js": "f0d42c295a2be5c735c690ee9ac4f466aa226d434a51c035d5cee61cd782d177"
+  },
+  "note": "Original book chunks/PDF, palettes, fox pixels and launcher effect, assistant behavior, core arithmetic and prior onboarding/guidance remain unchanged. Reader spacing/number formatting and source-confirmed fraction presentation are targeted changes."
+}

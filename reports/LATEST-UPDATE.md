@@ -1,3 +1,13 @@
+# FoxiMed 5.4.2 — clearer drug timings, numeric typography and verified dopamine arithmetic
+
+Prepared 24 October 2026; not deployed. Generic top review notes are removed; bottom source/page links remain. All 398 timing tables use labelled route cards. Ninety-four genuine stacked fractions are restored, and ranges/ratios/mixed fractions are isolated for correct reading. Eight external dopamine examples/cells pass in both pump methods and directions.
+
+Read [DRUG-READER-5.4.2.md](DRUG-READER-5.4.2.md) for source comparisons, full verification and limits. The original source PDF/book chunks, calculator arithmetic, fox assets/effect and excluded controls remain unchanged. The new drug-reference-presentation.js file is required and included in offline storage.
+
+---
+
+## Earlier cumulative changes
+
 # FoxiMed 5.4.1 — compact offline management and pump-only main calculator
 
 Updated 22 October 2026. Prepared for upload; not deployed.

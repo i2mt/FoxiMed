@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "version": "5.4.1",
+  "version": "5.4.2",
   "scope": "Full reference text, source PDF, and same-origin app shell; excludes voice model and external icon/font CDN assets.",
   "files": [
     {
       "url": "index.html",
-      "bytes": 181713,
-      "sha256": "c408cff9021ebb76dc649fb79cf5b62cf68b017bf5f00458109cd1963702ce23"
+      "bytes": 181777,
+      "sha256": "6f0d134656bb92dd590d2ade663f2a2b10763f94f22e24f316618c5c6517c980"
     },
     {
       "url": "style.css?v=51",
@@ -24,9 +24,9 @@
       "sha256": "09052ec376365a56c0b9bd795c5612ae8e20769189bc60da7ba14323e057e07c"
     },
     {
-      "url": "script.js?v=60",
-      "bytes": 307526,
-      "sha256": "1245e1a753c3e8363e313c1495e55cc4d2aa45bdc765a636b14eb30f7a3e6e79"
+      "url": "script.js?v=61",
+      "bytes": 307903,
+      "sha256": "6ac0a71badf9aa425f39ec46283684d5681f0dc18539fb187c009431b6184b4b"
     },
     {
       "url": "voice-recognition.js?v=42",
@@ -60,13 +60,13 @@
     },
     {
       "url": "drugDatabase.js",
-      "bytes": 62030,
-      "sha256": "2bdc4ebd29449b8ab39feee9c2b0460567b9d24be33dba3bb45cc3b5dd092ca5"
+      "bytes": 62591,
+      "sha256": "73dad5a0ba05faabade4ff4cb3ecbc8c6f1d834f98de731a4b5c44e34a0fbf12"
     },
     {
-      "url": "drug-reference.css?v=8",
-      "bytes": 12070,
-      "sha256": "52b302cc92536da8213cae31aea3a8f4439bac2d4d1d4fa031e31526684b4f3c"
+      "url": "drug-reference.css?v=9",
+      "bytes": 13263,
+      "sha256": "56a8629231a56933812674adcfb532759e9c58a261343d70be887e04ce32d0f7"
     },
     {
       "url": "drug-reference-data.js?v=2",
@@ -74,9 +74,14 @@
       "sha256": "2ab1305e95a5e054d0493f104606a999414f89548c80db817a6523ce0a4e9599"
     },
     {
-      "url": "drug-reference.js?v=9",
-      "bytes": 26937,
-      "sha256": "ff8d982232ad9c60f22e230625ac7611bd2bfde4a71e1a93168aa69aff03dd73"
+      "url": "drug-reference-presentation.js?v=1",
+      "bytes": 260475,
+      "sha256": "cdebcd6e4ae3154b2763848a0b539c63ac4defd4c2042e20572e82dc819cdcf7"
+    },
+    {
+      "url": "drug-reference.js?v=10",
+      "bytes": 31410,
+      "sha256": "e60e664fe44d3949f403544e2ce9e046264483db3b30df31cf5646a2a969b07c"
     },
     {
       "url": "onboarding.js?v=5",
@@ -109,9 +114,9 @@
       "sha256": "10608e5aced310552ae80af93610c190173e6490adc7f07fbb88a2ef0b8b932b"
     },
     {
-      "url": "reference-offline.js?v=2",
+      "url": "reference-offline.js?v=3",
       "bytes": 15661,
-      "sha256": "0cc0c230b1ca80ba759d9ee2f61f185a4540207f4d71e800acf4ea923329d8b4"
+      "sha256": "c3f689d402f27ddd8a8199ede3f350b24d767b8c4312a2702e8554476c534d8f"
     },
     {
       "url": "reference-offline.css?v=2",
@@ -136,7 +141,7 @@
     {
       "url": "manifest.json",
       "bytes": 1810,
-      "sha256": "abd6a52836845549aac83c59fbaa969013fa0210539a49f5effab3aadd46c297"
+      "sha256": "45ca8f3d89336e99d538648a7aac1859f32eb89f0d86bb46f47524399403d4d8"
     },
     {
       "url": "icons/icon-192.png",

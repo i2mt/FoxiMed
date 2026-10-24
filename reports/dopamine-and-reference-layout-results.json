@@ -1,0 +1,634 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "sources": {
+    "label": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fc1eb709-ce72-413e-9043-8e463ef0fd36",
+    "chart": "https://www.gloshospitals.nhs.uk/documents/22897/Dopamine_infusion_chart.pdf"
+  },
+  "sourceCases": [
+    {
+      "source": "label",
+      "total": 200,
+      "volume": 250,
+      "weight": 60,
+      "dose": 2,
+      "expected": 9,
+      "published": 9
+    },
+    {
+      "source": "label",
+      "total": 400,
+      "volume": 250,
+      "weight": 70,
+      "dose": 5,
+      "expected": 13.125,
+      "published": 13.13
+    },
+    {
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 70,
+      "dose": 5,
+      "expected": 5.25,
+      "published": 5.3
+    },
+    {
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 70,
+      "dose": 2,
+      "expected": 2.1,
+      "published": 2.1
+    },
+    {
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 100,
+      "dose": 4,
+      "expected": 6,
+      "published": 6
+    },
+    {
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 70,
+      "dose": 5,
+      "expected": 13.65,
+      "published": 13.7
+    },
+    {
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 50,
+      "dose": 2,
+      "expected": 3.9,
+      "published": 3.9
+    },
+    {
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 60,
+      "dose": 3,
+      "expected": 7.02,
+      "published": 7
+    }
+  ],
+  "calculations": [
+    {
+      "method": "syringe",
+      "source": "label",
+      "total": 200,
+      "volume": 250,
+      "weight": 60,
+      "dose": 2,
+      "expected": 9,
+      "published": 9,
+      "actual": 8.999999999999998,
+      "displayed": 9,
+      "reverseDose": 2
+    },
+    {
+      "method": "syringe",
+      "source": "label",
+      "total": 400,
+      "volume": 250,
+      "weight": 70,
+      "dose": 5,
+      "expected": 13.125,
+      "published": 13.13,
+      "actual": 13.125,
+      "displayed": 13.13,
+      "reverseDose": 5
+    },
+    {
+      "method": "syringe",
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 70,
+      "dose": 5,
+      "expected": 5.25,
+      "published": 5.3,
+      "actual": 5.25,
+      "displayed": 5.25,
+      "reverseDose": 5
+    },
+    {
+      "method": "syringe",
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 70,
+      "dose": 2,
+      "expected": 2.1,
+      "published": 2.1,
+      "actual": 2.1,
+      "displayed": 2.1,
+      "reverseDose": 2
+    },
+    {
+      "method": "syringe",
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 100,
+      "dose": 4,
+      "expected": 6,
+      "published": 6,
+      "actual": 6,
+      "displayed": 6,
+      "reverseDose": 4
+    },
+    {
+      "method": "syringe",
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 70,
+      "dose": 5,
+      "expected": 13.65,
+      "published": 13.7,
+      "actual": 13.649999999999999,
+      "displayed": 13.65,
+      "reverseDose": 5
+    },
+    {
+      "method": "syringe",
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 50,
+      "dose": 2,
+      "expected": 3.9,
+      "published": 3.9,
+      "actual": 3.9,
+      "displayed": 3.9,
+      "reverseDose": 2
+    },
+    {
+      "method": "syringe",
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 60,
+      "dose": 3,
+      "expected": 7.02,
+      "published": 7,
+      "actual": 7.019999999999999,
+      "displayed": 7.02,
+      "reverseDose": 3
+    },
+    {
+      "method": "infusion",
+      "source": "label",
+      "total": 200,
+      "volume": 250,
+      "weight": 60,
+      "dose": 2,
+      "expected": 9,
+      "published": 9,
+      "actual": 8.999999999999998,
+      "displayed": 9,
+      "reverseDose": 2
+    },
+    {
+      "method": "infusion",
+      "source": "label",
+      "total": 400,
+      "volume": 250,
+      "weight": 70,
+      "dose": 5,
+      "expected": 13.125,
+      "published": 13.13,
+      "actual": 13.125,
+      "displayed": 13.13,
+      "reverseDose": 5
+    },
+    {
+      "method": "infusion",
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 70,
+      "dose": 5,
+      "expected": 5.25,
+      "published": 5.3,
+      "actual": 5.25,
+      "displayed": 5.25,
+      "reverseDose": 5
+    },
+    {
+      "method": "infusion",
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 70,
+      "dose": 2,
+      "expected": 2.1,
+      "published": 2.1,
+      "actual": 2.1,
+      "displayed": 2.1,
+      "reverseDose": 2
+    },
+    {
+      "method": "infusion",
+      "source": "chart",
+      "total": 200,
+      "volume": 50,
+      "weight": 100,
+      "dose": 4,
+      "expected": 6,
+      "published": 6,
+      "actual": 6,
+      "displayed": 6,
+      "reverseDose": 4
+    },
+    {
+      "method": "infusion",
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 70,
+      "dose": 5,
+      "expected": 13.65,
+      "published": 13.7,
+      "actual": 13.649999999999999,
+      "displayed": 13.65,
+      "reverseDose": 5
+    },
+    {
+      "method": "infusion",
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 50,
+      "dose": 2,
+      "expected": 3.9,
+      "published": 3.9,
+      "actual": 3.9,
+      "displayed": 3.9,
+      "reverseDose": 2
+    },
+    {
+      "method": "infusion",
+      "source": "chart",
+      "total": 400,
+      "volume": 260,
+      "weight": 60,
+      "dose": 3,
+      "expected": 7.02,
+      "published": 7,
+      "actual": 7.019999999999999,
+      "displayed": 7.02,
+      "reverseDose": 3
+    }
+  ],
+  "layouts": [
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 280,
+      "mode": "light",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 280,
+      "mode": "dark",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 320,
+      "mode": "light",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 320,
+      "mode": "dark",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "acarbose",
+      "routes": 1
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "acetazolamide",
+      "routes": 2
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "sulfate-atropin",
+      "routes": 5
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "furosemide",
+      "routes": 3
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "insulin-injection-human-reyular-insulin",
+      "routes": 10
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "hydrochloride-dopamine",
+      "routes": 1
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "id": "phosphate-disopyramide",
+      "routes": 1
+    }
+  ],
+  "checks": [
+    "Published label examples and six NHS chart cells, both pump methods, exact forward/reverse values, final dilution volumes, display rounding, weight toggle, Persian input, changed/missing weight, absolute mcg/min, history/copy units and concentration warning",
+    "56 rendered drug views at 280/320/390/1280 px in light/dark; labelled route timings fit; corrected half and mixed fractions; no horizontal overflow; source footer retained; no repeated top note"
+  ]
+}

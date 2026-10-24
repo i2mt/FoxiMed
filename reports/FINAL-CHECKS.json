@@ -1,9 +1,40 @@
 {
-  "version": "5.4.1",
-  "date": "2026-10-22",
+  "version": "5.4.2",
+  "date": "2026-10-24",
   "status": "PASS_WITH_DOCUMENTED_LIMITS",
   "deployed": false,
-  "checks": {
+  "excluded": [
+    "theme/color changes except requested Calculate readiness",
+    "accessibility overhaul",
+    "existing touch-target geometry",
+    "assistant download flow",
+    "Telegram controls",
+    "lossy asset processing"
+  ],
+  "remaining": [
+    "Qualified clinical review of all 827 monographs and pair-specific compatibility records",
+    "Validated automatic age-specific burn TBSA estimates; diagrams currently record regions and fluid estimates require confirmed TBSA",
+    "Physical iPhone/Android, Safari/WebKit, OS install/keyboard/shortcut and real microphone testing",
+    "External icon/font CDN dependence; icon-specific touch suite blocked when CDN denied",
+    "Full generated voice model build and production-host verification"
+  ],
+  "evidence": [
+    "DRUG-READER-5.4.2.md",
+    "drug-reference-layout-audit.json",
+    "drug-reference-presentation-results.json",
+    "dopamine-and-reference-layout-results.json",
+    "scope-preservation-5.4.2.json",
+    "COMPACT-OFFLINE-5.4.1.md",
+    "pump-without-drip-results.json",
+    "compact-offline-update-results.json",
+    "calculator-safety-results.json",
+    "reference-offline-results.json",
+    "persian-numbers-results.json",
+    "scope-preservation-5.4.0.json",
+    "AUDIT-FIXES-5.4.0.md",
+    "scope-preservation-5.4.1.json"
+  ],
+  "previous_release_checks": {
     "calculator-safety": "PASS: current pump-only main calculator and all retained safety regressions",
     "drug-reference-ui": "PASS",
     "persian-numbers": "PASS: rerun with required product assumptions, 55 numeric fields and 16 paths",
@@ -26,30 +57,20 @@
     "compact-offline-update": "PASS: compact prompt, Settings management, opt-in migration, automatic/manual updates, reuse, failure preservation and removal",
     "earlier_other_browser_results": "Historical 5.4.0 unless explicitly listed above as current"
   },
-  "excluded": [
-    "theme/color changes except requested Calculate readiness",
-    "accessibility overhaul",
-    "existing touch-target geometry",
-    "assistant download flow",
-    "Telegram controls",
-    "lossy asset processing"
-  ],
-  "remaining": [
-    "Qualified clinical review of all 827 monographs and pair-specific compatibility records",
-    "Validated automatic age-specific burn TBSA estimates; diagrams currently record regions and fluid estimates require confirmed TBSA",
-    "Physical iPhone/Android, Safari/WebKit, OS install/keyboard/shortcut and real microphone testing",
-    "External icon/font CDN dependence; icon-specific touch suite blocked when CDN denied",
-    "Full generated voice model build and production-host verification"
-  ],
-  "evidence": [
-    "COMPACT-OFFLINE-5.4.1.md",
-    "pump-without-drip-results.json",
-    "compact-offline-update-results.json",
-    "calculator-safety-results.json",
-    "reference-offline-results.json",
-    "persian-numbers-results.json",
-    "scope-preservation-5.4.0.json",
-    "AUDIT-FIXES-5.4.0.md",
-    "scope-preservation-5.4.1.json"
-  ]
+  "checks": {
+    "drug-reference-reader": "PASS",
+    "drug-reference-presentation": "PASS",
+    "drug-reference-ui": "PASS",
+    "drug-reference-data": "PASS",
+    "drug-reference-cache": "PASS",
+    "dopamine-and-reference-layout": "PASS",
+    "calculator-safety": "PASS",
+    "pump-without-drip": "PASS",
+    "reference-offline": "PASS",
+    "compact-offline-update": "PASS",
+    "offline-manifest": "PASS",
+    "scope-preservation": "PASS",
+    "earlier_other_browser_results": "Historical 5.4.1/5.4.0; not rerun unless listed above",
+    "javascript-syntax": "PASS: all 33 root JavaScript files"
+  }
 }

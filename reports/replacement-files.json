@@ -1,19 +1,19 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "5.4.1-compact-offline-pump-without-drip",
+  "revision": "5.4.2-reference-layout-and-dopamine",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "reason": "Retain existing voice build and validate new modules and exact offline manifest before publishing.",
-      "bytes": 7798,
-      "sha256": "25774a3b20af9c8843a97381dea0f6798cc2a439ee0b52313c2471a6c2ceed8d"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 7909,
+      "sha256": "8b73068d21da4b91d2dd32bc9dbebc73a64e32772529fb91c7c84cc15481e60c"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "Current cumulative upload paths, new welcome assets, install/setup/tip checks and real-device validation scope.",
-      "bytes": 7103,
-      "sha256": "b6a5e575b51a9917ce9af4ca7c389df52b74ec9f03a23b9966117549d380861e"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 7709,
+      "sha256": "14ecefbc43fdbd29f2091ddf32b9bce6af9fee083aa170bd1c0466edee783c43"
     },
     {
       "path": "calculation-core.js",
@@ -106,6 +106,12 @@
       "sha256": "80f3056a8f2e2b95800d6ac26917997296d327e71925e9c10fdd5afc15ef1bfd"
     },
     {
+      "path": "drug-reference-presentation.js",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 260475,
+      "sha256": "cdebcd6e4ae3154b2763848a0b539c63ac4defd4c2042e20572e82dc819cdcf7"
+    },
+    {
       "path": "drug-reference-source.pdf",
       "reason": "Unchanged original PDF copied under the path used by footer page links.",
       "bytes": 12760136,
@@ -113,21 +119,21 @@
     },
     {
       "path": "drug-reference.css",
-      "reason": "Retain reader styling and stable scroll behavior; use readable dark-mode reference headings.",
-      "bytes": 12070,
-      "sha256": "52b302cc92536da8213cae31aea3a8f4439bac2d4d1d4fa031e31526684b4f3c"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 13263,
+      "sha256": "56a8629231a56933812674adcfb532759e9c58a261343d70be887e04ce32d0f7"
     },
     {
       "path": "drug-reference.js",
-      "reason": "Visible per-entry provenance and unfinished clinical review status.",
-      "bytes": 26937,
-      "sha256": "ff8d982232ad9c60f22e230625ac7611bd2bfde4a71e1a93168aa69aff03dd73"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 31410,
+      "sha256": "e60e664fe44d3949f403544e2ce9e046264483db3b30df31cf5646a2a969b07c"
     },
     {
       "path": "drugDatabase.js",
-      "reason": "Targeted sourced corrections to heparin monitoring and norepinephrine access notes; no claim of full formulary validation.",
-      "bytes": 62030,
-      "sha256": "2bdc4ebd29449b8ab39feee9c2b0460567b9d24be33dba3bb45cc3b5dd092ca5"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 62591,
+      "sha256": "73dad5a0ba05faabade4ff4cb3ecbc8c6f1d834f98de731a4b5c44e34a0fbf12"
     },
     {
       "path": "icons/fox-mark-clean-mask.png",
@@ -149,15 +155,15 @@
     },
     {
       "path": "index.html",
-      "reason": "Remove main drip selector/output; Settings reference management; current versioned runtime assets, retained clinical scope and startup recovery.",
-      "bytes": 181713,
-      "sha256": "c408cff9021ebb76dc649fb79cf5b62cf68b017bf5f00458109cd1963702ce23"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 181777,
+      "sha256": "6f0d134656bb92dd590d2ade663f2a2b10763f94f22e24f316618c5c6517c980"
     },
     {
       "path": "manifest.json",
-      "reason": "Release version 5.4.1.",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 1810,
-      "sha256": "abd6a52836845549aac83c59fbaa969013fa0210539a49f5effab3aadd46c297"
+      "sha256": "45ca8f3d89336e99d538648a7aac1859f32eb89f0d86bb46f47524399403d4d8"
     },
     {
       "path": "onboarding.css",
@@ -173,9 +179,9 @@
     },
     {
       "path": "reference-offline-manifest.json",
-      "reason": "Exact size/SHA-256 inventory of the opt-in whole-reference and same-origin shell package.",
-      "bytes": 6974,
-      "sha256": "86fd0d0356be2c2f3dff0b6dc1f0eb55a314f54900a55e6d0ea966fcf4acb085"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 7145,
+      "sha256": "223fa8dcf90fe00e5e722aed126e385673b4a7e55d3ddfac4a2109261994b2a9"
     },
     {
       "path": "reference-offline.css",
@@ -185,9 +191,9 @@
     },
     {
       "path": "reference-offline.js",
-      "reason": "Compact disappearing invitation; Settings management; opt-in migration, automatic/manual app-version updates reusing valid files, integrity checks and preservation of prior complete packages.",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 15661,
-      "sha256": "0cc0c230b1ca80ba759d9ee2f61f185a4540207f4d71e800acf4ea923329d8b4"
+      "sha256": "c3f689d402f27ddd8a8199ede3f350b24d767b8c4312a2702e8554476c534d8f"
     },
     {
       "path": "reports/AUDIT-FIXES-5.4.0.md",
@@ -208,6 +214,12 @@
       "sha256": "287295f63d381d4376d8ea17bb375187278dc8eb3c33ffb6fca44b5afa7ea739"
     },
     {
+      "path": "reports/DRUG-READER-5.4.2.md",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 5271,
+      "sha256": "29dac7913e7a49860158af5aea7f2d366e197151a920668b1dd86e07e430b2c3"
+    },
+    {
       "path": "reports/DRUG-READER-UPDATE.md",
       "reason": "Historical two-stage reader revision, explicitly pointing to the current update.",
       "bytes": 5719,
@@ -215,9 +227,9 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
-      "bytes": 2639,
-      "sha256": "0ff415ff054765d130db2a45fb465e777e6236ce196ea55dfb0616debc61cedb"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 3466,
+      "sha256": "9d83c8aab8729187c9b2c2aaf78612a89b5b1a9e37f823dcb77fe8a432e356a0"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -227,9 +239,9 @@
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
-      "bytes": 26287,
-      "sha256": "183dabceb80877bd6c80c8abbb0c502da930c42ddb1bb55a30451b9d05abff57"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 27091,
+      "sha256": "be10d00f85a3d82c6f9e2e0f9faea4aa7df51f49d6e62312c2a61e63821f4f82"
     },
     {
       "path": "reports/SECOND-SPELLING-PASS.json",
@@ -257,9 +269,15 @@
     },
     {
       "path": "reports/compact-offline-update-results.json",
-      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 1102,
-      "sha256": "86edd1550794b078ba17beee7cefaabdb4e7ba6f5dfb4ba5e08a8980772a3fa3"
+      "sha256": "fb8f1845d9814264e7aaca4ec80f911f600a1c5f1c3666c66a110fb939d07312"
+    },
+    {
+      "path": "reports/dopamine-and-reference-layout-results.json",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 12405,
+      "sha256": "08d308a55b8590501e8eb8f3461a6c214b2ad48c3e238c23f34d1942f029f1db"
     },
     {
       "path": "reports/drug-data-audit.json",
@@ -304,10 +322,22 @@
       "sha256": "807107f7ae647b383fbf4e08c2d469f54edf40e2042767cac0b3f95e9b6c3695"
     },
     {
+      "path": "reports/drug-reference-layout-audit.json",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 26800,
+      "sha256": "e106eb01a7294846f6c15cdcdab86514a5e54b755986ca1e26e5551c5d7710bd"
+    },
+    {
       "path": "reports/drug-reference-performance.json",
       "reason": "Historical first performance-repair sample, labelled separately from this layout revision.",
       "bytes": 1185,
       "sha256": "4ebcb0efbc6ccef4b712cccf8474267bbee5c6b2e7e8bc8cbeb4e6b132e30d95"
+    },
+    {
+      "path": "reports/drug-reference-presentation-results.json",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 381,
+      "sha256": "cb4a686267abeb9a496edb40b6e0c37f267625bcdfe483033d1ab5112df71740"
     },
     {
       "path": "reports/drug-reference-readability-visual.json",
@@ -317,9 +347,9 @@
     },
     {
       "path": "reports/drug-reference-ui-results.json",
-      "reason": "Current rendered drug/search/card/keyboard/bidi/tutorial and user-state restoration results.",
-      "bytes": 1112,
-      "sha256": "ece26d4ee7d40ad8f5c4f090da3525d68b0d7925a73d776c6edfdb2f956b6f40"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 1141,
+      "sha256": "93257eef1f92217e1830b895eaecd0b452d4754b51094a59bc46fbb92421855f"
     },
     {
       "path": "reports/drug-source-duplicate-headings.json",
@@ -347,15 +377,15 @@
     },
     {
       "path": "reports/pump-without-drip-results.json",
-      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 1000,
-      "sha256": "f9368a209e537fb6868db39c260d3d75ddaa2d55a3ba3b56cb64b3c13f3115d1"
+      "sha256": "2a5223a68cd458afb67bf684bd5064ea49c6535d614033d94f59e797fdf3f3f9"
     },
     {
       "path": "reports/reference-offline-results.json",
-      "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
-      "bytes": 1025,
-      "sha256": "240afd88fec992abba19088c3ce81b23fc751cffdf5c4350ad75e0edf1b0af1c"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 1092,
+      "sha256": "ce959145a5d7d890ab7e3a9c81fb65b6a7e221de0370215be0aa5bbe9502189c"
     },
     {
       "path": "reports/scope-preservation-5.4.0.json",
@@ -368,6 +398,12 @@
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
       "bytes": 195,
       "sha256": "8a5ce6e58e2a9d6b032b8c018bb76bc6022ae720a25eb2750b8c79c30c78a7c3"
+    },
+    {
+      "path": "reports/scope-preservation-5.4.2.json",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 2623,
+      "sha256": "1f90a705406bd45cd98d5f0b71708ac8a20171b3a30867039ee3f02874c9d3bb"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -407,9 +443,9 @@
     },
     {
       "path": "script.js",
-      "reason": "Canonical infusion state/output/history; dimension checks, safe recovery, required-field events, corrected tool math/state, confirmed TBSA workflow, scoped warnings, shorter readiness-gated loading and shortcuts.",
-      "bytes": 307526,
-      "sha256": "1245e1a753c3e8363e313c1495e55cc4d2aa45bdc765a636b14eb30f7a3e6e79"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 307903,
+      "sha256": "6ac0a71badf9aa425f39ec46283684d5681f0dc18539fb187c009431b6184b4b"
     },
     {
       "path": "scripts/build-reference-offline-manifest.py",
@@ -455,9 +491,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "Fresh shell versions; retained stable model/reference caches; verified-download refresh route and offline navigation fallback.",
-      "bytes": 8820,
-      "sha256": "044e42fd6682f0787c2a34f74af1953c42e4c3de4f9d3929d360f4b0c4b00cbf"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 8864,
+      "sha256": "94c7626ce5f2ec5c46d7b6ebc8da11fd00195aef8d53505ed407b9322fbc2bad"
     },
     {
       "path": "settings.css",
@@ -479,9 +515,15 @@
     },
     {
       "path": "tests/compact-offline-update.test.js",
-      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
       "bytes": 10260,
-      "sha256": "4b25296faa502dc7c0a3434cab619bbc70a46cd6e0003730ea52edc98277aafe"
+      "sha256": "02dcc68382039690d8a3ebda71bb8b03234f27533b91447da742b0da0811fd50"
+    },
+    {
+      "path": "tests/dopamine-and-reference-layout.test.js",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 9037,
+      "sha256": "5f83650125e54d2a3a801c9ae7242d96a1e5c390d41e428ae924a3a84c708fe0"
     },
     {
       "path": "tests/drug-reference-cache.test.js",
@@ -496,16 +538,22 @@
       "sha256": "54966d3b383833a7c7e067561f1d66321e3bf3618c8b4c9f91ea3afd6d91a6a2"
     },
     {
+      "path": "tests/drug-reference-presentation.test.js",
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 3631,
+      "sha256": "c0b8078b2bfcc0c8c3fc275b0a2c3c304e6069eca8bc12cba53152e84bd42d92"
+    },
+    {
       "path": "tests/drug-reference-reader.test.js",
-      "reason": "Whole-source content/numeric preservation plus all-monograph source ordering, seed mechanism order and brands-first checks.",
-      "bytes": 4728,
-      "sha256": "c6589861fbd3972eb3b5de5529a150418b1909cd970ef2f2e00ab3431f5c1a5f"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 5889,
+      "sha256": "5b00d515ece0cec841bca875f3525bc96c237bc4b728109efd05d120306552a8"
     },
     {
       "path": "tests/drug-reference-ui.test.js",
-      "reason": "Retain drug/reader/UI checks and explicitly open the optional interactive tutorial.",
-      "bytes": 15951,
-      "sha256": "a6e3504af88625408501fa690384abe1daf6af12386251a4fd6c56ecfc997aa4"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 16881,
+      "sha256": "617d71e9d8001021bf3bea278f05d740c5ede10421b4ba91858acf4735893640"
     },
     {
       "path": "tests/navigation-layout.test.js",
@@ -521,15 +569,15 @@
     },
     {
       "path": "tests/pump-without-drip.test.js",
-      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
-      "bytes": 5978,
-      "sha256": "a7c3ce81dbf18bb50e29c5e42e92b55cf26090f8739d2f6801a11a54be7184cc"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 6019,
+      "sha256": "aae4edfb3469e0a20d11a0c7aaca1cc5b71d2b0b6f36d801c6a4db983ad94392"
     },
     {
       "path": "tests/reference-offline.test.js",
-      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
-      "bytes": 8834,
-      "sha256": "a626c932154b3963b96e16eeead157b30724854afd2bbc12fde1117a089a9bc8"
+      "reason": "5.4.2: source-faithful drug-reader timings, numeric/fraction presentation, top-note removal, dopamine verification, cache integration or validation evidence.",
+      "bytes": 9173,
+      "sha256": "aa2016019ce5533e323a7f6521b299d8bb32fa32838152ee35a2be34c57e6f97"
     },
     {
       "path": "tests/settings-mobile.test.js",

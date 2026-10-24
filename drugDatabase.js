@@ -860,7 +860,13 @@ const drugDatabase = {
             defaultWeight: 70
         },
         typicalDoseRange: { min: 2, max: 20, unit: 'mcg/kg/min' },
-        maxConcentration: '800 mcg/mL',
+        // Concentrations depend on the product, venous route and local protocol.
+        // 800 mcg/mL is a label example, not a universal maximum.
+        concentrationNote: 'غلظت دوپامین باید با فرآورده، راه وریدی و پروتکل مرکز تطبیق داده شود؛ 800 mcg/mL حد بیشینهٔ عمومی نیست.',
+        concentrationSources: [
+            'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fc1eb709-ce72-413e-9043-8e463ef0fd36',
+            'https://www.gloshospitals.nhs.uk/documents/22897/Dopamine_infusion_chart.pdf'
+        ],
         solutionType: ['D5W', 'N.S'],
         lineRequirement: 'لاین مرکزی برای دوزهای بالا (>10 میکروگرم/کیلوگرم/دقیقه)',
         ySiteCompatibilities: {

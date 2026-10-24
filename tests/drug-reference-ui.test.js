@@ -53,14 +53,16 @@ const server=http.createServer((req,res)=>{try{const url=new URL(req.url,'http:/
   // Inspect actual bracket positions, including nested RTL/LTR groups.
   const punctuation=await context(),b=await punctuation.newPage();await b.setContent('<section id="drugsTab" dir="rtl"><div class="drug-reference-section" id="bracketFixtures"></div></section>');
   const instrumented=fs.readFileSync(path.join(ROOT,'drug-reference.js'),'utf8').replace(/\}\)\(\);\s*$/, 'window.fixtureReader={paragraphs};})();');await b.addScriptTag({content:instrumented});await b.addStyleTag({content:fs.readFileSync(path.join(ROOT,'drug-reference.css'),'utf8')});
-  await b.evaluate(()=>{document.querySelector('#bracketFixtures').innerHTML=['ادامه (PTCA) وریدی','متن (فارسی و (English)) ادامه','دوز (۰/۲۵ mg/kg/min) هر ۶ ساعت','اختلال دید )تاری('].map(s=>fixtureReader.paragraphs(s)).join('')});
+  await b.evaluate(()=>{document.querySelector('#bracketFixtures').innerHTML=['ادامه (PTCA) وریدی','متن (فارسی و (English)) ادامه','دوز (۰/۲۵ mg/kg/min) هر ۶ ساعت','اختلال دید )تاری(','نسبت ۱:۲','کسر ۱/۲','سن ۱۲−۶ سال','مدت اثر ۱½−۸½ h'].map(s=>fixtureReader.paragraphs(s)).join('')});
   for(const width of [1280,390,320]){
    await b.setViewportSize({width,height:900});
    const pairs=await b.locator('.drug-reference-parenthesis').evaluateAll(nodes=>nodes.map(n=>{const start=n.firstChild,end=n.lastChild,a=document.createRange(),z=document.createRange();a.setStart(start,0);a.setEnd(start,1);z.setStart(end,end.textContent.length-1);z.setEnd(end,end.textContent.length);return {direction:n.dir,first:a.getBoundingClientRect().left,last:z.getBoundingClientRect().left};}));
    assert(pairs.length>=5);for(const pair of pairs)assert(pair.direction==='rtl'?pair.first>pair.last:pair.first<pair.last,JSON.stringify(pair));
+   const quantities=await b.locator('.drug-reference-measure').evaluateAll(nodes=>nodes.filter(n=>['1:2','1/2','6–12','1½–8½ h'].includes(n.textContent)).map(n=>{const walker=document.createTreeWalker(n,NodeFilter.SHOW_TEXT),texts=[];while(walker.nextNode())if(walker.currentNode.textContent.trim())texts.push(walker.currentNode);const first=document.createRange(),last=document.createRange(),a=texts[0],z=texts.at(-1);first.setStart(a,0);first.setEnd(a,1);last.setStart(z,z.textContent.length-1);last.setEnd(z,z.textContent.length);return{text:n.textContent,first:first.getBoundingClientRect().left,last:last.getBoundingClientRect().left,nowrap:getComputedStyle(n).whiteSpace};}));
+   assert.equal(quantities.length,4);for(const q of quantities)assert(q.first<q.last&&q.nowrap==='nowrap',JSON.stringify(q));
    assert(await b.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   }
-  await punctuation.close();passed.push('actual bracket glyph positions for Persian, Latin, nested and numeric/unit phrases at desktop and phone widths');
+  await punctuation.close();passed.push('actual bracket and numeric glyph positions for Persian/Latin/nested phrases, 1:2, 1/2, ages and mixed fractions at desktop and phone widths');
   const result={status:'PASS',density,passed};fs.writeFileSync(path.join(ROOT,'reports/drug-reference-ui-results.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
