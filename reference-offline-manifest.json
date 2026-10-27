@@ -1,17 +1,22 @@
 {
   "schema": 1,
-  "version": "5.4.3",
+  "version": "5.4.4",
   "scope": "Full reference text, source PDF, and same-origin app shell; excludes voice model and external icon/font CDN assets.",
   "files": [
     {
       "url": "index.html",
-      "bytes": 181778,
-      "sha256": "c46233eb32c69eaef01f16bc7f6d3ffc19d2d0219bf684b83de95806326f62ba"
+      "bytes": 185748,
+      "sha256": "1a0c06c5011fc7644ed2ca5bbca57cd845275c34662fc9b95da17670fbff3103"
     },
     {
       "url": "style.css?v=51",
       "bytes": 236747,
       "sha256": "62037b938f937f8a598e133fe72cb87b5966baba25a13b79864cc8ef13c9f2b0"
+    },
+    {
+      "url": "burns.css?v=1",
+      "bytes": 3430,
+      "sha256": "6c571794cf02d221bf55b6c1a5a04a3dd2fea6f67041d1dddf98df4d7434da8a"
     },
     {
       "url": "voice-assistant.css?v=43",
@@ -24,9 +29,14 @@
       "sha256": "09052ec376365a56c0b9bd795c5612ae8e20769189bc60da7ba14323e057e07c"
     },
     {
-      "url": "script.js?v=62",
-      "bytes": 308181,
-      "sha256": "92d1aeb968201bfb3e8c6aa3988c419c8e8347c45a4137a30de29b24551546c1"
+      "url": "burns-core.js?v=1",
+      "bytes": 2371,
+      "sha256": "c4fa65bf7b26885cd6d776b5f586a79c09b79323735966d34fb9b5f5652cb546"
+    },
+    {
+      "url": "script.js?v=63",
+      "bytes": 310495,
+      "sha256": "cf6be3d7179397b321fa95bf8ee52ea7ae16cf33cae81bd07940ff7672bb883d"
     },
     {
       "url": "voice-recognition.js?v=42",
@@ -114,9 +124,9 @@
       "sha256": "10608e5aced310552ae80af93610c190173e6490adc7f07fbb88a2ef0b8b932b"
     },
     {
-      "url": "reference-offline.js?v=4",
+      "url": "reference-offline.js?v=5",
       "bytes": 15661,
-      "sha256": "21835565b9b2ef16b651c4c0d3e82bc3544acc04b5320a63e24fc7587f635b03"
+      "sha256": "2613221131f39640c2272902b38e5b16e56936e77ada9b3fd1811d508bd4e762"
     },
     {
       "url": "reference-offline.css?v=2",
@@ -141,7 +151,7 @@
     {
       "url": "manifest.json",
       "bytes": 1810,
-      "sha256": "c5f5c36ba183c8f8c786726d9ba53442154bcbc1c75b0eb728af80f7c4951e6e"
+      "sha256": "f6c74549877304018c3929975eedc2a1eb89be73c2f8f1c7cb43b9784983ea18"
     },
     {
       "url": "icons/icon-192.png",

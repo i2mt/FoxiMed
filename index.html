@@ -27,6 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=51">
+    <link rel="stylesheet" href="burns.css?v=1">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
     <link rel="stylesheet" href="drug-reference.css?v=10">
     <link rel="stylesheet" href="settings.css?v=3">
@@ -51,7 +52,7 @@
             </div>
             <div class="loading-status" id="loadingStatus">در حال بارگذاری پایگاه داده دارویی...</div>
             <div class="loading-meta">
-                <span>نسخه 5.4.3</span>
+                <span>نسخه 5.4.4</span>
                 <span class="loading-meta-dot" aria-hidden="true"></span>
                 <span>محاسبه آفلاین · مرجع با دریافت اختیاری</span>
             </div>
@@ -1007,7 +1008,7 @@
                             <button class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-icon-wrap" style="background:linear-gradient(135deg,#f97316,#ef4444)"><i class="fas fa-fire"></i></div>
                                 <div class="accordion-title-wrap">
-                                    <span class="accordion-title">ثبت نواحی و TBSA سوختگی</span>
+                                    <span class="accordion-title">درصد سوختگی</span>
                                     <span class="accordion-sub">Total Body Surface Area — TBSA</span>
                                 </div>
                                 <i class="fas fa-chevron-down accordion-chevron"></i>
@@ -1017,11 +1018,15 @@
                                     <button class="burns-age-btn active" id="burnsAdultBtn" onclick="setBurnsAge('adult')"><i class="fas fa-person"></i> بزرگسال</button>
                                     <button class="burns-age-btn" id="burnsPedBtn" onclick="setBurnsAge('pediatric')"><i class="fas fa-child"></i> کودک</button>
                                 </div>
-                                <label class="calc-toggle-item">TBSA تأییدشده (%، فقط سوختگی نسبی/تمام‌ضخامت)<input id="burnsConfirmedTBSA" type="text" data-numeric="true" class="oxy-input" inputmode="decimal" oninput="updateBurns()"></label>
-                                <div class="control-group"><label>پروتکل تخمین مایع — بزرگسال</label><select id="burnsProtocol" class="manual-unit-select" onchange="updateParkland()"><option value="">طبق دستور/پروتکل مرکز انتخاب کنید</option><option value="2">ABA · 2 mL/kg/%TBSA · فقط بزرگسال ≥20% TBSA</option><option value="4">Parkland سنتی · 4 mL/kg/%TBSA</option></select></div>
-                                <div class="calc-toggles-stack"><label class="calc-toggle-item">ساعت سپری‌شده از آسیب (۰ تا کمتر از ۲۴)<input id="burnsElapsed" type="text" data-numeric="true" class="oxy-input" inputmode="decimal" oninput="updateParkland()"></label><label class="calc-toggle-item">مایع احیای دریافت‌شده از زمان آسیب (mL)<input id="burnsGiven" type="text" data-numeric="true" class="oxy-input" inputmode="decimal" oninput="updateParkland()"></label></div>
-                                <p class="tool-note">زمان از آسیب حساب می‌شود، نه پذیرش. فقط سوختگی نسبی/تمام‌ضخامت. برآورد اولیه نیازمند تنظیم بالینی است؛ کودک به جدول سن‌محور و پروتکل جداگانه نیاز دارد. <a href="https://doi.org/10.1093/jbcr/irad125" target="_blank" rel="noopener">منبع ABA</a> · مرور منبع: 2026-10-21</p>
-                                <p class="burns-rule-note" id="burnsRuleNote">نقشه فقط برای ثبت نواحی است و درصد خودکار تولید نمی‌کند؛ TBSA را با روش معتبر تأیید و جداگانه وارد کنید.</p>
+                                <details id="burnsAgeDetails" class="burns-secondary" hidden>
+                                    <summary>سن کودک، برای برآورد نزدیک‌تر <span>اختیاری</span></summary>
+                                    <label class="burns-field">سن کودک (سال)<select id="burnsChildAge" onchange="updateBurns()"><option value="">نامشخص — نمایش بازه</option><option value="0">کمتر از ۱ سال</option><option value="1">1 سال</option><option value="2">2 سال</option><option value="3">3 سال</option><option value="4">4 سال</option><option value="5">5 سال</option><option value="6">6 سال</option><option value="7">7 سال</option><option value="8">8 سال</option><option value="9">9 سال</option><option value="10">10 سال</option><option value="11">11 سال</option><option value="12">12 سال</option><option value="13">13 سال</option><option value="14">14 سال</option><option value="15">15 سال</option></select></label>
+                                </details>
+                                <div class="burns-result-box burns-primary-result" id="burnsResultBox">
+                                    <div class="burns-result-row"><span class="burns-result-label">برآورد درصد سوختگی (TBSA)</span><bdi class="burns-result-value" id="burnsTBSA" dir="ltr">0%</bdi></div>
+                                    <p id="burnsEstimateHint" class="burns-estimate-hint">نواحی سوخته را روی نمای جلو و پشت انتخاب کنید.</p>
+                                </div>
+                                <p class="burns-rule-note" id="burnsRuleNote">هر انتخاب، کل بخش مشخص‌شده است؛ قرمزی سطحی را حساب نکنید.</p>
 
                                 <div class="burns-body-wrap">
                                     <div class="burns-body-view">
@@ -1029,29 +1034,29 @@
                                         <svg class="burns-svg" viewBox="0 0 120 260" id="burnsSvgFront">
                                             <ellipse cx="60" cy="22" rx="18" ry="20" class="burns-region" data-region="head" data-label="سر"/>
                                             <rect x="53" y="42" width="14" height="10" rx="4" class="burns-region" data-region="neck" data-label="گردن"/>
-                                            <rect x="34" y="54" width="52" height="36" rx="6" class="burns-region" data-region="chest" data-label="قفسه سینه (جلو)"/>
-                                            <rect x="36" y="92" width="48" height="34" rx="6" class="burns-region" data-region="abdomen" data-label="شکم (جلو)"/>
+                                            <rect x="34" y="54" width="52" height="36" rx="6" class="burns-region" data-region="trunk_f" data-label="تنه جلو (سینه و شکم)"/>
+                                            <rect x="36" y="92" width="48" height="34" rx="6" class="burns-region" data-region="trunk_f" data-label="تنه جلو (سینه و شکم)"/>
                                             <rect x="46" y="128" width="28" height="14" rx="5" class="burns-region" data-region="perineum" data-label="پرینه"/>
-                                            <rect x="14" y="56" width="18" height="32" rx="7" class="burns-region" data-region="l_upper_arm" data-label="بازوی چپ"/>
-                                            <rect x="88" y="56" width="18" height="32" rx="7" class="burns-region" data-region="r_upper_arm" data-label="بازوی راست"/>
-                                            <rect x="8" y="90" width="15" height="26" rx="6" class="burns-region" data-region="l_lower_arm" data-label="ساعد چپ"/>
-                                            <rect x="97" y="90" width="15" height="26" rx="6" class="burns-region" data-region="r_lower_arm" data-label="ساعد راست"/>
-                                            <ellipse cx="15" cy="127" rx="8" ry="10" class="burns-region" data-region="l_hand" data-label="دست چپ"/>
-                                            <ellipse cx="105" cy="127" rx="8" ry="10" class="burns-region" data-region="r_hand" data-label="دست راست"/>
-                                            <rect x="34" y="144" width="22" height="36" rx="7" class="burns-region" data-region="l_thigh_f" data-label="ران چپ (جلو)"/>
-                                            <rect x="64" y="144" width="22" height="36" rx="7" class="burns-region" data-region="r_thigh_f" data-label="ران راست (جلو)"/>
-                                            <rect x="35" y="182" width="20" height="36" rx="6" class="burns-region" data-region="l_leg_f" data-label="ساق چپ (جلو)"/>
-                                            <rect x="65" y="182" width="20" height="36" rx="6" class="burns-region" data-region="r_leg_f" data-label="ساق راست (جلو)"/>
-                                            <ellipse cx="45" cy="225" rx="12" ry="8" class="burns-region" data-region="l_foot" data-label="پای چپ"/>
-                                            <ellipse cx="75" cy="225" rx="12" ry="8" class="burns-region" data-region="r_foot" data-label="پای راست"/>
+                                            <rect x="14" y="56" width="18" height="32" rx="7" class="burns-region" data-region="r_upper_arm" data-label="بازوی راست"/>
+                                            <rect x="88" y="56" width="18" height="32" rx="7" class="burns-region" data-region="l_upper_arm" data-label="بازوی چپ"/>
+                                            <rect x="8" y="90" width="15" height="26" rx="6" class="burns-region" data-region="r_lower_arm" data-label="ساعد راست"/>
+                                            <rect x="97" y="90" width="15" height="26" rx="6" class="burns-region" data-region="l_lower_arm" data-label="ساعد چپ"/>
+                                            <ellipse cx="15" cy="127" rx="8" ry="10" class="burns-region" data-region="r_hand" data-label="دست راست"/>
+                                            <ellipse cx="105" cy="127" rx="8" ry="10" class="burns-region" data-region="l_hand" data-label="دست چپ"/>
+                                            <rect x="34" y="144" width="22" height="36" rx="7" class="burns-region" data-region="r_thigh_f" data-label="ران راست (جلو)"/>
+                                            <rect x="64" y="144" width="22" height="36" rx="7" class="burns-region" data-region="l_thigh_f" data-label="ران چپ (جلو)"/>
+                                            <rect x="35" y="182" width="20" height="36" rx="6" class="burns-region" data-region="r_leg_f" data-label="ساق راست (جلو)"/>
+                                            <rect x="65" y="182" width="20" height="36" rx="6" class="burns-region" data-region="l_leg_f" data-label="ساق چپ (جلو)"/>
+                                            <ellipse cx="45" cy="225" rx="12" ry="8" class="burns-region" data-region="r_foot" data-label="پای راست"/>
+                                            <ellipse cx="75" cy="225" rx="12" ry="8" class="burns-region" data-region="l_foot" data-label="پای چپ"/>
                                         </svg>
                                     </div>
                                     <div class="burns-body-view">
                                         <div class="burns-view-label">پشت</div>
                                         <svg class="burns-svg" viewBox="0 0 120 260" id="burnsSvgBack">
                                             <ellipse cx="60" cy="22" rx="18" ry="20" class="burns-region" data-region="head_b" data-label="سر (پشت)"/>
-                                            <rect x="34" y="54" width="52" height="36" rx="6" class="burns-region" data-region="upper_back" data-label="کمربند شانه (پشت)"/>
-                                            <rect x="36" y="92" width="48" height="34" rx="6" class="burns-region" data-region="lower_back" data-label="کمر (پشت)"/>
+                                            <rect x="34" y="54" width="52" height="36" rx="6" class="burns-region" data-region="trunk_b" data-label="تنه پشت (بدون باسن)"/>
+                                            <rect x="36" y="92" width="48" height="34" rx="6" class="burns-region" data-region="trunk_b" data-label="تنه پشت (بدون باسن)"/>
                                             <rect x="38" y="128" width="44" height="18" rx="6" class="burns-region" data-region="buttocks" data-label="باسن"/>
                                             <rect x="14" y="56" width="18" height="32" rx="7" class="burns-region" data-region="l_upper_arm_b" data-label="بازوی چپ (پشت)"/>
                                             <rect x="88" y="56" width="18" height="32" rx="7" class="burns-region" data-region="r_upper_arm_b" data-label="بازوی راست (پشت)"/>
@@ -1061,7 +1066,12 @@
                                             <rect x="64" y="148" width="22" height="36" rx="7" class="burns-region" data-region="r_thigh_b" data-label="ران راست (پشت)"/>
                                             <rect x="35" y="186" width="20" height="36" rx="6" class="burns-region" data-region="l_leg_b" data-label="ساق چپ (پشت)"/>
                                             <rect x="65" y="186" width="20" height="36" rx="6" class="burns-region" data-region="r_leg_b" data-label="ساق راست (پشت)"/>
-                                        </svg>
+                                                                                    <rect x="53" y="42" width="14" height="10" rx="4" class="burns-region" data-region="neck_b" data-label="گردن (پشت)"/>
+                                            <ellipse cx="15" cy="127" rx="8" ry="10" class="burns-region" data-region="l_hand_b" data-label="دست چپ (پشت)"/>
+                                            <ellipse cx="105" cy="127" rx="8" ry="10" class="burns-region" data-region="r_hand_b" data-label="دست راست (پشت)"/>
+                                            <ellipse cx="45" cy="231" rx="12" ry="8" class="burns-region" data-region="l_foot_b" data-label="پای چپ (پشت)"/>
+                                            <ellipse cx="75" cy="231" rx="12" ry="8" class="burns-region" data-region="r_foot_b" data-label="پای راست (پشت)"/>
+</svg>
                                     </div>
                                 </div>
 
@@ -1069,25 +1079,28 @@
                                     <span class="burns-chips-placeholder">هیچ ناحیه‌ای انتخاب نشده — روی نواحی بدن ضربه بزنید</span>
                                 </div>
 
-                                <div class="burns-result-box" id="burnsResultBox" style="display:none;">
-                                    <div class="burns-result-row">
-                                        <span class="burns-result-label">درصد کل سوختگی (TBSA)</span>
-                                        <span class="burns-result-value" id="burnsTBSA">0%</span>
-                                    </div>
-                                    <div class="burns-parkland-weight">
-                                        <label style="font-family:var(--font-persian);font-size:12px;color:var(--text-secondary);display:block;margin-bottom:4px;">وزن بیمار برای محاسبه Parkland</label>
-                                        <div class="input-with-unit">
-                                            <input type="text" data-numeric="true" id="burnsWeight" placeholder="وزن" inputmode="decimal" step="0.1" oninput="updateParkland()">
-                                            <span class="input-unit">kg</span>
+                                <details class="burns-fluid-panel burns-secondary" id="burnsFluidPanel">
+                                    <summary>تخمین مایع — بزرگسال <span>اختیاری</span></summary>
+                                    <div class="burns-fluid-content">
+                                        <p class="burns-estimate-hint" id="burnsFluidBasis">درصد از نقشه خوانده می‌شود.</p>
+                                        <div class="burns-protocol-grid" role="group" aria-label="روش تخمین مایع">
+                                            <button type="button" class="burns-protocol-choice" data-burn-factor="4" onclick="setBurnsProtocol('4')"><strong>Parkland سنتی</strong><bdi dir="ltr">4 mL × kg × %TBSA</bdi><small>فرمول کلاسیک ۲۴ ساعت نخست</small></button>
+                                            <button type="button" class="burns-protocol-choice" data-burn-factor="2" onclick="setBurnsProtocol('2')"><strong>ABA</strong><bdi dir="ltr">2 mL × kg × %TBSA</bdi><small>بزرگسال با حداقل ۲۰٪ TBSA</small></button>
                                         </div>
+                                        <select id="burnsProtocol" hidden onchange="updateParkland()"><option value=""></option><option value="4">Parkland</option><option value="2">ABA</option></select>
+                                        <label class="burns-field">وزن بیمار (kg)<input type="text" data-numeric="true" id="burnsWeight" placeholder="وزن" inputmode="decimal" oninput="updateParkland()"></label>
+                                        <p class="burns-estimate-hint" id="burnsFluidHint">روش را انتخاب و وزن را وارد کنید.</p>
+                                        <div class="burns-fluid-result" id="parklandRow" style="display:none;">
+                                            <div class="burns-result-row"><span class="burns-result-label" id="parklandLabel">تخمین ۲۴ ساعت نخست از آسیب</span><bdi class="burns-result-value" id="parklandResult" dir="ltr">—</bdi></div>
+                                            <div class="burns-fluid-split"><div><span>۸ ساعت نخست از آسیب</span><bdi id="burnsFirst8" dir="ltr">—</bdi></div><div><span>۱۶ ساعت بعد</span><bdi id="burnsNext16" dir="ltr">—</bdi></div></div>
+                                        </div>
+                                        <details class="burns-secondary" id="burnsTbsaDetails"><summary>اصلاح درصد نقشه <span>اختیاری</span></summary><label class="burns-field">درصد ارزیابی‌شده برای محاسبه مایع<input id="burnsConfirmedTBSA" type="text" data-numeric="true" inputmode="decimal" placeholder="خالی = استفاده از نقشه" oninput="updateParkland()"></label></details>
+                                        <details class="burns-secondary" id="burnsTimingDetails"><summary>ادامه احیا و مایع قبلی <span>اختیاری</span></summary><div class="burns-fields-grid"><label class="burns-field">ساعت گذشته از آسیب<input id="burnsElapsed" type="text" data-numeric="true" inputmode="decimal" placeholder="۰ تا کمتر از ۲۴" oninput="updateParkland()"></label><label class="burns-field">مایع احیای دریافت‌شده (mL)<input id="burnsGiven" type="text" data-numeric="true" inputmode="decimal" placeholder="اگر دریافت نشده: ۰" oninput="updateParkland()"></label></div><p class="burns-estimate-hint" id="burnsTimingResult">برای بررسی باقیمانده، هر دو مقدار را وارد کنید.</p></details>
+                                        <p class="burns-estimate-hint">فرمول‌ها برآورد اولیه‌اند؛ انتخاب روش و تنظیم مایع با پروتکل مرکز و پاسخ بیمار انجام می‌شود. زمان از آسیب حساب می‌شود، نه پذیرش.</p>
+                                        <a class="burns-source-link" href="https://doi.org/10.1093/jbcr/irad125" target="_blank" rel="noopener">منبع راهنمای ABA</a>
                                     </div>
-                                    <div class="burns-result-row" id="parklandRow" style="display:none;">
-                                        <span class="burns-result-label" id="parklandLabel">مایع Parkland 24h</span>
-                                        <span class="burns-result-value" id="parklandResult">—</span>
-                                    </div>
-                                    <div class="burns-notes" id="burnsNotes"></div>
-                                </div>
-
+                                </details>
+                                <p class="burns-estimate-hint burns-method-note">برآورد نقشه: Lund–Browder · <a href="https://static1.squarespace.com/static/54a40119e4b0fbd5ffb33811/t/653c10bed3fb417b530643b0/1698435263792/CG032%2BBurns.pdf#page=14" target="_blank" rel="noopener">جدول سنی</a> · <a href="https://dha.gov.ae/uploads/032024/35%20-%20DHA%20Telehealth%20Clinical%20Guidelines%20for%20Virtual%20Management%20of%20Burns2024329667.pdf#page=25" target="_blank" rel="noopener">تقسیم‌بندی نواحی</a></p>
                                 <button class="tool-btn" onclick="resetBurns()" style="margin-top:8px;background:var(--surface-elevated);color:var(--text-secondary);border:1px solid var(--border);box-shadow:none;">
                                     <i class="fas fa-rotate-right"></i> پاک کردن انتخاب‌ها
                                 </button>
@@ -2079,7 +2092,7 @@
                 <section class="settings-group settings-card" data-settings-section="about">
                     <button type="button" id="settings-trigger-about" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-about"><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-about" role="region" aria-labelledby="settings-trigger-about" hidden>
                     <div class="about-info">
-                        <div class="about-row"><span>نسخه</span><span>5.4.3</span></div>
+                        <div class="about-row"><span>نسخه</span><span>5.4.4</span></div>
                         <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
@@ -2152,7 +2165,8 @@
     <script src="drugDatabase.js"></script>
     <script src="converters.js?v=3"></script>
     <script src="calculation-core.js?v=36"></script>
-    <script src="script.js?v=62"></script>
+    <script src="burns-core.js?v=1"></script>
+    <script src="script.js?v=63"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
@@ -2161,7 +2175,7 @@
     <script src="onboarding.js?v=5"></script>
     <script src="welcome.js?v=2"></script>
     <script src="calculator-guidance.js?v=1"></script>
-    <script src="reference-offline.js?v=4"></script>
+    <script src="reference-offline.js?v=5"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=46"></script>
@@ -2169,7 +2183,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=63', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=64', { updateViaCache: 'none' });
             });
         }
     </script>
