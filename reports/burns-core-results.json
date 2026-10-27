@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mappedRegions": 32,
+  "wholeBodyAgeChecks": 63,
+  "checks": [
+    "Independent source age-column values",
+    "All mapped surfaces total 100%; posterior neck/hands/feet included",
+    "No duplicate trunk counting",
+    "Anatomical worked examples",
+    "Unknown-child range uses correlated age totals",
+    "Optional age interpolation",
+    "Separate 2/4 mL fluid arithmetic and ABA scope",
+    "Elapsed-time boundaries and nonnegative remaining volume"
+  ]
+}

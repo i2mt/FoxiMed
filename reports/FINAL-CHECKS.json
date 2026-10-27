@@ -1,6 +1,6 @@
 {
-  "version": "5.4.3",
-  "date": "2026-10-24",
+  "version": "5.4.4",
+  "date": "2026-10-27",
   "status": "PASS_WITH_DOCUMENTED_LIMITS",
   "deployed": false,
   "excluded": [
@@ -13,12 +13,16 @@
   ],
   "remaining": [
     "Qualified clinical review of all 827 monographs and pair-specific compatibility records",
-    "Validated automatic age-specific burn TBSA estimates; diagrams currently record regions and fluid estimates require confirmed TBSA",
+    "Clinical/physical-device validation of coarse burn-region estimation; partial-region assessment and pediatric fluid planning remain outside this automatic map",
     "Physical iPhone/Android, Safari/WebKit, OS install/keyboard/shortcut and real microphone testing",
     "External icon/font CDN dependence; icon-specific touch suite blocked when CDN denied",
     "Full generated voice model build and production-host verification"
   ],
   "evidence": [
+    "BURNS-5.4.4.md",
+    "burns-core-results.json",
+    "burns-flow-results.json",
+    "scope-preservation-5.4.4.json",
     "MIXED-SCRIPT-5.4.3.md",
     "mixed-script-reader-results.json",
     "scope-preservation-5.4.3.json",
@@ -76,7 +80,7 @@
     "earlier_other_browser_results": "Historical 5.4.1/5.4.0; not rerun unless listed above",
     "javascript-syntax": "PASS: all 33 root JavaScript files"
   },
-  "checks": {
+  "previous_5.4.3_checks": {
     "mixed-script-reader (626 source sections; 18 rendered views)": "PASS",
     "drug-reference-reader": "PASS",
     "drug-reference-presentation": "PASS",
@@ -89,5 +93,19 @@
     "scope-preservation": "PASS",
     "javascript-syntax": "PASS: 33 root JavaScript files",
     "other_prior_checks": "Historical unless explicitly rerun above"
+  },
+  "checks": {
+    "burns-core": "PASS",
+    "burns-flow (20 responsive states)": "PASS",
+    "calculator-safety": "PASS",
+    "pump-without-drip": "PASS",
+    "drug-reference-reader (pure integrity)": "PASS",
+    "mixed-script-reader (pure integrity)": "PASS",
+    "reference-offline": "PASS",
+    "compact-offline-update": "PASS",
+    "offline-manifest": "PASS",
+    "scope-preservation": "PASS",
+    "earlier_other_browser_results": "Historical; unchanged runtime features were not rerun unless listed above.",
+    "javascript-syntax": "PASS: 34 root JavaScript files"
   }
 }

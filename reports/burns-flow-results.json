@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "engine": "Chromium",
+  "checks": [
+    "Real SVG taps calculate immediately without time, weight or measured percentage; linked torso sections toggle together; full front/back totals 100%; child range, optional age interpolation and mode changes",
+    "Optional fluid panel: distinct Parkland/ABA choices, inherited map TBSA, Persian weight, initial 24h split without time prompts, optional timing/manual override, invalid and cleared values, pediatric restriction and complete reset"
+  ],
+  "layouts": [
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "light",
+      "ageMode": "adult"
+    },
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "light",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "dark",
+      "ageMode": "adult"
+    },
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "dark",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "light",
+      "ageMode": "adult"
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "light",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "dark",
+      "ageMode": "adult"
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "dark",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "light",
+      "ageMode": "adult"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "light",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "dark",
+      "ageMode": "adult"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "dark",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "light",
+      "ageMode": "adult"
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "light",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "dark",
+      "ageMode": "adult"
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "dark",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "light",
+      "ageMode": "adult"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "light",
+      "ageMode": "pediatric"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "dark",
+      "ageMode": "adult"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "dark",
+      "ageMode": "pediatric"
+    }
+  ]
+}

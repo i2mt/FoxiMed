@@ -1,3 +1,13 @@
+# FoxiMed 5.4.4 — simple automatic burn-percentage estimation
+
+Prepared 27 October 2026; not deployed. Adult/child selection and body-map taps again produce an automatic result. Child age refinement is optional; fluid formulas, manual TBSA correction and time/prior-fluid inputs live in a separate closed panel.
+
+Read [BURNS-5.4.4.md](BURNS-5.4.4.md) for the region mapping, source values, browser checks and limits. All earlier cumulative edits remain included. This supersedes the older region-recording-only burn design.
+
+---
+
+## Earlier cumulative changes
+
 # FoxiMed 5.4.3 — mixed-script labels and numeric phrases
 
 Prepared 24 October 2026; not deployed. Latin system labels have their own rows, Persian «تا» ranges stay together, and the acetaminophen acute-poisoning passage is updated against a current named clinical source. The original source files remain intact.

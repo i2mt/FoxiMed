@@ -1,19 +1,31 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "5.4.3-mixed-script-reader",
+  "revision": "5.4.4-simple-burns",
   "self_hash_excluded": true,
   "files": [
     {
       "path": ".github/workflows/pages-sherpa-koochik.yml",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 7958,
-      "sha256": "f47145437a21c6e83c0371b723ba83851aa3f760e437ce2867445cc9f527655d"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 8035,
+      "sha256": "2673e36feceb9aeb7b044cbd34c451c499f2f30cc5e9eef7c371417c6300ae70"
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 8145,
-      "sha256": "98d7cfbd6c4703460ea887f923590355667b96183c837a3d56c717d227dc22b2"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 8512,
+      "sha256": "f4c68a64c6697dd679366298acff748d11f0b14e91ddda5152396e692ea0f4a8"
+    },
+    {
+      "path": "burns-core.js",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 2371,
+      "sha256": "c4fa65bf7b26885cd6d776b5f586a79c09b79323735966d34fb9b5f5652cb546"
+    },
+    {
+      "path": "burns.css",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 3430,
+      "sha256": "6c571794cf02d221bf55b6c1a5a04a3dd2fea6f67041d1dddf98df4d7434da8a"
     },
     {
       "path": "calculation-core.js",
@@ -155,15 +167,15 @@
     },
     {
       "path": "index.html",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 181778,
-      "sha256": "c46233eb32c69eaef01f16bc7f6d3ffc19d2d0219bf684b83de95806326f62ba"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 185748,
+      "sha256": "1a0c06c5011fc7644ed2ca5bbca57cd845275c34662fc9b95da17670fbff3103"
     },
     {
       "path": "manifest.json",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
       "bytes": 1810,
-      "sha256": "c5f5c36ba183c8f8c786726d9ba53442154bcbc1c75b0eb728af80f7c4951e6e"
+      "sha256": "f6c74549877304018c3929975eedc2a1eb89be73c2f8f1c7cb43b9784983ea18"
     },
     {
       "path": "onboarding.css",
@@ -179,9 +191,9 @@
     },
     {
       "path": "reference-offline-manifest.json",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 7146,
-      "sha256": "57fb1b2cfc9ab5bc86f94e34d1760623c0718e6d2cde9f10281b4c83ca95279d"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 7444,
+      "sha256": "92ab44fecf3509ad5f51cd62f7c406ea0259a2ae4f5db5224f114066957c8044"
     },
     {
       "path": "reference-offline.css",
@@ -191,15 +203,21 @@
     },
     {
       "path": "reference-offline.js",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
       "bytes": 15661,
-      "sha256": "21835565b9b2ef16b651c4c0d3e82bc3544acc04b5320a63e24fc7587f635b03"
+      "sha256": "2613221131f39640c2272902b38e5b16e56936e77ada9b3fd1811d508bd4e762"
     },
     {
       "path": "reports/AUDIT-FIXES-5.4.0.md",
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
       "bytes": 12731,
       "sha256": "3433bf10ab6ac5040c908dd586e8d8fe95de7f773c43c8735803f94d9a33520d"
+    },
+    {
+      "path": "reports/BURNS-5.4.4.md",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 6871,
+      "sha256": "86b9e0a4d49c605d8b309b03b3bc65efdea11f4a7a5a73d8a339a34ff778b216"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -227,9 +245,9 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 4129,
-      "sha256": "e03f76a035163f0f28cd6e2ce02b1674c8e3c0a307ed652797fce163b6b4fd3a"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 4869,
+      "sha256": "2d30a31a5a2dd51a01fc6dd46479c5d3ce3b131320804bfa4ea6dbbc0ec49f82"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -239,9 +257,9 @@
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 27582,
-      "sha256": "a5e806b778acba3e0b739d6f64202140c8b8f3ebad8b1b6515ec23aac472d989"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 28145,
+      "sha256": "4b5b6babc051cfd4037bf80e3ea7a58e5442bd45560d845451ee90419f5e531a"
     },
     {
       "path": "reports/MIXED-SCRIPT-5.4.3.md",
@@ -262,6 +280,18 @@
       "sha256": "3bdfdebb2d8ffb30a53c8fce941f3921817b80d8ace4fb14190450cc63a742e4"
     },
     {
+      "path": "reports/burns-core-results.json",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 485,
+      "sha256": "d3471671e712503d39ce1d72df9bdc5e9090957931de3a716b62f8381cc82988"
+    },
+    {
+      "path": "reports/burns-flow-results.json",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 2609,
+      "sha256": "a3b9b1f39149719e4386b25d0ff212bdf68352f142407d0ad8aed0fb7fc32d3e"
+    },
+    {
       "path": "reports/calculator-safety-results.json",
       "reason": "Current audit disposition/evidence; older retained reports are explicitly historical.",
       "bytes": 1898,
@@ -275,9 +305,9 @@
     },
     {
       "path": "reports/compact-offline-update-results.json",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
       "bytes": 1102,
-      "sha256": "3f12d66a835cc52bc66c5e05f1f206e5eb4e78f782529db0d5bbb05e998315e8"
+      "sha256": "be84608e5af681855dbabdce1a19f6e4a5207946ed1cc29a30cabac3d9651c1d"
     },
     {
       "path": "reports/dopamine-and-reference-layout-results.json",
@@ -389,15 +419,15 @@
     },
     {
       "path": "reports/pump-without-drip-results.json",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
       "bytes": 1000,
-      "sha256": "fee339190bc44084c97a9ebe10cbcb1fbd5f772ca4db20a86823fa518a07c823"
+      "sha256": "3a56f1c4ea36ff65ba189307d00519c85f766fd29ead561e3e31ee2a4524e0c1"
     },
     {
       "path": "reports/reference-offline-results.json",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 1150,
-      "sha256": "a929860893932e90e935e36184f15d0d22989d04a50f9b23b3179a707fdb743e"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 1238,
+      "sha256": "487e4f24c92be2d8c1db04ec885a294cc40a48e539cb204386a60901d9f9ba92"
     },
     {
       "path": "reports/scope-preservation-5.4.0.json",
@@ -422,6 +452,12 @@
       "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
       "bytes": 2597,
       "sha256": "d4ebd6c0a042e8af8a0ad4b97ccc5a5e936968d7a8fbd1bc742fbc4a53aaa1de"
+    },
+    {
+      "path": "reports/scope-preservation-5.4.4.json",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 3265,
+      "sha256": "2fa6ca5f271f682daef49344e898d12e1da7c12963dacae825960a0da3e4bdc6"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -461,9 +497,9 @@
     },
     {
       "path": "script.js",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 308181,
-      "sha256": "92d1aeb968201bfb3e8c6aa3988c419c8e8347c45a4137a30de29b24551546c1"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 310495,
+      "sha256": "cf6be3d7179397b321fa95bf8ee52ea7ae16cf33cae81bd07940ff7672bb883d"
     },
     {
       "path": "scripts/build-reference-offline-manifest.py",
@@ -509,9 +545,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 8861,
-      "sha256": "562cfdda9d25e96e4128df45a09c15df8e5b02b0c9decd656349463c2c81240b"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 8911,
+      "sha256": "fa40186cc876ea83f0b2530cff1d417fcef17fb22b5d686ee7b40ccdf36ba327"
     },
     {
       "path": "settings.css",
@@ -526,16 +562,28 @@
       "sha256": "62037b938f937f8a598e133fe72cb87b5966baba25a13b79864cc8ef13c9f2b0"
     },
     {
+      "path": "tests/burns-core.test.js",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 3817,
+      "sha256": "44e9ea099c826e09b929ff9ba52df68a7f62442d269773fa6ddb60134c08b353"
+    },
+    {
+      "path": "tests/burns-flow.test.js",
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 9175,
+      "sha256": "0e466e4c14a08c4e8b7c3efe89da984b0690cc16abc41c7ff5723b9e0a376abd"
+    },
+    {
       "path": "tests/calculator-safety.test.js",
-      "reason": "Current regression checks, including exact arithmetic, readiness, complete history and/or offline error workflows.",
-      "bytes": 13727,
-      "sha256": "c46662149a37710d645dab6e7cddee0848a99001a77b0d445b475ecf1acff073"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 13845,
+      "sha256": "df41959b15eec68b778defb5cdb784ea7f4014be061c6cc6b4ec3bc0301a33e7"
     },
     {
       "path": "tests/compact-offline-update.test.js",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 10260,
-      "sha256": "ecf94f275d6225434e696b1b11530ee8ea897688bbe4e86c454ac018280bf333"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 10410,
+      "sha256": "73f011311ddb7e518eea788ac968ffa4f02b3c3fb12e3faefe266f630b1553d7"
     },
     {
       "path": "tests/dopamine-and-reference-layout.test.js",
@@ -599,9 +647,9 @@
     },
     {
       "path": "tests/reference-offline.test.js",
-      "reason": "5.4.3: mixed-script category labels/ranges, exact-anchor acetaminophen clinical-source update, current cache revisions or validation evidence.",
-      "bytes": 9661,
-      "sha256": "c5cfcca5ae4af86cdb190a707cb878099fa95ec9984110d6f0b587ed386e9793"
+      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "bytes": 10392,
+      "sha256": "3f7649daa0af34d5b79fb06c69033fd8a8d3f2f8ece48c1e75743e100f9e48a5"
     },
     {
       "path": "tests/settings-mobile.test.js",
