@@ -1,3 +1,13 @@
+# FoxiMed 5.4.5 — polished burn-fluid calculation and remaining amounts
+
+Prepared 28 October 2026; not deployed. Both fluid methods use one visible percentage field, initially filled from the map. Time/intake fields are compact and aligned. Remaining amounts are bold, separately labelled results. ABA explains out-of-scope percentages prominently and calculates eligible values immediately.
+
+Read [BURNS-POLISH-5.4.5.md](BURNS-POLISH-5.4.5.md) for behavior, worked calculations, layout tests and limits. This supersedes the prior hidden manual-percentage control and paragraph-only remaining result. All earlier cumulative changes remain included.
+
+---
+
+## Earlier cumulative changes
+
 # FoxiMed 5.4.4 — simple automatic burn-percentage estimation
 
 Prepared 27 October 2026; not deployed. Adult/child selection and body-map taps again produce an automatic result. Child age refinement is optional; fluid formulas, manual TBSA correction and time/prior-fluid inputs live in a separate closed panel.

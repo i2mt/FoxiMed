@@ -3,7 +3,8 @@
   "engine": "Chromium",
   "checks": [
     "Real SVG taps calculate immediately without time, weight or measured percentage; linked torso sections toggle together; full front/back totals 100%; child range, optional age interpolation and mode changes",
-    "Optional fluid panel: distinct Parkland/ABA choices, inherited map TBSA, Persian weight, initial 24h split without time prompts, optional timing/manual override, invalid and cleared values, pediatric restriction and complete reset"
+    "Shared map/manual TBSA for both methods; explicit ABA scope below 20 and calculation at/above 20; Persian input, blur, early/late remaining volumes, over-target/invalid/cleared data, source reset, pediatric restriction and full reset",
+    "Aligned 40px fields, bold primary-color remaining amounts, separate total header, no duplicate late-phase amount, all six palettes in light/dark, and enlarged-text containment"
   ],
   "layouts": [
     {
@@ -125,6 +126,210 @@
       "height": 900,
       "mode": "dark",
       "ageMode": "pediatric"
+    }
+  ],
+  "fluidLayouts": [
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "light",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 280,
+      "height": 653,
+      "mode": "dark",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "light",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "mode": "dark",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "light",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "dark",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "light",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "mode": "dark",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "light",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "mode": "dark",
+      "inputHeights": [
+        40,
+        40
+      ],
+      "aligned": true,
+      "centeredAndContained": true,
+      "amountsUsePrimaryText": true,
+      "remaining8": "1100 mL",
+      "remaining24": "3200 mL"
+    }
+  ],
+  "themeStates": [
+    {
+      "theme": "default",
+      "mode": "light",
+      "readableAmounts": true
+    },
+    {
+      "theme": "default",
+      "mode": "dark",
+      "readableAmounts": true
+    },
+    {
+      "theme": "fox",
+      "mode": "light",
+      "readableAmounts": true
+    },
+    {
+      "theme": "fox",
+      "mode": "dark",
+      "readableAmounts": true
+    },
+    {
+      "theme": "ocean",
+      "mode": "light",
+      "readableAmounts": true
+    },
+    {
+      "theme": "ocean",
+      "mode": "dark",
+      "readableAmounts": true
+    },
+    {
+      "theme": "rose",
+      "mode": "light",
+      "readableAmounts": true
+    },
+    {
+      "theme": "rose",
+      "mode": "dark",
+      "readableAmounts": true
+    },
+    {
+      "theme": "forest",
+      "mode": "light",
+      "readableAmounts": true
+    },
+    {
+      "theme": "forest",
+      "mode": "dark",
+      "readableAmounts": true
+    },
+    {
+      "theme": "dreamfire",
+      "mode": "light",
+      "readableAmounts": true
+    },
+    {
+      "theme": "dreamfire",
+      "mode": "dark",
+      "readableAmounts": true
     }
   ]
 }

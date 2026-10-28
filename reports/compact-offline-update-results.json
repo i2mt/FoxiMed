@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "version": "5.4.4",
+  "version": "5.4.5",
   "engine": "Chromium",
   "checks": [
     "Fresh users get a compact, dismissible prompt; management lives in Settings; no automatic first database download or main drip controls",

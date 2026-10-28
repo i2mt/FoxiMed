@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "version": "5.4.4",
+  "version": "5.4.5",
   "mainCalculationCases": 4608,
   "manualFactorIndependenceCases": 15,
   "drugs": 14,

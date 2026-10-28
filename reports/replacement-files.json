@@ -1,6 +1,6 @@
 {
   "based_on_archive_commit": "4468c9df0564c2e5ab65a38545efd26751910405",
-  "revision": "5.4.4-simple-burns",
+  "revision": "5.4.5-burns-fluid-polish",
   "self_hash_excluded": true,
   "files": [
     {
@@ -11,9 +11,9 @@
     },
     {
       "path": "UPLOAD-INSTRUCTIONS.md",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 8512,
-      "sha256": "f4c68a64c6697dd679366298acff748d11f0b14e91ddda5152396e692ea0f4a8"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 8761,
+      "sha256": "84f70f67d1b6acb061907970e7d6230647836f4a0b64bce1ef04b9972c95d6ff"
     },
     {
       "path": "burns-core.js",
@@ -23,9 +23,9 @@
     },
     {
       "path": "burns.css",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 3430,
-      "sha256": "6c571794cf02d221bf55b6c1a5a04a3dd2fea6f67041d1dddf98df4d7434da8a"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 7737,
+      "sha256": "2809cf2b39385e5be82763561eea6bc8b135193f2aefb9e41ee6f53f3f16eb66"
     },
     {
       "path": "calculation-core.js",
@@ -167,15 +167,15 @@
     },
     {
       "path": "index.html",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 185748,
-      "sha256": "1a0c06c5011fc7644ed2ca5bbca57cd845275c34662fc9b95da17670fbff3103"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 188011,
+      "sha256": "5b5e7d1737fa97345398dde056a2202466352be8baf4d3d1745f5711be04552c"
     },
     {
       "path": "manifest.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 1810,
-      "sha256": "f6c74549877304018c3929975eedc2a1eb89be73c2f8f1c7cb43b9784983ea18"
+      "sha256": "751da52f0bd7b66ce37f96162e6dc04d1c3481c4fcc10575fb136bebbfb2c1c3"
     },
     {
       "path": "onboarding.css",
@@ -191,9 +191,9 @@
     },
     {
       "path": "reference-offline-manifest.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 7444,
-      "sha256": "92ab44fecf3509ad5f51cd62f7c406ea0259a2ae4f5db5224f114066957c8044"
+      "sha256": "f79ab41504dca0a4179cf9b981b36b77fb6548e4fa18dc9252da387908ba643b"
     },
     {
       "path": "reference-offline.css",
@@ -203,9 +203,9 @@
     },
     {
       "path": "reference-offline.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 15661,
-      "sha256": "2613221131f39640c2272902b38e5b16e56936e77ada9b3fd1811d508bd4e762"
+      "sha256": "1971fd312e1768e61a3b766bbd9937a86889ba7fead12921cd43786ef7bf4e97"
     },
     {
       "path": "reports/AUDIT-FIXES-5.4.0.md",
@@ -218,6 +218,12 @@
       "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
       "bytes": 6871,
       "sha256": "86b9e0a4d49c605d8b309b03b3bc65efdea11f4a7a5a73d8a339a34ff778b216"
+    },
+    {
+      "path": "reports/BURNS-POLISH-5.4.5.md",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 5298,
+      "sha256": "72e6d828e1ae5d446a235ea3cc47f38b3336783721e684d85c23b3cb3689f495"
     },
     {
       "path": "reports/COMPACT-ACCORDION-UPDATE.md",
@@ -245,9 +251,9 @@
     },
     {
       "path": "reports/FINAL-CHECKS.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 4869,
-      "sha256": "2d30a31a5a2dd51a01fc6dd46479c5d3ce3b131320804bfa4ea6dbbc0ec49f82"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 5429,
+      "sha256": "0aa41215f734c4f2ea607482879718ff44a3701156668935339a7e1b38e87cc2"
     },
     {
       "path": "reports/IMPLEMENTATION-REPORT.md",
@@ -257,9 +263,9 @@
     },
     {
       "path": "reports/LATEST-UPDATE.md",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 28145,
-      "sha256": "4b5b6babc051cfd4037bf80e3ea7a58e5442bd45560d845451ee90419f5e531a"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 28833,
+      "sha256": "1c4805c72ad873ebf8fff229ebaedb834af1462b08200d0ccdcd2f14b5050abe"
     },
     {
       "path": "reports/MIXED-SCRIPT-5.4.3.md",
@@ -287,9 +293,9 @@
     },
     {
       "path": "reports/burns-flow-results.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 2609,
-      "sha256": "a3b9b1f39149719e4386b25d0ff212bdf68352f142407d0ad8aed0fb7fc32d3e"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 6831,
+      "sha256": "6cef6a94f1c2e10325c867f46adbab84b9de88a2ebda268eed074b123c43bd2f"
     },
     {
       "path": "reports/calculator-safety-results.json",
@@ -305,9 +311,9 @@
     },
     {
       "path": "reports/compact-offline-update-results.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 1102,
-      "sha256": "be84608e5af681855dbabdce1a19f6e4a5207946ed1cc29a30cabac3d9651c1d"
+      "sha256": "67c49a34a64f529dc17ee24d3af026285825299fb6eb1c98206d3eb5cb05825d"
     },
     {
       "path": "reports/dopamine-and-reference-layout-results.json",
@@ -419,15 +425,15 @@
     },
     {
       "path": "reports/pump-without-drip-results.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 1000,
-      "sha256": "3a56f1c4ea36ff65ba189307d00519c85f766fd29ead561e3e31ee2a4524e0c1"
+      "sha256": "7121a1a3c0e2e3aaf64bbba2985a7555e7db68c61713e35fb9eac6d37999df1c"
     },
     {
       "path": "reports/reference-offline-results.json",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 1238,
-      "sha256": "487e4f24c92be2d8c1db04ec885a294cc40a48e539cb204386a60901d9f9ba92"
+      "sha256": "3fe5626f6a4c5f26d49532cfd105616c7078e40e56cda713e09dbe7bb7b6a5d6"
     },
     {
       "path": "reports/scope-preservation-5.4.0.json",
@@ -458,6 +464,12 @@
       "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
       "bytes": 3265,
       "sha256": "2fa6ca5f271f682daef49344e898d12e1da7c12963dacae825960a0da3e4bdc6"
+    },
+    {
+      "path": "reports/scope-preservation-5.4.5.json",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 3180,
+      "sha256": "8b5b1255f91d98f356397f691174d068b6afa8eff831e6f7b34d28221039d4c2"
     },
     {
       "path": "reports/settings-mobile-results.json",
@@ -497,9 +509,9 @@
     },
     {
       "path": "script.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 310495,
-      "sha256": "cf6be3d7179397b321fa95bf8ee52ea7ae16cf33cae81bd07940ff7672bb883d"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 312793,
+      "sha256": "cdf0c0b931bf321ec53aadd0b0ef972b30a5de7f5b0c69adc0253b786c90db5a"
     },
     {
       "path": "scripts/build-reference-offline-manifest.py",
@@ -545,9 +557,9 @@
     },
     {
       "path": "service-worker.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 8911,
-      "sha256": "fa40186cc876ea83f0b2530cff1d417fcef17fb22b5d686ee7b40ccdf36ba327"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 8910,
+      "sha256": "577101eacbfadc0ce0d88c294b8d5c11cebace97c9530ac0df9ffa30cbc7fdec"
     },
     {
       "path": "settings.css",
@@ -569,21 +581,21 @@
     },
     {
       "path": "tests/burns-flow.test.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 9175,
-      "sha256": "0e466e4c14a08c4e8b7c3efe89da984b0690cc16abc41c7ff5723b9e0a376abd"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 15220,
+      "sha256": "83e0e5ad5bd7d65f64092a1eb9b016074d1474e2b4648a19a6df27b10eef418c"
     },
     {
       "path": "tests/calculator-safety.test.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
-      "bytes": 13845,
-      "sha256": "df41959b15eec68b778defb5cdb784ea7f4014be061c6cc6b4ec3bc0301a33e7"
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
+      "bytes": 13844,
+      "sha256": "8dd7df6dcaff0355fa86b2d6f92504a8257e5cc511fe72ad2917354a54b0cc7a"
     },
     {
       "path": "tests/compact-offline-update.test.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 10410,
-      "sha256": "73f011311ddb7e518eea788ac968ffa4f02b3c3fb12e3faefe266f630b1553d7"
+      "sha256": "ac9486b382d040c591e6f3ea3617cdcd62f59566fb90146651731c51c857dc99"
     },
     {
       "path": "tests/dopamine-and-reference-layout.test.js",
@@ -647,9 +659,9 @@
     },
     {
       "path": "tests/reference-offline.test.js",
-      "reason": "5.4.4: automatic burn percentage mapping, optional fluid workflow, source-backed numeric core, responsive/blur/offline validation or release integration.",
+      "reason": "5.4.5: polished burn-fluid fields and remaining-volume cards, shared TBSA source tracking, explicit ABA scope feedback, validation or release integration.",
       "bytes": 10392,
-      "sha256": "3f7649daa0af34d5b79fb06c69033fd8a8d3f2f8ece48c1e75743e100f9e48a5"
+      "sha256": "ebc44e4eaf0c2a6e029f333bc892cbb5075ddc443926d1c4c48c3746dc94ab67"
     },
     {
       "path": "tests/settings-mobile.test.js",
