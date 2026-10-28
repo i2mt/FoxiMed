@@ -14,7 +14,7 @@ This is a cumulative replacement package based on the supplied FoxiMed-main ZIP,
 9. Check gentle required-field outlines and the ready Calculate button in forward, reverse, weight and custom modes. In Reference, use the compact opt-in download strip; confirm it disappears after verified completion. Use Settings → Data & Offline Reference for download/resume, manual update checks, removal and the automatic app-version update switch. Test unopened drugs and the original PDF offline. The main calculator has no drip selector; Tools/manual retain drop calculations. The displayed size is about 24.2 MB; assistant models are separate. Review `reports/AUDIT-FIXES-5.4.0.md` for clinical limits, including confirmed TBSA requirements.
 10. After changing any packaged runtime file, run `python3 scripts/build-reference-offline-manifest.py`; upload its regenerated JSON together with the matching runtime files. CI checks for a stale manifest. Do not rename runtime files or append HTML fallbacks under their paths.
 
-Current offline asset URLs are `reference-offline.js?v=5`, `reference-offline.css?v=2` and `reference-offline-manifest.json?v=5`. Read `reports/MIXED-SCRIPT-5.4.3.md` for current mixed-script changes and `reports/DRUG-READER-5.4.2.md` for earlier reader/dopamine checks and `reports/COMPACT-OFFLINE-5.4.1.md` for earlier offline behavior; earlier main drip-selector instructions are superseded.
+Current offline asset URLs are `reference-offline.js?v=6`, `reference-offline.css?v=2` and `reference-offline-manifest.json?v=6`. Read `reports/MIXED-SCRIPT-5.4.3.md` for current mixed-script changes and `reports/DRUG-READER-5.4.2.md` for earlier reader/dopamine checks and `reports/COMPACT-OFFLINE-5.4.1.md` for earlier offline behavior; earlier main drip-selector instructions are superseded.
 
 Read `reports/LATEST-UPDATE.md` for changes, the console-log diagnosis, verification and limitations. Exact replacement paths and hashes are in `reports/replacement-files.json`. Older update reports are historical.
 
@@ -70,3 +70,5 @@ The 5.4.2 presentation sidecar is required alongside drug-reference.js. Keep it 
 The current reader assets are drug-reference.js?v=11, drug-reference.css?v=10 and drug-reference-presentation.js?v=2. Upload them together with this version’s HTML, worker and offline manifest. The acetaminophen poisoning update has its own footer source link and exact source anchor.
 
 For 5.4.4, include burns-core.js?v=1 and burns.css?v=1 with script.js?v=63, the updated HTML/worker and regenerated offline inventory. The burn map now calculates its own percentage; older instructions requiring a separate TBSA entry are superseded by reports/BURNS-5.4.4.md.
+
+For 5.4.5, upload the matching index.html, script.js?v=64, burns.css?v=2, worker and offline inventory together. burns-core.js?v=1 is unchanged. Read reports/BURNS-POLISH-5.4.5.md for the shared percentage input and remaining-volume result layout.

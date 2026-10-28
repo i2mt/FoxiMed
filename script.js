@@ -19,11 +19,15 @@
 // manifest.json, service-worker.js's CACHE_NAME) on every release, and add
 // a matching entry to CHANGELOG. Keep entries short — 2-4 real bullet
 // points people would actually notice, not an engineering changelog.
-const APP_VERSION = '5.4.4';
+const APP_VERSION = '5.4.5';
 // Increment this revision whenever a meaningful release note is added.
-const RELEASE_NOTES_REVISION = '5.4.4-simple-burns';
+const RELEASE_NOTES_REVISION = '5.4.5-burns-fluid-polish';
 
 const CHANGELOG = {
+    '5.4.5': [
+        'چیدمان فشرده و هماهنگ ورودی‌های سوختگی و نمایش روشن مایع باقیمانده',
+        'درصد مشترک برای Parkland و ABA و توضیح واضح هنگام خارج بودن از دامنهٔ ABA'
+    ],
     '5.4.4': [
         'برآورد خودکار درصد سوختگی با انتخاب نواحی بدن؛ تعیین سن کودک اختیاری است',
         'بخش جداگانه و اختیاری مایع، با نمایش روشن تفاوت Parkland و ABA'
@@ -4121,7 +4125,7 @@ function resetGCS() {
 // ============================================
 
 // Surface estimation is independent of the optional adult fluid panel.
-const BURNS_STATE = { selected: new Set(), ageMode: 'adult' };
+const BURNS_STATE = { selected: new Set(), ageMode: 'adult', fluidTbsaSource: 'map' };
 const burnsPct = n => Number(n.toFixed(2)).toString()+'%';
 function burnsText(id,parts){
     const node=document.getElementById(id);node.replaceChildren(...parts.map(part=>{
@@ -4138,9 +4142,10 @@ function setupBurns() {
     // The shared numeric change handler invalidates old tool results on blur.
     // Recompute this live result in the same event so a blur cannot collapse
     // the card underneath the optional control the user is about to press.
-    for(const id of ['burnsWeight','burnsConfirmedTBSA','burnsElapsed','burnsGiven']){
+    for(const id of ['burnsWeight','burnsElapsed','burnsGiven']){
         document.getElementById(id).addEventListener('change',updateParkland);
     }
+    document.getElementById('burnsConfirmedTBSA').addEventListener('change',setBurnsFluidTBSA);
     document.querySelectorAll('.burns-region').forEach(region=>{
         region.addEventListener('click',()=>{
             haptic(20);const key=region.dataset.region;
@@ -4149,14 +4154,14 @@ function setupBurns() {
             updateBurns();
         });
     });
-    for(const id of ['burnsFluidPanel','burnsTimingDetails','burnsTbsaDetails','burnsAgeDetails']){
+    for(const id of ['burnsFluidPanel','burnsTimingDetails','burnsAgeDetails']){
         document.getElementById(id).addEventListener('toggle',()=>{updateParkland();refreshAccordion(document.getElementById(id));});
     }
     updateBurns();
 }
 function setBurnsAge(mode) {
     if(!['adult','pediatric'].includes(mode))return;
-    if(BURNS_STATE.ageMode!==mode)document.getElementById('burnsConfirmedTBSA').value='';
+    if(BURNS_STATE.ageMode!==mode){document.getElementById('burnsConfirmedTBSA').value='';BURNS_STATE.fluidTbsaSource='map';}
     BURNS_STATE.ageMode=mode;
     document.getElementById('burnsAdultBtn').classList.toggle('active',mode==='adult');
     document.getElementById('burnsPedBtn').classList.toggle('active',mode==='pediatric');
@@ -4166,6 +4171,7 @@ function setBurnsAge(mode) {
 }
 function updateBurns() {
     const estimate=burnsMapEstimate();
+    if(BURNS_STATE.fluidTbsaSource==='map')document.getElementById('burnsConfirmedTBSA').value=estimate.count&&estimate.min===estimate.max?Number(estimate.min.toFixed(2)).toString():'';
     document.getElementById('burnsTBSA').textContent=burnsRange(estimate);
     document.getElementById('burnsEstimateHint').textContent=!estimate.count?'نواحی سوخته را روی نمای جلو و پشت انتخاب کنید.':!estimate.ageKnown&&estimate.min!==estimate.max?'بازهٔ جدول کودک (۰ تا ۱۵ سال)؛ تعیین سن اختیاری است.':estimate.count+' بخش انتخاب شده · برآورد Lund–Browder';
     const chips=document.getElementById('burnsChips');chips.replaceChildren();
@@ -4185,22 +4191,36 @@ function setBurnsProtocol(value){
     if(!['2','4'].includes(String(value)))return;
     document.getElementById('burnsProtocol').value=String(value);updateParkland();
 }
+function setBurnsFluidTBSA(){
+    BURNS_STATE.fluidTbsaSource='manual';updateParkland();
+}
+function useBurnsMapTBSA(){
+    BURNS_STATE.fluidTbsaSource='map';updateBurns();
+}
 function updateParkland(){
     const row=document.getElementById('parklandRow');if(!row)return;row.style.display='none';
+    document.getElementById('burnsRemainingResult').hidden=true;
+    for(const id of ['parklandResult','burnsFirst8','burnsNext16','burnsPeriodRemaining','burnsTotalRemaining','burnsTimeLeft'])document.getElementById(id).textContent='—';
     const factor=Number(document.getElementById('burnsProtocol').value);
     document.querySelectorAll('[data-burn-factor]').forEach(n=>{const active=Number(n.dataset.burnFactor)===factor;n.classList.toggle('selected',active);n.setAttribute('aria-pressed',String(active));});
     if(BURNS_STATE.ageMode!=='adult'||!document.getElementById('burnsFluidPanel').open)return;
-    const override=document.getElementById('burnsConfirmedTBSA').value.trim(),map=burnsMapEstimate(),tbsa=override?PersianNumbers.parseNumber(override):map.min;
+    const rawTbsa=document.getElementById('burnsConfirmedTBSA').value.trim(),tbsa=PersianNumbers.parseNumber(rawTbsa),manual=BURNS_STATE.fluidTbsaSource==='manual';
     const hint=document.getElementById('burnsFluidHint'),timing=document.getElementById('burnsTimingResult');
-    timing.textContent='برای بررسی باقیمانده، هر دو مقدار را وارد کنید.';
-    if(Number.isFinite(tbsa)&&tbsa>0&&tbsa<=100)burnsText('burnsFluidBasis',[{ltr:'TBSA'},' برای مایع: ',{ltr:burnsPct(tbsa)},override?' · درصد واردشده':' · برآورد نقشه']);
-    else document.getElementById('burnsFluidBasis').textContent='نواحی را روی نقشه انتخاب کنید یا در بخش اصلاح درصد، مقدار ارزیابی‌شده را وارد کنید.';
-    if(!Number.isFinite(tbsa)||tbsa<=0||tbsa>100){hint.textContent='درصد معتبر بین ۰ و ۱۰۰ لازم است.';return;}
-    if(![2,4].includes(factor)){hint.textContent='یکی از دو روش را مطابق پروتکل مرکز انتخاب کنید.';return;}
+    timing.textContent='هر دو مقدار را وارد کنید؛ اگر مایعی دریافت نشده، ۰ بنویسید.';
+    document.getElementById('burnsUseMap').hidden=!manual;
+    const status=document.getElementById('burnsFluidStatus'),title=document.getElementById('burnsFluidStatusTitle');
+    status.dataset.state='pending';status.hidden=false;title.textContent='برای محاسبه';
+    if(Number.isFinite(tbsa)&&tbsa>0&&tbsa<=100)burnsText('burnsFluidBasis',[{ltr:burnsPct(tbsa)},manual?' · درصد واردشده':' · از نقشه']);
+    else document.getElementById('burnsFluidBasis').textContent=manual?'درصد واردشده':'با انتخاب نواحی، درصد خودکار وارد می‌شود.';
+    if(!Number.isFinite(tbsa)||tbsa<=0||tbsa>100){hint.textContent='درصد سوختگی را از نقشه انتخاب یا عددی بزرگ‌تر از ۰ و حداکثر ۱۰۰ وارد کنید.';return;}
+    if(![2,4].includes(factor)){hint.textContent='یکی از دو روش Parkland یا ABA را انتخاب کنید.';return;}
+    if(factor===2&&tbsa<20){status.dataset.state='blocked';title.textContent='این درصد در دامنهٔ روش ABA نیست';burnsText('burnsFluidHint',['درصد فعلی ',{ltr:burnsPct(tbsa)},' است. این گزینه برای بزرگسال با حداقل ',{ltr:'20% TBSA'},' است؛ پروتکل مرکز را بررسی کنید.']);return;}
     const weight=PersianNumbers.parseNumber(document.getElementById('burnsWeight').value);let result;
     try{result=window.FoxiBurnsCore.fluid({tbsa,weight,factor});}catch{hint.textContent='وزن معتبر بیمار را وارد کنید.';return;}
-    if(!result.eligible){hint.textContent='گزینهٔ ABA برای بزرگسال با حداقل ۲۰٪ TBSA است؛ پروتکل مرکز را بررسی کنید.';return;}
-    burnsText('burnsFluidHint',[{ltr:factor===4?'Parkland':'ABA'},factor===4?' سنتی · ضریب ':' · ضریب ',{ltr:factor+' mL/kg/%TBSA'}]);
+    if(!result.eligible)return;
+    status.dataset.state='ready';title.textContent='روش فعال';
+    burnsText('burnsFluidHint',[{ltr:factor===4?'Parkland':'ABA'},factor===4?' سنتی · ':' · ',{ltr:factor+' mL/kg/%TBSA'}]);
+    burnsText('parklandLabel',['تخمین ',{ltr:factor===4?'Parkland':'ABA'},' برای ۲۴ ساعت نخست']);
     document.getElementById('parklandResult').textContent=Math.round(result.total)+' mL / 24 h';
     document.getElementById('burnsFirst8').textContent=Math.round(result.first8)+' mL';
     document.getElementById('burnsNext16').textContent=Math.round(result.next16)+' mL';row.style.display='block';
@@ -4208,16 +4228,23 @@ function updateParkland(){
     if(elapsedRaw||givenRaw){
         try{
             if(!elapsedRaw||!givenRaw)throw Error();
-            const remaining=window.FoxiBurnsCore.remainder(result.total,PersianNumbers.parseNumber(elapsedRaw),PersianNumbers.parseNumber(givenRaw));
-            burnsText('burnsTimingResult',['باقیماندهٔ ریاضی تا ۲۴ ساعت: ',{ltr:Math.round(remaining.remaining)+' mL'},'؛ تا پایان بازهٔ '+(PersianNumbers.parseNumber(elapsedRaw)<8?'۸':'۲۴')+' ساعته: ',{ltr:Math.round(remaining.periodRemaining)+' mL'},' در ',{ltr:remaining.hours.toFixed(1)},' ساعت. این تفاضل، دستور جبران یا سرعت پمپ نیست.']);
+            const elapsed=PersianNumbers.parseNumber(elapsedRaw),given=PersianNumbers.parseNumber(givenRaw),remaining=window.FoxiBurnsCore.remainder(result.total,elapsed,given);
+            document.getElementById('burnsRemainingResult').hidden=false;
+            document.getElementById('burnsRemainingResult').dataset.phase=elapsed<8?'first':'later';
+            document.getElementById('burnsPeriodLabel').textContent=elapsed<8?'تا پایان ۸ ساعت نخست':'تا پایان ۲۴ ساعت نخست';
+            document.getElementById('burnsPeriodVolumeLabel').textContent=elapsed<8?'باقیمانده تا ۸ ساعت':'باقیمانده تا ۲۴ ساعت';
+            document.getElementById('burnsTimeLeft').textContent=remaining.hours.toFixed(1)+' h';
+            document.getElementById('burnsPeriodRemaining').textContent=Math.round(remaining.periodRemaining)+' mL';
+            document.getElementById('burnsTotalRemaining').textContent=Math.round(remaining.remaining)+' mL';
+            burnsText('burnsTimingResult',['مایع ثبت‌شده از زمان آسیب: ',{ltr:given+' mL'},given>result.total?'؛ از برآورد ۲۴ ساعته بیشتر است.':'']);
         }catch{timing.textContent='ساعت از آسیب باید ۰ تا کمتر از ۲۴ و مایع دریافت‌شده باید ۰ یا بیشتر باشد؛ هر دو را وارد کنید.';}
     }
     refreshAccordion(document.getElementById('burnsFluidPanel'));
 }
 function resetBurns(){
-    BURNS_STATE.selected.clear();document.querySelectorAll('.burns-region').forEach(n=>n.classList.remove('selected'));
+    BURNS_STATE.selected.clear();BURNS_STATE.fluidTbsaSource='map';document.querySelectorAll('.burns-region').forEach(n=>n.classList.remove('selected'));
     for(const id of ['burnsChildAge','burnsWeight','burnsConfirmedTBSA','burnsElapsed','burnsGiven','burnsProtocol'])document.getElementById(id).value='';
-    for(const id of ['burnsFluidPanel','burnsAgeDetails','burnsTimingDetails','burnsTbsaDetails'])document.getElementById(id).open=false;
+    for(const id of ['burnsFluidPanel','burnsAgeDetails','burnsTimingDetails'])document.getElementById(id).open=false;
     updateBurns();haptic(30);
 }
 

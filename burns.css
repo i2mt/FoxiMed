@@ -1,26 +1,57 @@
-/* Keep percentage estimation first; fluid planning is an optional disclosure. */
+/* Burn map first; compact, shared fluid inputs and clearly separated results. */
+#burnsAccordionItem>.accordion-body{box-sizing:border-box;max-width:720px;margin-inline:auto!important}
 #burnsAccordionItem .burns-primary-result{animation:none;margin:10px 0}
 #burnsAccordionItem .burns-primary-result .burns-result-value{font-size:25px}
-#burnsAccordionItem .burns-estimate-hint{margin:8px 0;font-family:var(--font-persian);font-size:11.5px;line-height:1.8;color:var(--text-secondary);overflow-wrap:anywhere}
+#burnsAccordionItem .burns-estimate-hint{margin:8px 0;font:11.5px/1.8 var(--font-persian);color:var(--text-secondary);overflow-wrap:anywhere}
 #burnsAccordionItem .burns-primary-result .burns-estimate-hint{padding:0 12px 8px;margin:0}
 #burnsAccordionItem .burns-secondary{border:1px solid var(--border);border-radius:11px;background:var(--surface-elevated);margin:10px 0;min-width:0}
-#burnsAccordionItem .burns-secondary>summary{padding:12px;font:600 12px/1.8 var(--font-persian);cursor:pointer;color:var(--text-primary);overflow-wrap:anywhere}
+#burnsAccordionItem .burns-secondary>summary{padding:11px 12px;font:600 12px/1.8 var(--font-persian);cursor:pointer;color:var(--text-primary);overflow-wrap:anywhere}
 #burnsAccordionItem .burns-secondary>summary>span{font-size:10px;font-weight:400;color:var(--text-secondary);margin-inline-start:7px}
 #burnsAccordionItem .burns-fluid-content{padding:0 12px 12px;min-width:0}
-#burnsAccordionItem .burns-field{display:flex;flex-direction:column;gap:6px;margin:10px 0;min-width:0;font:12px/1.8 var(--font-persian);color:var(--text-secondary)}
-#burnsAccordionItem .burns-secondary>.burns-field,#burnsAccordionItem .burns-secondary>.burns-fields-grid,#burnsAccordionItem .burns-secondary>.burns-estimate-hint{margin:10px 12px}
-#burnsAccordionItem .burns-field input,#burnsAccordionItem .burns-field select{box-sizing:border-box;width:100%;min-width:0;max-width:100%;padding:10px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text-primary);font:inherit}
-#burnsAccordionItem .burns-field input{direction:ltr;text-align:center;font-family:var(--font-mono)}
-#burnsAccordionItem .burns-protocol-grid,#burnsAccordionItem .burns-fluid-split,#burnsAccordionItem .burns-fields-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;min-width:0}
-#burnsAccordionItem .burns-protocol-choice{display:flex;flex-direction:column;gap:6px;padding:11px 8px;min-width:0;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text-primary);font:12px/1.7 var(--font-persian);cursor:pointer;text-align:start}
-#burnsAccordionItem .burns-protocol-choice bdi{font-family:var(--font-mono);font-size:11px;overflow-wrap:anywhere}
+#burnsAccordionItem .burns-fields-grid,#burnsAccordionItem .burns-protocol-grid,#burnsAccordionItem .burns-fluid-split,#burnsAccordionItem .burns-remaining-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-width:0}
+#burnsAccordionItem .burns-field{display:grid;grid-template-rows:minmax(20px,auto) 40px;align-content:start;gap:5px;margin:0;min-width:0;font:12px/1.6 var(--font-persian);color:var(--text-primary)}
+#burnsAccordionItem .burns-field-label{font-weight:500;min-width:0}
+#burnsAccordionItem .burns-parameters{margin:12px 0 5px}
+#burnsAccordionItem .burns-input-shell{display:flex;direction:ltr;align-items:center;box-sizing:border-box;width:100%;height:40px;min-width:0;border:1px solid var(--border);border-radius:8px;background:var(--surface);overflow:hidden}
+#burnsAccordionItem .burns-input-shell:focus-within{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+#burnsAccordionItem .burns-input-shell input{box-sizing:border-box;flex:1 1 0;width:0;min-width:0;max-width:100%;height:38px;min-height:0;margin:0;padding:6px 5px;border:0;border-radius:0;background:transparent;box-shadow:none;outline:none;opacity:1;color:var(--text-primary);font:500 14px/1.4 var(--font-mono);direction:ltr;text-align:center}
+#burnsAccordionItem .burns-input-unit{flex:0 0 28px;text-align:center;border-inline-start:1px solid var(--border);color:var(--text-secondary);font:11px/1.4 var(--font-mono)}
+#burnsAccordionItem .burns-field select{box-sizing:border-box;width:100%;height:40px;min-width:0;max-width:100%;padding:7px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text-primary);font:12px/1.6 var(--font-persian)}
+#burnsAccordionItem #burnsAgeDetails>.burns-field{margin:10px 12px}
+#burnsAccordionItem .burns-protocol-grid{gap:8px}
+#burnsAccordionItem .burns-protocol-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:9px 5px;min-width:0;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text-primary);font:12px/1.6 var(--font-persian);cursor:pointer;text-align:center}
+#burnsAccordionItem .burns-protocol-choice bdi{font:10.5px/1.6 var(--font-mono);white-space:nowrap}
 #burnsAccordionItem .burns-protocol-choice small{font-size:10px;color:var(--text-secondary)}
 #burnsAccordionItem .burns-protocol-choice.selected{border-color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary);background:var(--primary-light)}
+#burnsAccordionItem .burns-basis-row{display:flex;flex-wrap:wrap;gap:5px 8px;align-items:baseline;margin:5px 0 10px;min-width:0}
+#burnsAccordionItem .burns-basis-row p{flex:1;min-width:0;margin:0;font:11px/1.8 var(--font-persian);color:var(--text-secondary)}
+#burnsAccordionItem #burnsUseMap{padding:3px 0;border:0;background:transparent;color:var(--primary);font:11px/1.8 var(--font-persian);text-decoration:underline;cursor:pointer}
+#burnsAccordionItem .burns-calculation-status{padding:10px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text-primary);margin:10px 0;min-width:0}
+#burnsAccordionItem .burns-calculation-status strong{display:block;font:700 12px/1.8 var(--font-persian)}
+#burnsAccordionItem #burnsFluidHint{margin:3px 0 0;font:12px/1.9 var(--font-persian);color:var(--text-primary);opacity:1;overflow-wrap:anywhere}
+#burnsAccordionItem .burns-calculation-status[data-state=blocked]{border-inline-start:3px solid var(--primary)}
+#burnsAccordionItem .burns-calculation-status[data-state=ready]{padding:0;border:0;background:transparent;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+#burnsAccordionItem .burns-calculation-status[data-state=ready] #burnsFluidHint{margin:0}
 #burnsAccordionItem .burns-fluid-result{border:1px solid var(--border);border-radius:10px;background:var(--surface);margin:10px 0;min-width:0}
-#burnsAccordionItem .burns-fluid-result .burns-result-value{font-size:16px}
+#burnsAccordionItem .burns-fluid-result>.burns-result-row{display:block;padding:10px;text-align:start}
+#burnsAccordionItem #parklandLabel{display:block;color:var(--text-primary);font-size:12px}
+#burnsAccordionItem .burns-fluid-result .burns-result-value{display:block;text-align:center;margin:5px 0;font-size:clamp(18px,5.2vw,22px);color:var(--text-primary);opacity:1}
 #burnsAccordionItem .burns-fluid-split{padding:10px}
 #burnsAccordionItem .burns-fluid-split>div{display:flex;flex-direction:column;gap:5px;min-width:0;font:11px/1.7 var(--font-persian);color:var(--text-secondary)}
-#burnsAccordionItem .burns-fluid-split bdi{font:600 13px/1.7 var(--font-mono);color:var(--text-primary)}
+#burnsAccordionItem .burns-fluid-split bdi{font:700 15px/1.7 var(--font-mono);color:var(--text-primary);opacity:1}
+#burnsAccordionItem .burns-timing-panel{background:var(--surface)}
+#burnsAccordionItem .burns-timing-content{padding:0 10px 10px;min-width:0}
+#burnsAccordionItem .burns-timing-message{margin:9px 0;font:12px/1.8 var(--font-persian);color:var(--text-primary);opacity:1;overflow-wrap:anywhere}
+#burnsAccordionItem .burns-time-left{display:flex;justify-content:space-between;align-items:baseline;gap:5px 8px;flex-wrap:wrap;margin:10px 0;font:12px/1.8 var(--font-persian);color:var(--text-primary)}
+#burnsAccordionItem .burns-time-left strong{font-weight:700}
+#burnsAccordionItem .burns-remaining-grid{margin:0;gap:8px}
+#burnsAccordionItem .burns-remaining-grid>div{min-width:0;padding:10px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface-elevated)}
+#burnsAccordionItem .burns-remaining-grid dt{margin:0 0 5px;font:12px/1.8 var(--font-persian);color:var(--text-primary)}
+#burnsAccordionItem .burns-remaining-grid dd{margin:0;font:800 18px/1.7 var(--font-mono);color:var(--text-primary);opacity:1;overflow-wrap:anywhere}
+#burnsAccordionItem .burns-remaining-result[data-phase=later] .burns-remaining-grid{grid-template-columns:minmax(0,1fr)}
+#burnsAccordionItem .burns-remaining-result[data-phase=later] .burns-remaining-grid>div:first-child{display:none}
+#burnsAccordionItem .burns-result-note{margin:9px 0 0;font:11px/1.8 var(--font-persian);color:var(--text-secondary)}
 #burnsAccordionItem .burns-source-link,#burnsAccordionItem .burns-method-note{font-size:10px}
 #burnsAccordionItem .burns-chip bdi{display:inline-block;margin-inline-start:4px}
-@media(max-width:360px){#burnsAccordionItem .burns-protocol-grid,#burnsAccordionItem .burns-fields-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:360px){#burnsAccordionItem .burns-remaining-grid{grid-template-columns:minmax(0,1fr)}#burnsAccordionItem .burns-remaining-grid>div{display:flex;align-items:center;justify-content:space-between;gap:7px}#burnsAccordionItem .burns-remaining-grid dt{max-width:57%;margin:0;font-size:11px}#burnsAccordionItem .burns-protocol-choice bdi{font-size:10px}}
+.large-font #burnsAccordionItem .burns-fields-grid,.large-font #burnsAccordionItem .burns-protocol-grid{grid-template-columns:minmax(0,1fr)}

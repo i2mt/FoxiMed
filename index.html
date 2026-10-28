@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=51">
-    <link rel="stylesheet" href="burns.css?v=1">
+    <link rel="stylesheet" href="burns.css?v=2">
     <link rel="stylesheet" href="voice-assistant.css?v=43">
     <link rel="stylesheet" href="drug-reference.css?v=10">
     <link rel="stylesheet" href="settings.css?v=3">
@@ -52,7 +52,7 @@
             </div>
             <div class="loading-status" id="loadingStatus">در حال بارگذاری پایگاه داده دارویی...</div>
             <div class="loading-meta">
-                <span>نسخه 5.4.4</span>
+                <span>نسخه 5.4.5</span>
                 <span class="loading-meta-dot" aria-hidden="true"></span>
                 <span>محاسبه آفلاین · مرجع با دریافت اختیاری</span>
             </div>
@@ -1082,20 +1082,39 @@
                                 <details class="burns-fluid-panel burns-secondary" id="burnsFluidPanel">
                                     <summary>تخمین مایع — بزرگسال <span>اختیاری</span></summary>
                                     <div class="burns-fluid-content">
-                                        <p class="burns-estimate-hint" id="burnsFluidBasis">درصد از نقشه خوانده می‌شود.</p>
                                         <div class="burns-protocol-grid" role="group" aria-label="روش تخمین مایع">
-                                            <button type="button" class="burns-protocol-choice" data-burn-factor="4" onclick="setBurnsProtocol('4')"><strong>Parkland سنتی</strong><bdi dir="ltr">4 mL × kg × %TBSA</bdi><small>فرمول کلاسیک ۲۴ ساعت نخست</small></button>
-                                            <button type="button" class="burns-protocol-choice" data-burn-factor="2" onclick="setBurnsProtocol('2')"><strong>ABA</strong><bdi dir="ltr">2 mL × kg × %TBSA</bdi><small>بزرگسال با حداقل ۲۰٪ TBSA</small></button>
+                                            <button type="button" class="burns-protocol-choice" data-burn-factor="4" onclick="setBurnsProtocol('4')"><strong dir="ltr">Parkland</strong><bdi dir="ltr">4 mL/kg/%TBSA</bdi><small>فرمول کلاسیک</small></button>
+                                            <button type="button" class="burns-protocol-choice" data-burn-factor="2" onclick="setBurnsProtocol('2')"><strong dir="ltr">ABA</strong><bdi dir="ltr">2 mL/kg/%TBSA</bdi><small>بزرگسال · حداقل ۲۰٪</small></button>
                                         </div>
                                         <select id="burnsProtocol" hidden onchange="updateParkland()"><option value=""></option><option value="4">Parkland</option><option value="2">ABA</option></select>
-                                        <label class="burns-field">وزن بیمار (kg)<input type="text" data-numeric="true" id="burnsWeight" placeholder="وزن" inputmode="decimal" oninput="updateParkland()"></label>
-                                        <p class="burns-estimate-hint" id="burnsFluidHint">روش را انتخاب و وزن را وارد کنید.</p>
+                                        <div class="burns-fields-grid burns-parameters">
+                                            <label class="burns-field"><span class="burns-field-label">درصد برای مایع</span><span class="burns-input-shell"><input id="burnsConfirmedTBSA" type="text" data-numeric="true" inputmode="decimal" placeholder="از نقشه" oninput="setBurnsFluidTBSA()"><span class="burns-input-unit" dir="ltr">%</span></span></label>
+                                            <label class="burns-field"><span class="burns-field-label">وزن بیمار</span><span class="burns-input-shell"><input type="text" data-numeric="true" id="burnsWeight" placeholder="وزن" inputmode="decimal" oninput="updateParkland()"><span class="burns-input-unit" dir="ltr">kg</span></span></label>
+                                        </div>
+                                        <div class="burns-basis-row"><p id="burnsFluidBasis">درصد از نقشه خوانده می‌شود.</p><button type="button" id="burnsUseMap" onclick="useBurnsMapTBSA()" hidden>استفاده از نقشه</button></div>
+                                        <div id="burnsFluidStatus" class="burns-calculation-status" role="status"><strong id="burnsFluidStatusTitle">تخمین مایع</strong><p id="burnsFluidHint">روش را انتخاب و وزن را وارد کنید.</p></div>
                                         <div class="burns-fluid-result" id="parklandRow" style="display:none;">
                                             <div class="burns-result-row"><span class="burns-result-label" id="parklandLabel">تخمین ۲۴ ساعت نخست از آسیب</span><bdi class="burns-result-value" id="parklandResult" dir="ltr">—</bdi></div>
                                             <div class="burns-fluid-split"><div><span>۸ ساعت نخست از آسیب</span><bdi id="burnsFirst8" dir="ltr">—</bdi></div><div><span>۱۶ ساعت بعد</span><bdi id="burnsNext16" dir="ltr">—</bdi></div></div>
                                         </div>
-                                        <details class="burns-secondary" id="burnsTbsaDetails"><summary>اصلاح درصد نقشه <span>اختیاری</span></summary><label class="burns-field">درصد ارزیابی‌شده برای محاسبه مایع<input id="burnsConfirmedTBSA" type="text" data-numeric="true" inputmode="decimal" placeholder="خالی = استفاده از نقشه" oninput="updateParkland()"></label></details>
-                                        <details class="burns-secondary" id="burnsTimingDetails"><summary>ادامه احیا و مایع قبلی <span>اختیاری</span></summary><div class="burns-fields-grid"><label class="burns-field">ساعت گذشته از آسیب<input id="burnsElapsed" type="text" data-numeric="true" inputmode="decimal" placeholder="۰ تا کمتر از ۲۴" oninput="updateParkland()"></label><label class="burns-field">مایع احیای دریافت‌شده (mL)<input id="burnsGiven" type="text" data-numeric="true" inputmode="decimal" placeholder="اگر دریافت نشده: ۰" oninput="updateParkland()"></label></div><p class="burns-estimate-hint" id="burnsTimingResult">برای بررسی باقیمانده، هر دو مقدار را وارد کنید.</p></details>
+                                        <details class="burns-secondary burns-timing-panel" id="burnsTimingDetails">
+                                            <summary>مایع باقیمانده پس از دریافت اولیه <span>اختیاری</span></summary>
+                                            <div class="burns-timing-content">
+                                                <div class="burns-fields-grid">
+                                                    <label class="burns-field"><span class="burns-field-label">زمان از آسیب</span><span class="burns-input-shell"><input id="burnsElapsed" type="text" data-numeric="true" inputmode="decimal" placeholder="—" oninput="updateParkland()"><span class="burns-input-unit" dir="ltr">h</span></span></label>
+                                                    <label class="burns-field"><span class="burns-field-label">مایع دریافتی</span><span class="burns-input-shell"><input id="burnsGiven" type="text" data-numeric="true" inputmode="decimal" placeholder="—" oninput="updateParkland()"><span class="burns-input-unit" dir="ltr">mL</span></span></label>
+                                                </div>
+                                                <p class="burns-timing-message" id="burnsTimingResult" role="status">هر دو مقدار را وارد کنید؛ اگر مایعی دریافت نشده، ۰ بنویسید.</p>
+                                                <div class="burns-remaining-result" id="burnsRemainingResult" hidden>
+                                                    <div class="burns-time-left"><span id="burnsPeriodLabel">تا پایان ۸ ساعت نخست</span><strong><bdi id="burnsTimeLeft" dir="ltr">—</bdi> باقی است</strong></div>
+                                                    <dl class="burns-remaining-grid">
+                                                        <div><dt id="burnsPeriodVolumeLabel">مایع تا پایان این بازه</dt><dd><bdi id="burnsPeriodRemaining" dir="ltr">—</bdi></dd></div>
+                                                        <div><dt>باقیمانده تا ۲۴ ساعت</dt><dd><bdi id="burnsTotalRemaining" dir="ltr">—</bdi></dd></div>
+                                                    </dl>
+                                                    <p class="burns-result-note">تفاضل برآورد فرمول و مایع ثبت‌شده؛ این اعداد دستور جبران یا سرعت پمپ نیستند.</p>
+                                                </div>
+                                            </div>
+                                        </details>
                                         <p class="burns-estimate-hint">فرمول‌ها برآورد اولیه‌اند؛ انتخاب روش و تنظیم مایع با پروتکل مرکز و پاسخ بیمار انجام می‌شود. زمان از آسیب حساب می‌شود، نه پذیرش.</p>
                                         <a class="burns-source-link" href="https://doi.org/10.1093/jbcr/irad125" target="_blank" rel="noopener">منبع راهنمای ABA</a>
                                     </div>
@@ -2092,7 +2111,7 @@
                 <section class="settings-group settings-card" data-settings-section="about">
                     <button type="button" id="settings-trigger-about" class="settings-card-trigger" data-settings-toggle aria-expanded="false" aria-controls="settings-panel-about"><i class="fas fa-info-circle"></i><span class="settings-card-title"> درباره</span><i class="fas fa-chevron-down settings-chevron" aria-hidden="true"></i></button><div class="settings-group-content" id="settings-panel-about" role="region" aria-labelledby="settings-trigger-about" hidden>
                     <div class="about-info">
-                        <div class="about-row"><span>نسخه</span><span>5.4.4</span></div>
+                        <div class="about-row"><span>نسخه</span><span>5.4.5</span></div>
                         <div class="about-row"><span>داروهای محاسبه‌گر</span><span id="drugCount">12</span></div>
                         <div class="about-row"><span>آخرین به‌روزرسانی</span><span id="lastUpdate">—</span></div>
                     </div>
@@ -2166,7 +2185,7 @@
     <script src="converters.js?v=3"></script>
     <script src="calculation-core.js?v=36"></script>
     <script src="burns-core.js?v=1"></script>
-    <script src="script.js?v=63"></script>
+    <script src="script.js?v=64"></script>
     <script src="drug-reference-data.js?v=2"></script>
     <script src="drug-reference-catalog.js?v=1"></script>
     <script src="drug-reference-index.js?v=3"></script>
@@ -2175,7 +2194,7 @@
     <script src="onboarding.js?v=5"></script>
     <script src="welcome.js?v=2"></script>
     <script src="calculator-guidance.js?v=1"></script>
-    <script src="reference-offline.js?v=5"></script>
+    <script src="reference-offline.js?v=6"></script>
     <script src="koochik-asr.js?v=36"></script>
     <script src="voice-recognition.js?v=42"></script>
     <script src="voice-commands.js?v=46"></script>
@@ -2183,7 +2202,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js?v=64', { updateViaCache: 'none' });
+                navigator.serviceWorker.register('service-worker.js?v=65', { updateViaCache: 'none' });
             });
         }
     </script>
